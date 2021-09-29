@@ -138,6 +138,9 @@ footer:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
+    - label: "Youtube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/channel/UCHTNaLtro_1I6Y3SSywo3Cg"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/touchizen"
