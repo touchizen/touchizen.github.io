@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "고든/터치즌(Gordon/Touchizen.com)의 코딩여행"
+title                    : "고든/터치즌의 코딩여행"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Gordon Ahn"
