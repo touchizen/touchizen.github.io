@@ -111,7 +111,7 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
     - label: "Youtube"
-      icon: "fab fa-fw fa-youtube"
+      icon: "fab fa-fw fa-youtube-play"
       url: "https://www.youtube.com/channel/UCHTNaLtro_1I6Y3SSywo3Cg"
     - label: "Website"
       icon: "fas fa-fw fa-link"
