@@ -103,7 +103,7 @@ analytics:
 author:
   name             : "Gordon Ahn"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "그냥 이것(Backend) 저것(Frontend) 할 줄 하는 개발자입니다."
+  bio              : "그냥 이것(Cloud Backend) 저것(Frontend), 요것(Deep Learning)도 할 줄 하는 개발자입니다."
   location         : "Seoul"
   email            :
   links:
