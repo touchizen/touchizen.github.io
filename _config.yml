@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "터치즌(Touchizen.com)과 고든의 코딩여행"
+title                    : "고든/터치즌(Gordon/Touchizen.com)의 코딩여행"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Gordon Ahn"
@@ -111,7 +111,7 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
     - label: "Youtube"
-      icon: "fab fa-fw fa-youtube-play"
+      icon: "fab fa-fw fa-youtube"
       url: "https://www.youtube.com/channel/UCHTNaLtro_1I6Y3SSywo3Cg"
     - label: "Website"
       icon: "fas fa-fw fa-link"
