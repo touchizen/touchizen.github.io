@@ -122,6 +122,76 @@
   $ref: ./lifeplus/agreement/TER01020000.yaml
 /ter/TER01060000.do:
   $ref: ./lifeplus/agreement/TER01060000.yaml
+#COMController.java
+/error403.do:
+  $ref: ./lifeplus/common/error403.yaml
+/error404.do:
+  $ref: ./lifeplus/common/error404.yaml
+/error500.do:
+  $ref: ./lifeplus/common/error500.yaml
+/callCdn.do:
+  $ref: ./lifeplus/common/callCdn.yaml
+/native/appVer.do:
+  $ref: ./lifeplus/common/appVer.yaml
+/native/appVerNew.do:
+  $ref: ./lifeplus/common/appVerNew.yaml
+/lmhsInfoCall01.do:
+  $ref: ./lifeplus/common/lmhsInfoCall01.yaml
+/lmhsInfoAgree.do:
+  $ref: ./lifeplus/common/lmhsInfoAgree.yaml
+#FileController.java
+/filedownload.do:
+  $ref: ./lifeplus/common/filedownload.yaml
+#LOGController.java
+#/log/LOG01010000.do:
+#  $ref: ./lifeplus/login/index.yaml
+#/log/LOGOUT.do:
+#  $ref: ./lifeplus/login/index.yaml
+#/log/LOG01020100.do:
+#  $ref: ./lifeplus/login/index.yaml
+#/log/LOG01030200.do:
+#  $ref: ./lifeplus/login/index.yaml
+#/log/LOG01030100.do:
+#  $ref: ./lifeplus/login/index.yaml
+#MEMController.java
+#/mem/transKey.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mem/MEM02000000.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mem/MEM02010000.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mem/MEM02040100.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mem/MEM02040200.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mem/MEM02050000.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mem/MEM02050100.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mem/MEM02050200.do:
+#  $ref: ./lifeplus/member/index.yaml
+#MORController.java
+#/mor/MOR02010000.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mor/MOR02020000.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mor/MOR02020001.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mor/MOR03000000.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mor/MOR04000000.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mor/MOR05000000.do:
+#  $ref: ./lifeplus/member/index.yaml
+#/mor/MOR02010001.do:
+#  $ref: ./lifeplus/member/index.yaml
+#NICEController.java
+#/niceCall.do:
+#  $ref: ./lifeplus/nice/index.yaml
+#/niceSuccess.do:
+#  $ref: ./lifeplus/nice/index.yaml
+#/niceFail.do:
+#  $ref: ./lifeplus/nice/index.yaml
 /users:
   $ref: ./lifeplus/v1/index.yaml
 /users/{userId}:

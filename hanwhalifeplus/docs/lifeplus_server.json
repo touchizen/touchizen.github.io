@@ -27,6 +27,10 @@
       "description": "API는 인증되어야만 사용할 수 있습니다.\n여기서는 기개발된 마음건강 서버 API를 설명합니다.\nsignup을 별도로 구분하여 기술한 이유는 마음건강에서 기개발된 API들이 RESTful 표준 방식으로 설계되어 개발되지 않고,\n개발자가 임의로 작성한 것이라 참고를 위해 예제로 따로 추출하여 기술합니다. (비효율적으로 생각됩니다.)\n"
     },
     {
+      "name": "common",
+      "description": "공통\n"
+    },
+    {
       "name": "home",
       "description": "홈(메인화면).\n"
     },
@@ -52,19 +56,35 @@
     },
     {
       "name": "detaildiag",
-      "description": "세부진단\n"
+      "description": "세부진단.\n"
     },
     {
       "name": "simplediag",
-      "description": "간편진단\n"
+      "description": "간편진단.\n"
     },
     {
       "name": "agreement",
-      "description": "약관 더보기 \n"
+      "description": "약관 더보기.\n"
     },
     {
       "name": "pedometer",
       "description": "만보기.\n"
+    },
+    {
+      "name": "file",
+      "description": "파일 관련 처리 .\n"
+    },
+    {
+      "name": "login",
+      "description": "로그인 관련.\n"
+    },
+    {
+      "name": "member",
+      "description": "회원관리.\n"
+    },
+    {
+      "name": "NICE",
+      "description": "나이스 인증관리.\n"
     },
     {
       "name": "users",
@@ -2414,6 +2434,538 @@
           "agreement"
         ],
         "description": "약관 더보기 - 업무공유 시스템 정보 연동 동의 \n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/error403.do": {
+      "get": {
+        "operationId": "LifePlusError403",
+        "summary": "에러페이지_error403",
+        "tags": [
+          "common"
+        ],
+        "description": "에러페이지_error403\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/error404.do": {
+      "get": {
+        "operationId": "LifePlusError404",
+        "summary": "에러페이지_error404",
+        "tags": [
+          "common"
+        ],
+        "description": "에러페이지_error404\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/error500.do": {
+      "get": {
+        "operationId": "LifePlusError500",
+        "summary": "에러페이지_error500",
+        "tags": [
+          "common"
+        ],
+        "description": "에러페이지_error500\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/callCdn.do": {
+      "get": {
+        "operationId": "LifePlusCallCDN",
+        "summary": "CDN 호출",
+        "tags": [
+          "common"
+        ],
+        "description": "CDN 호출\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/native/appVer.do": {
+      "get": {
+        "operationId": "LifePlusAppVer",
+        "summary": "앱 버젼",
+        "tags": [
+          "common"
+        ],
+        "description": "앱 버젼\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/native/appVerNew.do": {
+      "get": {
+        "operationId": "LifePlusAppVerNew",
+        "summary": "신규 앱버젼",
+        "tags": [
+          "common"
+        ],
+        "description": "신규 앱버젼\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/lmhsInfoCall01.do": {
+      "get": {
+        "operationId": "LifePlusLmhsInfoCall01",
+        "summary": "업무공유 시스템 감정캘린더 조회",
+        "tags": [
+          "common"
+        ],
+        "description": "업무공유 시스템 감정캘린더 조회\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/lmhsInfoAgree.do": {
+      "get": {
+        "operationId": "LifePlusLmhsInfoAgree",
+        "summary": "업무공유 시스템 연동 동의",
+        "tags": [
+          "common"
+        ],
+        "description": "업무공유 시스템 연동 동의 \n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/filedownload.do": {
+      "get": {
+        "operationId": "LifePlusFiledownload",
+        "summary": "파일 다운로드",
+        "tags": [
+          "common"
+        ],
+        "description": "파일 다운로드\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/log/LOG01010000.do": {
+      "post": {
+        "operationId": "LifePlusSignup",
+        "summary": "Create a user",
+        "tags": [
+          "signup"
+        ],
+        "description": "Create a user. This api needs no authentication.\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/log/LOGOUT.do": {
+      "post": {
+        "operationId": "LifePlusSignup",
+        "summary": "Create a user",
+        "tags": [
+          "signup"
+        ],
+        "description": "Create a user. This api needs no authentication.\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/log/LOG01020100.do": {
+      "post": {
+        "operationId": "LifePlusSignup",
+        "summary": "Create a user",
+        "tags": [
+          "signup"
+        ],
+        "description": "Create a user. This api needs no authentication.\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/log/LOG01030200.do": {
+      "post": {
+        "operationId": "LifePlusSignup",
+        "summary": "Create a user",
+        "tags": [
+          "signup"
+        ],
+        "description": "Create a user. This api needs no authentication.\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/log/LOG01030100.do": {
+      "post": {
+        "operationId": "LifePlusSignup",
+        "summary": "Create a user",
+        "tags": [
+          "signup"
+        ],
+        "description": "Create a user. This api needs no authentication.\n",
         "consumes": [
           "application/json"
         ],

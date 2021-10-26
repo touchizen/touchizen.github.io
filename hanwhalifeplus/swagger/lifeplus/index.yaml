@@ -15,6 +15,9 @@ tags:
       여기서는 기개발된 마음건강 서버 API를 설명합니다.
       signup을 별도로 구분하여 기술한 이유는 마음건강에서 기개발된 API들이 RESTful 표준 방식으로 설계되어 개발되지 않고,
       개발자가 임의로 작성한 것이라 참고를 위해 예제로 따로 추출하여 기술합니다. (비효율적으로 생각됩니다.)
+  - name: common
+    description: |
+      공통
   - name: home
     description: |
       홈(메인화면).
@@ -35,16 +38,28 @@ tags:
       공지사항 / 이벤트 처리
   - name: detaildiag
     description: |
-      세부진단
+      세부진단.
   - name: simplediag
     description: |
-      간편진단
+      간편진단.
   - name: agreement
     description: |
-      약관 더보기 
+      약관 더보기.
   - name: pedometer
     description: |
       만보기.
+  - name: file
+    description: |
+      파일 관련 처리 .
+  - name: login
+    description: |
+      로그인 관련.
+  - name: member
+    description: |
+      회원관리.
+  - name: NICE
+    description: |
+      나이스 인증관리.
   - name: users
     description: |
       RESTful 표준안을 잘 따른 방식으로 작성한 방법을 기술합니다. (제발 이런 방식으로 작성하기를 바랍니다.)
