@@ -1,0 +1,20 @@
+{
+  "name": "teddy-swagger-docs",
+  "version": "1.0.0",
+  "description": "Teddy server Swagger docs",
+  "main": "doc_resolve.js",
+  "scripts": {
+    "start": "node doc_resolve.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "json-refs": "^2.0.3",
+    "yaml-js": "^0.1.3",
+    "swagger-cli-client": "~0.1.12"
+  },
+  "devDependencies": {
+    "yaml-js": "~0.1.3",
+    "json-refs": "~2.1.6",
+    "bootstrap": "~3.3.7"
+  }
+}

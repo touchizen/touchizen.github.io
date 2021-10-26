@@ -1,0 +1,81 @@
+get:
+  operationId: LifePlusV1GetUser
+  summary: A user profile for a specific user
+  tags:
+  - users
+  description: |
+    Show a user profile for a specific user after signed in.
+  parameters:
+    - name: userId
+      in: path
+      required: true
+      description: The id of the user to retrieve
+      type: string
+  responses:
+    "200":
+      description: Expected response to a valid request
+      schema:
+        $ref: '#/definitions/User'
+    default:
+      description: unexpected error
+      schema:
+        $ref: '#/definitions/Error'
+put:
+  operationId: LifePlusV1UpdateUser
+  summary: Update a user for a specific user
+  tags:
+  - users
+  description: |
+    Update the user for a specific user after signed in
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+    - name: "userId"
+      in: "path"
+      description: "the ID of user that needs to be updated"
+      required: true
+      type: "string"
+    - in: "body"
+      name: "body"
+      description: "Updated user object"
+      required: true
+      schema:
+        $ref: "#/definitions/User"
+  responses:
+    405:
+      description: "Invalid input"
+  security:
+  - teddy_auth:
+    - "write:users"
+    - "read:users"
+
+delete:
+  operationId: "LifePlusV1DeleteUser"
+  summary: "Deletes a user for a specfic user"
+  tags:
+  - "users"
+  description: |
+    Delete the user for a specific user after signed in
+  produces:
+  - "application/json"
+  parameters:
+  - name: "api_key"
+    in: "header"
+    required: false
+    type: "string"
+  - name: "userId"
+    in: "path"
+    description: "User id to delete"
+    required: true
+    type: "string"
+  responses:
+    400:
+      description: "Invalid ID supplied"
+    404:
+      description: "User not found"
+  security:
+  - teddy_auth:
+    - "write:users"
+    - "read:users"

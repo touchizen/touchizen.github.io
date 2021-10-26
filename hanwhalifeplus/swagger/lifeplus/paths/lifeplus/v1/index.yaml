@@ -1,0 +1,60 @@
+get:
+  operationId: LifePlusV1ListUsers
+  summary: List all users
+  tags:
+  - users
+  description: |
+    List all users after signed in.
+  parameters:
+    - name: limit
+      in: query
+      description: How many items to return at one time (max 100)
+      required: false
+      type: integer
+      format: int32
+  produces:
+  - application/json
+  responses:
+    "200":
+      description: A paged array of users
+      headers:
+        x-next:
+          type: string
+          description: A link to the next page of responses
+      schema:
+        $ref: '#/definitions/Users'
+    default:
+      description: unexpected error
+      schema:
+        $ref: '#/definitions/Error'
+post:
+  operationId: LifePlusV1CreateUser
+  summary: Create a user
+  tags:
+  - users
+  description: |
+    Create a user. This api needs no authentication.
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+    - in: "body"
+      name: "body"
+      description: "Create an user"
+      required: true
+      schema:
+        $ref: "#/definitions/User"
+  responses:
+    "201":
+      description: Null response
+    "405":
+      description: "Invalid input"
+    default:
+      description: unexpected error
+      schema:
+        $ref: '#/definitions/Error'
+  security:
+  - teddy_auth:
+    - "write:users"
+    - "read:users"

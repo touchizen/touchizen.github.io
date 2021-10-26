@@ -1,0 +1,102 @@
+type: "object"
+required:
+  - custId
+  - pswd
+  - mailAddr
+  - nknm
+properties:
+  custId:
+    type: string
+    description: |
+      고객아이디.
+    example: "abcd"    
+  pswd:
+    type: string
+    description: |
+      비밀번호
+    example: "abcd1234!"    
+  crtfTokn:
+    type: string
+    description: |
+      인증토큰
+    example: "unknown"    
+  mailAddr:
+    type: string
+    description: |
+      이메일주소
+    example: "test@test.com"    
+  custNo:
+    type: string
+    description: |
+      고객번호
+    example: "unknown"    
+  custName:
+    type: string
+    description: |
+      고객명
+    example: "John Doh"    
+  hpNo:
+    type: string
+    description: |
+      핸드폰 번호
+    example: "keyword"    
+  brth:
+    type: string
+    description: |
+      생년월일
+    example: "19671025"    
+  sex:
+    type: string
+    description: |
+      성별
+    example: "m"    
+  ntprCustCode:
+    type: string
+    description: |
+      기업고객코드
+    example: "unknown"    
+  ntprName:
+    type: string
+    description: |
+      기업명
+    example: "한화생명"    
+  insrPyno:
+    type: string
+    description: |
+      보험증권번호
+    example: "unknown"    
+  stplAgreYn:
+    type: string
+    description: |
+      약관동의여부
+    example: "Y"    
+  trmnId:
+    type: string
+    description: |
+      단말기Id
+    example: "unknown"    
+  pushTokn:
+    type: string
+    description: |
+      모바일푸시토큰
+    example: "unknown"    
+  osDvnm:
+    type: string
+    description: |
+      모바일 운영체제
+    example: "ios"    
+  mktgAgyn:
+    type: string
+    description: |
+      마케팅동의여부  
+    example: "Y"    
+  ifapAgyn:
+    type: string
+    description: |
+      업무 공유시스템 정보 연동 동의
+    example: "Y"    
+  nknm:
+    type: string
+    description: |
+      닉네임
+    example: "test"    

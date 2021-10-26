@@ -1,0 +1,9 @@
+type: object
+required:
+- keyword
+properties:
+  keyword:
+    type: string
+    description: |
+      To be promoted.
+    example: "keyword"

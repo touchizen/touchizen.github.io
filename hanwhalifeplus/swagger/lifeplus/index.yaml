@@ -1,0 +1,68 @@
+swagger: '2.0'
+schemes:
+  - https
+host: localhost:8080
+basePath: /v1
+info:
+  $ref: ./info/index.yaml
+# externalDocs:
+#   description: More external documentation available soon here
+#   url: 'https://gitlab.com/.........'
+tags:
+  - name: signup
+    description: |
+      API는 인증되어야만 사용할 수 있습니다.
+      여기서는 기개발된 마음건강 서버 API를 설명합니다.
+      signup을 별도로 구분하여 기술한 이유는 마음건강에서 기개발된 API들이 RESTful 표준 방식으로 설계되어 개발되지 않고,
+      개발자가 임의로 작성한 것이라 참고를 위해 예제로 따로 추출하여 기술합니다. (비효율적으로 생각됩니다.)
+  - name: home
+    description: |
+      홈(메인화면).
+  - name: challenge
+    description: |
+      챌린지.
+  - name: class
+    description: |
+      클래스.
+  - name: mind
+    description: |
+      마음(감정캘린더, 마음일기).
+  - name: record
+    description: |
+      내기록.
+  - name: notification
+    description: |
+      공지사항 / 이벤트 처리
+  - name: detaildiag
+    description: |
+      세부진단
+  - name: simplediag
+    description: |
+      간편진단
+  - name: agreement
+    description: |
+      약관 더보기 
+  - name: pedometer
+    description: |
+      만보기.
+  - name: users
+    description: |
+      RESTful 표준안을 잘 따른 방식으로 작성한 방법을 기술합니다. (제발 이런 방식으로 작성하기를 바랍니다.)
+      Functions can be accessed with user authentication.
+      These endpoints can process the requests for Creating(POST), Retrieving(GET), Update(UPDATE), Delete(DELETE) to users.
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+  teddy_auth:
+    type: "oauth2"
+    authorizationUrl: "https://lifeplusmentalcare.swagger.io/oauth/authorize"
+    flow: "implicit"
+    scopes:
+      read:users: "read your users"
+      write:users: "modify users"
+paths:
+  $ref: ./paths/index.yaml
+definitions:
+  $ref: ./definitions/index.yaml
