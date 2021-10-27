@@ -28,12 +28,12 @@
 #       schema:
 #         $ref: '#/definitions/Error'
 post:
-  operationId: LifePlusLOG01010000
-  summary: 모바일 로그인
+  operationId: LifePlusLOGOUT
+  summary: 모바일 로그아웃
   tags: 
   - login
   description: |
-    모바일 로그인
+    모바일 로그아웃
   consumes:
   - "application/json"
   produces:

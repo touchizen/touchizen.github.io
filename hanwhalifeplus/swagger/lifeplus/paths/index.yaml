@@ -143,16 +143,16 @@
 /filedownload.do:
   $ref: ./lifeplus/common/filedownload.yaml
 #LOGController.java
-#/log/LOG01010000.do:
-#  $ref: ./lifeplus/login/index.yaml
-#/log/LOGOUT.do:
-#  $ref: ./lifeplus/login/index.yaml
-#/log/LOG01020100.do:
-#  $ref: ./lifeplus/login/index.yaml
-#/log/LOG01030200.do:
-#  $ref: ./lifeplus/login/index.yaml
-#/log/LOG01030100.do:
-#  $ref: ./lifeplus/login/index.yaml
+/log/LOG01010000.do:
+  $ref: ./lifeplus/login/LOG01010000.yaml
+/log/LOGOUT.do:
+  $ref: ./lifeplus/login/LOGOUT.yaml
+/log/LOG01020100.do:
+  $ref: ./lifeplus/login/LOG01020100.yaml
+/log/LOG01030200.do:
+  $ref: ./lifeplus/login/LOG01030200.yaml
+/log/LOG01030100.do:
+  $ref: ./lifeplus/login/LOG01030100.yaml
 #MEMController.java
 #/mem/transKey.do:
 #  $ref: ./lifeplus/member/index.yaml

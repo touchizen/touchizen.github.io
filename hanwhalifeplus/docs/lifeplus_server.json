@@ -2807,51 +2807,16 @@
       }
     },
     "/log/LOG01010000.do": {
-      "post": {
-        "operationId": "LifePlusSignup",
-        "summary": "Create a user",
-        "tags": [
-          "signup"
-        ],
-        "description": "Create a user. This api needs no authentication.\n",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Updated user object",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Null response"
-          },
-          "default": {
-            "description": "unexpected error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
+      "$ref": "./lifeplus/login/LOG01010000.yaml"
     },
     "/log/LOGOUT.do": {
       "post": {
-        "operationId": "LifePlusSignup",
-        "summary": "Create a user",
+        "operationId": "LifePlusLOGOUT",
+        "summary": "모바일 로그아웃",
         "tags": [
-          "signup"
+          "login"
         ],
-        "description": "Create a user. This api needs no authentication.\n",
+        "description": "모바일 로그아웃\n",
         "consumes": [
           "application/json"
         ],
@@ -2884,12 +2849,12 @@
     },
     "/log/LOG01020100.do": {
       "post": {
-        "operationId": "LifePlusSignup",
-        "summary": "Create a user",
+        "operationId": "LifePlusLOG01020100",
+        "summary": "아이디 찾기",
         "tags": [
-          "signup"
+          "login"
         ],
-        "description": "Create a user. This api needs no authentication.\n",
+        "description": "아이디 찾기\n",
         "consumes": [
           "application/json"
         ],
@@ -2922,12 +2887,12 @@
     },
     "/log/LOG01030200.do": {
       "post": {
-        "operationId": "LifePlusSignup",
-        "summary": "Create a user",
+        "operationId": "LifePlusLOG01030200",
+        "summary": "비밀번호 찾기",
         "tags": [
-          "signup"
+          "login"
         ],
-        "description": "Create a user. This api needs no authentication.\n",
+        "description": "비밀번호 찾기\n",
         "consumes": [
           "application/json"
         ],
@@ -2960,12 +2925,12 @@
     },
     "/log/LOG01030100.do": {
       "post": {
-        "operationId": "LifePlusSignup",
-        "summary": "Create a user",
+        "operationId": "LifePlusLOG01030100",
+        "summary": "비밀번호 재설정",
         "tags": [
-          "signup"
+          "login"
         ],
-        "description": "Create a user. This api needs no authentication.\n",
+        "description": "비밀번호 재설정\n",
         "consumes": [
           "application/json"
         ],
