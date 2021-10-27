@@ -31,7 +31,7 @@ get:
   operationId: LifePlusNiceCall
   summary: 나이스팝업호출
   tags:
-  - NICE
+  - nice
   description: |
     나이스팝업호출
   consumes:

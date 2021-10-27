@@ -31,7 +31,7 @@ get:
   operationId: LifePlusNiceFail
   summary: 나이스 실패
   tags:
-  - NICE
+  - nice
   description: |
     나이스 실패
   consumes:

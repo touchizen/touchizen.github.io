@@ -87,7 +87,7 @@
       "description": "회원관리 기타 (정보 수정 등)      \n"
     },
     {
-      "name": "NICE",
+      "name": "nice",
       "description": "나이스 인증관리.\n"
     },
     {
@@ -3537,7 +3537,7 @@
         "operationId": "LifePlusNiceCall",
         "summary": "나이스팝업호출",
         "tags": [
-          "NICE"
+          "nice"
         ],
         "description": "나이스팝업호출\n",
         "consumes": [
@@ -3575,7 +3575,7 @@
         "operationId": "LifePlusNiceSuccess",
         "summary": "나이스 인증 성공",
         "tags": [
-          "NICE"
+          "nice"
         ],
         "description": "나이스 인증 성공\n",
         "consumes": [
@@ -3613,7 +3613,7 @@
         "operationId": "LifePlusNiceFail",
         "summary": "나이스 실패",
         "tags": [
-          "NICE"
+          "nice"
         ],
         "description": "나이스 실패\n",
         "consumes": [
