@@ -144,7 +144,7 @@
   $ref: ./lifeplus/common/filedownload.yaml
 #LOGController.java
 /log/LOG01010000.do:
-  $ref: ./lifeplus/login/LOG01010000.yaml
+  $ref: ./lifeplus/login/index.yaml
 /log/LOGOUT.do:
   $ref: ./lifeplus/login/LOGOUT.yaml
 /log/LOG01020100.do:
