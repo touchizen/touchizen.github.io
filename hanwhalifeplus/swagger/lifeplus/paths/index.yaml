@@ -154,22 +154,22 @@
 /log/LOG01030100.do:
   $ref: ./lifeplus/login/LOG01030100.yaml
 #MEMController.java
-#/mem/transKey.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mem/MEM02000000.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mem/MEM02010000.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mem/MEM02040100.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mem/MEM02040200.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mem/MEM02050000.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mem/MEM02050100.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mem/MEM02050200.do:
-#  $ref: ./lifeplus/member/index.yaml
+/mem/transKey.do:
+  $ref: ./lifeplus/member/transKey.yaml
+/mem/MEM02000000.do:
+  $ref: ./lifeplus/member/MEM02000000.yaml
+/mem/MEM02010000.do:
+  $ref: ./lifeplus/member/MEM02010000.yaml
+/mem/MEM02040100.do:
+  $ref: ./lifeplus/member/MEM02040100.yaml
+/mem/MEM02040200.do:
+  $ref: ./lifeplus/member/MEM02040200.yaml
+/mem/MEM02050000.do:
+  $ref: ./lifeplus/member/MEM02050000.yaml
+/mem/MEM02050100.do:
+  $ref: ./lifeplus/member/MEM02050100.yaml
+/mem/MEM02050200.do:
+  $ref: ./lifeplus/member/MEM02050200.yaml
 #MORController.java
 #/mor/MOR02010000.do:
 #  $ref: ./lifeplus/member/index.yaml

@@ -110,12 +110,12 @@
   "paths": {
     "/mem/MEM02050000.do": {
       "post": {
-        "operationId": "LifePlusSignup",
-        "summary": "Create a user",
+        "operationId": "LifePlusMEM02050000",
+        "summary": "회원가입_완료",
         "tags": [
-          "signup"
+          "member"
         ],
-        "description": "Create a user. This api needs no authentication.\n",
+        "description": "회원가입_완료\n",
         "consumes": [
           "application/json"
         ],
@@ -2966,6 +2966,272 @@
           "login"
         ],
         "description": "비밀번호 재설정\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mem/transKey.do": {
+      "post": {
+        "operationId": "LifePlusTransKey",
+        "summary": "라온 키패드 시큐어 키 생성",
+        "tags": [
+          "member"
+        ],
+        "description": "라온 키패드 시큐어 키 생성\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mem/MEM02000000.do": {
+      "post": {
+        "operationId": "LifePlusMEM02000000",
+        "summary": "회원가입_고객중복확인",
+        "tags": [
+          "member"
+        ],
+        "description": "회원가입_고객중복확인\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mem/MEM02010000.do": {
+      "post": {
+        "operationId": "LifePlusMEM02010000",
+        "summary": "회원가입_고객확인",
+        "tags": [
+          "member"
+        ],
+        "description": "회원가입_고객확인\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mem/MEM02040100.do": {
+      "post": {
+        "operationId": "LifePlusMEM02040100",
+        "summary": "회원가입_아이디 중복 확인",
+        "tags": [
+          "member"
+        ],
+        "description": "회원가입_아이디 중복 확인\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mem/MEM02040200.do": {
+      "post": {
+        "operationId": "LifeMEM02040200",
+        "summary": "회원가입_이메일 중복 확인",
+        "tags": [
+          "member"
+        ],
+        "description": "회원가입_이메일 중복 확인\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mem/MEM02050100.do": {
+      "post": {
+        "operationId": "LifePlusMEM02050100",
+        "summary": "회원가입_닉네임 중복 확인",
+        "tags": [
+          "member"
+        ],
+        "description": "회원가입_닉네임 중복 확인\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mem/MEM02050200.do": {
+      "post": {
+        "operationId": "LifePlusMEM02050200",
+        "summary": "회원가입_닉네임 등록",
+        "tags": [
+          "signup"
+        ],
+        "description": "회원가입_닉네임 등록\n",
         "consumes": [
           "application/json"
         ],

@@ -28,12 +28,12 @@
 #       schema:
 #         $ref: '#/definitions/Error'
 post:
-  operationId: LifePlusSignup
-  summary: Create a user
+  operationId: LifePlusMEM02000000
+  summary: 회원가입_고객중복확인
   tags: 
-  - signup
+  - member
   description: |
-    Create a user. This api needs no authentication.
+    회원가입_고객중복확인
   consumes:
   - "application/json"
   produces:
