@@ -2806,6 +2806,44 @@
         }
       }
     },
+    "/log/LOG01010000.do": {
+      "post": {
+        "operationId": "LifePlusLOG01010000",
+        "summary": "모바일 로그인",
+        "tags": [
+          "login"
+        ],
+        "description": "모바일 로그인\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/log/LOGOUT.do": {
       "post": {
         "operationId": "LifePlusLOGOUT",
