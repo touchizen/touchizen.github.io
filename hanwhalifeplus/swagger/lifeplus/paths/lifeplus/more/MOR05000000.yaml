@@ -27,7 +27,7 @@
 #       description: unexpected error
 #       schema:
 #         $ref: '#/definitions/Error'
-post:
+get:
   operationId: LifePlusMOR05000000
   summary: 보험상품안내
   tags: 

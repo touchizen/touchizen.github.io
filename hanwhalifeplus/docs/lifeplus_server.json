@@ -3457,7 +3457,7 @@
       }
     },
     "/mor/MOR05000000.do": {
-      "post": {
+      "get": {
         "operationId": "LifePlusMOR05000000",
         "summary": "보험상품안내",
         "tags": [
