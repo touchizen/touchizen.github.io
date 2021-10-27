@@ -83,6 +83,10 @@
       "description": "회원관리.\n"
     },
     {
+      "name": "more",
+      "description": "회원관리 기타 (정보 수정 등)      \n"
+    },
+    {
       "name": "NICE",
       "description": "나이스 인증관리.\n"
     },
@@ -2773,7 +2777,7 @@
         "operationId": "LifePlusFiledownload",
         "summary": "파일 다운로드",
         "tags": [
-          "common"
+          "file"
         ],
         "description": "파일 다운로드\n",
         "consumes": [
@@ -3232,6 +3236,272 @@
           "signup"
         ],
         "description": "회원가입_닉네임 등록\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mor/MOR02010000.do": {
+      "post": {
+        "operationId": "LifePlusMOR02010000",
+        "summary": "회원정보 수정",
+        "tags": [
+          "more"
+        ],
+        "description": "회원정보 수정\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mor/MOR02020000.do": {
+      "post": {
+        "operationId": "LifePlusMOR02020000",
+        "summary": "회원탈퇴",
+        "tags": [
+          "more"
+        ],
+        "description": "회원탈퇴\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mor/MOR02020001.do": {
+      "post": {
+        "operationId": "LifePlusMOR02020001",
+        "summary": "최근 7일 이내 등록된 공지 or 이벤트 있는지 확인",
+        "tags": [
+          "more"
+        ],
+        "description": "최근 7일 이내 등록된 공지 or 이벤트 있는지 확인\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mor/MOR03000000.do": {
+      "post": {
+        "operationId": "LifePlusMOR03000000",
+        "summary": "보험금 청구하기",
+        "tags": [
+          "more"
+        ],
+        "description": "보험금 청구하기\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mor/MOR04000000.do": {
+      "post": {
+        "operationId": "LifePlusMOR04000000",
+        "summary": "LIFEPLUS 마음건강 소개",
+        "tags": [
+          "more"
+        ],
+        "description": "LIFEPLUS 마음건강 소개\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mor/MOR05000000.do": {
+      "post": {
+        "operationId": "LifePlusMOR05000000",
+        "summary": "보험상품안내",
+        "tags": [
+          "more"
+        ],
+        "description": "보험상품안내\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/mor/MOR02010001.do": {
+      "post": {
+        "operationId": "LifePlusMOR02010000",
+        "summary": "회원정보 수정",
+        "tags": [
+          "more"
+        ],
+        "description": "회원정보 수정\n",
         "consumes": [
           "application/json"
         ],

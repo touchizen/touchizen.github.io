@@ -27,13 +27,13 @@
 #       description: unexpected error
 #       schema:
 #         $ref: '#/definitions/Error'
-get:
-  operationId: LifePlusFiledownload
-  summary: 파일 다운로드
+post:
+  operationId: LifePlusMOR02020000
+  summary: 회원탈퇴
   tags: 
-  - file
+  - more
   description: |
-    파일 다운로드
+    회원탈퇴
   consumes:
   - "application/json"
   produces:

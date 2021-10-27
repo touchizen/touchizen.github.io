@@ -27,13 +27,13 @@
 #       description: unexpected error
 #       schema:
 #         $ref: '#/definitions/Error'
-get:
-  operationId: LifePlusFiledownload
-  summary: 파일 다운로드
+post:
+  operationId: LifePlusMOR02020001
+  summary: 최근 7일 이내 등록된 공지 or 이벤트 있는지 확인
   tags: 
-  - file
+  - more
   description: |
-    파일 다운로드
+    최근 7일 이내 등록된 공지 or 이벤트 있는지 확인
   consumes:
   - "application/json"
   produces:

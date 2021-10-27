@@ -57,6 +57,9 @@ tags:
   - name: member
     description: |
       회원관리.
+  - name: more
+    description: |
+      회원관리 기타 (정보 수정 등)      
   - name: NICE
     description: |
       나이스 인증관리.

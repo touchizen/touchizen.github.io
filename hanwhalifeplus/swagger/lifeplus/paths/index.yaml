@@ -171,20 +171,20 @@
 /mem/MEM02050200.do:
   $ref: ./lifeplus/member/MEM02050200.yaml
 #MORController.java
-#/mor/MOR02010000.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mor/MOR02020000.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mor/MOR02020001.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mor/MOR03000000.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mor/MOR04000000.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mor/MOR05000000.do:
-#  $ref: ./lifeplus/member/index.yaml
-#/mor/MOR02010001.do:
-#  $ref: ./lifeplus/member/index.yaml
+/mor/MOR02010000.do:
+  $ref: ./lifeplus/more/MOR02010000.yaml
+/mor/MOR02020000.do:
+  $ref: ./lifeplus/more/MOR02020000.yaml
+/mor/MOR02020001.do:
+  $ref: ./lifeplus/more/MOR02020001.yaml
+/mor/MOR03000000.do:
+  $ref: ./lifeplus/more/MOR03000000.yaml
+/mor/MOR04000000.do:
+  $ref: ./lifeplus/more/MOR04000000.yaml
+/mor/MOR05000000.do:
+  $ref: ./lifeplus/more/MOR05000000.yaml
+/mor/MOR02010001.do:
+  $ref: ./lifeplus/more/MOR02010001.yaml
 #NICEController.java
 #/niceCall.do:
 #  $ref: ./lifeplus/nice/index.yaml
