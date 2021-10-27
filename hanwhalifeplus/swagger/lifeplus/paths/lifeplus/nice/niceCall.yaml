@@ -30,7 +30,7 @@
 get:
   operationId: LifePlusNiceCall
   summary: 나이스팝업호출
-  tags: 
+  tags:
   - NICE
   description: |
     나이스팝업호출

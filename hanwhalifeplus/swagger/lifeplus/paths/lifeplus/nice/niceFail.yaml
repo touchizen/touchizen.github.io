@@ -30,7 +30,7 @@
 get:
   operationId: LifePlusNiceFail
   summary: 나이스 실패
-  tags: 
+  tags:
   - NICE
   description: |
     나이스 실패

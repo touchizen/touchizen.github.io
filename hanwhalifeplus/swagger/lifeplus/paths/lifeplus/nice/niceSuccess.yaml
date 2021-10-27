@@ -30,7 +30,7 @@
 get:
   operationId: LifePlusNiceSuccess
   summary: 나이스 인증 성공
-  tags: 
+  tags:
   - NICE
   description: |
     나이스 인증 성공
