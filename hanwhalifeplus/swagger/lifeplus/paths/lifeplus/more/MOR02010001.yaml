@@ -28,7 +28,7 @@
 #       schema:
 #         $ref: '#/definitions/Error'
 post:
-  operationId: LifePlusMOR02010000
+  operationId: LifePlusMOR02010001
   summary: 회원정보 수정
   tags: 
   - more
