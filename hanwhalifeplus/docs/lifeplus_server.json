@@ -3381,7 +3381,7 @@
       }
     },
     "/mor/MOR03000000.do": {
-      "post": {
+      "get": {
         "operationId": "LifePlusMOR03000000",
         "summary": "보험금 청구하기",
         "tags": [
@@ -3419,7 +3419,7 @@
       }
     },
     "/mor/MOR04000000.do": {
-      "post": {
+      "get": {
         "operationId": "LifePlusMOR04000000",
         "summary": "LIFEPLUS 마음건강 소개",
         "tags": [

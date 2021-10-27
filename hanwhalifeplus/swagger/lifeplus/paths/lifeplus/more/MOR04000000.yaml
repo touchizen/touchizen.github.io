@@ -27,7 +27,7 @@
 #       description: unexpected error
 #       schema:
 #         $ref: '#/definitions/Error'
-post:
+get:
   operationId: LifePlusMOR04000000
   summary: LIFEPLUS 마음건강 소개
   tags: 

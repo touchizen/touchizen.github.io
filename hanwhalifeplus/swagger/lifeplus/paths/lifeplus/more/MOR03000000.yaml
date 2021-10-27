@@ -27,7 +27,7 @@
 #       description: unexpected error
 #       schema:
 #         $ref: '#/definitions/Error'
-post:
+get:
   operationId: LifePlusMOR03000000
   summary: 보험금 청구하기 
   tags: 
