@@ -3532,6 +3532,120 @@
         }
       }
     },
+    "/niceCall.do": {
+      "get": {
+        "operationId": "LifePlusNiceCall",
+        "summary": "나이스팝업호출",
+        "tags": [
+          "nice"
+        ],
+        "description": "나이스팝업호출\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/niceSuccess.do": {
+      "get": {
+        "operationId": "LifePlusNiceSuccess",
+        "summary": "나이스 인증 성공",
+        "tags": [
+          "nice"
+        ],
+        "description": "나이스 인증 성공\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/niceFail.do": {
+      "get": {
+        "operationId": "LifePlusNiceFail",
+        "summary": "나이스 실패",
+        "tags": [
+          "nice"
+        ],
+        "description": "나이스 실패\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/users": {
       "get": {
         "operationId": "LifePlusV1ListUsers",

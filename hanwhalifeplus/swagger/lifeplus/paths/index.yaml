@@ -186,12 +186,12 @@
 /mor/MOR02010001.do:
   $ref: ./lifeplus/more/MOR02010001.yaml
 #NICEController.java
-#/niceCall.do:
-#  $ref: ./lifeplus/nice/index.yaml
-#/niceSuccess.do:
-#  $ref: ./lifeplus/nice/index.yaml
-#/niceFail.do:
-#  $ref: ./lifeplus/nice/index.yaml
+/niceCall.do:
+  $ref: ./lifeplus/nice/niceCall.yaml
+/niceSuccess.do:
+  $ref: ./lifeplus/nice/niceSuccess.yaml
+/niceFail.do:
+  $ref: ./lifeplus/nice/niceFail.yaml
 /users:
   $ref: ./lifeplus/v1/index.yaml
 /users/{userId}:
