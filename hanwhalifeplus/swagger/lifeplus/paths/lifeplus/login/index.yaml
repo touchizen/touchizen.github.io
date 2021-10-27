@@ -30,7 +30,7 @@
 post:
   operationId: LifePlusLOG01010000
   summary: 모바일 로그인
-  tags: 
+  tags:
   - login
   description: |
     모바일 로그인
