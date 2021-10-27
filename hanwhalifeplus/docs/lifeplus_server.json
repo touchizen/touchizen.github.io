@@ -3537,7 +3537,7 @@
         "operationId": "LifePlusNiceCall",
         "summary": "나이스팝업호출",
         "tags": [
-          "nice"
+          "NICE"
         ],
         "description": "나이스팝업호출\n",
         "consumes": [
@@ -3575,7 +3575,7 @@
         "operationId": "LifePlusNiceSuccess",
         "summary": "나이스 인증 성공",
         "tags": [
-          "nice"
+          "NICE"
         ],
         "description": "나이스 인증 성공\n",
         "consumes": [
@@ -3613,7 +3613,7 @@
         "operationId": "LifePlusNiceFail",
         "summary": "나이스 실패",
         "tags": [
-          "nice"
+          "NICE"
         ],
         "description": "나이스 실패\n",
         "consumes": [

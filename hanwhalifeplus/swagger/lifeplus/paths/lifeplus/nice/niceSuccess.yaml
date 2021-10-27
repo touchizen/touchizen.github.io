@@ -31,7 +31,7 @@ get:
   operationId: LifePlusNiceSuccess
   summary: 나이스 인증 성공
   tags: 
-  - nice
+  - NICE
   description: |
     나이스 인증 성공
   consumes:
