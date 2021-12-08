@@ -1,7 +1,0 @@
-# Teddy
-User:
-  $ref: public/User.yaml
-Users:
-  $ref: public/Users.yaml
-Error:
-  $ref: public/Error.yaml
