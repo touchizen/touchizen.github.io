@@ -142,7 +142,9 @@
     // 메시지 추가 후 스크롤을 가장 아래로 이동시키는 함수
     function scrollToBottom() {
       var messagesDiv = document.getElementById("messages");
-      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+      if (messagesDiv) {
+        messagesDiv.scrollTop = messagesDiv.scrollHeight - messagesDiv.clientHeight;
+      }
     }
     
     // 타이핑 애니메이션 표시 함수
