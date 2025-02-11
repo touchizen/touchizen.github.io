@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>채팅창 & Typing 애니메이션 예제</title>
+  <!-- lottie-web 라이브러리 CDN (bodymovin) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+  <!-- Mathpix Markdown-it CDN (LaTeX 렌더링) -->
+  <script src="https://cdn.jsdelivr.net/npm/mathpix-markdown-it@2.0.6/es5/bundle.js"></script>
+  <style>
+    html, body {
+       overflow-x: hidden; /* 좌우 스크롤 제거 */
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    /* Safe Area를 고려한 컨테이너 (전체 너비 사용) */
+    #chat-container {
+      width: 100%;
+      margin: 0 auto;
+      padding-top: calc(env(safe-area-inset-top, 0px) + 10px);
+      padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+      padding-left: calc(env(safe-area-inset-left, 0px) + 10px);
+      padding-right: calc(env(safe-area-inset-right, 0px) + 10px);
+      box-sizing: border-box;
+      height: 100vh;
+      overflow: hidden;
+    }
+    /* 메시지 목록 영역 */
+    #messages {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 95%;
+      overflow-y: auto;
+      overflow-x: hidden; /* 좌우 스크롤 제거 */
+      padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px) + 20px);
+      border-bottom: 1px solid #eee;
+    }
+    /* 메시지 컨테이너 (헤더, 버블, 타임스탬프를 포함) */
+    .message {
+      margin-bottom: 8px;
+      position: relative;
+    }
+    /* sent / received 정렬 */
+    .sent {
+      align-self: flex-end;
+      text-align: right;
+    }
+    .received {
+      align-self: flex-start;
+      text-align: left;
+    }
+    /* 실제 메시지 내용을 담는 버블 (배경 적용) */
+    .chat-bubble {
+      padding: 8px 12px;
+      border-radius: 4px;
+      display: inline-flex;
+      max-width: 100%;
+    }
+    .sent .chat-bubble {
+      background-color: #dcf8c6;
+    }
+    .received .chat-bubble {
+      background-color: #f0f0f0;
+    }
+    /* 시스템 메시지 상단 헤더 (아이콘 + 시스템명), 배경 투명, 상단에 표시 */
+    .chat-header {
+      display: block;       /* block-level 요소로 만들어 한 줄 전체를 차지 */
+      text-align: left;   /* 내부 콘텐츠(아이콘과 시스템명)를 중앙 정렬 */
+      white-space: nowrap;  /* 불필요한 줄바꿈 제거 */
+      margin-bottom: 4px;
+      background: transparent;
+    }
+    .ai-icon {
+      width: 14px;
+      height: 14px;
+      vertical-align: middle;
+      color: #666;
+    }
+    .system-name {
+      font-size: 0.8em;
+      vertical-align: middle;
+      margin-left: 4px;
+      color: #666;
+    }
+    /* 메시지 하단 타임스탬프, 배경 투명 */
+    .chat-timestamp {
+      font-size: 0.8em;
+      color: #666;
+      margin-top: 4px;
+      background: transparent;
+    }
+    /* 타이핑 애니메이션 영역 (기본 숨김) */
+    #lottie-container {
+      width: 64px;
+      height: 40px;
+      display: none;  /* 필요할 때만 보임 */
+      margin: 0 0 0 10px;
+    }
+    /* 입력창 영역 */
+    #input-area {
+      display: flex;
+      gap: 10px;
+    }
+    #message-input {
+      flex: 1;
+      padding: 6px 8px;
+    }
+    #send-button {
+      padding: 6px 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <!-- 메시지 목록 -->
+    <div id="messages"></div>
+    <!-- 타이핑 애니메이션을 위한 컨테이너 -->
+    <div id="lottie-container"></div>
+    <!-- 메시지 입력창 -->
+    <div id="input-area">
+      <input type="text" id="message-input" placeholder="메시지를 입력하세요">
+      <button id="send-button">보내기</button>
+    </div>
+  </div>
+  
+  <script>
+    // lottie-web을 이용하여 typing.json 애니메이션 로드
+    var typingAnimation = lottie.loadAnimation({
+      container: document.getElementById('lottie-container'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'typing.json'
+    });
+    
+    // 메시지 추가 후 스크롤을 가장 아래로 이동시키는 함수
+    function scrollToBottom() {
+      var messagesDiv = document.getElementById("messages");
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+    
+    // 타이핑 애니메이션 표시 함수
+    function showTypingIndicator() {
+      document.getElementById('lottie-container').style.display = 'block';
+    }
+    
+    // 타이핑 애니메이션 숨김 함수
+    function hideTypingIndicator() {
+      document.getElementById('lottie-container').style.display = 'none';
+    }
+    
+    /**
+     * addMessage(text, type)
+     * - text: 메시지 내용 (Markdown 및 LaTeX 포함 가능)
+     * - type: "sent" 또는 "received"
+     *
+     * received 메시지 상단에는 아이콘과 시스템명을, 모든 메시지 하단에는 날짜와 시간을 표시합니다.
+     * Mathpix Markdown-it(window.render)가 존재하면 렌더링합니다.
+     * 헤더와 타임스탬프는 채팅 버블과 분리되어 배경이 투명하게 처리됩니다.
+     */
+    function addMessage(text, type) {
+      var messagesContainer = document.getElementById("messages");
+      var messageDiv = document.createElement("div");
+      messageDiv.classList.add("message");
+      messageDiv.classList.add(type);  // "sent" 또는 "received"
+      
+      // received 메시지인 경우 상단에 헤더(아이콘 + 시스템명) 추가
+      if (type === "received") {
+        var headerDiv = document.createElement("div");
+        headerDiv.className = "chat-header";
+        
+        var aiIcon = document.createElement("img");
+        aiIcon.src = "ai_icon_24.svg"; // 실제 파일 경로 또는 URL로 변경
+        aiIcon.alt = "AI Icon";
+        aiIcon.className = "ai-icon";
+        
+        var systemName = document.createElement("span");
+        systemName.className = "system-name";
+        systemName.textContent = "다풀어";
+        
+        headerDiv.appendChild(aiIcon);
+        headerDiv.appendChild(systemName);
+        messageDiv.appendChild(headerDiv);
+      }
+      
+      // 실제 메시지 내용을 담는 버블 추가
+      var bubble = document.createElement("div");
+      bubble.className = "chat-bubble";
+      messageDiv.appendChild(bubble);
+      
+      // 하단에 타임스탬프 추가 ("YYYY-MM-DD HH:MM" 형식)
+      var timestampDiv = document.createElement("div");
+      timestampDiv.className = "chat-timestamp";
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 1;
+      if (month < 10) { month = "0" + month; }
+      var day = now.getDate();
+      if (day < 10) { day = "0" + day; }
+      var hours = now.getHours();
+      if (hours < 10) { hours = "0" + hours; }
+      var minutes = now.getMinutes();
+      if (minutes < 10) { minutes = "0" + minutes; }
+      timestampDiv.textContent = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+      messageDiv.appendChild(timestampDiv);
+      
+      // 메시지 컨테이너에 추가 후 스크롤 이동
+      messagesContainer.appendChild(messageDiv);
+      scrollToBottom();
+      
+      // 메시지 내용 렌더링 (Markdown / LaTeX 처리)
+      if (window.render && typeof window.render === 'function') {
+        var options = { htmlTags: true };
+        const trimText = text.replace(/(\\\[)([\s\S]*?)(\\\])/g, function(match, open, content, close) {
+          return open + content.replace(/<br>/g, " ") + close;
+        });
+        
+        if (typeof window.loadMathJax === "function") {
+          console.log("Loading MathJax...");
+          try {
+            window.loadMathJax();
+            setTimeout(function() {
+              console.log("MathJax Loaded. Rendering...");
+              bubble.innerHTML = window.render(trimText, options);
+              scrollToBottom();
+            }, 10);
+          } catch (e) {
+            console.log("Error load MathJax => " + e);
+            bubble.innerHTML = trimText;
+            scrollToBottom();
+          }
+        } else {
+          console.log("MathJax Not Found. Rendering Directly...");
+          bubble.innerHTML = window.render(trimText, options);
+          scrollToBottom();
+        }
+      } else {
+        bubble.innerText = text;
+        scrollToBottom();
+      }
+      
+      // sent 메시지인 경우 타이핑 애니메이션과 자동응답 처리
+      if (type === "sent") {
+        showTypingIndicator();
+        setTimeout(function() {
+          hideTypingIndicator();
+          addMessage("자동응답: " + text, "received");
+        }, 3000);
+      }
+    }
+    
+    // "보내기" 버튼 클릭 시 동작
+    document.getElementById('send-button').addEventListener('click', function() {
+      var input = document.getElementById('message-input');
+      var text = input.value.trim();
+      if (text !== "") {
+        addMessage(text, "sent");
+        input.value = "";
+      }
+    });
+    
+    // 엔터키 입력 시 "보내기" 버튼과 동일하게 작동
+    document.getElementById('message-input').addEventListener('keyup', function(e) {
+      if (e.key === 'Enter') {
+        document.getElementById('send-button').click();
+      }
+    });
+  </script>
+</body>
+</html>
+
