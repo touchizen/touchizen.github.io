@@ -38,7 +38,7 @@
       max-height: 80%;
       overflow-y: auto;
       overflow-x: hidden; /* 좌우 스크롤 제거 */
-      padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px) + 10px);
+      padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
       border-bottom: 1px solid #eee;
     }
     /* 메시지 컨테이너 (헤더, 버블, 타임스탬프를 포함) */
@@ -123,10 +123,10 @@
     <!-- 타이핑 애니메이션을 위한 컨테이너 -->
     <div id="lottie-container"></div>
     <!-- 메시지 입력창 -->
-    <div id="input-area">
+    <!--div id="input-area">
       <input type="text" id="message-input" placeholder="메시지를 입력하세요">
       <button id="send-button">보내기</button>
-    </div>
+    </div-->
   </div>
   
   <script>
@@ -143,7 +143,7 @@
     function scrollToBottom() {
       var messagesDiv = document.getElementById("messages");
       if (messagesDiv) {
-        messagesDiv.scrollTop = messagesDiv.scrollHeight - messagesDiv.clientHeight;
+        messagesDiv.scrollTop = messagesDiv.scrollHeight - messagesDiv.clientHeight - 20;
       }
     }
     
