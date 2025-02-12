@@ -158,6 +158,53 @@
     }
     
     /**
+     * 타이핑 애니메이션 메시지 추가 함수 (header와 타임스탬프 없이 오직 애니메이션만 표시)
+     */
+     function showTypingIndicatorInMessage() {
+      var messagesContainer = document.getElementById("messages");
+      var typingMessage = document.createElement("div");
+      typingMessage.classList.add("message", "received");
+      
+      // header와 타임스탬프 없이, 단지 채팅 버블 내에 lottie-container만 포함
+      var bubble = document.createElement("div");
+      bubble.className = "chat-bubble";
+      
+      // 기존 lottie-container 요소를 이동시킵니다.
+      var lottieEl = document.getElementById("lottie-container");
+      bubble.appendChild(lottieEl);
+      
+      typingMessage.appendChild(bubble);
+      messagesContainer.appendChild(typingMessage);
+      scrollToBottom();
+    }
+    
+    /**
+     * 타이핑 애니메이션 메시지를 제거하고 lottie-container를 원래 위치로 복원하는 함수
+     */
+    function hideTypingIndicatorInMessage() {
+      var messagesContainer = document.getElementById("messages");
+      var lastMessage = messagesContainer.lastElementChild;
+      if (lastMessage && lastMessage.querySelector("#lottie-container")) {
+        messagesContainer.removeChild(lastMessage);
+        // 새 lottie-container 요소를 생성하여 chat-container에 추가합니다.
+        var newLottie = document.createElement("div");
+        newLottie.id = "lottie-container";
+        newLottie.style.width = "64px";
+        newLottie.style.height = "40px";
+        newLottie.style.display = "none";
+        newLottie.style.margin = "0 0 0 10px";
+        document.getElementById("chat-container").appendChild(newLottie);
+        lottie.loadAnimation({
+          container: newLottie,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: 'typing.json'
+        });
+      }
+    }
+
+    /**
      * addMessage(text, type)
      * - text: 메시지 내용 (Markdown 및 LaTeX 포함 가능)
      * - type: "sent" 또는 "received"
@@ -249,9 +296,9 @@
       
       // sent 메시지인 경우 타이핑 애니메이션과 자동응답 처리
       if (type === "sent") {
-        showTypingIndicator();
+        showTypingIndicatorInMessage();
         setTimeout(function() {
-          hideTypingIndicator();
+          hideTypingIndicatorInMessage();
           addMessage("자동응답: " + text, "received");
         }, 500);
       }
