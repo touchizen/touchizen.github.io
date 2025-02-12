@@ -353,6 +353,33 @@
       scrollToBottom();
     }
 
+    /**
+     * 스트리밍 응답 업데이트용 함수
+     * 
+     * 이 함수는 채팅 메시지 목록에서 마지막으로 추가된 "received" 메시지의 내용을 업데이트합니다.
+     * API의 스트리밍 응답을 처리할 때, 첫 번째 청크로 생성된 메시지 요소에 추가적으로 받은 텍스트를 누적하여
+     * 하나의 메시지로 보이도록 업데이트하는 역할을 합니다.
+     * 
+     * 동작:
+     * 1. 'messages' ID를 가진 컨테이너에서 마지막 메시지 요소를 선택합니다.
+     * 2. 해당 요소가 "received" 타입 메시지인 경우, 내부의 메시지 버블(.chat-bubble) 요소를 찾아냅니다.
+     * 3. 버블의 innerHTML을 새 텍스트(newText)로 갱신하여 업데이트합니다.
+     * 4. 메시지 업데이트 후 스크롤을 맨 아래로 이동시켜 최신 내용이 보이도록 합니다.
+     * 
+     * @param {string} newText - 업데이트할 메시지 텍스트 (HTML 형식 지원)
+     */
+    function updateLastMessage(newText) {
+      var messagesContainer = document.getElementById("messages");
+      var lastMessage = messagesContainer.lastElementChild;
+      if (lastMessage && lastMessage.classList.contains("received")) {
+        var bubble = lastMessage.querySelector(".chat-bubble");
+        if (bubble) {
+          bubble.innerHTML = newText;
+          scrollToBottom();
+        }
+      }
+    }
+
     // "보내기" 버튼 클릭 시 동작
     document.getElementById('send-button').addEventListener('click', function() {
       var input = document.getElementById('message-input');
