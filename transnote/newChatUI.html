@@ -161,16 +161,6 @@
       }
     }
     
-    // 타이핑 애니메이션 표시 함수
-    function showTypingIndicator() {
-      document.getElementById('lottie-container').style.display = 'block';
-    }
-    
-    // 타이핑 애니메이션 숨김 함수
-    function hideTypingIndicator() {
-      document.getElementById('lottie-container').style.display = 'none';
-    }
-    
     /**
      * 타이핑 애니메이션 메시지 추가 함수 (header와 타임스탬프 없이 오직 애니메이션만 표시)
      */
@@ -220,6 +210,43 @@
       }
     }
 
+    // 공통: received 메시지용 상단 헤더 생성 함수
+    function createHeader() {
+      var headerDiv = document.createElement("div");
+      headerDiv.className = "chat-header";
+      
+      var aiIcon = document.createElement("img");
+      aiIcon.src = "ai_icon_24.svg"; // 실제 경로로 변경
+      aiIcon.alt = "AI Icon";
+      aiIcon.className = "ai-icon";
+      
+      var systemName = document.createElement("span");
+      systemName.className = "system-name";
+      systemName.textContent = "다풀어";
+      
+      headerDiv.appendChild(aiIcon);
+      headerDiv.appendChild(systemName);
+      return headerDiv;
+    }
+    
+    // 공통: 타임스탬프 생성 함수 ("YYYY-MM-DD HH:MM" 형식)
+    function createTimestamp() {
+      var timestampDiv = document.createElement("div");
+      timestampDiv.className = "chat-timestamp";
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 1;
+      if (month < 10) { month = "0" + month; }
+      var day = now.getDate();
+      if (day < 10) { day = "0" + day; }
+      var hours = now.getHours();
+      if (hours < 10) { hours = "0" + hours; }
+      var minutes = now.getMinutes();
+      if (minutes < 10) { minutes = "0" + minutes; }
+      timestampDiv.textContent = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+      return timestampDiv;
+    }
+
     /**
      * addMessage(text, type)
      * - text: 메시지 내용 (Markdown 및 LaTeX 포함 가능)
@@ -237,21 +264,7 @@
       
       // received 메시지인 경우 상단에 헤더(아이콘 + 시스템명) 추가
       if (type === "received") {
-        var headerDiv = document.createElement("div");
-        headerDiv.className = "chat-header";
-        
-        var aiIcon = document.createElement("img");
-        aiIcon.src = "ai_icon_24.svg"; // 실제 파일 경로 또는 URL로 변경
-        aiIcon.alt = "AI Icon";
-        aiIcon.className = "ai-icon";
-        
-        var systemName = document.createElement("span");
-        systemName.className = "system-name";
-        systemName.textContent = "다풀어";
-        
-        headerDiv.appendChild(aiIcon);
-        headerDiv.appendChild(systemName);
-        messageDiv.appendChild(headerDiv);
+        messageDiv.appendChild(createHeader());
       }
       
       // 실제 메시지 내용을 담는 버블 추가
@@ -259,21 +272,8 @@
       bubble.className = "chat-bubble";
       messageDiv.appendChild(bubble);
       
-      // 하단에 타임스탬프 추가 ("YYYY-MM-DD HH:MM" 형식)
-      var timestampDiv = document.createElement("div");
-      timestampDiv.className = "chat-timestamp";
-      var now = new Date();
-      var year = now.getFullYear();
-      var month = now.getMonth() + 1;
-      if (month < 10) { month = "0" + month; }
-      var day = now.getDate();
-      if (day < 10) { day = "0" + day; }
-      var hours = now.getHours();
-      if (hours < 10) { hours = "0" + hours; }
-      var minutes = now.getMinutes();
-      if (minutes < 10) { minutes = "0" + minutes; }
-      timestampDiv.textContent = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
-      messageDiv.appendChild(timestampDiv);
+      // 타임스탬프 생성 및 추가
+      messageDiv.appendChild(createTimestamp());
       
       // 메시지 컨테이너에 추가 후 스크롤 이동
       messagesContainer.appendChild(messageDiv);
@@ -322,9 +322,8 @@
     
     /**
      * 이미지 메시지 추가 함수
-     * addImageMessage(imageData, type)
-     * - imageData: 이미지의 URL 혹은 Data URL
-     * - type: "sent" 또는 "received"
+     * @param {string} imageData - 이미지의 URL 또는 Data URL
+     * @param {string} type - "sent" 또는 "received"
      */
      function addImageMessage(imageData, type) {
       var messagesContainer = document.getElementById("messages");
@@ -332,49 +331,23 @@
       messageDiv.classList.add("message");
       messageDiv.classList.add(type);
       
-      // received 메시지의 경우 상단 헤더 추가
+      // received 메시지의 경우 헤더 추가
       if (type === "received") {
-        var headerDiv = document.createElement("div");
-        headerDiv.className = "chat-header";
-        var aiIcon = document.createElement("img");
-        aiIcon.src = "ai_icon_24.svg"; // 실제 경로로 변경
-        aiIcon.alt = "AI Icon";
-        aiIcon.className = "ai-icon";
-        var systemName = document.createElement("span");
-        systemName.className = "system-name";
-        systemName.textContent = "다풀어";
-        headerDiv.appendChild(aiIcon);
-        headerDiv.appendChild(systemName);
-        messageDiv.appendChild(headerDiv);
+        messageDiv.appendChild(createHeader());
       }
       
       // 이미지 메시지 내용을 담는 버블
       var bubble = document.createElement("div");
       bubble.className = "chat-bubble";
-      
       var img = document.createElement("img");
       img.src = imageData;
       img.style.maxWidth = "90%";
       img.style.borderRadius = "10px";
-      
       bubble.appendChild(img);
       messageDiv.appendChild(bubble);
       
-      // 타임스탬프 ("YYYY-MM-DD HH:MM" 형식)
-      var timestampDiv = document.createElement("div");
-      timestampDiv.className = "chat-timestamp";
-      var now = new Date();
-      var year = now.getFullYear();
-      var month = now.getMonth() + 1;
-      if (month < 10) { month = "0" + month; }
-      var day = now.getDate();
-      if (day < 10) { day = "0" + day; }
-      var hours = now.getHours();
-      if (hours < 10) { hours = "0" + hours; }
-      var minutes = now.getMinutes();
-      if (minutes < 10) { minutes = "0" + minutes; }
-      timestampDiv.textContent = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
-      messageDiv.appendChild(timestampDiv);
+      // 타임스탬프 생성 및 추가
+      messageDiv.appendChild(createTimestamp());
       
       messagesContainer.appendChild(messageDiv);
       scrollToBottom();
