@@ -313,10 +313,12 @@
       // sent 메시지인 경우 타이핑 애니메이션과 자동응답 처리
       if (type === "sent") {
         showTypingIndicatorInMessage();
-        setTimeout(function() {
-          hideTypingIndicatorInMessage();
-          addMessage("자동응답: " + text, "received");
-        }, 500);
+        // setTimeout(function() {
+        //   hideTypingIndicatorInMessage();
+        //   addMessage("자동응답: " + text, "received");
+        // }, 500);
+      } else if (type === "received") {
+        hideTypingIndicatorInMessage();
       }
     }
     
