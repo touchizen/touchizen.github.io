@@ -354,17 +354,19 @@
     }
 
     /**
-     * 스트리밍 응답 업데이트용 함수
+     * 스트리밍 응답 업데이트용 함수 (렌더링 포함)
      * 
-     * 이 함수는 채팅 메시지 목록에서 마지막으로 추가된 "received" 메시지의 내용을 업데이트합니다.
-     * API의 스트리밍 응답을 처리할 때, 첫 번째 청크로 생성된 메시지 요소에 추가적으로 받은 텍스트를 누적하여
-     * 하나의 메시지로 보이도록 업데이트하는 역할을 합니다.
+     * 이 함수는 채팅 메시지 목록의 마지막 "received" 메시지 요소를 찾아,
+     * 그 내부의 메시지 버블을 업데이트합니다.
+     * 만약 window.render 함수가 존재한다면, Markdown 및 LaTeX 렌더링을 수행하여
+     * 업데이트된 메시지를 출력합니다.
      * 
      * 동작:
-     * 1. 'messages' ID를 가진 컨테이너에서 마지막 메시지 요소를 선택합니다.
-     * 2. 해당 요소가 "received" 타입 메시지인 경우, 내부의 메시지 버블(.chat-bubble) 요소를 찾아냅니다.
-     * 3. 버블의 innerHTML을 새 텍스트(newText)로 갱신하여 업데이트합니다.
-     * 4. 메시지 업데이트 후 스크롤을 맨 아래로 이동시켜 최신 내용이 보이도록 합니다.
+     * 1. 'messages' 컨테이너에서 마지막 메시지 요소를 찾습니다.
+     * 2. 해당 요소가 "received" 타입인지 확인한 후, 내부의 .chat-bubble 요소를 선택합니다.
+     * 3. window.render가 존재하면 렌더링 옵션을 적용해 새 텍스트를 렌더링하고,
+     *    MathJax를 사용하는 경우 MathJax 로딩 후 렌더링합니다.
+     * 4. 렌더링 결과를 버블의 innerHTML에 적용한 후 스크롤을 업데이트합니다.
      * 
      * @param {string} newText - 업데이트할 메시지 텍스트 (HTML 형식 지원)
      */
@@ -374,8 +376,38 @@
       if (lastMessage && lastMessage.classList.contains("received")) {
         var bubble = lastMessage.querySelector(".chat-bubble");
         if (bubble) {
-          bubble.innerHTML = newText;
-          scrollToBottom();
+          // 메시지 내용 렌더링 (Markdown / LaTeX 처리)
+          if (window.render && typeof window.render === 'function') {
+            var options = { htmlTags: true };
+            // addMessage()와 유사하게 텍스트를 전처리 (예시)
+            const trimText = newText.replace(/(\\\[)([\s\S]*?)(\\\])/g, function(match, open, content, close) {
+              return open + content.replace(/<br>/g, " ") + close;
+            });
+            
+            if (typeof window.loadMathJax === "function") {
+              console.log("Loading MathJax for updateLastMessage...");
+              try {
+                window.loadMathJax();
+                setTimeout(function() {
+                  console.log("MathJax Loaded for updateLastMessage. Rendering...");
+                  bubble.innerHTML = window.render(trimText, options);
+                  scrollToBottom();
+                }, 10);
+              } catch (e) {
+                console.log("Error loading MathJax in updateLastMessage: " + e);
+                bubble.innerHTML = trimText;
+                scrollToBottom();
+              }
+            } else {
+              console.log("MathJax Not Found in updateLastMessage. Rendering Directly...");
+              bubble.innerHTML = window.render(trimText, options);
+              scrollToBottom();
+            }
+          } else {
+            // 렌더러가 없는 경우 일반 텍스트로 설정
+            bubble.innerHTML = newText;
+            scrollToBottom();
+          }
         }
       }
     }
