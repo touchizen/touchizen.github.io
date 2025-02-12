@@ -27,7 +27,7 @@
       padding-left: calc(env(safe-area-inset-left, 0px) + 10px);
       padding-right: calc(env(safe-area-inset-right, 0px) + 10px);
       box-sizing: border-box;
-      height: calc(100vh - 100px);
+      height: calc(100vh - 80px);
       overflow: hidden;
     }
     /* 메시지 목록 영역 */
@@ -168,7 +168,8 @@
       // header와 타임스탬프 없이, 단지 채팅 버블 내에 lottie-container만 포함
       var bubble = document.createElement("div");
       bubble.className = "chat-bubble";
-      
+      bubble.style.backgroundColor = "transparent"; // 배경을 투명으로 설정
+
       // 기존 lottie-container 요소를 이동시킵니다.
       var lottieEl = document.getElementById("lottie-container");
       lottieEl.style.display = "block";      
