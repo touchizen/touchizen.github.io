@@ -137,10 +137,10 @@
     <!-- 타이핑 애니메이션을 위한 컨테이너 -->
     <div id="lottie-container"></div>
     <!-- 메시지 입력창 -->
-    <!--div id="input-area">
+    <div id="input-area">
       <input type="text" id="message-input" placeholder="메시지를 입력하세요">
       <button id="send-button">보내기</button>
-    </div-->
+    </div>
   </div>
   
   <script>
@@ -423,7 +423,15 @@
       var input = document.getElementById('message-input');
       var text = input.value.trim();
       if (text !== "") {
-        addMessage(text, "sent");
+        // URL 형식과 이미지 확장자 (.png, .jpg, .jpeg, .gif 등)를 확인
+        var imageUrlPattern = /^(http[s]?:\/\/.*\.(?:png|jpg|jpeg|gif))(?:\?.*)?$/i;
+        if (imageUrlPattern.test(text)) {
+          // 이미지 URL이면 addImageMessage() 호출하여 메시지에 이미지를 표시
+          addImageMessage(text, "sent");
+        } else {
+          // 그 외의 경우는 기존 addMessage()로 텍스트 메시지를 처리
+          addMessage(text, "sent");
+        }
         input.value = "";
       }
     });
