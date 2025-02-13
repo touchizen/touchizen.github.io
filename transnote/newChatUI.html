@@ -334,6 +334,7 @@
       
       // received 메시지의 경우 헤더 추가
       if (type === "received") {
+        hideTypingIndicatorInMessage();
         messageDiv.appendChild(createHeader());
       }
       
@@ -352,6 +353,10 @@
       
       messagesContainer.appendChild(messageDiv);
       scrollToBottom();
+
+      if (type === "sent") {
+        showTypingIndicatorInMessage();
+      }      
     }
 
     /**
