@@ -359,6 +359,13 @@
       }      
     }
 
+    function clearChatMessages() {
+      const messagesContainer = document.getElementById("messages");
+      if (messagesContainer) {
+        messagesContainer.innerHTML = "";
+      }
+    }
+
     /**
      * 스트리밍 응답 업데이트용 함수 (렌더링 포함)
      * 
