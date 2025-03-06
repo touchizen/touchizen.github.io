@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="40" viewBox="0 0 64 40">
+  <style>
+    @keyframes pulse1 {
+      0%, 100% { opacity: 0.3; }
+      20% { opacity: 1; }
+    }
+    @keyframes pulse2 {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    @keyframes pulse3 {
+      0%, 100% { opacity: 0.3; }
+      80% { opacity: 1; }
+    }
+    .dot1 { animation: pulse1 1.5s infinite; }
+    .dot2 { animation: pulse2 1.5s infinite; }
+    .dot3 { animation: pulse3 1.5s infinite; }
+  </style>
+  <circle class="dot1" cx="16" cy="20" r="5" fill="#666666" />
+  <circle class="dot2" cx="32" cy="20" r="5" fill="#666666" />
+  <circle class="dot3" cx="48" cy="20" r="5" fill="#666666" />
+</svg>

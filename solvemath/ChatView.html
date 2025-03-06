@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>채팅창 & Typing 애니메이션 예제</title>
+  <!-- lottie-web 라이브러리 CDN (bodymovin) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+  <!-- Mathpix Markdown-it CDN (LaTeX 렌더링) -->
+  <script src="https://cdn.jsdelivr.net/npm/mathpix-markdown-it@2.0.6/es5/bundle.js"></script>
+  <!-- 외부 CSS 파일 연결 -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="chat-container">
+    <!-- 방 ID 입력 폼 -->
+    <form id="room-form">
+      <input type="text" id="room-id" placeholder="방 ID를 입력하세요">
+      <button type="submit" id="load-button">대화 불러오기</button>
+    </form>
+    
+    <!-- 페이지네이션 컨트롤 -->
+    <div id="pagination-controls">
+      <button class="pagination-button" id="prev-page" disabled>이전</button>
+      <span class="pagination-info">페이지: <span id="current-page">1</span></span>
+      <button class="pagination-button" id="next-page" disabled>다음</button>
+    </div>
+    
+    <!-- 로딩 인디케이터 -->
+    <div id="loading-indicator">불러오는 중...</div>
+    
+    <!-- 메시지 목록 -->
+    <div id="messages"></div>
+    
+    <!-- 타이핑 애니메이션을 위한 컨테이너 -->
+    <div id="lottie-container"></div>
+    
+    <!-- 메시지 입력창 -->
+    <div id="input-area">
+      <input type="text" id="message-input" placeholder="메시지를 입력하세요">
+      <button id="send-button">보내기</button>
+    </div>
+  </div>
+  
+  <script>
+    // 페이지네이션을 위한 변수들
+    let currentOffset = 0;
+    const limit = 10;
+    let currentRoomId = null;
+    let hasMoreMessages = true;
+    
+    // lottie-web을 이용하여 typing.json 애니메이션 로드
+    var typingAnimation = lottie.loadAnimation({
+      container: document.getElementById('lottie-container'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'typing.json'
+    });
+    
+    // API 기본 URL (필요에 따라 변경)
+    const API_BASE_URL = 'https://solve-math-o5he3cqntq-du.a.run.app/quests';
+    
+    // 방 정보 폼 제출시 이벤트 핸들러
+    document.getElementById('room-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const roomId = document.getElementById('room-id').value.trim();
+      if (roomId) {
+        // 대화 목록 초기화
+        clearMessages();
+        // 방 ID 저장
+        currentRoomId = roomId;
+        // 페이지네이션 초기화
+        currentOffset = 0;
+        document.getElementById('current-page').textContent = '1';
+        // 대화 목록 불러오기
+        loadMessages(roomId, currentOffset, limit);
+      }
+    });
+    
+    // 이전 페이지 버튼 클릭 핸들러
+    document.getElementById('prev-page').addEventListener('click', function() {
+        if (currentOffset >= limit && currentRoomId) {
+            currentOffset -= limit;
+            const pageNumber = Math.floor(currentOffset / limit) + 1;
+            document.getElementById('current-page').textContent = pageNumber;
+            
+            // URL 쿼리 파라미터 업데이트 (페이지 정보 포함)
+            const url = new URL(window.location.href);
+            url.searchParams.set('roomId', currentRoomId);
+            url.searchParams.set('page', pageNumber);
+            window.history.pushState({}, '', url);
+            
+            clearMessages();
+            loadMessages(currentRoomId, currentOffset, limit);
+        }
+    });
+    
+    // 다음 페이지 버튼 클릭 핸들러
+    document.getElementById('next-page').addEventListener('click', function() {
+        if (hasMoreMessages && currentRoomId) {
+            currentOffset += limit;
+            const pageNumber = Math.floor(currentOffset / limit) + 1;
+            document.getElementById('current-page').textContent = pageNumber;
+            
+            // URL 쿼리 파라미터 업데이트 (페이지 정보 포함)
+            const url = new URL(window.location.href);
+            url.searchParams.set('roomId', currentRoomId);
+            url.searchParams.set('page', pageNumber);
+            window.history.pushState({}, '', url);
+            
+            clearMessages();
+            loadMessages(currentRoomId, currentOffset, limit);
+        }
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // 페이지 로드 시 URL에서 쿼리 파라미터 확인
+        const urlParams = new URLSearchParams(window.location.search);
+        const roomIdParam = urlParams.get('roomId');
+        
+        // URL에 roomId 파라미터가 있으면 자동으로 해당 방 불러오기
+        if (roomIdParam) {
+            document.getElementById('room-id').value = roomIdParam;
+            loadRoomData(roomIdParam);
+        }
+        
+        // 방 폼 제출 이벤트를 쿼리 파라미터로 변경
+        document.getElementById('room-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const roomId = document.getElementById('room-id').value.trim();
+            
+            if (roomId) {
+            // URL 쿼리 파라미터 업데이트
+            const url = new URL(window.location.href);
+            url.searchParams.set('roomId', roomId);
+            window.history.pushState({}, '', url);
+            
+            // 대화 불러오기
+            loadRoomData(roomId);
+            }
+        });
+    });
+
+    // 방 데이터 로드 함수
+    function loadRoomData(roomId) {
+        // 대화 목록 초기화
+        clearMessages();
+        // 방 ID 저장
+        currentRoomId = roomId;
+        // 페이지네이션 초기화
+        currentOffset = 0;
+        document.getElementById('current-page').textContent = '1';
+        // 대화 목록 불러오기
+        loadMessages(roomId, currentOffset, limit);
+    }    
+
+    // API에서 대화 목록 불러오기
+    function loadMessages(roomId, offset, limit) {
+      // 로딩 인디케이터 표시
+      document.getElementById('loading-indicator').style.display = 'block';
+      
+      // API 호출
+      fetch(`${API_BASE_URL}/room/${roomId}?offset=${offset}&limit=${limit}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('API 응답 오류: ' + response.status);
+          }
+          return response.json();
+        })
+        .then(data => {
+          // 로딩 인디케이터 숨김
+          document.getElementById('loading-indicator').style.display = 'none';
+          
+          // 데이터가 배열인지 확인
+          if (Array.isArray(data)) {
+            // 이전 페이지 버튼 활성화/비활성화
+            document.getElementById('prev-page').disabled = offset === 0;
+            
+            // 다음 페이지 버튼 활성화/비활성화 (가져온 항목 수가 limit보다 적으면 더 이상 데이터가 없음)
+            hasMoreMessages = data.length === limit;
+            document.getElementById('next-page').disabled = !hasMoreMessages;
+            
+            // 각 메시지를 UI에 추가
+            data.forEach(quest => {
+              // quest.type에 따라 sent/received 결정 (question은 sent, answer는 received로 가정)
+              const messageType = quest.type === 'answer' ? 'received' : 'sent';
+              
+              // 이미지 URL이 있는 경우 이미지 메시지 추가
+              if (quest.imageUrl) {
+                addImageMessage(quest.imageUrl, messageType);
+              }
+              
+              // 텍스트 내용이 있는 경우 텍스트 메시지 추가
+              if (quest.content) {
+                addMessage(quest.content, messageType);
+              }
+            });
+          } else {
+            console.error('API 응답이 배열이 아님:', data);
+            alert('대화 내용을 불러오는데 실패했습니다.');
+          }
+        })
+        .catch(error => {
+          console.error('API 호출 오류:', error);
+          document.getElementById('loading-indicator').style.display = 'none';
+          alert('대화 내용을 불러오는데 실패했습니다: ' + error.message);
+        });
+    }
+    
+    // 메시지 추가 후 스크롤을 가장 아래로 이동시키는 함수
+    function scrollToBottom() {
+      var messagesDiv = document.getElementById("messages");
+      if (messagesDiv) {
+        messagesDiv.scrollTop = messagesDiv.scrollHeight - messagesDiv.clientHeight;
+      }
+    }
+    
+    /**
+     * 타이핑 애니메이션 메시지 추가 함수 (header와 타임스탬프 없이 오직 애니메이션만 표시)
+     */
+     function showTypingIndicatorInMessage() {
+      var messagesContainer = document.getElementById("messages");
+      var typingMessage = document.createElement("div");
+      typingMessage.classList.add("message", "received");
+      
+      // header와 타임스탬프 없이, 단지 채팅 버블 내에 lottie-container만 포함
+      var bubble = document.createElement("div");
+      bubble.className = "chat-bubble";
+      bubble.style.backgroundColor = "transparent"; // 배경을 투명으로 설정
+
+      // 기존 lottie-container 요소를 이동시킵니다.
+      var lottieEl = document.getElementById("lottie-container");
+      lottieEl.style.display = "block";      
+      bubble.appendChild(lottieEl);
+      
+      typingMessage.appendChild(bubble);
+      messagesContainer.appendChild(typingMessage);
+      scrollToBottom();
+    }
+    
+    /**
+     * 타이핑 애니메이션 메시지를 제거하고 lottie-container를 원래 위치로 복원하는 함수
+     */
+    function hideTypingIndicatorInMessage() {
+      var messagesContainer = document.getElementById("messages");
+      var lastMessage = messagesContainer.lastElementChild;
+      if (lastMessage && lastMessage.querySelector("#lottie-container")) {
+        messagesContainer.removeChild(lastMessage);
+        // 새 lottie-container 요소를 생성하여 chat-container에 추가합니다.
+        var newLottie = document.createElement("div");
+        newLottie.id = "lottie-container";
+        newLottie.style.width = "64px";
+        newLottie.style.height = "40px";
+        newLottie.style.display = "none";
+        newLottie.style.margin = "0 0 0 10px";
+        document.getElementById("chat-container").appendChild(newLottie);
+        lottie.loadAnimation({
+          container: newLottie,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: 'typing.json'
+        });
+      }
+    }
+
+    // 공통: received 메시지용 상단 헤더 생성 함수
+    function createHeader() {
+      var headerDiv = document.createElement("div");
+      headerDiv.className = "chat-header";
+      
+      var aiIcon = document.createElement("img");
+      aiIcon.src = "ai_icon_24.svg"; // 실제 경로로 변경
+      aiIcon.alt = "AI Icon";
+      aiIcon.className = "ai-icon";
+      
+      var systemName = document.createElement("span");
+      systemName.className = "system-name";
+      systemName.textContent = "다풀어";
+      
+      headerDiv.appendChild(aiIcon);
+      headerDiv.appendChild(systemName);
+      return headerDiv;
+    }
+    
+    // 공통: 타임스탬프 생성 함수 ("YYYY-MM-DD HH:MM" 형식)
+    function createTimestamp() {
+      var timestampDiv = document.createElement("div");
+      timestampDiv.className = "chat-timestamp";
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 1;
+      if (month < 10) { month = "0" + month; }
+      var day = now.getDate();
+      if (day < 10) { day = "0" + day; }
+      var hours = now.getHours();
+      if (hours < 10) { hours = "0" + hours; }
+      var minutes = now.getMinutes();
+      if (minutes < 10) { minutes = "0" + minutes; }
+      timestampDiv.textContent = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+      return timestampDiv;
+    }
+
+    /**
+     * addMessage(text, type)
+     * - text: 메시지 내용 (Markdown 및 LaTeX 포함 가능)
+     * - type: "sent" 또는 "received"
+     *
+     * received 메시지 상단에는 아이콘과 시스템명을, 모든 메시지 하단에는 날짜와 시간을 표시합니다.
+     * Mathpix Markdown-it(window.render)가 존재하면 렌더링합니다.
+     * 헤더와 타임스탬프는 채팅 버블과 분리되어 배경이 투명하게 처리됩니다.
+     */
+    function addMessage(text, type) {
+      var messagesContainer = document.getElementById("messages");
+      var messageDiv = document.createElement("div");
+      messageDiv.classList.add("message");
+      messageDiv.classList.add(type);  // "sent" 또는 "received"
+      
+      // received 메시지인 경우 상단에 헤더(아이콘 + 시스템명) 추가
+      if (type === "received") {
+        hideTypingIndicatorInMessage();
+        messageDiv.appendChild(createHeader());
+      }
+      
+      // 실제 메시지 내용을 담는 버블 추가
+      var bubble = document.createElement("div");
+      bubble.className = "chat-bubble";
+      messageDiv.appendChild(bubble);
+      
+      // 타임스탬프 생성 및 추가
+      messageDiv.appendChild(createTimestamp());
+      
+      // 메시지 컨테이너에 추가 후 스크롤 이동
+      messagesContainer.appendChild(messageDiv);
+      scrollToBottom();
+      
+      // 메시지 내용 렌더링 (Markdown / LaTeX 처리)
+      if (window.render && typeof window.render === 'function') {
+        var options = { htmlTags: true };
+        const trimText = text.replace(/(\\\[)([\s\S]*?)(\\\])/g, function(match, open, content, close) {
+          return open + content.replace(/<br>/g, " ") + close;
+        });
+        
+        if (typeof window.loadMathJax === "function") {
+          console.log("Loading MathJax...");
+          try {
+            window.loadMathJax();
+            setTimeout(function() {
+              console.log("MathJax Loaded. Rendering...");
+              bubble.innerHTML = window.render(trimText, options);
+              scrollToBottom();
+            }, 10);
+          } catch (e) {
+            console.log("Error load MathJax => " + e);
+            bubble.innerHTML = trimText;
+            scrollToBottom();
+          }
+        } else {
+          console.log("MathJax Not Found. Rendering Directly...");
+          bubble.innerHTML = window.render(trimText, options);
+          scrollToBottom();
+        }
+      } else {
+        bubble.innerText = text;
+        scrollToBottom();
+      }
+      
+      // 사용자 메시지 입력 후 자동으로 타이핑 애니메이션 표시 기능은 API 통합으로 비활성화
+      // if (type === "sent") {
+      //   showTypingIndicatorInMessage();
+      // }
+    }
+    
+    /**
+     * 이미지 메시지 추가 함수
+     * @param {string} imageData - 이미지의 URL 또는 Data URL
+     * @param {string} type - "sent" 또는 "received"
+     */
+    function addImageMessage(imageData, type) {
+      var messagesContainer = document.getElementById("messages");
+      var messageDiv = document.createElement("div");
+      messageDiv.classList.add("message");
+      messageDiv.classList.add(type);
+      
+      // received 메시지의 경우 헤더 추가
+      if (type === "received") {
+        hideTypingIndicatorInMessage();
+        messageDiv.appendChild(createHeader());
+      }
+      
+      // 이미지 메시지 내용을 담는 버블
+      var bubble = document.createElement("div");
+      bubble.className = "chat-bubble";
+      var img = document.createElement("img");
+      img.src = imageData;
+      img.style.maxWidth = "90%";
+      img.style.borderRadius = "10px";
+      bubble.appendChild(img);
+      messageDiv.appendChild(bubble);
+      
+      // 타임스탬프 생성 및 추가
+      messageDiv.appendChild(createTimestamp());
+      
+      messagesContainer.appendChild(messageDiv);
+      scrollToBottom();
+    }
+
+    function clearMessages() {
+      const messagesContainer = document.getElementById("messages");
+      if (messagesContainer) {
+        messagesContainer.innerHTML = "";
+      }
+    }
+
+    /**
+     * 스트리밍 응답 업데이트용 함수 (렌더링 포함)
+     */
+    function updateLastMessage(newText) {
+      var messagesContainer = document.getElementById("messages");
+      var lastMessage = messagesContainer.lastElementChild;
+      if (lastMessage && lastMessage.classList.contains("received")) {
+        var bubble = lastMessage.querySelector(".chat-bubble");
+        if (bubble) {
+          // 메시지 내용 렌더링 (Markdown / LaTeX 처리)
+          if (window.render && typeof window.render === 'function') {
+            var options = { htmlTags: true };
+            // addMessage()와 유사하게 텍스트를 전처리 (예시)
+            const trimText = newText.replace(/(\\\[)([\s\S]*?)(\\\])/g, function(match, open, content, close) {
+              return open + content.replace(/<br>/g, " ") + close;
+            });
+            
+            if (typeof window.loadMathJax === "function") {
+              console.log("Loading MathJax for updateLastMessage...");
+              try {
+                window.loadMathJax();
+                setTimeout(function() {
+                  console.log("MathJax Loaded for updateLastMessage. Rendering...");
+                  bubble.innerHTML = window.render(trimText, options);
+                  scrollToBottom();
+                }, 10);
+              } catch (e) {
+                console.log("Error loading MathJax in updateLastMessage: " + e);
+                bubble.innerHTML = trimText;
+                scrollToBottom();
+              }
+            } else {
+              console.log("MathJax Not Found in updateLastMessage. Rendering Directly...");
+              bubble.innerHTML = window.render(trimText, options);
+              scrollToBottom();
+            }
+          } else {
+            // 렌더러가 없는 경우 일반 텍스트로 설정
+            bubble.innerHTML = newText;
+            scrollToBottom();
+          }
+        }
+      }
+    }
+
+    // "보내기" 버튼 클릭 시 동작
+    document.getElementById('send-button').addEventListener('click', function() {
+      var input = document.getElementById('message-input');
+      var text = input.value.trim();
+      if (text !== "") {
+        // URL 형식과 이미지 확장자 (.png, .jpg, .jpeg, .gif 등)를 확인
+        var imageUrlPattern = /^(http[s]?:\/\/.*\.(?:png|jpg|jpeg|gif))(?:\?.*)?$/i;
+        if (imageUrlPattern.test(text)) {
+          // 이미지 URL이면 addImageMessage() 호출하여 메시지에 이미지를 표시
+          addImageMessage(text, "sent");
+        } else {
+          // 그 외의 경우는 기존 addMessage()로 텍스트 메시지를 처리
+          addMessage(text, "sent");
+        }
+        input.value = "";
+        
+        // API 연동이 되어 있으면 여기에 메시지 전송 코드를 추가할 수 있습니다.
+        // 현재 방 ID가 있는 경우에만 메시지 전송
+        if (currentRoomId) {
+          // 타이핑 애니메이션 표시 (실제 API 응답 대기 중)
+          showTypingIndicatorInMessage();
+          
+          // 예시: POST 요청을 통해 메시지 전송 (실제 구현 시 수정 필요)
+          // fetch(`${API_BASE_URL}`, {
+          //   method: 'POST',
+          //   headers: {
+          //     'Content-Type': 'application/json',
+          //   },
+          //   body: JSON.stringify({
+          //     roomId: currentRoomId,
+          //     userId: 'user-id', // 사용자 ID는 실제 구현 시 동적으로 설정
+          //     type: 'question',
+          //     content: text,
+          //     model: 'human'
+          //   }),
+          // })
+          // .then(response => response.json())
+          // .then(data => {
+          //   // 성공적으로 전송된 경우 타이핑 애니메이션 숨김
+          //   hideTypingIndicatorInMessage();
+          // })
+          // .catch(error => {
+          //   console.error('메시지 전송 오류:', error);
+          //   hideTypingIndicatorInMessage();
+          //   alert('메시지 전송에 실패했습니다.');
+          // });
+        }
+      }
+    });
+    
+    // 엔터키 입력 시 "보내기" 버튼과 동일하게 작동
+    document.getElementById('message-input').addEventListener('keyup', function(e) {
+      if (e.key === 'Enter') {
+        document.getElementById('send-button').click();
+      }
+    });
+  </script>
+</body>
+</html>
