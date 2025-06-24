@@ -1,0 +1,794 @@
+{
+  "output_format": "mp4",
+  "width": 1080,
+  "height": 1920,
+  "duration": 50,
+  "snapshot_time": 12.31,
+  "fill_color": "rgba(1,1,60,1)",
+  "elements": [
+    {
+      "id": "0101c7a2-faff-4dfe-b001-391b4d423f5d",
+      "name": "Sound-1",
+      "type": "audio",
+      "track": 1,
+      "duration": 5,
+      "source": "4191a8ff-00e9-4d0c-8683-842a478afa58",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "275cdc7b-658e-49d6-b88d-fc02f156a69f",
+      "name": "Sound-2",
+      "type": "audio",
+      "track": 1,
+      "duration": 5,
+      "source": "4191a8ff-00e9-4d0c-8683-842a478afa58",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "0040405b-a265-491b-a364-d8c508eae43b",
+      "name": "Sound-3",
+      "type": "audio",
+      "track": 1,
+      "duration": 5,
+      "source": "4191a8ff-00e9-4d0c-8683-842a478afa58",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "8151a3e4-a6ec-4b51-bbd6-12c4adaed720",
+      "name": "Sound-4",
+      "type": "audio",
+      "track": 1,
+      "duration": 5,
+      "source": "4191a8ff-00e9-4d0c-8683-842a478afa58",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "b0b7d5fb-76de-4af6-bd4a-ea77d6c9e95d",
+      "name": "Sound-5",
+      "type": "audio",
+      "track": 1,
+      "duration": 5,
+      "source": "4191a8ff-00e9-4d0c-8683-842a478afa58",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "cdbec1e3-b600-4974-866d-14a5069e5857",
+      "name": "Sound-6",
+      "type": "audio",
+      "track": 1,
+      "duration": 5,
+      "source": "4191a8ff-00e9-4d0c-8683-842a478afa58",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "9d225a2e-742c-4768-baf9-91e8390df1ca",
+      "name": "Sound-7",
+      "type": "audio",
+      "track": 1,
+      "duration": 5,
+      "source": "4191a8ff-00e9-4d0c-8683-842a478afa58",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "b59cf11b-ede6-4bca-beee-d5f962bdb9ca",
+      "name": "Sound-8",
+      "type": "audio",
+      "track": 1,
+      "duration": 5,
+      "source": "4191a8ff-00e9-4d0c-8683-842a478afa58",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "54ef7a25-c40d-4789-a4d1-2cc67d28bea1",
+      "name": "Sound-9",
+      "type": "audio",
+      "track": 1,
+      "duration": 5,
+      "source": "4191a8ff-00e9-4d0c-8683-842a478afa58",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "f3bb05fb-7e25-4d4d-a209-9e24db7a8a94",
+      "name": "Sound-10",
+      "type": "audio",
+      "track": 1,
+      "duration": 5,
+      "source": "4191a8ff-00e9-4d0c-8683-842a478afa58",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "3c0fd1ff-9680-4a76-9ca2-a2224c0545b7",
+      "name": "Video-1",
+      "type": "video",
+      "track": 2,
+      "time": 0,
+      "duration": 5,
+      "source": "352e0742-fe1e-4112-88e5-10ec9852278b",
+      "loop": true
+    },
+    {
+      "id": "7b5f1b3b-411e-4e26-832b-51f05d80e878",
+      "name": "Video-2",
+      "type": "video",
+      "track": 2,
+      "duration": 5,
+      "source": "f167e11a-0c33-4255-b4e8-ea9123d1cb1b",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "fc4c7fe0-fa54-4279-b5e5-88ce699a5a0b",
+      "name": "Video-3",
+      "type": "video",
+      "track": 2,
+      "duration": 5,
+      "source": "e9300a04-20b2-46a6-a562-6c4e30685b6f",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "1576de03-64f1-404b-9cf6-e475b9c550b7",
+      "name": "Video-4",
+      "type": "video",
+      "track": 2,
+      "duration": 5,
+      "source": "e9300a04-20b2-46a6-a562-6c4e30685b6f",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "1297a962-6b3b-4d03-8687-97e41a0cb57d",
+      "name": "Video-5",
+      "type": "video",
+      "track": 2,
+      "duration": 5,
+      "source": "e9300a04-20b2-46a6-a562-6c4e30685b6f",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "9d7e8175-c5a6-4672-bd6b-025dea8a565b",
+      "name": "Video-6",
+      "type": "video",
+      "track": 2,
+      "duration": 5,
+      "source": "e9300a04-20b2-46a6-a562-6c4e30685b6f",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "a50efc98-6622-42bd-803e-9778bb4ff291",
+      "name": "Video-7",
+      "type": "video",
+      "track": 2,
+      "duration": 5,
+      "source": "e9300a04-20b2-46a6-a562-6c4e30685b6f",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "56a17d03-12f6-47c8-807e-182389156714",
+      "name": "Video-8",
+      "type": "video",
+      "track": 2,
+      "duration": 5,
+      "source": "e9300a04-20b2-46a6-a562-6c4e30685b6f",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "e54b2ca6-d014-4f9e-9af6-e6163036761c",
+      "name": "Video-9",
+      "type": "video",
+      "track": 2,
+      "duration": 5,
+      "source": "e9300a04-20b2-46a6-a562-6c4e30685b6f",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "6c7c8377-c6d7-49b3-a8b3-96c86a5eb1e5",
+      "name": "Video-10",
+      "type": "video",
+      "track": 2,
+      "duration": 5,
+      "source": "e9300a04-20b2-46a6-a562-6c4e30685b6f",
+      "trim_start": 0,
+      "loop": true
+    },
+    {
+      "id": "702e67a5-919b-4af3-8454-52b3c707d8d6",
+      "name": "Fact-1",
+      "type": "text",
+      "track": 3,
+      "duration": 5,
+      "y": "37.6503%",
+      "width": "86.6637%",
+      "height": "37.71%",
+      "x_alignment": "50%",
+      "text": "1. [color #f1c40f]Golden eagles[/color] are found throughout the Northern Hemisphere, from North America to Europe and Asia. 🌍",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "font_size_maximum": "7.5 vmin",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "dynamic": true,
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "line",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "line",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "9073f772-cc9a-422b-803e-87dc4ac45ad8",
+      "name": "Fact-2",
+      "type": "text",
+      "track": 3,
+      "duration": 5,
+      "width": "86.6637%",
+      "height": "37.71%",
+      "x_alignment": "50%",
+      "y_alignment": "50%",
+      "text": "2. These birds are powerful hunters, able to take down prey as large as deer and mountain goats. 🦌",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "font_size_maximum": "7.5 vmin",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "dynamic": true,
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "letter",
+          "overlap": "50%",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "letter",
+          "overlap": "50%",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "d5e835c8-7e4e-4ee8-8481-17af112e5ebc",
+      "name": "Fact-3",
+      "type": "text",
+      "track": 3,
+      "duration": 5,
+      "y": "37.65%",
+      "width": "86.6637%",
+      "height": "37.71%",
+      "x_alignment": "50%",
+      "text": "3. [color #f1c40f]Golden eagles[/color] have a wingspan that can reach over 7 feet and can fly at speeds of up to 200 miles per hour! 🌬️",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "font_size_maximum": "7.5 vmin",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "dynamic": true,
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "line",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "line",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "2970e44d-952f-400a-957a-0c3963b51e8e",
+      "name": "Fact-4",
+      "type": "text",
+      "track": 3,
+      "duration": 5,
+      "y": "73.4717%",
+      "width": "86.6637%",
+      "height": "37.7143%",
+      "x_alignment": "50%",
+      "y_alignment": "100%",
+      "text": "4. Unlike many other bird species, [color #f1c40f]golden eagles[/color] mate for life and will often return to the same nest site year after year. 💕",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "font_size_maximum": "7.5 vmin",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "dynamic": true,
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "letter",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "letter",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "fa14a1d2-02c6-4072-87cc-22fc2f25dfc8",
+      "name": "Fact-5",
+      "type": "text",
+      "track": 3,
+      "duration": 5,
+      "y": "62.1478%",
+      "width": "86.6637%",
+      "height": "37.71%",
+      "x_alignment": "50%",
+      "y_alignment": "100%",
+      "text": "5. [color #f1c40f]Golden eagles[/color] have been important symbols in many cultures throughout history and are often associated with power, bravery, and freedom. 🌟",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "font_size_maximum": "7.5 vmin",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "dynamic": true,
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "line",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "line",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "9d676658-6faa-4dbf-be83-620bf3972732",
+      "name": "Fact-6",
+      "type": "text",
+      "track": 3,
+      "duration": 5,
+      "y": "50.9768%",
+      "width": "86.6637%",
+      "height": "37.71%",
+      "x_alignment": "50%",
+      "y_alignment": "100%",
+      "text": "6. With eyesight up to 8× sharper than humans, [color #f1c40f]golden eagles[/color] can spot a rabbit from over 3 km away. 👀",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "font_size_maximum": "7.5 vmin",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "dynamic": true,
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "letter",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "letter",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "44a7e5a7-6e27-457b-9bf8-3bbd69a8b92b",
+      "name": "Fact-7",
+      "type": "text",
+      "track": 3,
+      "duration": 5,
+      "y": "40.9768%",
+      "width": "86.6637%",
+      "height": "37.71%",
+      "x_alignment": "50%",
+      "y_alignment": "100%",
+      "text": "7. Their massive nests—called eyries—can reach 2 m across and weigh over 1 ton! 🪺",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "font_size_maximum": "7.5 vmin",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "dynamic": true,
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "line",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "line",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "60204e0d-0f75-4049-aab5-4fb3592a7cb0",
+      "name": "Fact-8",
+      "type": "text",
+      "track": 3,
+      "duration": 5,
+      "y": "30.9768%",
+      "width": "86.6637%",
+      "height": "37.71%",
+      "x_alignment": "50%",
+      "y_alignment": "100%",
+      "text": "8. Pairs perform dramatic ‘cartwheel’ dives, locking talons and spinning through the sky. 🔄",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "font_size_maximum": "7.5 vmin",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "dynamic": true,
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "letter",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "letter",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "aabb3109-347f-403a-930c-e3715238f485",
+      "name": "Fact-9",
+      "type": "text",
+      "track": 3,
+      "duration": 5,
+      "y": "65.9768%",
+      "width": "86.6637%",
+      "height": "37.71%",
+      "x_alignment": "50%",
+      "y_alignment": "100%",
+      "text": "9. Juveniles wander for up to a year honing their hunting skills before settling down. 🐣",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "font_size_maximum": "7.5 vmin",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "dynamic": true,
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "line",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "line",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "73d77267-47f0-4141-be00-1947f5af0751",
+      "name": "Fact-10",
+      "type": "text",
+      "track": 3,
+      "duration": 5,
+      "y": "45.9768%",
+      "width": "86.6637%",
+      "height": "37.71%",
+      "x_alignment": "50%",
+      "y_alignment": "100%",
+      "text": "10. Conservation efforts are helping golden eagles rebound where they once declined. 🌱",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "font_size_maximum": "7.5 vmin",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "dynamic": true,
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "letter",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "letter",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "f55a1e8f-5e4e-4c0c-96a1-0481f781e514",
+      "name": "Narration-1",
+      "type": "audio",
+      "track": 4,
+      "time": 0,
+      "duration": 5,
+      "trim_start": 0
+    },
+    {
+      "id": "5a0aa8ed-f6a0-4762-9cd8-efec8eea407b",
+      "name": "Narration-2",
+      "type": "audio",
+      "track": 4,
+      "time": 5,
+      "duration": 5,
+      "trim_start": 0
+    },
+    {
+      "id": "83326cf8-0905-4f65-8555-676cbc94694d",
+      "name": "Narration-3",
+      "type": "audio",
+      "track": 4,
+      "time": 10,
+      "duration": 5,
+      "trim_start": 0
+    },
+    {
+      "id": "3521751c-8933-493a-9961-39c842579d45",
+      "name": "Narration-4",
+      "type": "audio",
+      "track": 4,
+      "time": 15,
+      "duration": 5,
+      "trim_start": 0
+    },
+    {
+      "id": "79ebbc6b-79e4-48f5-91aa-33ee1beb5736",
+      "name": "Narration-5",
+      "type": "audio",
+      "track": 4,
+      "time": 20,
+      "duration": 5,
+      "trim_start": 0
+    },
+    {
+      "id": "911e1eb5-77a8-4718-8e4a-a5f798aade1f",
+      "name": "Narration-6",
+      "type": "audio",
+      "track": 4,
+      "time": 25,
+      "duration": 5,
+      "trim_start": 0
+    },
+    {
+      "id": "b89966d3-19ff-4804-9700-17649afb7522",
+      "name": "Narration-7",
+      "type": "audio",
+      "track": 4,
+      "time": 30,
+      "duration": 5,
+      "trim_start": 0
+    },
+    {
+      "id": "d6d60d83-ac0a-4915-89e6-3d604cc74610",
+      "name": "Narration-8",
+      "type": "audio",
+      "track": 4,
+      "time": 35,
+      "duration": 5,
+      "trim_start": 0
+    },
+    {
+      "id": "6e14fd1a-0a24-4949-88c9-18082def5c70",
+      "name": "Narration-9",
+      "type": "audio",
+      "track": 4,
+      "time": 40,
+      "duration": 5,
+      "trim_start": 0
+    },
+    {
+      "id": "dd2a9edb-45b4-4207-85c7-6e26bb7df47d",
+      "name": "Narration-10",
+      "type": "audio",
+      "track": 4,
+      "time": 45,
+      "duration": 5,
+      "trim_start": 0
+    },
+    {
+      "id": "b27804b1-d55d-4720-9ed5-b34ed65f1c79",
+      "name": "WhoAmI-1",
+      "type": "text",
+      "track": 6,
+      "time": 5,
+      "duration": 5,
+      "y": "6.0988%",
+      "height": "6.1087%",
+      "text": "나는 누구인가?",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "letter",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "letter",
+          "y_anchor": "200%"
+        }
+      ]
+    },
+    {
+      "id": "911ed6e7-f971-4cbe-86af-9d240c30e3f9",
+      "name": "WhoAmI-5",
+      "type": "text",
+      "track": 6,
+      "time": 45,
+      "y": "6.0988%",
+      "height": "6.1087%",
+      "text": "정답은 댓글로..",
+      "font_family": "Montserrat",
+      "font_weight": "600",
+      "line_height": "100%",
+      "fill_color": "#ffffff",
+      "stroke_color": "#000000",
+      "stroke_width": "1.05 vmin",
+      "shadow_color": "rgba(0,0,0,0.27)",
+      "animations": [
+        {
+          "time": 0,
+          "duration": 1.5,
+          "easing": "back-out",
+          "type": "text-scale",
+          "split": "letter",
+          "y_anchor": "200%"
+        },
+        {
+          "time": "end",
+          "duration": 1.5,
+          "easing": "back-out",
+          "reversed": true,
+          "type": "text-scale",
+          "order": "reversed",
+          "split": "letter",
+          "y_anchor": "200%"
+        }
+      ]
+    }
+  ]
+}
