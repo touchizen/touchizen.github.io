@@ -1,0 +1,1751 @@
+{
+  "name": "1인칭 동영상 ai 자동화",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1520,
+        -80
+      ],
+      "id": "c79d60f1-f740-403c-b538-e75f694ed72a",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {
+          "responseFormat": "json_object"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -920,
+        400
+      ],
+      "id": "4294bb82-5bb4-4db8-9201-9e741fa3336e",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ClfgXfm3N0MC5gZN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## INPUT: 영상 주제 선정 & 타이틀 생성\n",
+        "height": 440,
+        "width": 820
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        100
+      ],
+      "id": "edf45879-5c2f-445b-b3f4-35cd9a1f0a37",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=당신은 짧은 POV(1인칭 시점) 이미지 프롬프트 아이디어를, Flux나 MidJourney 같은 이미지 생성 모델에 최적화된 정교하고 하이퍼리얼한 프롬프트로 확장하는 고급 프롬프트 생성 AI입니다.\n당신의 임무는 간결한 입력을 받아, 몰입감 있고 시네마틱하며 1인칭 시점에 엄격히 맞춘 풍부한 프롬프트로 변환하는 것입니다.\n\n1. 이 프롬프트는 시청자가 장면 안에 직접 존재하는 것처럼 느낄 수 있도록 해야 합니다.\n\n* 프롬프트 아이디어: {{ $json.text }}\n* 이미지의 환경을 설명할 때 반드시 포함해야 하는 정보: {{ $json.environment_prompt }}\n* 기본 idea: {{ $('Subjects').item.json.idea }}\n* caption: {{ $('Subjects').item.json.caption }}\n\n2. 프롬프트는 두 개의 섹션으로 구성되어야 합니다:\n\n2.1 전경 (foreground)\n시청자의 손, 팔, 다리, 발 등 신체 일부가 직접적으로 등장해야 합니다.\n\n장면은 반드시 다음과 같이 시작하세요:\n\n1) 한글인 경우:\n\"1인칭 시점 고프로 카메라 시점으로 본 [해당 신체 부위]…\" 또는\n\"고프로 시점으로 보이는 [손/팔/발]…\"\n\n2) 영어인 경우:\n  must start with: \"First person view POV GoPro shot of [relevant limb]\"\n\n\n2.2 배경 (background)\n\n주인공이 바라보는 환경이나 주변 풍경을 묘사하세요.\n\n문장은 다음과 같이 시작해야 합니다:\n1) 한글\n“배경에는 [풍경 설명]” 또는\n“뒤편으로는 [장면 설명]”,\n“주변에는 [공간 묘사]”\n2) 영어\n must start with \"In the background, [describe scenery]\"\n\n2.3 사운드 효과 요소 (Sound Effects) – 필수이며 영어로 작성해 주세요.\n반드시 하나 이상의 소리 정보를 포함해야 합니다:\n\n 1) 배경 소음: 비, 바람, 사람들 말소리, 기계 소리 등\n 2) 접촉/작용 소리: 종이 부스럭임, 유리 잔 부딪힘, 버튼 클릭, 발걸음\n 3) 감정/리듬/변화: 울림, 반향, 멀리서 다가오는 소리 등\n\n3. 가장 중요한 가이드라인:\n이미지는 반드시 **1인칭 시점(POV)**이어야 하며, 시청자는 단순히 관찰하는 것이 아니라 그 순간을 직접 체험하는 것처럼 느껴야 합니다. \n그리고 시각, 청각 모두 묘사되어야 합니다.\n\n손이나 발 등 신체 일부가 반드시 등장해야 하며, 그 부위는 그 환경과 적극적으로 상호작용하고 있어야 합니다. (카메라 방향은 대각선이 아니라 1인칭으로 부터 직선방향이어야합니다.)\n예: 붙잡기, 뻗기, 밀기, 들기 등\n\n카메라 프레이밍은 반드시 현실 세계의 인간 시각처럼 역동적이고 인터랙티브하게 구성되어야 합니다.\n예: GoPro나 머리 장착 카메라의 시점처럼 모션과 깊이감이 있어야 함. \n\n4. 기타 중요한 가이드라인:\n전신 인식:\n프롬프트는 시청자가 실제로 그 공간에 존재하고 있다는 느낌을 은근히 줘야 합니다.\n예: 무게 중심 이동, 추운 날씨에 김 서림, 아드레날린으로 떨리는 손가락 등\n\n감각적 깊이:\n프롬프트는 시각, 촉각, 온도, 소리, 심지어 냄새까지 포함하여 현실감을 극대화해야 합니다.\n\n환경 상호작용:\n손이나 발이 단순히 나와 있는 것만으로는 부족하며, 반드시 장면과 상호작용해야 합니다.\n예: 쥐기, 조정하기, 앞으로 나아가기, 벽면을 스치기 등\n\n전체 프롬프트는 1000자 이내의 단일 시네마틱 문장으로 작성되어야 하며,\n형식 설명, 주석, 불필요한 출력은 포함하지 마세요. 그리고 시각은 영어로, 청각도 영어로 작성해 주세요.\n\n예제들: 출력은 JSON 으로 보여줄 것.\n\n입력: 네온 불빛으로 물든 거리 위, 화재 대피 사다리를 오르기\n출력: {\n  \"visual\": \"First person view GoPro shot of gloved hands gripping a slippery, rusted fire escape ladder, rain running down the fingers with every pull upward. In the background, neon signs flicker against wet brick walls, their reflections rippling in rain-soaked puddles below\",\n  \"auditory\": \"metal ladder creaking, rain hitting steel, distant police sirens, tires skidding, breath echoing in the helmet\"\n}\n\n예시 2\n입력: 분주한 카페에서 커피에 손을 뻗기\n출력: {\n  \"visual\": \"First person view GoPro shot of a bare hand reaching out and wrapping around a steaming ceramic mug on a polished counter. In the background, a crowded café with tiled walls reflects morning sunlight, baristas moving quickly under hanging lights\",\n  \"auditory\": \"espresso machine steaming, conversations overlapping, ceramic mugs clinking, spoon stirring, milk frother buzzing\"\n}\n\n\n\n예시 3\n입력: 중세 선술집에서 깨어나기\n출력: {\n  \"visual\": \"First person view GoPro shot of a rough hand wiping over tired eyes, flickering candlelight glinting off sweat on the forehead. In the background, a dimly lit tavern with wooden beams, drunken patrons slumped over tables, and a bard playing in the corner\",\n  \"auditory\": \"wooden chairs creaking, lute strings gently plucking, drunken laughter, fire crackling, tankards thudding on tables\"\n}\n\n"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        140,
+        -460
+      ],
+      "id": "97a28289-aa75-4fba-a683-b38f38a903a3",
+      "name": "OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "ClfgXfm3N0MC5gZN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 프롬프트 생성\n",
+        "height": 200,
+        "width": 640,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        -520
+      ],
+      "id": "1ab45b81-bc1e-49fa-be94-6e7174bb728e",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/flux-1/dev",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 82748ba0-9859-4226-914f-3041e7044375:ad335fef5740d34a444144cc4faa1171"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": \"{{ $json.message.content.visual }}\",\n  \"image_size\": {\n    \"width\": 1080,\n    \"height\": 1920\n  },\n  \"style\": \"realistic_image\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -140,
+        -160
+      ],
+      "id": "428eb960-afad-413d-b14b-83fd2dd73512",
+      "name": "Text to Image"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/flux-1/requests/{{ $json.request_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 82748ba0-9859-4226-914f-3041e7044375:ad335fef5740d34a444144cc4faa1171"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        -160
+      ],
+      "id": "b0b9c651-3444-461f-a186-0842784289b5",
+      "name": "Get ImageURL"
+    },
+    {
+      "parameters": {
+        "amount": 25
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        40,
+        -160
+      ],
+      "id": "28aeb2bc-70a3-476c-89a5-500213afafbf",
+      "name": "Wait3",
+      "webhookId": "77e48d1d-2159-4b9d-8a64-26e342053dc2"
+    },
+    {
+      "parameters": {
+        "content": "## 이미지 생성\n",
+        "height": 260,
+        "width": 640,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        -260
+      ],
+      "id": "78520312-2013-4b4a-92d3-b7ae0d89b01f",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/kling-video/v2.1/pro/image-to-video",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 82748ba0-9859-4226-914f-3041e7044375:ad335fef5740d34a444144cc4faa1171"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": \"{{ $('OpenAI').item.json.message.content.visual }}\",\n  \"image_url\": \"{{ $('Get ImageURL').item.json.images[0].url }}\",\n  \"duration\": 5,\n  \"aspect_ratio\": \"9:16\",\n  \"negative_prompt\": \"blur, distort, and low quality\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -140,
+        160
+      ],
+      "id": "c3718c4f-6844-430f-b234-d60b965d0390",
+      "name": "Image to Video"
+    },
+    {
+      "parameters": {
+        "amount": 300
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        40,
+        160
+      ],
+      "id": "609c85af-430f-4837-b153-873e1979c32a",
+      "name": "Wait",
+      "webhookId": "77e48d1d-2159-4b9d-8a64-26e342053dc2"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/kling-video/requests/{{ $json.request_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 82748ba0-9859-4226-914f-3041e7044375:ad335fef5740d34a444144cc4faa1171"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        160
+      ],
+      "id": "1edd3891-cfe8-478c-bee9-522b0b19a319",
+      "name": "Get VideoURLs"
+    },
+    {
+      "parameters": {
+        "content": "## 비디오 생성\n",
+        "height": 260,
+        "width": 640,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        60
+      ],
+      "id": "f465e443-0e5b-4120-aa1f-f738dd7bd5e7",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        40,
+        480
+      ],
+      "id": "881d5f70-740e-4084-ac31-3f3c1daaa6a2",
+      "name": "Wait1",
+      "webhookId": "77e48d1d-2159-4b9d-8a64-26e342053dc2"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/elevenlabs/requests/{{ $json.request_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 82748ba0-9859-4226-914f-3041e7044375:ad335fef5740d34a444144cc4faa1171"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        480
+      ],
+      "id": "7d4db279-3eff-429e-aa0b-bce1ff25015e",
+      "name": "Get SoundeffectURLs"
+    },
+    {
+      "parameters": {
+        "content": "## 사운드 생성\n",
+        "height": 260,
+        "width": 640,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        380
+      ],
+      "id": "57abe5ec-54c4-4938-b43f-2e56cef06bee",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/elevenlabs/sound-effects",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 82748ba0-9859-4226-914f-3041e7044375:ad335fef5740d34a444144cc4faa1171"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"text\": \"no voice,  {{ $('OpenAI').item.json.message.content.auditory.substring(0,440) }}\",\n  \"duration_seconds\": 5,\n  \"prompt_influence\": 0.6\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -140,
+        480
+      ],
+      "id": "89e4fbb4-2356-4d34-8133-032f2d00333c",
+      "name": "Text to Sound"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 4,
+        "options": {
+          "includeUnpaired": true
+        }
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        680,
+        -200
+      ],
+      "id": "d11581db-3176-444d-b7a4-0694146ce9d5",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 85b4d10721e848e090c958ed63f3f3f3879f7fcc7d90837b4cf58fac145a35da80cabbdee4d033e2599c2d52b445fc0c"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"template_id\": \"5abbb8f4-79f2-4113-8c64-2ab7bcb99932\",\n  \"modifications\": {\n    \"Fact-1.text\": \"{{ $json.scene_titles[0] }}\",\n    \"Fact-2.text\": \"{{ $json.scene_titles[1] }}\",\n    \"Fact-3.text\": \"{{ $json.scene_titles[2] }}\",\n    \"Fact-4.text\": \"{{ $json.scene_titles[3] }}\",\n    \"Fact-5.text\": \"{{ $json.scene_titles[4] }}\",\n    \"Fact-6.text\": \"{{ $json.scene_titles[5] }}\",\n    \"Fact-7.text\": \"{{ $json.scene_titles[6] }}\",\n    \"Fact-8.text\": \"{{ $json.scene_titles[7] }}\",\n    \"Fact-9.text\": \"{{ $json.scene_titles[8] }}\",\n    \"Fact-10.text\": \"{{ $json.scene_titles[9] }}\",\n    \"Video-1.source\": \"{{ $json.video_urls[0] }}\",\n    \"Video-2.source\": \"{{ $json.video_urls[1] }}\",\n    \"Video-3.source\": \"{{ $json.video_urls[2] }}\",\n    \"Video-4.source\": \"{{ $json.video_urls[3] }}\",\n    \"Video-5.source\": \"{{ $json.video_urls[4] }}\",\n    \"Video-6.source\": \"{{ $json.video_urls[5] }}\",\n    \"Video-7.source\": \"{{ $json.video_urls[6] }}\",\n    \"Video-8.source\": \"{{ $json.video_urls[7] }}\",\n    \"Video-9.source\": \"{{ $json.video_urls[8] }}\",\n    \"Video-10.source\": \"{{ $json.video_urls[9] }}\",\n    \"Sound-1.source\": \"{{ $json.sound_urls[0] }}\",\n    \"Sound-2.source\": \"{{ $json.sound_urls[1] }}\",\n    \"Sound-3.source\": \"{{ $json.sound_urls[2] }}\",\n    \"Sound-4.source\": \"{{ $json.sound_urls[3] }}\",\n    \"Sound-5.source\": \"{{ $json.sound_urls[4] }}\",\n    \"Sound-6.source\": \"{{ $json.sound_urls[5] }}\",\n    \"Sound-7.source\": \"{{ $json.sound_urls[6] }}\",\n    \"Sound-8.source\": \"{{ $json.sound_urls[7] }}\",\n    \"Sound-9.source\": \"{{ $json.sound_urls[8] }}\",\n    \"Sound-10.source\": \"{{ $json.sound_urls[9] }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1020,
+        -200
+      ],
+      "id": "79e09262-cc0c-4e59-ad77-db247281a653",
+      "name": "Final Video Composer"
+    },
+    {
+      "parameters": {
+        "jsCode": "const idea = $('Subjects').first().json.idea;\nconst caption = $('Subjects').first().json.caption;\n\nreturn [\n  {\n    scene_titles: items.map((item, index) => item.json.text),\n    video_urls: items.map(item => item.json.video.url),\n    sound_urls: items.map(item => item.json.audio.url),\n    audio_urls: items.map(item => item.json.audio_url),\n    alignment_urls: items.map(item => item.json.alignment_url),    \n    row_number: $('Subjects').first().json.row_number,\n    title: idea + ' - \\\\n' + caption\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        840,
+        -200
+      ],
+      "id": "b3d51224-e7bf-46ab-9c22-426abc263eb4",
+      "name": "List Elements"
+    },
+    {
+      "parameters": {
+        "content": "## Output: 최종 영상\n",
+        "height": 380,
+        "width": 860
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        580,
+        -360
+      ],
+      "id": "951d6579-4e42-484e-9784-df6366674721",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        1240
+      ],
+      "id": "548ab236-d268-4281-aee5-3170407cd5ef",
+      "name": "YouTube",
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "4IxtulsoMb6o3hCB",
+          "name": "YouTube account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 85b4d10721e848e090c958ed63f3f3f3879f7fcc7d90837b4cf58fac145a35da80cabbdee4d033e2599c2d52b445fc0c"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"template_id\": \"374b2eda-ccf4-44ea-88c6-ba7d4e9dc4cd\",\n  \"modifications\": {\n    \"Narration.source\": \"{{ $json.narration }}\",\n    \"Video-1.source\": \"{{ $json.scene1 }}\",\n    \"Sound-Effect-1-1.source\": \"{{ $json.sound1 }}\",\n    \"Video-2.source\": \"{{ $json.scene2 }}\",\n    \"Sound-Effect-2-1.source\": \"{{ $json.sound2 }}\",\n    \"Video-3.source\": \"{{ $json.scene3 }}\",\n    \"Sound-Effect-3-1.source\": \"{{ $json.sound3 }}\",\n    \"Video-4.source\": \"{{ $json.scene4 }}\",\n    \"Sound-Effect-4-1.source\": \"{{ $json.sound4 }}\",\n    \"Video-5.source\": \"{{ $json.scene5 }}\",\n    \"Sound-Effect-5-1.source\": \"{{ $json.sound5 }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        940,
+        1240
+      ],
+      "id": "7d5be8d9-747e-40f2-9599-42cc24f29a4d",
+      "name": "Get Video File"
+    },
+    {
+      "parameters": {
+        "content": "## Output: Pubslishing to Youtube, Instagram, Tiktok, Facebook, Linkedin, Naver",
+        "height": 440,
+        "width": 860,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        580,
+        1100
+      ],
+      "id": "69b6e0a6-3249-46ef-80d9-277e99c6906c",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "ideas",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -800,
+        -300
+      ],
+      "id": "35cb6f6c-57ad-44ef-9682-9fb3f10ac2c6",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI",
+          "mode": "list",
+          "cachedResultName": "1인칭 동영상  AI 제작 완전자동화",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "1단계: 영상주제",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "idea": "={{ $json.idea }}",
+            "environment_prompt": "={{ $json.environment_prompt }}",
+            "caption": "={{ $json.caption }}",
+            "status": "={{ $json.status }}",
+            "answer": "={{ $json.answer }}",
+            "sex": "={{ $json.sex }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "idea",
+              "displayName": "idea",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "environment_prompt",
+              "displayName": "environment_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "sex",
+              "displayName": "sex",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Final Video Link",
+              "displayName": "Final Video Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -620,
+        -300
+      ],
+      "id": "53393f2e-4bc2-4812-83cc-374a1533ea3b",
+      "name": "Saving Subjects",
+      "credentials": {
+        "googleApi": {
+          "id": "a35CaW3SDb7UU6D9",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {
+          "responseFormat": "json_object"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1100,
+        -140
+      ],
+      "id": "c6722c94-9a6f-4b54-8164-174e8823c446",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ClfgXfm3N0MC5gZN",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## INPUT: 영상 주제 생성\n",
+        "height": 400,
+        "width": 820
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        -360
+      ],
+      "id": "95a74062-f932-4731-8fc0-a10afcc07274",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=1. idea: {{ $json.idea }}\n2. caption: {{ $json.caption }}\n3. answer: {{ $json.answer }}\n",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "당신은 고도로 사실적이고 몰입감 있는 1인칭 시점의 영상 콘텐츠 프롬프트를 전문적으로 생성하는 고급 프롬프트 생성 AI입니다.\n영상의 몰입도를 높이기 위해, 시청자가 누구인지 처음엔 모르게 하지만 대중이 알고 있는 역사적으로 중요한 사실을 1인칭 시점에서 경험한 5~10가지 활동을 나레이션 또는 자막으로 차례대로 보여주는 형식을 만들어 주고,\n마지막에 내가 누구였는 지 알려줍니다.\n\n아래 정보를 바탕으로 시청자가 해당 인물의 시선으로 직접 체험하는 것처럼 느낄 수 있도록 하되 전체적으로 스토리가 되어야 한다.\n1인칭 시점의 짧은 단문 10개로 구성된 narration_sequence를 생성하세요.\n\n[생성 지침]\n\n1. 역사적 사실 기반: 실제 인물의 일생에서 가장 상징적인 10개 사건·경험을 선택.\n2. 연대순 배열: 어린 시절 → 전성기 → 몰락/죽음 흐름으로 정렬.\n3. 단서처럼 구성: 역사 지식이 있으면 정답을 유추할 수 있도록 암시.\n4. 대중이 알고 있는 역사적 사실을 나열하되, 1인칭 시점 유지해서 작성해줘. (마지막 이름을 알리는 문장을 제외하곤 과거형으로 작성해줘)\n5. 문장 길이 & 수: text는 한국어 (총 50자 미만), 총 10문장.\n6. environment_prompt 작성법:\n   - 각 text와 1 : 1로 매칭되는 배경 묘사.\n   - \"연도·지명·의상·소품·분위기\"를 핵심 키워드로 50자 이내.\n   - 중복 표현 최소화, 불필요한 수식어 제거.\n7. 무조건 JSON만 출력\n8. 마지막(10번째) 문장은 답변을 알 수 있도록 인물의 극적인 선언과 이름이 나와야 한다. environment_prompt는 초상화가 그려지도록 유도한다.\n   그리고 이름을 밝히기전 예문과 같이 break tag 를 사용한다.\n\n입력 예시:\n- idea: \"POVQuest: 마지막 왕관을 쓰기 전 순간\"\n- answer: \"앤 불린\"\n\n출력 형식(JSON): { \n\"facts\" : [\n  { \"text\": \"나는 궁정 가면극에서 ‘희망’ 역으로 무대를 밝혔다.\",   \"environment_prompt\": \"1522 화이트홀궁 가면극 비단드레스 횃불\" },\n  …\n  { \"text\": \"간통과 반역 혐의로 차가운 감옥에 갇혔다..\", \"environment_prompt\": \"1536 화이트홀 겨울 회의실 검은드레스\" },\n  { \"text\": \"왕의 칼날 앞에서도 고개를 들고 서 있었던, 나는 <break time=\"1.0s\"/> 앤 불린이다.\",  \"environment_prompt\": \"1536 타워그린 흰드레스 유화초상 담담\" }\n]}\n---\n\n각 프롬프트 시퀀스는 몰입감 있는 시각적 스토리를 구성하며, 처음부터 끝까지 시청자를 1인칭 경험으로 끌어들입니다.\n"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.6,
+      "position": [
+        -920,
+        200
+      ],
+      "id": "15ffada0-c213-49fd-87dd-cb85e0ce852b",
+      "name": "타이틀 생성"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": {
+          "__rl": true,
+          "value": "1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI",
+          "mode": "list",
+          "cachedResultName": "1인칭 동영상  AI 제작 완전자동화",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "1단계: 영상주제",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "status",
+              "lookupValue": "Ready"
+            }
+          ]
+        },
+        "options": {
+          "returnFirstMatch": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -1100,
+        200
+      ],
+      "id": "b2a46691-67fd-4910-8401-3f9772468d0e",
+      "name": "Subjects",
+      "credentials": {
+        "googleApi": {
+          "id": "a35CaW3SDb7UU6D9",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI",
+          "mode": "list",
+          "cachedResultName": "1인칭 동영상  AI 제작 완전자동화",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "1단계: 영상주제",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "status": "Done",
+            "Final Video Link": "={{ $json.url }}",
+            "row_number": "={{ $('List Elements').item.json.row_number }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "idea",
+              "displayName": "idea",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "environment_prompt",
+              "displayName": "environment_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "sex",
+              "displayName": "sex",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Final Video Link",
+              "displayName": "Final Video Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1200,
+        -200
+      ],
+      "id": "7e2e58c6-c533-4585-9302-415c65d8da2e",
+      "name": "Saving the final video",
+      "credentials": {
+        "googleApi": {
+          "id": "a35CaW3SDb7UU6D9",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": {
+          "__rl": true,
+          "value": "1jE8Pa4XH6J8Jk7OBUj9ZOf189XyOw1LQUT_QPJIQ2jE",
+          "mode": "list",
+          "cachedResultName": "1인칭 영상 AI 완전 자동화",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jE8Pa4XH6J8Jk7OBUj9ZOf189XyOw1LQUT_QPJIQ2jE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 155313355,
+          "mode": "list",
+          "cachedResultName": "1단계 주제선정",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jE8Pa4XH6J8Jk7OBUj9ZOf189XyOw1LQUT_QPJIQ2jE/edit#gid=155313355"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "Ready"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        760,
+        1240
+      ],
+      "id": "0fd81470-0944-47eb-9254-9f68a14769c6",
+      "name": "Subjects (Final Video)",
+      "credentials": {
+        "googleApi": {
+          "id": "a35CaW3SDb7UU6D9",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=[역사상 유명한 인물들 예: 클레오파트라 또는 다른 인물들]의 관점에서 경험하는 [5]가지 1인칭 쇼츠 영상 아이디어를 만들어주세요\n\n당신은 1인칭 시점(POV) 쇼츠 영상 콘텐츠를 기획하는 전문 AI입니다. 시청자가 역사 인물이 되어 직접 체험하는 몰입형 영상을 위한 아이디어를 생성합니다.\n영상의 몰입도를 높이기 위해, 시청자가 누구인지 처음엔 모르게 하면서 1인칭 시점에서 경험한 5~10가지 활동을 나레이션 또는 자막으로 차례대로 보여주는 형식을 만들고 싶다.\n\nJSON 배열 형식으로 출력(ideas):\n\n[\n  {\n    \"id\": \"<UUID>\",\n    \"idea\": \"POVQuest: [시청자가 해당 인물이 되어 경험하는 상황, 최대 20자]\",\n    \"caption\": \"[시청자가 '내가 누구인지' 추측하도록 유도하는 감정적/도발적 자막. 예: “나는 누구인가?”]\",\n    \"environment_prompt\": \"[시대적 배경 + 장소 + 의상 + 소품 + 분위기. AI 이미지 생성에 참고할 최대 50자]\",\n    \"answer\": \"클레오파트라\",\n    \"sex\": [성별]\n    \"status\": \"ready\"\n  }\n]\n\n\n각 필드 상세 설명:\n- id: 고유 식별번호 또는 문자열 (UUID)\n- idea: 영상의 핵심 컨셉. 반드시 \"POV:\"로 시작하며, 시청자가 역사 인물의 입장에서 경험하는 구체적인 상황이나 사건을 간결하게 표현\n- caption: 실제 쇼츠 영상에 사용될 제목/설명. 클릭을 유도하고 바이럴을 일으킬 수 있는 한국어 표현 사용 (예: \"이게 실화라고?\", \"역사책에 없던 이야기\", \"만약 내가 ○○○였다면\", \"... 나는 누구인가?\")\n- environment_prompt: AI 이미지 생성이나 실제 촬영 시 참고할 환경 설정. 시대적 배경, 장소, 의상, 소품, 조명, 인물의 사회적 지위 등 포함\n- answer: 시청자가 추측하게 될 역사 인물의 이름. narration_sequence를 통해 유추할 수 있는 대상이며, 정답 확인 또는 평가용으로 사용됩니다.\n- sex: answer의 값이 한글로 쓰여지는 경우는 '남성', '여성', 영어로 쓰여지는 경우 'male', 'female'.\n- status: 제작 진행 상태 (ready: 촬영 준비 완료, done: 촬영/편집 완료, published: 업로드 완료)\n\n1인칭 쇼츠 영상 제작 가이드라인:\n- POV: 시청자가 역사 인물의 눈으로 직접 보고 경험하는 상황\n- 15-60초 길이의 세로형 영상에 적합한 임팩트 있는 순간\n- 역사적 사실 기반하되 현대적 감각으로 재해석\n- 시각적으로 흥미롭고 촬영 가능한 장면\n- 한국 MZ세대가 공감할 수 있는 스토리텔링\n\n** 다음의 출력예제를 참고하여 정확히 5개를 JSON 배열로 반환하세요. **\n\n출력(예제): [{\n\"ideas\": [\n  {\n    \"id\": \"2eac8cb3-6c27-4a14-a167-43e3a1e4972f\",\n    \"idea\": \"POVQuest: 왕좌에 앉기 전 마지막 목욕\",\n    \"caption\": \"내가 누군지 맞혀봐... 이 모든 걸 겪었어\",\n    \"environment_prompt\": \"기원전 이집트 알렉산드리아 왕궁, 황금 욕조, 향료 연기\",\n    \"answer\": \"클레오파트라\",\n    \"sex\": \"여성\",\n    \"status\": \"ready\"\n  },\n  {\n    \"id\": \"9af031ed-9d21-4de3-8759-c9611df021bb\",\n    \"idea\": \"POVQuest: 불타는 도시 위의 마지막 연설\",\n    \"caption\": \"모든 것이 무너졌을 때, 나는 말했지. 나는 누구인가?\",\n    \"environment_prompt\": \"기원전 44년 로마 원로원, 붉은 토가, 분노한 군중의 함성\",\n    \"answer\": \"율리우스 카이사르\",\n    \"sex\": \"남성\",\n    \"status\": \"ready\"\n  },\n  {\n    \"id\": \"6f2751e2-b004-4044-8a8f-f5d80792e8e1\",\n    \"idea\": \"POVQuest: 망명지에서 마지막 편지를 쓰다\",\n    \"caption\": \"세상이 등을 돌려도, 나는 썼다, 나는 누구인가?\",\n    \"environment_prompt\": \"1815년 엘바 섬, 거친 파도, 군복과 잉크 병\",\n    \"answer\": \"나폴레옹 보나파르트\",\n    \"sex\": \"남성\",\n    \"status\": \"ready\"\n  }\n...\n] }]"
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.6,
+      "position": [
+        -1120,
+        -300
+      ],
+      "id": "a215413d-7b29-4406-9613-1febaff847aa",
+      "name": "주제목록 생성"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/flux-1/dev",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 82748ba0-9859-4226-914f-3041e7044375:ad335fef5740d34a444144cc4faa1171"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": \"{{ $json.message.content.visual }}\",\n  \"image_size\": {\n    \"width\": 720,\n    \"height\": 1280\n  },\n  \"style\": \"realistic_image\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        -760
+      ],
+      "id": "0ca693c3-c0c3-4e91-8d44-9579e0b0883c",
+      "name": "Text to Image1"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "facts",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        -460
+      ],
+      "id": "69098a63-bc0c-44a7-aac1-d6056ab93dcd",
+      "name": "Split Out1"
+    },
+    {
+      "parameters": {
+        "maxItems": 10
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -460
+      ],
+      "id": "df2004fe-e2d5-48ef-9d1f-4a3b3c9bd462",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/elevenlabs/requests/{{ $json.request_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 82748ba0-9859-4226-914f-3041e7044375:ad335fef5740d34a444144cc4faa1171"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1360,
+        1020
+      ],
+      "id": "bdb673be-2ec1-4841-8254-e765097d4f1a",
+      "name": "Get SoundeffectURLs1"
+    },
+    {
+      "parameters": {
+        "content": "## 나레이션 생성\n",
+        "height": 300,
+        "width": 640,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        700
+      ],
+      "id": "fe9c85fe-2f00-4632-aaec-cf96ce27a221",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.elevenlabs.io/v1/text-to-speech/{{ $json.voice_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "xi-api-key",
+              "value": "sk_a3fcfbe4d316bd3d135f8d9016424904247c2a8c87eb346d"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"text\": \"{{ $('Limit').item.json.text }}\",\n  \"model_id\": \"eleven_multilingual_v2\",\n  \"voice_settings\": {\"speed\": 1.05}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1680,
+        1020
+      ],
+      "id": "1df4b694-6e1b-43ac-8f6a-95e0ee50427f",
+      "name": "Text to Voice"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  const sex = $('Subjects').first().json.sex;\n  item.json.sex = sex;\n  item.json.narration = $('Limit').first().json.text;\n  item.json.environment = $('Limit').first().json.environment_prompt;\n  item.json.visual = $('OpenAI').first().json.message.content.visual;\n  item.json.auditory = $('OpenAI').first().json.message.content.auditory;\n  if (sex === \"남성\") {\n    //item.json.voice_id = \"v1jVu1Ky28piIPEJqRrm\";\n    item.json.voice_id = \"ZJCNdZEjYwkOElxugmW2\";\n  } else if (sex === \"male\") {\n    item.json.voice_id = \"6xPz2opT0y5qtoRh1U1Y\";\n  } else if (sex === \"여성\") {\n    item.json.voice_id = \"uyVNoMrnUku1dZyVEXwD\";\n  } else if (sex === \"female\") {\n    item.json.voice_id = \"flHkNRp1BlvT73UL6gyz\";\n  } else {\n    item.json.voice_id = \"v1jVu1Ky28piIPEJqRrm\";\n  }\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -140,
+        800
+      ],
+      "id": "851a2597-42af-4c0d-a36a-ababe9fbcb48",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1560,
+        1020
+      ],
+      "id": "8e755d03-1c5b-4519-af19-2f0869c1e0a3",
+      "name": "Google Drive",
+      "credentials": {
+        "googleApi": {
+          "id": "a35CaW3SDb7UU6D9",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://192.168.0.25:8080/v1/tts/elevenlabs/text-to-speech",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"text\": \"{{ $('Limit').item.json.text.replace(/\\\"/g, '\\\\\\\"') }}\",\n  \"voice_id\": \"{{ $json.voice_id }}\",\n  \"speed\": 1.05,\n  \"stability\": 0.5,\n  \"similarity_boost\": 0.7\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        800
+      ],
+      "id": "7dfb046b-d90d-43c6-bd44-a1f92bc615d2",
+      "name": "Text to Voice (ElevenLabs)"
+    },
+    {
+      "parameters": {
+        "batchSize": 5,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        20,
+        800
+      ],
+      "id": "88f28dab-5c31-4fad-9550-cb0346f72fd7",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "content": "## Output: 최종 영상 (Local 작업)\n",
+        "height": 420,
+        "width": 860
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        580,
+        160
+      ],
+      "id": "99662817-428e-46ae-811b-27e5bd3a02ed",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://192.168.0.25:8080/v1/render/video-blocks",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"title\": \"{{ $json.title }}\",\n  \"narration1\": \"{{ $json.audio_urls[0] }}\",\n  \"alignment_url1\": \"{{ $json.alignment_urls[0] }}\",\n  \"scene1\": \"{{ $json.video_urls[0] }}\",\n  \"sound1\": \"{{ $json.sound_urls[0] }}\",\n\n  \"narration2\": \"{{ $json.audio_urls[1] }}\",\n  \"alignment_url2\": \"{{ $json.alignment_urls[1] }}\",\n  \"scene2\": \"{{ $json.video_urls[1] }}\",\n  \"sound2\": \"{{ $json.sound_urls[1] }}\",\n\n  \"narration3\": \"{{ $json.audio_urls[2] }}\",\n  \"alignment_url3\": \"{{ $json.alignment_urls[2] }}\",\n  \"scene3\": \"{{ $json.video_urls[2] }}\",\n  \"sound3\": \"{{ $json.sound_urls[2] }}\",\n\n  \"narration4\": \"{{ $json.audio_urls[3] }}\",\n  \"alignment_url4\": \"{{ $json.alignment_urls[3] }}\",\n  \"scene4\": \"{{ $json.video_urls[3] }}\",\n  \"sound4\": \"{{ $json.sound_urls[3] }}\",\n\n  \"narration5\": \"{{ $json.audio_urls[4] }}\",\n  \"alignment_url5\": \"{{ $json.alignment_urls[4] }}\",\n  \"scene5\": \"{{ $json.video_urls[4] }}\",\n  \"sound5\": \"{{ $json.sound_urls[4] }}\",\n\n  \"narration6\": \"{{ $json.audio_urls[5] }}\",\n  \"alignment_url6\": \"{{ $json.alignment_urls[5] }}\",\n  \"scene6\": \"{{ $json.video_urls[5] }}\",\n  \"sound6\": \"{{ $json.sound_urls[5] }}\",\n\n  \"narration7\": \"{{ $json.audio_urls[6] }}\",\n  \"alignment_url7\": \"{{ $json.alignment_urls[6] }}\",\n  \"scene7\": \"{{ $json.video_urls[6] }}\",\n  \"sound7\": \"{{ $json.sound_urls[6] }}\",\n\n  \"narration8\": \"{{ $json.audio_urls[7] }}\",\n  \"alignment_url8\": \"{{ $json.alignment_urls[7] }}\",\n  \"scene8\": \"{{ $json.video_urls[7] }}\",\n  \"sound8\": \"{{ $json.sound_urls[7] }}\",\n\n  \"narration9\": \"{{ $json.audio_urls[8] }}\",\n  \"alignment_url9\": \"{{ $json.alignment_urls[8] }}\",\n  \"scene9\": \"{{ $json.video_urls[8] }}\",\n  \"sound9\": \"{{ $json.sound_urls[8] }}\",\n\n  \"narration10\": \"{{ $json.audio_urls[9] }}\",\n  \"alignment_url10\": \"{{ $json.alignment_urls[9] }}\",\n  \"scene10\": \"{{ $json.video_urls[9] }}\",\n  \"sound10\": \"{{ $json.sound_urls[9] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        800,
+        320
+      ],
+      "id": "91d3e9d4-f334-4371-9a15-32514866d1cd",
+      "name": "Final Video Composer with MoviePy"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI",
+          "mode": "list",
+          "cachedResultName": "1인칭 동영상  AI 제작 완전자동화",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "1단계: 영상주제",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1BaGqc41JuZcI95M_8eZCVNLhqv4cwpUjHFe1-thefLI/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "status": "Done",
+            "Final Video Link": "={{ $json.url }}",
+            "row_number": "={{ $('List Elements').item.json.row_number }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "idea",
+              "displayName": "idea",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "environment_prompt",
+              "displayName": "environment_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "sex",
+              "displayName": "sex",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Final Video Link",
+              "displayName": "Final Video Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1080,
+        320
+      ],
+      "id": "d5afe886-27a4-4016-9e4b-b65520360b41",
+      "name": "Saving the final video1",
+      "credentials": {
+        "googleApi": {
+          "id": "a35CaW3SDb7UU6D9",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Subjects",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Subjects (Final Video)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "주제목록 생성",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "타이틀 생성",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text to Image": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "Get ImageURL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Text to Image",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Text to Image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image to Video": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get VideoURLs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Get SoundeffectURLs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text to Sound": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get ImageURL": {
+      "main": [
+        [
+          {
+            "node": "Image to Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get VideoURLs": {
+      "main": [
+        [
+          {
+            "node": "Text to Sound",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "List Elements",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Final Video Composer": {
+      "main": [
+        [
+          {
+            "node": "Saving the final video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Elements": {
+      "main": [
+        [
+          {
+            "node": "Final Video Composer",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Final Video Composer with MoviePy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Video File": {
+      "main": [
+        [
+          {
+            "node": "YouTube",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get SoundeffectURLs": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          },
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Saving Subjects",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "주제목록 생성",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "타이틀 생성": {
+      "main": [
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Subjects": {
+      "main": [
+        [
+          {
+            "node": "타이틀 생성",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Subjects (Final Video)": {
+      "main": [
+        [
+          {
+            "node": "Get Video File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "주제목록 생성": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out1": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get SoundeffectURLs1": {
+      "main": [
+        []
+      ]
+    },
+    "Text to Voice": {
+      "main": [
+        [
+          {
+            "node": "Get SoundeffectURLs1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ],
+        [
+          {
+            "node": "Text to Voice (ElevenLabs)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text to Voice (ElevenLabs)": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Final Video Composer with MoviePy": {
+      "main": [
+        [
+          {
+            "node": "Saving the final video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "8bab7734-6dd3-4fc3-a868-d1b7f036d899",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ee9b7eeeec87fa68ba290b2d49579eddd9d7bde06bbb0e21fa0f51513f4775c5"
+  },
+  "id": "y8gWlKrK1w38aaxl",
+  "tags": []
+}
