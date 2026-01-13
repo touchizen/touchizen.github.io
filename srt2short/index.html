@@ -1,22 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRT2Short</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .tiktok-btn {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tiktok-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tiktok-btn:active {
+            transform: translateY(0);
+        }
+
+        .tiktok-btn::before {
+            content: "🎵";
+            font-size: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>SRT2Short</h1>
-    <p>TikTok content automation tool</p>
+    <div class="container">
+        <h1>SRT2Short</h1>
+        <p>TikTok content automation tool</p>
 
-    <button onclick="loginWithTikTok()">Login with TikTok</button>
+        <button class="tiktok-btn" onclick="loginWithTikTok()">
+            Login with TikTok
+        </button>
 
-    <footer>
-        <a href="service.html">Terms</a> |
-        <a href="privacy.html">Privacy</a>
-    </footer>
+        <footer>
+            <a href="service.html">Terms of Service</a> |
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
 
     <script>
     function loginWithTikTok() {
-        const client_key = 'sbawr7d8bws6pahuqu'; // 여기에 실제 Client Key
+        const client_key = 'sbawr7d8bws6pahuqu';
         const redirect_uri = 'https://touchizen.com/srt2short/callback';
         const scope = 'video.upload';
 
