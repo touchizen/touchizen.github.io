@@ -1,87 +1,28 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>srt2short - SRT to Short Video Converter</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 50px 40px;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
-        .logo {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-        h1 {
-            color: #333;
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-        .description {
-            color: #666;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-        }
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .links a {
-            display: block;
-            padding: 15px 30px;
-            background: #f5f5f5;
-            color: #333;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 15px;
-            transition: all 0.3s;
-        }
-        .links a:hover {
-            background: #667eea;
-            color: white;
-        }
-        .footer {
-            margin-top: 40px;
-            color: #999;
-            font-size: 13px;
-        }
-    </style>
+    <title>SRT2Short</title>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">🎬</div>
-        <h1>srt2short</h1>
-        <p class="description">
-            SRT 자막 파일을 분석하여<br>
-            쇼츠 영상을 쉽게 만들어주는 도구입니다.
-        </p>
-        <div class="links">
-            <a href="privacy.html">개인정보처리방침</a>
-            <a href="service.html">이용약관</a>
-        </div>
-        <p class="footer">© 2025 srt2short. All rights reserved.</p>
-    </div>
+    <h1>SRT2Short</h1>
+    <p>TikTok content automation tool</p>
+
+    <button onclick="loginWithTikTok()">Login with TikTok</button>
+
+    <footer>
+        <a href="service.html">Terms</a> |
+        <a href="privacy.html">Privacy</a>
+    </footer>
+
+    <script>
+    function loginWithTikTok() {
+        const client_key = 'sbawr7d8bws6pahuqu'; // 여기에 실제 Client Key
+        const redirect_uri = 'https://touchizen.com/srt2short/callback';
+        const scope = 'video.upload';
+
+        window.location.href =
+            `https://www.tiktok.com/v2/auth/authorize?client_key=${client_key}&scope=${scope}&redirect_uri=${redirect_uri}&response_type=code`;
+    }
+    </script>
 </body>
 </html>
