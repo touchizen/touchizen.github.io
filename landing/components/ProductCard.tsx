@@ -13,24 +13,27 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
 
   return (
     <div className="card-hover bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800">
-      {/* Icon with gradient background */}
-      <div
-        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${product.gradient} flex items-center justify-center text-2xl mb-4`}
-      >
-        {product.icon}
+      {/* Header: Icon + Title/Slogan */}
+      <div className="flex items-start gap-4 mb-4">
+        {/* Icon with gradient background */}
+        <div
+          className={`w-14 h-14 rounded-xl bg-gradient-to-br ${product.gradient} flex items-center justify-center text-2xl flex-shrink-0`}
+        >
+          {product.icon}
+        </div>
+
+        {/* Title and Slogan */}
+        <div>
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+            {t(product.nameKey as TranslationKey)}
+          </h3>
+          {product.sloganKey && (
+            <p className="text-sm font-semibold text-purple-600 dark:text-purple-400">
+              {t(product.sloganKey as TranslationKey)}
+            </p>
+          )}
+        </div>
       </div>
-
-      {/* Title */}
-      <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">
-        {t(product.nameKey as TranslationKey)}
-      </h3>
-
-      {/* Slogan */}
-      {product.sloganKey && (
-        <p className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-2">
-          {t(product.sloganKey as TranslationKey)}
-        </p>
-      )}
 
       {/* Description */}
       <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
