@@ -139,17 +139,6 @@ export default function Whisk2CapCutPage() {
         </div>
 
         <div className="relative z-10 container-custom px-4">
-          {/* Back link */}
-          <a
-            href="/"
-            className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-500 mb-8 transition-colors"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            {t('back_to_home')}
-          </a>
-
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-900/30 rounded-full text-violet-700 dark:text-violet-300 text-sm font-medium mb-6">
               <span>🎬</span>
