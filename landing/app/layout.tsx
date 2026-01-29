@@ -2,23 +2,33 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Touchizen Creator Tools - AI-Powered Tools for Content Creators',
+  title: 'Touchizen Creator Tools - Save Your Time with AI-Powered Tools',
   description:
-    'Streamline your creative workflow with AI-powered tools. Whisk2CapCut for bulk image generation, SRT2Short for TikTok automation, and more.',
+    'Save hours of work with AI-powered creator tools. Generate 100+ images in minutes and instantly convert to CapCut projects. Turn repetitive tasks into automated efficiency.',
   keywords: [
     'creator tools',
-    'AI tools',
-    'CapCut',
-    'Whisk',
-    'video editing',
+    'AI image generation',
+    'CapCut automation',
+    'Google Whisk',
+    'bulk image creation',
+    'video editing automation',
     'content creation',
-    'TikTok',
-    'automation',
+    'time saving tools',
+    'AI video tools',
+    'CapCut project export',
   ],
   authors: [{ name: 'Touchizen' }],
+  metadataBase: new URL('https://touchizen.com'),
+  alternates: {
+    canonical: 'https://touchizen.com',
+    languages: {
+      'en': 'https://touchizen.com',
+      'ko': 'https://touchizen.com',
+    },
+  },
   openGraph: {
-    title: 'Touchizen Creator Tools',
-    description: 'AI-powered tools connecting creativity and video editing',
+    title: 'Touchizen Creator Tools - Save Your Time',
+    description: 'Generate 100+ AI images in minutes, convert to CapCut in seconds. Save hours of repetitive work.',
     url: 'https://touchizen.com',
     siteName: 'Touchizen',
     type: 'website',
@@ -29,12 +39,22 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@touchizen',
     creator: '@touchizen',
-    title: 'Touchizen Creator Tools',
-    description: 'AI-powered tools connecting creativity and video editing',
+    title: 'Touchizen Creator Tools - Save Your Time',
+    description: 'Generate 100+ AI images in minutes, convert to CapCut in seconds. Save hours of repetitive work.',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'abab50d830b4ddf2',
   },
 };
 

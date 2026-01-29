@@ -1,0 +1,233 @@
+export const de = {
+  // Header
+  brand_slogan: 'Mehr schaffen, weniger arbeiten',
+  nav_products: 'Produkte',
+  nav_features: 'Funktionen',
+  nav_pricing: 'Preise',
+
+  // Hero
+  hero_title: 'Creator-Tools',
+  hero_subtitle: 'Tools, die Zeit sparen und Kreativität steigern',
+  hero_cta: 'Tools entdecken',
+  hero_by: 'by Touchizen',
+
+  // Time saving value
+  time_save_motto: 'Save Your Time',
+  time_save_badge: 'Stunden sparen',
+  time_save_title: 'Enorme Zeitersparnis',
+  time_save_subtitle: 'Stunden manueller Arbeit in Minuten automatisierter Effizienz verwandeln',
+  time_save_stat1_number: '100+',
+  time_save_stat1_label: 'Bilder in ~10 Minuten',
+  time_save_stat2_number: '4+ Stunden',
+  time_save_stat2_label: 'manuelle Arbeit gespart',
+  time_save_stat3_number: '<1 Min',
+  time_save_stat3_label: 'CapCut-Konvertierung',
+  time_save_desc: 'Generieren Sie 100+ AI-Bilder mit Google Whisk und konvertieren Sie sie sofort in ein editierbares CapCut-Projekt. Was manuell 4+ Stunden dauert, dauert jetzt weniger als 1 Minute.',
+
+  // Products
+  products_title: 'Unsere Tools',
+  products_subtitle: 'Optimieren Sie Ihren kreativen Workflow mit unseren Tools',
+
+  // Whisk2CapCut
+  whisk2capcut_name: 'Whisk2CapCut',
+  whisk2capcut_slogan: 'Save Your Time',
+  whisk2capcut_desc: 'Massenbilder generieren und Videos mit wenigen Klicks erstellen',
+  whisk2capcut_feature1: 'Stapelgenerierung',
+  whisk2capcut_feature2: 'Ken Burns Effekt',
+  whisk2capcut_feature3: 'Untertitel-Support',
+  whisk2capcut_cta: 'Mehr erfahren',
+
+  // Whisk2CapCut Detail Page
+  whisk2capcut_hero_title: 'Whisk2CapCut',
+  whisk2capcut_hero_slogan: 'Save Your Time',
+  whisk2capcut_hero_subtitle: '100+ AI-Bilder in 10 Min, 4+ Stunden Arbeit in unter 1 Min',
+  whisk2capcut_hero_cta: 'Chrome-Erweiterung installieren',
+  whisk2capcut_hero_cta_secondary: 'Preise ansehen',
+
+  whisk2capcut_what_title: 'Was ist Whisk2CapCut?',
+  whisk2capcut_what_desc: 'Whisk2CapCut ist eine Chrome-Erweiterung, die Google Whisk AI-Bildgenerierung mit CapCut-Videobearbeitung verbindet. Generieren Sie mehrere AI-Bilder mit einheitlichem Stil und exportieren Sie sie als editierbares CapCut-Projekt.',
+
+  whisk2capcut_features_title: 'Funktionen',
+  whisk2capcut_feat1_title: 'Stapel-AI-Generierung',
+  whisk2capcut_feat1_desc: 'Generieren Sie mehrere Bilder auf einmal mit konsistenten Charakter-, Hintergrund- und Stilreferenzen.',
+  whisk2capcut_feat2_title: 'CapCut-Export',
+  whisk2capcut_feat2_desc: 'Exportieren Sie generierte Bilder als vollständiges CapCut-Projekt mit Timeline.',
+  whisk2capcut_feat3_title: 'Ken Burns Effekt',
+  whisk2capcut_feat3_desc: 'Automatische Zoom- und Schwenk-Animationen für lebendige Standbilder.',
+  whisk2capcut_feat4_title: 'Untertitel-Support',
+  whisk2capcut_feat4_desc: 'SRT-Dateien importieren und Untertitel in Ihr CapCut-Projekt einbinden.',
+  whisk2capcut_feat5_title: 'Referenzsystem',
+  whisk2capcut_feat5_desc: 'Charakter-, Hintergrund- und Stilreferenzen für konsistente Ergebnisse.',
+  whisk2capcut_feat6_title: 'Mehrere Eingabeformate',
+  whisk2capcut_feat6_desc: 'Unterstützung für Textprompts, CSV-Dateien und SRT-Untertiteldateien.',
+
+  whisk2capcut_howto_title: 'So funktioniert es',
+  whisk2capcut_step1_title: 'Prompts eingeben',
+  whisk2capcut_step1_desc: 'Szenenbeschreibungen schreiben oder aus CSV/SRT-Dateien importieren.',
+  whisk2capcut_step2_title: 'Referenzen hinzufügen',
+  whisk2capcut_step2_desc: 'Charakter-, Hintergrund- und Stilreferenzbilder hochladen.',
+  whisk2capcut_step3_title: 'Bilder generieren',
+  whisk2capcut_step3_desc: 'Whisk AI erstellt Ihre Bilder mit einheitlichem Stil.',
+  whisk2capcut_step4_title: 'Nach CapCut exportieren',
+  whisk2capcut_step4_desc: 'Als CapCut-Projekt herunterladen und mit der Bearbeitung beginnen.',
+
+  whisk2capcut_pricing_title: 'Preise',
+  whisk2capcut_pricing_subtitle: 'Kostenlos starten, upgraden wenn nötig',
+
+  // Input Guide
+  input_guide_title: 'Eingabe-Anleitung',
+  input_guide_subtitle: 'Lernen Sie, wie Sie Prompts und Szenendaten vorbereiten',
+
+  input_text_title: 'Text-Prompts',
+  input_text_desc: 'Eine Szenenbeschreibung pro Zeile eingeben. Einfach und schnell für grundlegende Projekte.',
+  input_text_example_title: 'Beispiel',
+
+  input_csv_title: 'CSV-Import',
+  input_csv_desc: 'Für strukturierte Projekte mit Untertiteln, Charakter-Tags und Timing-Kontrolle. CSV-Dateien mit folgenden Spalten importieren:',
+  input_csv_col1: 'prompt',
+  input_csv_col1_desc: 'Szenenbeschreibung für AI-Bildgenerierung',
+  input_csv_col2: 'subtitle',
+  input_csv_col2_desc: 'Anzuzeigender Untertiteltext',
+  input_csv_col3: 'characters',
+  input_csv_col3_desc: 'Charakternamen für Referenz-Matching',
+  input_csv_col4: 'scene_tag',
+  input_csv_col4_desc: 'Hintergrund/Ort-Tag für Referenz-Matching',
+  input_csv_col5: 'style_tag',
+  input_csv_col5_desc: 'Kunststil-Tag für Referenz-Matching',
+  input_csv_col6: 'duration',
+  input_csv_col6_desc: 'Szenendauer in Sekunden',
+  input_csv_download: 'Beispiel-CSV herunterladen',
+
+  input_reference_title: 'Referenzbilder',
+  input_reference_desc: 'Referenzbilder hochladen und Namen zuweisen. Die Erweiterung matcht sie automatisch mit Szenen-Tags.',
+  input_ref_character: 'Charakter',
+  input_ref_character_desc: 'Charakterbilder hochladen, benennen (z.B. "König"). Mit characters-Spalte gematcht.',
+  input_ref_background: 'Hintergrund',
+  input_ref_background_desc: 'Hintergrundbilder hochladen, benennen (z.B. "Palast"). Mit scene_tag-Spalte gematcht.',
+  input_ref_style: 'Stil',
+  input_ref_style_desc: 'Stilreferenzbilder hochladen (z.B. "Aquarell"). Mit style_tag-Spalte gematcht.',
+
+  // Scene CSV
+  input_scene_csv_title: 'Szenen-CSV',
+  input_scene_csv_desc: 'Für strukturierte Szenendaten mit Untertiteln, Charakter-Tags und Timing. Jede Zeile repräsentiert eine Szene.',
+  input_scene_csv_download: 'Szenen-CSV-Beispiel herunterladen',
+
+  // Reference CSV
+  input_ref_csv_title: 'Referenz-CSV',
+  input_ref_csv_desc: 'Definieren Sie Ihre Charakter-, Hintergrund- und Stilreferenzen. Die Erweiterung matcht sie automatisch mit Szenen-Tags.',
+  input_ref_csv_col1: 'type',
+  input_ref_csv_col1_desc: 'Referenztyp: character, background oder style',
+  input_ref_csv_col2: 'name',
+  input_ref_csv_col2_desc: 'Name für Matching (z.B. "könig", "palast")',
+  input_ref_csv_col3: 'image_path',
+  input_ref_csv_col3_desc: 'Pfad zur Referenzbilddatei',
+  input_ref_csv_download: 'Referenz-CSV-Beispiel herunterladen',
+
+  // SRT Import
+  input_srt_title: 'SRT-Untertitel-Import',
+  input_srt_desc: 'Standard-SRT-Untertiteldateien importieren. Jeder Untertitelblock wird zu einer Szene mit automatisch berechneter Dauer.',
+  input_srt_download: 'SRT-Beispiel herunterladen',
+
+  // Meta prompts
+  input_meta_title: 'AI-Prompts für Dateigenerierung',
+  input_meta_desc: 'Verwenden Sie diese Prompts mit Claude, ChatGPT oder Gemini, um Dateien aus Ihrer Geschichte zu generieren.',
+  input_meta_scene_title: 'Szenen-CSV-Generierungsprompt',
+  input_meta_ref_title: 'Referenz-CSV-Generierungsprompt',
+  input_meta_srt_title: 'SRT-Generierungsprompt',
+  input_meta_copy: 'Prompt kopieren',
+  input_meta_copied: 'Kopiert!',
+
+  // AI Usage Guide
+  ai_guide_title: 'Verwendung mit AI-Tools',
+  ai_guide_subtitle: 'Schritt-für-Schritt-Anleitung für Claude, ChatGPT und Gemini',
+  ai_guide_step1_title: 'Projekt erstellen',
+  ai_guide_step1_desc: 'In Claude/ChatGPT/Gemini ein neues Projekt oder Gespräch erstellen.',
+  ai_guide_step2_title: 'Meta-Prompt einfügen',
+  ai_guide_step2_desc: 'Den entsprechenden Meta-Prompt kopieren und als Systemanweisung oder erste Nachricht einfügen.',
+  ai_guide_step3_title: 'Geschichte eingeben',
+  ai_guide_step3_desc: 'Ihre Geschichte, Ihr Skript einfügen oder Ihr Videokonzept detailliert beschreiben.',
+  ai_guide_step4_title: 'Ergebnis herunterladen',
+  ai_guide_step4_desc: 'Den generierten CSV/SRT-Inhalt kopieren und als Datei speichern, oder die AI bitten, es als herunterladbare Datei bereitzustellen.',
+  ai_guide_claude_title: 'Claude (Empfohlen)',
+  ai_guide_claude_desc: 'Neues Projekt mit Meta-Prompt als Projektanweisung erstellen. Am besten für komplexe Geschichten.',
+  ai_guide_chatgpt_title: 'ChatGPT',
+  ai_guide_chatgpt_desc: 'Custom GPT verwenden oder Prompt am Anfang des Gesprächs einfügen.',
+  ai_guide_gemini_title: 'Gemini',
+  ai_guide_gemini_desc: 'Neuen Chat starten und Meta-Prompt zuerst einfügen, dann Ihre Geschichte.',
+
+  // Export Guide
+  export_guide_title: 'CapCut-Export-Anleitung',
+  export_guide_subtitle: 'Export-Optionen konfigurieren und in CapCut importieren',
+
+  export_options_title: 'Export-Optionen',
+  export_opt1_name: 'Projektordner',
+  export_opt1_desc: 'CapCut-Projektordnerpfad (Ordnername oder absoluter Pfad)',
+  export_opt2_name: 'Auto Scale',
+  export_opt2_desc: 'Medien automatisch an Rahmen anpassen unter Beibehaltung des Seitenverhältnisses',
+  export_opt3_name: 'Ken Burns',
+  export_opt3_desc: 'Zoom/Schwenk-Animationen auf Bilder anwenden',
+  export_opt4_name: 'Untertitel einbeziehen',
+  export_opt4_desc: 'Untertitelspur einbeziehen (nur angezeigt wenn Untertiteldaten existieren)',
+
+  kenburns_title: 'Ken Burns Effekt',
+  kenburns_desc: 'Wendet automatisch Zoom- und Schwenk-Animationen auf Bildclips an und verleiht statischen Bildern dynamische Bewegung. Gilt nicht für Videoclips.',
+  kenburns_mode_pattern: 'Pattern-Modus',
+  kenburns_mode_pattern_desc: 'Durchläuft 10 vordefinierte Muster zyklisch',
+  kenburns_mode_random: 'Random-Modus',
+  kenburns_mode_random_desc: 'Generiert bei jedem Zyklus zufällige Zoom/Schwenk-Werte',
+  kenburns_patterns_title: 'Verfügbare Muster',
+  kenburns_cycle: 'Zyklusdauer',
+  kenburns_cycle_desc: 'Bereich: 1-30 Sekunden (Standard: 5 Sekunden). Neues Muster wird bei jedem Zyklus angewendet.',
+
+  import_title: 'In CapCut importieren',
+  import_step1: 'Exportierte ZIP-Datei herunterladen',
+  import_step2: 'ZIP-Datei extrahieren',
+  import_step3: 'Extrahierten Ordner in CapCut-Projektordner kopieren',
+  import_step4: 'CapCut neu starten und Projekt überprüfen',
+
+  output_structure_title: 'Ausgabestruktur',
+
+  whisk2capcut_cta_title: 'Bereit zum Erstellen?',
+  whisk2capcut_cta_subtitle: 'Installieren Sie die Chrome-Erweiterung und erstellen Sie erstaunliche Videoinhalte.',
+  whisk2capcut_cta_button: 'Whisk2CapCut holen',
+
+  back_to_home: 'Zurück zur Startseite',
+
+  // Features (main page)
+  features_title: 'Warum uns wählen',
+  features_subtitle: 'Von Creatorn für Creator entwickelt',
+  feature1_title: 'Zeit sparen',
+  feature1_desc: 'Stunden repetitiver Arbeit in nur wenige Minuten verwandeln',
+  feature2_title: 'Massen-Bildgenerierung',
+  feature2_desc: '100+ AI-Bilder auf einmal mit einheitlichem Stil generieren',
+  feature3_title: 'Sofortiger CapCut-Export',
+  feature3_desc: 'Ein-Klick-Konvertierung zu editierbaren CapCut-Projekten',
+
+  // Pricing
+  pricing_title: 'Einfache Preise',
+  pricing_subtitle: 'Kostenlos starten, upgraden wenn nötig',
+  pricing_free: 'Kostenlose Testversion',
+  pricing_free_desc: '5 Exporte oder 7 Tage',
+  pricing_free_feature1: '5 CapCut-Exporte',
+  pricing_free_feature2: '7-Tage-Testzeitraum',
+  pricing_free_feature3: 'Alle Grundfunktionen',
+  pricing_pro: 'Pro',
+  pricing_pro_desc: 'Für ernsthafte Creator',
+  pricing_pro_feature1: 'Unbegrenzte Exporte',
+  pricing_pro_feature2: 'Ken Burns Effekte',
+  pricing_pro_feature3: 'Prioritäts-Support',
+  pricing_pro_monthly: '$4,99/Monat',
+  pricing_pro_yearly: '$39,99/Jahr',
+  pricing_pro_save: '33% sparen',
+  pricing_cta_free: 'Kostenlos starten',
+  pricing_cta_pro: 'Pro kaufen',
+
+  // Footer
+  footer_tagline: 'Creator mit AI-Tools stärken',
+  footer_products: 'Produkte',
+  footer_legal: 'Rechtliches',
+  footer_privacy: 'Datenschutzrichtlinie',
+  footer_terms: 'Nutzungsbedingungen',
+  footer_connect: 'Verbinden',
+  footer_copyright: '2026 Touchizen. Alle Rechte vorbehalten.',
+} as const;
