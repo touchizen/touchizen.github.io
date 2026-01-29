@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lottie-web 예제</title>
+  <!-- lottie-web 라이브러리 CDN (bodymovin) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+  <!-- 애니메이션을 표시할 컨테이너 -->
+  <div id="lottie-container" style="width: 400px; height: 400px;"></div>
+
+  <script>
+    // lottie-web을 이용한 애니메이션 로드
+    var animation = lottie.loadAnimation({
+      container: document.getElementById('lottie-container'), // 애니메이션이 표시될 컨테이너
+      renderer: 'svg',       // 렌더링 방식 (svg, canvas, html)
+      loop: true,            // 애니메이션 반복 여부
+      autoplay: true,        // 자동 재생 여부
+      path: 'typing.json' // 애니메이션 JSON 파일 경로 (로컬 파일 혹은 URL)
+    });
+  </script>
+</body>
+</html>
