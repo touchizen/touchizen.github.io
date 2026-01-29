@@ -1,0 +1,9 @@
+prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne in grand palace hall, dramatic lighting from tall windows","늙은 현명한 왕이 황금 왕좌에 앉아있다",왕,궁전,cinematic,4
+"Beautiful queen enters through large ornate doors, flowing red silk dress","아름다운 왕비가 화려한 문으로 들어온다",왕비,궁전,cinematic,3
+"King and queen discuss important matters, serious expressions, close-up shot","왕과 왕비가 중요한 문제를 논의한다",왕;왕비,궁전,cinematic,4
+"Young prince practices sword fighting in castle courtyard, morning sunlight","어린 왕자가 성 안뜰에서 검술 연습을 한다",왕자,안뜰,cinematic,3
+"Royal advisor whispers secret news to the king, shadowy corner","왕실 고문이 왕에게 비밀 소식을 전한다",왕;고문,궁전,cinematic,3
+"Queen looks out palace window at distant mountains, contemplative mood","왕비가 궁전 창문으로 먼 산을 바라본다",왕비,궁전,cinematic,4
+"War council meeting with generals around large map table","장군들과 전쟁 회의를 하고 있다",왕;장군들,회의실,cinematic,4
+"King makes difficult decision, standing alone in throne room at night","왕이 밤에 홀로 어려운 결정을 내린다",왕,궁전,cinematic,5
