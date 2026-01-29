@@ -1,6 +1,7 @@
 export interface Product {
   id: string;
   nameKey: string;
+  sloganKey?: string;
   descKey: string;
   features: string[];
   ctaKey: string;
@@ -15,6 +16,7 @@ export const products: Product[] = [
   {
     id: 'whisk2capcut',
     nameKey: 'whisk2capcut_name',
+    sloganKey: 'whisk2capcut_slogan',
     descKey: 'whisk2capcut_desc',
     features: ['whisk2capcut_feature1', 'whisk2capcut_feature2', 'whisk2capcut_feature3'],
     ctaKey: 'whisk2capcut_cta',

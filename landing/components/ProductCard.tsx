@@ -21,9 +21,16 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
       </div>
 
       {/* Title */}
-      <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+      <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">
         {t(product.nameKey as TranslationKey)}
       </h3>
+
+      {/* Slogan */}
+      {product.sloganKey && (
+        <p className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-2">
+          {t(product.sloganKey as TranslationKey)}
+        </p>
+      )}
 
       {/* Description */}
       <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">

@@ -32,7 +32,8 @@ export const translations = {
 
     // Whisk2CapCut
     whisk2capcut_name: 'Whisk2CapCut',
-    whisk2capcut_desc: 'Bulk AI image generation with Google Whisk and automatic CapCut project export',
+    whisk2capcut_slogan: 'Save Your Time',
+    whisk2capcut_desc: 'Turn your ideas into videos in minutes',
     whisk2capcut_feature1: 'Batch Generation',
     whisk2capcut_feature2: 'Ken Burns Effect',
     whisk2capcut_feature3: 'Subtitle Support',
@@ -263,7 +264,8 @@ export const translations = {
 
     // Whisk2CapCut
     whisk2capcut_name: 'Whisk2CapCut',
-    whisk2capcut_desc: 'Google Whisk로 AI 이미지 일괄 생성 후 CapCut 프로젝트로 자동 변환',
+    whisk2capcut_slogan: 'Save Your Time',
+    whisk2capcut_desc: '아이디어를 몇 분 만에 영상으로',
     whisk2capcut_feature1: '일괄 생성',
     whisk2capcut_feature2: 'Ken Burns 효과',
     whisk2capcut_feature3: '자막 지원',
