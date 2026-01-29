@@ -37,22 +37,22 @@ export interface Feature {
 
 export const features: Feature[] = [
   {
-    id: 'multilingual',
+    id: 'save-time',
     titleKey: 'feature1_title',
     descKey: 'feature1_desc',
-    icon: '🌐',
+    icon: '⏱️',
   },
   {
-    id: 'privacy',
+    id: 'bulk-images',
     titleKey: 'feature2_title',
     descKey: 'feature2_desc',
-    icon: '🔒',
+    icon: '🖼️',
   },
   {
-    id: 'opensource',
+    id: 'capcut-export',
     titleKey: 'feature3_title',
     descKey: 'feature3_desc',
-    icon: '💻',
+    icon: '🎬',
   },
 ];
 

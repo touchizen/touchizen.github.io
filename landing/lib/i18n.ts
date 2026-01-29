@@ -198,12 +198,12 @@ export const translations = {
     // Features (main page)
     features_title: 'Why Choose Us',
     features_subtitle: 'Built for creators, by creators',
-    feature1_title: 'Multilingual',
-    feature1_desc: 'Full support for Korean and English interfaces',
-    feature2_title: 'Privacy First',
-    feature2_desc: 'No cloud required. Process everything locally on your device',
-    feature3_title: 'Open Source Friendly',
-    feature3_desc: 'Transparent development with community feedback',
+    feature1_title: 'Save Time',
+    feature1_desc: 'Turn hours of repetitive work into just a few minutes',
+    feature2_title: 'Bulk Image Creation',
+    feature2_desc: 'Generate 100+ AI images at once with consistent style',
+    feature3_title: 'Instant CapCut Export',
+    feature3_desc: 'One-click conversion to ready-to-edit CapCut projects',
 
     // Pricing
     pricing_title: 'Simple Pricing',
@@ -430,12 +430,12 @@ export const translations = {
     // Features (main page)
     features_title: '왜 선택해야 할까요',
     features_subtitle: '크리에이터를 위해, 크리에이터가 만든',
-    feature1_title: '다국어 지원',
-    feature1_desc: '한국어와 영어 인터페이스 완벽 지원',
-    feature2_title: '프라이버시 우선',
-    feature2_desc: '클라우드 불필요. 모든 처리는 로컬에서',
-    feature3_title: '오픈소스 친화적',
-    feature3_desc: '커뮤니티 피드백과 함께하는 투명한 개발',
+    feature1_title: '시간 절약',
+    feature1_desc: '수시간의 반복 작업을 몇 분으로 단축',
+    feature2_title: '대량 이미지 생성',
+    feature2_desc: '일관된 스타일로 100장 이상의 AI 이미지를 한번에 생성',
+    feature3_title: 'CapCut 즉시 변환',
+    feature3_desc: '클릭 한 번으로 바로 편집 가능한 CapCut 프로젝트로 변환',
 
     // Pricing
     pricing_title: '심플한 가격 정책',
