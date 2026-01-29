@@ -223,7 +223,7 @@ export default function Whisk2CapCutPage() {
           </div>
 
           {/* Main Before → After comparison */}
-          <div className="max-w-4xl mx-auto mb-10">
+          <div className="max-w-5xl mx-auto mb-10">
             {/* Before vs After Card */}
             <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
@@ -264,7 +264,7 @@ export default function Whisk2CapCutPage() {
           </div>
 
           {/* Supporting Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
             {/* Stat 1: 100+ images */}
             <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg">
               <div className="flex items-center gap-4">
@@ -275,7 +275,7 @@ export default function Whisk2CapCutPage() {
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-violet-500">100+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
                     {lang === 'ko' ? '이미지를 ~10분에 생성' : 'images in ~10 min'}
                   </div>
                 </div>
@@ -294,7 +294,7 @@ export default function Whisk2CapCutPage() {
                   <div className="text-3xl font-bold text-orange-500">
                     {lang === 'ko' ? '4시간+' : '4+ hrs'}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
                     {lang === 'ko' ? '수작업 시간 절약' : 'manual work saved'}
                   </div>
                 </div>
@@ -313,7 +313,7 @@ export default function Whisk2CapCutPage() {
                   <div className="text-3xl font-bold text-green-500">
                     {lang === 'ko' ? '1클릭' : '1 Click'}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
                     {lang === 'ko' ? 'CapCut 프로젝트로 내보내기' : 'export to CapCut project'}
                   </div>
                 </div>
