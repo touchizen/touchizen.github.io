@@ -12,7 +12,12 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
   const t = (key: TranslationKey) => translations[lang][key];
 
   return (
-    <div className="card-hover bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800">
+    <a
+      href={product.link}
+      target={product.isExternal ? '_blank' : undefined}
+      rel={product.isExternal ? 'noopener noreferrer' : undefined}
+      className="block card-hover bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 cursor-pointer"
+    >
       {/* Header: Icon + Title/Slogan */}
       <div className="flex items-start gap-4 mb-4">
         {/* Icon with gradient background */}
@@ -53,10 +58,7 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
       </div>
 
       {/* CTA Button */}
-      <a
-        href={product.link}
-        target={product.isExternal ? '_blank' : undefined}
-        rel={product.isExternal ? 'noopener noreferrer' : undefined}
+      <div
         className={`inline-flex items-center justify-center w-full py-3 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r ${product.gradient} text-white hover:shadow-lg hover:opacity-90 active:scale-95`}
       >
         {t(product.ctaKey as TranslationKey)}
@@ -75,7 +77,7 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
             />
           </svg>
         )}
-      </a>
-    </div>
+      </div>
+    </a>
   );
 }
