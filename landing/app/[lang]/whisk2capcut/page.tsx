@@ -139,16 +139,19 @@ export default function Whisk2CapCutPage() {
               <img src="/images/whisk2capcut.png" alt="Whisk2CapCut" className="w-6 h-6 rounded" />
               Chrome Extension
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 flex items-center gap-4">
-              <img src="/images/whisk2capcut.png" alt="Whisk2CapCut" className="w-16 h-16 md:w-20 md:h-20 rounded-2xl" />
-              <span className="bg-gradient-to-r from-violet-500 to-purple-600 bg-clip-text text-transparent">
-                {t('whisk2capcut_hero_title')}
-              </span>
-            </h1>
-            {/* Slogan */}
-            <p className="text-2xl md:text-3xl font-bold text-green-500 dark:text-green-400 mb-4">
-              {t('whisk2capcut_hero_slogan')}
-            </p>
+            <div className="flex items-center gap-6 mb-4">
+              <img src="/images/whisk2capcut.png" alt="Whisk2CapCut" className="w-24 h-24 md:w-32 md:h-32 rounded-2xl" />
+              <div>
+                <h1 className="text-4xl md:text-6xl font-bold">
+                  <span className="bg-gradient-to-r from-violet-500 to-purple-600 bg-clip-text text-transparent">
+                    {t('whisk2capcut_hero_title')}
+                  </span>
+                </h1>
+                <p className="text-2xl md:text-3xl font-bold text-green-500 dark:text-green-400">
+                  {t('whisk2capcut_hero_slogan')}
+                </p>
+              </div>
+            </div>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
               {t('whisk2capcut_hero_subtitle')}
             </p>
