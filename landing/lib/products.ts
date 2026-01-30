@@ -69,7 +69,7 @@ export const socialLinks = [
   },
   {
     name: 'Discord',
-    url: 'https://discord.gg/touchizen',
+    url: 'https://discord.gg/DTMMs8TZDN',
     icon: 'discord',
   },
   {
