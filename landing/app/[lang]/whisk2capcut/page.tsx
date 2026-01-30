@@ -136,7 +136,7 @@ export default function Whisk2CapCutPage() {
         <div className="relative z-10 container-custom px-4">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-900/30 rounded-full text-violet-700 dark:text-violet-300 text-sm font-medium mb-6">
-              <span>🎬</span>
+              <img src="/images/whisk2capcut.png" alt="Whisk2CapCut" className="w-6 h-6 rounded" />
               Chrome Extension
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-2">

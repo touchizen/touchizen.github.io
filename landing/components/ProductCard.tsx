@@ -23,12 +23,20 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
     >
       {/* Header: Icon + Title/Slogan */}
       <div className="flex items-start gap-4 mb-4">
-        {/* Icon with gradient background */}
-        <div
-          className={`w-14 h-14 rounded-xl bg-gradient-to-br ${product.gradient} flex items-center justify-center text-2xl flex-shrink-0`}
-        >
-          {product.icon}
-        </div>
+        {/* Icon */}
+        {product.iconImage ? (
+          <img
+            src={product.iconImage}
+            alt={product.id}
+            className="w-14 h-14 rounded-xl flex-shrink-0"
+          />
+        ) : (
+          <div
+            className={`w-14 h-14 rounded-xl bg-gradient-to-br ${product.gradient} flex items-center justify-center text-2xl flex-shrink-0`}
+          >
+            {product.icon}
+          </div>
+        )}
 
         {/* Title and Slogan */}
         <div>
