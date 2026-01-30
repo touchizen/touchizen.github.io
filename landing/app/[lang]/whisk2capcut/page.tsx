@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Language, detectLanguage, translations, TranslationKey } from '@/lib/i18n';
+import { useState } from 'react';
+import { useRouter, useParams } from 'next/navigation';
+import { Language, languages, translations, TranslationKey } from '@/lib/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -58,25 +59,19 @@ function FileFormatTabs({
 }
 
 export default function Whisk2CapCutPage() {
-  const [lang, setLang] = useState<Language>('en');
-  const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+  const params = useParams();
+  const paramLang = params.lang as string;
 
-  useEffect(() => {
-    setMounted(true);
-    setLang(detectLanguage());
-  }, []);
+  // Validate lang parameter
+  const isValidLang = languages.some((l) => l.code === paramLang);
+  const lang: Language = isValidLang ? (paramLang as Language) : 'en';
 
   const t = (key: TranslationKey) => translations[lang][key];
 
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-white dark:bg-gray-950">
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
-        </div>
-      </div>
-    );
-  }
+  const handleLanguageChange = (newLang: Language) => {
+    router.push(`/${newLang}/whisk2capcut`);
+  };
 
   const features = [
     { title: 'whisk2capcut_feat1_title', desc: 'whisk2capcut_feat1_desc', icon: '🎨' },
@@ -128,7 +123,7 @@ export default function Whisk2CapCutPage() {
 
   return (
     <main className="min-h-screen">
-      <Header lang={lang} onLanguageChange={setLang} />
+      <Header lang={lang} onLanguageChange={handleLanguageChange} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">

@@ -11,9 +11,12 @@ interface ProductCardProps {
 export default function ProductCard({ product, lang }: ProductCardProps) {
   const t = (key: TranslationKey) => translations[lang][key];
 
+  // Add language prefix to internal links
+  const href = product.isExternal ? product.link : `/${lang}${product.link}`;
+
   return (
     <a
-      href={product.link}
+      href={href}
       target={product.isExternal ? '_blank' : undefined}
       rel={product.isExternal ? 'noopener noreferrer' : undefined}
       className="block card-hover bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 cursor-pointer"
