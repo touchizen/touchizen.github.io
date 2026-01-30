@@ -47,7 +47,14 @@ export default function Footer({ lang }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold gradient-text mb-4">Touchizen</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src="/images/touchizen.jpeg"
+                alt="Touchizen"
+                className="w-10 h-10 rounded-lg"
+              />
+              <h3 className="text-2xl font-bold gradient-text">Touchizen</h3>
+            </div>
             <p className="text-gray-400 mb-6 max-w-md">
               {t('footer_tagline')}
             </p>
