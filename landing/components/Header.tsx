@@ -42,7 +42,7 @@ export default function Header({ lang, onLanguageChange }: HeaderProps) {
           {/* Logo */}
           <a href={`/${lang}`} className="flex items-center gap-3">
             <img
-              src="/images/touchizen.jpeg"
+              src="/images/touchizen.png"
               alt="Touchizen"
               className="w-10 h-10 rounded-lg"
             />
