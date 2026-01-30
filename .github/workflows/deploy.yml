@@ -44,6 +44,7 @@ jobs:
           cp -r srt2short landing/out/ 2>/dev/null || true
           cp -r solvemath landing/out/ 2>/dev/null || true
           cp -r transnote landing/out/ 2>/dev/null || true
+          cp -r guide landing/out/ 2>/dev/null || true
           # Copy root-level files
           cp privacy.html landing/out/ 2>/dev/null || true
           cp service.html landing/out/ 2>/dev/null || true
