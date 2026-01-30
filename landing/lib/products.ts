@@ -25,7 +25,7 @@ export const products: Product[] = [
     isExternal: false,
     gradient: 'from-violet-500 to-purple-600',
     icon: '🎬',
-    iconImage: '/images/whisk2capcut.png',
+    iconImage: '/images/whisk2capcut.svg',
     hasDetailPage: true,
   },
 ];

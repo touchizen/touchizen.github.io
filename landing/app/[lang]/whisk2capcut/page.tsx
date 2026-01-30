@@ -136,11 +136,11 @@ export default function Whisk2CapCutPage() {
         <div className="relative z-10 container-custom px-4">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-900/30 rounded-full text-violet-700 dark:text-violet-300 text-sm font-medium mb-6">
-              <img src="/images/whisk2capcut.png" alt="Whisk2CapCut" className="w-6 h-6 rounded" />
+              <img src="/images/whisk2capcut.svg" alt="Whisk2CapCut" className="w-6 h-6 rounded" />
               Chrome Extension
             </div>
             <div className="flex items-center gap-6 mb-4">
-              <img src="/images/whisk2capcut.png" alt="Whisk2CapCut" className="w-24 h-24 md:w-32 md:h-32 rounded-2xl" />
+              <img src="/images/whisk2capcut.svg" alt="Whisk2CapCut" className="w-24 h-24 md:w-32 md:h-32 rounded-2xl" />
               <div>
                 <h1 className="text-4xl md:text-6xl font-bold">
                   <span className="bg-gradient-to-r from-violet-500 to-purple-600 bg-clip-text text-transparent">
