@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whisk2CapCut - 파일 가져오기 가이드</title>
+  <meta name="description" content="CSV, SRT, 텍스트 파일을 Whisk2CapCut에 가져오는 방법을 알아보세요.">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/whisk2capcut.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #8b5cf6, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+    .tab-btn.active {
+      border-bottom-color: #8b5cf6;
+      color: #8b5cf6;
+    }
+    .dark .tab-btn.active {
+      color: #a78bfa;
+    }
+    .style-tag-chip {
+      transition: all 0.15s ease;
+    }
+    .style-tag-chip:hover {
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="/guide/ko/whisk2capcut/" class="flex items-center gap-2">
+          <img src="/assets/images/whisk2capcut.svg" alt="Whisk2CapCut" class="w-8 h-8 rounded-lg">
+          <span class="text-lg font-bold gradient-text">Whisk2CapCut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- Language Dropdown -->
+          <div class="relative">
+            <button id="langToggle" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+              <span>🇰🇷</span>
+              <span>한국어</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="langDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
+              <a href="/guide/en/whisk2capcut/" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇺🇸</span> English
+              </a>
+              <a href="/guide/ko/whisk2capcut/" class="flex items-center gap-2 px-4 py-2.5 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium">
+                <span>🇰🇷</span> 한국어
+              </a>
+              <a href="/guide/de/whisk2capcut/" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇩🇪</span> Deutsch
+              </a>
+              <a href="/guide/ja/whisk2capcut/" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇯🇵</span> 日本語
+              </a>
+            </div>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          </svg>
+          가져오기 가이드
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">파일 가져오기 가이드</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          CSV, SRT, 텍스트 파일을 Whisk2CapCut에 가져오는 방법
+        </p>
+      </div>
+
+      <!-- Supported File Types -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📄</span>
+          지원하는 파일 형식
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">📝</span>
+              <span class="font-semibold text-amber-700 dark:text-amber-300">일반 텍스트</span>
+              <span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">가장 쉬움</span>
+            </div>
+            <p class="text-sm text-amber-600 dark:text-amber-400">한 줄에 하나의 장면, 간단한 형식</p>
+          </div>
+          <div class="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">📊</span>
+              <span class="font-semibold text-blue-700 dark:text-blue-300">장면 CSV</span>
+            </div>
+            <p class="text-sm text-blue-600 dark:text-blue-400">프롬프트, 자막, 시간 정보를 포함한 장면 정보</p>
+          </div>
+          <div class="p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">🖼️</span>
+              <span class="font-semibold text-green-700 dark:text-green-300">참조 CSV</span>
+            </div>
+            <p class="text-sm text-green-600 dark:text-green-400">캐릭터, 배경, 스타일 참조 이미지</p>
+          </div>
+          <div class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">🎬</span>
+              <span class="font-semibold text-purple-700 dark:text-purple-300">SRT 자막</span>
+            </div>
+            <p class="text-sm text-purple-600 dark:text-purple-400">표준 자막 형식, 자동으로 장면으로 변환</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plain Text Format -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📝</span>
+          일반 텍스트 형식
+          <span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">가장 쉬움</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          가장 간단한 형식입니다. 한 줄에 하나의 장면 설명을 작성하면 됩니다. 각 줄이 기본 시간으로 별도의 장면이 됩니다.
+        </p>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">예시</h3>
+        <div class="relative">
+          <pre id="text-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">산봉우리 위로 떠오르는 일출
+계곡을 걷는 두 여행자
+별빛 아래 캠프파이어
+평화로운 마을에서의 여정의 끝</pre>
+          <button onclick="copyCode('text-example')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scene CSV Format -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📊</span>
+          장면 CSV 형식
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          장면 CSV 파일은 각 장면의 내용을 정의합니다. 이미지 생성 프롬프트, 자막, 타이밍 등을 포함합니다.
+        </p>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">필수 컬럼</h3>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm border-gray-200 dark:border-gray-700">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">컬럼</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">설명</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">예시</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">prompt</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">이미지 생성 프롬프트</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">석양 속 절벽에 서 있는 영웅</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">subtitle</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">장면의 자막 텍스트</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">여기서 여정이 시작된다.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">characters</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">캐릭터 이름 (세미콜론 구분)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">영웅;멘토</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">scene_tag</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">배경 참조 태그</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">숲, 궁전, 마을</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">style_tag</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">비주얼 스타일 태그</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">cinematic, ghibli, ink-wash</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">duration</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">장면 시간 (초)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- CSV Example with Tabs -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">CSV 예시</h3>
+        <div class="mb-4">
+          <!-- Tab Buttons -->
+          <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+            <button onclick="switchTab('scene', 'text')" id="scene-tab-text" class="tab-btn active px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📝 텍스트
+            </button>
+            <button onclick="switchTab('scene', 'table')" id="scene-tab-table" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📊 표
+            </button>
+          </div>
+
+          <!-- Text View -->
+          <div id="scene-view-text" class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_sample.csv</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('scene-csv-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  복사
+                </button>
+                <a href="/samples/scene-sample.csv" download class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  다운로드
+                </a>
+              </div>
+            </div>
+            <pre id="scene-csv-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne","늙은 현명한 왕이 황금 왕좌에 앉아있다",왕,궁전,cinematic,5
+"Beautiful queen enters through doors","아름다운 왕비가 화려한 문으로 들어온다",왕비,궁전,cinematic,4
+"King and queen discuss matters","왕과 왕비가 중요한 문제를 논의한다",왕;왕비,궁전,cinematic,5</pre>
+          </div>
+
+          <!-- Table View -->
+          <div id="scene-view-table" class="hidden">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_sample.csv</span>
+              <a href="/samples/scene-sample.csv" download class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                다운로드
+              </a>
+            </div>
+            <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="bg-gray-100 dark:bg-gray-800">
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">prompt</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">subtitle</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">characters</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">scene_tag</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">style_tag</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">duration</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-gray-900">
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">A wise old king sits on golden throne</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">늙은 현명한 왕이 황금 왕좌에 앉아있다</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">왕</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">궁전</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">5</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">Beautiful queen enters through doors</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">아름다운 왕비가 화려한 문으로 들어온다</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">왕비</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">궁전</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">4</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">King and queen discuss matters</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">왕과 왕비가 중요한 문제를 논의한다</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">왕;왕비</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">궁전</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">5</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reference CSV Format -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🖼️</span>
+          참조 CSV 형식
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          참조 CSV 파일은 여러 장면에서 일관된 비주얼 생성을 위해 캐릭터, 배경, 스타일을 정의합니다.
+        </p>
+
+        <!-- Tag Matching Explanation - IMPORTANT -->
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-5 mb-6">
+          <h3 class="font-bold text-amber-800 dark:text-amber-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">🔗</span>
+            태그 매칭 시스템 (매우 중요!)
+          </h3>
+          <p class="text-amber-700 dark:text-amber-400 text-sm mb-4">
+            참조 CSV의 <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code> 필드는 장면 CSV의 태그와 <strong>자동으로 매칭</strong>됩니다.
+            이미지 생성 시 매칭된 참조 이미지가 Whisk에 업로드되어 일관된 스타일/캐릭터를 유지합니다.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-blue-700 dark:text-blue-300 mb-2">👤 Character 매칭</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">type: character</code><br>
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">name: 왕</code>
+              </div>
+              <div class="mt-2 text-xs">
+                ↔️ 장면 CSV의 <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters</code> 컬럼
+              </div>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-green-700 dark:text-green-300 mb-2">🏞️ Background 매칭</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">type: background</code><br>
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">name: 궁전</code>
+              </div>
+              <div class="mt-2 text-xs">
+                ↔️ 장면 CSV의 <code class="bg-green-100 dark:bg-green-900 px-1 rounded">scene_tag</code> 컬럼
+              </div>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-purple-700 dark:text-purple-300 mb-2">🎨 Style 매칭</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">type: style</code><br>
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">name: cinematic</code>
+              </div>
+              <div class="mt-2 text-xs">
+                ↔️ 장면 CSV의 <code class="bg-purple-100 dark:bg-purple-900 px-1 rounded">style_tag</code> 컬럼
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 p-3 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+            <div class="font-semibold text-gray-800 dark:text-gray-200 mb-2">💡 매칭 예시</div>
+            <div class="text-xs text-gray-600 dark:text-gray-400 font-mono">
+              장면 CSV: <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters: 왕;왕비</code>, <code class="bg-green-100 dark:bg-green-900 px-1 rounded">scene_tag: 궁전</code>, <code class="bg-purple-100 dark:bg-purple-900 px-1 rounded">style_tag: cinematic</code><br>
+              <span class="text-gray-500">→ 참조 이미지 자동 적용: 왕.png + 왕비.png + 궁전.png + cinematic.png</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">필수 컬럼</h3>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm border-gray-200 dark:border-gray-700">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">컬럼</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">설명</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">예시</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">type</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">참조 타입 (character / background / style)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">character</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">name</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">태그 매칭에 사용되는 이름 (장면 CSV와 동일해야 함)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">왕, 궁전, cinematic</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">image_path</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">참조 이미지 경로 또는 URL</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">./images/king.png</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">description</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">상세 설명 (이미지 생성에 참고)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">흰 수염의 현명한 왕</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- CSV Example with Tabs -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">CSV 예시</h3>
+        <div class="mb-4">
+          <!-- Tab Buttons -->
+          <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+            <button onclick="switchTab('ref', 'text')" id="ref-tab-text" class="tab-btn active px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📝 텍스트
+            </button>
+            <button onclick="switchTab('ref', 'table')" id="ref-tab-table" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📊 표
+            </button>
+          </div>
+
+          <!-- Text View -->
+          <div id="ref-view-text" class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">reference_sample.csv</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('ref-csv-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  복사
+                </button>
+                <a href="/samples/reference-sample.csv" download class="text-xs px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  다운로드
+                </a>
+              </div>
+            </div>
+            <pre id="ref-csv-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">type,name,image_path,description
+character,왕,./images/king.png,흰 수염과 황금 왕관을 쓴 현명한 왕
+character,왕비,./images/queen.png,붉은 드레스를 입은 우아한 왕비
+background,궁전,./images/palace.png,화려한 장식의 왕실 궁전 내부
+style,cinematic,./images/cinematic.png,영화 같은 드라마틱 조명</pre>
+          </div>
+
+          <!-- Table View -->
+          <div id="ref-view-table" class="hidden">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">reference_sample.csv</span>
+              <a href="/samples/reference-sample.csv" download class="text-xs px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                다운로드
+              </a>
+            </div>
+            <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="bg-gray-100 dark:bg-gray-800">
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">type</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">name</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">image_path</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">description</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-gray-900">
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700"><span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded text-xs">character</span></td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-medium">왕</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono text-gray-500">./images/king.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">흰 수염과 황금 왕관을 쓴 현명한 왕</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700"><span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded text-xs">character</span></td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-medium">왕비</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono text-gray-500">./images/queen.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">붉은 드레스를 입은 우아한 왕비</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700"><span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded text-xs">background</span></td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-medium">궁전</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono text-gray-500">./images/palace.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">화려한 장식의 왕실 궁전 내부</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700"><span class="px-2 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded text-xs">style</span></td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-medium">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono text-gray-500">./images/cinematic.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">영화 같은 드라마틱 조명</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Style Tag Reference -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎨</span>
+          Style Tag 목록
+          <span class="text-xs bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-2 py-0.5 rounded-full">87개</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded">style_tag</code> 컬럼에 사용할 수 있는 스타일 ID 목록입니다.
+          참조 CSV의 style 타입 name에도 동일하게 사용할 수 있습니다.
+        </p>
+
+        <!-- Style Categories -->
+        <div class="space-y-4">
+          <!-- Animation -->
+          <div>
+            <button onclick="toggleCategory('cat-animation')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>🎌</span>
+              <span class="font-semibold">애니메이션 스타일</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(12개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-animation-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-animation" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">korean-ani</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">ghibli</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">disney-pixar</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">cartoon-3d</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">korean-romance-webtoon</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">semi-animation</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">stick-figure</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">90s-anime</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">manhwa</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">chibi</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">makoto-shinkai</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">claymation</span>
+            </div>
+          </div>
+
+          <!-- Photography -->
+          <div>
+            <button onclick="toggleCategory('cat-photography')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>📷</span>
+              <span class="font-semibold">사실적/사진 스타일</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(8개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-photography-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-photography" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">photorealistic</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">semi-realistic</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">portrait</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">cinematic</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">documentary</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">fashion</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">street-photo</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">drone-aerial</span>
+            </div>
+          </div>
+
+          <!-- Film & Drama -->
+          <div>
+            <button onclick="toggleCategory('cat-film')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>🎬</span>
+              <span class="font-semibold">영화/드라마 스타일</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(8개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-film-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-film" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">kdrama</span>
+              <span class="style-tag-chip px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">sageuk</span>
+              <span class="style-tag-chip px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">noir</span>
+              <span class="style-tag-chip px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">thriller</span>
+              <span class="style-tag-chip px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">horror</span>
+              <span class="style-tag-chip px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">melodrama</span>
+              <span class="style-tag-chip px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">blockbuster</span>
+              <span class="style-tag-chip px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">indie-film</span>
+            </div>
+          </div>
+
+          <!-- Asian Traditional -->
+          <div>
+            <button onclick="toggleCategory('cat-asian')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>🏯</span>
+              <span class="font-semibold">한국/동양 전통</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(6개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-asian-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-asian" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">minhwa</span>
+              <span class="style-tag-chip px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">ink-wash</span>
+              <span class="style-tag-chip px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">dancheong</span>
+              <span class="style-tag-chip px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">ukiyo-e</span>
+              <span class="style-tag-chip px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">chinese-painting</span>
+              <span class="style-tag-chip px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">hanbok-portrait</span>
+            </div>
+          </div>
+
+          <!-- Western Art -->
+          <div>
+            <button onclick="toggleCategory('cat-western')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>🎨</span>
+              <span class="font-semibold">서양 전통 예술</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(10개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-western-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-western" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">watercolor</span>
+              <span class="style-tag-chip px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">oil-painting</span>
+              <span class="style-tag-chip px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">impressionist</span>
+              <span class="style-tag-chip px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">renaissance</span>
+              <span class="style-tag-chip px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">baroque</span>
+              <span class="style-tag-chip px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">expressionist</span>
+              <span class="style-tag-chip px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">surrealist</span>
+              <span class="style-tag-chip px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">art-nouveau</span>
+              <span class="style-tag-chip px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">art-deco</span>
+              <span class="style-tag-chip px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">romanticism</span>
+            </div>
+          </div>
+
+          <!-- Illustration -->
+          <div>
+            <button onclick="toggleCategory('cat-illustration')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>✏️</span>
+              <span class="font-semibold">일러스트/드로잉</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(8개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-illustration-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-illustration" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">sketch</span>
+              <span class="style-tag-chip px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">charcoal</span>
+              <span class="style-tag-chip px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">pen-ink</span>
+              <span class="style-tag-chip px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">colored-pencil</span>
+              <span class="style-tag-chip px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">children-book</span>
+              <span class="style-tag-chip px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">editorial</span>
+              <span class="style-tag-chip px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">botanical</span>
+              <span class="style-tag-chip px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">fashion-sketch</span>
+            </div>
+          </div>
+
+          <!-- Digital Art -->
+          <div>
+            <button onclick="toggleCategory('cat-digital')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>💻</span>
+              <span class="font-semibold">디지털/모던 아트</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(8개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-digital-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-digital" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">concept-art</span>
+              <span class="style-tag-chip px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">digital-art</span>
+              <span class="style-tag-chip px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">fantasy-art</span>
+              <span class="style-tag-chip px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">dark-fantasy</span>
+              <span class="style-tag-chip px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">graphic-novel</span>
+              <span class="style-tag-chip px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">vector-art</span>
+              <span class="style-tag-chip px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">vaporwave</span>
+              <span class="style-tag-chip px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">synthwave</span>
+            </div>
+          </div>
+
+          <!-- Sci-Fi & Fantasy -->
+          <div>
+            <button onclick="toggleCategory('cat-scifi')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>🚀</span>
+              <span class="font-semibold">SF/판타지 장르</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(6개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-scifi-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-scifi" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">cyberpunk</span>
+              <span class="style-tag-chip px-2 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">steampunk</span>
+              <span class="style-tag-chip px-2 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">sci-fi</span>
+              <span class="style-tag-chip px-2 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">post-apocalyptic</span>
+              <span class="style-tag-chip px-2 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">space-opera</span>
+              <span class="style-tag-chip px-2 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">mythological</span>
+            </div>
+          </div>
+
+          <!-- Game & 3D -->
+          <div>
+            <button onclick="toggleCategory('cat-game')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>🎮</span>
+              <span class="font-semibold">게임/3D 스타일</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(6개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-game-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-game" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">3d-render</span>
+              <span class="style-tag-chip px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">low-poly</span>
+              <span class="style-tag-chip px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">pixel-art</span>
+              <span class="style-tag-chip px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">isometric</span>
+              <span class="style-tag-chip px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">unreal-engine</span>
+              <span class="style-tag-chip px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">nintendo</span>
+            </div>
+          </div>
+
+          <!-- Effects -->
+          <div>
+            <button onclick="toggleCategory('cat-effects')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>📸</span>
+              <span class="font-semibold">특수 효과/기법</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(10개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-effects-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-effects" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">vintage</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">sepia</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">monochrome</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">double-exposure</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">long-exposure</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">tilt-shift</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">hdr</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">infrared</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">glitch</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">silhouette</span>
+            </div>
+          </div>
+
+          <!-- Misc -->
+          <div>
+            <button onclick="toggleCategory('cat-misc')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>🎭</span>
+              <span class="font-semibold">기타/특수 스타일</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(11개)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-misc-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-misc" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">pop-art</span>
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">minimalist</span>
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">abstract</span>
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">collage</span>
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">stained-glass</span>
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">mosaic</span>
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">graffiti</span>
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">propaganda</span>
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">pastel</span>
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">neon</span>
+              <span class="style-tag-chip px-2 py-1 bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">paper-cut</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">💡 스타일 태그를 클릭하면 복사됩니다.</p>
+      </div>
+
+      <!-- SRT Format -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🎬</span>
+          SRT 자막 형식
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          표준 SRT 자막 파일을 가져옵니다. 각 자막 블록은 자동으로 장면으로 변환되며, 자막 텍스트가 프롬프트와 자막으로 사용됩니다. 시간은 타임코드에서 자동 계산됩니다.
+        </p>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">SRT 구조</h3>
+        <div class="relative">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">sample.srt</span>
+            <div class="flex gap-2">
+              <button onclick="copyCode('srt-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                복사
+              </button>
+              <a href="/samples/sample.srt" download class="text-xs px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                다운로드
+              </a>
+            </div>
+          </div>
+          <pre id="srt-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">1
+00:00:00,000 --> 00:00:05,000
+영웅이 신비로운 숲에서 깨어난다.
+
+2
+00:00:05,000 --> 00:00:09,500
+이상한 빛이 앞으로 나아갈 길을 안내한다.
+
+3
+00:00:09,500 --> 00:00:14,000
+멀리서 신비한 인물이 나타난다.</pre>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">
+          번호가 매겨진 각 블록이 하나의 장면이 됩니다. 타임코드로 장면 시간이 자동 결정됩니다.
+        </p>
+
+        <!-- TTS Service Info -->
+        <div class="mt-6 bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-xl border border-violet-200 dark:border-violet-800 p-4">
+          <h4 class="font-semibold text-violet-800 dark:text-violet-300 mb-3 flex items-center gap-2">
+            <span class="text-lg">🎙️</span>
+            TTS 서비스에서 SRT 자동 생성하기
+          </h4>
+          <p class="text-sm text-violet-700 dark:text-violet-400 mb-4">
+            아래 TTS(Text-to-Speech) 서비스들은 음성을 생성할 때 <strong>SRT 자막 파일을 자동으로 함께 생성</strong>해 줍니다.
+            나레이션 음성과 함께 자막을 받아서 Whisk2CapCut에 바로 가져올 수 있습니다.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-violet-200 dark:border-violet-700 hover:border-violet-400 dark:hover:border-violet-500 transition-colors group">
+              <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">11</div>
+              <div>
+                <div class="font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">ElevenLabs</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">고품질 AI 음성 + SRT 지원</div>
+              </div>
+              <svg class="w-4 h-4 ml-auto text-gray-400 group-hover:text-violet-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <a href="https://typecast.ai" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-violet-200 dark:border-violet-700 hover:border-violet-400 dark:hover:border-violet-500 transition-colors group">
+              <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">TC</div>
+              <div>
+                <div class="font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Typecast</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">한국어 특화 + 다양한 목소리</div>
+              </div>
+              <svg class="w-4 h-4 ml-auto text-gray-400 group-hover:text-violet-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <a href="https://vrew.voyagerx.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-violet-200 dark:border-violet-700 hover:border-violet-400 dark:hover:border-violet-500 transition-colors group">
+              <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">V</div>
+              <div>
+                <div class="font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Vrew</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">영상 편집 + AI 음성/자막</div>
+              </div>
+              <svg class="w-4 h-4 ml-auto text-gray-400 group-hover:text-violet-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
+          <p class="text-xs text-violet-600 dark:text-violet-400 mt-3">
+            💡 <strong>팁:</strong> TTS 서비스에서 음성을 생성한 후, SRT 파일을 다운로드하여 Whisk2CapCut에 가져오면 타이밍이 정확하게 맞춰집니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- AI Generation Meta Prompt -->
+      <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🤖</span>
+          AI로 CSV 자동 생성하기
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Claude, ChatGPT, Gemini 등의 AI 도구에 아래 프롬프트를 붙여넣고 스토리를 입력하면 CSV 파일을 자동으로 생성할 수 있습니다.
+        </p>
+
+        <!-- Scene CSV Prompt -->
+        <div class="mb-6">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+            📊 장면 CSV 생성 프롬프트
+          </h3>
+
+          <div class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_csv_prompt_ko.txt</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('scene-prompt')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  복사
+                </button>
+                <button onclick="downloadTextFile('scene-prompt', 'scene_csv_prompt_ko.txt')" class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  다운로드
+                </button>
+              </div>
+            </div>
+
+            <pre id="scene-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">당신은 Whisk2CapCut 영상 제작을 위한 장면 분석 어시스턴트입니다.
+
+스토리나 대본을 받으면, 다음 컬럼을 가진 장면 CSV 파일을 생성하세요:
+- prompt: AI 이미지 생성을 위한 영어 장면 설명 (구도, 조명, 분위기, 카메라 앵글 포함)
+- subtitle: 장면의 한국어 자막 (간결하게, 30자 이내)
+- characters: 장면에 등장하는 캐릭터 이름 (여러 명이면 세미콜론으로 구분, 예: 왕;왕비)
+- scene_tag: 배경/장소 태그 (일관된 태그 사용, 예: 궁전, 숲, 마을)
+- style_tag: 아트 스타일 (일관되게 유지, 예: cinematic, ghibli, ink-wash)
+- duration: 장면 지속 시간(초) (일반 3-5초, 빠른 컷 2초, 극적인 장면 6초 이상)
+
+규칙:
+1. 각 행 = 하나의 시각적 장면 (단일 이미지 프레임)
+2. 프롬프트는 설명적이되 200자 이내로 유지
+3. 일관된 캐릭터 이름 사용 (참조 이미지와 매칭됨)
+4. 유사한 장소는 하나의 scene_tag로 그룹화
+5. 페이싱 고려: 극적 효과를 위해 지속 시간 변화
+6. 헤더 행이 있는 CSV로 출력, 쉼표가 포함된 값은 따옴표로 감싸기
+
+출력 예시:
+prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne, dramatic lighting","현명한 왕이 왕좌에 앉아있다",왕,궁전,cinematic,5
+
+이제 이 스토리를 장면으로 분해하세요:</pre>
+          </div>
+        </div>
+
+        <!-- Reference CSV Prompt -->
+        <div class="mb-6">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+            🖼️ 참조 CSV 생성 프롬프트
+          </h3>
+
+          <div class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">reference_csv_prompt_ko.txt</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('ref-prompt')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  복사
+                </button>
+                <button onclick="downloadTextFile('ref-prompt', 'reference_csv_prompt_ko.txt')" class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  다운로드
+                </button>
+              </div>
+            </div>
+
+            <pre id="ref-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">당신은 Whisk2CapCut을 위한 참조 계획 어시스턴트입니다.
+
+스토리를 받으면, 다음 컬럼을 가진 참조 CSV를 생성하세요:
+- type: 참조 타입 (character, background, 또는 style)
+- name: 태그 매칭용 이름 (장면 CSV 태그와 정확히 일치해야 함)
+- image_path: 제안하는 이미지 파일명
+- description: 참조 이미지 생성/검색을 위한 상세 설명
+
+캐릭터: 모든 고유 캐릭터와 시각적 외모 나열
+배경: 언급된 모든 고유 장소/설정 나열
+스타일: 스토리 분위기에 맞는 1-2개 아트 스타일 제안
+
+중요: 'name' 필드는 다음과 정확히 일치해야 합니다:
+- character 타입 → 장면 CSV의 'characters' 컬럼과 매칭
+- background 타입 → 장면 CSV의 'scene_tag' 컬럼과 매칭
+- style 타입 → 장면 CSV의 'style_tag' 컬럼과 매칭
+
+출력 예시:
+type,name,image_path,description
+character,왕,./images/king.png,"흰 수염과 황금 왕관을 쓴 현명한 노왕"
+background,궁전,./images/palace.png,"붉은 카펫이 깔린 웅장한 궁전 왕좌실"
+style,cinematic,./images/cinematic.png,"깊이감 있는 극적인 영화 조명"
+
+이제 이 스토리를 위한 참조 목록을 생성하세요:</pre>
+          </div>
+        </div>
+
+        <!-- AI Tool Usage Tips -->
+        <div class="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4">
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💡 AI 도구별 사용 팁</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
+              <div class="font-semibold text-orange-700 dark:text-orange-300 mb-1">🟠 Claude</div>
+              <p class="text-orange-600 dark:text-orange-400 text-xs">
+                긴 스토리 처리에 강함. Artifacts 기능으로 CSV 파일을 직접 다운로드 가능.
+              </p>
+            </div>
+            <div class="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+              <div class="font-semibold text-green-700 dark:text-green-300 mb-1">🟢 ChatGPT</div>
+              <p class="text-green-600 dark:text-green-400 text-xs">
+                Code Interpreter로 CSV 파일 생성 후 다운로드. 표 형식으로 미리보기 가능.
+              </p>
+            </div>
+            <div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div class="font-semibold text-blue-700 dark:text-blue-300 mb-1">🔵 Gemini</div>
+              <p class="text-blue-600 dark:text-blue-400 text-xs">
+                Google 문서와 연동 가능. 스프레드시트로 직접 내보내기 용이.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How to Import -->
+      <div class="bg-gradient-to-br from-primary-50 to-purple-50 dark:from-primary-900/20 dark:to-purple-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          파일 가져오는 방법
+        </h2>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Whisk2CapCut 확장 프로그램 열기</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Chrome 툴바에서 확장 프로그램 아이콘 클릭</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Import 버튼 클릭</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">사이드바 또는 툴바에 위치</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">파일 선택</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">컴퓨터에서 CSV, SRT 또는 TXT 파일 선택</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">검토 및 생성</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">가져온 장면을 확인하고 이미지 생성 시작</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download Sample Files -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📥</span>
+          샘플 파일 다운로드
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          빠르게 시작하려면 샘플 파일을 다운로드하세요:
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/samples/scene-sample.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            scene_sample.csv
+          </a>
+          <a href="/samples/reference-sample.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            reference_sample.csv
+          </a>
+          <a href="/samples/sample.srt" download class="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            sample.srt
+          </a>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          관련 가이드
+        </h2>
+        <a href="/guide/ko/whisk2capcut/capcut-export.html" class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+          CapCut으로 내보내기 가이드
+        </a>
+      </div>
+
+      <!-- Back to Extension -->
+      <div class="text-center">
+        <a href="/guide/ko/whisk2capcut/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Whisk2CapCut으로 돌아가기
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026 Touchizen. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Language dropdown toggle
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    // Copy code function
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        // Show feedback
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = btn.innerHTML.includes('복사')
+          ? '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 완료!'
+          : '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+
+    // Tab switching function
+    function switchTab(section, tab) {
+      // Hide all views
+      document.getElementById(`${section}-view-text`).classList.add('hidden');
+      document.getElementById(`${section}-view-table`).classList.add('hidden');
+
+      // Remove active from all tabs
+      document.getElementById(`${section}-tab-text`).classList.remove('active');
+      document.getElementById(`${section}-tab-table`).classList.remove('active');
+
+      // Show selected view and activate tab
+      document.getElementById(`${section}-view-${tab}`).classList.remove('hidden');
+      document.getElementById(`${section}-tab-${tab}`).classList.add('active');
+    }
+
+    // Category toggle function
+    function toggleCategory(categoryId) {
+      const content = document.getElementById(categoryId);
+      const icon = document.getElementById(categoryId + '-icon');
+
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    }
+
+    // Copy style tag function
+    function copyStyleTag(element) {
+      const tag = element.textContent;
+      navigator.clipboard.writeText(tag).then(() => {
+        const original = element.textContent;
+        element.textContent = '✓ 복사됨';
+        element.classList.add('bg-green-200', 'dark:bg-green-800');
+        setTimeout(() => {
+          element.textContent = original;
+          element.classList.remove('bg-green-200', 'dark:bg-green-800');
+        }, 1000);
+      });
+    }
+
+    // Download text file from element content
+    function downloadTextFile(elementId, filename) {
+      const element = document.getElementById(elementId);
+      const content = element.textContent;
+
+      const blob = new Blob([content], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

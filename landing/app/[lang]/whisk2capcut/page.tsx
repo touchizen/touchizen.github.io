@@ -921,7 +921,7 @@ Now create the SRT file for this story:`}</pre>
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 mb-6">
                 {[
                   { step: '1', key: 'import_step1' },
                   { step: '2', key: 'import_step2' },
@@ -938,6 +938,17 @@ Now create the SRT file for this story:`}</pre>
                   </div>
                 ))}
               </div>
+
+              {/* Detailed Guide Link */}
+              <a
+                href={`/guide/${lang}/whisk2capcut/`}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded-lg font-medium text-sm hover:bg-violet-200 dark:hover:bg-violet-900/50 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                {lang === 'ko' ? '자세한 가이드 보기' : lang === 'ja' ? '詳細ガイドを見る' : lang === 'de' ? 'Ausführliche Anleitung' : 'View Detailed Guide'}
+              </a>
             </div>
 
             {/* Output Structure */}

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whisk2CapCut - ファイルインポートガイド</title>
+  <meta name="description" content="CSV、SRT、テキストファイルをWhisk2CapCutにインポートする方法をご案内します。">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/whisk2capcut.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #8b5cf6, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="/guide/ja/whisk2capcut/" class="flex items-center gap-2">
+          <img src="/assets/images/whisk2capcut.svg" alt="Whisk2CapCut" class="w-8 h-8 rounded-lg">
+          <span class="text-lg font-bold gradient-text">Whisk2CapCut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- Language Dropdown -->
+          <div class="relative">
+            <button id="langToggle" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+              <span>🇯🇵</span>
+              <span>日本語</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="langDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
+              <a href="/guide/en/whisk2capcut/" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇺🇸</span> English
+              </a>
+              <a href="/guide/ko/whisk2capcut/" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇰🇷</span> 한국어
+              </a>
+              <a href="/guide/de/whisk2capcut/" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇩🇪</span> Deutsch
+              </a>
+              <a href="/guide/ja/whisk2capcut/" class="flex items-center gap-2 px-4 py-2.5 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium">
+                <span>🇯🇵</span> 日本語
+              </a>
+            </div>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          </svg>
+          インポートガイド
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">ファイルインポートガイド</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          CSV、SRT、テキストファイルをWhisk2CapCutにインポートする方法
+        </p>
+      </div>
+
+      <!-- Supported File Types -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📄</span>
+          対応ファイル形式
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">📝</span>
+              <span class="font-semibold text-amber-700 dark:text-amber-300">プレーンテキスト</span>
+              <span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">最も簡単</span>
+            </div>
+            <p class="text-sm text-amber-600 dark:text-amber-400">1行1シーン、シンプルな形式</p>
+          </div>
+          <div class="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">📊</span>
+              <span class="font-semibold text-blue-700 dark:text-blue-300">シーンCSV</span>
+            </div>
+            <p class="text-sm text-blue-600 dark:text-blue-400">プロンプト、字幕、時間を含むシーン情報</p>
+          </div>
+          <div class="p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">🖼️</span>
+              <span class="font-semibold text-green-700 dark:text-green-300">リファレンスCSV</span>
+            </div>
+            <p class="text-sm text-green-600 dark:text-green-400">キャラクター、背景、スタイルの参照</p>
+          </div>
+          <div class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">🎬</span>
+              <span class="font-semibold text-purple-700 dark:text-purple-300">SRT字幕</span>
+            </div>
+            <p class="text-sm text-purple-600 dark:text-purple-400">標準字幕形式、自動的にシーンに変換</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plain Text Format -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📝</span>
+          プレーンテキスト形式
+          <span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">最も簡単</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          最もシンプルな形式です。1行に1つのシーン説明を書くだけです。各行がデフォルトの時間で別々のシーンになります。
+        </p>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">例</h3>
+        <div class="relative">
+          <pre id="text-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">山頂に昇る日の出
+谷を歩く二人の旅人
+星空の下のキャンプファイヤー
+平和な村での旅の終わり</pre>
+          <button onclick="copyCode('text-example')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scene CSV Format -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📊</span>
+          シーンCSV形式
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          シーンCSVファイルは各シーンの内容を定義します。画像生成プロンプト、字幕、タイミングなどを含みます。
+        </p>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">必須カラム</h3>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm border-gray-200 dark:border-gray-700">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">カラム</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">説明</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">例</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">prompt</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">画像生成プロンプト</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">夕日の崖に立つ英雄</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">subtitle</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">シーンの字幕テキスト</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">ここから旅が始まる。</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">characters</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">キャラクター名（カンマ区切り）</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">英雄, 師匠</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">scene_tag</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">シーンカテゴリタグ</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">opening, action, dialogue</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">style_tag</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">ビジュアルスタイルタグ</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">cinematic, anime, realistic</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">duration</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">シーン時間（秒）</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">CSV例</h3>
+        <div class="mb-4">
+          <!-- Tab Buttons -->
+          <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+            <button onclick="switchTab('scene', 'text')" id="scene-tab-text" class="tab-btn active px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📝 テキスト
+            </button>
+            <button onclick="switchTab('scene', 'table')" id="scene-tab-table" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📊 テーブル
+            </button>
+          </div>
+
+          <!-- Text View -->
+          <div id="scene-view-text" class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_sample.csv</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('scene-csv-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  コピー
+                </button>
+                <a href="/samples/scene-sample.csv" download class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  ダウンロード
+                </a>
+              </div>
+            </div>
+            <pre id="scene-csv-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne","賢明な老王が黄金の王座に座っている",王,宮殿,cinematic,5
+"Beautiful queen enters through doors","美しい王妃が豪華な扉から入ってくる",王妃,宮殿,cinematic,4
+"King and queen discuss matters","王と王妃が重要な問題を議論する",王;王妃,宮殿,cinematic,5</pre>
+          </div>
+
+          <!-- Table View -->
+          <div id="scene-view-table" class="hidden">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_sample.csv</span>
+              <a href="/samples/scene-sample.csv" download class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                ダウンロード
+              </a>
+            </div>
+            <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="bg-gray-100 dark:bg-gray-800">
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">prompt</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">subtitle</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">characters</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">scene_tag</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">style_tag</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">duration</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-gray-900">
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">A wise old king sits on golden throne</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">賢明な老王が黄金の王座に座っている</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">王</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">宮殿</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">5</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">Beautiful queen enters through doors</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">美しい王妃が豪華な扉から入ってくる</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">王妃</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">宮殿</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">4</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">King and queen discuss matters</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">王と王妃が重要な問題を議論する</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">王;王妃</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">宮殿</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">5</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reference CSV Format -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🖼️</span>
+          リファレンスCSV形式
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          リファレンスCSVファイルは、複数のシーンで一貫したビジュアル生成のためのキャラクター、背景、スタイルを定義します。
+        </p>
+
+        <!-- Tag Matching Explanation - IMPORTANT -->
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-5 mb-6">
+          <h3 class="font-bold text-amber-800 dark:text-amber-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">🔗</span>
+            タグマッチングシステム（非常に重要！）
+          </h3>
+          <p class="text-amber-700 dark:text-amber-400 text-sm mb-4">
+            リファレンスCSVの<code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code>フィールドは、シーンCSVのタグと<strong>自動的にマッチング</strong>されます。
+            画像生成時、マッチした参照画像がWhiskにアップロードされ、一貫したスタイル/キャラクターを維持します。
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-blue-700 dark:text-blue-300 mb-2">👤 キャラクターマッチング</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">type: character</code><br>
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">name: 王</code>
+              </div>
+              <div class="mt-2 text-xs">
+                ↔️ シーンCSV <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters</code> カラム
+              </div>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-green-700 dark:text-green-300 mb-2">🏞️ 背景マッチング</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">type: background</code><br>
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">name: 宮殿</code>
+              </div>
+              <div class="mt-2 text-xs">
+                ↔️ シーンCSV <code class="bg-green-100 dark:bg-green-900 px-1 rounded">scene_tag</code> カラム
+              </div>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-purple-700 dark:text-purple-300 mb-2">🎨 スタイルマッチング</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">type: style</code><br>
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">name: cinematic</code>
+              </div>
+              <div class="mt-2 text-xs">
+                ↔️ シーンCSV <code class="bg-purple-100 dark:bg-purple-900 px-1 rounded">style_tag</code> カラム
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 p-3 bg-white/60 dark:bg-gray-800/60 rounded-lg">
+            <div class="font-semibold text-gray-800 dark:text-gray-200 mb-2">💡 マッチング例</div>
+            <div class="text-xs text-gray-600 dark:text-gray-400 font-mono">
+              シーンCSV: <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters: 王;王妃</code>, <code class="bg-green-100 dark:bg-green-900 px-1 rounded">scene_tag: 宮殿</code>, <code class="bg-purple-100 dark:bg-purple-900 px-1 rounded">style_tag: cinematic</code><br>
+              <span class="text-gray-500">→ 自動適用される参照: 王.png + 王妃.png + 宮殿.png + cinematic.png</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">必須カラム</h3>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm border-gray-200 dark:border-gray-700">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">カラム</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">説明</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">例</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">type</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">参照タイプ (character / background / style)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">character</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">name</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">タグマッチング用の名前（シーンCSVと一致必須）</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">王, 宮殿, cinematic</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">image_path</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">参照画像のパスまたはURL</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">./images/king.png</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">description</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">詳細な説明（画像生成用）</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">白いひげを持つ賢明な老王</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">CSV例</h3>
+        <div class="mb-4">
+          <!-- Tab Buttons -->
+          <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+            <button onclick="switchTab('ref', 'text')" id="ref-tab-text" class="tab-btn active px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📝 テキスト
+            </button>
+            <button onclick="switchTab('ref', 'table')" id="ref-tab-table" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📊 テーブル
+            </button>
+          </div>
+
+          <!-- Text View -->
+          <div id="ref-view-text" class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">reference_sample.csv</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('ref-csv-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  コピー
+                </button>
+                <a href="/samples/reference-sample.csv" download class="text-xs px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  ダウンロード
+                </a>
+              </div>
+            </div>
+            <pre id="ref-csv-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">type,name,image_path,description
+character,王,./images/king.png,白いひげと金の王冠を持つ賢明な老王
+character,王妃,./images/queen.png,赤いドレスを着た優雅な王妃
+background,宮殿,./images/palace.png,豪華な装飾の壮大な王室宮殿
+style,cinematic,./images/cinematic.png,映画のようなドラマチックな照明</pre>
+          </div>
+
+          <!-- Table View -->
+          <div id="ref-view-table" class="hidden">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">reference_sample.csv</span>
+              <a href="/samples/reference-sample.csv" download class="text-xs px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                ダウンロード
+              </a>
+            </div>
+            <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="bg-gray-100 dark:bg-gray-800">
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">type</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">name</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">image_path</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">description</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-gray-900">
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">character</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">王</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">./images/king.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">白いひげと金の王冠を持つ賢明な老王</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">character</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">王妃</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">./images/queen.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">赤いドレスを着た優雅な王妃</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">background</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">宮殿</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">./images/palace.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">豪華な装飾の壮大な王室宮殿</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">style</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">./images/cinematic.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">映画のようなドラマチックな照明</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Style Tag Reference -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎨</span>
+          スタイルタグ一覧
+          <span class="text-xs bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-2 py-0.5 rounded-full">87スタイル</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+          <code class="bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded">style_tag</code>カラムで使用できるスタイルIDです。
+          リファレンスCSVのstyleタイプのnameとしても使用できます。
+        </p>
+
+        <!-- Style Categories -->
+        <div class="space-y-4">
+          <!-- Animation -->
+          <div>
+            <button onclick="toggleCategory('cat-animation')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>🎌</span>
+              <span class="font-semibold">アニメーションスタイル</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(12)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-animation-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-animation" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">korean-ani</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">ghibli</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">disney-pixar</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">cartoon-3d</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">90s-anime</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">manhwa</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">chibi</span>
+              <span class="style-tag-chip px-2 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">makoto-shinkai</span>
+            </div>
+          </div>
+
+          <!-- Photography -->
+          <div>
+            <button onclick="toggleCategory('cat-photography')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>📷</span>
+              <span class="font-semibold">リアル/写真スタイル</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(8)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-photography-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-photography" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">photorealistic</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">cinematic</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">portrait</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">documentary</span>
+              <span class="style-tag-chip px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">fashion</span>
+            </div>
+          </div>
+
+          <!-- More Styles -->
+          <div>
+            <button onclick="toggleCategory('cat-more')" class="flex items-center gap-2 w-full text-left p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>✨</span>
+              <span class="font-semibold">その他のスタイル</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">(60+)</span>
+              <svg class="w-4 h-4 ml-auto transform transition-transform" id="cat-more-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="cat-more" class="hidden mt-2 flex flex-wrap gap-2 pl-4">
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">ink-wash</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">ukiyo-e</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">oil-painting</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">watercolor</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">impressionism</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">cyberpunk</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">steampunk</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">fantasy-rpg</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">sci-fi</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">pixel-art</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">comic-book</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">noir</span>
+              <span class="style-tag-chip px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-mono cursor-pointer" onclick="copyStyleTag(this)">horror</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">💡 スタイルタグをクリックするとコピーされます。</p>
+      </div>
+
+      <!-- SRT Format -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🎬</span>
+          SRT字幕形式
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          標準のSRT字幕ファイルをインポートします。各字幕ブロックは自動的にシーンに変換され、字幕テキストがプロンプトと字幕の両方として使用されます。時間はタイムコードから自動計算されます。
+        </p>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">SRT構造</h3>
+        <div class="relative">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">sample.srt</span>
+            <div class="flex gap-2">
+              <button onclick="copyCode('srt-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                コピー
+              </button>
+              <a href="/samples/sample.srt" download class="text-xs px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                ダウンロード
+              </a>
+            </div>
+          </div>
+          <pre id="srt-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">1
+00:00:00,000 --> 00:00:05,000
+英雄が神秘的な森で目覚める。
+
+2
+00:00:05,000 --> 00:00:09,500
+不思議な光が前へ進む道を示す。
+
+3
+00:00:09,500 --> 00:00:14,000
+遠くに謎の人物が現れる。</pre>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">
+          番号が付いた各ブロックが1つのシーンになります。タイムコードからシーンの時間が自動的に決定されます。
+        </p>
+
+        <!-- TTS Service Info -->
+        <div class="mt-6 bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-xl border border-violet-200 dark:border-violet-800 p-4">
+          <h4 class="font-semibold text-violet-800 dark:text-violet-300 mb-3 flex items-center gap-2">
+            <span class="text-lg">🎙️</span>
+            TTSサービスからSRTを自動生成
+          </h4>
+          <p class="text-sm text-violet-700 dark:text-violet-400 mb-4">
+            これらのTTS（テキスト読み上げ）サービスは、音声と一緒に<strong>SRT字幕ファイルを自動生成</strong>します。
+            ナレーションと字幕をWhisk2CapCutに直接インポートできます。
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-violet-200 dark:border-violet-700 hover:border-violet-400 dark:hover:border-violet-500 transition-colors group">
+              <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">11</div>
+              <div>
+                <div class="font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">ElevenLabs</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">高品質AI音声 + SRT</div>
+              </div>
+              <svg class="w-4 h-4 ml-auto text-gray-400 group-hover:text-violet-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <a href="https://voicevox.hiroshiba.jp" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-violet-200 dark:border-violet-700 hover:border-violet-400 dark:hover:border-violet-500 transition-colors group">
+              <div class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">VV</div>
+              <div>
+                <div class="font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">VOICEVOX</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">日本語特化 + 無料</div>
+              </div>
+              <svg class="w-4 h-4 ml-auto text-gray-400 group-hover:text-violet-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <a href="https://vrew.voyagerx.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-violet-200 dark:border-violet-700 hover:border-violet-400 dark:hover:border-violet-500 transition-colors group">
+              <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">V</div>
+              <div>
+                <div class="font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Vrew</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">動画編集 + AI音声/字幕</div>
+              </div>
+              <svg class="w-4 h-4 ml-auto text-gray-400 group-hover:text-violet-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
+          <p class="text-xs text-violet-600 dark:text-violet-400 mt-3">
+            💡 <strong>ヒント：</strong>TTSサービスで音声を生成した後、SRTファイルをダウンロードしてWhisk2CapCutにインポートすると、タイミングが完璧に合います。
+          </p>
+        </div>
+      </div>
+
+      <!-- AI Generation Meta Prompt -->
+      <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🤖</span>
+          AIでCSVを自動生成
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          以下のプロンプトをClaude、ChatGPT、Geminiなどのツールにストーリーと一緒に貼り付けると、CSVファイルを自動生成できます。
+        </p>
+
+        <!-- Scene CSV Prompt -->
+        <div class="mb-6">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+            📊 シーンCSV生成プロンプト
+          </h3>
+
+          <div class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_csv_prompt_ja.txt</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('scene-prompt')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  コピー
+                </button>
+                <button onclick="downloadTextFile('scene-prompt', 'scene_csv_prompt_ja.txt')" class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  ダウンロード
+                </button>
+              </div>
+            </div>
+
+            <pre id="scene-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">あなたはWhisk2CapCut動画制作のためのシーン分析アシスタントです。
+
+物語や脚本を受け取ったら、以下のカラムを持つシーンCSVファイルを作成してください：
+- prompt: AI画像生成用の英語シーン説明（構図、照明、雰囲気、カメラアングルを含む）
+- subtitle: シーンの日本語字幕（簡潔に、30文字以内）
+- characters: シーンに登場するキャラクター名（複数の場合はセミコロンで区切る、例：王;王妃）
+- scene_tag: 背景/場所タグ（一貫したタグを使用、例：宮殿、森、村）
+- style_tag: アートスタイル（一貫性を保つ、例：cinematic, ghibli, ink-wash）
+- duration: シーン継続時間（秒）（通常3-5秒、速いカット2秒、ドラマチック6秒以上）
+
+ルール：
+1. 各行 = 1つのビジュアルシーン（単一画像フレーム）
+2. プロンプトは説明的だが200文字以内
+3. 一貫したキャラクター名を使用（参照画像と一致）
+4. 類似した場所は1つのscene_tagでグループ化
+5. ペーシングを考慮：ドラマチックな効果のため継続時間を変化
+6. ヘッダー行付きCSVで出力、カンマを含む値は引用符で囲む
+
+出力例：
+prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne, dramatic lighting","賢明な王が玉座に座っている",王,宮殿,cinematic,5
+
+この物語をシーンに分解してください：</pre>
+          </div>
+        </div>
+
+        <!-- Reference CSV Prompt -->
+        <div class="mb-6">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+            🖼️ 参照CSV生成プロンプト
+          </h3>
+
+          <div class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">reference_csv_prompt_ja.txt</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('ref-prompt')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  コピー
+                </button>
+                <button onclick="downloadTextFile('ref-prompt', 'reference_csv_prompt_ja.txt')" class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  ダウンロード
+                </button>
+              </div>
+            </div>
+
+            <pre id="ref-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">あなたはWhisk2CapCutのための参照計画アシスタントです。
+
+物語を受け取ったら、以下のカラムを持つ参照CSVを作成してください：
+- type: 参照タイプ (character, background, または style)
+- name: タグマッチング用の名前（シーンCSVタグと正確に一致する必要があります）
+- image_path: 提案する画像ファイル名
+- description: 参照画像の生成/検索のための詳細説明
+
+キャラクター：すべてのユニークなキャラクターとその視覚的外観をリスト
+背景：言及されたすべてのユニークな場所/設定をリスト
+スタイル：物語の雰囲気に合う1-2つのアートスタイルを提案
+
+重要：'name'フィールドは以下と正確に一致する必要があります：
+- character タイプ → シーンCSVの 'characters' カラムと一致
+- background タイプ → シーンCSVの 'scene_tag' カラムと一致
+- style タイプ → シーンCSVの 'style_tag' カラムと一致
+
+出力例：
+type,name,image_path,description
+character,王,./images/king.png,"白いひげと金の王冠を持つ賢明な老王"
+background,宮殿,./images/palace.png,"赤いカーペットが敷かれた壮大な宮殿の玉座の間"
+style,cinematic,./images/cinematic.png,"深みのあるドラマチックな映画照明"
+
+この物語の参照リストを作成してください：</pre>
+          </div>
+        </div>
+
+        <!-- AI Tool Usage Tips -->
+        <div class="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4">
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💡 AIツールのヒント</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
+              <div class="font-semibold text-orange-700 dark:text-orange-300 mb-1">🟠 Claude</div>
+              <p class="text-orange-600 dark:text-orange-400 text-xs">
+                長いストーリーに最適。Artifacts機能でCSVを直接ダウンロード可能。
+              </p>
+            </div>
+            <div class="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+              <div class="font-semibold text-green-700 dark:text-green-300 mb-1">🟢 ChatGPT</div>
+              <p class="text-green-600 dark:text-green-400 text-xs">
+                Code InterpreterでCSV作成とダウンロード。表形式でプレビュー可能。
+              </p>
+            </div>
+            <div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div class="font-semibold text-blue-700 dark:text-blue-300 mb-1">🔵 Gemini</div>
+              <p class="text-blue-600 dark:text-blue-400 text-xs">
+                Google Docsと連携可能。スプレッドシートへの簡単エクスポート。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How to Import -->
+      <div class="bg-gradient-to-br from-primary-50 to-purple-50 dark:from-primary-900/20 dark:to-purple-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          ファイルのインポート方法
+        </h2>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Whisk2CapCut拡張機能を開く</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Chromeツールバーの拡張機能アイコンをクリック</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Importボタンをクリック</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">サイドバーまたはツールバーにあります</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">ファイルを選択</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">コンピューターからCSV、SRT、またはTXTファイルを選択</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">確認して生成</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">インポートされたシーンを確認し、画像生成を開始</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download Sample Files -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📥</span>
+          サンプルファイルのダウンロード
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          すぐに始めるためにサンプルファイルをダウンロードしてください：
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/samples/scene-sample.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            scene-sample.csv
+          </a>
+          <a href="/samples/reference-sample.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            reference-sample.csv
+          </a>
+          <a href="/samples/sample.srt" download class="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            sample.srt
+          </a>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          関連ガイド
+        </h2>
+        <a href="/guide/ja/whisk2capcut/capcut-export.html" class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          CapCutへのエクスポートガイド
+        </a>
+      </div>
+
+      <!-- Back to Extension -->
+      <div class="text-center">
+        <a href="/guide/ja/whisk2capcut/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Whisk2CapCutに戻る
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026 Touchizen. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Language dropdown toggle
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    // Copy code function
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+
+    // Download text file from element content
+    function downloadTextFile(elementId, filename) {
+      const element = document.getElementById(elementId);
+      const content = element.textContent;
+
+      const blob = new Blob([content], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // Toggle style tag category
+    function toggleCategory(categoryId) {
+      const content = document.getElementById(categoryId);
+      const icon = document.getElementById(categoryId + '-icon');
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    }
+
+    // Copy style tag
+    function copyStyleTag(element) {
+      const tag = element.textContent;
+      navigator.clipboard.writeText(tag).then(() => {
+        const original = element.textContent;
+        element.textContent = '✓ コピー済み';
+        element.classList.add('bg-green-200', 'dark:bg-green-800');
+        setTimeout(() => {
+          element.textContent = original;
+          element.classList.remove('bg-green-200', 'dark:bg-green-800');
+        }, 1000);
+      });
+    }
+
+    // Tab switching function
+    function switchTab(section, tab) {
+      // Update tab buttons
+      const textTab = document.getElementById(`${section}-tab-text`);
+      const tableTab = document.getElementById(`${section}-tab-table`);
+
+      if (tab === 'text') {
+        textTab.classList.add('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
+        tableTab.classList.remove('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
+      } else {
+        tableTab.classList.add('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
+        textTab.classList.remove('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
+      }
+
+      // Update content views
+      const textView = document.getElementById(`${section}-view-text`);
+      const tableView = document.getElementById(`${section}-view-table`);
+
+      if (tab === 'text') {
+        textView.classList.remove('hidden');
+        tableView.classList.add('hidden');
+      } else {
+        textView.classList.add('hidden');
+        tableView.classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
