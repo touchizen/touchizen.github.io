@@ -40,9 +40,16 @@ export default function Header({ lang, onLanguageChange }: HeaderProps) {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
-          <a href={`/${lang}`} className="flex flex-col">
-            <span className="text-2xl font-bold gradient-text leading-tight">Touchizen</span>
-            <span className="text-xs text-gray-500 dark:text-gray-400">{t('brand_slogan' as TranslationKey)}</span>
+          <a href={`/${lang}`} className="flex items-center gap-3">
+            <img
+              src="/images/touchizen.jpeg"
+              alt="Touchizen"
+              className="w-10 h-10 rounded-lg"
+            />
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold gradient-text leading-tight">Touchizen</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">{t('brand_slogan' as TranslationKey)}</span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}
