@@ -139,7 +139,8 @@ export default function Whisk2CapCutPage() {
               <img src="/images/whisk2capcut.png" alt="Whisk2CapCut" className="w-6 h-6 rounded" />
               Chrome Extension
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2">
+            <h1 className="text-4xl md:text-6xl font-bold mb-2 flex items-center gap-4">
+              <img src="/images/whisk2capcut.png" alt="Whisk2CapCut" className="w-16 h-16 md:w-20 md:h-20 rounded-2xl" />
               <span className="bg-gradient-to-r from-violet-500 to-purple-600 bg-clip-text text-transparent">
                 {t('whisk2capcut_hero_title')}
               </span>
