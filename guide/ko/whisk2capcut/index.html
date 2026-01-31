@@ -168,19 +168,41 @@
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
-            <div>
+            <div class="flex-1">
               <p class="font-medium text-gray-900 dark:text-white">파일 가져오기</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Whisk2CapCut에서 <strong>"가져오기"</strong> 탭 → <strong>"프롬프트 Text 파일"</strong> 선택 → 파일 열기</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Whisk2CapCut에서 <strong>"📂 가져오기"</strong> 버튼 클릭 → <strong>"프롬프트 Text 파일"</strong> 선택</p>
+
+              <!-- 플러그인 탭 헤더 UI 미리보기 -->
+              <div class="bg-gray-900 dark:bg-black rounded-lg p-3 text-xs">
+                <div class="flex items-center justify-between mb-2 pb-2 border-b border-gray-700">
+                  <div class="flex gap-1">
+                    <span class="px-2 py-1 bg-primary-600 text-white rounded">📝 프롬프트</span>
+                    <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded">📋 씬목록 (0)</span>
+                  </div>
+                  <div class="flex gap-1">
+                    <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded">🖼️ Ref (0)</span>
+                    <span class="px-2 py-1 bg-blue-600 text-white rounded animate-pulse">📂 가져오기</span>
+                  </div>
+                </div>
+                <div class="text-gray-500 text-center py-4">← 여기를 클릭!</div>
+              </div>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
-            <div>
+            <div class="flex-1">
               <p class="font-medium text-gray-900 dark:text-white">이미지 생성!</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">화면 하단의 <strong>"생성 시작"</strong> 버튼을 누르면 Whisk가 각 장면의 이미지를 자동으로 생성합니다</p>
-              <div class="mt-2 inline-flex items-center gap-2 px-3 py-1.5 bg-primary-600 text-white text-xs rounded-lg">
-                ✨ 생성 시작
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">화면 하단의 <strong>"생성 시작"</strong> 버튼을 누르면 Whisk가 각 장면의 이미지를 자동으로 생성합니다</p>
+
+              <!-- 플러그인 하단 버튼 UI 미리보기 -->
+              <div class="bg-gray-900 dark:bg-black rounded-lg p-3 text-xs">
+                <div class="flex gap-2">
+                  <button class="flex-1 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium animate-pulse">
+                    ✨ 생성 시작
+                  </button>
+                </div>
+                <div class="text-gray-500 text-center text-xs mt-2">씬이 있으면 활성화됨</div>
               </div>
             </div>
           </div>
@@ -301,6 +323,83 @@
           <p class="text-xs text-amber-700 dark:text-amber-400">
             💡 <strong>요약:</strong> 씬 CSV의 <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">characters</code>, <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">scene_tag</code>, <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">style_tag</code> 값이 레퍼런스 CSV의 <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code>과 일치하면 해당 참조 이미지가 자동으로 적용됩니다.
           </p>
+        </div>
+      </div>
+
+      <!-- Import Modal Preview -->
+      <div id="import-modal" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📂</span>
+          가져오기 모달 미리보기
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          "📂 가져오기" 버튼을 누르면 나타나는 모달입니다. 원하는 파일 형식을 클릭하세요.
+        </p>
+
+        <!-- Import Modal UI -->
+        <div class="bg-gray-900 dark:bg-black rounded-xl p-4 max-w-md mx-auto">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-700">
+            <span class="text-white font-semibold">📂 파일 가져오기</span>
+            <span class="text-gray-500 cursor-pointer">✕</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-4">파일 형식을 선택하세요</p>
+
+          <!-- Import Options -->
+          <div class="space-y-2">
+            <!-- Text Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-amber-500 transition-all">
+              <span class="text-2xl">📝</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">프롬프트 Text 파일</div>
+                <div class="text-gray-400 text-xs">줄바꿈으로 구분된 프롬프트</div>
+                <div class="text-gray-500 text-xs mt-1">한 줄 = 하나의 씬</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- CSV Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-blue-500 transition-all">
+              <span class="text-2xl">📊</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">씬 CSV 파일</div>
+                <div class="text-gray-400 text-xs">구조화된 씬 데이터</div>
+                <div class="text-gray-500 text-xs mt-1">prompt, subtitle, characters...</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- Reference CSV Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-green-500 transition-all">
+              <span class="text-2xl">🖼️</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">레퍼런스 CSV 파일</div>
+                <div class="text-gray-400 text-xs">캐릭터/배경/스타일 정의</div>
+                <div class="text-gray-500 text-xs mt-1">name, type, prompt</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- SRT Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-purple-500 transition-all">
+              <span class="text-2xl">📺</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">자막 SRT 파일</div>
+                <div class="text-gray-400 text-xs">자막에서 자동으로 씬 생성</div>
+                <div class="text-gray-500 text-xs mt-1">타임코드 + 자막 → 프롬프트</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+          </div>
+
+          <!-- Option Links (below each option) -->
+          <div class="mt-4 pt-3 border-t border-gray-700">
+            <p class="text-gray-500 text-xs mb-2">각 옵션 아래에 도움말 버튼이 있습니다:</p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">📖 가이드</span>
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">📄 샘플</span>
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">🤖 AI 생성</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -679,6 +778,100 @@
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <!-- Reference Panel UI Preview -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl border border-green-200 dark:border-green-800 p-5 mb-6">
+          <h3 class="font-bold text-green-800 dark:text-green-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">🖼️</span>
+            플러그인 레퍼런스 패널 미리보기
+          </h3>
+          <p class="text-green-700 dark:text-green-400 text-sm mb-4">
+            "🖼️ Ref" 버튼을 클릭하면 표시되는 레퍼런스 패널입니다. CSV를 가져오면 여기에 카드가 생성됩니다.
+          </p>
+
+          <!-- Reference Panel UI -->
+          <div class="bg-gray-900 dark:bg-black rounded-xl p-4">
+            <!-- Panel Header -->
+            <div class="flex items-center justify-between mb-3 pb-2 border-b border-gray-700">
+              <div class="flex items-center gap-2">
+                <span class="text-gray-400 cursor-pointer">▼</span>
+                <span class="text-white text-sm font-medium">🖼️ 레퍼런스 이미지 (3)</span>
+              </div>
+              <button class="px-3 py-1 bg-primary-600 text-white text-xs rounded-lg">
+                🎨 일괄 생성 (2)
+              </button>
+            </div>
+
+            <!-- Reference Cards Grid -->
+            <div class="grid grid-cols-4 gap-3">
+              <!-- Card 1: King (with image) -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between px-2 py-1 bg-gray-700">
+                  <select class="bg-transparent text-xs text-blue-400 outline-none">
+                    <option>👤 캐릭터</option>
+                  </select>
+                  <span class="text-gray-500 text-xs cursor-pointer">✕</span>
+                </div>
+                <div class="aspect-video bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center relative">
+                  <span class="text-3xl">👑</span>
+                  <span class="absolute bottom-1 right-1 text-xs">✅</span>
+                </div>
+                <div class="px-2 py-1 text-center">
+                  <span class="text-white text-xs">왕</span>
+                  <span class="text-yellow-500 text-xs ml-1">📝</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Queen (no image, has prompt) -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between px-2 py-1 bg-gray-700">
+                  <select class="bg-transparent text-xs text-blue-400 outline-none">
+                    <option>👤 캐릭터</option>
+                  </select>
+                  <span class="text-gray-500 text-xs cursor-pointer">✕</span>
+                </div>
+                <div class="aspect-video bg-gray-700 flex flex-col items-center justify-center">
+                  <span class="text-2xl mb-1">👤</span>
+                  <span class="text-gray-400 text-xs">클릭하여 업로드</span>
+                </div>
+                <div class="px-2 py-1 text-center">
+                  <span class="text-white text-xs">왕비</span>
+                  <span class="text-yellow-500 text-xs ml-1">📝</span>
+                </div>
+                <button class="w-full py-1 bg-primary-600 text-white text-xs">🎨 생성</button>
+              </div>
+
+              <!-- Card 3: Palace (background) -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between px-2 py-1 bg-gray-700">
+                  <select class="bg-transparent text-xs text-green-400 outline-none">
+                    <option>🏞️ 배경</option>
+                  </select>
+                  <span class="text-gray-500 text-xs cursor-pointer">✕</span>
+                </div>
+                <div class="aspect-video bg-gray-700 flex flex-col items-center justify-center">
+                  <span class="text-2xl mb-1">🏞️</span>
+                  <span class="text-gray-400 text-xs">클릭하여 업로드</span>
+                </div>
+                <div class="px-2 py-1 text-center">
+                  <span class="text-white text-xs">궁전</span>
+                  <span class="text-yellow-500 text-xs ml-1">📝</span>
+                </div>
+                <button class="w-full py-1 bg-primary-600 text-white text-xs">🎨 생성</button>
+              </div>
+
+              <!-- Add Card -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden border-2 border-dashed border-gray-600 flex flex-col items-center justify-center aspect-video cursor-pointer hover:border-gray-500">
+                <span class="text-2xl text-gray-500">+</span>
+                <span class="text-gray-500 text-xs">추가</span>
+              </div>
+            </div>
+
+            <p class="text-gray-500 text-xs mt-3 text-center">
+              💡 프롬프트가 있고 이미지가 없는 카드는 "🎨 생성" 버튼으로 AI 이미지 생성 가능
+            </p>
+          </div>
         </div>
 
         <!-- CSV Example with Tabs -->
