@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { translations, Language } from '@/lib/i18n';
 
 interface CapCutTimelineProps {
@@ -45,7 +45,29 @@ export default function CapCutTimeline({ lang = 'ko' }: CapCutTimelineProps) {
   ];
   const [playheadPosition, setPlayheadPosition] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const totalDuration = scenes.reduce((sum, s) => sum + s.duration, 0);
+
+  // Audio control
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying && !isMuted) {
+        audioRef.current.play().catch(() => {
+          // Autoplay blocked, user needs to interact first
+        });
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isPlaying, isMuted]);
+
+  // Reset audio when playhead resets
+  useEffect(() => {
+    if (audioRef.current && playheadPosition === 0) {
+      audioRef.current.currentTime = 0;
+    }
+  }, [playheadPosition]);
 
   // Animate playhead
   useEffect(() => {
@@ -75,6 +97,14 @@ export default function CapCutTimeline({ lang = 'ko' }: CapCutTimelineProps) {
 
   return (
     <div className="space-y-4">
+      {/* Background Audio */}
+      <audio
+        ref={audioRef}
+        src="/audio/epic-cinematic.mp3"
+        loop
+        preload="auto"
+      />
+
       {/* CapCut-style UI */}
       <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
         {/* Header Bar */}
@@ -223,6 +253,38 @@ export default function CapCutTimeline({ lang = 'ko' }: CapCutTimelineProps) {
               </div>
             </div>
 
+            {/* Audio Track */}
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xs text-gray-500 w-16">🎵 Audio</span>
+              <div className="flex-1 relative h-6 bg-gray-800 rounded overflow-hidden">
+                <div
+                  className="absolute inset-0 flex items-center"
+                  style={{
+                    background: 'linear-gradient(90deg, #22c55e20, #22c55e40, #22c55e20)',
+                  }}
+                >
+                  {/* Audio waveform visualization */}
+                  <div className="flex items-center justify-around w-full h-full px-2">
+                    {Array.from({ length: 40 }).map((_, i) => (
+                      <div
+                        key={i}
+                        className="bg-green-500/60 rounded-full"
+                        style={{
+                          width: '2px',
+                          height: `${Math.random() * 60 + 20}%`,
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
+                {/* Playhead */}
+                <div
+                  className="absolute top-0 bottom-0 w-0.5 bg-red-500 z-10 transition-all"
+                  style={{ left: `${(playheadPosition / totalDuration) * 100}%` }}
+                />
+              </div>
+            </div>
+
             {/* Subtitle Track */}
             <div className="flex items-center gap-2">
               <span className="text-xs text-gray-500 w-16">💬 Subtitle</span>
@@ -273,6 +335,13 @@ export default function CapCutTimeline({ lang = 'ko' }: CapCutTimelineProps) {
               className="p-2 text-gray-400 hover:text-white transition-colors"
             >
               ⏭️
+            </button>
+            <button
+              onClick={() => setIsMuted(!isMuted)}
+              className={`p-2 transition-colors ${isMuted ? 'text-red-400' : 'text-gray-400 hover:text-white'}`}
+              title={isMuted ? 'Unmute' : 'Mute'}
+            >
+              {isMuted ? '🔇' : '🔊'}
             </button>
           </div>
       </div>
