@@ -193,7 +193,7 @@
               <p class="font-medium text-gray-900 dark:text-white">エクスポートモーダルで情報を入力</p>
               <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">シーンタブ > <strong>「📦 CapCut」</strong>ボタンをクリックし、ユーザー名とプロジェクト番号を入力</p>
 
-              <!-- Export Modal Mockup -->
+              <!-- Export Modal Mockup (インタラクティブ) -->
               <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 overflow-hidden text-xs shadow-lg">
                 <!-- Modal Header -->
                 <div class="bg-gray-100 dark:bg-gray-700 px-4 py-2 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
@@ -202,39 +202,39 @@
                 </div>
                 <!-- Modal Content -->
                 <div class="p-4 space-y-3">
-                  <!-- OS Selection -->
+                  <!-- OS Selection (インタラクティブ) -->
                   <div class="flex gap-2">
-                    <span class="flex-1 px-3 py-2 bg-blue-100 dark:bg-blue-900 border-2 border-blue-500 rounded-lg text-center font-medium text-gray-800 dark:text-white">🍎 macOS</span>
-                    <span class="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-center text-gray-800 dark:text-gray-200">🪟 Windows</span>
+                    <button id="mockup-os-mac" onclick="selectMockupOS('mac')" style="flex:1; padding:10px 16px; border:2px solid #007AFF; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;">🍎 macOS</button>
+                    <button id="mockup-os-win" onclick="selectMockupOS('win')" style="flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;">🪟 Windows</button>
                   </div>
-                  <!-- Username Input -->
+                  <!-- Username Input (インタラクティブ) -->
                   <div>
                     <label class="block text-gray-600 dark:text-gray-400 mb-1">👤 システムユーザー名 <span class="text-red-500">*</span></label>
                     <div class="relative">
-                      <input type="text" value="taro" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white" readonly>
+                      <input type="text" id="mockup-username" value="taro" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
                       <span class="absolute right-2 top-2 text-green-500">✓</span>
                     </div>
                     <p class="text-gray-500 mt-1">💡 ターミナルで <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">whoami</code> を入力</p>
                   </div>
-                  <!-- Project Number Input -->
+                  <!-- Project Number Input (インタラクティブ) -->
                   <div>
                     <label class="block text-gray-600 dark:text-gray-400 mb-1">📁 プロジェクト番号 <span class="text-red-500">*</span></label>
                     <div class="relative">
-                      <input type="text" value="0131" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white" readonly>
+                      <input type="text" id="mockup-project" value="0131" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
                       <span class="absolute right-2 top-2 text-green-500">✓</span>
                     </div>
                     <p class="text-gray-500 mt-1">💡 CapCutフォルダで次の番号を確認</p>
                   </div>
-                  <!-- Generated Path -->
+                  <!-- Generated Path (動的) -->
                   <div class="bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg p-3">
                     <label class="block text-green-700 dark:text-green-400 text-xs font-bold mb-1">📂 生成されるパス</label>
-                    <code class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/taro/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
+                    <code id="mockup-path" class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/taro/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
                   </div>
                 </div>
                 <!-- Modal Footer -->
                 <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 flex justify-end gap-2 border-t border-gray-300 dark:border-gray-600">
-                  <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg">キャンセル</span>
-                  <span class="px-4 py-2 bg-primary-500 text-white rounded-lg font-medium animate-pulse">📦 エクスポート</span>
+                  <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">キャンセル</span>
+                  <span class="px-4 py-2 bg-primary-500 text-white rounded-lg font-medium cursor-pointer hover:bg-primary-600 transition-colors">📦 エクスポート</span>
                 </div>
               </div>
             </div>
@@ -467,6 +467,37 @@
     document.addEventListener('click', () => {
       langDropdown.classList.add('hidden');
     });
+
+    // モックアップのインタラクティブ機能
+    let mockupOS = 'mac';
+
+    function selectMockupOS(os) {
+      mockupOS = os;
+      const macBtn = document.getElementById('mockup-os-mac');
+      const winBtn = document.getElementById('mockup-os-win');
+
+      if (os === 'mac') {
+        macBtn.style.cssText = 'flex:1; padding:10px 16px; border:2px solid #007AFF; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;';
+        winBtn.style.cssText = 'flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;';
+      } else {
+        winBtn.style.cssText = 'flex:1; padding:10px 16px; border:2px solid #0078D4; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;';
+        macBtn.style.cssText = 'flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;';
+      }
+
+      updateMockupPath();
+    }
+
+    function updateMockupPath() {
+      const username = document.getElementById('mockup-username').value || 'taro';
+      const project = document.getElementById('mockup-project').value || '0131';
+      const pathEl = document.getElementById('mockup-path');
+
+      if (mockupOS === 'mac') {
+        pathEl.textContent = `/Users/${username}/Movies/CapCut/User Data/Projects/com.lveditor.draft/${project}`;
+      } else {
+        pathEl.textContent = `C:\\Users\\${username}\\Documents\\CapCut\\User Data\\Projects\\com.lveditor.draft\\${project}`;
+      }
+    }
   </script>
 </body>
 </html>
