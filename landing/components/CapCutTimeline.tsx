@@ -100,7 +100,7 @@ export default function CapCutTimeline({ lang = 'ko' }: CapCutTimelineProps) {
       {/* Background Audio */}
       <audio
         ref={audioRef}
-        src="/audio/epic-cinematic.mp3"
+        src="/audio/classical-baroque.mp3"
         loop
         preload="auto"
       />
