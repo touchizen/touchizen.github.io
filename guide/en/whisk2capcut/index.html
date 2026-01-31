@@ -261,10 +261,12 @@ The journey's end at a peaceful village</pre>
           </p>
           <ul class="text-sm text-blue-600 dark:text-blue-400 space-y-1 ml-4">
             <li>• <strong>Subtitles</strong> separate from prompts (different content)</li>
-            <li>• <strong>Character tags</strong> for consistent character images</li>
+            <li>• <strong>Character/Background/Style tags</strong> → Auto-match with reference images (see below)</li>
             <li>• <strong>Per-scene duration</strong> settings (3s, 5s, etc.)</li>
-            <li>• <strong>Style tags</strong> for consistent art style</li>
           </ul>
+          <p class="text-xs text-blue-500 dark:text-blue-500 mt-2">
+            💡 When tags match references, you'll see <span class="text-green-600 font-bold">✓</span> in the scene list
+          </p>
         </div>
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Required Columns</h3>
@@ -473,11 +475,76 @@ The journey's end at a peaceful village</pre>
             </div>
           </div>
 
-          <div class="mt-4 p-3 bg-white/60 dark:bg-gray-800/60 rounded-lg">
-            <div class="font-semibold text-gray-800 dark:text-gray-200 mb-2">💡 Matching Example</div>
-            <div class="text-xs text-gray-600 dark:text-gray-400 font-mono">
-              Scene CSV: <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters: King;Queen</code>, <code class="bg-green-100 dark:bg-green-900 px-1 rounded">scene_tag: palace</code>, <code class="bg-purple-100 dark:bg-purple-900 px-1 rounded">style_tag: cinematic</code><br>
-              <span class="text-gray-500">→ Auto-applied references: King.png + Queen.png + palace.png + cinematic.png</span>
+          <!-- Scene List Preview - Tag Matching UI -->
+          <div class="mt-4 p-4 bg-gray-900 dark:bg-black rounded-xl">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-white font-semibold text-sm">📋 Scene List Preview</span>
+              <span class="text-xs text-gray-400">Tag matching indicator</span>
+            </div>
+
+            <!-- Scene Table Header -->
+            <div class="bg-gray-800 rounded-t-lg px-3 py-2 grid grid-cols-12 gap-2 text-xs text-gray-400 font-medium">
+              <div class="col-span-1">#</div>
+              <div class="col-span-5">Prompt / Subtitle</div>
+              <div class="col-span-4">Matching Tags</div>
+              <div class="col-span-2">Image</div>
+            </div>
+
+            <!-- Scene Row 1 -->
+            <div class="bg-gray-800/50 border-t border-gray-700 px-3 py-2 grid grid-cols-12 gap-2 items-center">
+              <div class="col-span-1 text-gray-300 text-xs">1</div>
+              <div class="col-span-5">
+                <div class="text-gray-200 text-xs truncate">A wise old king sits on golden throne</div>
+                <div class="text-gray-500 text-xs flex items-center gap-1 mt-1">💬 The wise king on his throne</div>
+              </div>
+              <div class="col-span-4 flex flex-col gap-1">
+                <div class="flex items-center gap-1">
+                  <input type="text" value="king" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="palace" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="cinematic" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+              </div>
+              <div class="col-span-2">
+                <div class="w-10 h-10 bg-gray-700 rounded flex items-center justify-center text-gray-500">⏳</div>
+              </div>
+            </div>
+
+            <!-- Scene Row 2 -->
+            <div class="bg-gray-800/30 border-t border-gray-700 px-3 py-2 grid grid-cols-12 gap-2 items-center">
+              <div class="col-span-1 text-gray-300 text-xs">2</div>
+              <div class="col-span-5">
+                <div class="text-gray-200 text-xs truncate">Beautiful queen enters the room</div>
+                <div class="text-gray-500 text-xs flex items-center gap-1 mt-1">💬 The queen arrives</div>
+              </div>
+              <div class="col-span-4 flex flex-col gap-1">
+                <div class="flex items-center gap-1">
+                  <input type="text" value="queen" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="palace" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="wizard" readonly class="bg-gray-700 border border-red-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-red-500 text-xs font-bold">✗</span>
+                </div>
+              </div>
+              <div class="col-span-2">
+                <div class="w-10 h-10 bg-gray-700 rounded flex items-center justify-center text-gray-500">⏳</div>
+              </div>
+            </div>
+
+            <div class="mt-3 text-xs text-gray-400 flex items-center gap-4">
+              <span><span class="text-green-500 font-bold">✓</span> Matched with reference</span>
+              <span><span class="text-red-500 font-bold">✗</span> No reference (needs to be added)</span>
             </div>
           </div>
         </div>

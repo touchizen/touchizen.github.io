@@ -274,10 +274,12 @@
           </p>
           <ul class="text-sm text-blue-600 dark:text-blue-400 space-y-1 ml-4">
             <li>• <strong>자막</strong>을 별도로 지정 (프롬프트와 다른 내용)</li>
-            <li>• <strong>캐릭터 태그</strong>로 일관된 캐릭터 이미지 유지</li>
+            <li>• <strong>캐릭터/배경/스타일 태그</strong> → 레퍼런스 이미지와 자동 매칭 (아래 참조)</li>
             <li>• <strong>장면별 시간</strong>을 다르게 설정 (3초, 5초 등)</li>
-            <li>• <strong>스타일 태그</strong>로 일관된 아트 스타일 유지</li>
           </ul>
+          <p class="text-xs text-blue-500 dark:text-blue-500 mt-2">
+            💡 태그가 레퍼런스와 매칭되면 씬목록에서 <span class="text-green-600 font-bold">✓</span> 표시가 됩니다
+          </p>
         </div>
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">필수 컬럼</h3>
@@ -494,11 +496,76 @@
             </div>
           </div>
 
-          <div class="mt-4 p-3 bg-white/60 dark:bg-gray-800/60 rounded-lg">
-            <div class="font-semibold text-gray-800 dark:text-gray-200 mb-2">💡 매칭 예시</div>
-            <div class="text-xs text-gray-600 dark:text-gray-400 font-mono">
-              장면 CSV: <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters: 왕;왕비</code>, <code class="bg-green-100 dark:bg-green-900 px-1 rounded">scene_tag: 궁전</code>, <code class="bg-purple-100 dark:bg-purple-900 px-1 rounded">style_tag: cinematic</code><br>
-              <span class="text-gray-500">→ 참조 이미지 자동 적용: 왕.png + 왕비.png + 궁전.png + cinematic.png</span>
+          <!-- Scene List Preview - Tag Matching UI -->
+          <div class="mt-4 p-4 bg-gray-900 dark:bg-black rounded-xl">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-white font-semibold text-sm">📋 씬목록 미리보기</span>
+              <span class="text-xs text-gray-400">태그 매칭 시 표시</span>
+            </div>
+
+            <!-- Scene Table Header -->
+            <div class="bg-gray-800 rounded-t-lg px-3 py-2 grid grid-cols-12 gap-2 text-xs text-gray-400 font-medium">
+              <div class="col-span-1">#</div>
+              <div class="col-span-5">프롬프트 / 자막</div>
+              <div class="col-span-4">매칭 태그</div>
+              <div class="col-span-2">이미지</div>
+            </div>
+
+            <!-- Scene Row 1 -->
+            <div class="bg-gray-800/50 border-t border-gray-700 px-3 py-2 grid grid-cols-12 gap-2 items-center">
+              <div class="col-span-1 text-gray-300 text-xs">1</div>
+              <div class="col-span-5">
+                <div class="text-gray-200 text-xs truncate">A wise old king sits on golden throne</div>
+                <div class="text-gray-500 text-xs flex items-center gap-1 mt-1">💬 현명한 왕이 왕좌에</div>
+              </div>
+              <div class="col-span-4 flex flex-col gap-1">
+                <div class="flex items-center gap-1">
+                  <input type="text" value="왕" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="궁전" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="cinematic" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+              </div>
+              <div class="col-span-2">
+                <div class="w-10 h-10 bg-gray-700 rounded flex items-center justify-center text-gray-500">⏳</div>
+              </div>
+            </div>
+
+            <!-- Scene Row 2 -->
+            <div class="bg-gray-800/30 border-t border-gray-700 px-3 py-2 grid grid-cols-12 gap-2 items-center">
+              <div class="col-span-1 text-gray-300 text-xs">2</div>
+              <div class="col-span-5">
+                <div class="text-gray-200 text-xs truncate">Beautiful queen enters the room</div>
+                <div class="text-gray-500 text-xs flex items-center gap-1 mt-1">💬 왕비가 들어온다</div>
+              </div>
+              <div class="col-span-4 flex flex-col gap-1">
+                <div class="flex items-center gap-1">
+                  <input type="text" value="왕비" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="궁전" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="마법사" readonly class="bg-gray-700 border border-red-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-red-500 text-xs font-bold">✗</span>
+                </div>
+              </div>
+              <div class="col-span-2">
+                <div class="w-10 h-10 bg-gray-700 rounded flex items-center justify-center text-gray-500">⏳</div>
+              </div>
+            </div>
+
+            <div class="mt-3 text-xs text-gray-400 flex items-center gap-4">
+              <span><span class="text-green-500 font-bold">✓</span> 레퍼런스와 매칭됨</span>
+              <span><span class="text-red-500 font-bold">✗</span> 레퍼런스 없음 (추가 필요)</span>
             </div>
           </div>
         </div>

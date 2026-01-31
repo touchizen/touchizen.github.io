@@ -261,10 +261,12 @@
           </p>
           <ul class="text-sm text-blue-600 dark:text-blue-400 space-y-1 ml-4">
             <li>• <strong>字幕</strong>をプロンプトとは別に指定（異なる内容も可）</li>
-            <li>• <strong>キャラクタータグ</strong>で一貫したキャラクター画像を維持</li>
+            <li>• <strong>キャラクター/背景/スタイルタグ</strong> → リファレンス画像と自動マッチング（下記参照）</li>
             <li>• <strong>シーンごとの時間</strong>を個別に設定（3秒、5秒など）</li>
-            <li>• <strong>スタイルタグ</strong>で一貫したアートスタイルを維持</li>
           </ul>
+          <p class="text-xs text-blue-500 dark:text-blue-500 mt-2">
+            💡 タグがリファレンスとマッチすると、シーンリストに <span class="text-green-600 font-bold">✓</span> が表示されます
+          </p>
         </div>
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">必須カラム</h3>
@@ -473,11 +475,76 @@
             </div>
           </div>
 
-          <div class="mt-4 p-3 bg-white/60 dark:bg-gray-800/60 rounded-lg">
-            <div class="font-semibold text-gray-800 dark:text-gray-200 mb-2">💡 マッチング例</div>
-            <div class="text-xs text-gray-600 dark:text-gray-400 font-mono">
-              シーンCSV: <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters: 王;王妃</code>, <code class="bg-green-100 dark:bg-green-900 px-1 rounded">scene_tag: 宮殿</code>, <code class="bg-purple-100 dark:bg-purple-900 px-1 rounded">style_tag: cinematic</code><br>
-              <span class="text-gray-500">→ 自動適用される参照: 王.png + 王妃.png + 宮殿.png + cinematic.png</span>
+          <!-- Scene List Preview - Tag Matching UI -->
+          <div class="mt-4 p-4 bg-gray-900 dark:bg-black rounded-xl">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-white font-semibold text-sm">📋 シーンリストプレビュー</span>
+              <span class="text-xs text-gray-400">タグマッチング表示</span>
+            </div>
+
+            <!-- Scene Table Header -->
+            <div class="bg-gray-800 rounded-t-lg px-3 py-2 grid grid-cols-12 gap-2 text-xs text-gray-400 font-medium">
+              <div class="col-span-1">#</div>
+              <div class="col-span-5">プロンプト / 字幕</div>
+              <div class="col-span-4">マッチングタグ</div>
+              <div class="col-span-2">画像</div>
+            </div>
+
+            <!-- Scene Row 1 -->
+            <div class="bg-gray-800/50 border-t border-gray-700 px-3 py-2 grid grid-cols-12 gap-2 items-center">
+              <div class="col-span-1 text-gray-300 text-xs">1</div>
+              <div class="col-span-5">
+                <div class="text-gray-200 text-xs truncate">A wise old king sits on golden throne</div>
+                <div class="text-gray-500 text-xs flex items-center gap-1 mt-1">💬 賢い王が玉座に</div>
+              </div>
+              <div class="col-span-4 flex flex-col gap-1">
+                <div class="flex items-center gap-1">
+                  <input type="text" value="王" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="宮殿" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="cinematic" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+              </div>
+              <div class="col-span-2">
+                <div class="w-10 h-10 bg-gray-700 rounded flex items-center justify-center text-gray-500">⏳</div>
+              </div>
+            </div>
+
+            <!-- Scene Row 2 -->
+            <div class="bg-gray-800/30 border-t border-gray-700 px-3 py-2 grid grid-cols-12 gap-2 items-center">
+              <div class="col-span-1 text-gray-300 text-xs">2</div>
+              <div class="col-span-5">
+                <div class="text-gray-200 text-xs truncate">Beautiful queen enters the room</div>
+                <div class="text-gray-500 text-xs flex items-center gap-1 mt-1">💬 王妃が入室</div>
+              </div>
+              <div class="col-span-4 flex flex-col gap-1">
+                <div class="flex items-center gap-1">
+                  <input type="text" value="王妃" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="宮殿" readonly class="bg-gray-700 border border-green-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-green-500 text-xs font-bold">✓</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <input type="text" value="魔法使い" readonly class="bg-gray-700 border border-red-500 text-gray-200 text-xs px-2 py-0.5 rounded w-16" />
+                  <span class="text-red-500 text-xs font-bold">✗</span>
+                </div>
+              </div>
+              <div class="col-span-2">
+                <div class="w-10 h-10 bg-gray-700 rounded flex items-center justify-center text-gray-500">⏳</div>
+              </div>
+            </div>
+
+            <div class="mt-3 text-xs text-gray-400 flex items-center gap-4">
+              <span><span class="text-green-500 font-bold">✓</span> リファレンスとマッチ</span>
+              <span><span class="text-red-500 font-bold">✗</span> リファレンスなし（追加が必要）</span>
             </div>
           </div>
         </div>
