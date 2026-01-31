@@ -124,34 +124,120 @@
           <span class="text-2xl">🚀</span>
           빠른 시작 (4단계)
         </h2>
-        <div class="space-y-4">
+        <div class="space-y-6">
+          <!-- Step 1 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
-            <div>
-              <p class="font-medium text-gray-900 dark:text-white">Export된 ZIP 파일 다운로드</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Whisk2CapCut에서 "Export to CapCut" 버튼 클릭</p>
+            <div class="flex-1">
+              <p class="font-medium text-gray-900 dark:text-white">내보내기 모달에서 정보 입력</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">씬 목록 탭 > <strong>"📦 CapCut"</strong> 버튼 클릭 후 사용자명과 프로젝트 번호 입력</p>
+
+              <!-- Export Modal 목업 -->
+              <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 overflow-hidden text-xs shadow-lg">
+                <!-- 모달 헤더 -->
+                <div class="bg-gray-100 dark:bg-gray-700 px-4 py-2 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
+                  <span class="font-bold text-gray-800 dark:text-white">📦 CapCut 내보내기</span>
+                  <span class="text-gray-400">✕</span>
+                </div>
+                <!-- 모달 내용 -->
+                <div class="p-4 space-y-3">
+                  <!-- OS 선택 -->
+                  <div class="flex gap-2">
+                    <span class="flex-1 px-3 py-2 bg-blue-100 dark:bg-blue-900 border-2 border-blue-500 rounded-lg text-center font-medium">🍎 macOS</span>
+                    <span class="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-center">🪟 Windows</span>
+                  </div>
+                  <!-- 사용자명 입력 -->
+                  <div>
+                    <label class="block text-gray-600 dark:text-gray-400 mb-1">👤 시스템 사용자명 <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                      <input type="text" value="tuxxon" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white" readonly>
+                      <span class="absolute right-2 top-2 text-green-500">✓</span>
+                    </div>
+                    <p class="text-gray-500 mt-1">💡 터미널에서 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">whoami</code> 입력</p>
+                  </div>
+                  <!-- 프로젝트 번호 입력 -->
+                  <div>
+                    <label class="block text-gray-600 dark:text-gray-400 mb-1">📁 프로젝트 번호 <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                      <input type="text" value="0131" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white" readonly>
+                      <span class="absolute right-2 top-2 text-green-500">✓</span>
+                    </div>
+                    <p class="text-gray-500 mt-1">💡 CapCut 폴더에서 다음 번호 확인</p>
+                  </div>
+                  <!-- 생성될 경로 -->
+                  <div class="bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg p-3">
+                    <label class="block text-green-700 dark:text-green-400 text-xs font-bold mb-1">📂 생성될 경로</label>
+                    <code class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/tuxxon/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
+                  </div>
+                </div>
+                <!-- 모달 푸터 -->
+                <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 flex justify-end gap-2 border-t border-gray-300 dark:border-gray-600">
+                  <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg">취소</span>
+                  <span class="px-4 py-2 bg-primary-500 text-white rounded-lg font-medium animate-pulse">📦 내보내기</span>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- Step 2 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
             <div>
               <p class="font-medium text-gray-900 dark:text-white">ZIP 파일 압축 해제</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">다운로드된 ZIP 파일을 더블클릭하여 압축 해제</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">다운로드된 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">프로젝트명_capcut.zip</code> 파일을 더블클릭하여 압축 해제</p>
             </div>
           </div>
+
+          <!-- Step 3 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
             <div>
               <p class="font-medium text-gray-900 dark:text-white">CapCut 프로젝트 폴더에 복사</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">아래 경로 참조</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">압축 해제된 폴더(예: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">0131</code>)를 아래 경로에 복사</p>
             </div>
           </div>
+
+          <!-- Step 4 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
             <div>
               <p class="font-medium text-gray-900 dark:text-white">CapCut 재시작</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">CapCut을 재시작하면 프로젝트 목록에 표시됩니다</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">CapCut을 완전히 종료 후 다시 시작하면 프로젝트 목록에 표시됩니다</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 사용자명 찾기 -->
+      <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">👤</span>
+          시스템 사용자명 찾기
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- macOS -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xl">🍎</span>
+              <span class="font-semibold text-gray-900 dark:text-white">macOS</span>
+            </div>
+            <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-decimal list-inside">
+              <li>터미널 앱 실행 (Spotlight: <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Space</kbd> → "터미널")</li>
+              <li><code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> 입력 후 Enter</li>
+              <li>표시되는 이름이 사용자명입니다</li>
+            </ol>
+          </div>
+          <!-- Windows -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xl">🪟</span>
+              <span class="font-semibold text-gray-900 dark:text-white">Windows</span>
+            </div>
+            <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-decimal list-inside">
+              <li>명령 프롬프트 실행 (<kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + R</kbd> → "cmd")</li>
+              <li><code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> 입력 후 Enter</li>
+              <li><code class="text-gray-700 dark:text-gray-300">컴퓨터명\사용자명</code> 형식으로 표시됨 (사용자명만 사용)</li>
+            </ol>
           </div>
         </div>
       </div>
@@ -189,7 +275,7 @@
             <span class="font-semibold text-gray-900 dark:text-white">Windows</span>
           </div>
           <div class="relative">
-            <pre id="path-windows" class="bg-gray-900 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto">C:\Users\[사용자명]\AppData\Local\CapCut\User Data\Projects\com.lveditor.draft\</pre>
+            <pre id="path-windows" class="bg-gray-900 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto">C:\Users\[사용자명]\Documents\CapCut\User Data\Projects\com.lveditor.draft\</pre>
             <button onclick="copyPath('path-windows')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
               <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
@@ -197,7 +283,10 @@
             </button>
           </div>
           <p class="text-sm text-amber-700 dark:text-amber-400 mt-2">
-            💡 파일 탐색기에서 <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + R</kbd> 누르고 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">%localappdata%</code> 입력
+            💡 파일 탐색기 주소창에 경로 직접 입력 또는 <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + E</kbd> → 문서 폴더 열기
+          </p>
+          <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">
+            ⚠️ CapCut 설치 방식에 따라 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">AppData\Local\CapCut\...</code> 경로일 수도 있습니다
           </p>
         </div>
       </div>
