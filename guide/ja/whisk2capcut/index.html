@@ -165,14 +165,17 @@
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
             <div>
               <p class="font-medium text-gray-900 dark:text-white">画像を生成！</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400"><strong>「一括生成」</strong>ボタンを押すと、Whiskが各シーンの画像を自動生成します</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">画面下部の<strong>「生成開始」</strong>ボタンを押すと、Whiskが各シーンの画像を自動生成します</p>
+              <div class="mt-2 inline-flex items-center gap-2 px-3 py-1.5 bg-primary-600 text-white text-xs rounded-lg">
+                ▶ 生成開始
+              </div>
             </div>
           </div>
         </div>
 
         <div class="mt-6 p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
           <p class="text-sm text-emerald-700 dark:text-emerald-300">
-            💡 <strong>ヒント：</strong>まずはテキストファイルから始めましょう。字幕やキャラクターの一貫性など、より細かい制御が必要な場合は、以下のCSV形式を使用してください。
+            💡 <strong>次のステップ：</strong>まずはテキストファイルから始めましょう。字幕やキャラクターの一貫性が必要な場合は、以下のCSV形式を使用してください。
           </p>
         </div>
       </div>
@@ -204,15 +207,87 @@
               <span class="text-xl">🖼️</span>
               <span class="font-semibold text-green-700 dark:text-green-300">リファレンスCSV</span>
             </div>
-            <p class="text-sm text-green-600 dark:text-green-400">キャラクター、背景、スタイルの参照</p>
+            <p class="text-sm text-green-600 dark:text-green-400">キャラクター/背景/スタイル定義（一貫性維持用）</p>
           </div>
           <div class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
             <div class="flex items-center gap-2 mb-2">
               <span class="text-xl">🎬</span>
               <span class="font-semibold text-purple-700 dark:text-purple-300">SRT字幕</span>
+              <span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full">ナレーション動画</span>
             </div>
             <p class="text-sm text-purple-600 dark:text-purple-400">標準字幕形式、自動的にシーンに変換</p>
           </div>
+        </div>
+      </div>
+
+      <!-- Workflow Overview -->
+      <div id="workflow" class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-2xl border border-indigo-200 dark:border-indigo-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🔄</span>
+          ワークフロー概要
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          ファイルがどのように連携するか一目で確認
+        </p>
+
+        <!-- Simple Workflow -->
+        <div class="mb-6">
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 flex items-center gap-2">
+            <span class="text-green-500">●</span> 基本（テキストのみ）
+          </h3>
+          <div class="flex items-center gap-2 flex-wrap text-sm">
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              📝 テキストファイル
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              📋 シーンリスト
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg border border-primary-300 dark:border-primary-700 text-primary-700 dark:text-primary-300">
+              🎨 画像生成
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              📦 CapCutエクスポート
+            </div>
+          </div>
+        </div>
+
+        <!-- Advanced Workflow -->
+        <div>
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 flex items-center gap-2">
+            <span class="text-blue-500">●</span> 上級（キャラクターの一貫性）
+          </h3>
+          <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div class="flex items-center gap-2 text-sm">
+                <div class="px-3 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-300">
+                  📊 シーンCSV
+                </div>
+                <span class="text-xs text-gray-500">characters: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">王</code></span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <div class="px-3 py-2 bg-green-100 dark:bg-green-900/30 rounded-lg border border-green-300 dark:border-green-700 text-green-700 dark:text-green-300">
+                  🖼️ リファレンスCSV
+                </div>
+                <span class="text-xs text-gray-500">name: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">王</code></span>
+              </div>
+            </div>
+            <div class="flex items-center justify-center gap-2 text-sm">
+              <span class="text-gray-500">タグが同じなら</span>
+              <span class="text-green-500 font-bold">✓</span>
+              <span class="text-gray-500">自動マッチ！</span>
+              <span class="text-gray-400 mx-2">→</span>
+              <span class="text-gray-600 dark:text-gray-400">同じキャラクター外見を維持</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>まとめ：</strong>シーンCSVの<code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">characters</code>、<code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">scene_tag</code>、<code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">style_tag</code>がリファレンスCSVの<code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code>と一致すると、該当する参照画像が自動適用されます。
+          </p>
         </div>
       </div>
 

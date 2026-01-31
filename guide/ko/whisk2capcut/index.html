@@ -178,14 +178,17 @@
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
             <div>
               <p class="font-medium text-gray-900 dark:text-white">이미지 생성!</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400"><strong>"일괄 생성"</strong> 버튼을 누르면 Whisk가 각 장면의 이미지를 자동으로 생성합니다</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">화면 하단의 <strong>"생성 시작"</strong> 버튼을 누르면 Whisk가 각 장면의 이미지를 자동으로 생성합니다</p>
+              <div class="mt-2 inline-flex items-center gap-2 px-3 py-1.5 bg-primary-600 text-white text-xs rounded-lg">
+                ▶ 생성 시작
+              </div>
             </div>
           </div>
         </div>
 
         <div class="mt-6 p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
           <p class="text-sm text-emerald-700 dark:text-emerald-300">
-            💡 <strong>팁:</strong> 처음에는 텍스트 파일로 시작하세요. 자막, 캐릭터 일관성 등 더 세밀한 컨트롤이 필요하면 아래 CSV 형식을 사용하세요.
+            💡 <strong>다음 단계:</strong> 처음에는 텍스트 파일로 시작하세요. 자막이나 캐릭터 일관성이 필요하면 아래 CSV 형식을 사용하세요.
           </p>
         </div>
       </div>
@@ -215,17 +218,89 @@
           <div class="p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
             <div class="flex items-center gap-2 mb-2">
               <span class="text-xl">🖼️</span>
-              <span class="font-semibold text-green-700 dark:text-green-300">참조 CSV</span>
+              <span class="font-semibold text-green-700 dark:text-green-300">레퍼런스 CSV</span>
             </div>
-            <p class="text-sm text-green-600 dark:text-green-400">캐릭터, 배경, 스타일 참조 이미지</p>
+            <p class="text-sm text-green-600 dark:text-green-400">캐릭터/배경/스타일 정의 (일관성 유지용)</p>
           </div>
           <div class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
             <div class="flex items-center gap-2 mb-2">
               <span class="text-xl">🎬</span>
               <span class="font-semibold text-purple-700 dark:text-purple-300">SRT 자막</span>
+              <span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full">나레이션 영상</span>
             </div>
             <p class="text-sm text-purple-600 dark:text-purple-400">표준 자막 형식, 자동으로 장면으로 변환</p>
           </div>
+        </div>
+      </div>
+
+      <!-- Workflow Overview -->
+      <div id="workflow" class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-2xl border border-indigo-200 dark:border-indigo-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🔄</span>
+          전체 워크플로우
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          파일들이 어떻게 연결되는지 한눈에 보세요
+        </p>
+
+        <!-- Simple Workflow -->
+        <div class="mb-6">
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 flex items-center gap-2">
+            <span class="text-green-500">●</span> 기본 (텍스트만)
+          </h3>
+          <div class="flex items-center gap-2 flex-wrap text-sm">
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              📝 텍스트 파일
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              📋 씬 목록
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg border border-primary-300 dark:border-primary-700 text-primary-700 dark:text-primary-300">
+              🎨 이미지 생성
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              📦 CapCut 내보내기
+            </div>
+          </div>
+        </div>
+
+        <!-- Advanced Workflow -->
+        <div>
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 flex items-center gap-2">
+            <span class="text-blue-500">●</span> 고급 (캐릭터 일관성 유지)
+          </h3>
+          <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div class="flex items-center gap-2 text-sm">
+                <div class="px-3 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-300">
+                  📊 씬 CSV
+                </div>
+                <span class="text-xs text-gray-500">characters: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">왕</code></span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <div class="px-3 py-2 bg-green-100 dark:bg-green-900/30 rounded-lg border border-green-300 dark:border-green-700 text-green-700 dark:text-green-300">
+                  🖼️ 레퍼런스 CSV
+                </div>
+                <span class="text-xs text-gray-500">name: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">왕</code></span>
+              </div>
+            </div>
+            <div class="flex items-center justify-center gap-2 text-sm">
+              <span class="text-gray-500">태그가 같으면</span>
+              <span class="text-green-500 font-bold">✓</span>
+              <span class="text-gray-500">자동 매칭!</span>
+              <span class="text-gray-400 mx-2">→</span>
+              <span class="text-gray-600 dark:text-gray-400">동일한 캐릭터 외모 유지</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>요약:</strong> 씬 CSV의 <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">characters</code>, <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">scene_tag</code>, <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">style_tag</code> 값이 레퍼런스 CSV의 <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code>과 일치하면 해당 참조 이미지가 자동으로 적용됩니다.
+          </p>
         </div>
       </div>
 
@@ -434,7 +509,7 @@
           레퍼런스 CSV 파일
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
-          참조 CSV 파일은 여러 장면에서 일관된 비주얼 생성을 위해 캐릭터, 배경, 스타일을 정의합니다.
+          레퍼런스 CSV 파일은 여러 장면에서 일관된 비주얼 생성을 위해 캐릭터, 배경, 스타일을 정의합니다.
         </p>
 
         <!-- No Image Required Note -->
@@ -459,7 +534,7 @@
             태그 매칭 시스템 (매우 중요!)
           </h3>
           <p class="text-amber-700 dark:text-amber-400 text-sm mb-4">
-            참조 CSV의 <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code> 필드는 장면 CSV의 태그와 <strong>자동으로 매칭</strong>됩니다.
+            레퍼런스 CSV의 <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code> 필드는 장면 CSV의 태그와 <strong>자동으로 매칭</strong>됩니다.
             이미지 생성 시 매칭된 참조 이미지가 Whisk에 업로드되어 일관된 스타일/캐릭터를 유지합니다.
           </p>
 
@@ -707,7 +782,7 @@ style,cinematic,./images/cinematic.png,영화 같은 드라마틱 조명</pre>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
           <code class="bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded">style_tag</code> 컬럼에 사용할 수 있는 스타일 ID 목록입니다.
-          참조 CSV의 style 타입 name에도 동일하게 사용할 수 있습니다.
+          레퍼런스 CSV의 style 타입 name에도 동일하게 사용할 수 있습니다.
         </p>
 
         <!-- Style Categories -->
@@ -967,7 +1042,21 @@ style,cinematic,./images/cinematic.png,영화 같은 드라마틱 조명</pre>
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🎬</span>
           자막 SRT 파일
+          <span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full">나레이션 영상 제작</span>
         </h2>
+
+        <!-- SRT Best For -->
+        <div class="bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 p-4 mb-6">
+          <h3 class="font-semibold text-purple-800 dark:text-purple-300 mb-2 flex items-center gap-2">
+            <span>🎙️</span> 이런 분들에게 추천!
+          </h3>
+          <ul class="text-sm text-purple-700 dark:text-purple-400 space-y-1 ml-4">
+            <li>• TTS(텍스트 음성 변환)로 나레이션을 먼저 만들고 영상을 제작하는 분</li>
+            <li>• 유튜브 자막 파일(SRT)을 그대로 활용하고 싶은 분</li>
+            <li>• 타임코드 기반으로 정확한 장면 전환이 필요한 분</li>
+          </ul>
+        </div>
+
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           표준 SRT 자막 파일을 가져옵니다. 각 자막 블록은 자동으로 장면으로 변환되며, 자막 텍스트가 프롬프트와 자막으로 사용됩니다. 시간은 타임코드에서 자동 계산됩니다.
         </p>
@@ -1119,7 +1208,7 @@ prompt,subtitle,characters,scene_tag,style_tag,duration
         <!-- Reference CSV Prompt -->
         <div class="mb-6">
           <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-            🖼️ 참조 CSV 생성 프롬프트
+            🖼️ 레퍼런스 CSV 생성 프롬프트
           </h3>
 
           <div class="relative">
@@ -1143,7 +1232,7 @@ prompt,subtitle,characters,scene_tag,style_tag,duration
 
             <pre id="ref-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">당신은 Whisk2CapCut을 위한 참조 계획 어시스턴트입니다.
 
-스토리를 받으면, 다음 컬럼을 가진 참조 CSV를 생성하세요:
+스토리를 받으면, 다음 컬럼을 가진 레퍼런스 CSV를 생성하세요:
 - type: 참조 타입 (character, background, 또는 style)
 - name: 태그 매칭용 이름 (장면 CSV 태그와 정확히 일치해야 함)
 - image_path: 제안하는 이미지 파일명
