@@ -155,19 +155,41 @@
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
-            <div>
+            <div class="flex-1">
               <p class="font-medium text-gray-900 dark:text-white">ファイルをインポート</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Whisk2CapCutで<strong>「インポート」</strong>タブ → <strong>「プロンプトTextファイル」</strong>を選択 → ファイルを開く</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Whisk2CapCutで<strong>「📂 インポート」</strong>ボタンをクリック → <strong>「プロンプトTextファイル」</strong>を選択</p>
+
+              <!-- プラグインタブヘッダーUIプレビュー -->
+              <div class="bg-gray-900 dark:bg-black rounded-lg p-3 text-xs">
+                <div class="flex items-center justify-between mb-2 pb-2 border-b border-gray-700">
+                  <div class="flex gap-1">
+                    <span class="px-2 py-1 bg-primary-600 text-white rounded">📝 プロンプト</span>
+                    <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded">📋 シーン (0)</span>
+                  </div>
+                  <div class="flex gap-1">
+                    <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded">🖼️ Ref (0)</span>
+                    <span class="px-2 py-1 bg-blue-600 text-white rounded animate-pulse">📂 インポート</span>
+                  </div>
+                </div>
+                <div class="text-gray-500 text-center py-4">← ここをクリック！</div>
+              </div>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
-            <div>
+            <div class="flex-1">
               <p class="font-medium text-gray-900 dark:text-white">画像を生成！</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">画面下部の<strong>「生成開始」</strong>ボタンを押すと、Whiskが各シーンの画像を自動生成します</p>
-              <div class="mt-2 inline-flex items-center gap-2 px-3 py-1.5 bg-primary-600 text-white text-xs rounded-lg">
-                ✨ 生成開始
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">画面下部の<strong>「生成開始」</strong>ボタンを押すと、Whiskが各シーンの画像を自動生成します</p>
+
+              <!-- プラグイン下部ボタンUIプレビュー -->
+              <div class="bg-gray-900 dark:bg-black rounded-lg p-3 text-xs">
+                <div class="flex gap-2">
+                  <button class="flex-1 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium animate-pulse">
+                    ✨ 生成開始
+                  </button>
+                </div>
+                <div class="text-gray-500 text-center text-xs mt-2">シーンがあると有効化されます</div>
               </div>
             </div>
           </div>
@@ -288,6 +310,83 @@
           <p class="text-xs text-amber-700 dark:text-amber-400">
             💡 <strong>まとめ：</strong>シーンCSVの<code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">characters</code>、<code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">scene_tag</code>、<code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">style_tag</code>がリファレンスCSVの<code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code>と一致すると、該当する参照画像が自動適用されます。
           </p>
+        </div>
+      </div>
+
+      <!-- Import Modal Preview -->
+      <div id="import-modal" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📂</span>
+          インポートモーダルプレビュー
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          「📂 インポート」ボタンをクリックすると表示されるモーダルです。目的のファイル形式をクリックしてください。
+        </p>
+
+        <!-- Import Modal UI -->
+        <div class="bg-gray-900 dark:bg-black rounded-xl p-4 max-w-md mx-auto">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-700">
+            <span class="text-white font-semibold">📂 ファイルインポート</span>
+            <span class="text-gray-500 cursor-pointer">✕</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-4">ファイル形式を選択してください</p>
+
+          <!-- Import Options -->
+          <div class="space-y-2">
+            <!-- Text Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-amber-500 transition-all">
+              <span class="text-2xl">📝</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">プロンプトTextファイル</div>
+                <div class="text-gray-400 text-xs">改行で区切られたプロンプト</div>
+                <div class="text-gray-500 text-xs mt-1">1行 = 1つのシーン</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- CSV Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-blue-500 transition-all">
+              <span class="text-2xl">📊</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">シーンCSVファイル</div>
+                <div class="text-gray-400 text-xs">構造化されたシーンデータ</div>
+                <div class="text-gray-500 text-xs mt-1">prompt, subtitle, characters...</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- Reference CSV Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-green-500 transition-all">
+              <span class="text-2xl">🖼️</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">リファレンスCSVファイル</div>
+                <div class="text-gray-400 text-xs">キャラクター/背景/スタイル定義</div>
+                <div class="text-gray-500 text-xs mt-1">name, type, prompt</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- SRT Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-purple-500 transition-all">
+              <span class="text-2xl">📺</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">字幕SRTファイル</div>
+                <div class="text-gray-400 text-xs">字幕から自動でシーン生成</div>
+                <div class="text-gray-500 text-xs mt-1">タイムコード + 字幕 → プロンプト</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+          </div>
+
+          <!-- Option Links (below each option) -->
+          <div class="mt-4 pt-3 border-t border-gray-700">
+            <p class="text-gray-500 text-xs mb-2">各オプションの下にヘルプボタン：</p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">📖 ガイド</span>
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">📄 サンプル</span>
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">🤖 AI生成</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -658,6 +757,100 @@
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <!-- Reference Panel UI Preview -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl border border-green-200 dark:border-green-800 p-5 mb-6">
+          <h3 class="font-bold text-green-800 dark:text-green-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">🖼️</span>
+            プラグイン リファレンスパネル プレビュー
+          </h3>
+          <p class="text-green-700 dark:text-green-400 text-sm mb-4">
+            「🖼️ Ref」ボタンをクリックすると表示されるリファレンスパネルです。CSVをインポートするとここにカードが作成されます。
+          </p>
+
+          <!-- Reference Panel UI -->
+          <div class="bg-gray-900 dark:bg-black rounded-xl p-4">
+            <!-- Panel Header -->
+            <div class="flex items-center justify-between mb-3 pb-2 border-b border-gray-700">
+              <div class="flex items-center gap-2">
+                <span class="text-gray-400 cursor-pointer">▼</span>
+                <span class="text-white text-sm font-medium">🖼️ リファレンス画像 (3)</span>
+              </div>
+              <button class="px-3 py-1 bg-primary-600 text-white text-xs rounded-lg">
+                🎨 一括生成 (2)
+              </button>
+            </div>
+
+            <!-- Reference Cards Grid -->
+            <div class="grid grid-cols-4 gap-3">
+              <!-- Card 1: King (with image) -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between px-2 py-1 bg-gray-700">
+                  <select class="bg-transparent text-xs text-blue-400 outline-none">
+                    <option>👤 キャラクター</option>
+                  </select>
+                  <span class="text-gray-500 text-xs cursor-pointer">✕</span>
+                </div>
+                <div class="aspect-video bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center relative">
+                  <span class="text-3xl">👑</span>
+                  <span class="absolute bottom-1 right-1 text-xs">✅</span>
+                </div>
+                <div class="px-2 py-1 text-center">
+                  <span class="text-white text-xs">王</span>
+                  <span class="text-yellow-500 text-xs ml-1">📝</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Queen (no image, has prompt) -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between px-2 py-1 bg-gray-700">
+                  <select class="bg-transparent text-xs text-blue-400 outline-none">
+                    <option>👤 キャラクター</option>
+                  </select>
+                  <span class="text-gray-500 text-xs cursor-pointer">✕</span>
+                </div>
+                <div class="aspect-video bg-gray-700 flex flex-col items-center justify-center">
+                  <span class="text-2xl mb-1">👤</span>
+                  <span class="text-gray-400 text-xs">クリックでアップロード</span>
+                </div>
+                <div class="px-2 py-1 text-center">
+                  <span class="text-white text-xs">王妃</span>
+                  <span class="text-yellow-500 text-xs ml-1">📝</span>
+                </div>
+                <button class="w-full py-1 bg-primary-600 text-white text-xs">🎨 生成</button>
+              </div>
+
+              <!-- Card 3: Palace (background) -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between px-2 py-1 bg-gray-700">
+                  <select class="bg-transparent text-xs text-green-400 outline-none">
+                    <option>🏞️ 背景</option>
+                  </select>
+                  <span class="text-gray-500 text-xs cursor-pointer">✕</span>
+                </div>
+                <div class="aspect-video bg-gray-700 flex flex-col items-center justify-center">
+                  <span class="text-2xl mb-1">🏞️</span>
+                  <span class="text-gray-400 text-xs">クリックでアップロード</span>
+                </div>
+                <div class="px-2 py-1 text-center">
+                  <span class="text-white text-xs">宮殿</span>
+                  <span class="text-yellow-500 text-xs ml-1">📝</span>
+                </div>
+                <button class="w-full py-1 bg-primary-600 text-white text-xs">🎨 生成</button>
+              </div>
+
+              <!-- Add Card -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden border-2 border-dashed border-gray-600 flex flex-col items-center justify-center aspect-video cursor-pointer hover:border-gray-500">
+                <span class="text-2xl text-gray-500">+</span>
+                <span class="text-gray-500 text-xs">追加</span>
+              </div>
+            </div>
+
+            <p class="text-gray-500 text-xs mt-3 text-center">
+              💡 プロンプトがあり画像がないカードは「🎨 生成」ボタンでAI画像生成が可能
+            </p>
+          </div>
         </div>
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">CSV例</h3>

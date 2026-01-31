@@ -155,19 +155,41 @@
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
-            <div>
+            <div class="flex-1">
               <p class="font-medium text-gray-900 dark:text-white">Import the File</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">In Whisk2CapCut, go to <strong>"Import"</strong> tab → Select <strong>"Prompt Text File"</strong> → Open your file</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">In Whisk2CapCut, click <strong>"📂 Import"</strong> button → Select <strong>"Prompt Text File"</strong></p>
+
+              <!-- Plugin Tab Header UI Preview -->
+              <div class="bg-gray-900 dark:bg-black rounded-lg p-3 text-xs">
+                <div class="flex items-center justify-between mb-2 pb-2 border-b border-gray-700">
+                  <div class="flex gap-1">
+                    <span class="px-2 py-1 bg-primary-600 text-white rounded">📝 Prompts</span>
+                    <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded">📋 Scenes (0)</span>
+                  </div>
+                  <div class="flex gap-1">
+                    <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded">🖼️ Ref (0)</span>
+                    <span class="px-2 py-1 bg-blue-600 text-white rounded animate-pulse">📂 Import</span>
+                  </div>
+                </div>
+                <div class="text-gray-500 text-center py-4">← Click here!</div>
+              </div>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
-            <div>
+            <div class="flex-1">
               <p class="font-medium text-gray-900 dark:text-white">Generate Images!</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Click <strong>"Start Generation"</strong> button at the bottom and Whisk will automatically create images for each scene</p>
-              <div class="mt-2 inline-flex items-center gap-2 px-3 py-1.5 bg-primary-600 text-white text-xs rounded-lg">
-                ✨ Start Generation
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Click <strong>"Start Generation"</strong> button at the bottom and Whisk will automatically create images for each scene</p>
+
+              <!-- Plugin Bottom Button UI Preview -->
+              <div class="bg-gray-900 dark:bg-black rounded-lg p-3 text-xs">
+                <div class="flex gap-2">
+                  <button class="flex-1 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium animate-pulse">
+                    ✨ Start Generation
+                  </button>
+                </div>
+                <div class="text-gray-500 text-center text-xs mt-2">Enabled when scenes exist</div>
               </div>
             </div>
           </div>
@@ -288,6 +310,83 @@
           <p class="text-xs text-amber-700 dark:text-amber-400">
             💡 <strong>Summary:</strong> When <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">characters</code>, <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">scene_tag</code>, <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">style_tag</code> in Scene CSV match <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code> in Reference CSV, reference images are automatically applied.
           </p>
+        </div>
+      </div>
+
+      <!-- Import Modal Preview -->
+      <div id="import-modal" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📂</span>
+          Import Modal Preview
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          This modal appears when you click the "📂 Import" button. Click on the file format you want.
+        </p>
+
+        <!-- Import Modal UI -->
+        <div class="bg-gray-900 dark:bg-black rounded-xl p-4 max-w-md mx-auto">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-700">
+            <span class="text-white font-semibold">📂 Import File</span>
+            <span class="text-gray-500 cursor-pointer">✕</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-4">Select a file format</p>
+
+          <!-- Import Options -->
+          <div class="space-y-2">
+            <!-- Text Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-amber-500 transition-all">
+              <span class="text-2xl">📝</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">Prompt Text File</div>
+                <div class="text-gray-400 text-xs">Line-separated prompts</div>
+                <div class="text-gray-500 text-xs mt-1">One line = One scene</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- CSV Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-blue-500 transition-all">
+              <span class="text-2xl">📊</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">Scene CSV File</div>
+                <div class="text-gray-400 text-xs">Structured scene data</div>
+                <div class="text-gray-500 text-xs mt-1">prompt, subtitle, characters...</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- Reference CSV Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-green-500 transition-all">
+              <span class="text-2xl">🖼️</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">Reference CSV File</div>
+                <div class="text-gray-400 text-xs">Character/Background/Style definitions</div>
+                <div class="text-gray-500 text-xs mt-1">name, type, prompt</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- SRT Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-purple-500 transition-all">
+              <span class="text-2xl">📺</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">Subtitle SRT File</div>
+                <div class="text-gray-400 text-xs">Auto-generate scenes from subtitles</div>
+                <div class="text-gray-500 text-xs mt-1">Timecode + subtitle → prompt</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+          </div>
+
+          <!-- Option Links (below each option) -->
+          <div class="mt-4 pt-3 border-t border-gray-700">
+            <p class="text-gray-500 text-xs mb-2">Help buttons below each option:</p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">📖 Guide</span>
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">📄 Sample</span>
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">🤖 AI Prompt</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -658,6 +757,100 @@ The journey's end at a peaceful village</pre>
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <!-- Reference Panel UI Preview -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl border border-green-200 dark:border-green-800 p-5 mb-6">
+          <h3 class="font-bold text-green-800 dark:text-green-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">🖼️</span>
+            Plugin Reference Panel Preview
+          </h3>
+          <p class="text-green-700 dark:text-green-400 text-sm mb-4">
+            This is the Reference panel displayed when you click "🖼️ Ref" button. When you import a CSV, cards are created here.
+          </p>
+
+          <!-- Reference Panel UI -->
+          <div class="bg-gray-900 dark:bg-black rounded-xl p-4">
+            <!-- Panel Header -->
+            <div class="flex items-center justify-between mb-3 pb-2 border-b border-gray-700">
+              <div class="flex items-center gap-2">
+                <span class="text-gray-400 cursor-pointer">▼</span>
+                <span class="text-white text-sm font-medium">🖼️ Reference Images (3)</span>
+              </div>
+              <button class="px-3 py-1 bg-primary-600 text-white text-xs rounded-lg">
+                🎨 Generate All (2)
+              </button>
+            </div>
+
+            <!-- Reference Cards Grid -->
+            <div class="grid grid-cols-4 gap-3">
+              <!-- Card 1: King (with image) -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between px-2 py-1 bg-gray-700">
+                  <select class="bg-transparent text-xs text-blue-400 outline-none">
+                    <option>👤 Character</option>
+                  </select>
+                  <span class="text-gray-500 text-xs cursor-pointer">✕</span>
+                </div>
+                <div class="aspect-video bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center relative">
+                  <span class="text-3xl">👑</span>
+                  <span class="absolute bottom-1 right-1 text-xs">✅</span>
+                </div>
+                <div class="px-2 py-1 text-center">
+                  <span class="text-white text-xs">King</span>
+                  <span class="text-yellow-500 text-xs ml-1">📝</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Queen (no image, has prompt) -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between px-2 py-1 bg-gray-700">
+                  <select class="bg-transparent text-xs text-blue-400 outline-none">
+                    <option>👤 Character</option>
+                  </select>
+                  <span class="text-gray-500 text-xs cursor-pointer">✕</span>
+                </div>
+                <div class="aspect-video bg-gray-700 flex flex-col items-center justify-center">
+                  <span class="text-2xl mb-1">👤</span>
+                  <span class="text-gray-400 text-xs">Click to upload</span>
+                </div>
+                <div class="px-2 py-1 text-center">
+                  <span class="text-white text-xs">Queen</span>
+                  <span class="text-yellow-500 text-xs ml-1">📝</span>
+                </div>
+                <button class="w-full py-1 bg-primary-600 text-white text-xs">🎨 Generate</button>
+              </div>
+
+              <!-- Card 3: Palace (background) -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between px-2 py-1 bg-gray-700">
+                  <select class="bg-transparent text-xs text-green-400 outline-none">
+                    <option>🏞️ Background</option>
+                  </select>
+                  <span class="text-gray-500 text-xs cursor-pointer">✕</span>
+                </div>
+                <div class="aspect-video bg-gray-700 flex flex-col items-center justify-center">
+                  <span class="text-2xl mb-1">🏞️</span>
+                  <span class="text-gray-400 text-xs">Click to upload</span>
+                </div>
+                <div class="px-2 py-1 text-center">
+                  <span class="text-white text-xs">Palace</span>
+                  <span class="text-yellow-500 text-xs ml-1">📝</span>
+                </div>
+                <button class="w-full py-1 bg-primary-600 text-white text-xs">🎨 Generate</button>
+              </div>
+
+              <!-- Add Card -->
+              <div class="bg-gray-800 rounded-lg overflow-hidden border-2 border-dashed border-gray-600 flex flex-col items-center justify-center aspect-video cursor-pointer hover:border-gray-500">
+                <span class="text-2xl text-gray-500">+</span>
+                <span class="text-gray-500 text-xs">Add</span>
+              </div>
+            </div>
+
+            <p class="text-gray-500 text-xs mt-3 text-center">
+              💡 Cards with prompt but no image can generate AI images with "🎨 Generate" button
+            </p>
+          </div>
         </div>
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">CSV Example</h3>
