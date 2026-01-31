@@ -5,6 +5,10 @@ import { useRouter, useParams } from 'next/navigation';
 import { Language, languages, translations, TranslationKey } from '@/lib/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PluginMockup from '@/components/PluginMockup';
+import WorkflowDemo from '@/components/WorkflowDemo';
+import KenBurnsDemo from '@/components/KenBurnsDemo';
+import CapCutTimeline from '@/components/CapCutTimeline';
 
 // Tab component for file format sections
 function FileFormatTabs({
@@ -134,43 +138,51 @@ export default function Whisk2CapCutPage() {
         </div>
 
         <div className="relative z-10 container-custom px-4">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-900/30 rounded-full text-violet-700 dark:text-violet-300 text-sm font-medium mb-6">
-              <img src="/images/whisk2capcut.svg" alt="Whisk2CapCut" className="w-6 h-6 rounded" />
-              Chrome Extension
-            </div>
-            <div className="flex items-center gap-6 mb-4">
-              <img src="/images/whisk2capcut.svg" alt="Whisk2CapCut" className="w-24 h-24 md:w-32 md:h-32 rounded-2xl" />
-              <div>
-                <h1 className="text-4xl md:text-6xl font-bold">
-                  <span className="bg-gradient-to-r from-violet-500 to-purple-600 bg-clip-text text-transparent">
-                    {t('whisk2capcut_hero_title')}
-                  </span>
-                </h1>
-                <p className="text-2xl md:text-3xl font-bold text-green-500 dark:text-green-400">
-                  {t('whisk2capcut_hero_slogan')}
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-900/30 rounded-full text-violet-700 dark:text-violet-300 text-sm font-medium mb-6">
+                <img src="/images/whisk2capcut.svg" alt="Whisk2CapCut" className="w-6 h-6 rounded" />
+                Chrome Extension
+              </div>
+              <div className="flex items-center gap-6 mb-4">
+                <img src="/images/whisk2capcut.svg" alt="Whisk2CapCut" className="w-20 h-20 md:w-24 md:h-24 rounded-2xl" />
+                <div>
+                  <h1 className="text-3xl md:text-5xl font-bold">
+                    <span className="bg-gradient-to-r from-violet-500 to-purple-600 bg-clip-text text-transparent">
+                      {t('whisk2capcut_hero_title')}
+                    </span>
+                  </h1>
+                  <p className="text-xl md:text-2xl font-bold text-green-500 dark:text-green-400">
+                    {t('whisk2capcut_hero_slogan')}
+                  </p>
+                </div>
+              </div>
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
+                {t('whisk2capcut_hero_subtitle')}
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://chrome.google.com/webstore"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary text-lg"
+                >
+                  {t('whisk2capcut_hero_cta')}
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+                <a href="#pricing" className="btn-secondary text-lg">
+                  {t('whisk2capcut_hero_cta_secondary')}
+                </a>
               </div>
             </div>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-              {t('whisk2capcut_hero_subtitle')}
-            </p>
 
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="https://chrome.google.com/webstore"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-lg"
-              >
-                {t('whisk2capcut_hero_cta')}
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-              <a href="#pricing" className="btn-secondary text-lg">
-                {t('whisk2capcut_hero_cta_secondary')}
-              </a>
+            {/* Right: Plugin Mockup */}
+            <div className="hidden lg:block">
+              <PluginMockup lang={lang} variant="generating" />
             </div>
           </div>
         </div>
@@ -342,27 +354,16 @@ export default function Whisk2CapCutPage() {
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* How It Works Section - Interactive Demo */}
       <section className="section-padding bg-gray-50 dark:bg-gray-900/50">
         <div className="container-custom px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             <span className="gradient-text">{t('whisk2capcut_howto_title')}</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-violet-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                  {step.num}
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
-                  {t(step.title as TranslationKey)}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {t(step.desc as TranslationKey)}
-                </p>
-              </div>
-            ))}
-          </div>
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+            {lang === 'ko' ? '3단계로 끝나는 간단한 워크플로우를 직접 확인해보세요' : 'See how simple it is with just 3 steps'}
+          </p>
+          <WorkflowDemo lang={lang} />
         </div>
       </section>
 
@@ -439,14 +440,11 @@ The king makes a difficult decision`}</pre>
 
                     {/* Scene CSV Example */}
                     <div className="bg-gray-900 dark:bg-black rounded-xl p-4 font-mono text-xs text-gray-300 overflow-x-auto mb-4">
-                      <pre>{`prompt,subtitle,characters,scene_tag,style_tag,duration
-"A wise old king sits on golden throne","늙은 현명한 왕이 황금 왕좌에 앉아있다",왕,궁전,cinematic,4
-"Beautiful queen enters through doors","아름다운 왕비가 화려한 문으로 들어온다",왕비,궁전,cinematic,3
-"King and queen discuss matters","왕과 왕비가 중요한 문제를 논의한다",왕;왕비,궁전,cinematic,4`}</pre>
+                      <pre>{t('sample_scene_csv')}</pre>
                     </div>
 
                     <a
-                      href="/samples/scene-sample.csv"
+                      href={`/samples/${lang}/scene-sample.csv`}
                       download
                       className="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded-lg font-medium text-sm hover:bg-violet-200 dark:hover:bg-violet-900/50 transition-colors"
                     >
@@ -542,15 +540,11 @@ Now break down this story into scenes:`}</pre>
 
                     {/* Reference CSV Example */}
                     <div className="bg-gray-900 dark:bg-black rounded-xl p-4 font-mono text-xs text-gray-300 overflow-x-auto mb-4">
-                      <pre>{`type,name,image_path,description
-character,왕,images/king.png,"Wise old king with white beard"
-character,왕비,images/queen.png,"Beautiful queen in red dress"
-background,궁전,images/palace.png,"Grand palace interior"
-style,cinematic,images/cinematic.png,"Dramatic lighting"`}</pre>
+                      <pre>{t('sample_ref_csv')}</pre>
                     </div>
 
                     <a
-                      href="/samples/reference-sample.csv"
+                      href={`/samples/${lang}/reference-sample.csv`}
                       download
                       className="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded-lg font-medium text-sm hover:bg-violet-200 dark:hover:bg-violet-900/50 transition-colors"
                     >
@@ -623,25 +617,11 @@ Now create the reference list for this story:`}</pre>
                   <>
                     {/* SRT Example */}
                     <div className="bg-gray-900 dark:bg-black rounded-xl p-4 font-mono text-xs text-gray-300 overflow-x-auto mb-4">
-                      <pre>{`1
-00:00:00,000 --> 00:00:04,000
-늙은 현명한 왕이 황금 왕좌에 앉아있다
-
-2
-00:00:04,000 --> 00:00:07,000
-아름다운 왕비가 화려한 문으로 들어온다
-
-3
-00:00:07,000 --> 00:00:11,000
-왕과 왕비가 중요한 문제를 논의한다
-
-4
-00:00:11,000 --> 00:00:14,000
-어린 왕자가 성 안뜰에서 검술 연습을 한다`}</pre>
+                      <pre>{t('sample_srt')}</pre>
                     </div>
 
                     <a
-                      href="/samples/sample.srt"
+                      href={`/samples/${lang}/sample.srt`}
                       download
                       className="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded-lg font-medium text-sm hover:bg-violet-200 dark:hover:bg-violet-900/50 transition-colors"
                     >
@@ -803,7 +783,7 @@ Now create the SRT file for this story:`}</pre>
               </div>
             </div>
 
-            {/* Ken Burns Effect */}
+            {/* Ken Burns Effect - Interactive Demo */}
             <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8">
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-3">
                 <span className="text-2xl">🎬</span>
@@ -813,8 +793,11 @@ Now create the SRT file for this story:`}</pre>
                 {t('kenburns_desc')}
               </p>
 
-              {/* Modes */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              {/* Interactive Ken Burns Demo */}
+              <KenBurnsDemo lang={lang} />
+
+              {/* Modes - collapsed info */}
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
                   <div className="flex items-center gap-2 mb-2">
                     <span>🎯</span>
@@ -837,45 +820,6 @@ Now create the SRT file for this story:`}</pre>
                     {t('kenburns_mode_random_desc')}
                   </p>
                 </div>
-              </div>
-
-              {/* Patterns */}
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
-                  {t('kenburns_patterns_title')}
-                </h4>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-                  {[
-                    { name: 'zoomIn', desc: '1.0x → 1.3x' },
-                    { name: 'zoomOut', desc: '1.3x → 1.0x' },
-                    { name: 'panLeft', desc: '→ ←' },
-                    { name: 'panRight', desc: '← →' },
-                    { name: 'panUp', desc: '↓ ↑' },
-                    { name: 'panDown', desc: '↑ ↓' },
-                    { name: 'zoomInPanLeft', desc: '↗ + ←' },
-                    { name: 'zoomInPanRight', desc: '↗ + →' },
-                    { name: 'zoomOutPanUp', desc: '↙ + ↑' },
-                    { name: 'zoomOutPanDown', desc: '↙ + ↓' },
-                  ].map((pattern, i) => (
-                    <div key={i} className="px-3 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-center">
-                      <div className="text-xs font-mono text-gray-900 dark:text-white">{pattern.name}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{pattern.desc}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Cycle */}
-              <div className="p-4 bg-violet-50 dark:bg-violet-900/20 rounded-xl">
-                <div className="flex items-center gap-2 mb-1">
-                  <span>⏱️</span>
-                  <span className="font-semibold text-gray-900 dark:text-white">
-                    {t('kenburns_cycle')}
-                  </span>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {t('kenburns_cycle_desc')}
-                </p>
               </div>
             </div>
 
@@ -949,6 +893,20 @@ Now create the SRT file for this story:`}</pre>
                 </svg>
                 {lang === 'ko' ? '자세한 가이드 보기' : lang === 'ja' ? '詳細ガイドを見る' : lang === 'de' ? 'Ausführliche Anleitung' : 'View Detailed Guide'}
               </a>
+            </div>
+
+            {/* CapCut Preview - Interactive Timeline */}
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-3">
+                <span className="text-2xl">🎥</span>
+                {lang === 'ko' ? 'CapCut에서 보이는 모습' : 'Preview in CapCut'}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
+                {lang === 'ko'
+                  ? '내보낸 프로젝트를 CapCut에서 열면 이런 모습입니다. 이미지, 자막, 애니메이션이 모두 타임라인에 배치됩니다.'
+                  : 'This is how your exported project looks in CapCut. Images, subtitles, and animations are all placed on the timeline.'}
+              </p>
+              <CapCutTimeline lang={lang} />
             </div>
 
             {/* Output Structure */}

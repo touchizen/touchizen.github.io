@@ -222,6 +222,68 @@ export const ko = {
   pricing_cta_free: '무료 시작',
   pricing_cta_pro: 'Pro 구독',
 
+  // CapCut Timeline Preview
+  timeline_preview: '미리보기',
+  timeline_properties: '속성',
+  timeline_playback: '재생 시간',
+  timeline_position: '위치',
+  timeline_zoom: '줌',
+  timeline_media: '미디어',
+  timeline_subtitles: '자막',
+  timeline_scene: '씬',
+  timeline_desc: 'Whisk2CapCut으로 내보낸 프로젝트를 CapCut에서 바로 편집할 수 있습니다. 이미지, 자막, Ken Burns 효과가 모두 포함됩니다.',
+  timeline_sub1: '왕이 왕좌에 앉아있다',
+  timeline_sub2: '왕비가 들어온다',
+  timeline_sub3: '중요한 논의를 한다',
+  timeline_sub4: '왕자의 검술 연습',
+  timeline_sub5: '긴급한 소식이 온다',
+  timeline_sub6: '적군이 침입했다',
+  timeline_sub7: '왕이 결단을 내린다',
+  timeline_sub8: '출정을 준비한다',
+  timeline_resolution: '해상도',
+  timeline_framerate: '프레임',
+  timeline_clips: '클립 수',
+  timeline_applied: '적용됨',
+
+  // Sample examples
+  sample_scene_csv: `prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne","늙은 현명한 왕이 황금 왕좌에 앉아있다",왕,궁전,cinematic,4
+"Beautiful queen enters through doors","아름다운 왕비가 화려한 문으로 들어온다",왕비,궁전,cinematic,3
+"King and queen discuss matters","왕과 왕비가 중요한 문제를 논의한다",왕;왕비,궁전,cinematic,4`,
+  sample_ref_csv: `type,name,image_path,description
+character,왕,images/king.png,"Wise old king with white beard"
+character,왕비,images/queen.png,"Beautiful queen in red dress"
+background,궁전,images/palace.png,"Grand palace interior"
+style,cinematic,images/cinematic.png,"Dramatic lighting"`,
+  sample_srt: `1
+00:00:00,000 --> 00:00:04,000
+늙은 현명한 왕이 황금 왕좌에 앉아있다
+
+2
+00:00:04,000 --> 00:00:07,000
+아름다운 왕비가 화려한 문으로 들어온다
+
+3
+00:00:07,000 --> 00:00:11,000
+왕과 왕비가 중요한 문제를 논의한다
+
+4
+00:00:11,000 --> 00:00:14,000
+어린 왕자가 성 안뜰에서 검술 연습을 한다`,
+
+  // Plugin Mockup
+  mockup_sub1: '늙은 현명한 왕이 황금 왕좌에 앉아있다',
+  mockup_sub2: '아름다운 왕비가 화려한 문으로 들어온다',
+  mockup_sub3: '왕과 왕비가 중요한 문제를 논의한다',
+  mockup_sub4: '어린 왕자가 성 안뜰에서 검술 연습을 한다',
+  mockup_sub5: '왕실 고문이 왕에게 긴급한 소식을 전한다',
+  mockup_char_king: '왕',
+  mockup_char_queen: '왕비',
+  mockup_char_prince: '왕자',
+  mockup_char_advisor: '고문',
+  mockup_scene_palace: '궁전',
+  mockup_scene_courtyard: '안뜰',
+
   // Footer
   footer_tagline: 'AI 도구로 크리에이터에게 힘을',
   footer_products: '제품',

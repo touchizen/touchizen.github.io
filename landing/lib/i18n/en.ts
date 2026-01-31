@@ -222,6 +222,68 @@ export const en = {
   pricing_cta_free: 'Start Free',
   pricing_cta_pro: 'Go Pro',
 
+  // CapCut Timeline Preview
+  timeline_preview: 'Preview',
+  timeline_properties: 'Properties',
+  timeline_playback: 'Playback',
+  timeline_position: 'Position',
+  timeline_zoom: 'Zoom',
+  timeline_media: 'Media',
+  timeline_subtitles: 'Subtitles',
+  timeline_scene: 'Scene',
+  timeline_desc: 'Projects exported with Whisk2CapCut can be edited directly in CapCut. Images, subtitles, and Ken Burns effects are all included.',
+  timeline_sub1: 'The king sits on the throne',
+  timeline_sub2: 'The queen enters',
+  timeline_sub3: 'An important discussion',
+  timeline_sub4: 'Prince practices swordplay',
+  timeline_sub5: 'Urgent news arrives',
+  timeline_sub6: 'Enemy forces invade',
+  timeline_sub7: 'The king makes a decision',
+  timeline_sub8: 'Preparing for battle',
+  timeline_resolution: 'Resolution',
+  timeline_framerate: 'Frame Rate',
+  timeline_clips: 'Clips',
+  timeline_applied: 'Applied',
+
+  // Sample examples
+  sample_scene_csv: `prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne","The wise old king sits on the golden throne",king,palace,cinematic,4
+"Beautiful queen enters through doors","The beautiful queen enters through the doors",queen,palace,cinematic,3
+"King and queen discuss matters","The king and queen discuss important matters",king;queen,palace,cinematic,4`,
+  sample_ref_csv: `type,name,image_path,description
+character,king,images/king.png,"Wise old king with white beard"
+character,queen,images/queen.png,"Beautiful queen in red dress"
+background,palace,images/palace.png,"Grand palace interior"
+style,cinematic,images/cinematic.png,"Dramatic lighting"`,
+  sample_srt: `1
+00:00:00,000 --> 00:00:04,000
+The wise old king sits on the golden throne
+
+2
+00:00:04,000 --> 00:00:07,000
+The beautiful queen enters through the doors
+
+3
+00:00:07,000 --> 00:00:11,000
+The king and queen discuss important matters
+
+4
+00:00:11,000 --> 00:00:14,000
+The young prince practices sword fighting in the courtyard`,
+
+  // Plugin Mockup
+  mockup_sub1: 'The wise old king sits on the golden throne',
+  mockup_sub2: 'The beautiful queen enters through the doors',
+  mockup_sub3: 'The king and queen discuss important matters',
+  mockup_sub4: 'The young prince practices sword fighting',
+  mockup_sub5: 'The royal advisor delivers urgent news to the king',
+  mockup_char_king: 'King',
+  mockup_char_queen: 'Queen',
+  mockup_char_prince: 'Prince',
+  mockup_char_advisor: 'Advisor',
+  mockup_scene_palace: 'Palace',
+  mockup_scene_courtyard: 'Courtyard',
+
   // Footer
   footer_tagline: 'Empowering creators with AI tools',
   footer_products: 'Products',

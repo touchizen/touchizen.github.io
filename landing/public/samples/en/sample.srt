@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:04,000
+The wise old king sits on the golden throne
+
+2
+00:00:04,000 --> 00:00:07,000
+The beautiful queen enters through the ornate doors
+
+3
+00:00:07,000 --> 00:00:11,000
+The king and queen discuss important matters
+
+4
+00:00:11,000 --> 00:00:14,000
+The young prince practices sword fighting in the courtyard
+
+5
+00:00:14,000 --> 00:00:17,000
+The royal advisor whispers secret news to the king
+
+6
+00:00:17,000 --> 00:00:21,000
+The queen gazes at distant mountains from the window
+
+7
+00:00:21,000 --> 00:00:25,000
+A war council meeting with the generals
+
+8
+00:00:25,000 --> 00:00:30,000
+The king makes a difficult decision alone at night

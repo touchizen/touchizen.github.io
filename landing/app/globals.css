@@ -132,3 +132,116 @@ body {
 .stagger-1 { animation-delay: 0.1s; }
 .stagger-2 { animation-delay: 0.2s; }
 .stagger-3 { animation-delay: 0.3s; }
+
+/* Ken Burns Effect Animations */
+@keyframes kenburns-zoom-in-left {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.25) translate(-5%, 0);
+  }
+}
+
+@keyframes kenburns-zoom-out-right {
+  0% {
+    transform: scale(1.25) translate(5%, 0);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes kenburns-zoom-in-center {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes kenburns-zoom-out-center {
+  0% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes kenburns-zoom-in-right {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.25) translate(5%, 0);
+  }
+}
+
+@keyframes kenburns-zoom-out-left {
+  0% {
+    transform: scale(1.25) translate(-5%, 0);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes kenburns-zoom-in-top {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.25) translate(0, -5%);
+  }
+}
+
+@keyframes kenburns-zoom-out-bottom {
+  0% {
+    transform: scale(1.25) translate(0, 5%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.kenburns-zoom-in-left {
+  animation-name: kenburns-zoom-in-left;
+  animation-fill-mode: forwards;
+}
+
+.kenburns-zoom-out-right {
+  animation-name: kenburns-zoom-out-right;
+  animation-fill-mode: forwards;
+}
+
+.kenburns-zoom-in-center {
+  animation-name: kenburns-zoom-in-center;
+  animation-fill-mode: forwards;
+}
+
+.kenburns-zoom-out-center {
+  animation-name: kenburns-zoom-out-center;
+  animation-fill-mode: forwards;
+}
+
+.kenburns-zoom-in-right {
+  animation-name: kenburns-zoom-in-right;
+  animation-fill-mode: forwards;
+}
+
+.kenburns-zoom-out-left {
+  animation-name: kenburns-zoom-out-left;
+  animation-fill-mode: forwards;
+}
+
+.kenburns-zoom-in-top {
+  animation-name: kenburns-zoom-in-top;
+  animation-fill-mode: forwards;
+}
+
+.kenburns-zoom-out-bottom {
+  animation-name: kenburns-zoom-out-bottom;
+  animation-fill-mode: forwards;
+}

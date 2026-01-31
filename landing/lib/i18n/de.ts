@@ -222,6 +222,68 @@ export const de = {
   pricing_cta_free: 'Kostenlos starten',
   pricing_cta_pro: 'Pro kaufen',
 
+  // CapCut Timeline Preview
+  timeline_preview: 'Vorschau',
+  timeline_properties: 'Eigenschaften',
+  timeline_playback: 'Wiedergabe',
+  timeline_position: 'Position',
+  timeline_zoom: 'Zoom',
+  timeline_media: 'Medien',
+  timeline_subtitles: 'Untertitel',
+  timeline_scene: 'Szene',
+  timeline_desc: 'Mit Whisk2CapCut exportierte Projekte können direkt in CapCut bearbeitet werden. Bilder, Untertitel und Ken Burns Effekte sind enthalten.',
+  timeline_sub1: 'Der König sitzt auf dem Thron',
+  timeline_sub2: 'Die Königin tritt ein',
+  timeline_sub3: 'Eine wichtige Diskussion',
+  timeline_sub4: 'Prinz übt Schwertkampf',
+  timeline_sub5: 'Dringende Nachricht kommt',
+  timeline_sub6: 'Feindliche Truppen fallen ein',
+  timeline_sub7: 'Der König trifft eine Entscheidung',
+  timeline_sub8: 'Vorbereitung auf den Kampf',
+  timeline_resolution: 'Auflösung',
+  timeline_framerate: 'Bildrate',
+  timeline_clips: 'Clips',
+  timeline_applied: 'Angewendet',
+
+  // Sample examples
+  sample_scene_csv: `prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne","Der weise alte König sitzt auf dem goldenen Thron",koenig,palast,cinematic,4
+"Beautiful queen enters through doors","Die schöne Königin tritt durch die Türen ein",koenigin,palast,cinematic,3
+"King and queen discuss matters","König und Königin besprechen wichtige Angelegenheiten",koenig;koenigin,palast,cinematic,4`,
+  sample_ref_csv: `type,name,image_path,description
+character,koenig,images/king.png,"Wise old king with white beard"
+character,koenigin,images/queen.png,"Beautiful queen in red dress"
+background,palast,images/palace.png,"Grand palace interior"
+style,cinematic,images/cinematic.png,"Dramatic lighting"`,
+  sample_srt: `1
+00:00:00,000 --> 00:00:04,000
+Der weise alte König sitzt auf dem goldenen Thron
+
+2
+00:00:04,000 --> 00:00:07,000
+Die schöne Königin tritt durch die Türen ein
+
+3
+00:00:07,000 --> 00:00:11,000
+König und Königin besprechen wichtige Angelegenheiten
+
+4
+00:00:11,000 --> 00:00:14,000
+Der junge Prinz übt im Burghof Schwertkampf`,
+
+  // Plugin Mockup
+  mockup_sub1: 'Der weise alte König sitzt auf dem goldenen Thron',
+  mockup_sub2: 'Die schöne Königin tritt durch die Türen ein',
+  mockup_sub3: 'König und Königin besprechen wichtige Angelegenheiten',
+  mockup_sub4: 'Der junge Prinz übt im Burghof Schwertkampf',
+  mockup_sub5: 'Der königliche Berater überbringt dem König dringende Nachrichten',
+  mockup_char_king: 'König',
+  mockup_char_queen: 'Königin',
+  mockup_char_prince: 'Prinz',
+  mockup_char_advisor: 'Berater',
+  mockup_scene_palace: 'Palast',
+  mockup_scene_courtyard: 'Burghof',
+
   // Footer
   footer_tagline: 'Creator mit AI-Tools stärken',
   footer_products: 'Produkte',

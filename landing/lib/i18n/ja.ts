@@ -222,6 +222,68 @@ export const ja = {
   pricing_cta_free: '無料で始める',
   pricing_cta_pro: 'Proを購入',
 
+  // CapCut Timeline Preview
+  timeline_preview: 'プレビュー',
+  timeline_properties: 'プロパティ',
+  timeline_playback: '再生時間',
+  timeline_position: '位置',
+  timeline_zoom: 'ズーム',
+  timeline_media: 'メディア',
+  timeline_subtitles: '字幕',
+  timeline_scene: 'シーン',
+  timeline_desc: 'Whisk2CapCutでエクスポートしたプロジェクトはCapCutで直接編集できます。画像、字幕、Ken Burns効果がすべて含まれています。',
+  timeline_sub1: '王が玉座に座っている',
+  timeline_sub2: '王妃が入ってくる',
+  timeline_sub3: '重要な議論をする',
+  timeline_sub4: '王子の剣術練習',
+  timeline_sub5: '緊急の知らせが届く',
+  timeline_sub6: '敵軍が侵入した',
+  timeline_sub7: '王が決断を下す',
+  timeline_sub8: '出陣の準備をする',
+  timeline_resolution: '解像度',
+  timeline_framerate: 'フレームレート',
+  timeline_clips: 'クリップ数',
+  timeline_applied: '適用済み',
+
+  // Sample examples
+  sample_scene_csv: `prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne","賢明な老王が黄金の玉座に座っている",王,宮殿,cinematic,4
+"Beautiful queen enters through doors","美しい王妃が豪華な扉から入ってくる",王妃,宮殿,cinematic,3
+"King and queen discuss matters","王と王妃が重要な問題を話し合う",王;王妃,宮殿,cinematic,4`,
+  sample_ref_csv: `type,name,image_path,description
+character,王,images/king.png,"Wise old king with white beard"
+character,王妃,images/queen.png,"Beautiful queen in red dress"
+background,宮殿,images/palace.png,"Grand palace interior"
+style,cinematic,images/cinematic.png,"Dramatic lighting"`,
+  sample_srt: `1
+00:00:00,000 --> 00:00:04,000
+賢明な老王が黄金の玉座に座っている
+
+2
+00:00:04,000 --> 00:00:07,000
+美しい王妃が豪華な扉から入ってくる
+
+3
+00:00:07,000 --> 00:00:11,000
+王と王妃が重要な問題を話し合う
+
+4
+00:00:11,000 --> 00:00:14,000
+若い王子が中庭で剣術の稽古をする`,
+
+  // Plugin Mockup
+  mockup_sub1: '賢明な老王が黄金の玉座に座っている',
+  mockup_sub2: '美しい王妃が豪華な扉から入ってくる',
+  mockup_sub3: '王と王妃が重要な問題を話し合う',
+  mockup_sub4: '若い王子が中庭で剣術の稽古をする',
+  mockup_sub5: '王室顧問が王に緊急の知らせを伝える',
+  mockup_char_king: '王',
+  mockup_char_queen: '王妃',
+  mockup_char_prince: '王子',
+  mockup_char_advisor: '顧問',
+  mockup_scene_palace: '宮殿',
+  mockup_scene_courtyard: '中庭',
+
   // Footer
   footer_tagline: 'AIツールでクリエイターを支援',
   footer_products: '製品',

@@ -1,0 +1,9 @@
+prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne in grand palace hall, dramatic lighting from tall windows","Der weise alte König sitzt auf dem goldenen Thron",koenig,palast,cinematic,4
+"Beautiful queen enters through large ornate doors, flowing red silk dress","Die schöne Königin tritt durch die prächtigen Türen ein",koenigin,palast,cinematic,3
+"King and queen discuss important matters, serious expressions, close-up shot","König und Königin besprechen wichtige Angelegenheiten",koenig;koenigin,palast,cinematic,4
+"Young prince practices sword fighting in castle courtyard, morning sunlight","Der junge Prinz übt im Burghof Schwertkampf",prinz,burghof,cinematic,3
+"Royal advisor whispers secret news to the king, shadowy corner","Der königliche Berater flüstert dem König geheime Nachrichten",koenig;berater,palast,cinematic,3
+"Queen looks out palace window at distant mountains, contemplative mood","Die Königin blickt aus dem Fenster auf ferne Berge",koenigin,palast,cinematic,4
+"War council meeting with generals around large map table","Kriegsrat mit den Generälen",koenig;generaele,ratssaal,cinematic,4
+"King makes difficult decision, standing alone in throne room at night","Der König trifft nachts allein eine schwere Entscheidung",koenig,palast,cinematic,5

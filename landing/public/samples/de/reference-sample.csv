@@ -1,0 +1,10 @@
+type,name,image_path,description
+character,koenig,images/king.png,"Wise old king with white beard and royal robes"
+character,koenigin,images/queen.png,"Beautiful queen in elegant red dress"
+character,prinz,images/prince.png,"Young prince with determined expression"
+character,berater,images/advisor.png,"Mysterious royal advisor in dark robes"
+character,generaele,images/generals.png,"Group of military generals in armor"
+background,palast,images/palace.png,"Grand palace interior with golden decorations"
+background,burghof,images/courtyard.png,"Castle courtyard with training grounds"
+background,ratssaal,images/council.png,"War council room with large map table"
+style,cinematic,images/cinematic.png,"Dramatic lighting, movie-like composition"

@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:04,000
+Der weise alte König sitzt auf dem goldenen Thron
+
+2
+00:00:04,000 --> 00:00:07,000
+Die schöne Königin tritt durch die prächtigen Türen ein
+
+3
+00:00:07,000 --> 00:00:11,000
+König und Königin besprechen wichtige Angelegenheiten
+
+4
+00:00:11,000 --> 00:00:14,000
+Der junge Prinz übt im Burghof Schwertkampf
+
+5
+00:00:14,000 --> 00:00:17,000
+Der königliche Berater flüstert dem König geheime Nachrichten
+
+6
+00:00:17,000 --> 00:00:21,000
+Die Königin blickt aus dem Fenster auf ferne Berge
+
+7
+00:00:21,000 --> 00:00:25,000
+Kriegsrat mit den Generälen
+
+8
+00:00:25,000 --> 00:00:30,000
+Der König trifft nachts allein eine schwere Entscheidung

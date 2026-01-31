@@ -1,0 +1,9 @@
+prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne in grand palace hall, dramatic lighting from tall windows","The wise old king sits on the golden throne",king,palace,cinematic,4
+"Beautiful queen enters through large ornate doors, flowing red silk dress","The beautiful queen enters through the ornate doors",queen,palace,cinematic,3
+"King and queen discuss important matters, serious expressions, close-up shot","The king and queen discuss important matters",king;queen,palace,cinematic,4
+"Young prince practices sword fighting in castle courtyard, morning sunlight","The young prince practices sword fighting in the courtyard",prince,courtyard,cinematic,3
+"Royal advisor whispers secret news to the king, shadowy corner","The royal advisor whispers secret news to the king",king;advisor,palace,cinematic,3
+"Queen looks out palace window at distant mountains, contemplative mood","The queen gazes at distant mountains from the window",queen,palace,cinematic,4
+"War council meeting with generals around large map table","A war council meeting with the generals",king;generals,council,cinematic,4
+"King makes difficult decision, standing alone in throne room at night","The king makes a difficult decision alone at night",king,palace,cinematic,5
