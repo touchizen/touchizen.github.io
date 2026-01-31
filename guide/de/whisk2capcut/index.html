@@ -128,6 +128,55 @@
         </p>
       </div>
 
+      <!-- Quick Start -->
+      <div id="quick-start" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          In 5 Minuten starten
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">Empfohlen</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Keine komplizierte Einrichtung nötig. Eine einfache Textdatei reicht aus!
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Textdatei erstellen</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Schreiben Sie Szenenbeschreibungen, eine pro Zeile, in einem Texteditor</p>
+              <div class="mt-2 bg-gray-900 dark:bg-black rounded-lg p-3 font-mono text-xs text-green-400">
+                Sonnenaufgang über Berggipfeln<br>
+                Ein Reisender wandert durch den Wald<br>
+                Der Held erreicht das Dorf
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Datei importieren</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">In Whisk2CapCut: <strong>"Import"</strong>-Tab → <strong>"Prompt-Textdatei"</strong> wählen → Datei öffnen</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Bilder generieren!</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Klicken Sie auf <strong>"Batch-Generierung"</strong> und Whisk erstellt automatisch Bilder für jede Szene</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-emerald-700 dark:text-emerald-300">
+            💡 <strong>Tipp:</strong> Beginnen Sie mit einer Textdatei. Für mehr Kontrolle (Untertitel, konsistente Charaktere usw.) verwenden Sie die CSV-Formate unten.
+          </p>
+        </div>
+      </div>
+
       <!-- Supported File Types -->
       <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
@@ -201,6 +250,22 @@ Das Ende der Reise in einem friedlichen Dorf</pre>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           Die Szenen-CSV-Datei definiert den Inhalt jeder Szene, einschließlich Prompts für die Bildgenerierung, Untertitel und Timing.
         </p>
+
+        <!-- Why CSV? -->
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-4 mb-6">
+          <h3 class="font-semibold text-blue-800 dark:text-blue-300 mb-2 flex items-center gap-2">
+            <span>🤔</span> Warum CSV verwenden?
+          </h3>
+          <p class="text-sm text-blue-700 dark:text-blue-400 mb-3">
+            Textdateien sind einfach, aber CSV bietet mehr Kontrolle:
+          </p>
+          <ul class="text-sm text-blue-600 dark:text-blue-400 space-y-1 ml-4">
+            <li>• <strong>Untertitel</strong> separat von Prompts (unterschiedlicher Inhalt)</li>
+            <li>• <strong>Charakter-Tags</strong> für konsistente Charakterbilder</li>
+            <li>• <strong>Individuelle Dauer</strong> pro Szene (3s, 5s, usw.)</li>
+            <li>• <strong>Style-Tags</strong> für konsistenten Kunststil</li>
+          </ul>
+        </div>
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Erforderliche Spalten</h3>
         <div class="overflow-x-auto mb-6">
@@ -348,6 +413,21 @@ Das Ende der Reise in einem friedlichen Dorf</pre>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           Die Referenz-CSV-Datei definiert Charaktere, Hintergründe und Stile, die für eine konsistente visuelle Generierung über Szenen hinweg verwendet werden können.
         </p>
+
+        <!-- No Image Required Note -->
+        <div class="bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800 p-4 mb-6">
+          <h3 class="font-semibold text-green-800 dark:text-green-300 mb-2 flex items-center gap-2">
+            <span>✅</span> Keine Bilder erforderlich!
+          </h3>
+          <p class="text-sm text-green-700 dark:text-green-400 mb-2">
+            Sie können <code class="bg-green-200 dark:bg-green-800 px-1 rounded">image_path</code> in der CSV leer lassen. Fügen Sie Bilder später hinzu:
+          </p>
+          <ul class="text-sm text-green-600 dark:text-green-400 space-y-1 ml-4">
+            <li>• <strong>Direkter Upload</strong> - Klicken Sie im Referenzen-Tab auf den Bildbereich → Datei wählen</li>
+            <li>• <strong>KI-Generierung</strong> - Generieren Sie Referenzbilder in Whisk basierend auf der Beschreibung</li>
+            <li>• <strong>Später hinzufügen</strong> - Erstellen Sie erst die Struktur, Bilder später</li>
+          </ul>
+        </div>
 
         <!-- Tag Matching Explanation - IMPORTANT -->
         <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-5 mb-6">

@@ -128,6 +128,55 @@
         </p>
       </div>
 
+      <!-- Quick Start -->
+      <div id="quick-start" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          5分で始める
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">おすすめ</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          複雑な設定は不要です。テキストファイル1つで始められます！
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">テキストファイルを作成</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">メモ帳などでシーンの説明を1行ずつ書きます</p>
+              <div class="mt-2 bg-gray-900 dark:bg-black rounded-lg p-3 font-mono text-xs text-green-400">
+                山頂から昇る日の出<br>
+                森を歩く旅人<br>
+                村に到着した主人公
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">ファイルをインポート</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Whisk2CapCutで<strong>「インポート」</strong>タブ → <strong>「プロンプトTextファイル」</strong>を選択 → ファイルを開く</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">画像を生成！</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400"><strong>「一括生成」</strong>ボタンを押すと、Whiskが各シーンの画像を自動生成します</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-emerald-700 dark:text-emerald-300">
+            💡 <strong>ヒント：</strong>まずはテキストファイルから始めましょう。字幕やキャラクターの一貫性など、より細かい制御が必要な場合は、以下のCSV形式を使用してください。
+          </p>
+        </div>
+      </div>
+
       <!-- Supported File Types -->
       <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
@@ -201,6 +250,22 @@
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           シーンCSVファイルは各シーンの内容を定義します。画像生成プロンプト、字幕、タイミングなどを含みます。
         </p>
+
+        <!-- Why CSV? -->
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-4 mb-6">
+          <h3 class="font-semibold text-blue-800 dark:text-blue-300 mb-2 flex items-center gap-2">
+            <span>🤔</span> なぜCSVを使うの？
+          </h3>
+          <p class="text-sm text-blue-700 dark:text-blue-400 mb-3">
+            テキストファイルはシンプルですが、CSVを使うとより細かい制御ができます：
+          </p>
+          <ul class="text-sm text-blue-600 dark:text-blue-400 space-y-1 ml-4">
+            <li>• <strong>字幕</strong>をプロンプトとは別に指定（異なる内容も可）</li>
+            <li>• <strong>キャラクタータグ</strong>で一貫したキャラクター画像を維持</li>
+            <li>• <strong>シーンごとの時間</strong>を個別に設定（3秒、5秒など）</li>
+            <li>• <strong>スタイルタグ</strong>で一貫したアートスタイルを維持</li>
+          </ul>
+        </div>
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">必須カラム</h3>
         <div class="overflow-x-auto mb-6">
@@ -348,6 +413,21 @@
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           リファレンスCSVファイルは、複数のシーンで一貫したビジュアル生成のためのキャラクター、背景、スタイルを定義します。
         </p>
+
+        <!-- No Image Required Note -->
+        <div class="bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800 p-4 mb-6">
+          <h3 class="font-semibold text-green-800 dark:text-green-300 mb-2 flex items-center gap-2">
+            <span>✅</span> 画像がなくても大丈夫！
+          </h3>
+          <p class="text-sm text-green-700 dark:text-green-400 mb-2">
+            CSVの<code class="bg-green-200 dark:bg-green-800 px-1 rounded">image_path</code>は空欄でもOKです。後から以下の方法で追加できます：
+          </p>
+          <ul class="text-sm text-green-600 dark:text-green-400 space-y-1 ml-4">
+            <li>• <strong>直接アップロード</strong> - リファレンスタブで画像エリアをクリック → ファイル選択</li>
+            <li>• <strong>AI生成</strong> - descriptionを基にWhiskでリファレンス画像を生成</li>
+            <li>• <strong>後で追加</strong> - まず構造だけ作成し、画像は後から</li>
+          </ul>
+        </div>
 
         <!-- Tag Matching Explanation - IMPORTANT -->
         <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-5 mb-6">
