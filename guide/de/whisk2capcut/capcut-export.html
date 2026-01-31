@@ -124,34 +124,120 @@
           <span class="text-2xl">🚀</span>
           Schnellstart (4 Schritte)
         </h2>
-        <div class="space-y-4">
+        <div class="space-y-6">
+          <!-- Schritt 1 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
-            <div>
-              <p class="font-medium text-gray-900 dark:text-white">Exportierte ZIP-Datei herunterladen</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Klicken Sie auf "Export to CapCut" in Whisk2CapCut</p>
+            <div class="flex-1">
+              <p class="font-medium text-gray-900 dark:text-white">Informationen im Export-Modal eingeben</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Szenen-Tab > Klicken Sie auf <strong>"📦 CapCut"</strong>, dann Benutzername und Projektnummer eingeben</p>
+
+              <!-- Export Modal Mockup -->
+              <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 overflow-hidden text-xs shadow-lg">
+                <!-- Modal Header -->
+                <div class="bg-gray-100 dark:bg-gray-700 px-4 py-2 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
+                  <span class="font-bold text-gray-800 dark:text-white">📦 CapCut Export</span>
+                  <span class="text-gray-400">✕</span>
+                </div>
+                <!-- Modal Content -->
+                <div class="p-4 space-y-3">
+                  <!-- OS Selection -->
+                  <div class="flex gap-2">
+                    <span class="flex-1 px-3 py-2 bg-blue-100 dark:bg-blue-900 border-2 border-blue-500 rounded-lg text-center font-medium">🍎 macOS</span>
+                    <span class="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-center">🪟 Windows</span>
+                  </div>
+                  <!-- Username Input -->
+                  <div>
+                    <label class="block text-gray-600 dark:text-gray-400 mb-1">👤 System-Benutzername <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                      <input type="text" value="max" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white" readonly>
+                      <span class="absolute right-2 top-2 text-green-500">✓</span>
+                    </div>
+                    <p class="text-gray-500 mt-1">💡 Im Terminal <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">whoami</code> eingeben</p>
+                  </div>
+                  <!-- Project Number Input -->
+                  <div>
+                    <label class="block text-gray-600 dark:text-gray-400 mb-1">📁 Projektnummer <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                      <input type="text" value="0131" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white" readonly>
+                      <span class="absolute right-2 top-2 text-green-500">✓</span>
+                    </div>
+                    <p class="text-gray-500 mt-1">💡 Die nächste Nummer im CapCut-Ordner prüfen</p>
+                  </div>
+                  <!-- Generated Path -->
+                  <div class="bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg p-3">
+                    <label class="block text-green-700 dark:text-green-400 text-xs font-bold mb-1">📂 Generierter Pfad</label>
+                    <code class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/max/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
+                  </div>
+                </div>
+                <!-- Modal Footer -->
+                <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 flex justify-end gap-2 border-t border-gray-300 dark:border-gray-600">
+                  <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg">Abbrechen</span>
+                  <span class="px-4 py-2 bg-primary-500 text-white rounded-lg font-medium animate-pulse">📦 Exportieren</span>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- Schritt 2 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
             <div>
               <p class="font-medium text-gray-900 dark:text-white">ZIP-Datei entpacken</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Doppelklicken Sie auf die heruntergeladene ZIP-Datei zum Entpacken</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Doppelklicken Sie auf die heruntergeladene <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">projektname_capcut.zip</code> zum Entpacken</p>
             </div>
           </div>
+
+          <!-- Schritt 3 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
             <div>
               <p class="font-medium text-gray-900 dark:text-white">In den CapCut-Projektordner kopieren</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Siehe Pfade unten</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Kopieren Sie den entpackten Ordner (z.B. <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">0131</code>) in den unten angegebenen Pfad</p>
             </div>
           </div>
+
+          <!-- Schritt 4 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-primary-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
             <div>
               <p class="font-medium text-gray-900 dark:text-white">CapCut neu starten</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Starten Sie CapCut neu und das Projekt erscheint in Ihrer Projektliste</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">CapCut vollständig schließen und neu starten, dann erscheint das Projekt in Ihrer Liste</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benutzername finden -->
+      <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">👤</span>
+          System-Benutzernamen finden
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- macOS -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xl">🍎</span>
+              <span class="font-semibold text-gray-900 dark:text-white">macOS</span>
+            </div>
+            <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-decimal list-inside">
+              <li>Terminal öffnen (Spotlight: <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Space</kbd> → "Terminal")</li>
+              <li><code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> eingeben und Enter drücken</li>
+              <li>Der angezeigte Name ist Ihr Benutzername</li>
+            </ol>
+          </div>
+          <!-- Windows -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xl">🪟</span>
+              <span class="font-semibold text-gray-900 dark:text-white">Windows</span>
+            </div>
+            <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-decimal list-inside">
+              <li>Eingabeaufforderung öffnen (<kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + R</kbd> → "cmd")</li>
+              <li><code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> eingeben und Enter drücken</li>
+              <li>Angezeigt als <code class="text-gray-700 dark:text-gray-300">COMPUTER\Benutzername</code> Format (nur den Benutzernamen verwenden)</li>
+            </ol>
           </div>
         </div>
       </div>
@@ -189,7 +275,7 @@
             <span class="font-semibold text-gray-900 dark:text-white">Windows</span>
           </div>
           <div class="relative">
-            <pre id="path-windows" class="bg-gray-900 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto">C:\Users\[Benutzername]\AppData\Local\CapCut\User Data\Projects\com.lveditor.draft\</pre>
+            <pre id="path-windows" class="bg-gray-900 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto">C:\Users\[Benutzername]\Documents\CapCut\User Data\Projects\com.lveditor.draft\</pre>
             <button onclick="copyPath('path-windows')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
               <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
@@ -197,7 +283,10 @@
             </button>
           </div>
           <p class="text-sm text-amber-700 dark:text-amber-400 mt-2">
-            💡 Im Datei-Explorer drücken Sie <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + R</kbd> und geben Sie <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">%localappdata%</code> ein
+            💡 Pfad direkt in die Datei-Explorer-Adressleiste eingeben oder <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + E</kbd> → Dokumente-Ordner öffnen
+          </p>
+          <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">
+            ⚠️ Je nach CapCut-Installationsmethode kann der Pfad auch <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">AppData\Local\CapCut\...</code> sein
           </p>
         </div>
       </div>
