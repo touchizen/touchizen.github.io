@@ -57,6 +57,10 @@
     th, td {
       border: 1px solid;
     }
+    /* ヘッダー分のスクロールオフセット */
+    [id] {
+      scroll-margin-top: 80px;
+    }
   </style>
 </head>
 <body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
@@ -167,7 +171,7 @@
       <div id="plain-text" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">📝</span>
-          プレーンテキスト形式
+          プロンプトTextファイル
           <span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">最も簡単</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
@@ -192,7 +196,7 @@
       <div id="scene-csv" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">📊</span>
-          シーンCSV形式
+          シーンCSVファイル
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           シーンCSVファイルは各シーンの内容を定義します。画像生成プロンプト、字幕、タイミングなどを含みます。
@@ -339,7 +343,7 @@
       <div id="reference-csv" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🖼️</span>
-          リファレンスCSV形式
+          リファレンスCSVファイル
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           リファレンスCSVファイルは、複数のシーンで一貫したビジュアル生成のためのキャラクター、背景、スタイルを定義します。
@@ -613,7 +617,7 @@ style,cinematic,./images/cinematic.png,映画のようなドラマチックな�
       <div id="srt-subtitle" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🎬</span>
-          SRT字幕形式
+          字幕SRTファイル
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           標準のSRT字幕ファイルをインポートします。各字幕ブロックは自動的にシーンに変換され、字幕テキストがプロンプトと字幕の両方として使用されます。時間はタイムコードから自動計算されます。

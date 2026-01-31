@@ -57,6 +57,10 @@
     th, td {
       border: 1px solid;
     }
+    /* Scroll offset for fixed header */
+    [id] {
+      scroll-margin-top: 80px;
+    }
   </style>
 </head>
 <body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
@@ -167,7 +171,7 @@
       <div id="plain-text" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">📝</span>
-          Plain Text Format
+          Prompt Text File
           <span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">Easiest</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
@@ -192,7 +196,7 @@ The journey's end at a peaceful village</pre>
       <div id="scene-csv" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">📊</span>
-          Scene CSV Format
+          Scene CSV File
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           The Scene CSV file defines each scene's content, including prompts for image generation, subtitles, and timing.
@@ -339,7 +343,7 @@ The journey's end at a peaceful village</pre>
       <div id="reference-csv" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🖼️</span>
-          Reference CSV Format
+          Reference CSV File
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           The Reference CSV file defines characters, backgrounds, and styles that can be used across scenes for consistent visual generation.
@@ -693,7 +697,7 @@ style,cinematic,./images/cinematic.png,Film-like dramatic lighting</pre>
       <div id="srt-subtitle" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🎬</span>
-          SRT Subtitle Format
+          Subtitle SRT File
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           Import standard SRT subtitle files. Each subtitle block is automatically converted to a scene with the subtitle text used as both the prompt and subtitle. Duration is calculated from the timecodes.
