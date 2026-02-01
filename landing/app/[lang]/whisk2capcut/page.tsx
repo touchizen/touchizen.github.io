@@ -1129,7 +1129,7 @@ Now create the SRT file for this story:`}</pre>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                   <tr>
                     <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300">
-                      {lang === 'ko' ? 'Whisk 대량 이미지 생성' : lang === 'ja' ? 'Whisk一括画像生成' : lang === 'de' ? 'Whisk Massenbildgenerierung' : 'Whisk Bulk Image Generation'}
+                      {lang === 'ko' ? 'Whisk 대량 이미지 생성 및 자동저장' : lang === 'ja' ? 'Whisk一括画像生成と自動保存' : lang === 'de' ? 'Whisk Massenbildgenerierung & Auto-Speichern' : 'Whisk Bulk Image Generation & Auto-Save'}
                     </td>
                     <td className="px-4 py-4 text-center">
                       <span className="text-green-500 font-semibold text-sm">

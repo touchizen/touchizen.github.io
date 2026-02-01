@@ -119,7 +119,7 @@ export default function TermsPage() {
                       Google Whisk에서 생성한 이미지를 CapCut 프로젝트로 자동 변환하는 Chrome 확장 프로그램입니다.
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
-                      <li>Whisk 대량 이미지 생성: 무료/Pro 모두 무제한</li>
+                      <li>Whisk 대량 이미지 생성 및 자동저장: 무료/Pro 모두 무제한</li>
                       <li>무료 플랜: CapCut 내보내기 5회/7일, Ken Burns 효과, 자막 자동 삽입</li>
                       <li>Pro 플랜: 월 $4.99 또는 연 $39.99 (무제한 내보내기, 우선 지원)</li>
                     </ul>
@@ -227,7 +227,7 @@ export default function TermsPage() {
                       Google Whiskで生成した画像をCapCutプロジェクトに自動変換するChrome拡張機能です。
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
-                      <li>Whisk一括画像生成：無料/Pro両方無制限</li>
+                      <li>Whisk一括画像生成と自動保存：無料/Pro両方無制限</li>
                       <li>無料プラン：CapCutエクスポート5回/7日、Ken Burnsエフェクト、自動字幕挿入</li>
                       <li>Proプラン：月額$4.99または年額$39.99（無制限エクスポート、優先サポート）</li>
                     </ul>
@@ -335,7 +335,7 @@ export default function TermsPage() {
                       Eine Chrome-Erweiterung, die mit Google Whisk erstellte Bilder automatisch in CapCut-Projekte konvertiert.
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
-                      <li>Whisk-Massenbildgenerierung: Kostenlos/Pro beide unbegrenzt</li>
+                      <li>Whisk-Massenbildgenerierung und Auto-Speichern: Kostenlos/Pro beide unbegrenzt</li>
                       <li>Kostenloser Plan: CapCut-Export 5x/7 Tage, Ken Burns-Effekt, automatische Untertitel</li>
                       <li>Pro-Plan: $4,99/Monat oder $39,99/Jahr (unbegrenzter Export, Prioritäts-Support)</li>
                     </ul>
@@ -443,7 +443,7 @@ export default function TermsPage() {
                       A Chrome extension that automatically converts images generated with Google Whisk into CapCut projects.
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
-                      <li>Whisk Bulk Image Generation: Unlimited for both Free/Pro</li>
+                      <li>Whisk Bulk Image Generation & Auto-Save: Unlimited for both Free/Pro</li>
                       <li>Free Plan: CapCut export 5x/7 days, Ken Burns effect, auto subtitle insertion</li>
                       <li>Pro Plan: $4.99/month or $39.99/year (unlimited exports, priority support)</li>
                     </ul>
