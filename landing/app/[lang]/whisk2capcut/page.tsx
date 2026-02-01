@@ -1242,10 +1242,10 @@ Now create the SRT file for this story:`}</pre>
                       <div className="text-xs text-gray-500">/{lang === 'ko' ? '월' : lang === 'ja' ? '月' : lang === 'de' ? 'Monat' : 'month'}</div>
                     </td>
                     <td className="px-4 py-5 text-center bg-violet-100/50 dark:bg-violet-900/30">
-                      <div className="text-2xl font-bold text-violet-600 dark:text-violet-400">$3.33</div>
-                      <div className="text-xs text-gray-500">/{lang === 'ko' ? '월' : lang === 'ja' ? '月' : lang === 'de' ? 'Monat' : 'month'}</div>
+                      <div className="text-2xl font-bold text-violet-600 dark:text-violet-400">$39.99</div>
+                      <div className="text-xs text-gray-500">/{lang === 'ko' ? '년' : lang === 'ja' ? '年' : lang === 'de' ? 'Jahr' : 'year'}</div>
                       <div className="text-xs text-green-600 dark:text-green-400 font-semibold mt-1">
-                        {lang === 'ko' ? '연 $39.99 (33% 할인)' : lang === 'ja' ? '年額$39.99 (33%オフ)' : lang === 'de' ? '$39.99/Jahr (33% Rabatt)' : '$39.99/year (33% OFF)'}
+                        {lang === 'ko' ? '월 $3.33 (33% 할인)' : lang === 'ja' ? '月額$3.33 (33%オフ)' : lang === 'de' ? '$3.33/Monat (33% Rabatt)' : '$3.33/month (33% OFF)'}
                       </div>
                     </td>
                   </tr>
