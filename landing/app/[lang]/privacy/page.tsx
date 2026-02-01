@@ -1,38 +1,32 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Language, detectLanguage } from '@/lib/i18n';
+import { useRouter, useParams } from 'next/navigation';
+import { Language, languages } from '@/lib/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function PrivacyPage() {
-  const [lang, setLang] = useState<Language>('en');
-  const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+  const params = useParams();
+  const paramLang = params.lang as string;
 
-  useEffect(() => {
-    setMounted(true);
-    setLang(detectLanguage());
-  }, []);
+  // Validate lang parameter
+  const isValidLang = languages.some((l) => l.code === paramLang);
+  const lang: Language = isValidLang ? (paramLang as Language) : 'en';
 
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-white dark:bg-gray-950">
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
-        </div>
-      </div>
-    );
-  }
+  const handleLanguageChange = (newLang: Language) => {
+    router.push(`/${newLang}/privacy`);
+  };
 
   return (
     <main className="min-h-screen">
-      <Header lang={lang} onLanguageChange={setLang} />
+      <Header lang={lang} onLanguageChange={handleLanguageChange} />
 
       <section className="pt-32 pb-20">
         <div className="container-custom px-4">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">
-              {lang === 'ko' ? '개인정보 처리방침' : 'Privacy Policy'}
+              {lang === 'ko' ? '개인정보 처리방침' : lang === 'ja' ? 'プライバシーポリシー' : lang === 'de' ? 'Datenschutzrichtlinie' : 'Privacy Policy'}
             </h1>
 
             <div className="prose dark:prose-invert max-w-none">
@@ -104,6 +98,146 @@ export default function PrivacyPage() {
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">8. 개인정보 처리방침 변경</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     이 개인정보처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전부터 공지사항을 통하여 고지할 것입니다.
+                  </p>
+                </>
+              ) : lang === 'ja' ? (
+                <>
+                  <p className="text-gray-600 dark:text-gray-400 mb-8">
+                    最終更新日: 2024年1月1日
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. 個人情報の処理目的</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Touchizen（&apos;https://touchizen.com&apos;）は、以下の目的のために個人情報を処理しており、以下の目的以外には使用しません。
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>お客様の登録意思確認</li>
+                    <li>サービス提供のための本人識別・認証</li>
+                    <li>会員資格の維持・管理</li>
+                    <li>サービスの改善および新サービスの開発</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">2. 保持期間</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Touchizenは、同意された保持期間または法律で定められた期間内で個人情報を処理・保持します。
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>お客様登録：サービス終了または退会まで</li>
+                    <li>電子商取引記録：5年</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">3. データ主体の権利</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    いつでも以下の権利を行使できます：
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>個人情報へのアクセス要求</li>
+                    <li>エラーの訂正要求</li>
+                    <li>削除要求</li>
+                    <li>処理停止要求</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">4. 収集する個人情報</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Touchizenは、サービス提供に必要な最小限の個人情報のみを収集します。
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>必須：メールアドレス（アカウント認証用）</li>
+                    <li>任意：なし</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">5. 個人情報の廃棄</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Touchizenは、処理目的が達成された場合、遅滞なく個人情報を廃棄します。
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">6. クッキー</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Touchizenは、ユーザー情報を保存・取得するためのクッキーを使用しません。
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">7. プライバシー責任者</h2>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <strong>氏名:</strong> Kukhwan Ahn<br />
+                      <strong>役職:</strong> CEO<br />
+                      <strong>メール:</strong> gordon.ahn@gmail.com
+                    </p>
+                  </div>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">8. プライバシーポリシーの変更</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    このプライバシーポリシーは施行日から有効です。変更がある場合は、施行の7日前までに告知します。
+                  </p>
+                </>
+              ) : lang === 'de' ? (
+                <>
+                  <p className="text-gray-600 dark:text-gray-400 mb-8">
+                    Letzte Aktualisierung: 1. Januar 2024
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. Zweck der Datenverarbeitung</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Touchizen (&apos;https://touchizen.com&apos;) verarbeitet personenbezogene Daten nur für folgende Zwecke:
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>Bestätigung der Kundenregistrierung</li>
+                    <li>Identitätsverifizierung für die Dienstleistung</li>
+                    <li>Mitgliedschaftsverwaltung</li>
+                    <li>Serviceverbesserung und Entwicklung neuer Dienste</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">2. Aufbewahrungsfrist</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Touchizen verarbeitet und speichert personenbezogene Daten innerhalb der vereinbarten oder gesetzlich vorgeschriebenen Aufbewahrungsfrist.
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>Kundenregistrierung: Bis zur Kündigung oder Abmeldung</li>
+                    <li>E-Commerce-Aufzeichnungen: 5 Jahre</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">3. Rechte der Betroffenen</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Sie können jederzeit folgende Rechte ausüben:
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>Auskunft über personenbezogene Daten</li>
+                    <li>Berichtigung von Fehlern</li>
+                    <li>Löschung</li>
+                    <li>Einschränkung der Verarbeitung</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">4. Erhobene personenbezogene Daten</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Touchizen erhebt nur die für die Dienstleistung erforderlichen Mindestdaten.
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>Erforderlich: E-Mail-Adresse (zur Kontoverifizierung)</li>
+                    <li>Optional: Keine</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">5. Löschung personenbezogener Daten</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Touchizen löscht personenbezogene Daten unverzüglich, wenn der Verarbeitungszweck erreicht wurde.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">6. Cookies</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Touchizen verwendet keine Cookies zur Speicherung und Abfrage von Benutzerinformationen.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">7. Datenschutzbeauftragter</h2>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <strong>Name:</strong> Kukhwan Ahn<br />
+                      <strong>Position:</strong> CEO<br />
+                      <strong>E-Mail:</strong> gordon.ahn@gmail.com
+                    </p>
+                  </div>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">8. Änderungen der Datenschutzrichtlinie</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Diese Datenschutzrichtlinie gilt ab dem Datum des Inkrafttretens. Änderungen werden mindestens 7 Tage vor Inkrafttreten angekündigt.
                   </p>
                 </>
               ) : (

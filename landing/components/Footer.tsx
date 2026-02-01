@@ -103,7 +103,7 @@ export default function Footer({ lang }: FooterProps) {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="/privacy/"
+                  href={`/${lang}/privacy/`}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t('footer_privacy')}
@@ -111,7 +111,7 @@ export default function Footer({ lang }: FooterProps) {
               </li>
               <li>
                 <a
-                  href="/terms/"
+                  href={`/${lang}/terms/`}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t('footer_terms')}
