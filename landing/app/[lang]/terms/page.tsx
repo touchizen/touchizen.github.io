@@ -98,7 +98,36 @@ export default function TermsPage() {
                     <li>회원 간 또는 회원과 제3자 간의 분쟁에 대해 회사는 책임을 부담하지 않습니다.</li>
                   </ul>
 
-                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">제10조 (분쟁의 해결)</h2>
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">제10조 (환불 정책)</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    회사의 유료 서비스에 대한 환불 정책은 다음과 같습니다:
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>구매일로부터 7일 이내에 환불을 요청할 수 있습니다.</li>
+                    <li>환불 요청은 gordon.ahn@touchizen.com으로 연락해 주시기 바랍니다.</li>
+                    <li>디지털 콘텐츠의 특성상, 서비스를 실질적으로 이용한 경우 환불이 제한될 수 있습니다.</li>
+                    <li>구독 서비스의 경우, 다음 결제일 전에 취소하면 추가 요금이 발생하지 않습니다.</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">제11조 (서비스 및 상품)</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    회사가 제공하는 서비스 및 상품은 다음과 같습니다:
+                  </p>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      Google Whisk에서 생성한 이미지를 CapCut 프로젝트로 자동 변환하는 Chrome 확장 프로그램입니다.
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>무료 플랜: 기본 기능 제공</li>
+                      <li>Pro 플랜: 월 $4.99 또는 연 $39.99 (무제한 내보내기, Ken Burns 효과 등)</li>
+                    </ul>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                    * 추가 상품 및 서비스는 출시 시 본 약관에 업데이트됩니다.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">제12조 (분쟁의 해결)</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     회사와 회원은 서비스와 관련하여 발생한 분쟁을 원만하게 해결하기 위하여 필요한 모든 노력을 하여야 합니다. 소송이 제기될 경우 회사의 소재지를 관할하는 법원의 관할로 합니다.
                   </p>
@@ -176,7 +205,36 @@ export default function TermsPage() {
                     <li>会社は会員間または会員と第三者間の紛争について責任を負いません。</li>
                   </ul>
 
-                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">第10条（紛争解決）</h2>
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">第10条（返金ポリシー）</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    会社の有料サービスに対する返金ポリシーは以下の通りです：
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>購入日から7日以内に返金をリクエストできます。</li>
+                    <li>返金リクエストはgordon.ahn@touchizen.comまでご連絡ください。</li>
+                    <li>デジタルコンテンツの性質上、サービスを実質的に利用した場合、返金が制限される場合があります。</li>
+                    <li>サブスクリプションサービスの場合、次の請求日前にキャンセルすれば追加料金は発生しません。</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">第11条（サービスおよび製品）</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    会社が提供するサービスおよび製品は以下の通りです：
+                  </p>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      Google Whiskで生成した画像をCapCutプロジェクトに自動変換するChrome拡張機能です。
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>無料プラン：基本機能を提供</li>
+                      <li>Proプラン：月額$4.99または年額$39.99（無制限エクスポート、Ken Burnsエフェクトなど）</li>
+                    </ul>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                    * 追加の製品およびサービスはリリース時に本規約に更新されます。
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">第12条（紛争解決）</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     会社と会員は、サービスに関連する紛争を円満に解決するために必要なすべての努力を行います。訴訟が提起された場合、会社所在地の管轄裁判所とします。
                   </p>
@@ -254,7 +312,36 @@ export default function TermsPage() {
                     <li>Das Unternehmen ist nicht verantwortlich für Streitigkeiten zwischen Mitgliedern oder zwischen Mitgliedern und Dritten.</li>
                   </ul>
 
-                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Artikel 10 (Streitbeilegung)</h2>
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Artikel 10 (Rückerstattungsrichtlinie)</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Die Rückerstattungsrichtlinie für kostenpflichtige Dienste des Unternehmens lautet wie folgt:
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>Sie können innerhalb von 7 Tagen nach dem Kauf eine Rückerstattung beantragen.</li>
+                    <li>Rückerstattungsanfragen richten Sie bitte an gordon.ahn@touchizen.com.</li>
+                    <li>Aufgrund der Natur digitaler Inhalte kann die Rückerstattung eingeschränkt sein, wenn der Dienst wesentlich genutzt wurde.</li>
+                    <li>Bei Abonnementdiensten fallen keine zusätzlichen Gebühren an, wenn Sie vor dem nächsten Abrechnungsdatum kündigen.</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Artikel 11 (Dienste und Produkte)</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Die vom Unternehmen angebotenen Dienste und Produkte sind:
+                  </p>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      Eine Chrome-Erweiterung, die mit Google Whisk erstellte Bilder automatisch in CapCut-Projekte konvertiert.
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>Kostenloser Plan: Grundfunktionen</li>
+                      <li>Pro-Plan: $4,99/Monat oder $39,99/Jahr (unbegrenzter Export, Ken Burns-Effekt usw.)</li>
+                    </ul>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                    * Zusätzliche Produkte und Dienste werden bei Veröffentlichung in diesen Bedingungen aktualisiert.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Artikel 12 (Streitbeilegung)</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Das Unternehmen und die Mitglieder unternehmen alle notwendigen Anstrengungen, um Streitigkeiten im Zusammenhang mit Diensten gütlich beizulegen. Bei Rechtsstreitigkeiten ist der Gerichtsstand am Sitz des Unternehmens.
                   </p>
@@ -332,7 +419,36 @@ export default function TermsPage() {
                     <li>The Company is not responsible for disputes between members or between members and third parties.</li>
                   </ul>
 
-                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Article 10 (Dispute Resolution)</h2>
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Article 10 (Refund Policy)</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    The refund policy for the Company&apos;s paid services is as follows:
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>You may request a refund within 7 days of purchase.</li>
+                    <li>Please contact gordon.ahn@touchizen.com for refund requests.</li>
+                    <li>Due to the nature of digital content, refunds may be limited if the service has been substantially used.</li>
+                    <li>For subscription services, no additional charges will be incurred if you cancel before the next billing date.</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Article 11 (Services and Products)</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    The services and products offered by the Company are as follows:
+                  </p>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      A Chrome extension that automatically converts images generated with Google Whisk into CapCut projects.
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>Free Plan: Basic features included</li>
+                      <li>Pro Plan: $4.99/month or $39.99/year (unlimited exports, Ken Burns effect, etc.)</li>
+                    </ul>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                    * Additional products and services will be updated in these terms upon release.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Article 12 (Dispute Resolution)</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     The Company and members shall make all necessary efforts to amicably resolve disputes related to services. If litigation is filed, it shall be under the jurisdiction of the court where the Company is located.
                   </p>
