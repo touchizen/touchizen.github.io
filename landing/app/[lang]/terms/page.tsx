@@ -33,7 +33,7 @@ export default function TermsPage() {
               {lang === 'ko' ? (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    최종 수정일: 2024년 1월 1일
+                    최종 수정일: 2026년 1월 1일
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">제1조 (목적)</h2>
@@ -135,13 +135,13 @@ export default function TermsPage() {
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">부칙</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    이 약관은 2024년 1월 1일부터 시행합니다.
+                    이 약관은 2026년 1월 1일부터 시행합니다.
                   </p>
                 </>
               ) : lang === 'ja' ? (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    最終更新日: 2024年1月1日
+                    最終更新日: 2026年1月1日
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">第1条（目的）</h2>
@@ -243,13 +243,13 @@ export default function TermsPage() {
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">附則</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    この規約は2024年1月1日から施行します。
+                    この規約は2026年1月1日から施行します。
                   </p>
                 </>
               ) : lang === 'de' ? (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    Letzte Aktualisierung: 1. Januar 2024
+                    Letzte Aktualisierung: 1. Januar 2026
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Artikel 1 (Zweck)</h2>
@@ -351,13 +351,13 @@ export default function TermsPage() {
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Ergänzende Bestimmungen</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Diese Bedingungen gelten ab dem 1. Januar 2024.
+                    Diese Bedingungen gelten ab dem 1. Januar 2026.
                   </p>
                 </>
               ) : (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    Last updated: January 1, 2024
+                    Last updated: January 1, 2026
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Article 1 (Purpose)</h2>
@@ -459,7 +459,7 @@ export default function TermsPage() {
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Supplementary Provisions</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    These terms shall be effective from January 1, 2024.
+                    These terms shall be effective from January 1, 2026.
                   </p>
                 </>
               )}
