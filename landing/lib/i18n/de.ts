@@ -41,6 +41,7 @@ export const de = {
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
   whisk2capcut_hero_subtitle: 'Statische Bilder von Google Labs Whisk in 1 Sekunde zu CapCut bringen und zum Leben erwecken',
+  whisk2capcut_hero_target: '📝 Einfach Skripte (SRT/CSV) eingeben → 100+ Bilder generieren → CapCut-Projekt mit 1 Klick fertig',
   whisk2capcut_hero_cta: 'Chrome-Erweiterung installieren',
   whisk2capcut_hero_cta_secondary: 'Preise ansehen',
 
@@ -311,6 +312,15 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   faq_a5: 'Das Pro-Abonnement umfasst unbegrenzte Exporte, Ken Burns Effekte und Priority-Support. $4,99/Monat oder $39,99/Jahr.',
   faq_q6: 'Was ist Ihre Rückerstattungsrichtlinie?',
   faq_a6: 'Wir bieten eine vollständige Rückerstattung innerhalb von 7 Tagen nach Ihrem ersten Abonnement.',
+
+  // Trust Badges
+  trust_title: 'Vertrauenswürdig nutzen',
+  trust_data_title: 'Lokale Verarbeitung',
+  trust_data_desc: 'Alle Bilder und Daten werden in Ihrem Browser verarbeitet. Nichts wird auf unsere Server hochgeladen.',
+  trust_affiliate_title: 'Unabhängiges Tool',
+  trust_affiliate_desc: 'Whisk2CapCut ist ein unabhängig entwickeltes Tool, nicht mit Google oder CapCut verbunden oder von diesen unterstützt.',
+  trust_secure_title: 'Sichere Zahlungen',
+  trust_secure_desc: 'Alle Zahlungen werden sicher über Lemon Squeezy abgewickelt. Ihre Kartendaten werden nie gespeichert.',
 
   // Footer
   footer_tagline: 'Creator mit AI-Tools stärken',

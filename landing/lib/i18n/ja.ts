@@ -41,6 +41,7 @@ export const ja = {
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
   whisk2capcut_hero_subtitle: 'Google Labs Whiskで作った静止画像を、1秒でCapCutに送って命を吹き込む',
+  whisk2capcut_hero_target: '📝 台本(SRT/CSV)を入力するだけ → 画像100枚以上生成 → CapCutプロジェクト1クリック完成',
   whisk2capcut_hero_cta: 'Chrome拡張機能をインストール',
   whisk2capcut_hero_cta_secondary: '料金を見る',
 
@@ -311,6 +312,15 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   faq_a5: 'Proサブスクリプションには無制限エクスポート、Ken Burns効果、優先サポートが含まれます。月額$4.99または年額$39.99です。',
   faq_q6: '返金ポリシーは何ですか？',
   faq_a6: '最初のサブスクリプションから7日以内であれば全額返金いたします。',
+
+  // Trust Badges
+  trust_title: '安心してご利用ください',
+  trust_data_title: 'ローカル処理',
+  trust_data_desc: 'すべての画像とデータはブラウザ内で処理されます。サーバーにはアップロードされません。',
+  trust_affiliate_title: '独立開発ツール',
+  trust_affiliate_desc: 'Whisk2CapCutはGoogleやCapCutと提携・パートナーシップのない独立開発ツールです。',
+  trust_secure_title: '安全な決済',
+  trust_secure_desc: 'すべての決済はLemon Squeezyを通じて安全に処理されます。カード情報は保存されません。',
 
   // Footer
   footer_tagline: 'AIツールでクリエイターを支援',

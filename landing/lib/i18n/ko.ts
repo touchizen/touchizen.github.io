@@ -41,6 +41,7 @@ export const ko = {
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
   whisk2capcut_hero_subtitle: 'Google Labs Whisk로 만든 정적인 이미지, 1초 만에 CapCut으로 보내 생명을 불어넣으세요',
+  whisk2capcut_hero_target: '📝 대본(SRT/CSV)만 넣으면 → 이미지 100장 생성 → CapCut 프로젝트 1클릭 완성',
   whisk2capcut_hero_cta: 'Chrome 확장 프로그램 설치',
   whisk2capcut_hero_cta_secondary: '가격 보기',
 
@@ -311,6 +312,15 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   faq_a5: 'Pro 구독은 무제한 내보내기, Ken Burns 효과, 우선 지원을 포함합니다. 월 $4.99 또는 연 $39.99입니다.',
   faq_q6: '환불 정책은 어떻게 되나요?',
   faq_a6: '첫 구독 후 7일 이내에 요청하시면 전액 환불해 드립니다.',
+
+  // Trust Badges
+  trust_title: '안심하고 사용하세요',
+  trust_data_title: '로컬 처리',
+  trust_data_desc: '모든 이미지와 데이터는 사용자의 브라우저에서 처리됩니다. 서버에 업로드되지 않습니다.',
+  trust_affiliate_title: '비제휴 서비스',
+  trust_affiliate_desc: 'Whisk2CapCut은 Google 또는 CapCut과 제휴/파트너십이 없는 독립 개발 도구입니다.',
+  trust_secure_title: '안전한 결제',
+  trust_secure_desc: '모든 결제는 Lemon Squeezy를 통해 안전하게 처리됩니다. 카드 정보는 저장되지 않습니다.',
 
   // Footer
   footer_tagline: 'AI 도구로 크리에이터에게 힘을',

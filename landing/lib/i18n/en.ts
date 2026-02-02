@@ -41,6 +41,7 @@ export const en = {
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
   whisk2capcut_hero_subtitle: 'Bring static images from Google Labs Whisk to life with CapCut in just 1 second',
+  whisk2capcut_hero_target: '📝 Just input scripts (SRT/CSV) → Generate 100+ images → Complete CapCut project in 1 click',
   whisk2capcut_hero_cta: 'Install Chrome Extension',
   whisk2capcut_hero_cta_secondary: 'View Pricing',
 
@@ -311,6 +312,15 @@ The young prince practices sword fighting in the courtyard`,
   faq_a5: 'Pro subscription includes unlimited exports, Ken Burns effects, and priority support. $4.99/month or $39.99/year.',
   faq_q6: 'What is your refund policy?',
   faq_a6: 'We offer a full refund within 7 days of your first subscription.',
+
+  // Trust Badges
+  trust_title: 'Use with Confidence',
+  trust_data_title: 'Local Processing',
+  trust_data_desc: 'All images and data are processed in your browser. Nothing is uploaded to our servers.',
+  trust_affiliate_title: 'Independent Tool',
+  trust_affiliate_desc: 'Whisk2CapCut is an independently developed tool, not affiliated with or endorsed by Google or CapCut.',
+  trust_secure_title: 'Secure Payments',
+  trust_secure_desc: 'All payments are securely processed through Lemon Squeezy. Your card information is never stored.',
 
   // Footer
   footer_tagline: 'Empowering creators with AI tools',
