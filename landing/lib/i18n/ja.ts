@@ -41,7 +41,7 @@ export const ja = {
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
   whisk2capcut_hero_subtitle: 'Google Labs Whiskで作った静止画像を、1秒でCapCutに送って命を吹き込む',
-  whisk2capcut_hero_target: '📝 台本(SRT/CSV)を入力するだけ → 画像100枚以上生成 → CapCutプロジェクト1クリック完成',
+  whisk2capcut_hero_target: '📝 プロンプト・台本(TXT/CSV/SRT)を入力するだけ → 画像100枚以上生成 → CapCutプロジェクト1クリック完成',
   whisk2capcut_hero_cta: 'Chrome拡張機能をインストール',
   whisk2capcut_hero_cta_secondary: '料金を見る',
 

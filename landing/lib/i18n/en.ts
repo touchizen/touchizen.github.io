@@ -41,7 +41,7 @@ export const en = {
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
   whisk2capcut_hero_subtitle: 'Bring static images from Google Labs Whisk to life with CapCut in just 1 second',
-  whisk2capcut_hero_target: '📝 Just input scripts (SRT/CSV) → Generate 100+ images → Complete CapCut project in 1 click',
+  whisk2capcut_hero_target: '📝 Just input prompt-scripts (TXT/CSV/SRT) → Generate 100+ images → Complete CapCut project in 1 click',
   whisk2capcut_hero_cta: 'Install Chrome Extension',
   whisk2capcut_hero_cta_secondary: 'View Pricing',
 

@@ -41,7 +41,7 @@ export const ko = {
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
   whisk2capcut_hero_subtitle: 'Google Labs Whisk로 만든 정적인 이미지, 1초 만에 CapCut으로 보내 생명을 불어넣으세요',
-  whisk2capcut_hero_target: '📝 대본(SRT/CSV)만 넣으면 → 이미지 100장 생성 → CapCut 프로젝트 1클릭 완성',
+  whisk2capcut_hero_target: '📝 프롬프트-대본(TXT/CSV/SRT)만 넣으면 → 이미지 100장 생성 → CapCut 프로젝트 1클릭 완성',
   whisk2capcut_hero_cta: 'Chrome 확장 프로그램 설치',
   whisk2capcut_hero_cta_secondary: '가격 보기',
 
