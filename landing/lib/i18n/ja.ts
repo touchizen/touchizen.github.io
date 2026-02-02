@@ -315,8 +315,8 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
 
   // Trust Badges
   trust_title: '安心してご利用ください',
-  trust_data_title: 'ローカル処理',
-  trust_data_desc: 'すべての画像とデータはブラウザ内で処理されます。サーバーにはアップロードされません。',
+  trust_data_title: '画像のローカル処理',
+  trust_data_desc: '生成された画像はブラウザ内でローカル処理されます。画像ファイルはサーバーにアップロードされません。',
   trust_affiliate_title: '独立開発ツール',
   trust_affiliate_desc: 'Whisk2CapCutはGoogleやCapCutと提携・パートナーシップのない独立開発ツールです。',
   trust_secure_title: '安全な決済',

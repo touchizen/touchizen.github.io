@@ -315,8 +315,8 @@ The young prince practices sword fighting in the courtyard`,
 
   // Trust Badges
   trust_title: 'Use with Confidence',
-  trust_data_title: 'Local Processing',
-  trust_data_desc: 'All images and data are processed in your browser. Nothing is uploaded to our servers.',
+  trust_data_title: 'Images Processed Locally',
+  trust_data_desc: 'Generated images are processed locally in your browser. Image files are never uploaded to our servers.',
   trust_affiliate_title: 'Independent Tool',
   trust_affiliate_desc: 'Whisk2CapCut is an independently developed tool, not affiliated with or endorsed by Google or CapCut.',
   trust_secure_title: 'Secure Payments',

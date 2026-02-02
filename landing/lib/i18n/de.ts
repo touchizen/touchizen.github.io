@@ -315,8 +315,8 @@ Der junge Prinz übt im Burghof Schwertkampf`,
 
   // Trust Badges
   trust_title: 'Vertrauenswürdig nutzen',
-  trust_data_title: 'Lokale Verarbeitung',
-  trust_data_desc: 'Alle Bilder und Daten werden in Ihrem Browser verarbeitet. Nichts wird auf unsere Server hochgeladen.',
+  trust_data_title: 'Lokale Bildverarbeitung',
+  trust_data_desc: 'Generierte Bilder werden lokal in Ihrem Browser verarbeitet. Bilddateien werden nie auf unsere Server hochgeladen.',
   trust_affiliate_title: 'Unabhängiges Tool',
   trust_affiliate_desc: 'Whisk2CapCut ist ein unabhängig entwickeltes Tool, nicht mit Google oder CapCut verbunden oder von diesen unterstützt.',
   trust_secure_title: 'Sichere Zahlungen',
