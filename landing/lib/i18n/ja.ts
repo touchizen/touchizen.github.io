@@ -22,7 +22,7 @@ export const ja = {
   time_save_stat2_label: '手作業時間を節約',
   time_save_stat3_number: '1分未満',
   time_save_stat3_label: 'CapCut変換',
-  time_save_desc: 'Google Whiskで100枚以上のAI画像を生成し、すぐに編集可能なCapCutプロジェクトに変換。手作業で4時間以上かかる作業を1分未満で処理。',
+  time_save_desc: 'Google Labs Whiskで100枚以上のAI画像を生成し、Ken Burns効果（ズームイン/アウト）が適用されたCapCutプロジェクトに即座に変換。手作業で4時間以上かかる作業を1分未満で処理。',
 
   // Products
   products_title: '私たちのツール',
@@ -40,12 +40,12 @@ export const ja = {
   // Whisk2CapCut Detail Page
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
-  whisk2capcut_hero_subtitle: '100枚以上のAI画像を10分で、4時間の作業を1分で',
+  whisk2capcut_hero_subtitle: 'Google Labs Whiskで作った静止画像を、1秒でCapCutに送って命を吹き込む',
   whisk2capcut_hero_cta: 'Chrome拡張機能をインストール',
   whisk2capcut_hero_cta_secondary: '料金を見る',
 
   whisk2capcut_what_title: 'Whisk2CapCutとは？',
-  whisk2capcut_what_desc: 'Whisk2CapCutは、Google Whisk AI画像生成とCapCut動画編集を連携するChrome拡張機能です。一貫したスタイルで複数のAI画像を生成し、編集可能なCapCutプロジェクトとしてエクスポートできます。',
+  whisk2capcut_what_desc: 'Whisk2CapCutは、Google Labs Whisk AI画像生成とCapCut動画編集を連携するChrome拡張機能です。一貫したスタイルで複数のAI画像を生成し、Ken Burns効果（ズームイン/アウト）が適用された動く動画に即座に変換します。',
 
   whisk2capcut_features_title: '主な機能',
   whisk2capcut_feat1_title: '一括AI生成',
@@ -285,22 +285,22 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   mockup_scene_courtyard: '中庭',
 
   // Google Whisk Introduction
-  whisk_intro_title: 'Google Whiskとは？',
-  whisk_intro_desc: 'Google WhiskはGoogle Labsが開発したAI画像生成ツールです。テキストプロンプトとリファレンス画像を組み合わせて、一貫したスタイルの画像を生成できます。',
+  whisk_intro_title: 'Google Labs Whiskとは？',
+  whisk_intro_desc: 'Google Labs WhiskはGoogleが開発した最新のAI画像生成ツールです。テキストプロンプトとリファレンス画像を組み合わせて、一貫したスタイルの静止画像を生成します。Whisk2CapCutを使用すると、これらの静止画像にKen Burns効果を適用して動くショートフォーム動画に変換できます。',
   whisk_intro_feature1_title: 'リファレンスベース生成',
   whisk_intro_feature1_desc: 'キャラクター、背景、スタイル画像をリファレンスとして使用して一貫した結果を生成',
   whisk_intro_feature2_title: '高速生成',
   whisk_intro_feature2_desc: '高品質なAI画像を数秒で生成',
   whisk_intro_feature3_title: '無料トライアル',
   whisk_intro_feature3_desc: '無料ユーザーは月100 AIクレジット付与（1日の生成制限あり）',
-  whisk_intro_cta: 'Google Whiskを試す',
+  whisk_intro_cta: 'Google Labs Whiskを試す',
   whisk_intro_cta_url: 'https://labs.google/whisk',
 
   // FAQ
   faq_title: 'よくある質問',
   faq_subtitle: 'ご質問はありますか？',
-  faq_q1: 'Google Whiskは無料ですか？',
-  faq_a1: 'Google Whiskは制限付きで無料で体験できます。無料ユーザーは月100 AIクレジットと1日の生成制限が適用されます。より多くの使用量が必要な場合は、Google AI Pro（月1,000クレジット）またはAI Ultra（月25,000クレジット）を購読できます。',
+  faq_q1: 'Google Labs Whiskは無料ですか？',
+  faq_a1: 'Google Labs Whiskは制限付きで無料で体験できます。無料ユーザーは月100 AIクレジットと1日の生成制限が適用されます。より多くの使用量が必要な場合は、Google AI Pro（月1,000クレジット）またはAI Ultra（月25,000クレジット）を購読できます。',
   faq_q2: 'CapCutは無料ですか？',
   faq_a2: 'CapCutには無料版とPro版があります。無料版は基本編集、1080pエクスポート、一部のエフェクトを提供します。Pro（月額$9.99/年額$89.99）は4Kエクスポート、ウォーターマークなし、AIツール、プレミアムアセットを含みます。Whisk2CapCutは無料版でも問題なく動作します。',
   faq_q3: 'Whisk2CapCutのインストール方法は？',

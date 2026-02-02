@@ -22,7 +22,7 @@ export const ko = {
   time_save_stat2_label: '수작업 시간 절약',
   time_save_stat3_number: '1분 미만',
   time_save_stat3_label: 'CapCut 변환',
-  time_save_desc: 'Google Whisk로 100장 이상의 AI 이미지를 생성하고, 즉시 바로 편집 가능한 CapCut 프로젝트로 변환합니다. 수작업으로 4시간 이상 걸리던 작업을 이제 1분 미만에 처리하세요.',
+  time_save_desc: 'Google Labs Whisk로 100장 이상의 AI 이미지를 생성하고, Ken Burns 효과(줌 인/아웃)가 적용된 CapCut 프로젝트로 즉시 변환합니다. 수작업으로 4시간 이상 걸리던 작업을 이제 1분 미만에 처리하세요.',
 
   // Products
   products_title: '우리의 도구',
@@ -40,12 +40,12 @@ export const ko = {
   // Whisk2CapCut Detail Page
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
-  whisk2capcut_hero_subtitle: '100장 이상 AI 이미지를 10분 만에, 4시간 작업을 1분 만에',
+  whisk2capcut_hero_subtitle: 'Google Labs Whisk로 만든 정적인 이미지, 1초 만에 CapCut으로 보내 생명을 불어넣으세요',
   whisk2capcut_hero_cta: 'Chrome 확장 프로그램 설치',
   whisk2capcut_hero_cta_secondary: '가격 보기',
 
   whisk2capcut_what_title: 'Whisk2CapCut이란?',
-  whisk2capcut_what_desc: 'Whisk2CapCut은 Google Whisk AI 이미지 생성과 CapCut 영상 편집을 연결하는 Chrome 확장 프로그램입니다. 일관된 스타일로 여러 AI 이미지를 생성하고, 바로 편집 가능한 CapCut 프로젝트로 내보내세요.',
+  whisk2capcut_what_desc: 'Whisk2CapCut은 Google Labs Whisk AI 이미지 생성과 CapCut 영상 편집을 연결하는 Chrome 확장 프로그램입니다. 일관된 스타일로 여러 AI 이미지를 생성하고, Ken Burns 효과(줌 인/아웃)가 적용된 움직이는 영상으로 바로 변환하세요.',
 
   whisk2capcut_features_title: '주요 기능',
   whisk2capcut_feat1_title: '일괄 AI 생성',
@@ -285,22 +285,22 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   mockup_scene_courtyard: '안뜰',
 
   // Google Whisk Introduction
-  whisk_intro_title: 'Google Whisk란?',
-  whisk_intro_desc: 'Google Whisk는 Google Labs에서 개발한 AI 이미지 생성 도구입니다. 텍스트 프롬프트와 레퍼런스 이미지를 조합하여 일관된 스타일의 이미지를 생성할 수 있습니다.',
+  whisk_intro_title: 'Google Labs Whisk란?',
+  whisk_intro_desc: 'Google Labs Whisk는 Google이 개발한 최신 AI 이미지 생성 도구입니다. 텍스트 프롬프트와 레퍼런스 이미지를 조합하여 일관된 스타일의 정적 이미지를 생성합니다. Whisk2CapCut을 사용하면 이 정적 이미지에 Ken Burns 효과를 적용해 움직이는 숏폼 영상으로 변환할 수 있습니다.',
   whisk_intro_feature1_title: '레퍼런스 기반 생성',
   whisk_intro_feature1_desc: '캐릭터, 배경, 스타일 이미지를 레퍼런스로 사용하여 일관된 결과물 생성',
   whisk_intro_feature2_title: '빠른 생성 속도',
   whisk_intro_feature2_desc: '고품질 AI 이미지를 몇 초 만에 생성',
   whisk_intro_feature3_title: '무료 체험',
   whisk_intro_feature3_desc: '무료 사용자는 월 100 AI 크레딧 제공 (일일 생성 제한 있음)',
-  whisk_intro_cta: 'Google Whisk 사용해보기',
+  whisk_intro_cta: 'Google Labs Whisk 사용해보기',
   whisk_intro_cta_url: 'https://labs.google/whisk',
 
   // FAQ
   faq_title: '자주 묻는 질문',
   faq_subtitle: '궁금한 점이 있으신가요?',
-  faq_q1: 'Google Whisk는 무료인가요?',
-  faq_a1: 'Google Whisk는 무료로 체험할 수 있지만 제한이 있습니다. 무료 사용자는 월 100 AI 크레딧과 일일 생성 제한이 적용됩니다. 더 많은 사용량이 필요하면 Google AI Pro(월 1,000 크레딧) 또는 AI Ultra(월 25,000 크레딧)를 구독할 수 있습니다.',
+  faq_q1: 'Google Labs Whisk는 무료인가요?',
+  faq_a1: 'Google Labs Whisk는 무료로 체험할 수 있지만 제한이 있습니다. 무료 사용자는 월 100 AI 크레딧과 일일 생성 제한이 적용됩니다. 더 많은 사용량이 필요하면 Google AI Pro(월 1,000 크레딧) 또는 AI Ultra(월 25,000 크레딧)를 구독할 수 있습니다.',
   faq_q2: 'CapCut은 무료인가요?',
   faq_a2: 'CapCut은 무료 버전과 Pro 버전이 있습니다. 무료 버전은 기본 편집, 1080p 내보내기, 일부 효과를 제공합니다. Pro(월 $9.99/연 $89.99)는 4K 내보내기, 워터마크 제거, AI 도구, 프리미엄 에셋을 포함합니다. Whisk2CapCut은 무료 버전에서도 잘 작동합니다.',
   faq_q3: 'Whisk2CapCut 설치 방법은?',

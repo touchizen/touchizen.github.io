@@ -22,7 +22,7 @@ export const de = {
   time_save_stat2_label: 'manuelle Arbeit gespart',
   time_save_stat3_number: '<1 Min',
   time_save_stat3_label: 'CapCut-Konvertierung',
-  time_save_desc: 'Generieren Sie 100+ AI-Bilder mit Google Whisk und konvertieren Sie sie sofort in ein editierbares CapCut-Projekt. Was manuell 4+ Stunden dauert, dauert jetzt weniger als 1 Minute.',
+  time_save_desc: 'Generieren Sie 100+ AI-Bilder mit Google Labs Whisk und konvertieren Sie sie sofort in ein CapCut-Projekt mit Ken Burns Effekt (Zoom in/out). Was manuell 4+ Stunden dauert, dauert jetzt weniger als 1 Minute.',
 
   // Products
   products_title: 'Unsere Tools',
@@ -40,12 +40,12 @@ export const de = {
   // Whisk2CapCut Detail Page
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
-  whisk2capcut_hero_subtitle: '100+ AI-Bilder in 10 Min, 4+ Stunden Arbeit in unter 1 Min',
+  whisk2capcut_hero_subtitle: 'Statische Bilder von Google Labs Whisk in 1 Sekunde zu CapCut bringen und zum Leben erwecken',
   whisk2capcut_hero_cta: 'Chrome-Erweiterung installieren',
   whisk2capcut_hero_cta_secondary: 'Preise ansehen',
 
   whisk2capcut_what_title: 'Was ist Whisk2CapCut?',
-  whisk2capcut_what_desc: 'Whisk2CapCut ist eine Chrome-Erweiterung, die Google Whisk AI-Bildgenerierung mit CapCut-Videobearbeitung verbindet. Generieren Sie mehrere AI-Bilder mit einheitlichem Stil und exportieren Sie sie als editierbares CapCut-Projekt.',
+  whisk2capcut_what_desc: 'Whisk2CapCut ist eine Chrome-Erweiterung, die Google Labs Whisk AI-Bildgenerierung mit CapCut-Videobearbeitung verbindet. Generieren Sie mehrere AI-Bilder mit einheitlichem Stil und verwandeln Sie sie sofort in bewegte Videos mit Ken Burns Effekt (Zoom in/out).',
 
   whisk2capcut_features_title: 'Funktionen',
   whisk2capcut_feat1_title: 'Stapel-AI-Generierung',
@@ -285,22 +285,22 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   mockup_scene_courtyard: 'Burghof',
 
   // Google Whisk Introduction
-  whisk_intro_title: 'Was ist Google Whisk?',
-  whisk_intro_desc: 'Google Whisk ist ein AI-Bildgenerierungstool, entwickelt von Google Labs. Es kombiniert Textprompts mit Referenzbildern, um Bilder mit konsistentem Stil zu erstellen.',
+  whisk_intro_title: 'Was ist Google Labs Whisk?',
+  whisk_intro_desc: 'Google Labs Whisk ist das neueste AI-Bildgenerierungstool von Google. Es kombiniert Textprompts mit Referenzbildern, um statische Bilder mit konsistentem Stil zu erstellen. Mit Whisk2CapCut können Sie Ken Burns Effekte auf diese statischen Bilder anwenden und sie in bewegte Kurzform-Videos verwandeln.',
   whisk_intro_feature1_title: 'Referenzbasierte Generierung',
   whisk_intro_feature1_desc: 'Charakter-, Hintergrund- und Stilbilder als Referenzen für konsistente Ergebnisse verwenden',
   whisk_intro_feature2_title: 'Schnelle Generierung',
   whisk_intro_feature2_desc: 'Hochwertige AI-Bilder in Sekunden generieren',
   whisk_intro_feature3_title: 'Kostenlose Testversion',
   whisk_intro_feature3_desc: 'Kostenlose Nutzer erhalten 100 AI-Credits pro Monat (tägliche Generierungslimits)',
-  whisk_intro_cta: 'Google Whisk ausprobieren',
+  whisk_intro_cta: 'Google Labs Whisk ausprobieren',
   whisk_intro_cta_url: 'https://labs.google/whisk',
 
   // FAQ
   faq_title: 'Häufig gestellte Fragen',
   faq_subtitle: 'Haben Sie Fragen? Wir haben Antworten.',
-  faq_q1: 'Ist Google Whisk kostenlos?',
-  faq_a1: 'Google Whisk bietet eine kostenlose Testversion mit Einschränkungen. Kostenlose Nutzer erhalten 100 AI-Credits pro Monat und tägliche Generierungslimits. Für mehr Nutzung können Sie Google AI Pro (1.000 Credits/Monat) oder AI Ultra (25.000 Credits/Monat) abonnieren.',
+  faq_q1: 'Ist Google Labs Whisk kostenlos?',
+  faq_a1: 'Google Labs Whisk bietet eine kostenlose Testversion mit Einschränkungen. Kostenlose Nutzer erhalten 100 AI-Credits pro Monat und tägliche Generierungslimits. Für mehr Nutzung können Sie Google AI Pro (1.000 Credits/Monat) oder AI Ultra (25.000 Credits/Monat) abonnieren.',
   faq_q2: 'Ist CapCut kostenlos?',
   faq_a2: 'CapCut bietet sowohl eine kostenlose als auch eine Pro-Version. Die kostenlose Version umfasst grundlegende Bearbeitung, 1080p-Export und einige Effekte. Pro ($9,99/Monat oder $89,99/Jahr) bietet 4K-Export, keine Wasserzeichen, AI-Tools und Premium-Assets. Whisk2CapCut funktioniert hervorragend mit der kostenlosen Version.',
   faq_q3: 'Wie installiere ich Whisk2CapCut?',

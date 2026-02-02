@@ -22,7 +22,7 @@ export const en = {
   time_save_stat2_label: 'manual work saved',
   time_save_stat3_number: '<1 min',
   time_save_stat3_label: 'CapCut conversion',
-  time_save_desc: 'Generate 100+ AI images with Google Whisk and instantly convert them to a ready-to-edit CapCut project. What takes 4+ hours manually now takes less than 1 minute.',
+  time_save_desc: 'Generate 100+ AI images with Google Labs Whisk and instantly convert them to a CapCut project with Ken Burns effect (zoom in/out). What takes 4+ hours manually now takes less than 1 minute.',
 
   // Products
   products_title: 'Our Tools',
@@ -40,12 +40,12 @@ export const en = {
   // Whisk2CapCut Detail Page
   whisk2capcut_hero_title: 'Whisk2CapCut',
   whisk2capcut_hero_slogan: 'Save Your Time',
-  whisk2capcut_hero_subtitle: '100+ AI images in 10 min, 4+ hours of work done in under 1 min',
+  whisk2capcut_hero_subtitle: 'Bring static images from Google Labs Whisk to life with CapCut in just 1 second',
   whisk2capcut_hero_cta: 'Install Chrome Extension',
   whisk2capcut_hero_cta_secondary: 'View Pricing',
 
   whisk2capcut_what_title: 'What is Whisk2CapCut?',
-  whisk2capcut_what_desc: 'Whisk2CapCut is a Chrome extension that connects Google Whisk AI image generation with CapCut video editing. Generate multiple AI images with consistent style, then export them as a ready-to-edit CapCut project.',
+  whisk2capcut_what_desc: 'Whisk2CapCut is a Chrome extension that connects Google Labs Whisk AI image generation with CapCut video editing. Generate multiple AI images with consistent style, then instantly transform them into moving videos with Ken Burns effect (zoom in/out).',
 
   whisk2capcut_features_title: 'Features',
   whisk2capcut_feat1_title: 'Batch AI Generation',
@@ -285,22 +285,22 @@ The young prince practices sword fighting in the courtyard`,
   mockup_scene_courtyard: 'Courtyard',
 
   // Google Whisk Introduction
-  whisk_intro_title: 'What is Google Whisk?',
-  whisk_intro_desc: 'Google Whisk is an AI image generation tool developed by Google Labs. It combines text prompts with reference images to create images with consistent style.',
+  whisk_intro_title: 'What is Google Labs Whisk?',
+  whisk_intro_desc: 'Google Labs Whisk is the latest AI image generation tool developed by Google. It combines text prompts with reference images to create static images with consistent style. With Whisk2CapCut, you can apply Ken Burns effects to these static images and transform them into moving short-form videos.',
   whisk_intro_feature1_title: 'Reference-based Generation',
   whisk_intro_feature1_desc: 'Use character, background, and style images as references for consistent results',
   whisk_intro_feature2_title: 'Fast Generation',
   whisk_intro_feature2_desc: 'Generate high-quality AI images in seconds',
   whisk_intro_feature3_title: 'Free Trial',
   whisk_intro_feature3_desc: 'Free users get 100 AI credits per month (daily generation limits apply)',
-  whisk_intro_cta: 'Try Google Whisk',
+  whisk_intro_cta: 'Try Google Labs Whisk',
   whisk_intro_cta_url: 'https://labs.google/whisk',
 
   // FAQ
   faq_title: 'Frequently Asked Questions',
   faq_subtitle: 'Got questions? We have answers.',
-  faq_q1: 'Is Google Whisk free?',
-  faq_a1: 'Google Whisk offers a free trial with limitations. Free users get 100 AI credits per month and daily generation limits. For more usage, you can subscribe to Google AI Pro (1,000 credits/month) or AI Ultra (25,000 credits/month).',
+  faq_q1: 'Is Google Labs Whisk free?',
+  faq_a1: 'Google Labs Whisk offers a free trial with limitations. Free users get 100 AI credits per month and daily generation limits. For more usage, you can subscribe to Google AI Pro (1,000 credits/month) or AI Ultra (25,000 credits/month).',
   faq_q2: 'Is CapCut free?',
   faq_a2: 'CapCut offers both Free and Pro versions. The free version includes basic editing, 1080p export, and some effects. Pro ($9.99/month or $89.99/year) adds 4K export, no watermarks, AI tools, and premium assets. Whisk2CapCut works great with the free version.',
   faq_q3: 'How do I install Whisk2CapCut?',

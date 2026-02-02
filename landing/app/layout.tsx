@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'creator tools',
     'AI image generation',
     'CapCut automation',
-    'Google Whisk',
+    'Google Labs Whisk',
     'bulk image creation',
     'video editing automation',
     'content creation',

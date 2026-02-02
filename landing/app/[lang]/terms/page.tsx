@@ -116,7 +116,7 @@ export default function TermsPage() {
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      Google Whisk에서 생성한 이미지를 CapCut 프로젝트로 자동 변환하는 Chrome 확장 프로그램입니다.
+                      Google Labs Whisk에서 생성한 정적 이미지를 Ken Burns 효과(줌 인/아웃)가 적용된 CapCut 프로젝트로 자동 변환하는 Chrome 확장 프로그램입니다.
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>Whisk 대량 이미지 생성 및 자동저장: 무료/Pro 모두 무제한</li>
@@ -224,7 +224,7 @@ export default function TermsPage() {
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      Google Whiskで生成した画像をCapCutプロジェクトに自動変換するChrome拡張機能です。
+                      Google Labs Whiskで生成した静止画像をKen Burns効果（ズームイン/アウト）が適用されたCapCutプロジェクトに自動変換するChrome拡張機能です。
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>Whisk一括画像生成と自動保存：無料/Pro両方無制限</li>
@@ -332,7 +332,7 @@ export default function TermsPage() {
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      Eine Chrome-Erweiterung, die mit Google Whisk erstellte Bilder automatisch in CapCut-Projekte konvertiert.
+                      Eine Chrome-Erweiterung, die mit Google Labs Whisk erstellte statische Bilder automatisch in CapCut-Projekte mit Ken Burns Effekt (Zoom in/out) konvertiert.
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>Whisk-Massenbildgenerierung und Auto-Speichern: Kostenlos/Pro beide unbegrenzt</li>
@@ -440,7 +440,7 @@ export default function TermsPage() {
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      A Chrome extension that automatically converts images generated with Google Whisk into CapCut projects.
+                      A Chrome extension that automatically converts static images from Google Labs Whisk into CapCut projects with Ken Burns effect (zoom in/out).
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>Whisk Bulk Image Generation & Auto-Save: Unlimited for both Free/Pro</li>
