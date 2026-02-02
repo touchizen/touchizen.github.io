@@ -45,7 +45,7 @@ export default function CapCutTimeline({ lang = 'ko' }: CapCutTimelineProps) {
   ];
   const [playheadPosition, setPlayheadPosition] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true); // Start muted to avoid disturbing users
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const totalDuration = scenes.reduce((sum, s) => sum + s.duration, 0);
 
