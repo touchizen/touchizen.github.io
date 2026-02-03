@@ -231,7 +231,7 @@ export default function PrivacyPage() {
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">10. プライバシー責任者</h2>
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong>氏名:</strong> Kukhwan Ahn<br />
+                      <strong>氏名:</strong> Gookwhan Ahn<br />
                       <strong>役職:</strong> CEO<br />
                       <strong>メール:</strong> gordon.ahn@gmail.com
                     </p>
@@ -337,7 +337,7 @@ export default function PrivacyPage() {
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">10. Datenschutzbeauftragter</h2>
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong>Name:</strong> Kukhwan Ahn<br />
+                      <strong>Name:</strong> Gookwhan Ahn<br />
                       <strong>Position:</strong> CEO<br />
                       <strong>E-Mail:</strong> gordon.ahn@gmail.com
                     </p>
@@ -443,7 +443,7 @@ export default function PrivacyPage() {
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">10. Privacy Officer</h2>
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <strong>Name:</strong> Kukhwan Ahn<br />
+                      <strong>Name:</strong> Gookwhan Ahn<br />
                       <strong>Title:</strong> CEO<br />
                       <strong>Email:</strong> gordon.ahn@gmail.com
                     </p>
