@@ -172,7 +172,7 @@ export default function Whisk2CapCutPage() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="https://chrome.google.com/webstore"
+                  href="https://chromewebstore.google.com/detail/whisk2capcut/bipgbkcmomdhfclabgdgepdhdfekcldl"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-lg"
@@ -1454,7 +1454,7 @@ Now create the SRT file for this story:`}</pre>
             {t('whisk2capcut_cta_subtitle')}
           </p>
           <a
-            href="https://chrome.google.com/webstore"
+            href="https://chromewebstore.google.com/detail/whisk2capcut/bipgbkcmomdhfclabgdgepdhdfekcldl"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-violet-600 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 active:scale-95"
