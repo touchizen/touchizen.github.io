@@ -61,6 +61,10 @@ export const en = {
   whisk2capcut_feat5_desc: 'Use character, background, and style references for consistent results.',
   whisk2capcut_feat6_title: 'Multi-format Input',
   whisk2capcut_feat6_desc: 'Support for text prompts, CSV files, and SRT subtitle files.',
+  whisk2capcut_feat7_title: 'Auto Save',
+  whisk2capcut_feat7_desc: 'Automatically saves generated images to local storage for easy access.',
+  whisk2capcut_feat8_title: 'Tag Matching',
+  whisk2capcut_feat8_desc: 'Match references to scenes using tags for precise character and style control.',
 
   whisk2capcut_howto_title: 'How It Works',
   whisk2capcut_step1_title: 'Enter Prompts',

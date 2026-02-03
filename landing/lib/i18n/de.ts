@@ -61,6 +61,10 @@ export const de = {
   whisk2capcut_feat5_desc: 'Charakter-, Hintergrund- und Stilreferenzen für konsistente Ergebnisse.',
   whisk2capcut_feat6_title: 'Mehrere Eingabeformate',
   whisk2capcut_feat6_desc: 'Unterstützung für Textprompts, CSV-Dateien und SRT-Untertiteldateien.',
+  whisk2capcut_feat7_title: 'Auto-Speichern',
+  whisk2capcut_feat7_desc: 'Generierte Bilder werden automatisch im lokalen Speicher gespeichert.',
+  whisk2capcut_feat8_title: 'Tag-Matching',
+  whisk2capcut_feat8_desc: 'Referenzen und Szenen mit Tags abgleichen für präzise Charakter- und Stilkontrolle.',
 
   whisk2capcut_howto_title: 'So funktioniert es',
   whisk2capcut_step1_title: 'Prompts eingeben',

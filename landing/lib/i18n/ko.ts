@@ -61,6 +61,10 @@ export const ko = {
   whisk2capcut_feat5_desc: '캐릭터, 배경, 스타일 레퍼런스로 일관된 결과물을 얻으세요.',
   whisk2capcut_feat6_title: '다양한 입력 형식',
   whisk2capcut_feat6_desc: '텍스트 프롬프트, CSV 파일, SRT 자막 파일을 지원합니다.',
+  whisk2capcut_feat7_title: '자동 저장',
+  whisk2capcut_feat7_desc: '생성된 이미지를 로컬 저장소에 자동으로 저장하여 쉽게 접근할 수 있습니다.',
+  whisk2capcut_feat8_title: '태그 매칭',
+  whisk2capcut_feat8_desc: '태그를 사용하여 레퍼런스와 씬을 매칭하고 캐릭터와 스타일을 정밀하게 제어합니다.',
 
   whisk2capcut_howto_title: '사용 방법',
   whisk2capcut_step1_title: '프롬프트 입력',

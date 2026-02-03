@@ -85,6 +85,8 @@ export default function Whisk2CapCutPage() {
     { title: 'whisk2capcut_feat4_title', desc: 'whisk2capcut_feat4_desc', icon: '💬' },
     { title: 'whisk2capcut_feat5_title', desc: 'whisk2capcut_feat5_desc', icon: '🖼️' },
     { title: 'whisk2capcut_feat6_title', desc: 'whisk2capcut_feat6_desc', icon: '📄' },
+    { title: 'whisk2capcut_feat7_title', desc: 'whisk2capcut_feat7_desc', icon: '💾' },
+    { title: 'whisk2capcut_feat8_title', desc: 'whisk2capcut_feat8_desc', icon: '🏷️' },
   ];
 
   const steps = [
