@@ -56,7 +56,7 @@ export const ja = {
   whisk2capcut_feat3_title: 'Ken Burns効果',
   whisk2capcut_feat3_desc: '静止画像に動きを与える自動ズーム/パンアニメーション。',
   whisk2capcut_feat4_title: '自動字幕',
-  whisk2capcut_feat4_desc: 'プロンプトから字幕を自動生成、またはSRTファイルをインポート。',
+  whisk2capcut_feat4_desc: 'プロンプトから字幕を自動生成、またはCSV/SRTファイルからインポート。',
   whisk2capcut_feat5_title: 'リファレンスシステム',
   whisk2capcut_feat5_desc: 'キャラクター、背景、スタイルリファレンスで一貫した結果を得る。',
   whisk2capcut_feat6_title: '多様な入力形式',

@@ -56,7 +56,7 @@ export const en = {
   whisk2capcut_feat3_title: 'Ken Burns Effect',
   whisk2capcut_feat3_desc: 'Automatic zoom and pan animations to bring static images to life.',
   whisk2capcut_feat4_title: 'Auto Subtitle',
-  whisk2capcut_feat4_desc: 'Auto-generate subtitles from prompts or import SRT files.',
+  whisk2capcut_feat4_desc: 'Auto-generate subtitles from prompts or import from CSV/SRT files.',
   whisk2capcut_feat5_title: 'Reference System',
   whisk2capcut_feat5_desc: 'Use character, background, and style references for consistent results.',
   whisk2capcut_feat6_title: 'Multi-format Input',
