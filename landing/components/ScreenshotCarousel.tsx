@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Language } from '@/lib/i18n';
 
 interface Screenshot {
@@ -73,25 +73,41 @@ interface ScreenshotCarouselProps {
 
 export default function ScreenshotCarousel({ lang }: ScreenshotCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev === screenshots.length - 1 ? 0 : prev + 1));
+  }, []);
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev === 0 ? screenshots.length - 1 : prev - 1));
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev === screenshots.length - 1 ? 0 : prev + 1));
   };
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
 
+  // Auto-advance every 5 seconds
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      goToNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, goToNext]);
+
   const currentScreenshot = screenshots[currentIndex];
 
   return (
     <div className="relative">
       {/* Main Image Container */}
-      <div className="relative aspect-[16/10] bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-xl">
+      <div
+        className="relative aspect-[16/10] bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-xl"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <img
           src={currentScreenshot.src}
           alt={currentScreenshot.alt}
