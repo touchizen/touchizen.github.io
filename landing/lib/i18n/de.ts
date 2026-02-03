@@ -56,7 +56,7 @@ export const de = {
   whisk2capcut_feat3_title: 'Ken Burns Effekt',
   whisk2capcut_feat3_desc: 'Automatische Zoom- und Schwenk-Animationen für lebendige Standbilder.',
   whisk2capcut_feat4_title: 'Auto-Untertitel',
-  whisk2capcut_feat4_desc: 'SRT-Dateien importieren und Untertitel in Ihr CapCut-Projekt einbinden.',
+  whisk2capcut_feat4_desc: 'Untertitel automatisch aus Prompts generieren oder SRT-Dateien importieren.',
   whisk2capcut_feat5_title: 'Referenzsystem',
   whisk2capcut_feat5_desc: 'Charakter-, Hintergrund- und Stilreferenzen für konsistente Ergebnisse.',
   whisk2capcut_feat6_title: 'Mehrere Eingabeformate',

@@ -56,7 +56,7 @@ export const ko = {
   whisk2capcut_feat3_title: 'Ken Burns 효과',
   whisk2capcut_feat3_desc: '정적인 이미지에 생동감을 주는 자동 줌/팬 애니메이션.',
   whisk2capcut_feat4_title: '자동 자막',
-  whisk2capcut_feat4_desc: 'SRT 파일을 가져와서 CapCut 프로젝트에 자막을 포함시킵니다.',
+  whisk2capcut_feat4_desc: '프롬프트에서 자막을 자동 생성하거나 SRT 파일을 가져올 수 있습니다.',
   whisk2capcut_feat5_title: '레퍼런스 시스템',
   whisk2capcut_feat5_desc: '캐릭터, 배경, 스타일 레퍼런스로 일관된 결과물을 얻으세요.',
   whisk2capcut_feat6_title: '다양한 입력 형식',
