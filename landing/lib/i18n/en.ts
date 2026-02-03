@@ -55,7 +55,7 @@ export const en = {
   whisk2capcut_feat2_desc: 'Export generated images as a complete CapCut project with timeline, ready to edit.',
   whisk2capcut_feat3_title: 'Ken Burns Effect',
   whisk2capcut_feat3_desc: 'Automatic zoom and pan animations to bring static images to life.',
-  whisk2capcut_feat4_title: 'Subtitle Support',
+  whisk2capcut_feat4_title: 'Auto Subtitle',
   whisk2capcut_feat4_desc: 'Import SRT files and include subtitles in your CapCut project.',
   whisk2capcut_feat5_title: 'Reference System',
   whisk2capcut_feat5_desc: 'Use character, background, and style references for consistent results.',

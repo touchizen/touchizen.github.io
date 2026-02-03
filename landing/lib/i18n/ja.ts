@@ -55,7 +55,7 @@ export const ja = {
   whisk2capcut_feat2_desc: '生成した画像をタイムライン付きの完全なCapCutプロジェクトとしてエクスポート。',
   whisk2capcut_feat3_title: 'Ken Burns効果',
   whisk2capcut_feat3_desc: '静止画像に動きを与える自動ズーム/パンアニメーション。',
-  whisk2capcut_feat4_title: '字幕サポート',
+  whisk2capcut_feat4_title: '自動字幕',
   whisk2capcut_feat4_desc: 'SRTファイルをインポートしてCapCutプロジェクトに字幕を含める。',
   whisk2capcut_feat5_title: 'リファレンスシステム',
   whisk2capcut_feat5_desc: 'キャラクター、背景、スタイルリファレンスで一貫した結果を得る。',

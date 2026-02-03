@@ -55,7 +55,7 @@ export const de = {
   whisk2capcut_feat2_desc: 'Exportieren Sie generierte Bilder als vollständiges CapCut-Projekt mit Timeline.',
   whisk2capcut_feat3_title: 'Ken Burns Effekt',
   whisk2capcut_feat3_desc: 'Automatische Zoom- und Schwenk-Animationen für lebendige Standbilder.',
-  whisk2capcut_feat4_title: 'Untertitel-Support',
+  whisk2capcut_feat4_title: 'Auto-Untertitel',
   whisk2capcut_feat4_desc: 'SRT-Dateien importieren und Untertitel in Ihr CapCut-Projekt einbinden.',
   whisk2capcut_feat5_title: 'Referenzsystem',
   whisk2capcut_feat5_desc: 'Charakter-, Hintergrund- und Stilreferenzen für konsistente Ergebnisse.',

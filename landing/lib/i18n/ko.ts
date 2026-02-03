@@ -55,7 +55,7 @@ export const ko = {
   whisk2capcut_feat2_desc: '생성된 이미지를 타임라인이 포함된 완전한 CapCut 프로젝트로 내보냅니다.',
   whisk2capcut_feat3_title: 'Ken Burns 효과',
   whisk2capcut_feat3_desc: '정적인 이미지에 생동감을 주는 자동 줌/팬 애니메이션.',
-  whisk2capcut_feat4_title: '자막 지원',
+  whisk2capcut_feat4_title: '자동 자막',
   whisk2capcut_feat4_desc: 'SRT 파일을 가져와서 CapCut 프로젝트에 자막을 포함시킵니다.',
   whisk2capcut_feat5_title: '레퍼런스 시스템',
   whisk2capcut_feat5_desc: '캐릭터, 배경, 스타일 레퍼런스로 일관된 결과물을 얻으세요.',
