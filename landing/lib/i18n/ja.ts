@@ -63,7 +63,7 @@ export const ja = {
   whisk2capcut_feat6_desc: 'テキストプロンプト、CSVファイル、SRT字幕ファイルをサポート。',
   whisk2capcut_feat7_title: '自動保存',
   whisk2capcut_feat7_desc: '生成された画像をローカルストレージに自動保存し、簡単にアクセスできます。',
-  whisk2capcut_feat8_title: 'タグマッチング',
+  whisk2capcut_feat8_title: '自動タグマッチング',
   whisk2capcut_feat8_desc: 'タグを使用してリファレンスとシーンをマッチングし、キャラクターとスタイルを精密に制御。',
 
   whisk2capcut_howto_title: '使い方',

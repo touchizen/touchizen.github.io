@@ -63,7 +63,7 @@ export const de = {
   whisk2capcut_feat6_desc: 'Unterstützung für Textprompts, CSV-Dateien und SRT-Untertiteldateien.',
   whisk2capcut_feat7_title: 'Auto-Speichern',
   whisk2capcut_feat7_desc: 'Generierte Bilder werden automatisch im lokalen Speicher gespeichert.',
-  whisk2capcut_feat8_title: 'Tag-Matching',
+  whisk2capcut_feat8_title: 'Auto Tag-Matching',
   whisk2capcut_feat8_desc: 'Referenzen und Szenen mit Tags abgleichen für präzise Charakter- und Stilkontrolle.',
 
   whisk2capcut_howto_title: 'So funktioniert es',
