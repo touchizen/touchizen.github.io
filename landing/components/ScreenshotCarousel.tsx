@@ -74,17 +74,21 @@ interface ScreenshotCarouselProps {
 export default function ScreenshotCarousel({ lang }: ScreenshotCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev === screenshots.length - 1 ? 0 : prev + 1));
+    setProgress(0);
   }, []);
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev === 0 ? screenshots.length - 1 : prev - 1));
+    setProgress(0);
   };
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
+    setProgress(0);
   };
 
   // Auto-advance every 5 seconds
@@ -97,6 +101,17 @@ export default function ScreenshotCarousel({ lang }: ScreenshotCarouselProps) {
 
     return () => clearInterval(interval);
   }, [isPaused, goToNext]);
+
+  // Progress bar update every 100ms
+  useEffect(() => {
+    if (isPaused) return;
+
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => (prev >= 100 ? 0 : prev + 2));
+    }, 100);
+
+    return () => clearInterval(progressInterval);
+  }, [isPaused, currentIndex]);
 
   const currentScreenshot = screenshots[currentIndex];
 
@@ -145,6 +160,16 @@ export default function ScreenshotCarousel({ lang }: ScreenshotCarouselProps) {
       <p className="text-center text-lg text-gray-600 dark:text-gray-400 mt-4">
         {currentScreenshot.caption[lang]}
       </p>
+
+      {/* Progress Bar */}
+      <div className="mt-4 max-w-md mx-auto">
+        <div className="h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-violet-500 transition-all duration-100 ease-linear"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+      </div>
 
       {/* Dot Indicators */}
       <div className="flex justify-center gap-2 mt-4">
