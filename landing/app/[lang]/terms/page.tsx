@@ -75,6 +75,8 @@ export default function TermsPage() {
                   </ul>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">제7조 (회원의 의무)</h2>
+
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">제7조 1항 (금지 행위)</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     회원은 다음 행위를 하여서는 안됩니다:
                   </p>
@@ -87,7 +89,7 @@ export default function TermsPage() {
                     <li>서비스의 안정적인 운영에 지장을 주는 행위</li>
                   </ul>
 
-                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">제7조의2 (콘텐츠 정책)</h2>
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">제7조 2항 (콘텐츠 정책)</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Whisk2CapCut은 이미지 생성 엔진이 아니며, Google Labs Whisk의 워크플로우를 자동화하는 Chrome 확장 프로그램입니다.
                   </p>
@@ -194,6 +196,8 @@ export default function TermsPage() {
                   </ul>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">第7条（会員の義務）</h2>
+
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">第7条 第1項（禁止行為）</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     会員は以下の行為を行ってはなりません：
                   </p>
@@ -206,7 +210,7 @@ export default function TermsPage() {
                     <li>安定したサービス運営を妨げる行為</li>
                   </ul>
 
-                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">第7条の2（コンテンツポリシー）</h2>
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">第7条 第2項（コンテンツポリシー）</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Whisk2CapCutは画像生成エンジンではなく、Google Labs Whiskのワークフローを自動化するChrome拡張機能です。
                   </p>
@@ -313,6 +317,8 @@ export default function TermsPage() {
                   </ul>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Artikel 7 (Pflichten der Mitglieder)</h2>
+
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">Artikel 7 Absatz 1 (Verbotene Handlungen)</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Mitglieder dürfen folgende Aktivitäten nicht ausüben:
                   </p>
@@ -325,7 +331,7 @@ export default function TermsPage() {
                     <li>Handlungen, die den stabilen Dienstbetrieb stören</li>
                   </ul>
 
-                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Artikel 7a (Inhaltsrichtlinie)</h2>
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">Artikel 7 Absatz 2 (Inhaltsrichtlinie)</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Whisk2CapCut ist keine Bildgenerierungs-Engine, sondern eine Chrome-Erweiterung, die den Workflow von Google Labs Whisk automatisiert.
                   </p>
@@ -432,6 +438,8 @@ export default function TermsPage() {
                   </ul>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Article 7 (Member&apos;s Obligations)</h2>
+
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">Article 7, Section 1 (Prohibited Activities)</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Members shall not engage in the following activities:
                   </p>
@@ -444,7 +452,7 @@ export default function TermsPage() {
                     <li>Actions that disrupt stable service operation</li>
                   </ul>
 
-                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Article 7-2 (Content Policy)</h2>
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">Article 7, Section 2 (Content Policy)</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Whisk2CapCut is not an image generation engine. It is a Chrome extension that automates the workflow on Google Labs Whisk.
                   </p>
