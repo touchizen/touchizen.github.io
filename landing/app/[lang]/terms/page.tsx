@@ -87,6 +87,17 @@ export default function TermsPage() {
                     <li>서비스의 안정적인 운영에 지장을 주는 행위</li>
                   </ul>
 
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">제7조의2 (콘텐츠 정책)</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Whisk2CapCut은 이미지 생성 엔진이 아니며, Google Labs Whisk의 워크플로우를 자동화하는 Chrome 확장 프로그램입니다.
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>모든 이미지 생성은 Google Whisk에서 처리되며, Google의 안전 필터 및 콘텐츠 정책이 적용됩니다.</li>
+                    <li>본 확장 프로그램은 Google의 콘텐츠 검열 시스템을 우회하거나 수정하지 않습니다.</li>
+                    <li>사용자는 본 서비스를 통해 NSFW(성인용) 또는 부적절한 콘텐츠를 생성할 수 없습니다.</li>
+                    <li>Whisk2CapCut은 Google Whisk의 콘텐츠 정책을 따릅니다.</li>
+                  </ul>
+
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">제8조 (게시물에 대한 권리)</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     게시물에 대한 저작권을 포함한 모든 권리 및 책임은 이를 게시한 회원에게 있습니다.
@@ -193,6 +204,17 @@ export default function TermsPage() {
                     <li>知的財産権の侵害</li>
                     <li>ハッキングまたはウイルスの配布</li>
                     <li>安定したサービス運営を妨げる行為</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">第7条の2（コンテンツポリシー）</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Whisk2CapCutは画像生成エンジンではなく、Google Labs Whiskのワークフローを自動化するChrome拡張機能です。
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>すべての画像生成はGoogle Whiskによって処理され、Googleの安全フィルターとコンテンツポリシーが適用されます。</li>
+                    <li>この拡張機能はGoogleのコンテンツ審査システムを回避または変更しません。</li>
+                    <li>ユーザーは本サービスを通じてNSFW（成人向け）または不適切なコンテンツを生成することはできません。</li>
+                    <li>Whisk2CapCutはGoogle Whiskのコンテンツポリシーに従います。</li>
                   </ul>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">第8条（コンテンツの権利）</h2>
@@ -303,6 +325,17 @@ export default function TermsPage() {
                     <li>Handlungen, die den stabilen Dienstbetrieb stören</li>
                   </ul>
 
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Artikel 7a (Inhaltsrichtlinie)</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Whisk2CapCut ist keine Bildgenerierungs-Engine, sondern eine Chrome-Erweiterung, die den Workflow von Google Labs Whisk automatisiert.
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>Alle Bildgenerierung wird von Google Whisk verarbeitet, wobei die Sicherheitsfilter und Inhaltsrichtlinien von Google gelten.</li>
+                    <li>Diese Erweiterung umgeht oder modifiziert keine Inhaltsmoderation von Google.</li>
+                    <li>Benutzer können über diesen Dienst keine NSFW- (nicht jugendfrei) oder unangemessenen Inhalte generieren.</li>
+                    <li>Whisk2CapCut folgt den Inhaltsrichtlinien von Google Whisk.</li>
+                  </ul>
+
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Artikel 8 (Rechte an Inhalten)</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Alle Rechte und Verantwortlichkeiten für gepostete Inhalte, einschließlich Urheberrecht, liegen beim Mitglied, das sie gepostet hat.
@@ -409,6 +442,17 @@ export default function TermsPage() {
                     <li>Infringement of intellectual property rights</li>
                     <li>Hacking or virus distribution</li>
                     <li>Actions that disrupt stable service operation</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Article 7-2 (Content Policy)</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Whisk2CapCut is not an image generation engine. It is a Chrome extension that automates the workflow on Google Labs Whisk.
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>All image generation is handled by Google Whisk, which has built-in safety filters and content policies.</li>
+                    <li>This extension does not bypass or modify any of Google&apos;s content moderation systems.</li>
+                    <li>Users cannot generate NSFW (adult) or inappropriate content through this service.</li>
+                    <li>Whisk2CapCut follows Google Whisk&apos;s content policies.</li>
                   </ul>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Article 8 (Rights to Content)</h2>
