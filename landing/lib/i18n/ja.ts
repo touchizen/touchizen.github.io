@@ -289,7 +289,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   mockup_scene_palace: '宮殿',
   mockup_scene_courtyard: '中庭',
 
-  // Google Whisk Introduction
+  // Google Labs Whisk Introduction
   whisk_intro_title: 'Google Labs Whiskとは？',
   whisk_intro_desc: 'Google Labs WhiskはGoogleが開発した最新のAI画像生成ツールです。テキストプロンプトとリファレンス画像を組み合わせて、一貫したスタイルの静止画像を生成します。Whisk2CapCutを使用すると、これらの静止画像にKen Burns効果を適用して動くショートフォーム動画に変換できます。',
   whisk_intro_feature1_title: 'リファレンスベース生成',
@@ -305,13 +305,13 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   privacy_safety_title: 'プライバシーと安全性',
   privacy_safety_subtitle: 'データは常にブラウザ内に保持されます。',
   privacy_safety_feature1_title: 'サーバー処理なし',
-  privacy_safety_feature1_desc: 'すべての画像生成はGoogle Whiskで完全に処理されます。画像を処理、保存、送信することはありません。',
+  privacy_safety_feature1_desc: 'すべての画像生成はGoogle Labs Whiskで完全に処理されます。画像を処理、保存、送信することはありません。',
   privacy_safety_feature2_title: 'ブラウザのみで動作',
   privacy_safety_feature2_desc: 'この拡張機能は100%ブラウザ内で動作します。創作物がデバイスを離れることはありません。',
   privacy_safety_feature3_title: 'Googleコンテンツ安全',
-  privacy_safety_feature3_desc: 'Google WhiskはNSFWおよび不適切なコンテンツをソースレベルでブロックする組み込みの安全フィルターを適用します。',
+  privacy_safety_feature3_desc: 'Google Labs WhiskはNSFWおよび不適切なコンテンツをソースレベルでブロックする組み込みの安全フィルターを適用します。',
   privacy_safety_feature4_title: 'コンテンツ制御不可',
-  privacy_safety_feature4_desc: 'Google Whiskの出力を監視または制御する技術的能力はありません。すべてのコンテンツに関するお問い合わせはGoogleに直接ご連絡ください。',
+  privacy_safety_feature4_desc: 'Google Labs Whiskの出力を監視または制御する技術的能力はありません。すべてのコンテンツに関するお問い合わせはGoogleに直接ご連絡ください。',
 
   // FAQ
   faq_title: 'よくある質問',

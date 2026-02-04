@@ -289,7 +289,7 @@ The young prince practices sword fighting in the courtyard`,
   mockup_scene_palace: 'Palace',
   mockup_scene_courtyard: 'Courtyard',
 
-  // Google Whisk Introduction
+  // Google Labs Whisk Introduction
   whisk_intro_title: 'What is Google Labs Whisk?',
   whisk_intro_desc: 'Google Labs Whisk is the latest AI image generation tool developed by Google. It combines text prompts with reference images to create static images with consistent style. With Whisk2CapCut, you can apply Ken Burns effects to these static images and transform them into moving short-form videos.',
   whisk_intro_feature1_title: 'Reference-based Generation',
@@ -305,13 +305,13 @@ The young prince practices sword fighting in the courtyard`,
   privacy_safety_title: 'Privacy & Safety',
   privacy_safety_subtitle: 'Your data stays in your browser. Always.',
   privacy_safety_feature1_title: 'No Server Processing',
-  privacy_safety_feature1_desc: 'All image generation is handled entirely by Google Whisk. We never process, store, or transmit your images.',
+  privacy_safety_feature1_desc: 'All image generation is handled entirely by Google Labs Whisk. We never process, store, or transmit your images.',
   privacy_safety_feature2_title: 'Browser-Only Operation',
   privacy_safety_feature2_desc: 'This extension operates 100% within your browser. Your creative work never leaves your device.',
   privacy_safety_feature3_title: 'Google Content Safety',
-  privacy_safety_feature3_desc: 'Google Whisk enforces built-in safety filters that block NSFW and inappropriate content at the source level.',
+  privacy_safety_feature3_desc: 'Google Labs Whisk enforces built-in safety filters that block NSFW and inappropriate content at the source level.',
   privacy_safety_feature4_title: 'No Content Control',
-  privacy_safety_feature4_desc: 'We have no technical capability to monitor or control Google Whisk\'s output. All content concerns should be directed to Google.',
+  privacy_safety_feature4_desc: 'We have no technical capability to monitor or control Google Labs Whisk\'s output. All content concerns should be directed to Google.',
 
   // FAQ
   faq_title: 'Frequently Asked Questions',

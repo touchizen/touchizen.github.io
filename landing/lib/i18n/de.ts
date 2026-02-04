@@ -289,7 +289,7 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   mockup_scene_palace: 'Palast',
   mockup_scene_courtyard: 'Burghof',
 
-  // Google Whisk Introduction
+  // Google Labs Whisk Introduction
   whisk_intro_title: 'Was ist Google Labs Whisk?',
   whisk_intro_desc: 'Google Labs Whisk ist das neueste AI-Bildgenerierungstool von Google. Es kombiniert Textprompts mit Referenzbildern, um statische Bilder mit konsistentem Stil zu erstellen. Mit Whisk2CapCut können Sie Ken Burns Effekte auf diese statischen Bilder anwenden und sie in bewegte Kurzform-Videos verwandeln.',
   whisk_intro_feature1_title: 'Referenzbasierte Generierung',
@@ -305,13 +305,13 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   privacy_safety_title: 'Datenschutz & Sicherheit',
   privacy_safety_subtitle: 'Ihre Daten bleiben immer in Ihrem Browser.',
   privacy_safety_feature1_title: 'Keine Server-Verarbeitung',
-  privacy_safety_feature1_desc: 'Alle Bildgenerierung wird vollständig von Google Whisk verarbeitet. Wir verarbeiten, speichern oder übertragen Ihre Bilder niemals.',
+  privacy_safety_feature1_desc: 'Alle Bildgenerierung wird vollständig von Google Labs Whisk verarbeitet. Wir verarbeiten, speichern oder übertragen Ihre Bilder niemals.',
   privacy_safety_feature2_title: 'Nur Browser-Betrieb',
   privacy_safety_feature2_desc: 'Diese Erweiterung arbeitet 100% in Ihrem Browser. Ihre kreative Arbeit verlässt niemals Ihr Gerät.',
   privacy_safety_feature3_title: 'Google Inhaltssicherheit',
-  privacy_safety_feature3_desc: 'Google Whisk wendet integrierte Sicherheitsfilter an, die NSFW- und unangemessene Inhalte auf Quellebene blockieren.',
+  privacy_safety_feature3_desc: 'Google Labs Whisk wendet integrierte Sicherheitsfilter an, die NSFW- und unangemessene Inhalte auf Quellebene blockieren.',
   privacy_safety_feature4_title: 'Keine Inhaltskontrolle',
-  privacy_safety_feature4_desc: 'Wir haben keine technische Fähigkeit, die Ausgabe von Google Whisk zu überwachen oder zu kontrollieren. Alle Inhaltsanfragen sollten direkt an Google gerichtet werden.',
+  privacy_safety_feature4_desc: 'Wir haben keine technische Fähigkeit, die Ausgabe von Google Labs Whisk zu überwachen oder zu kontrollieren. Alle Inhaltsanfragen sollten direkt an Google gerichtet werden.',
 
   // FAQ
   faq_title: 'Häufig gestellte Fragen',
