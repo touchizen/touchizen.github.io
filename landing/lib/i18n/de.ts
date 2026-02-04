@@ -301,6 +301,18 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   whisk_intro_cta: 'Google Labs Whisk ausprobieren',
   whisk_intro_cta_url: 'https://labs.google/whisk',
 
+  // Privacy & Safety
+  privacy_safety_title: 'Datenschutz & Sicherheit',
+  privacy_safety_subtitle: 'Ihre Daten bleiben immer in Ihrem Browser.',
+  privacy_safety_feature1_title: 'Keine Server-Verarbeitung',
+  privacy_safety_feature1_desc: 'Alle Bildgenerierung wird vollständig von Google Whisk verarbeitet. Wir verarbeiten, speichern oder übertragen Ihre Bilder niemals.',
+  privacy_safety_feature2_title: 'Nur Browser-Betrieb',
+  privacy_safety_feature2_desc: 'Diese Erweiterung arbeitet 100% in Ihrem Browser. Ihre kreative Arbeit verlässt niemals Ihr Gerät.',
+  privacy_safety_feature3_title: 'Google Inhaltssicherheit',
+  privacy_safety_feature3_desc: 'Google Whisk wendet integrierte Sicherheitsfilter an, die NSFW- und unangemessene Inhalte auf Quellebene blockieren.',
+  privacy_safety_feature4_title: 'Keine Inhaltskontrolle',
+  privacy_safety_feature4_desc: 'Wir haben keine technische Fähigkeit, die Ausgabe von Google Whisk zu überwachen oder zu kontrollieren. Alle Inhaltsanfragen sollten direkt an Google gerichtet werden.',
+
   // FAQ
   faq_title: 'Häufig gestellte Fragen',
   faq_subtitle: 'Haben Sie Fragen? Wir haben Antworten.',
