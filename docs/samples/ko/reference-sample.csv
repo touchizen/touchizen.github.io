@@ -1,0 +1,10 @@
+type,name,image_path,description
+character,왕,images/king.png,"Wise old king with white beard and royal robes"
+character,왕비,images/queen.png,"Beautiful queen in elegant red dress"
+character,왕자,images/prince.png,"Young prince with determined expression"
+character,고문,images/advisor.png,"Mysterious royal advisor in dark robes"
+character,장군들,images/generals.png,"Group of military generals in armor"
+background,궁전,images/palace.png,"Grand palace interior with golden decorations"
+background,안뜰,images/courtyard.png,"Castle courtyard with training grounds"
+background,회의실,images/council.png,"War council room with large map table"
+style,cinematic,images/cinematic.png,"Dramatic lighting, movie-like composition"
