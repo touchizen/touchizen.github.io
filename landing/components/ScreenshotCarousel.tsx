@@ -4,7 +4,12 @@ import { useState, useEffect, useCallback } from 'react';
 import { Language } from '@/lib/i18n';
 
 interface Screenshot {
-  src: string;
+  src: {
+    en: string;
+    ko: string;
+    ja: string;
+    de: string;
+  };
   alt: string;
   caption: {
     en: string;
@@ -16,7 +21,12 @@ interface Screenshot {
 
 const screenshots: Screenshot[] = [
   {
-    src: '/images/screenshots/whisk2capcut/01_CapCutScreen_en.png',
+    src: {
+      en: '/images/screenshots/whisk2capcut/01_CapCutScreen_en.png',
+      ko: '/images/screenshots/whisk2capcut/01_CapCutScreen_ko.png',
+      ja: '/images/screenshots/whisk2capcut/01_CapCutScreen_en.png',
+      de: '/images/screenshots/whisk2capcut/01_CapCutScreen_en.png',
+    },
     alt: 'CapCut Screen',
     caption: {
       en: 'Works seamlessly within CapCut',
@@ -26,7 +36,12 @@ const screenshots: Screenshot[] = [
     },
   },
   {
-    src: '/images/screenshots/whisk2capcut/02_PrmoptInput.png',
+    src: {
+      en: '/images/screenshots/whisk2capcut/02_PrmoptInput.png',
+      ko: '/images/screenshots/whisk2capcut/02_PrmoptInput_ko.png',
+      ja: '/images/screenshots/whisk2capcut/02_PrmoptInput.png',
+      de: '/images/screenshots/whisk2capcut/02_PrmoptInput.png',
+    },
     alt: 'Prompt Input',
     caption: {
       en: 'Enter your creative prompts',
@@ -36,7 +51,12 @@ const screenshots: Screenshot[] = [
     },
   },
   {
-    src: '/images/screenshots/whisk2capcut/03_References_and_Scene3.png',
+    src: {
+      en: '/images/screenshots/whisk2capcut/03_References_and_Scene3.png',
+      ko: '/images/screenshots/whisk2capcut/03_References_and_Scenes2_ko.png',
+      ja: '/images/screenshots/whisk2capcut/03_References_and_Scene3.png',
+      de: '/images/screenshots/whisk2capcut/03_References_and_Scene3.png',
+    },
     alt: 'References and Scenes',
     caption: {
       en: 'Manage references and scenes',
@@ -46,7 +66,12 @@ const screenshots: Screenshot[] = [
     },
   },
   {
-    src: '/images/screenshots/whisk2capcut/04_ExportModal.png',
+    src: {
+      en: '/images/screenshots/whisk2capcut/04_ExportModal.png',
+      ko: '/images/screenshots/whisk2capcut/04_ExportModal_ko.png',
+      ja: '/images/screenshots/whisk2capcut/04_ExportModal.png',
+      de: '/images/screenshots/whisk2capcut/04_ExportModal.png',
+    },
     alt: 'Export Modal',
     caption: {
       en: 'Export to CapCut project',
@@ -56,7 +81,12 @@ const screenshots: Screenshot[] = [
     },
   },
   {
-    src: '/images/screenshots/whisk2capcut/05_SettingsModal.png',
+    src: {
+      en: '/images/screenshots/whisk2capcut/05_SettingsModal.png',
+      ko: '/images/screenshots/whisk2capcut/05_SettingsModal_ko.png',
+      ja: '/images/screenshots/whisk2capcut/05_SettingsModal.png',
+      de: '/images/screenshots/whisk2capcut/05_SettingsModal.png',
+    },
     alt: 'Settings Modal',
     caption: {
       en: 'Customize your settings',
@@ -124,7 +154,7 @@ export default function ScreenshotCarousel({ lang }: ScreenshotCarouselProps) {
         onMouseLeave={() => setIsPaused(false)}
       >
         <img
-          src={currentScreenshot.src}
+          src={currentScreenshot.src[lang]}
           alt={currentScreenshot.alt}
           className="w-full h-full object-contain"
         />
@@ -200,7 +230,7 @@ export default function ScreenshotCarousel({ lang }: ScreenshotCarouselProps) {
             }`}
           >
             <img
-              src={screenshot.src}
+              src={screenshot.src[lang]}
               alt={screenshot.alt}
               className="w-full h-full object-cover"
             />
