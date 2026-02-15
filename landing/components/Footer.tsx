@@ -124,7 +124,8 @@ export default function Footer({ lang }: FooterProps) {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  {t('footer_affiliate')}
+                  {t('footer_affiliate').split('(')[0]}
+                  <span className="block text-xs">({t('footer_affiliate').split('(')[1]}</span>
                 </a>
               </li>
             </ul>
