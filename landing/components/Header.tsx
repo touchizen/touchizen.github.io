@@ -63,6 +63,14 @@ export default function Header({ lang, onLanguageChange }: HeaderProps) {
                 {t(item.key)}
               </a>
             ))}
+            <a
+              href="https://touchizen.lemonsqueezy.com/affiliates"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
+            >
+              {t('nav_affiliate')}
+            </a>
           </nav>
 
           {/* Right side controls */}
@@ -115,6 +123,15 @@ export default function Header({ lang, onLanguageChange }: HeaderProps) {
                 {t(item.key)}
               </a>
             ))}
+            <a
+              href="https://touchizen.lemonsqueezy.com/affiliates"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-3 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
+            >
+              {t('nav_affiliate')}
+            </a>
           </nav>
         )}
       </div>

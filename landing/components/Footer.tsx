@@ -117,6 +117,16 @@ export default function Footer({ lang }: FooterProps) {
                   {t('footer_terms')}
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://touchizen.lemonsqueezy.com/affiliates"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  {t('footer_affiliate')}
+                </a>
+              </li>
             </ul>
           </div>
         </div>

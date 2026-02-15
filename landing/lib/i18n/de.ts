@@ -344,6 +344,8 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   footer_legal: 'Rechtliches',
   footer_privacy: 'Datenschutzrichtlinie',
   footer_terms: 'Nutzungsbedingungen',
+  nav_affiliate: 'Affiliate',
+  footer_affiliate: 'Affiliate werden (20% Provision)',
   footer_connect: 'Verbinden',
   footer_copyright: '2026 Touchizen. Alle Rechte vorbehalten.',
 } as const;

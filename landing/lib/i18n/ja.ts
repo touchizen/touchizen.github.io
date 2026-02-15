@@ -344,6 +344,8 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   footer_legal: '法的情報',
   footer_privacy: 'プライバシーポリシー',
   footer_terms: '利用規約',
+  nav_affiliate: 'アフィリエイト',
+  footer_affiliate: 'アフィリエイトに参加 (20% コミッション)',
   footer_connect: 'つながる',
   footer_copyright: '2026 Touchizen. All rights reserved.',
 } as const;

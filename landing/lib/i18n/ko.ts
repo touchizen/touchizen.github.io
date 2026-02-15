@@ -344,6 +344,8 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   footer_legal: '법적 고지',
   footer_privacy: '개인정보 처리방침',
   footer_terms: '서비스 이용약관',
+  nav_affiliate: '제휴 프로그램',
+  footer_affiliate: '제휴 파트너 신청 (20% 커미션)',
   footer_connect: '연결',
   footer_copyright: '2026 Touchizen. All rights reserved.',
 } as const;
