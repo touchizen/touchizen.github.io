@@ -46,11 +46,11 @@ export const ja = {
   whisk2capcut_hero_cta_secondary: '料金を見る',
 
   whisk2capcut_what_title: 'Whisk2CapCutとは？',
-  whisk2capcut_what_desc: 'Whisk2CapCutは、Google Labs Whisk AI画像生成とCapCut動画編集を連携するChrome拡張機能です。一貫したスタイルで複数のAI画像を生成し、Ken Burns効果（ズームイン/アウト）が適用された動く動画に即座に変換します。',
+  whisk2capcut_what_desc: 'Whisk2CapCutは、Google Labs Whisk AI画像生成とCapCut動画編集を連携するChrome拡張機能です。一貫したスタイルで複数のAI画像を生成し、Ken Burns効果（ズームイン/アウト）が適用された動く動画に即座に変換します。画像ダウンロードだけの単純な自動化ツールとは異なり、タイムライン付きの完全なCapCut動画プロジェクトを作成します。',
 
   whisk2capcut_features_title: '主な機能',
   whisk2capcut_feat1_title: '一括AI生成',
-  whisk2capcut_feat1_desc: 'キャラクター、背景、スタイルリファレンスを維持しながら複数の画像を一度に生成。',
+  whisk2capcut_feat1_desc: 'キャラクター、背景、スタイルリファレンスを維持しながら複数の画像を一度に生成。エラー自動リトライとトークン更新でバッチ生成の安定性を確保。',
   whisk2capcut_feat2_title: 'CapCutエクスポート',
   whisk2capcut_feat2_desc: '生成した画像をタイムライン付きの完全なCapCutプロジェクトとしてエクスポート。',
   whisk2capcut_feat3_title: 'Ken Burns効果',
@@ -65,6 +65,16 @@ export const ja = {
   whisk2capcut_feat7_desc: '生成された画像をローカルストレージに自動保存し、簡単にアクセスできます。',
   whisk2capcut_feat8_title: '自動タグマッチング',
   whisk2capcut_feat8_desc: 'タグを使用してリファレンスとシーンをマッチングし、キャラクターとスタイルを精密に制御。',
+
+  whisk2capcut_audience_title: 'こんな方におすすめ',
+  whisk2capcut_audience_1_title: 'AI動画クリエイター',
+  whisk2capcut_audience_1_desc: '200枚以上のAI生成シーンを60秒で完全なCapCut動画プロジェクトに変換。',
+  whisk2capcut_audience_2_title: 'ビジュアルストーリーテラー',
+  whisk2capcut_audience_2_desc: 'リファレンスベースの生成で、ストーリー全体を通して同じキャラクター、背景、スタイルを維持。',
+  whisk2capcut_audience_3_title: 'YouTube & TikTokクリエイター',
+  whisk2capcut_audience_3_desc: 'AIスライドショー/ナレーション動画制作における画像→タイムラインの繰り返し作業を自動化。',
+  whisk2capcut_audience_4_title: '教育コンテンツ制作者',
+  whisk2capcut_audience_4_desc: 'スクリプトや字幕からイラスト動画レッスンを制作。SRTファイルをインポートすれば、すぐに編集可能なCapCutプロジェクトが完成。',
 
   whisk2capcut_howto_title: '使い方',
   whisk2capcut_step1_title: 'プロンプト入力',

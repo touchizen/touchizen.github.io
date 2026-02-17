@@ -46,11 +46,11 @@ export const de = {
   whisk2capcut_hero_cta_secondary: 'Preise ansehen',
 
   whisk2capcut_what_title: 'Was ist Whisk2CapCut?',
-  whisk2capcut_what_desc: 'Whisk2CapCut ist eine Chrome-Erweiterung, die Google Labs Whisk AI-Bildgenerierung mit CapCut-Videobearbeitung verbindet. Generieren Sie mehrere AI-Bilder mit einheitlichem Stil und verwandeln Sie sie sofort in bewegte Videos mit Ken Burns Effekt (Zoom in/out).',
+  whisk2capcut_what_desc: 'Whisk2CapCut ist eine Chrome-Erweiterung, die Google Labs Whisk AI-Bildgenerierung mit CapCut-Videobearbeitung verbindet. Generieren Sie mehrere AI-Bilder mit einheitlichem Stil und verwandeln Sie sie sofort in bewegte Videos mit Ken Burns Effekt (Zoom in/out). Im Gegensatz zu einfachen Prompt-Automatisierern, die nur Bilder herunterladen, erstellt Whisk2CapCut ein vollständiges, timeline-fertiges CapCut-Videoprojekt.',
 
   whisk2capcut_features_title: 'Funktionen',
   whisk2capcut_feat1_title: 'Stapel-AI-Generierung',
-  whisk2capcut_feat1_desc: 'Generieren Sie mehrere Bilder auf einmal mit konsistenten Charakter-, Hintergrund- und Stilreferenzen.',
+  whisk2capcut_feat1_desc: 'Generieren Sie mehrere Bilder auf einmal mit konsistenten Charakter-, Hintergrund- und Stilreferenzen. Automatische Wiederholung bei Fehlern und Token-Aktualisierung sorgen für stabile Batch-Generierung.',
   whisk2capcut_feat2_title: 'CapCut-Export',
   whisk2capcut_feat2_desc: 'Exportieren Sie generierte Bilder als vollständiges CapCut-Projekt mit Timeline.',
   whisk2capcut_feat3_title: 'Ken Burns Effekt',
@@ -65,6 +65,16 @@ export const de = {
   whisk2capcut_feat7_desc: 'Generierte Bilder werden automatisch im lokalen Speicher gespeichert.',
   whisk2capcut_feat8_title: 'Auto Tag-Matching',
   whisk2capcut_feat8_desc: 'Referenzen und Szenen mit Tags abgleichen für präzise Charakter- und Stilkontrolle.',
+
+  whisk2capcut_audience_title: 'Für wen ist das?',
+  whisk2capcut_audience_1_title: 'AI-Video-Ersteller',
+  whisk2capcut_audience_1_desc: 'Verwandeln Sie 200+ AI-generierte Szenen in 60 Sekunden in ein vollständiges CapCut-Videoprojekt.',
+  whisk2capcut_audience_2_title: 'Visuelle Geschichtenerzähler',
+  whisk2capcut_audience_2_desc: 'Behalten Sie denselben Charakter, Hintergrund und Stil über eine gesamte Geschichte mit referenzbasierter Generierung bei.',
+  whisk2capcut_audience_3_title: 'YouTube & TikTok Creator',
+  whisk2capcut_audience_3_desc: 'Automatisieren Sie den mühsamen Bild-zu-Timeline-Workflow für AI-Slideshow- und Narrations-Videos.',
+  whisk2capcut_audience_4_title: 'Pädagogen & Kursersteller',
+  whisk2capcut_audience_4_desc: 'Erstellen Sie illustrierte Video-Lektionen aus Skripten oder Untertiteln. Importieren Sie SRT-Dateien und erhalten Sie ein bearbeitungsfertiges CapCut-Projekt.',
 
   whisk2capcut_howto_title: 'So funktioniert es',
   whisk2capcut_step1_title: 'Prompts eingeben',

@@ -46,11 +46,11 @@ export const en = {
   whisk2capcut_hero_cta_secondary: 'View Pricing',
 
   whisk2capcut_what_title: 'What is Whisk2CapCut?',
-  whisk2capcut_what_desc: 'Whisk2CapCut is a Chrome extension that connects Google Labs Whisk AI image generation with CapCut video editing. Generate multiple AI images with consistent style, then instantly transform them into moving videos with Ken Burns effect (zoom in/out).',
+  whisk2capcut_what_desc: 'Whisk2CapCut is a Chrome extension that connects Google Labs Whisk AI image generation with CapCut video editing. Generate multiple AI images with consistent style, then instantly transform them into moving videos with Ken Burns effect (zoom in/out). Unlike basic prompt automators that only download images, Whisk2CapCut produces a complete, timeline-ready CapCut video project.',
 
   whisk2capcut_features_title: 'Features',
   whisk2capcut_feat1_title: 'Batch AI Generation',
-  whisk2capcut_feat1_desc: 'Generate multiple images at once with consistent character, background, and style references.',
+  whisk2capcut_feat1_desc: 'Generate multiple images at once with consistent character, background, and style references. Auto-retry on errors and token refresh keep batch runs stable.',
   whisk2capcut_feat2_title: 'CapCut Export',
   whisk2capcut_feat2_desc: 'Export generated images as a complete CapCut project with timeline, ready to edit.',
   whisk2capcut_feat3_title: 'Ken Burns Effect',
@@ -65,6 +65,16 @@ export const en = {
   whisk2capcut_feat7_desc: 'Automatically saves generated images to local storage for easy access.',
   whisk2capcut_feat8_title: 'Auto Tag Matching',
   whisk2capcut_feat8_desc: 'Match references to scenes using tags for precise character and style control.',
+
+  whisk2capcut_audience_title: 'Who Is This For?',
+  whisk2capcut_audience_1_title: 'AI Video Creators',
+  whisk2capcut_audience_1_desc: 'Turn 200+ AI-generated scenes into a complete CapCut video project in 60 seconds.',
+  whisk2capcut_audience_2_title: 'Visual Storytellers',
+  whisk2capcut_audience_2_desc: 'Maintain the same character, background, and style across an entire story with reference-based generation.',
+  whisk2capcut_audience_3_title: 'YouTube & TikTok Creators',
+  whisk2capcut_audience_3_desc: 'Automate the tedious image-to-timeline workflow for AI slideshow and narration videos.',
+  whisk2capcut_audience_4_title: 'Educators & Course Creators',
+  whisk2capcut_audience_4_desc: 'Build illustrated video lessons from scripts or subtitles. Import SRT files and get a ready-to-edit CapCut project.',
 
   whisk2capcut_howto_title: 'How It Works',
   whisk2capcut_step1_title: 'Enter Prompts',
