@@ -20,16 +20,19 @@ export const metadata: Metadata = {
   authors: [{ name: 'Touchizen' }],
   metadataBase: new URL('https://touchizen.com'),
   alternates: {
-    canonical: 'https://touchizen.com',
+    canonical: 'https://touchizen.com/en/',
     languages: {
-      'en': 'https://touchizen.com',
-      'ko': 'https://touchizen.com',
+      'en': 'https://touchizen.com/en/',
+      'ko': 'https://touchizen.com/ko/',
+      'ja': 'https://touchizen.com/ja/',
+      'de': 'https://touchizen.com/de/',
+      'x-default': 'https://touchizen.com/en/',
     },
   },
   openGraph: {
     title: 'Touchizen Creator Tools - Save Your Time',
     description: 'Generate 100+ AI images in minutes, convert to CapCut in seconds. Save hours of repetitive work.',
-    url: 'https://touchizen.com',
+    url: 'https://touchizen.com/en/',
     siteName: 'Touchizen',
     type: 'website',
     locale: 'en_US',

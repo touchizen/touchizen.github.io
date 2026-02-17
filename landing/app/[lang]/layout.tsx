@@ -51,15 +51,18 @@ export function generateMetadata({ params }: Props): Metadata {
     authors: [{ name: 'Touchizen' }],
     metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `${baseUrl}/${lang}`,
-      languages: Object.fromEntries(
-        languages.map((l) => [l.code, `${baseUrl}/${l.code}`])
-      ),
+      canonical: `${baseUrl}/${lang}/`,
+      languages: {
+        ...Object.fromEntries(
+          languages.map((l) => [l.code, `${baseUrl}/${l.code}/`])
+        ),
+        'x-default': `${baseUrl}/en/`,
+      },
     },
     openGraph: {
       title: titles[lang],
       description: descriptions[lang],
-      url: `${baseUrl}/${lang}`,
+      url: `${baseUrl}/${lang}/`,
       siteName: 'Touchizen',
       type: 'website',
       locale: locales[lang],
