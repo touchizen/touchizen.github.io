@@ -1011,21 +1011,36 @@ Now create the SRT file for this story:`}</pre>
                       </code>
                     </div>
                   </div>
-                  {/* Windows */}
+                  {/* Windows - 3 paths */}
                   <div className="flex items-start gap-3">
                     <span className="text-lg">🪟</span>
-                    <div className="flex-1">
+                    <div className="flex-1 space-y-2">
                       <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Windows</div>
-                      <code className="block text-xs bg-gray-900 dark:bg-black text-green-400 px-3 py-2 rounded-lg font-mono overflow-x-auto">
-                        C:\Users\[Username]\AppData\Local\CapCut\User Data\Projects\com.lveditor.draft\
-                      </code>
+                      <div>
+                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">CapCut ({lang === 'ko' ? '기본' : 'Default'})</span>
+                        <code className="block text-xs bg-gray-900 dark:bg-black text-green-400 px-3 py-2 rounded-lg font-mono overflow-x-auto mt-1">
+                          C:\Users\[{lang === 'ko' ? '사용자명' : 'Username'}]\AppData\Local\CapCut\User Data\Projects\com.lveditor.draft\
+                        </code>
+                      </div>
+                      <div>
+                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">CapCut Pro</span>
+                        <code className="block text-xs bg-gray-900 dark:bg-black text-green-400 px-3 py-2 rounded-lg font-mono overflow-x-auto mt-1">
+                          C:\Users\[{lang === 'ko' ? '사용자명' : 'Username'}]\AppData\Local\CapCutPro\User Data\Projects\com.lveditor.draft\
+                        </code>
+                      </div>
+                      <div>
+                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">Documents</span>
+                        <code className="block text-xs bg-gray-900 dark:bg-black text-green-400 px-3 py-2 rounded-lg font-mono overflow-x-auto mt-1">
+                          C:\Users\[{lang === 'ko' ? '사용자명' : 'Username'}]\Documents\CapCut\Projects\
+                        </code>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <p className="mt-3 text-xs text-amber-700 dark:text-amber-400">
                   {lang === 'ko'
-                    ? '💡 내보낸 프로젝트 폴더를 위 경로에 복사한 후 CapCut을 재시작하세요.'
-                    : '💡 Copy the exported project folder to the path above, then restart CapCut.'}
+                    ? '💡 확장 프로그램에서 프리셋(CapCut / CapCut Pro / Documents)을 선택하면 경로가 자동 생성됩니다.'
+                    : '💡 Select a preset (CapCut / CapCut Pro / Documents) in the extension to auto-generate the path.'}
                 </p>
               </div>
 
