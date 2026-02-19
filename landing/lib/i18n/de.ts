@@ -348,6 +348,23 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   trust_secure_title: 'Sichere Zahlungen',
   trust_secure_desc: 'Alle Zahlungen werden sicher über Lemon Squeezy abgewickelt. Ihre Kartendaten werden nie gespeichert.',
 
+  // Installation / Comparison Section
+  whisk2capcut_install_title: 'Wählen Sie Ihre Version',
+  whisk2capcut_install_subtitle: 'Desktop-App empfohlen für das beste Erlebnis',
+  whisk2capcut_compare_feature: 'Funktion',
+  whisk2capcut_compare_desktop: 'Desktop-App',
+  whisk2capcut_compare_plugin: 'Chrome-Plugin',
+  whisk2capcut_compare_ai: 'KI-Bildgenerierung',
+  whisk2capcut_compare_export: 'CapCut-Projektexport',
+  whisk2capcut_compare_kenburns: 'Ken-Burns-Effekt',
+  whisk2capcut_compare_srt: 'SRT-Untertitel',
+  whisk2capcut_compare_direct_write: 'Direkt in CapCut-Ordner schreiben',
+  whisk2capcut_compare_auto_launch: 'CapCut automatisch starten',
+  whisk2capcut_compare_split_view: 'Split-View-Layout',
+  whisk2capcut_compare_no_browser: 'Kein Browser erforderlich',
+  whisk2capcut_compare_zip_only: 'Nur ZIP-Export',
+  whisk2capcut_compare_recommended: 'Empfohlen',
+
   // Desktop App Section
   whisk2capcut_desktop_badge: 'Desktop-App',
   whisk2capcut_desktop_title: 'Auch als Desktop-App verfügbar',

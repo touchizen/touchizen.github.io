@@ -348,6 +348,23 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   trust_secure_title: '安全な決済',
   trust_secure_desc: 'すべての決済はLemon Squeezyを通じて安全に処理されます。カード情報は保存されません。',
 
+  // Installation / Comparison Section
+  whisk2capcut_install_title: 'バージョンを選択',
+  whisk2capcut_install_subtitle: '最高の体験にはデスクトップアプリがおすすめです',
+  whisk2capcut_compare_feature: '機能',
+  whisk2capcut_compare_desktop: 'デスクトップアプリ',
+  whisk2capcut_compare_plugin: 'Chromeプラグイン',
+  whisk2capcut_compare_ai: 'AI画像生成',
+  whisk2capcut_compare_export: 'CapCutプロジェクトエクスポート',
+  whisk2capcut_compare_kenburns: 'ケンバーンズ効果',
+  whisk2capcut_compare_srt: 'SRT字幕対応',
+  whisk2capcut_compare_direct_write: 'CapCutフォルダに直接保存',
+  whisk2capcut_compare_auto_launch: 'CapCut自動起動',
+  whisk2capcut_compare_split_view: '分割ビューレイアウト',
+  whisk2capcut_compare_no_browser: 'ブラウザ不要',
+  whisk2capcut_compare_zip_only: 'ZIPエクスポートのみ',
+  whisk2capcut_compare_recommended: 'おすすめ',
+
   // Desktop App Section
   whisk2capcut_desktop_badge: 'デスクトップアプリ',
   whisk2capcut_desktop_title: 'デスクトップアプリもあります',

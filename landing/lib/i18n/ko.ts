@@ -348,6 +348,23 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   trust_secure_title: '안전한 결제',
   trust_secure_desc: '모든 결제는 Lemon Squeezy를 통해 안전하게 처리됩니다. 카드 정보는 저장되지 않습니다.',
 
+  // Installation / Comparison Section
+  whisk2capcut_install_title: '버전을 선택하세요',
+  whisk2capcut_install_subtitle: '최고의 경험을 위해 데스크톱 앱을 권장합니다',
+  whisk2capcut_compare_feature: '기능',
+  whisk2capcut_compare_desktop: '데스크톱 앱',
+  whisk2capcut_compare_plugin: 'Chrome 플러그인',
+  whisk2capcut_compare_ai: 'AI 이미지 생성',
+  whisk2capcut_compare_export: 'CapCut 프로젝트 내보내기',
+  whisk2capcut_compare_kenburns: '켄 번즈 효과',
+  whisk2capcut_compare_srt: 'SRT 자막 지원',
+  whisk2capcut_compare_direct_write: 'CapCut 폴더에 직접 저장',
+  whisk2capcut_compare_auto_launch: 'CapCut 자동 실행',
+  whisk2capcut_compare_split_view: '분할 화면 레이아웃',
+  whisk2capcut_compare_no_browser: '브라우저 불필요',
+  whisk2capcut_compare_zip_only: 'ZIP 내보내기만 가능',
+  whisk2capcut_compare_recommended: '추천',
+
   // Desktop App Section
   whisk2capcut_desktop_badge: '데스크톱 앱',
   whisk2capcut_desktop_title: '데스크톱 앱도 있습니다',

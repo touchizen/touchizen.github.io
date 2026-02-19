@@ -348,6 +348,23 @@ The young prince practices sword fighting in the courtyard`,
   trust_secure_title: 'Secure Payments',
   trust_secure_desc: 'All payments are securely processed through Lemon Squeezy. Your card information is never stored.',
 
+  // Installation / Comparison Section
+  whisk2capcut_install_title: 'Choose Your Version',
+  whisk2capcut_install_subtitle: 'Desktop app recommended for the best experience',
+  whisk2capcut_compare_feature: 'Feature',
+  whisk2capcut_compare_desktop: 'Desktop App',
+  whisk2capcut_compare_plugin: 'Chrome Plugin',
+  whisk2capcut_compare_ai: 'AI Image Generation',
+  whisk2capcut_compare_export: 'CapCut Project Export',
+  whisk2capcut_compare_kenburns: 'Ken Burns Effect',
+  whisk2capcut_compare_srt: 'SRT Subtitle Support',
+  whisk2capcut_compare_direct_write: 'Direct Write to CapCut Folder',
+  whisk2capcut_compare_auto_launch: 'Auto-launch CapCut',
+  whisk2capcut_compare_split_view: 'Split View Layout',
+  whisk2capcut_compare_no_browser: 'No Browser Required',
+  whisk2capcut_compare_zip_only: 'ZIP export only',
+  whisk2capcut_compare_recommended: 'Recommended',
+
   // Desktop App Section
   whisk2capcut_desktop_badge: 'Desktop App',
   whisk2capcut_desktop_title: 'Also Available as Desktop App',
