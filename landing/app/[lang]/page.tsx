@@ -4,6 +4,7 @@ import { useRouter, useParams } from 'next/navigation';
 import { Language, languages } from '@/lib/i18n';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import QuickDownload from '@/components/QuickDownload';
 import Products from '@/components/Products';
 import Features from '@/components/Features';
 import Footer from '@/components/Footer';
@@ -25,6 +26,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header lang={lang} onLanguageChange={handleLanguageChange} />
       <Hero lang={lang} />
+      <QuickDownload lang={lang} />
       <Products lang={lang} />
       <Features lang={lang} />
       <Footer lang={lang} />

@@ -10,7 +10,7 @@ export default function Hero({ lang }: HeroProps) {
   const t = (key: TranslationKey) => translations[lang][key];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950" />
 
@@ -33,10 +33,10 @@ export default function Hero({ lang }: HeroProps) {
             {t('hero_subtitle')}
           </p>
           <a
-            href="#products"
+            href="#download"
             className="btn-primary text-lg px-8 py-4"
           >
-            {t('hero_cta')}
+            {t('quick_dl_title')}
             <svg
               className="w-5 h-5 ml-2"
               fill="none"
@@ -51,23 +51,6 @@ export default function Hero({ lang }: HeroProps) {
               />
             </svg>
           </a>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-6 h-6 text-gray-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
         </div>
       </div>
     </section>

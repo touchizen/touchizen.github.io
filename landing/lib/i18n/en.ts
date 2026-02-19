@@ -11,6 +11,20 @@ export const en = {
   hero_cta: 'Explore Tools',
   hero_by: 'by Touchizen',
 
+  // Quick Download (main page)
+  quick_dl_title: 'Get Whisk2CapCut',
+  quick_dl_subtitle: 'AI bulk image generation + instant CapCut video project',
+  quick_dl_desktop_title: 'Desktop App',
+  quick_dl_desktop_desc: 'Direct write to CapCut folder, auto-launch, split view',
+  quick_dl_desktop_recommended: 'Recommended',
+  quick_dl_plugin_title: 'Chrome Extension',
+  quick_dl_plugin_desc: 'Browser extension for Google Labs Whisk',
+  quick_dl_win: 'Windows',
+  quick_dl_mac: 'macOS',
+  quick_dl_chrome_store: 'Chrome Web Store',
+  quick_dl_learn_more: 'Compare versions',
+  quick_dl_version: 'v1.0.0 · Free trial included',
+
   // Time saving value
   time_save_motto: 'Save Your Time',
   time_save_badge: 'Save Hours of Work',

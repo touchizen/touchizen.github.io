@@ -11,6 +11,20 @@ export const de = {
   hero_cta: 'Tools entdecken',
   hero_by: 'by Touchizen',
 
+  // Quick Download (main page)
+  quick_dl_title: 'Whisk2CapCut herunterladen',
+  quick_dl_subtitle: 'KI-Massenbildgenerierung + sofortiges CapCut-Videoprojekt',
+  quick_dl_desktop_title: 'Desktop-App',
+  quick_dl_desktop_desc: 'Direkt in CapCut-Ordner, Auto-Start, Split-View',
+  quick_dl_desktop_recommended: 'Empfohlen',
+  quick_dl_plugin_title: 'Chrome-Erweiterung',
+  quick_dl_plugin_desc: 'Browser-Erweiterung für Google Labs Whisk',
+  quick_dl_win: 'Windows',
+  quick_dl_mac: 'macOS',
+  quick_dl_chrome_store: 'Chrome Web Store',
+  quick_dl_learn_more: 'Versionen vergleichen',
+  quick_dl_version: 'v1.0.0 · Kostenlose Testversion inklusive',
+
   // Time saving value
   time_save_motto: 'Save Your Time',
   time_save_badge: 'Stunden sparen',

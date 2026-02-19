@@ -11,6 +11,20 @@ export const ko = {
   hero_cta: '도구 살펴보기',
   hero_by: 'by Touchizen',
 
+  // Quick Download (main page)
+  quick_dl_title: 'Whisk2CapCut 다운로드',
+  quick_dl_subtitle: 'AI 대량 이미지 생성 + 즉시 CapCut 영상 프로젝트 변환',
+  quick_dl_desktop_title: '데스크톱 앱',
+  quick_dl_desktop_desc: 'CapCut 폴더에 직접 저장, 자동 실행, 분할 화면',
+  quick_dl_desktop_recommended: '추천',
+  quick_dl_plugin_title: 'Chrome 확장 프로그램',
+  quick_dl_plugin_desc: 'Google Labs Whisk용 브라우저 확장 프로그램',
+  quick_dl_win: 'Windows',
+  quick_dl_mac: 'macOS',
+  quick_dl_chrome_store: 'Chrome 웹스토어',
+  quick_dl_learn_more: '버전 비교하기',
+  quick_dl_version: 'v1.0.0 · 무료 체험 포함',
+
   // Time saving value
   time_save_motto: 'Save Your Time',
   time_save_badge: '시간을 절약하세요',
