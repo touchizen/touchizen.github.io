@@ -217,8 +217,10 @@ export const de = {
   output_structure_title: 'Ausgabestruktur',
 
   whisk2capcut_cta_title: 'Bereit zum Erstellen?',
-  whisk2capcut_cta_subtitle: 'Installieren Sie die Chrome-Erweiterung und erstellen Sie erstaunliche Videoinhalte.',
+  whisk2capcut_cta_subtitle: 'Laden Sie die Desktop-App herunter oder installieren Sie die Chrome-Erweiterung.',
   whisk2capcut_cta_button: 'Whisk2CapCut holen',
+  whisk2capcut_cta_desktop: 'Desktop-App herunterladen',
+  whisk2capcut_cta_chrome: 'Chrome Web Store',
 
   back_to_home: 'Zurück zur Startseite',
 

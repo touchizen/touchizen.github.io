@@ -217,8 +217,10 @@ export const ko = {
   output_structure_title: '출력 구조',
 
   whisk2capcut_cta_title: '시작할 준비가 되셨나요?',
-  whisk2capcut_cta_subtitle: 'Chrome 확장 프로그램을 설치하고 멋진 영상 콘텐츠를 만들어 보세요.',
+  whisk2capcut_cta_subtitle: '데스크톱 앱을 다운로드하거나 Chrome 확장 프로그램을 설치하세요.',
   whisk2capcut_cta_button: 'Whisk2CapCut 설치하기',
+  whisk2capcut_cta_desktop: '데스크톱 앱 다운로드',
+  whisk2capcut_cta_chrome: 'Chrome 웹스토어',
 
   back_to_home: '홈으로 돌아가기',
 

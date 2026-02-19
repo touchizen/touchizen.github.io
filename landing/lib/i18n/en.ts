@@ -217,8 +217,10 @@ export const en = {
   output_structure_title: 'Output Structure',
 
   whisk2capcut_cta_title: 'Ready to Create?',
-  whisk2capcut_cta_subtitle: 'Install the Chrome extension and start creating amazing video content.',
+  whisk2capcut_cta_subtitle: 'Download the desktop app or install the Chrome extension to get started.',
   whisk2capcut_cta_button: 'Get Whisk2CapCut',
+  whisk2capcut_cta_desktop: 'Download Desktop App',
+  whisk2capcut_cta_chrome: 'Chrome Web Store',
 
   back_to_home: 'Back to Home',
 

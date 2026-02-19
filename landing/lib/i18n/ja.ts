@@ -217,8 +217,10 @@ export const ja = {
   output_structure_title: '出力構造',
 
   whisk2capcut_cta_title: '始める準備はできましたか？',
-  whisk2capcut_cta_subtitle: 'Chrome拡張機能をインストールして、素晴らしい動画コンテンツを作成しましょう。',
+  whisk2capcut_cta_subtitle: 'デスクトップアプリをダウンロードするか、Chrome拡張機能をインストールしてください。',
   whisk2capcut_cta_button: 'Whisk2CapCutを入手',
+  whisk2capcut_cta_desktop: 'デスクトップアプリをダウンロード',
+  whisk2capcut_cta_chrome: 'Chrome ウェブストア',
 
   back_to_home: 'ホームに戻る',
 
