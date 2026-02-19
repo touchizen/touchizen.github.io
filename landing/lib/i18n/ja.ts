@@ -348,6 +348,20 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   trust_secure_title: '安全な決済',
   trust_secure_desc: 'すべての決済はLemon Squeezyを通じて安全に処理されます。カード情報は保存されません。',
 
+  // Desktop App Section
+  whisk2capcut_desktop_badge: 'デスクトップアプリ',
+  whisk2capcut_desktop_title: 'デスクトップアプリもあります',
+  whisk2capcut_desktop_subtitle: 'Windows & macOS対応 — ブラウザ不要',
+  whisk2capcut_desktop_feat1: 'CapCutプロジェクトフォルダに直接保存',
+  whisk2capcut_desktop_feat2: 'エクスポート後CapCutを自動起動',
+  whisk2capcut_desktop_feat3: '分割ビューレイアウト（タブ/左/右/上/下）',
+  whisk2capcut_desktop_feat4: 'ブラウザ不要',
+  whisk2capcut_desktop_dl_win: 'Windows版ダウンロード',
+  whisk2capcut_desktop_dl_mac: 'macOS版ダウンロード',
+  whisk2capcut_desktop_dl_all: 'すべてのリリースを見る',
+  whisk2capcut_desktop_version: 'v1.0.0 · 無料トライアル: 5回エクスポート / 7日間',
+  whisk2capcut_hero_cta_desktop: 'デスクトップアプリをダウンロード',
+
   // Footer
   footer_tagline: 'AIツールでクリエイターを支援',
   footer_products: '製品',

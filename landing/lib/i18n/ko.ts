@@ -348,6 +348,20 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   trust_secure_title: '안전한 결제',
   trust_secure_desc: '모든 결제는 Lemon Squeezy를 통해 안전하게 처리됩니다. 카드 정보는 저장되지 않습니다.',
 
+  // Desktop App Section
+  whisk2capcut_desktop_badge: '데스크톱 앱',
+  whisk2capcut_desktop_title: '데스크톱 앱도 있습니다',
+  whisk2capcut_desktop_subtitle: 'Windows & macOS 독립 실행 앱 — 브라우저 불필요',
+  whisk2capcut_desktop_feat1: 'CapCut 프로젝트 폴더에 직접 저장',
+  whisk2capcut_desktop_feat2: '내보내기 후 CapCut 자동 실행',
+  whisk2capcut_desktop_feat3: '분할 화면 레이아웃 (탭 / 좌 / 우 / 상 / 하)',
+  whisk2capcut_desktop_feat4: '브라우저 불필요',
+  whisk2capcut_desktop_dl_win: 'Windows 다운로드',
+  whisk2capcut_desktop_dl_mac: 'macOS 다운로드',
+  whisk2capcut_desktop_dl_all: '모든 릴리스 보기',
+  whisk2capcut_desktop_version: 'v1.0.0 · 무료 체험: 5회 내보내기 / 7일',
+  whisk2capcut_hero_cta_desktop: '데스크톱 앱 다운로드',
+
   // Footer
   footer_tagline: 'AI 도구로 크리에이터에게 힘을',
   footer_products: '제품',
