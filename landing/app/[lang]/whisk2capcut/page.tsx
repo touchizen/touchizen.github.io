@@ -242,7 +242,6 @@ export default function Whisk2CapCutPage() {
                     { key: 'whisk2capcut_compare_srt', desktop: true, plugin: true },
                     { key: 'whisk2capcut_compare_direct_write', desktop: true, plugin: false },
                     { key: 'whisk2capcut_compare_auto_launch', desktop: true, plugin: false },
-                    { key: 'whisk2capcut_compare_split_view', desktop: true, plugin: false },
                     { key: 'whisk2capcut_compare_no_browser', desktop: true, plugin: false },
                   ].map((row, i) => (
                     <tr key={i} className="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
