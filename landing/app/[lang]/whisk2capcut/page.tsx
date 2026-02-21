@@ -276,13 +276,13 @@ export default function Whisk2CapCutPage() {
                 </h3>
                 <div className="flex flex-col gap-3">
                   <a
-                    href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut.Setup.1.0.1.exe"
+                    href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-Setup.exe"
                     className="flex items-center justify-center gap-2 px-5 py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
                   >
                     🪟 {t('whisk2capcut_desktop_dl_win' as TranslationKey)}
                   </a>
                   <a
-                    href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-1.0.1-arm64.dmg"
+                    href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg"
                     className="flex items-center justify-center gap-2 px-5 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
                   >
                     🍎 {t('whisk2capcut_desktop_dl_mac' as TranslationKey)}
@@ -1273,14 +1273,14 @@ Now create the SRT file for this story:`}</pre>
               {/* Download buttons */}
               <div className="flex flex-col justify-center gap-4">
                 <a
-                  href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut.Setup.1.0.1.exe"
+                  href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-Setup.exe"
                   className="flex items-center justify-center gap-3 px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25"
                 >
                   <span className="text-2xl">🪟</span>
                   {t('whisk2capcut_desktop_dl_win' as TranslationKey)}
                 </a>
                 <a
-                  href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-1.0.1-arm64.dmg"
+                  href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg"
                   className="flex items-center justify-center gap-3 px-6 py-4 bg-gray-700 hover:bg-gray-600 text-white rounded-xl font-semibold text-lg transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-500/25"
                 >
                   <span className="text-2xl">🍎</span>
