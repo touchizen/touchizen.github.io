@@ -23,7 +23,7 @@ export const de = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'Chrome Web Store',
   quick_dl_learn_more: 'Versionen vergleichen',
-  quick_dl_version: 'v1.0.0 · Kostenlose Testversion inklusive',
+  quick_dl_version: 'v1.0.1 · Kostenlose Testversion inklusive',
 
   // Time saving value
   time_save_motto: 'Save Your Time',
@@ -392,7 +392,7 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   whisk2capcut_desktop_dl_win: 'Für Windows herunterladen',
   whisk2capcut_desktop_dl_mac: 'Für macOS herunterladen',
   whisk2capcut_desktop_dl_all: 'Alle Releases anzeigen',
-  whisk2capcut_desktop_version: 'v1.0.0 · Kostenlos testen: 5 Exporte / 7 Tage',
+  whisk2capcut_desktop_version: 'v1.0.1 · Kostenlos testen: 5 Exporte / 7 Tage',
   whisk2capcut_hero_cta_desktop: 'Desktop-App herunterladen',
 
   // Footer

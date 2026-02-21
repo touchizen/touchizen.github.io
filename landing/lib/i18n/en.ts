@@ -23,7 +23,7 @@ export const en = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'Chrome Web Store',
   quick_dl_learn_more: 'Compare versions',
-  quick_dl_version: 'v1.0.0 · Free trial included',
+  quick_dl_version: 'v1.0.1 · Free trial included',
 
   // Time saving value
   time_save_motto: 'Save Your Time',
@@ -392,7 +392,7 @@ The young prince practices sword fighting in the courtyard`,
   whisk2capcut_desktop_dl_win: 'Download for Windows',
   whisk2capcut_desktop_dl_mac: 'Download for macOS',
   whisk2capcut_desktop_dl_all: 'View all releases',
-  whisk2capcut_desktop_version: 'v1.0.0 · Free trial: 5 exports / 7 days',
+  whisk2capcut_desktop_version: 'v1.0.1 · Free trial: 5 exports / 7 days',
   whisk2capcut_hero_cta_desktop: 'Download Desktop App',
 
   // Footer

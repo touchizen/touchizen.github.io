@@ -23,7 +23,7 @@ export const ko = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'Chrome 웹스토어',
   quick_dl_learn_more: '버전 비교하기',
-  quick_dl_version: 'v1.0.0 · 무료 체험 포함',
+  quick_dl_version: 'v1.0.1 · 무료 체험 포함',
 
   // Time saving value
   time_save_motto: 'Save Your Time',
@@ -392,7 +392,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   whisk2capcut_desktop_dl_win: 'Windows 다운로드',
   whisk2capcut_desktop_dl_mac: 'macOS 다운로드',
   whisk2capcut_desktop_dl_all: '모든 릴리스 보기',
-  whisk2capcut_desktop_version: 'v1.0.0 · 무료 체험: 5회 내보내기 / 7일',
+  whisk2capcut_desktop_version: 'v1.0.1 · 무료 체험: 5회 내보내기 / 7일',
   whisk2capcut_hero_cta_desktop: '데스크톱 앱 다운로드',
 
   // Footer

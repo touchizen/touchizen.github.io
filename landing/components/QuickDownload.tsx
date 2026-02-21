@@ -6,8 +6,8 @@ interface QuickDownloadProps {
   lang: Language;
 }
 
-const DESKTOP_WIN_URL = 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-Setup.exe';
-const DESKTOP_MAC_URL = 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut.dmg';
+const DESKTOP_WIN_URL = 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut.Setup.1.0.1.exe';
+const DESKTOP_MAC_URL = 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-1.0.1-arm64.dmg';
 const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/whisk2capcut/lkbmmoicfaohjdlehmfdijaeofjhougo';
 
 export default function QuickDownload({ lang }: QuickDownloadProps) {

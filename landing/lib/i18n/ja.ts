@@ -23,7 +23,7 @@ export const ja = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'Chrome ウェブストア',
   quick_dl_learn_more: 'バージョンを比較',
-  quick_dl_version: 'v1.0.0 · 無料トライアル付き',
+  quick_dl_version: 'v1.0.1 · 無料トライアル付き',
 
   // Time saving value
   time_save_motto: 'Save Your Time',
@@ -392,7 +392,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   whisk2capcut_desktop_dl_win: 'Windows版ダウンロード',
   whisk2capcut_desktop_dl_mac: 'macOS版ダウンロード',
   whisk2capcut_desktop_dl_all: 'すべてのリリースを見る',
-  whisk2capcut_desktop_version: 'v1.0.0 · 無料トライアル: 5回エクスポート / 7日間',
+  whisk2capcut_desktop_version: 'v1.0.1 · 無料トライアル: 5回エクスポート / 7日間',
   whisk2capcut_hero_cta_desktop: 'デスクトップアプリをダウンロード',
 
   // Footer
