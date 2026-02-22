@@ -246,7 +246,7 @@ export const de = {
 
   // Features (main page)
   features_title: 'Warum uns wählen',
-  features_subtitle: 'Von Creatorn für Creator entwickelt',
+  features_subtitle: 'Von Creators für Creators entwickelt',
   feature1_title: 'Zeit sparen',
   feature1_desc: 'Stunden repetitiver Arbeit in nur wenige Minuten verwandeln',
   feature2_title: 'Massen-Bildgenerierung',
@@ -393,7 +393,7 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   whisk2capcut_compare_plugin: 'Chrome-Plugin',
   whisk2capcut_compare_ai: 'KI-Bildgenerierung',
   whisk2capcut_compare_export: 'CapCut-Projektexport',
-  whisk2capcut_compare_kenburns: 'Ken-Burns-Effekt',
+  whisk2capcut_compare_kenburns: 'Ken Burns Effekt',
   whisk2capcut_compare_srt: 'SRT-Untertitel',
   whisk2capcut_compare_direct_write: 'Direkt in CapCut-Ordner schreiben',
   whisk2capcut_compare_auto_launch: 'CapCut automatisch starten',

@@ -229,7 +229,7 @@ export const ko = {
   kenburns_cycle_desc: '설정 범위: 1~30초 (기본값: 5초). 각 사이클마다 새로운 패턴이 적용됩니다.',
 
   import_title: 'CapCut으로 가져오기',
-  import_step1: 'Export된 ZIP 파일 다운로드',
+  import_step1: '내보낸 ZIP 파일 다운로드',
   import_step2: 'ZIP 파일 압축 해제',
   import_step3: '해제된 폴더를 CapCut 프로젝트 폴더에 복사',
   import_step4: 'CapCut 재시작 후 프로젝트 확인',
