@@ -270,6 +270,7 @@ export const ja = {
   pricing_pro_save: '33%節約',
   pricing_cta_free: '無料で始める',
   pricing_cta_pro: 'Proを購入',
+  pricing_purchase_note: '購入とサブスクリプションは、Chrome拡張機能のインストール後にアプリ内で行われます。',
 
   // CapCut Timeline Preview
   timeline_preview: 'プレビュー',

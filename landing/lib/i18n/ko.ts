@@ -270,6 +270,7 @@ export const ko = {
   pricing_pro_save: '33% 절약',
   pricing_cta_free: '무료 시작',
   pricing_cta_pro: 'Pro 구독',
+  pricing_purchase_note: '결제 및 구독은 Chrome 확장 프로그램 설치 후 앱 내에서 진행됩니다.',
 
   // CapCut Timeline Preview
   timeline_preview: '미리보기',

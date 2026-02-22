@@ -270,6 +270,7 @@ export const en = {
   pricing_pro_save: 'Save 33%',
   pricing_cta_free: 'Start Free',
   pricing_cta_pro: 'Go Pro',
+  pricing_purchase_note: 'Purchase and subscription are handled inside the Chrome extension after installation.',
 
   // CapCut Timeline Preview
   timeline_preview: 'Preview',

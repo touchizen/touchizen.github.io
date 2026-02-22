@@ -1397,18 +1397,24 @@ Now create the SRT file for this story:`}</pre>
                   ))}
                 </ul>
 
-                <button
-                  className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 active:scale-95 ${
+                <a
+                  href="https://chromewebstore.google.com/detail/whisk2capcut/bipgbkcmomdhfclabgdgepdhdfekcldl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block w-full py-3 rounded-xl font-semibold text-center transition-all duration-300 active:scale-95 ${
                     plan.highlighted
                       ? 'bg-white text-violet-600 hover:bg-gray-100'
                       : 'bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:shadow-lg'
                   }`}
                 >
                   {plan.cta}
-                </button>
+                </a>
               </div>
             ))}
           </div>
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
+            {t('pricing_purchase_note' as TranslationKey)}
+          </p>
 
           {/* Feature Comparison Table */}
           <div className="max-w-4xl mx-auto">

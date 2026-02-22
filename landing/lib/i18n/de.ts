@@ -270,6 +270,7 @@ export const de = {
   pricing_pro_save: '33% sparen',
   pricing_cta_free: 'Kostenlos starten',
   pricing_cta_pro: 'Pro kaufen',
+  pricing_purchase_note: 'Kauf und Abonnement erfolgen nach der Installation in der Chrome-Erweiterung.',
 
   // CapCut Timeline Preview
   timeline_preview: 'Vorschau',
