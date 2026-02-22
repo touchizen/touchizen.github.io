@@ -168,6 +168,8 @@ export const de = {
   input_ref_csv_col2_desc: 'Name für Matching (z.B. "könig", "palast")',
   input_ref_csv_col3: 'image_path',
   input_ref_csv_col3_desc: 'Pfad zur Referenzbilddatei',
+  input_ref_csv_col4: 'prompt / description',
+  input_ref_csv_col4_desc: 'Textprompt zur Beschreibung der Referenz (optional)',
   input_ref_csv_download: 'Referenz-CSV-Beispiel herunterladen',
 
   // SRT Import
@@ -270,7 +272,7 @@ export const de = {
   pricing_pro_save: '33% sparen',
   pricing_cta_free: 'Kostenlos starten',
   pricing_cta_pro: 'Pro kaufen',
-  pricing_purchase_note: 'Kauf und Abonnement erfolgen nach der Installation in der Chrome-Erweiterung.',
+  pricing_purchase_note: 'Kauf und Abonnement erfolgen in der App — sowohl in der Desktop-App als auch in der Chrome-Erweiterung verfügbar.',
 
   // CapCut Timeline Preview
   timeline_preview: 'Vorschau',
@@ -377,7 +379,7 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   // Trust Badges
   trust_title: 'Vertrauenswürdig nutzen',
   trust_data_title: 'Lokale Bildverarbeitung',
-  trust_data_desc: 'Generierte Bilder werden lokal in Ihrem Browser verarbeitet. Bilddateien werden nie auf unsere Server hochgeladen.',
+  trust_data_desc: 'Generierte Bilder werden lokal auf Ihrem Gerät verarbeitet. Bilddateien werden nie auf unsere Server hochgeladen.',
   trust_affiliate_title: 'Unabhängiges Tool',
   trust_affiliate_desc: 'Whisk2CapCut ist ein unabhängig entwickeltes Tool, nicht mit Google oder CapCut verbunden oder von diesen unterstützt.',
   trust_secure_title: 'Sichere Zahlungen',

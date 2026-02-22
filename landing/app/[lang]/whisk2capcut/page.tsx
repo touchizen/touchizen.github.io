@@ -781,7 +781,7 @@ The king makes a difficult decision`}</pre>
 
 Given a story or script, create a Scene CSV file with these columns:
 - prompt: English scene description for AI image generation (composition, lighting, mood)
-- subtitle: Korean subtitle text for the scene
+- subtitle: Subtitle text for the scene (in your preferred language)
 - characters: Character names in the scene (semicolon-separated if multiple)
 - scene_tag: Location/background tag (use consistent tags)
 - style_tag: Art style tag (keep consistent across all scenes)
@@ -833,11 +833,12 @@ Now break down this story into scenes:`}</pre>
                 sampleContent={
                   <>
                     {/* Reference CSV Columns */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
                       {[
                         { col: 'input_ref_csv_col1', desc: 'input_ref_csv_col1_desc' },
                         { col: 'input_ref_csv_col2', desc: 'input_ref_csv_col2_desc' },
                         { col: 'input_ref_csv_col3', desc: 'input_ref_csv_col3_desc' },
+                        { col: 'input_ref_csv_col4', desc: 'input_ref_csv_col4_desc' },
                       ].map((item, i) => (
                         <div key={i} className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                           <code className="text-violet-600 dark:text-violet-400 font-mono text-sm">
@@ -960,7 +961,7 @@ Given a story, create an SRT subtitle file where each subtitle becomes a video s
 
 Rules:
 1. Each subtitle = one scene (3-5 seconds)
-2. Korean subtitles, concise (under 30 chars)
+2. Subtitles in your preferred language, concise (under 30 chars)
 3. Sequential numbering starting from 1
 4. Timecodes: HH:MM:SS,mmm --> HH:MM:SS,mmm
 5. One blank line between entries
@@ -968,7 +969,7 @@ Rules:
 Format:
 [number]
 [start time] --> [end time]
-[Korean subtitle text]
+[subtitle text]
 
 [next entry...]
 

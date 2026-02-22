@@ -168,6 +168,8 @@ export const ja = {
   input_ref_csv_col2_desc: 'マッチング用の名前（例：「王」、「宮殿」）',
   input_ref_csv_col3: 'image_path',
   input_ref_csv_col3_desc: 'リファレンス画像ファイルパス',
+  input_ref_csv_col4: 'prompt / description',
+  input_ref_csv_col4_desc: 'リファレンスを説明するテキストプロンプト（任意）',
   input_ref_csv_download: 'リファレンスCSVサンプルダウンロード',
 
   // SRT Import
@@ -270,7 +272,7 @@ export const ja = {
   pricing_pro_save: '33%節約',
   pricing_cta_free: '無料で始める',
   pricing_cta_pro: 'Proを購入',
-  pricing_purchase_note: '購入とサブスクリプションは、Chrome拡張機能のインストール後にアプリ内で行われます。',
+  pricing_purchase_note: '購入とサブスクリプションはアプリ内で行われます — デスクトップアプリとChrome拡張機能の両方で対応。',
 
   // CapCut Timeline Preview
   timeline_preview: 'プレビュー',
@@ -377,7 +379,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   // Trust Badges
   trust_title: '安心してご利用ください',
   trust_data_title: '画像のローカル処理',
-  trust_data_desc: '生成された画像はブラウザ内でローカル処理されます。画像ファイルはサーバーにアップロードされません。',
+  trust_data_desc: '生成された画像はお使いのデバイスでローカル処理されます。画像ファイルはサーバーにアップロードされません。',
   trust_affiliate_title: '独立開発ツール',
   trust_affiliate_desc: 'Whisk2CapCutはGoogleやCapCutと提携・パートナーシップのない独立開発ツールです。',
   trust_secure_title: '安全な決済',

@@ -134,7 +134,7 @@ export const ko = {
   input_csv_col1: 'prompt',
   input_csv_col1_desc: 'AI 이미지 생성을 위한 씬 설명',
   input_csv_col2: 'subtitle',
-  input_csv_col2_desc: '표시할 자막 텍스트 (한국어/영어)',
+  input_csv_col2_desc: '표시할 자막 텍스트 (모든 언어 지원)',
   input_csv_col3: 'characters',
   input_csv_col3_desc: '레퍼런스 매칭을 위한 캐릭터 이름',
   input_csv_col4: 'scene_tag',
@@ -168,6 +168,8 @@ export const ko = {
   input_ref_csv_col2_desc: '매칭용 이름 (예: "왕", "궁전")',
   input_ref_csv_col3: 'image_path',
   input_ref_csv_col3_desc: '레퍼런스 이미지 파일 경로',
+  input_ref_csv_col4: 'prompt / description',
+  input_ref_csv_col4_desc: '레퍼런스를 설명하는 텍스트 프롬프트 (선택)',
   input_ref_csv_download: '레퍼런스 CSV 샘플 다운로드',
 
   // SRT Import
@@ -270,7 +272,7 @@ export const ko = {
   pricing_pro_save: '33% 절약',
   pricing_cta_free: '무료 시작',
   pricing_cta_pro: 'Pro 구독',
-  pricing_purchase_note: '결제 및 구독은 Chrome 확장 프로그램 설치 후 앱 내에서 진행됩니다.',
+  pricing_purchase_note: '결제 및 구독은 앱 내에서 진행됩니다 — 데스크톱 앱과 Chrome 확장 프로그램 모두 지원.',
 
   // CapCut Timeline Preview
   timeline_preview: '미리보기',
@@ -377,7 +379,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   // Trust Badges
   trust_title: '안심하고 사용하세요',
   trust_data_title: '이미지 로컬 처리',
-  trust_data_desc: '생성된 이미지는 브라우저에서 로컬 처리됩니다. 이미지 파일은 서버에 업로드되지 않습니다.',
+  trust_data_desc: '생성된 이미지는 사용자 기기에서 로컬 처리됩니다. 이미지 파일은 서버에 업로드되지 않습니다.',
   trust_affiliate_title: '비제휴 서비스',
   trust_affiliate_desc: 'Whisk2CapCut은 Google 또는 CapCut과 제휴/파트너십이 없는 독립 개발 도구입니다.',
   trust_secure_title: '안전한 결제',

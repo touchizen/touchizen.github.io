@@ -134,7 +134,7 @@ export const en = {
   input_csv_col1: 'prompt',
   input_csv_col1_desc: 'Scene description for AI image generation',
   input_csv_col2: 'subtitle',
-  input_csv_col2_desc: 'Subtitle text to display (Korean/English)',
+  input_csv_col2_desc: 'Subtitle text to display (any language)',
   input_csv_col3: 'characters',
   input_csv_col3_desc: 'Character names for reference matching',
   input_csv_col4: 'scene_tag',
@@ -168,6 +168,8 @@ export const en = {
   input_ref_csv_col2_desc: 'Name for matching (e.g., "king", "palace")',
   input_ref_csv_col3: 'image_path',
   input_ref_csv_col3_desc: 'Path to reference image file',
+  input_ref_csv_col4: 'prompt / description',
+  input_ref_csv_col4_desc: 'Text prompt describing the reference (optional)',
   input_ref_csv_download: 'Download Reference CSV Sample',
 
   // SRT Import
@@ -270,7 +272,7 @@ export const en = {
   pricing_pro_save: 'Save 33%',
   pricing_cta_free: 'Start Free',
   pricing_cta_pro: 'Go Pro',
-  pricing_purchase_note: 'Purchase and subscription are handled inside the Chrome extension after installation.',
+  pricing_purchase_note: 'Purchase and subscription are handled inside the app — available in both the Desktop app and Chrome extension.',
 
   // CapCut Timeline Preview
   timeline_preview: 'Preview',
@@ -377,7 +379,7 @@ The young prince practices sword fighting in the courtyard`,
   // Trust Badges
   trust_title: 'Use with Confidence',
   trust_data_title: 'Images Processed Locally',
-  trust_data_desc: 'Generated images are processed locally in your browser. Image files are never uploaded to our servers.',
+  trust_data_desc: 'Generated images are processed locally on your device. Image files are never uploaded to our servers.',
   trust_affiliate_title: 'Independent Tool',
   trust_affiliate_desc: 'Whisk2CapCut is an independently developed tool, not affiliated with or endorsed by Google or CapCut.',
   trust_secure_title: 'Secure Payments',
