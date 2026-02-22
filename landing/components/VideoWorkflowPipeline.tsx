@@ -82,7 +82,7 @@ export default function VideoWorkflowPipeline({ lang }: VideoWorkflowPipelinePro
               <div
                 className={`relative flex items-start gap-4 md:gap-6 p-4 md:p-5 rounded-2xl transition-all ${
                   step.highlight
-                    ? 'border-[3px] border-violet-400 dark:border-violet-400 bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/30 dark:to-purple-900/30 shadow-[0_0_20px_rgba(139,92,246,0.4),0_0_40px_rgba(139,92,246,0.15)] dark:shadow-[0_0_25px_rgba(139,92,246,0.5),0_0_50px_rgba(139,92,246,0.2)] scale-[1.02]'
+                    ? 'border-2 border-violet-400 dark:border-violet-400 outline outline-2 outline-offset-[3px] outline-violet-400 dark:outline-violet-400 bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/30 dark:to-purple-900/30 shadow-lg scale-[1.02]'
                     : `border-2 ${step.borderColor} ${step.bgColor}`
                 }`}
               >
