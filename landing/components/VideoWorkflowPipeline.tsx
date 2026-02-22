@@ -90,7 +90,11 @@ export default function VideoWorkflowPipeline({ lang }: VideoWorkflowPipelinePro
                 <div
                   className={`relative z-10 flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg`}
                 >
-                  <span className="text-xl md:text-2xl">{step.icon}</span>
+                  {step.highlight ? (
+                    <img src="/images/whisk2capcut.svg" alt="Whisk2CapCut" className="w-7 h-7 md:w-9 md:h-9 rounded" />
+                  ) : (
+                    <span className="text-xl md:text-2xl">{step.icon}</span>
+                  )}
                 </div>
 
                 {/* Content */}
