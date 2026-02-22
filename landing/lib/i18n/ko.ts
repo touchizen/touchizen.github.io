@@ -112,7 +112,7 @@ export const ko = {
   workflow_step4_title: '씬별 이미지 프롬프트 작성',
   workflow_step4_desc2: '대본을 기반으로 각 씬의 비주얼을 묘사합니다.',
   workflow_step5_title: '이미지 생성 + CapCut 내보내기',
-  workflow_step5_desc: 'AI 이미지 대량 생성과 CapCut 프로젝트 변환을 원클릭으로.',
+  workflow_step5_desc: '프롬프트, 자막, 타이밍이 앞 단계에서 모두 준비되었습니다. Whisk2CapCut이 AI 이미지를 대량 생성하고 모든 요소를 합쳐 완성된 CapCut 프로젝트로 만들어줍니다 — 원클릭으로.',
   workflow_step5_highlight: '여기서 Whisk2CapCut이 작동합니다!',
   workflow_step6_title: 'CapCut 최종 편집',
   workflow_step6_desc: '음성을 얹고 타이밍을 조정한 후 공개합니다.',

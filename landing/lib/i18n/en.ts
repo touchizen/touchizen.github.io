@@ -112,7 +112,7 @@ export const en = {
   workflow_step4_title: 'Write Image Prompts',
   workflow_step4_desc2: 'Describe the visual for each scene based on your script.',
   workflow_step5_title: 'Generate Images + Export',
-  workflow_step5_desc: 'Bulk-generate AI images and export a complete CapCut project in one click.',
+  workflow_step5_desc: 'Your prompts, subtitles, and timing are all ready from the previous steps. Whisk2CapCut bulk-generates AI images and assembles everything into a complete CapCut project — one click.',
   workflow_step5_highlight: 'This is where Whisk2CapCut takes over!',
   workflow_step6_title: 'Final Edit in CapCut',
   workflow_step6_desc: 'Drop in your voiceover, fine-tune timing, and publish.',

@@ -112,7 +112,7 @@ export const ja = {
   workflow_step4_title: 'シーン別画像プロンプト作成',
   workflow_step4_desc2: '台本に基づいて各シーンのビジュアルを記述します。',
   workflow_step5_title: '画像生成＋エクスポート',
-  workflow_step5_desc: 'AI画像の一括生成とCapCutプロジェクト変換をワンクリックで。',
+  workflow_step5_desc: 'プロンプト、字幕、タイミングは前のステップですべて準備済み。Whisk2CapCutがAI画像を一括生成し、すべてを組み合わせて完成されたCapCutプロジェクトに — ワンクリックで。',
   workflow_step5_highlight: 'ここでWhisk2CapCutが活躍します！',
   workflow_step6_title: 'CapCutで最終編集',
   workflow_step6_desc: '音声を追加し、タイミングを調整して公開します。',

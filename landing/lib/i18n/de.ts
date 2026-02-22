@@ -112,7 +112,7 @@ export const de = {
   workflow_step4_title: 'Bild-Prompts schreiben',
   workflow_step4_desc2: 'Beschreiben Sie das Visuelle jeder Szene basierend auf Ihrem Drehbuch.',
   workflow_step5_title: 'Bilder generieren + exportieren',
-  workflow_step5_desc: 'KI-Bilder im Stapel generieren und ein komplettes CapCut-Projekt mit einem Klick exportieren.',
+  workflow_step5_desc: 'Prompts, Untertitel und Timing sind aus den vorherigen Schritten bereit. Whisk2CapCut generiert KI-Bilder im Stapel und fügt alles zu einem fertigen CapCut-Projekt zusammen — ein Klick.',
   workflow_step5_highlight: 'Hier übernimmt Whisk2CapCut!',
   workflow_step6_title: 'Endbearbeitung in CapCut',
   workflow_step6_desc: 'Sprachaufnahme hinzufügen, Timing anpassen und veröffentlichen.',
