@@ -100,6 +100,24 @@ export const ko = {
   whisk2capcut_step4_title: 'CapCut으로 내보내기',
   whisk2capcut_step4_desc: 'CapCut 프로젝트로 다운로드하고 편집을 시작하세요.',
 
+  // Video Creation Workflow Pipeline
+  workflow_pipeline_title: 'AI 영상 제작 전체 워크플로우',
+  workflow_pipeline_subtitle: 'Whisk2CapCut이 전체 AI 영상 제작 파이프라인에서 어디에 위치하는지 확인하세요',
+  workflow_step1_title: '대본 작성',
+  workflow_step1_desc: '나레이션 또는 스토리 대본을 작성합니다.',
+  workflow_step2_title: '음성 + 자막 생성',
+  workflow_step2_desc: 'TTS 서비스로 음성 파일과 SRT 자막 파일을 생성합니다.',
+  workflow_step3_title: 'SRT 기반 씬 분할',
+  workflow_step3_desc: '각 자막 항목이 하나의 씬이 됩니다. SRT 파일이 음성 타이밍, 자막, 이미지 생성을 연결하는 핵심 고리입니다.',
+  workflow_step4_title: '씬별 이미지 프롬프트 작성',
+  workflow_step4_desc2: '대본을 기반으로 각 씬의 비주얼을 묘사합니다.',
+  workflow_step5_title: '이미지 생성 + CapCut 내보내기',
+  workflow_step5_desc: 'AI 이미지 대량 생성과 CapCut 프로젝트 변환을 원클릭으로.',
+  workflow_step5_highlight: '여기서 Whisk2CapCut이 작동합니다!',
+  workflow_step6_title: 'CapCut 최종 편집',
+  workflow_step6_desc: '음성을 얹고 타이밍을 조정한 후 공개합니다.',
+  workflow_srt_callout: 'SRT 파일이 핵심 연결고리입니다 — TTS 음성 타이밍 → 씬 분할 → 이미지 생성 → CapCut 타임라인까지 하나로 이어줍니다.',
+
   whisk2capcut_pricing_title: '가격 정책',
   whisk2capcut_pricing_subtitle: '무료로 시작하고, 필요할 때 업그레이드',
 

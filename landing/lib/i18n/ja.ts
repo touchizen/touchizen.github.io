@@ -100,6 +100,24 @@ export const ja = {
   whisk2capcut_step4_title: 'CapCutへエクスポート',
   whisk2capcut_step4_desc: 'CapCutプロジェクトとしてダウンロードして編集を開始。',
 
+  // Video Creation Workflow Pipeline
+  workflow_pipeline_title: 'AI動画制作の全体ワークフロー',
+  workflow_pipeline_subtitle: 'Whisk2CapCutがAI動画制作パイプラインのどこに位置するかをご確認ください',
+  workflow_step1_title: '台本を書く',
+  workflow_step1_desc: 'ナレーションやストーリーの台本を作成します。',
+  workflow_step2_title: '音声＋字幕を生成',
+  workflow_step2_desc: 'TTSサービスで音声ファイルとSRT字幕ファイルを生成します。',
+  workflow_step3_title: 'SRTからシーン分割',
+  workflow_step3_desc: '各字幕がシーンになります。SRTファイルが音声タイミング、字幕、画像生成をつなぐ核心です。',
+  workflow_step4_title: 'シーン別画像プロンプト作成',
+  workflow_step4_desc2: '台本に基づいて各シーンのビジュアルを記述します。',
+  workflow_step5_title: '画像生成＋エクスポート',
+  workflow_step5_desc: 'AI画像の一括生成とCapCutプロジェクト変換をワンクリックで。',
+  workflow_step5_highlight: 'ここでWhisk2CapCutが活躍します！',
+  workflow_step6_title: 'CapCutで最終編集',
+  workflow_step6_desc: '音声を追加し、タイミングを調整して公開します。',
+  workflow_srt_callout: 'SRTファイルが核心的なコネクター — TTS音声タイミング → シーン分割 → 画像生成 → CapCutタイムラインまで一つにつなぎます。',
+
   whisk2capcut_pricing_title: '料金プラン',
   whisk2capcut_pricing_subtitle: '無料で始めて、必要に応じてアップグレード',
 

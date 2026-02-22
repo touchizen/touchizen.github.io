@@ -100,6 +100,24 @@ export const de = {
   whisk2capcut_step4_title: 'Nach CapCut exportieren',
   whisk2capcut_step4_desc: 'Als CapCut-Projekt herunterladen und mit der Bearbeitung beginnen.',
 
+  // Video Creation Workflow Pipeline
+  workflow_pipeline_title: 'Kompletter Video-Erstellungs-Workflow',
+  workflow_pipeline_subtitle: 'Sehen Sie, wo Whisk2CapCut in die gesamte AI-Videoproduktionspipeline passt',
+  workflow_step1_title: 'Drehbuch schreiben',
+  workflow_step1_desc: 'Verfassen Sie Ihr Narrationsskript oder Ihre Story.',
+  workflow_step2_title: 'Stimme + Untertitel generieren',
+  workflow_step2_desc: 'Verwenden Sie einen TTS-Dienst, um Sprachaufnahmen und eine SRT-Untertiteldatei zu erstellen.',
+  workflow_step3_title: 'Szenen aus SRT aufteilen',
+  workflow_step3_desc: 'Jeder Untertiteleintrag wird zu einer Szene. Die SRT-Datei verbindet Sprachtiming, Untertitel und Bildgenerierung.',
+  workflow_step4_title: 'Bild-Prompts schreiben',
+  workflow_step4_desc2: 'Beschreiben Sie das Visuelle jeder Szene basierend auf Ihrem Drehbuch.',
+  workflow_step5_title: 'Bilder generieren + exportieren',
+  workflow_step5_desc: 'KI-Bilder im Stapel generieren und ein komplettes CapCut-Projekt mit einem Klick exportieren.',
+  workflow_step5_highlight: 'Hier übernimmt Whisk2CapCut!',
+  workflow_step6_title: 'Endbearbeitung in CapCut',
+  workflow_step6_desc: 'Sprachaufnahme hinzufügen, Timing anpassen und veröffentlichen.',
+  workflow_srt_callout: 'Die SRT-Datei ist der Schlüsselverbinder — sie verknüpft TTS-Sprachtiming mit Szenenaufteilung, Bildgenerierung und der finalen CapCut-Timeline.',
+
   whisk2capcut_pricing_title: 'Preise',
   whisk2capcut_pricing_subtitle: 'Kostenlos starten, upgraden wenn nötig',
 

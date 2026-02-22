@@ -100,6 +100,24 @@ export const en = {
   whisk2capcut_step4_title: 'Export to CapCut',
   whisk2capcut_step4_desc: 'Download as CapCut project and start editing.',
 
+  // Video Creation Workflow Pipeline
+  workflow_pipeline_title: 'Complete Video Creation Workflow',
+  workflow_pipeline_subtitle: 'See where Whisk2CapCut fits in the full AI video production pipeline',
+  workflow_step1_title: 'Write a Script',
+  workflow_step1_desc: 'Draft your narration or story script.',
+  workflow_step2_title: 'Generate Voice + Subtitles',
+  workflow_step2_desc: 'Use any TTS service to create voiceover audio and an SRT subtitle file.',
+  workflow_step3_title: 'Split Scenes from SRT',
+  workflow_step3_desc: 'Each subtitle entry becomes a scene. The SRT file connects voice timing, subtitles, and image generation.',
+  workflow_step4_title: 'Write Image Prompts',
+  workflow_step4_desc2: 'Describe the visual for each scene based on your script.',
+  workflow_step5_title: 'Generate Images + Export',
+  workflow_step5_desc: 'Bulk-generate AI images and export a complete CapCut project in one click.',
+  workflow_step5_highlight: 'This is where Whisk2CapCut takes over!',
+  workflow_step6_title: 'Final Edit in CapCut',
+  workflow_step6_desc: 'Drop in your voiceover, fine-tune timing, and publish.',
+  workflow_srt_callout: 'The SRT file is the key connector — it links your TTS voiceover timing to scene splits, image generation, and the final CapCut timeline.',
+
   whisk2capcut_pricing_title: 'Pricing',
   whisk2capcut_pricing_subtitle: 'Start free, upgrade when you need more',
 
