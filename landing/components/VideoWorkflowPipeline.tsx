@@ -80,10 +80,10 @@ export default function VideoWorkflowPipeline({ lang }: VideoWorkflowPipelinePro
             <div key={step.num} className="relative">
               {/* Step card */}
               <div
-                className={`relative flex items-start gap-4 md:gap-6 p-4 md:p-5 rounded-2xl border-2 transition-all ${
+                className={`relative flex items-start gap-4 md:gap-6 p-4 md:p-5 rounded-2xl transition-all ${
                   step.highlight
-                    ? 'border-violet-400 dark:border-violet-500 bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/30 dark:to-purple-900/30 shadow-lg shadow-violet-200/50 dark:shadow-violet-900/30 scale-[1.02]'
-                    : `${step.borderColor} ${step.bgColor}`
+                    ? 'border-[3px] border-violet-400 dark:border-violet-400 bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/30 dark:to-purple-900/30 shadow-[0_0_20px_rgba(139,92,246,0.4),0_0_40px_rgba(139,92,246,0.15)] dark:shadow-[0_0_25px_rgba(139,92,246,0.5),0_0_50px_rgba(139,92,246,0.2)] scale-[1.02]'
+                    : `border-2 ${step.borderColor} ${step.bgColor}`
                 }`}
               >
                 {/* Number circle */}
