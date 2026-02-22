@@ -134,7 +134,7 @@ export const de = {
   input_csv_col1: 'prompt',
   input_csv_col1_desc: 'Szenenbeschreibung für AI-Bildgenerierung',
   input_csv_col2: 'subtitle',
-  input_csv_col2_desc: 'Anzuzeigender Untertiteltext',
+  input_csv_col2_desc: 'Anzuzeigender Untertiteltext (alle Sprachen unterstützt)',
   input_csv_col3: 'characters',
   input_csv_col3_desc: 'Charakternamen für Referenz-Matching',
   input_csv_col4: 'scene_tag',

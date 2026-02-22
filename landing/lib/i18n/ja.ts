@@ -134,7 +134,7 @@ export const ja = {
   input_csv_col1: 'prompt',
   input_csv_col1_desc: 'AI画像生成用のシーン説明',
   input_csv_col2: 'subtitle',
-  input_csv_col2_desc: '表示する字幕テキスト',
+  input_csv_col2_desc: '表示する字幕テキスト（全言語対応）',
   input_csv_col3: 'characters',
   input_csv_col3_desc: 'リファレンスマッチング用のキャラクター名',
   input_csv_col4: 'scene_tag',
