@@ -1302,7 +1302,7 @@ Now create the SRT file for this story:`}</pre>
                   {t('whisk2capcut_desktop_dl_mac' as TranslationKey)}
                 </a>
                 <a
-                  href="https://github.com/touchizen/whisk2capcut-desktop/releases/tag/v1.0.1"
+                  href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-center text-violet-400 hover:text-violet-300 text-sm underline underline-offset-4"
