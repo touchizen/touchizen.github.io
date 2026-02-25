@@ -119,7 +119,7 @@ CapCut에서 열기만 하면 바로 편집을 시작할 수 있습니다.
 
 Whisk2CapCut은 여러 플랫폼에서 사용할 수 있습니다:
 
-- **Windows** — [Microsoft Store에서 다운로드](https://apps.microsoft.com/detail/9p4d2s3gxkjx)
+- **Windows** — [GitHub에서 다운로드](https://github.com/touchizen/whisk2capcut-desktop/releases/download/v1.0.1/Whisk2CapCut-Setup.exe)
 - **macOS** — [GitHub Releases에서 다운로드](https://github.com/touchizen/whisk2capcut-desktop/releases)
 - **Chrome 확장 프로그램** — [Chrome 웹 스토어에서 설치](https://chromewebstore.google.com/detail/whisk2capcut/badldiaehpjmjnfahikgondidkenmfgm)
 
