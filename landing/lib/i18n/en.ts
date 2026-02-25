@@ -426,4 +426,13 @@ The young prince practices sword fighting in the courtyard`,
   footer_affiliate: 'Become an Affiliate (30% Commission)',
   footer_connect: 'Connect',
   footer_copyright: '2026 Touchizen. All rights reserved.',
+
+  // Blog
+  nav_blog: 'Blog',
+  blog_title: 'Blog',
+  blog_subtitle: 'Tutorials, tips, and updates for AI video creators',
+  blog_read_more: 'Read more',
+  blog_back: 'Back to blog',
+  blog_published: 'Published',
+  blog_tags: 'Tags',
 } as const;

@@ -426,4 +426,13 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   footer_affiliate: 'Affiliate werden (30% Provision)',
   footer_connect: 'Verbinden',
   footer_copyright: '2026 Touchizen. Alle Rechte vorbehalten.',
+
+  // Blog
+  nav_blog: 'Blog',
+  blog_title: 'Blog',
+  blog_subtitle: 'Tutorials, Tipps und Updates für KI-Video-Creator',
+  blog_read_more: 'Weiterlesen',
+  blog_back: 'Zurück zum Blog',
+  blog_published: 'Veröffentlicht',
+  blog_tags: 'Tags',
 } as const;

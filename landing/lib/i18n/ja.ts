@@ -426,4 +426,13 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   footer_affiliate: 'アフィリエイトに参加 (30% コミッション)',
   footer_connect: 'つながる',
   footer_copyright: '2026 Touchizen. All rights reserved.',
+
+  // Blog
+  nav_blog: 'ブログ',
+  blog_title: 'ブログ',
+  blog_subtitle: 'AIビデオクリエイター向けのチュートリアル、ヒント、アップデート',
+  blog_read_more: '続きを読む',
+  blog_back: 'ブログに戻る',
+  blog_published: '公開日',
+  blog_tags: 'タグ',
 } as const;

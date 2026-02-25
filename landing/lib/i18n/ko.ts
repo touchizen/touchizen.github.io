@@ -426,4 +426,13 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   footer_affiliate: '제휴 파트너 신청 (30% 커미션)',
   footer_connect: '연결',
   footer_copyright: '2026 Touchizen. All rights reserved.',
+
+  // Blog
+  nav_blog: '블로그',
+  blog_title: '블로그',
+  blog_subtitle: 'AI 영상 크리에이터를 위한 튜토리얼, 팁, 업데이트',
+  blog_read_more: '더 보기',
+  blog_back: '블로그로 돌아가기',
+  blog_published: '게시일',
+  blog_tags: '태그',
 } as const;

@@ -27,6 +27,7 @@ export default function Header({ lang, onLanguageChange }: HeaderProps) {
   const navItems = [
     { key: 'nav_products' as TranslationKey, href: '#products' },
     { key: 'nav_features' as TranslationKey, href: '#features' },
+    { key: 'nav_blog' as TranslationKey, href: `/${lang}/blog` },
   ];
 
   return (
