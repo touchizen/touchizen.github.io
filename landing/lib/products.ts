@@ -28,6 +28,19 @@ export const products: Product[] = [
     iconImage: '/images/whisk2capcut.svg',
     hasDetailPage: true,
   },
+  {
+    id: 'calorie-shot',
+    nameKey: 'calorieshot_name',
+    sloganKey: 'calorieshot_slogan',
+    descKey: 'calorieshot_desc',
+    features: ['calorieshot_feature1', 'calorieshot_feature2', 'calorieshot_feature3'],
+    ctaKey: 'calorieshot_cta',
+    link: '/calorie-shot/',
+    isExternal: false,
+    gradient: 'from-blue-500 to-green-500',
+    icon: '📸',
+    hasDetailPage: true,
+  },
 ];
 
 export interface Feature {
