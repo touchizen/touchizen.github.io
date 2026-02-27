@@ -140,6 +140,17 @@ export default function TermsPage() {
                       <li>Pro 플랜: 월 $4.99 또는 연 $39.99 (무제한 내보내기, 우선 지원)</li>
                     </ul>
                   </div>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">칼로리샷 (Calorie Shot)</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      음식 사진을 AI로 분석하여 칼로리와 영양성분(탄수화물, 단백질, 지방, 나트륨 등)을 제공하는 토스 미니앱입니다.
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>무료 플랜: 일일 제한된 횟수의 AI 음식 분석</li>
+                      <li>유료 구독: 무제한 AI 음식 분석, 상세 영양성분, 일일 섭취량 대비 분석, 맞춤 건강 팁</li>
+                    </ul>
+                  </div>
+
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                     * 추가 상품 및 서비스는 출시 시 본 약관에 업데이트됩니다.
                   </p>
@@ -264,6 +275,17 @@ export default function TermsPage() {
                       <li>Proプラン：月額$4.99または年額$39.99（無制限エクスポート、優先サポート）</li>
                     </ul>
                   </div>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">カロリーショット (Calorie Shot)</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      食べ物の写真をAIで分析し、カロリーと栄養成分（炭水化物、タンパク質、脂質、ナトリウムなど）を提供するTossミニアプリです。
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>無料プラン：1日あたり限定回数のAI食事分析</li>
+                      <li>有料サブスクリプション：無制限AI食事分析、詳細栄養成分、1日摂取量比較分析、カスタム健康アドバイス</li>
+                    </ul>
+                  </div>
+
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                     * 追加の製品およびサービスはリリース時に本規約に更新されます。
                   </p>
@@ -388,6 +410,17 @@ export default function TermsPage() {
                       <li>Pro-Plan: $4,99/Monat oder $39,99/Jahr (unbegrenzter Export, Prioritäts-Support)</li>
                     </ul>
                   </div>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Calorie Shot</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      Eine Toss-Mini-App, die Lebensmittelfotos mit KI analysiert und Kalorien sowie Nährwertinformationen (Kohlenhydrate, Protein, Fett, Natrium usw.) bereitstellt.
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>Kostenloser Plan: Begrenzte tägliche KI-Lebensmittelanalysen</li>
+                      <li>Kostenpflichtiges Abonnement: Unbegrenzte KI-Lebensmittelanalyse, detaillierte Nährwertdaten, Analyse der täglichen Aufnahme, personalisierte Gesundheitstipps</li>
+                    </ul>
+                  </div>
+
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                     * Zusätzliche Produkte und Dienste werden bei Veröffentlichung in diesen Bedingungen aktualisiert.
                   </p>
@@ -512,6 +545,17 @@ export default function TermsPage() {
                       <li>Pro Plan: $4.99/month or $39.99/year (unlimited exports, priority support)</li>
                     </ul>
                   </div>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Calorie Shot</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      A Toss mini-app that analyzes food photos with AI to provide calorie and nutritional information (carbohydrates, protein, fat, sodium, etc.).
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>Free Plan: Limited daily AI food analysis</li>
+                      <li>Paid Subscription: Unlimited AI food analysis, detailed nutritional data, daily intake comparison, personalized health tips</li>
+                    </ul>
+                  </div>
+
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                     * Additional products and services will be updated in these terms upon release.
                   </p>
