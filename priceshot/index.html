@@ -51,6 +51,16 @@
     .btn:hover { opacity: 0.85; }
     .btn-icon { font-size: 18px; }
 
+    /* 쿠팡 파트너스 위젯 */
+    .coupang-widget {
+      background: #fff; border-radius: 16px; padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 16px;
+    }
+    .coupang-widget iframe { border: none; width: 100%; height: 80px; }
+    .coupang-notice {
+      font-size: 11px; color: #aaa; text-align: center; margin-top: 8px; line-height: 1.4;
+    }
+
     /* 검색 결과 섹션 */
     .search-section {
       background: #fff; border-radius: 16px; padding: 20px;
@@ -234,7 +244,13 @@
       </a>
     </div>
 
-    <!-- 3. 검색 결과 -->
+    <!-- 3. 쿠팡 파트너스 검색 -->
+    <div class="coupang-widget">
+      <iframe src="https://coupa.ng/clK2cM" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
+      <p class="coupang-notice">이 포스팅은 쿠팡 파트너스 활동의 일환으로,<br>이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </div>
+
+    <!-- 4. 검색 결과 -->
     <div class="search-section" id="search-section">
       <div class="search-header">
         🔍 <span class="search-query" id="search-query"></span> 가격비교
