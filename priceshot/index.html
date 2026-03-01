@@ -30,179 +30,96 @@
     .container { max-width: 420px; width: 100%; }
 
     /* 앱 아이콘 + 이름 */
-    .app-header {
-      text-align: center;
-      margin-bottom: 24px;
-    }
+    .app-header { text-align: center; margin-bottom: 24px; }
     .app-icon {
-      width: 80px;
-      height: 80px;
+      width: 80px; height: 80px;
       border-radius: 18px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.12);
       margin-bottom: 12px;
     }
-    .app-name {
-      font-size: 24px;
-      font-weight: 800;
-      color: #1a1a1a;
-    }
-    .app-tagline {
-      font-size: 14px;
-      color: #888;
-      margin-top: 4px;
-    }
+    .app-name { font-size: 24px; font-weight: 800; color: #1a1a1a; }
+    .app-tagline { font-size: 14px; color: #888; margin-top: 4px; }
 
     /* 다운로드 버튼 */
-    .store-buttons {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
+    .store-buttons { display: flex; gap: 10px; margin-bottom: 24px; }
     .btn {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      transition: opacity 0.2s;
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 16px; border-radius: 12px; text-decoration: none;
+      font-size: 14px; font-weight: 600; transition: opacity 0.2s;
+      background: #1a1a1a; color: #fff;
     }
     .btn:hover { opacity: 0.85; }
-    .btn-android { background: #1a1a1a; color: #fff; }
-    .btn-ios { background: #1a1a1a; color: #fff; }
     .btn-icon { font-size: 18px; }
 
-    /* 검색어 섹션 */
+    /* 검색 결과 섹션 */
     .search-section {
-      background: #fff;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      display: none;
+      background: #fff; border-radius: 16px; padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: none;
     }
     .search-header {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      font-size: 15px; font-weight: 700; color: #1a1a1a;
+      margin-bottom: 16px; display: flex; align-items: center; gap: 6px;
     }
-    .search-query {
-      color: #FF6B35;
-    }
+    .search-query { color: #FF6B35; }
 
-    /* 가격 결과 목록 */
-    .price-list {
-      list-style: none;
+    /* 로딩 */
+    .loading { text-align: center; padding: 30px 0; color: #999; font-size: 14px; }
+    .spinner {
+      width: 28px; height: 28px; border: 3px solid #eee; border-top-color: #FF6B35;
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+      margin: 0 auto 12px;
     }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* 가격 목록 */
+    .price-list { list-style: none; }
     .price-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid #f0f0f0;
+      display: flex; align-items: center; padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0; gap: 10px;
     }
     .price-item:last-child { border-bottom: none; }
+    .price-thumb {
+      width: 48px; height: 48px; border-radius: 8px; object-fit: cover;
+      background: #f5f5f5; flex-shrink: 0;
+    }
     .price-rank {
-      width: 24px;
-      height: 24px;
-      border-radius: 6px;
-      background: #eee;
-      color: #666;
-      font-size: 12px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      width: 22px; height: 22px; border-radius: 6px; background: #eee; color: #666;
+      font-size: 11px; font-weight: 700; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0;
     }
-    .price-item:first-child .price-rank {
-      background: #FF6B35;
-      color: #fff;
+    .price-item:first-child .price-rank { background: #FF6B35; color: #fff; }
+    .price-info { flex: 1; min-width: 0; }
+    .price-name {
+      font-size: 13px; color: #333; line-height: 1.3;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
-    .price-mall {
-      flex: 1;
-      margin-left: 12px;
-      font-size: 14px;
-      color: #333;
-    }
-    .price-store-badge {
-      font-size: 11px;
-      color: #999;
-      margin-left: 4px;
-    }
-    .price-value {
-      font-size: 16px;
-      font-weight: 700;
-      color: #1a1a1a;
-      flex-shrink: 0;
-    }
-    .price-item:first-child .price-value {
-      color: #FF6B35;
-    }
-    .price-won {
-      font-size: 13px;
-      font-weight: 400;
-      color: #666;
-    }
+    .price-mall-name { font-size: 11px; color: #999; margin-top: 2px; }
+    .price-value { font-size: 15px; font-weight: 700; color: #1a1a1a; flex-shrink: 0; white-space: nowrap; }
+    .price-item:first-child .price-value { color: #FF6B35; }
+    .price-won { font-size: 12px; font-weight: 400; color: #666; }
     .lowest-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      color: #FF6B35;
-      background: #FFF3ED;
-      padding: 2px 6px;
-      border-radius: 4px;
-      margin-left: 6px;
+      display: inline-block; font-size: 10px; font-weight: 600; color: #FF6B35;
+      background: #FFF3ED; padding: 1px 5px; border-radius: 4px; margin-left: 4px;
     }
 
-    /* 가격 없을 때 */
-    .no-prices {
-      display: none;
-    }
-    .no-prices-msg {
-      text-align: center;
-      color: #999;
-      font-size: 14px;
-      padding: 20px 0;
-    }
+    /* 에러 */
+    .error-msg { text-align: center; color: #999; font-size: 14px; padding: 20px 0; }
 
-    /* 앱 CTA */
+    /* CTA */
     .cta-section {
-      text-align: center;
-      margin-top: 20px;
-      padding: 16px;
-      background: #FFF8F5;
-      border-radius: 12px;
-      display: none;
+      text-align: center; margin-top: 16px; padding: 14px;
+      background: #FFF8F5; border-radius: 10px;
     }
-    .cta-text {
-      font-size: 13px;
-      color: #666;
-    }
-    .cta-text strong {
-      color: #FF6B35;
-    }
+    .cta-text { font-size: 13px; color: #666; }
+    .cta-text strong { color: #FF6B35; }
 
     /* 하단 안내 */
-    .footer-msg {
-      text-align: center;
-      font-size: 12px;
-      color: #bbb;
-      margin-top: 20px;
-    }
+    .footer-msg { text-align: center; font-size: 12px; color: #bbb; margin-top: 20px; }
   </style>
   <script>
     (function() {
       var params = new URLSearchParams(window.location.search);
       var query = params.get('q') || '';
-      var pricesParam = params.get('p') || '';
 
       var ua = navigator.userAgent || '';
       var isIOS = /iPhone|iPad|iPod/i.test(ua);
@@ -211,7 +128,7 @@
       var playStore = 'https://play.google.com/store/apps/details?id=com.touchizen.priceshot';
       var appStore = 'https://apps.apple.com/app/id{APPLE_ID}'; // TODO: 실제 ID로 교체
 
-      // 방문 이벤트
+      // GA 방문 이벤트
       if (typeof gtag === 'function') {
         gtag('event', 'ps_landing_visit', {
           platform: isIOS ? 'ios' : isAndroid ? 'android' : 'pc',
@@ -220,60 +137,68 @@
       }
 
       // 모바일: 스토어로 리다이렉트
-      if (isIOS) {
-        window.location.href = appStore;
-      } else if (isAndroid) {
-        window.location.href = playStore;
-      }
+      if (isIOS) { window.location.href = appStore; }
+      else if (isAndroid) { window.location.href = playStore; }
 
-      // 가격 데이터 파싱: "몰이름|가격|스토어,..."
-      function parsePrices(str) {
-        if (!str) return [];
-        return str.split(',').map(function(item) {
-          var parts = item.split('|');
-          return {
-            mall: decodeURIComponent(parts[0] || ''),
-            price: parseInt(parts[1], 10) || 0,
-            store: parts[2] || ''
-          };
-        }).filter(function(p) { return p.mall && p.price > 0; });
+      var API_URL = 'https://ps-websearch-6lz6qlbv3a-du.a.run.app';
+
+      function formatPrice(n) {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
       }
 
       document.addEventListener('DOMContentLoaded', function() {
         var searchSection = document.getElementById('search-section');
-        var priceList = document.getElementById('price-list');
         var searchQuery = document.getElementById('search-query');
+        var priceList = document.getElementById('price-list');
+        var loadingEl = document.getElementById('loading');
+        var errorEl = document.getElementById('error');
         var ctaSection = document.getElementById('cta-section');
-        var noSection = document.getElementById('no-prices');
 
-        if (query) {
-          searchSection.style.display = 'block';
-          searchQuery.textContent = query;
+        if (!query) return;
 
-          var prices = parsePrices(pricesParam);
+        searchSection.style.display = 'block';
+        searchQuery.textContent = query;
 
-          if (prices.length > 0) {
-            prices.forEach(function(p, i) {
+        // API 호출
+        fetch(API_URL + '?q=' + encodeURIComponent(query))
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
+            loadingEl.style.display = 'none';
+            var results = data.results || [];
+
+            if (results.length === 0) {
+              errorEl.style.display = 'block';
+              errorEl.textContent = '검색 결과가 없습니다';
+              ctaSection.style.display = 'block';
+              return;
+            }
+
+            results.forEach(function(p, i) {
               var li = document.createElement('li');
               li.className = 'price-item';
 
-              var priceFormatted = p.price.toLocaleString();
               var badgeHtml = i === 0 ? '<span class="lowest-badge">최저가</span>' : '';
+              var mallText = p.mallName || '네이버';
 
               li.innerHTML =
                 '<span class="price-rank">' + (i + 1) + '</span>' +
-                '<span class="price-mall">' + p.mall + '</span>' +
-                '<span class="price-value">' + priceFormatted + '<span class="price-won">원</span>' + badgeHtml + '</span>';
+                '<img class="price-thumb" src="' + (p.imageUrl || '') + '" alt="" onerror="this.style.display=\'none\'">' +
+                '<div class="price-info">' +
+                  '<div class="price-name">' + p.productName + '</div>' +
+                  '<div class="price-mall-name">' + mallText + '</div>' +
+                '</div>' +
+                '<span class="price-value">' + formatPrice(p.price) + '<span class="price-won">원</span>' + badgeHtml + '</span>';
 
               priceList.appendChild(li);
             });
 
             ctaSection.style.display = 'block';
-          } else {
-            noSection.style.display = 'block';
+          })
+          .catch(function() {
+            loadingEl.style.display = 'none';
+            errorEl.style.display = 'block';
             ctaSection.style.display = 'block';
-          }
-        }
+          });
 
         // 스토어 클릭 추적
         document.querySelectorAll('.btn').forEach(function(btn) {
@@ -314,12 +239,14 @@
       <div class="search-header">
         🔍 <span class="search-query" id="search-query"></span> 가격비교
       </div>
-      <ul class="price-list" id="price-list"></ul>
-      <div class="no-prices" id="no-prices">
-        <p class="no-prices-msg">앱에서 최저가를 확인해보세요!</p>
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        가격을 검색하고 있어요...
       </div>
-      <div class="cta-section" id="cta-section">
-        <p class="cta-text"><strong>얼마샷</strong>에서 더 많은 쇼핑몰 가격을 비교해보세요</p>
+      <ul class="price-list" id="price-list"></ul>
+      <p class="error-msg" id="error" style="display:none">검색 중 오류가 발생했습니다</p>
+      <div class="cta-section" id="cta-section" style="display:none">
+        <p class="cta-text"><strong>얼마샷</strong> 앱에서 사진으로 더 정확한 가격을 비교해보세요</p>
       </div>
     </div>
 
