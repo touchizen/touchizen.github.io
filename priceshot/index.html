@@ -9,6 +9,14 @@
   <meta property="og:description" content="사진 한 장으로 최저가 비교! 얼마샷으로 스마트하게 쇼핑하세요.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://touchizen.com/priceshot">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -60,19 +68,37 @@
       var playStore = 'https://play.google.com/store/apps/details?id=com.touchizen.priceshot';
       var appStore = 'https://apps.apple.com/app/id{APPLE_ID}'; // TODO: 실제 ID로 교체
 
+      // 방문 이벤트
+      if (typeof gtag === 'function') {
+        gtag('event', 'ps_landing_visit', {
+          platform: isIOS ? 'ios' : isAndroid ? 'android' : 'pc',
+          query: query || '(none)',
+        });
+      }
+
       if (isIOS) {
         window.location.href = appStore;
       } else if (isAndroid) {
         window.location.href = playStore;
       }
 
-      // PC: 제품명 표시
+      // PC: 제품명 표시 + 버튼 클릭 추적
       document.addEventListener('DOMContentLoaded', function() {
         if (query) {
           var el = document.getElementById('product-name');
           el.textContent = '🔍 ' + query + ' 최저가 비교';
           el.style.display = 'block';
         }
+        document.querySelectorAll('.btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            if (typeof gtag === 'function') {
+              gtag('event', 'ps_store_click', {
+                store: btn.classList.contains('btn-android') ? 'google' : 'apple',
+                query: query || '(none)',
+              });
+            }
+          });
+        });
       });
     })();
   </script>
