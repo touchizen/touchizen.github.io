@@ -24,42 +24,185 @@
       background: #f5f5f5;
       display: flex;
       justify-content: center;
-      align-items: center;
       min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container { max-width: 420px; width: 100%; }
+
+    /* 앱 아이콘 + 이름 */
+    .app-header {
       text-align: center;
-      padding: 20px;
-    }
-    .container { max-width: 400px; }
-    .emoji { font-size: 64px; margin-bottom: 16px; }
-    h1 { font-size: 28px; color: #1a1a1a; margin-bottom: 8px; }
-    .tagline { font-size: 16px; color: #666; margin-bottom: 12px; }
-    .product-name {
-      font-size: 20px;
-      font-weight: 700;
-      color: #FF6B35;
       margin-bottom: 24px;
-      display: none;
     }
-    .spacer { height: 20px; }
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      margin-bottom: 12px;
+    }
+    .app-name {
+      font-size: 24px;
+      font-weight: 800;
+      color: #1a1a1a;
+    }
+    .app-tagline {
+      font-size: 14px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    /* 다운로드 버튼 */
+    .store-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
     .btn {
-      display: block;
-      padding: 14px 24px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
       border-radius: 12px;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
-      margin-bottom: 12px;
       transition: opacity 0.2s;
     }
     .btn:hover { opacity: 0.85; }
-    .btn-android { background: #34A853; color: #fff; }
-    .btn-ios { background: #007AFF; color: #fff; }
-    .redirect-msg { font-size: 13px; color: #999; margin-top: 24px; }
+    .btn-android { background: #1a1a1a; color: #fff; }
+    .btn-ios { background: #1a1a1a; color: #fff; }
+    .btn-icon { font-size: 18px; }
+
+    /* 검색어 섹션 */
+    .search-section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      display: none;
+    }
+    .search-header {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .search-query {
+      color: #FF6B35;
+    }
+
+    /* 가격 결과 목록 */
+    .price-list {
+      list-style: none;
+    }
+    .price-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .price-item:last-child { border-bottom: none; }
+    .price-rank {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: #eee;
+      color: #666;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .price-item:first-child .price-rank {
+      background: #FF6B35;
+      color: #fff;
+    }
+    .price-mall {
+      flex: 1;
+      margin-left: 12px;
+      font-size: 14px;
+      color: #333;
+    }
+    .price-store-badge {
+      font-size: 11px;
+      color: #999;
+      margin-left: 4px;
+    }
+    .price-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      flex-shrink: 0;
+    }
+    .price-item:first-child .price-value {
+      color: #FF6B35;
+    }
+    .price-won {
+      font-size: 13px;
+      font-weight: 400;
+      color: #666;
+    }
+    .lowest-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #FF6B35;
+      background: #FFF3ED;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    /* 가격 없을 때 */
+    .no-prices {
+      display: none;
+    }
+    .no-prices-msg {
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+      padding: 20px 0;
+    }
+
+    /* 앱 CTA */
+    .cta-section {
+      text-align: center;
+      margin-top: 20px;
+      padding: 16px;
+      background: #FFF8F5;
+      border-radius: 12px;
+      display: none;
+    }
+    .cta-text {
+      font-size: 13px;
+      color: #666;
+    }
+    .cta-text strong {
+      color: #FF6B35;
+    }
+
+    /* 하단 안내 */
+    .footer-msg {
+      text-align: center;
+      font-size: 12px;
+      color: #bbb;
+      margin-top: 20px;
+    }
   </style>
   <script>
     (function() {
       var params = new URLSearchParams(window.location.search);
       var query = params.get('q') || '';
+      var pricesParam = params.get('p') || '';
 
       var ua = navigator.userAgent || '';
       var isIOS = /iPhone|iPad|iPod/i.test(ua);
@@ -76,19 +219,63 @@
         });
       }
 
+      // 모바일: 스토어로 리다이렉트
       if (isIOS) {
         window.location.href = appStore;
       } else if (isAndroid) {
         window.location.href = playStore;
       }
 
-      // PC: 제품명 표시 + 버튼 클릭 추적
+      // 가격 데이터 파싱: "몰이름|가격|스토어,..."
+      function parsePrices(str) {
+        if (!str) return [];
+        return str.split(',').map(function(item) {
+          var parts = item.split('|');
+          return {
+            mall: decodeURIComponent(parts[0] || ''),
+            price: parseInt(parts[1], 10) || 0,
+            store: parts[2] || ''
+          };
+        }).filter(function(p) { return p.mall && p.price > 0; });
+      }
+
       document.addEventListener('DOMContentLoaded', function() {
+        var searchSection = document.getElementById('search-section');
+        var priceList = document.getElementById('price-list');
+        var searchQuery = document.getElementById('search-query');
+        var ctaSection = document.getElementById('cta-section');
+        var noSection = document.getElementById('no-prices');
+
         if (query) {
-          var el = document.getElementById('product-name');
-          el.textContent = '🔍 ' + query + ' 최저가 비교';
-          el.style.display = 'block';
+          searchSection.style.display = 'block';
+          searchQuery.textContent = query;
+
+          var prices = parsePrices(pricesParam);
+
+          if (prices.length > 0) {
+            prices.forEach(function(p, i) {
+              var li = document.createElement('li');
+              li.className = 'price-item';
+
+              var priceFormatted = p.price.toLocaleString();
+              var badgeHtml = i === 0 ? '<span class="lowest-badge">최저가</span>' : '';
+
+              li.innerHTML =
+                '<span class="price-rank">' + (i + 1) + '</span>' +
+                '<span class="price-mall">' + p.mall + '</span>' +
+                '<span class="price-value">' + priceFormatted + '<span class="price-won">원</span>' + badgeHtml + '</span>';
+
+              priceList.appendChild(li);
+            });
+
+            ctaSection.style.display = 'block';
+          } else {
+            noSection.style.display = 'block';
+            ctaSection.style.display = 'block';
+          }
         }
+
+        // 스토어 클릭 추적
         document.querySelectorAll('.btn').forEach(function(btn) {
           btn.addEventListener('click', function() {
             if (typeof gtag === 'function') {
@@ -105,18 +292,38 @@
 </head>
 <body>
   <div class="container">
-    <div class="emoji">📸💰</div>
-    <h1>얼마샷</h1>
-    <p class="tagline">찍으면 최저가</p>
-    <p class="product-name" id="product-name"></p>
-    <div class="spacer"></div>
-    <a class="btn btn-android" href="https://play.google.com/store/apps/details?id=com.touchizen.priceshot">
-      Google Play에서 다운로드
-    </a>
-    <a class="btn btn-ios" href="https://apps.apple.com/app/id{APPLE_ID}">
-      App Store에서 다운로드
-    </a>
-    <p class="redirect-msg">모바일에서 열면 자동으로 스토어로 이동합니다</p>
+    <!-- 1. 앱 아이콘 + 이름 -->
+    <div class="app-header">
+      <img class="app-icon" src="app-icon.png" alt="얼마샷">
+      <div class="app-name">얼마샷</div>
+      <div class="app-tagline">찍으면 최저가</div>
+    </div>
+
+    <!-- 2. 스토어 다운로드 버튼 -->
+    <div class="store-buttons">
+      <a class="btn btn-android" href="https://play.google.com/store/apps/details?id=com.touchizen.priceshot">
+        <span class="btn-icon">▶</span> Google Play
+      </a>
+      <a class="btn btn-ios" href="https://apps.apple.com/app/id{APPLE_ID}">
+        <span class="btn-icon"></span> App Store
+      </a>
+    </div>
+
+    <!-- 3. 검색 결과 -->
+    <div class="search-section" id="search-section">
+      <div class="search-header">
+        🔍 <span class="search-query" id="search-query"></span> 가격비교
+      </div>
+      <ul class="price-list" id="price-list"></ul>
+      <div class="no-prices" id="no-prices">
+        <p class="no-prices-msg">앱에서 최저가를 확인해보세요!</p>
+      </div>
+      <div class="cta-section" id="cta-section">
+        <p class="cta-text"><strong>얼마샷</strong>에서 더 많은 쇼핑몰 가격을 비교해보세요</p>
+      </div>
+    </div>
+
+    <p class="footer-msg">모바일에서 열면 자동으로 스토어로 이동합니다</p>
   </div>
 </body>
 </html>
