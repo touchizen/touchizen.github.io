@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>얼마샷 - 찍으면 최저가</title>
+  <meta name="description" content="사진 한 장으로 최저가 비교! 얼마샷으로 스마트하게 쇼핑하세요.">
+  <meta property="og:title" content="얼마샷 - 찍으면 최저가">
+  <meta property="og:description" content="사진 한 장으로 최저가 비교! 얼마샷으로 스마트하게 쇼핑하세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://touchizen.com/priceshot">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .container { max-width: 400px; }
+    .emoji { font-size: 64px; margin-bottom: 16px; }
+    h1 { font-size: 28px; color: #1a1a1a; margin-bottom: 8px; }
+    .tagline { font-size: 16px; color: #666; margin-bottom: 12px; }
+    .product-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FF6B35;
+      margin-bottom: 24px;
+      display: none;
+    }
+    .spacer { height: 20px; }
+    .btn {
+      display: block;
+      padding: 14px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-android { background: #34A853; color: #fff; }
+    .btn-ios { background: #007AFF; color: #fff; }
+    .redirect-msg { font-size: 13px; color: #999; margin-top: 24px; }
+  </style>
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var query = params.get('q') || '';
+
+      var ua = navigator.userAgent || '';
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+      var isAndroid = /Android/i.test(ua);
+
+      var playStore = 'https://play.google.com/store/apps/details?id=com.touchizen.priceshot';
+      var appStore = 'https://apps.apple.com/app/id{APPLE_ID}'; // TODO: 실제 ID로 교체
+
+      if (isIOS) {
+        window.location.href = appStore;
+      } else if (isAndroid) {
+        window.location.href = playStore;
+      }
+
+      // PC: 제품명 표시
+      document.addEventListener('DOMContentLoaded', function() {
+        if (query) {
+          var el = document.getElementById('product-name');
+          el.textContent = '🔍 ' + query + ' 최저가 비교';
+          el.style.display = 'block';
+        }
+      });
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="emoji">📸💰</div>
+    <h1>얼마샷</h1>
+    <p class="tagline">찍으면 최저가</p>
+    <p class="product-name" id="product-name"></p>
+    <div class="spacer"></div>
+    <a class="btn btn-android" href="https://play.google.com/store/apps/details?id=com.touchizen.priceshot">
+      Google Play에서 다운로드
+    </a>
+    <a class="btn btn-ios" href="https://apps.apple.com/app/id{APPLE_ID}">
+      App Store에서 다운로드
+    </a>
+    <p class="redirect-msg">모바일에서 열면 자동으로 스토어로 이동합니다</p>
+  </div>
+</body>
+</html>
