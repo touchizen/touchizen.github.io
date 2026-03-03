@@ -277,7 +277,7 @@ export default function Whisk2CapCutPage() {
                 </h3>
                 <div className="flex flex-col gap-3">
                   <a
-                    href="ms-windows-store://pdp/?productid=9N38G1SCG12J"
+                    href="https://apps.microsoft.com/detail/9N38G1SCG12J"
                     className="flex items-center justify-center gap-2 px-5 py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
                   >
                     🪟 {t('whisk2capcut_desktop_dl_win' as TranslationKey)}
@@ -1288,7 +1288,7 @@ Now create the SRT file for this story:`}</pre>
               {/* Download buttons */}
               <div className="flex flex-col justify-center gap-4">
                 <a
-                  href="ms-windows-store://pdp/?productid=9N38G1SCG12J"
+                  href="https://apps.microsoft.com/detail/9N38G1SCG12J"
                   className="flex items-center justify-center gap-3 px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25"
                 >
                   <span className="text-2xl">🪟</span>

@@ -119,7 +119,7 @@ Whisk2CapCut is built for anyone who creates video content from AI-generated ima
 
 Whisk2CapCut is available on multiple platforms:
 
-- **Windows** — [Download from Microsoft Store](ms-windows-store://pdp/?productid=9N38G1SCG12J)
+- **Windows** — [Download from Microsoft Store](https://apps.microsoft.com/detail/9N38G1SCG12J)
 - **macOS** — [Download from GitHub Releases](https://github.com/touchizen/whisk2capcut-desktop/releases)
 - **Chrome Extension** — [Install from Chrome Web Store](https://chromewebstore.google.com/detail/whisk2capcut/badldiaehpjmjnfahikgondidkenmfgm)
 
