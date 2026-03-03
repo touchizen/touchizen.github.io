@@ -1,0 +1,210 @@
+2:I[2155,["738","static/chunks/738-04d8602505023a41.js","667","static/chunks/667-c0af6a35ede48419.js","552","static/chunks/app/%5Blang%5D/blog/page-ce272ea292d80976.js"],"default"]
+5:I[4707,[],""]
+7:I[6423,[],""]
+3:T1e38,
+## 240장의 이미지. 하나하나 수작업. 밤샘 3일.
+
+유튜브 영상 하나를 만들려고 AI 이미지 240장이 필요했습니다. Google Whisk을 열고, 프롬프트를 입력하고, 이미지를 생성하고, 다운로드하고. 다시 프롬프트를 입력하고, 생성하고, 다운로드하고. 그걸 CapCut에 끌어다 놓고, 타이밍을 맞추고, 자막을 넣고.
+
+이걸 240번 반복했습니다.
+
+밤샘 3일째, 문득 깨달았습니다. **"이건 사람이 할 일이 아니다."**
+
+그래서 직접 만들었습니다.
+
+## Whisk2CapCut 소개: 생성부터 편집까지 원클릭
+
+**Whisk2CapCut**은 Google Whisk의 AI 이미지 생성과 CapCut 영상 편집을 하나로 연결하는 데스크톱 앱입니다.
+
+이미지를 하나씩 만들고, 하나씩 다운로드하고, 하나씩 타임라인에 배치하는 대신 — Whisk2CapCut은 이 모든 과정을 자동으로 처리합니다.
+
+- 프롬프트 파일 하나로 **200장 이상의 AI 이미지를 일괄 생성**
+- 생성된 이미지를 **CapCut 프로젝트로 즉시 내보내기** — 타임라인 배치, 자막, Ken Burns 애니메이션까지 자동 적용
+
+더 이상 새벽 3시에 이미지를 하나씩 끌어다 놓을 필요가 없습니다.
+
+## AI 영상 제작의 전체 워크플로우
+
+AI 이미지 기반 영상을 처음부터 완성까지 만드는 과정입니다. Whisk2CapCut이 어디서 활약하는지 확인해 보세요.
+
+### 1단계: 스크립트 작성
+
+동화, 자기계발 쇼츠, 교육 콘텐츠 — 어떤 장르든 먼저 대본을 작성합니다. 이 대본이 전체 영상의 뼈대가 됩니다.
+
+### 2단계: TTS로 음성과 자막 생성
+
+텍스트를 음성으로 변환하는 TTS 도구를 사용해서 나레이션 오디오를 만듭니다. 대부분의 TTS 도구는 정확한 타임스탬프가 포함된 SRT 자막 파일도 함께 생성합니다. 이 타임스탬프가 장면을 나누는 기준이 됩니다.
+
+### 3단계: SRT 타임스탬프로 장면 분할
+
+SRT 파일의 각 자막 라인이 하나의 장면이 됩니다. Whisk2CapCut은 이 타임스탬프를 읽어서 몇 장의 이미지가 필요한지, 각 이미지가 얼마나 표시되어야 하는지를 자동으로 파악합니다.
+
+### 4단계: 장면별 이미지 프롬프트 작성
+
+각 장면에 맞는 이미지 프롬프트를 작성합니다. 직접 작성해도 되고, AI를 활용해서 대본에서 프롬프트를 자동 생성할 수도 있습니다. TXT, CSV, SRT 형식으로 저장하세요.
+
+### 5단계: 이미지 일괄 생성 + CapCut 내보내기
+
+**여기서 Whisk2CapCut이 등장합니다.** 프롬프트 파일을 불러오고 생성 버튼을 누르면:
+
+- Google Whisk에 프롬프트를 순차적으로 전송
+- 모든 이미지를 자동으로 일괄 생성
+- 태그 매칭으로 캐릭터, 배경, 스타일의 시각적 일관성 유지
+- 생성되는 즉시 로컬 드라이브에 자동 저장
+- 타임라인 배치, Ken Burns 효과, 자막 트랙이 포함된 CapCut 프로젝트 파일로 내보내기
+
+### 6단계: CapCut에서 최종 편집 후 발행
+
+내보낸 프로젝트를 CapCut에서 열면, 이미지가 이미 타임라인에 배치되어 있고 자막도 싱크되어 있습니다. 나레이션 음성을 추가하고 마지막 수정을 한 뒤 바로 업로드하면 됩니다.
+
+**밤샘 3일이 걸리던 작업이 1시간 이내로 줄어듭니다.**
+
+## Whisk2CapCut 사용법 (단계별 가이드)
+
+### 1. 프롬프트 파일 준비
+
+이미지 프롬프트가 담긴 파일을 만듭니다. 세 가지 형식을 지원합니다:
+
+- **TXT** — 한 줄에 프롬프트 하나. 가장 간단한 방식입니다.
+- **CSV** — 프롬프트, 캐릭터 태그, 배경 태그, 스타일 태그를 열로 구분한 구조화된 형식입니다.
+- **SRT** — 타임스탬프가 포함된 자막 형식. 각 장면의 정확한 재생 시간을 앱이 자동으로 인식합니다.
+
+### 2. 태그 설정
+
+Whisk2CapCut의 **자동 태그 매칭** 기능으로 시각적 일관성을 유지할 수 있습니다. 캐릭터 레퍼런스, 배경 스타일, 아트 스타일을 한 번만 설정하면 — 모든 생성 이미지에 동일하게 적용됩니다. 200장의 이미지가 하나의 영상에 어울리도록 만드는 핵심 기능입니다.
+
+### 3. 이미지 일괄 생성
+
+생성 버튼을 클릭하면 Whisk2CapCut이 프롬프트를 하나씩 Google Whisk에 전송합니다. 대기, 다운로드, 정리까지 모두 자동으로 처리됩니다. 생성되는 모든 이미지는 즉시 로컬 드라이브에 자동 저장됩니다.
+
+### 4. CapCut으로 내보내기
+
+생성이 완료되면 내보내기 버튼을 누르세요. Whisk2CapCut이 다음을 포함하는 `.capcut` 프로젝트 파일을 생성합니다:
+
+- 모든 이미지가 타임라인에 순서대로 배치
+- SRT 타임스탬프에 맞춘 재생 시간 설정
+- **Ken Burns 애니메이션** (팬 & 줌) 자동 적용
+- **자막**이 자막 트랙에 자동 배치
+
+CapCut에서 열기만 하면 바로 편집을 시작할 수 있습니다.
+
+## 주요 기능
+
+- **AI 이미지 일괄 생성** — 프롬프트 파일 하나로 200장 이상의 이미지를 한 번에 생성합니다. 하나씩 다운로드할 필요가 없습니다.
+- **시각적 일관성 유지** — 자동 태그 매칭으로 캐릭터, 배경, 아트 스타일이 전체 이미지에서 통일됩니다.
+- **자동 저장** — 이미지가 생성되는 즉시 로컬에 저장됩니다. 작업물을 잃어버릴 걱정이 없습니다.
+- **원클릭 CapCut 내보내기** — 이미지가 타임라인에 배치된 CapCut 프로젝트를 즉시 생성합니다.
+- **Ken Burns 애니메이션** — 정적인 이미지에 자동으로 팬 & 줌 효과를 적용합니다. 키프레임을 직접 설정할 필요가 없습니다.
+- **자동 자막 배치** — SRT 파일의 자막이 장면에 맞춰 자동으로 자막 트랙에 배치됩니다.
+
+## 이런 분들에게 추천합니다
+
+- **AI 콘텐츠 크리에이터** — AI 이미지로 영상을 만드는 분이라면, 가장 지루한 작업을 자동화할 수 있습니다.
+- **얼굴 없는 유튜브 채널 운영자** — AI 이미지로 스토리를 전달하는 채널의 제작 파이프라인이 됩니다.
+- **스토리텔러와 작가** — 카메라 없이도 이야기를 시각적 콘텐츠로 만들 수 있습니다.
+- **쇼츠 / 릴스 크리에이터** — 일관된 AI 비주얼로 숏폼 콘텐츠를 빠르게 대량 제작할 수 있습니다.
+- **교육자 / 설명 콘텐츠 제작자** — 시각 자료가 풍부한 교육 콘텐츠를 대규모로 제작할 수 있습니다.
+
+## 요금제
+
+**무료** — 이미지 생성 무제한, 7일마다 CapCut 내보내기 5회. 도구를 시험해보거나 소규모 프로젝트에 적합합니다.
+
+**Pro** — 월 $4.99 또는 연 $39.99. 무제한 내보내기, 우선 생성, 모든 기능 이용 가능. 스톡 이미지 구독 하나보다 저렴한 가격입니다.
+
+## 지금 시작하세요
+
+Whisk2CapCut은 여러 플랫폼에서 사용할 수 있습니다:
+
+- **Windows** — [Microsoft Store에서 다운로드](ms-windows-store://pdp/?productid=9N38G1SCG12J)
+- **macOS** — [GitHub Releases에서 다운로드](https://github.com/touchizen/whisk2capcut-desktop/releases)
+- **Chrome 확장 프로그램** — [Chrome 웹 스토어에서 설치](https://chromewebstore.google.com/detail/whisk2capcut/badldiaehpjmjnfahikgondidkenmfgm)
+
+이미지를 하나씩 끌어다 놓는 작업은 이제 그만. 밤새는 작업도 이제 그만. **Whisk2CapCut으로 AI 프롬프트를 완성된 CapCut 프로젝트로 변환하세요 — 단 한 번의 클릭으로.**
+4:T21d9,<h2>240장의 이미지. 하나하나 수작업. 밤샘 3일.</h2>
+<p>유튜브 영상 하나를 만들려고 AI 이미지 240장이 필요했습니다. Google Whisk을 열고, 프롬프트를 입력하고, 이미지를 생성하고, 다운로드하고. 다시 프롬프트를 입력하고, 생성하고, 다운로드하고. 그걸 CapCut에 끌어다 놓고, 타이밍을 맞추고, 자막을 넣고.</p>
+<p>이걸 240번 반복했습니다.</p>
+<p>밤샘 3일째, 문득 깨달았습니다. <strong>&quot;이건 사람이 할 일이 아니다.&quot;</strong></p>
+<p>그래서 직접 만들었습니다.</p>
+<h2>Whisk2CapCut 소개: 생성부터 편집까지 원클릭</h2>
+<p><strong>Whisk2CapCut</strong>은 Google Whisk의 AI 이미지 생성과 CapCut 영상 편집을 하나로 연결하는 데스크톱 앱입니다.</p>
+<p>이미지를 하나씩 만들고, 하나씩 다운로드하고, 하나씩 타임라인에 배치하는 대신 — Whisk2CapCut은 이 모든 과정을 자동으로 처리합니다.</p>
+<ul>
+<li>프롬프트 파일 하나로 <strong>200장 이상의 AI 이미지를 일괄 생성</strong></li>
+<li>생성된 이미지를 <strong>CapCut 프로젝트로 즉시 내보내기</strong> — 타임라인 배치, 자막, Ken Burns 애니메이션까지 자동 적용</li>
+</ul>
+<p>더 이상 새벽 3시에 이미지를 하나씩 끌어다 놓을 필요가 없습니다.</p>
+<h2>AI 영상 제작의 전체 워크플로우</h2>
+<p>AI 이미지 기반 영상을 처음부터 완성까지 만드는 과정입니다. Whisk2CapCut이 어디서 활약하는지 확인해 보세요.</p>
+<h3>1단계: 스크립트 작성</h3>
+<p>동화, 자기계발 쇼츠, 교육 콘텐츠 — 어떤 장르든 먼저 대본을 작성합니다. 이 대본이 전체 영상의 뼈대가 됩니다.</p>
+<h3>2단계: TTS로 음성과 자막 생성</h3>
+<p>텍스트를 음성으로 변환하는 TTS 도구를 사용해서 나레이션 오디오를 만듭니다. 대부분의 TTS 도구는 정확한 타임스탬프가 포함된 SRT 자막 파일도 함께 생성합니다. 이 타임스탬프가 장면을 나누는 기준이 됩니다.</p>
+<h3>3단계: SRT 타임스탬프로 장면 분할</h3>
+<p>SRT 파일의 각 자막 라인이 하나의 장면이 됩니다. Whisk2CapCut은 이 타임스탬프를 읽어서 몇 장의 이미지가 필요한지, 각 이미지가 얼마나 표시되어야 하는지를 자동으로 파악합니다.</p>
+<h3>4단계: 장면별 이미지 프롬프트 작성</h3>
+<p>각 장면에 맞는 이미지 프롬프트를 작성합니다. 직접 작성해도 되고, AI를 활용해서 대본에서 프롬프트를 자동 생성할 수도 있습니다. TXT, CSV, SRT 형식으로 저장하세요.</p>
+<h3>5단계: 이미지 일괄 생성 + CapCut 내보내기</h3>
+<p><strong>여기서 Whisk2CapCut이 등장합니다.</strong> 프롬프트 파일을 불러오고 생성 버튼을 누르면:</p>
+<ul>
+<li>Google Whisk에 프롬프트를 순차적으로 전송</li>
+<li>모든 이미지를 자동으로 일괄 생성</li>
+<li>태그 매칭으로 캐릭터, 배경, 스타일의 시각적 일관성 유지</li>
+<li>생성되는 즉시 로컬 드라이브에 자동 저장</li>
+<li>타임라인 배치, Ken Burns 효과, 자막 트랙이 포함된 CapCut 프로젝트 파일로 내보내기</li>
+</ul>
+<h3>6단계: CapCut에서 최종 편집 후 발행</h3>
+<p>내보낸 프로젝트를 CapCut에서 열면, 이미지가 이미 타임라인에 배치되어 있고 자막도 싱크되어 있습니다. 나레이션 음성을 추가하고 마지막 수정을 한 뒤 바로 업로드하면 됩니다.</p>
+<p><strong>밤샘 3일이 걸리던 작업이 1시간 이내로 줄어듭니다.</strong></p>
+<h2>Whisk2CapCut 사용법 (단계별 가이드)</h2>
+<h3>1. 프롬프트 파일 준비</h3>
+<p>이미지 프롬프트가 담긴 파일을 만듭니다. 세 가지 형식을 지원합니다:</p>
+<ul>
+<li><strong>TXT</strong> — 한 줄에 프롬프트 하나. 가장 간단한 방식입니다.</li>
+<li><strong>CSV</strong> — 프롬프트, 캐릭터 태그, 배경 태그, 스타일 태그를 열로 구분한 구조화된 형식입니다.</li>
+<li><strong>SRT</strong> — 타임스탬프가 포함된 자막 형식. 각 장면의 정확한 재생 시간을 앱이 자동으로 인식합니다.</li>
+</ul>
+<h3>2. 태그 설정</h3>
+<p>Whisk2CapCut의 <strong>자동 태그 매칭</strong> 기능으로 시각적 일관성을 유지할 수 있습니다. 캐릭터 레퍼런스, 배경 스타일, 아트 스타일을 한 번만 설정하면 — 모든 생성 이미지에 동일하게 적용됩니다. 200장의 이미지가 하나의 영상에 어울리도록 만드는 핵심 기능입니다.</p>
+<h3>3. 이미지 일괄 생성</h3>
+<p>생성 버튼을 클릭하면 Whisk2CapCut이 프롬프트를 하나씩 Google Whisk에 전송합니다. 대기, 다운로드, 정리까지 모두 자동으로 처리됩니다. 생성되는 모든 이미지는 즉시 로컬 드라이브에 자동 저장됩니다.</p>
+<h3>4. CapCut으로 내보내기</h3>
+<p>생성이 완료되면 내보내기 버튼을 누르세요. Whisk2CapCut이 다음을 포함하는 <code>.capcut</code> 프로젝트 파일을 생성합니다:</p>
+<ul>
+<li>모든 이미지가 타임라인에 순서대로 배치</li>
+<li>SRT 타임스탬프에 맞춘 재생 시간 설정</li>
+<li><strong>Ken Burns 애니메이션</strong> (팬 &amp; 줌) 자동 적용</li>
+<li><strong>자막</strong>이 자막 트랙에 자동 배치</li>
+</ul>
+<p>CapCut에서 열기만 하면 바로 편집을 시작할 수 있습니다.</p>
+<h2>주요 기능</h2>
+<ul>
+<li><strong>AI 이미지 일괄 생성</strong> — 프롬프트 파일 하나로 200장 이상의 이미지를 한 번에 생성합니다. 하나씩 다운로드할 필요가 없습니다.</li>
+<li><strong>시각적 일관성 유지</strong> — 자동 태그 매칭으로 캐릭터, 배경, 아트 스타일이 전체 이미지에서 통일됩니다.</li>
+<li><strong>자동 저장</strong> — 이미지가 생성되는 즉시 로컬에 저장됩니다. 작업물을 잃어버릴 걱정이 없습니다.</li>
+<li><strong>원클릭 CapCut 내보내기</strong> — 이미지가 타임라인에 배치된 CapCut 프로젝트를 즉시 생성합니다.</li>
+<li><strong>Ken Burns 애니메이션</strong> — 정적인 이미지에 자동으로 팬 &amp; 줌 효과를 적용합니다. 키프레임을 직접 설정할 필요가 없습니다.</li>
+<li><strong>자동 자막 배치</strong> — SRT 파일의 자막이 장면에 맞춰 자동으로 자막 트랙에 배치됩니다.</li>
+</ul>
+<h2>이런 분들에게 추천합니다</h2>
+<ul>
+<li><strong>AI 콘텐츠 크리에이터</strong> — AI 이미지로 영상을 만드는 분이라면, 가장 지루한 작업을 자동화할 수 있습니다.</li>
+<li><strong>얼굴 없는 유튜브 채널 운영자</strong> — AI 이미지로 스토리를 전달하는 채널의 제작 파이프라인이 됩니다.</li>
+<li><strong>스토리텔러와 작가</strong> — 카메라 없이도 이야기를 시각적 콘텐츠로 만들 수 있습니다.</li>
+<li><strong>쇼츠 / 릴스 크리에이터</strong> — 일관된 AI 비주얼로 숏폼 콘텐츠를 빠르게 대량 제작할 수 있습니다.</li>
+<li><strong>교육자 / 설명 콘텐츠 제작자</strong> — 시각 자료가 풍부한 교육 콘텐츠를 대규모로 제작할 수 있습니다.</li>
+</ul>
+<h2>요금제</h2>
+<p><strong>무료</strong> — 이미지 생성 무제한, 7일마다 CapCut 내보내기 5회. 도구를 시험해보거나 소규모 프로젝트에 적합합니다.</p>
+<p><strong>Pro</strong> — 월 $4.99 또는 연 $39.99. 무제한 내보내기, 우선 생성, 모든 기능 이용 가능. 스톡 이미지 구독 하나보다 저렴한 가격입니다.</p>
+<h2>지금 시작하세요</h2>
+<p>Whisk2CapCut은 여러 플랫폼에서 사용할 수 있습니다:</p>
+<ul>
+<li><strong>Windows</strong> — <a href="ms-windows-store://pdp/?productid=9N38G1SCG12J">Microsoft Store에서 다운로드</a></li>
+<li><strong>macOS</strong> — <a href="https://github.com/touchizen/whisk2capcut-desktop/releases">GitHub Releases에서 다운로드</a></li>
+<li><strong>Chrome 확장 프로그램</strong> — <a href="https://chromewebstore.google.com/detail/whisk2capcut/badldiaehpjmjnfahikgondidkenmfgm">Chrome 웹 스토어에서 설치</a></li>
+</ul>
+<p>이미지를 하나씩 끌어다 놓는 작업은 이제 그만. 밤새는 작업도 이제 그만. <strong>Whisk2CapCut으로 AI 프롬프트를 완성된 CapCut 프로젝트로 변환하세요 — 단 한 번의 클릭으로.</strong></p>
+6:["lang","ko","d"]
+0:["_cRHEDi5kkzTnGKKXvnSq",[[["",{"children":[["lang","ko","d"],{"children":["blog",{"children":["__PAGE__?{\"lang\":\"ko\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["lang","ko","d"],{"children":["blog",{"children":["__PAGE__",{},[["$L1",["$","$L2",null,{"lang":"ko","posts":[{"slug":"whisk2capcut-tutorial","title":"Whisk2CapCut 사용법: AI 이미지에서 CapCut 영상까지 원클릭","date":"2026-02-25","excerpt":"Google Whisk으로 200장 이상의 AI 이미지를 생성하고, 바로 편집 가능한 CapCut 프로젝트로 변환하는 방법을 알려드립니다.","tags":["Whisk2CapCut","튜토리얼","AI 영상","CapCut"],"author":"Touchizen","content":"$3","htmlContent":"$4"}]}],null],null],null]},[[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","$6","children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null],null]},[[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","$6","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e9fb3906fad3a4cf.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              window.dataLayer = window.dataLayer || [];\n              function gtag(){dataLayer.push(arguments);}\n              gtag('js', new Date());\n              gtag('config', 'G-S0JLFKK5G0');\n            "}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              (function() {\n                try {\n                  var theme = localStorage.getItem('theme');\n                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {\n                    document.documentElement.classList.add('dark');\n                  }\n                } catch (e) {}\n              })();\n            "}}]]}],["$","body",null,{"className":"antialiased min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300","children":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]],null],null],["$L8",null]]]]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Touchizen Creator Tools - AI 도구로 시간을 절약하세요"}],["$","meta","3",{"name":"description","content":"AI 기반 크리에이터 도구로 작업 시간을 절약하세요. 몇 분 안에 100개 이상의 이미지를 생성하고 CapCut 프로젝트로 즉시 변환하세요."}],["$","meta","4",{"name":"author","content":"Touchizen"}],["$","meta","5",{"name":"keywords","content":"creator tools,AI image generation,CapCut automation,Google Labs Whisk,bulk image creation,video editing automation,content creation,time saving tools"}],["$","meta","6",{"name":"robots","content":"index, follow"}],["$","meta","7",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","link","8",{"rel":"canonical","href":"https://touchizen.com/ko/"}],["$","link","9",{"rel":"alternate","hrefLang":"en","href":"https://touchizen.com/en/"}],["$","link","10",{"rel":"alternate","hrefLang":"ko","href":"https://touchizen.com/ko/"}],["$","link","11",{"rel":"alternate","hrefLang":"ja","href":"https://touchizen.com/ja/"}],["$","link","12",{"rel":"alternate","hrefLang":"de","href":"https://touchizen.com/de/"}],["$","link","13",{"rel":"alternate","hrefLang":"x-default","href":"https://touchizen.com/en/"}],["$","meta","14",{"name":"google-site-verification","content":"abab50d830b4ddf2"}],["$","meta","15",{"property":"og:title","content":"Touchizen Creator Tools - AI 도구로 시간을 절약하세요"}],["$","meta","16",{"property":"og:description","content":"AI 기반 크리에이터 도구로 작업 시간을 절약하세요. 몇 분 안에 100개 이상의 이미지를 생성하고 CapCut 프로젝트로 즉시 변환하세요."}],["$","meta","17",{"property":"og:url","content":"https://touchizen.com/ko/"}],["$","meta","18",{"property":"og:site_name","content":"Touchizen"}],["$","meta","19",{"property":"og:locale","content":"ko_KR"}],["$","meta","20",{"property":"og:locale:alternate","content":"en_US"}],["$","meta","21",{"property":"og:locale:alternate","content":"ja_JP"}],["$","meta","22",{"property":"og:locale:alternate","content":"de_DE"}],["$","meta","23",{"property":"og:type","content":"website"}],["$","meta","24",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","25",{"name":"twitter:site","content":"@touchizen"}],["$","meta","26",{"name":"twitter:creator","content":"@touchizen"}],["$","meta","27",{"name":"twitter:title","content":"Touchizen Creator Tools - AI 도구로 시간을 절약하세요"}],["$","meta","28",{"name":"twitter:description","content":"AI 기반 크리에이터 도구로 작업 시간을 절약하세요. 몇 분 안에 100개 이상의 이미지를 생성하고 CapCut 프로젝트로 즉시 변환하세요."}],["$","link","29",{"rel":"icon","href":"/icon.png?a1d408732dffda16","type":"image/png","sizes":"571x571"}]]
+1:null

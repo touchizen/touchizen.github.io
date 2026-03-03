@@ -6,7 +6,7 @@ interface QuickDownloadProps {
   lang: Language;
 }
 
-const DESKTOP_WIN_URL = 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-Setup.exe';
+const DESKTOP_WIN_URL = 'ms-windows-store://pdp/?productid=9N38G1SCG12J';
 const DESKTOP_MAC_URL = 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg';
 const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/whisk2capcut/lkbmmoicfaohjdlehmfdijaeofjhougo';
 
