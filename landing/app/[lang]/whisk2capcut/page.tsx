@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { Language, languages, translations, TranslationKey } from '@/lib/i18n';
 import Header from '@/components/Header';
@@ -74,6 +74,12 @@ export default function Whisk2CapCutPage() {
   const lang: Language = isValidLang ? (paramLang as Language) : 'en';
 
   const t = (key: TranslationKey) => translations[lang][key];
+
+  const [isMac, setIsMac] = useState(false);
+
+  useEffect(() => {
+    setIsMac(/Mac|iPhone|iPad|iPod/.test(navigator.platform));
+  }, []);
 
   const handleLanguageChange = (newLang: Language) => {
     router.push(`/${newLang}/whisk2capcut`);
@@ -277,16 +283,16 @@ export default function Whisk2CapCutPage() {
                 </h3>
                 <div className="flex flex-col gap-3">
                   <a
-                    href="https://apps.microsoft.com/detail/9N38G1SCG12J"
+                    href={isMac ? 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg' : 'https://apps.microsoft.com/detail/9N38G1SCG12J'}
                     className="flex items-center justify-center gap-2 px-5 py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
                   >
-                    🪟 {t('whisk2capcut_desktop_dl_win' as TranslationKey)}
+                    {isMac ? '🍎' : '🪟'} {t(isMac ? 'whisk2capcut_desktop_dl_mac' as TranslationKey : 'whisk2capcut_desktop_dl_win' as TranslationKey)}
                   </a>
                   <a
-                    href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg"
+                    href={isMac ? 'https://apps.microsoft.com/detail/9N38G1SCG12J' : 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg'}
                     className="flex items-center justify-center gap-2 px-5 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
                   >
-                    🍎 {t('whisk2capcut_desktop_dl_mac' as TranslationKey)}
+                    {isMac ? '🪟' : '🍎'} {t(isMac ? 'whisk2capcut_desktop_dl_win' as TranslationKey : 'whisk2capcut_desktop_dl_mac' as TranslationKey)}
                   </a>
                 </div>
               </div>
@@ -1288,18 +1294,18 @@ Now create the SRT file for this story:`}</pre>
               {/* Download buttons */}
               <div className="flex flex-col justify-center gap-4">
                 <a
-                  href="https://apps.microsoft.com/detail/9N38G1SCG12J"
+                  href={isMac ? 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg' : 'https://apps.microsoft.com/detail/9N38G1SCG12J'}
                   className="flex items-center justify-center gap-3 px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25"
                 >
-                  <span className="text-2xl">🪟</span>
-                  {t('whisk2capcut_desktop_dl_win' as TranslationKey)}
+                  <span className="text-2xl">{isMac ? '🍎' : '🪟'}</span>
+                  {t(isMac ? 'whisk2capcut_desktop_dl_mac' as TranslationKey : 'whisk2capcut_desktop_dl_win' as TranslationKey)}
                 </a>
                 <a
-                  href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg"
+                  href={isMac ? 'https://apps.microsoft.com/detail/9N38G1SCG12J' : 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg'}
                   className="flex items-center justify-center gap-3 px-6 py-4 bg-gray-700 hover:bg-gray-600 text-white rounded-xl font-semibold text-lg transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-gray-500/25"
                 >
-                  <span className="text-2xl">🍎</span>
-                  {t('whisk2capcut_desktop_dl_mac' as TranslationKey)}
+                  <span className="text-2xl">{isMac ? '🪟' : '🍎'}</span>
+                  {t(isMac ? 'whisk2capcut_desktop_dl_win' as TranslationKey : 'whisk2capcut_desktop_dl_mac' as TranslationKey)}
                 </a>
                 <a
                   href="https://github.com/touchizen/whisk2capcut-desktop/releases/latest"
