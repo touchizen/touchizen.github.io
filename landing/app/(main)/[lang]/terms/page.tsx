@@ -150,6 +150,16 @@ export default function TermsPage() {
                       <li>유료 구독: 무제한 AI 음식 분석, 상세 영양성분, 일일 섭취량 대비 분석, 맞춤 건강 팁</li>
                     </ul>
                   </div>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">얼마샷 (PriceShot)</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      마트나 시장에서 물건 사진을 찍으면 온라인 최저가를 비교하고 가격 추이를 보여주는 모바일 앱입니다. (Google Play / App Store)
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>무료 플랜: 스캔 10회 체험, 텍스트 검색 무제한</li>
+                      <li>프리미엄 구독: 주간 ₩2,900 / 월간 ₩9,900 / 연간 ₩29,900 (무제한 스캔, 가격 추이 그래프, 광고 제거)</li>
+                    </ul>
+                  </div>
 
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                     * 추가 상품 및 서비스는 출시 시 본 약관에 업데이트됩니다.
@@ -283,6 +293,16 @@ export default function TermsPage() {
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>無料プラン：1日あたり限定回数のAI食事分析</li>
                       <li>有料サブスクリプション：無制限AI食事分析、詳細栄養成分、1日摂取量比較分析、カスタム健康アドバイス</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">いくらショット (PriceShot)</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      スーパーや市場で商品の写真を撮ると、オンライン最安値を比較し価格推移を表示するモバイルアプリです。（Google Play / App Store）
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>無料プラン：スキャン10回体験、テキスト検索無制限</li>
+                      <li>プレミアムサブスクリプション：週間 ₩2,900 / 月間 ₩9,900 / 年間 ₩29,900（無制限スキャン、価格推移グラフ、広告なし）</li>
                     </ul>
                   </div>
 
@@ -420,6 +440,16 @@ export default function TermsPage() {
                       <li>Kostenpflichtiges Abonnement: Unbegrenzte KI-Lebensmittelanalyse, detaillierte Nährwertdaten, Analyse der täglichen Aufnahme, personalisierte Gesundheitstipps</li>
                     </ul>
                   </div>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">PriceShot</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      Eine mobile App, die Produktfotos aus Supermärkten und Märkten aufnimmt, Online-Tiefstpreise vergleicht und Preistrends anzeigt. (Google Play / App Store)
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>Kostenloser Plan: 10 Scans zum Ausprobieren, unbegrenzte Textsuche</li>
+                      <li>Premium-Abonnement: Wöchentlich ₩2.900 / Monatlich ₩9.900 / Jährlich ₩29.900 (unbegrenzte Scans, Preistrend-Grafiken, keine Werbung)</li>
+                    </ul>
+                  </div>
 
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                     * Zusätzliche Produkte und Dienste werden bei Veröffentlichung in diesen Bedingungen aktualisiert.
@@ -553,6 +583,16 @@ export default function TermsPage() {
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>Free Plan: Limited daily AI food analysis</li>
                       <li>Paid Subscription: Unlimited AI food analysis, detailed nutritional data, daily intake comparison, personalized health tips</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">PriceShot</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      A mobile app that takes product photos at supermarkets and markets, compares online lowest prices, and shows price trends. (Google Play / App Store)
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
+                      <li>Free Plan: 10 trial scans, unlimited text search</li>
+                      <li>Premium Subscription: Weekly ₩2,900 / Monthly ₩9,900 / Yearly ₩29,900 (unlimited scans, price trend graphs, ad-free)</li>
                     </ul>
                   </div>
 
