@@ -76,19 +76,34 @@ function generateJsonLd(lang: Language) {
         '@type': 'Offer',
         price: '0',
         priceCurrency: 'USD',
-        description: 'Free (5 exports / 7 days trial)',
+        description: ({
+          en: 'Free (5 exports / 7 days trial)',
+          ko: '무료 (5회 내보내기 / 7일 체험)',
+          ja: '無料（5回エクスポート / 7日間トライアル）',
+          de: 'Kostenlos (5 Exporte / 7 Tage Testversion)',
+        })[lang],
       },
       {
         '@type': 'Offer',
         price: '4.99',
         priceCurrency: 'USD',
-        description: 'Pro Monthly',
+        description: ({
+          en: 'Pro Monthly',
+          ko: 'Pro 월간 구독',
+          ja: 'Pro 月額プラン',
+          de: 'Pro Monatlich',
+        })[lang],
       },
       {
         '@type': 'Offer',
         price: '39.99',
         priceCurrency: 'USD',
-        description: 'Pro Yearly (save 33%)',
+        description: ({
+          en: 'Pro Yearly (save 33%)',
+          ko: 'Pro 연간 구독 (33% 할인)',
+          ja: 'Pro 年額プラン（33%お得）',
+          de: 'Pro Jährlich (33% sparen)',
+        })[lang],
       },
     ],
     author: {
