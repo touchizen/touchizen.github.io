@@ -157,7 +157,7 @@ export default function TermsPage() {
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>무료 플랜: 스캔 10회 체험, 텍스트 검색 무제한</li>
-                      <li>프리미엄 구독: 주간 ₩2,900 / 월간 ₩9,900 / 연간 ₩29,900 (무제한 스캔, 가격 추이 그래프, 광고 제거)</li>
+                      <li>프리미엄 구독: 무제한 스캔, 가격 추이 그래프, 광고 제거</li>
                     </ul>
                   </div>
 
@@ -302,7 +302,7 @@ export default function TermsPage() {
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>無料プラン：スキャン10回体験、テキスト検索無制限</li>
-                      <li>プレミアムサブスクリプション：週間 ₩2,900 / 月間 ₩9,900 / 年間 ₩29,900（無制限スキャン、価格推移グラフ、広告なし）</li>
+                      <li>プレミアムサブスクリプション：無制限スキャン、価格推移グラフ、広告なし</li>
                     </ul>
                   </div>
 
@@ -447,7 +447,7 @@ export default function TermsPage() {
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>Kostenloser Plan: 10 Scans zum Ausprobieren, unbegrenzte Textsuche</li>
-                      <li>Premium-Abonnement: Wöchentlich ₩2.900 / Monatlich ₩9.900 / Jährlich ₩29.900 (unbegrenzte Scans, Preistrend-Grafiken, keine Werbung)</li>
+                      <li>Premium-Abonnement: Unbegrenzte Scans, Preistrend-Grafiken, keine Werbung</li>
                     </ul>
                   </div>
 
@@ -592,7 +592,7 @@ export default function TermsPage() {
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>Free Plan: 10 trial scans, unlimited text search</li>
-                      <li>Premium Subscription: Weekly ₩2,900 / Monthly ₩9,900 / Yearly ₩29,900 (unlimited scans, price trend graphs, ad-free)</li>
+                      <li>Premium Subscription: Unlimited scans, price trend graphs, ad-free</li>
                     </ul>
                   </div>
 
