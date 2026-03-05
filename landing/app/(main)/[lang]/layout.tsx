@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Language, languages } from '@/lib/i18n';
+import '../../globals.css';
 
 type Props = {
   params: { lang: Language };
@@ -86,6 +87,9 @@ export function generateMetadata({ params }: Props): Metadata {
         'max-snippet': -1,
       },
     },
+    verification: {
+      google: 'abab50d830b4ddf2',
+    },
   };
 }
 
@@ -97,13 +101,38 @@ export default function LangLayout({
   params: { lang: Language };
 }) {
   return (
-    <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang="${params.lang}"`,
-        }}
-      />
-      {children}
-    </>
+    <html lang={params.lang} suppressHydrationWarning>
+      <head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-S0JLFKK5G0');
+            `,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="antialiased min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+        {children}
+      </body>
+    </html>
   );
 }
