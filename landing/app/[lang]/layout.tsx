@@ -91,8 +91,19 @@ export function generateMetadata({ params }: Props): Metadata {
 
 export default function LangLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: Language };
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `document.documentElement.lang="${params.lang}"`,
+        }}
+      />
+      {children}
+    </>
+  );
 }
