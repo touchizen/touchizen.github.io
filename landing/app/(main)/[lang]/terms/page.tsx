@@ -153,11 +153,11 @@ export default function TermsPage() {
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">얼마샷 (PriceShot)</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      마트나 시장에서 물건 사진을 찍으면 온라인 최저가를 비교하고 가격 추이를 보여주는 모바일 앱입니다. (Google Play / App Store)
+                      마트나 시장에서 물건 사진을 찍으면 온라인 최저가를 비교해주는 모바일 앱입니다. (Google Play / App Store)
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>무료 플랜: 스캔 10회 체험, 텍스트 검색 무제한</li>
-                      <li>프리미엄 구독: 무제한 스캔, 가격 추이 그래프, 광고 제거</li>
+                      <li>프리미엄 구독: 무제한 스캔, 광고 제거</li>
                     </ul>
                   </div>
 
@@ -298,11 +298,11 @@ export default function TermsPage() {
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">いくらショット (PriceShot)</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      スーパーや市場で商品の写真を撮ると、オンライン最安値を比較し価格推移を表示するモバイルアプリです。（Google Play / App Store）
+                      スーパーや市場で商品の写真を撮ると、オンライン最安値を比較するモバイルアプリです。（Google Play / App Store）
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>無料プラン：スキャン10回体験、テキスト検索無制限</li>
-                      <li>プレミアムサブスクリプション：無制限スキャン、価格推移グラフ、広告なし</li>
+                      <li>プレミアムサブスクリプション：無制限スキャン、広告なし</li>
                     </ul>
                   </div>
 
@@ -443,11 +443,11 @@ export default function TermsPage() {
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">PriceShot</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      Eine mobile App, die Produktfotos aus Supermärkten und Märkten aufnimmt, Online-Tiefstpreise vergleicht und Preistrends anzeigt. (Google Play / App Store)
+                      Eine mobile App, die Produktfotos aus Supermärkten und Märkten aufnimmt und Online-Tiefstpreise vergleicht. (Google Play / App Store)
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>Kostenloser Plan: 10 Scans zum Ausprobieren, unbegrenzte Textsuche</li>
-                      <li>Premium-Abonnement: Unbegrenzte Scans, Preistrend-Grafiken, keine Werbung</li>
+                      <li>Premium-Abonnement: Unbegrenzte Scans, keine Werbung</li>
                     </ul>
                   </div>
 
@@ -588,11 +588,11 @@ export default function TermsPage() {
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">PriceShot</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      A mobile app that takes product photos at supermarkets and markets, compares online lowest prices, and shows price trends. (Google Play / App Store)
+                      A mobile app that takes product photos at supermarkets and markets and compares online lowest prices. (Google Play / App Store)
                     </p>
                     <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
                       <li>Free Plan: 10 trial scans, unlimited text search</li>
-                      <li>Premium Subscription: Unlimited scans, price trend graphs, ad-free</li>
+                      <li>Premium Subscription: Unlimited scans, ad-free</li>
                     </ul>
                   </div>
 
