@@ -1,4 +1,17 @@
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { detectLanguage } from '@/lib/i18n';
+
 export default function RootPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const lang = detectLanguage();
+    router.replace(`/${lang}`);
+  }, [router]);
+
   const languages = [
     { code: 'en', name: 'English', href: '/en/' },
     { code: 'ko', name: '한국어', href: '/ko/' },
@@ -6,8 +19,13 @@ export default function RootPage() {
     { code: 'de', name: 'Deutsch', href: '/de/' },
   ] as const;
 
+  // SEO: Crawlers don't execute JS, so they see this full content.
+  // Real users get auto-redirected to their detected language via useEffect above.
   return (
     <main className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+      <noscript>
+        <meta httpEquiv="refresh" content="0;url=/en/" />
+      </noscript>
       <section className="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-6 py-20">
         <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full bg-violet-100 px-4 py-2 text-sm font-medium text-violet-700 dark:bg-violet-900/30 dark:text-violet-300">
           Touchizen
