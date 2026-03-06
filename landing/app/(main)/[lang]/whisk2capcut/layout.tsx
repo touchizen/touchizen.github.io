@@ -8,17 +8,17 @@ export function generateMetadata({ params }: Props): Metadata {
   const baseUrl = 'https://touchizen.com';
 
   const titles: Record<Language, string> = {
-    en: 'Whisk2CapCut - Bulk AI Images to CapCut Project in One Click',
-    ko: 'Whisk2CapCut - AI 이미지 대량 생성 → CapCut 원클릭 변환',
-    ja: 'Whisk2CapCut - AI画像一括生成→CapCutワンクリック変換',
-    de: 'Whisk2CapCut - KI-Bilder → CapCut-Projekt mit einem Klick',
+    en: 'Whisk2CapCut: Convert Google Whisk Images to CapCut Projects',
+    ko: 'Whisk2CapCut: Google Whisk 이미지를 CapCut 프로젝트로 변환',
+    ja: 'Whisk2CapCut: Google Whisk画像をCapCutプロジェクトへ変換',
+    de: 'Whisk2CapCut: Google-Whisk-Bilder in CapCut-Projekte umwandeln',
   };
 
   const descriptions: Record<Language, string> = {
-    en: 'Generate 200+ AI images with Google Whisk and export to CapCut project in one click.',
-    ko: 'Google Whisk로 AI 이미지 200장+ 생성, CapCut 프로젝트로 원클릭 변환.',
-    ja: 'Google WhiskでAI画像200枚+生成、CapCutプロジェクトにワンクリック変換。',
-    de: '200+ KI-Bilder mit Google Whisk generieren und mit einem Klick in CapCut exportieren.',
+    en: 'Turn Google Whisk image batches into editable CapCut projects with subtitles, timing, and Ken Burns effects in one click.',
+    ko: 'Google Whisk 이미지 묶음을 자막, 타이밍, Ken Burns 효과가 포함된 편집 가능한 CapCut 프로젝트로 원클릭 변환하세요.',
+    ja: 'Google Whiskの画像バッチを、字幕・タイミング・Ken Burns効果付きの編集可能なCapCutプロジェクトへワンクリック変換します。',
+    de: 'Wandle Google-Whisk-Bildserien mit Untertiteln, Timing und Ken-Burns-Effekten per Klick in editierbare CapCut-Projekte um.',
   };
 
   const ogImages: Record<Language, string> = {
@@ -31,6 +31,7 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: titles[lang],
     description: descriptions[lang],
+    metadataBase: new URL(baseUrl),
     alternates: {
       canonical: `${baseUrl}/${lang}/whisk2capcut/`,
       languages: {
@@ -43,6 +44,8 @@ export function generateMetadata({ params }: Props): Metadata {
     openGraph: {
       title: titles[lang],
       description: descriptions[lang],
+      siteName: 'Touchizen',
+      type: 'website',
       url: `${baseUrl}/${lang}/whisk2capcut/`,
       images: [{
         url: ogImages[lang],
@@ -56,12 +59,29 @@ export function generateMetadata({ params }: Props): Metadata {
       description: descriptions[lang],
       images: [ogImages[lang]],
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 
 function generateJsonLd(lang: Language) {
   const baseUrl = 'https://touchizen.com';
   const t = (key: string) => translations[lang][key as TranslationKey];
+  const descriptions: Record<Language, string> = {
+    en: 'Turn Google Whisk image batches into editable CapCut projects with subtitles, timing, and Ken Burns effects in one click.',
+    ko: 'Google Whisk 이미지 묶음을 자막, 타이밍, Ken Burns 효과가 포함된 편집 가능한 CapCut 프로젝트로 원클릭 변환하세요.',
+    ja: 'Google Whiskの画像バッチを、字幕・タイミング・Ken Burns効果付きの編集可能なCapCutプロジェクトへワンクリック変換します。',
+    de: 'Wandle Google-Whisk-Bildserien mit Untertiteln, Timing und Ken-Burns-Effekten per Klick in editierbare CapCut-Projekte um.',
+  };
 
   const softwareApp = {
     '@context': 'https://schema.org',
@@ -70,7 +90,7 @@ function generateJsonLd(lang: Language) {
     applicationCategory: 'MultimediaApplication',
     operatingSystem: 'Chrome, Windows, macOS',
     url: `${baseUrl}/${lang}/whisk2capcut/`,
-    description: t('whisk2capcut_hero_subtitle'),
+    description: descriptions[lang],
     offers: [
       {
         '@type': 'Offer',

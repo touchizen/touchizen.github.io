@@ -52,10 +52,10 @@ export const ja = {
   whisk2capcut_cta: '詳細を見る',
 
   // Whisk2CapCut Detail Page
-  whisk2capcut_hero_title: 'Whisk2CapCut',
-  whisk2capcut_hero_slogan: 'Save Your Time',
-  whisk2capcut_hero_subtitle: 'Google Labs Whiskで作った静止画像を、ワンクリックでCapCut動画に命を吹き込む',
-  whisk2capcut_hero_target: '📝 プロンプト・台本(TXT/CSV/SRT)を入力するだけ → 画像100枚以上生成 → CapCutプロジェクト1クリック完成',
+  whisk2capcut_hero_title: 'Google Whisk画像をCapCutプロジェクトへ変換',
+  whisk2capcut_hero_slogan: 'Whisk2CapCut',
+  whisk2capcut_hero_subtitle: 'Google Whiskで生成した画像バッチを、字幕・タイミング・モーション付きの編集可能なCapCutタイムラインへワンクリック変換します。',
+  whisk2capcut_hero_target: '📝 TXT/CSV/SRTのプロンプト入力 → 100枚以上の画像生成 → そのまま編集できるCapCutプロジェクトを書き出し',
   whisk2capcut_hero_cta: 'Chrome拡張機能をインストール',
   whisk2capcut_hero_cta_secondary: '料金を見る',
 

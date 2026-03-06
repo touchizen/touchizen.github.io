@@ -52,10 +52,10 @@ export const en = {
   whisk2capcut_cta: 'Learn More',
 
   // Whisk2CapCut Detail Page
-  whisk2capcut_hero_title: 'Whisk2CapCut',
-  whisk2capcut_hero_slogan: 'Save Your Time',
-  whisk2capcut_hero_subtitle: 'Bring static images from Google Labs Whisk to life with CapCut in just one click',
-  whisk2capcut_hero_target: '📝 Just input prompt-scripts (TXT/CSV/SRT) → Generate 100+ images → Complete CapCut project in 1 click',
+  whisk2capcut_hero_title: 'Convert Google Whisk Images to CapCut Projects',
+  whisk2capcut_hero_slogan: 'Whisk2CapCut',
+  whisk2capcut_hero_subtitle: 'Batch-export Google Whisk image generations into editable CapCut timelines with subtitles, timing, and motion in one click.',
+  whisk2capcut_hero_target: '📝 Input TXT/CSV/SRT prompts → Generate 100+ images → Export a ready-to-edit CapCut project',
   whisk2capcut_hero_cta: 'Install Chrome Extension',
   whisk2capcut_hero_cta_secondary: 'View Pricing',
 

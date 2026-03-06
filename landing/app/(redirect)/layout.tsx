@@ -2,16 +2,30 @@ import type { Metadata } from 'next';
 import '../globals.css';
 
 export const metadata: Metadata = {
-  title: 'Touchizen Creator Tools - Save Your Time with AI-Powered Tools',
+  title: 'Touchizen Creator Tools | AI Tools for Google Whisk and CapCut',
   description:
-    'Save hours of work with AI-powered creator tools. Generate 100+ images in minutes and instantly convert to CapCut projects. Turn repetitive tasks into automated efficiency.',
+    'Explore Touchizen creator tools for Google Whisk, CapCut, and AI-powered content workflows. Choose your language and start with Whisk2CapCut.',
   metadataBase: new URL('https://touchizen.com'),
   alternates: {
-    canonical: 'https://touchizen.com/en/',
+    canonical: 'https://touchizen.com/',
+    languages: {
+      en: 'https://touchizen.com/en/',
+      ko: 'https://touchizen.com/ko/',
+      ja: 'https://touchizen.com/ja/',
+      de: 'https://touchizen.com/de/',
+      'x-default': 'https://touchizen.com/',
+    },
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   verification: {
     google: 'abab50d830b4ddf2',

@@ -52,10 +52,10 @@ export const ko = {
   whisk2capcut_cta: '자세히 보기',
 
   // Whisk2CapCut Detail Page
-  whisk2capcut_hero_title: 'Whisk2CapCut',
-  whisk2capcut_hero_slogan: 'Save Your Time',
-  whisk2capcut_hero_subtitle: 'Google Labs Whisk로 만든 정적인 이미지, 원클릭으로 CapCut 영상에 생명을 불어넣으세요',
-  whisk2capcut_hero_target: '📝 프롬프트-대본(TXT/CSV/SRT)만 넣으면 → 이미지 100장 생성 → CapCut 프로젝트 1클릭 완성',
+  whisk2capcut_hero_title: 'Google Whisk 이미지를 CapCut 프로젝트로 변환',
+  whisk2capcut_hero_slogan: 'Whisk2CapCut',
+  whisk2capcut_hero_subtitle: 'Google Whisk에서 생성한 이미지 묶음을 자막, 타이밍, 모션이 포함된 편집 가능한 CapCut 타임라인으로 원클릭 변환하세요.',
+  whisk2capcut_hero_target: '📝 TXT/CSV/SRT 프롬프트 입력 → 이미지 100장+ 생성 → 바로 편집 가능한 CapCut 프로젝트 내보내기',
   whisk2capcut_hero_cta: 'Chrome 확장 프로그램 설치',
   whisk2capcut_hero_cta_secondary: '가격 보기',
 
