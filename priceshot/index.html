@@ -131,6 +131,23 @@
     .cta-text { font-size: 13px; color: #666; }
     .cta-text strong { color: #FF6B35; }
 
+    /* 영상 섹션 */
+    .video-section {
+      background: #fff; border-radius: 16px; padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-top: 16px;
+      text-align: center;
+    }
+    .video-header {
+      font-size: 15px; font-weight: 700; color: #1a1a1a;
+      margin-bottom: 14px; display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .video-wrap {
+      border-radius: 12px; overflow: hidden;
+      max-width: 315px; margin: 0 auto;
+    }
+    .video-wrap iframe { width: 100%; aspect-ratio: 9/16; border: none; }
+    .video-caption { font-size: 12px; color: #999; margin-top: 10px; }
+
     /* 하단 안내 */
     .footer-msg { text-align: center; font-size: 12px; color: #bbb; margin-top: 20px; }
   </style>
@@ -274,6 +291,15 @@
       <div class="cta-section" id="cta-section" style="display:none">
         <p class="cta-text"><strong>얼마샷</strong> 앱에서 사진으로 더 정확한 가격을 비교해보세요</p>
       </div>
+    </div>
+
+    <!-- 5. 영상 소개 -->
+    <div class="video-section">
+      <div class="video-header">🎬 얼마샷 사용법</div>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/w-uuyvvLfOw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">라면값 진짜 얼마가 정가일까?</p>
     </div>
 
     <p class="footer-msg">모바일에서 열면 자동으로 스토어로 이동합니다</p>
