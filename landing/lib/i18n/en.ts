@@ -459,7 +459,7 @@ The young prince practices sword fighting in the courtyard`,
 
   autoflowcut_hero_title: 'AutoFlowCut',
   autoflowcut_hero_slogan: '🎥 Google Flow AI → CapCut, Automated',
-  autoflowcut_hero_subtitle: 'Generate AI images and videos with Google Flow, then export complete CapCut projects with timeline, subtitles, and animations — all in one app.',
+  autoflowcut_hero_subtitle: 'Bulk auto-generate hundreds of AI images and videos with Google Flow AI, then export complete CapCut projects with timeline, subtitles, and animations — all in one click.',
   autoflowcut_hero_cta: 'Download Desktop App',
   autoflowcut_hero_cta_secondary: 'View on GitHub',
   autoflowcut_platform_badge: 'Desktop App · Open Source',

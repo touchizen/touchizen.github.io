@@ -459,7 +459,7 @@ Der junge Prinz übt im Burghof Schwertkampf`,
 
   autoflowcut_hero_title: 'AutoFlowCut',
   autoflowcut_hero_slogan: '🎥 Google Flow AI → CapCut, Automatisiert',
-  autoflowcut_hero_subtitle: 'Generieren Sie KI-Bilder und Videos mit Google Flow und exportieren Sie komplette CapCut-Projekte mit Timeline, Untertiteln und Animationen — alles in einer App.',
+  autoflowcut_hero_subtitle: 'Hunderte KI-Bilder und Videos mit Google Flow AI automatisch in Massen generieren und komplette CapCut-Projekte mit Timeline, Untertiteln und Animationen per Klick exportieren.',
   autoflowcut_hero_cta: 'Desktop-App herunterladen',
   autoflowcut_hero_cta_secondary: 'Auf GitHub ansehen',
   autoflowcut_platform_badge: 'Desktop-App · Open Source',

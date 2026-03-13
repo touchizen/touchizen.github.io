@@ -459,7 +459,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
 
   autoflowcut_hero_title: 'AutoFlowCut',
   autoflowcut_hero_slogan: '🎥 Google Flow AI → CapCut、自動化',
-  autoflowcut_hero_subtitle: 'Google FlowでAI画像と動画を生成し、タイムライン、字幕、アニメーション付きの完成されたCapCutプロジェクトをワンクリックでエクスポート。',
+  autoflowcut_hero_subtitle: 'Google Flow AIで数百枚のAI画像と動画を大量自動生成し、タイムライン、字幕、アニメーション付きの完成されたCapCutプロジェクトをワンクリックでエクスポート。',
   autoflowcut_hero_cta: 'デスクトップアプリをダウンロード',
   autoflowcut_hero_cta_secondary: 'GitHubで見る',
   autoflowcut_platform_badge: 'デスクトップアプリ · オープンソース',
