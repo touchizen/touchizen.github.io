@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import HeroSection from './components/HeroSection';
 import WhatIsSection from './components/WhatIsSection';
 import FeaturesSection from './components/FeaturesSection';
+import VideoGenerationSection from './components/VideoGenerationSection';
 import WorkflowSection from './components/WorkflowSection';
 import ComparisonSection from './components/ComparisonSection';
 import AudienceSection from './components/AudienceSection';
@@ -37,6 +38,7 @@ export default function AutoFlowCutPage() {
       <WhatIsSection lang={lang} t={t} />
       <WorkflowSection lang={lang} t={t} />
       <FeaturesSection lang={lang} t={t} />
+      <VideoGenerationSection lang={lang} t={t} />
       <ComparisonSection lang={lang} t={t} />
       <AudienceSection lang={lang} t={t} />
       <HowItWorksSection lang={lang} t={t} />

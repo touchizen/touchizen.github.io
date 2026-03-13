@@ -19,7 +19,7 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
       href={href}
       target={product.isExternal ? '_blank' : undefined}
       rel={product.isExternal ? 'noopener noreferrer' : undefined}
-      className="block card-hover bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 cursor-pointer"
+      className="block card-hover bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 cursor-pointer h-full flex flex-col"
     >
       {/* Header: Icon + Title/Slogan */}
       <div className="flex items-start gap-4 mb-4">
@@ -51,8 +51,8 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
         </div>
       </div>
 
-      {/* Description */}
-      <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+      {/* Description — flex-grow to equalize card heights */}
+      <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed flex-grow">
         {t(product.descKey as TranslationKey)}
       </p>
 

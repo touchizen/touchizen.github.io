@@ -7,9 +7,9 @@ interface QuickDownloadProps {
   lang: Language;
 }
 
-const DESKTOP_WIN_URL = 'https://apps.microsoft.com/detail/9N38G1SCG12J';
-const DESKTOP_MAC_URL = 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg';
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/whisk2capcut/lkbmmoicfaohjdlehmfdijaeofjhougo';
+const DESKTOP_WIN_URL = 'https://github.com/touchizen/flow2capcut/releases';
+const DESKTOP_MAC_URL = 'https://github.com/touchizen/flow2capcut/releases';
+const GITHUB_URL = 'https://github.com/touchizen/flow2capcut';
 
 export default function QuickDownload({ lang }: QuickDownloadProps) {
   const t = (key: TranslationKey) => translations[lang][key];
@@ -25,11 +25,9 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
         {/* Section Header */}
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <img
-              src="/images/whisk2capcut.svg"
-              alt="Whisk2CapCut"
-              className="w-10 h-10 rounded-xl"
-            />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-xl">
+              🎥
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold">
               <span className="gradient-text">{t('quick_dl_title')}</span>
             </h2>
@@ -42,10 +40,10 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
         {/* Download Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {/* Desktop App Card */}
-          <div className="relative bg-white dark:bg-gray-900 rounded-2xl p-6 border-2 border-purple-500 dark:border-purple-400 shadow-lg">
+          <div className="relative bg-white dark:bg-gray-900 rounded-2xl p-6 border-2 border-cyan-500 dark:border-cyan-400 shadow-lg">
             {/* Recommended Badge */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-              <span className="px-4 py-1 bg-gradient-to-r from-violet-500 to-purple-600 text-white text-xs font-bold rounded-full uppercase tracking-wide">
+              <span className="px-4 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold rounded-full uppercase tracking-wide">
                 {t('quick_dl_desktop_recommended')}
               </span>
             </div>
@@ -53,7 +51,7 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
             <div className="mt-2">
               {/* Title */}
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -72,7 +70,9 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
               <div className="space-y-2">
                 <a
                   href={isMac ? DESKTOP_MAC_URL : DESKTOP_WIN_URL}
-                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:shadow-lg hover:opacity-90 active:scale-95 text-sm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:shadow-lg hover:opacity-90 active:scale-95 text-sm"
                 >
                   {isMac ? (
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -87,6 +87,8 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
                 </a>
                 <a
                   href={isMac ? DESKTOP_WIN_URL : DESKTOP_MAC_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl font-semibold transition-all duration-300 bg-gray-900 dark:bg-gray-700 text-white hover:shadow-lg hover:opacity-90 active:scale-95 text-sm"
                 >
                   {isMac ? (
@@ -109,14 +111,14 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
             </div>
           </div>
 
-          {/* Chrome Extension Card */}
+          {/* GitHub Card */}
           <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800">
             <div className="mt-2">
               {/* Title */}
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
@@ -129,16 +131,16 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
                 {t('quick_dl_plugin_desc')}
               </p>
 
-              {/* Install Button */}
+              {/* GitHub Button */}
               <div className="space-y-2">
                 <a
-                  href={CHROME_STORE_URL}
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl font-semibold transition-all duration-300 bg-blue-600 text-white hover:shadow-lg hover:opacity-90 active:scale-95 text-sm"
+                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl font-semibold transition-all duration-300 bg-gray-900 dark:bg-gray-700 text-white hover:shadow-lg hover:opacity-90 active:scale-95 text-sm"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001-3.952 6.848c.404.037.812.057 1.227.057 6.627 0 12-5.373 12-12 0-1.19-.176-2.339-.5-3.424z" />
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                   </svg>
                   {t('quick_dl_chrome_store')}
                 </a>
@@ -147,11 +149,11 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
           </div>
         </div>
 
-        {/* Compare link */}
+        {/* Learn more link */}
         <div className="text-center mt-6">
           <a
-            href={`/${lang}/whisk2capcut/#install`}
-            className="text-sm text-purple-600 dark:text-purple-400 hover:underline font-medium"
+            href={`/${lang}/autoflowcut/`}
+            className="text-sm text-cyan-600 dark:text-cyan-400 hover:underline font-medium"
           >
             {t('quick_dl_learn_more')} →
           </a>
