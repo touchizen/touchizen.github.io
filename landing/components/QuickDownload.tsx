@@ -25,7 +25,7 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
         {/* Section Header */}
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <img src="/images/autoflowcut.svg" alt="AutoFlowCut" className="w-10 h-10 rounded-xl" />
+            <img src="/images/autoflowcut.svg?v=20260313" alt="AutoFlowCut" className="w-10 h-10 rounded-xl" />
             <h2 className="text-3xl md:text-4xl font-bold">
               <span className="gradient-text">{t('quick_dl_title')}</span>
             </h2>

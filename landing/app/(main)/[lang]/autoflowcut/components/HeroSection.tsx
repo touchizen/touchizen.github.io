@@ -16,9 +16,7 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
           </div>
 
           <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center text-5xl md:text-6xl shadow-lg">
-              🎥
-            </div>
+            <img src="/images/autoflowcut.svg?v=20260313" alt="AutoFlowCut" className="w-24 h-24 md:w-28 md:h-28 rounded-3xl shadow-lg" />
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
