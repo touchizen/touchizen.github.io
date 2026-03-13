@@ -536,7 +536,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   autoflowcut_faq_q5: 'CapCutデスクトップと互換性がありますか？',
   autoflowcut_faq_a5: 'はい、エクスポートされたプロジェクトはCapCutデスクトップと完全互換です。タイムライン、メディアファイル、字幕、Ken Burnsアニメーションが含まれており、すぐに編集を開始できます。',
   autoflowcut_faq_q6: 'AutoFlowCutは無料ですか？',
-  autoflowcut_faq_a6: 'はい、AutoFlowCutは無料のオープンソースです。すべての機能を無料でご利用いただけます。Google Flow AIも現在実験段階のため無料です。ソースコードはGitHubで公開されています。',
+  autoflowcut_faq_a6: 'AI画像/動画生成は無料です（Google Flow AIは現在実験段階のため無料）。CapCutプロジェクトへのエクスポートは有料機能です。ソースコードはGitHubでオープンソースとして公開されています。',
 
   // Calorie Shot
   calorieshot_name: 'カロリーショット',

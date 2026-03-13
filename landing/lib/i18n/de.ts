@@ -536,7 +536,7 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   autoflowcut_faq_q5: 'Ist das CapCut-Projekt mit CapCut Desktop kompatibel?',
   autoflowcut_faq_a5: 'Ja, das exportierte Projekt ist vollständig mit CapCut Desktop kompatibel. Es enthält Timeline, Mediendateien, Untertitel und Ken Burns-Animationen — sofort zur Bearbeitung bereit.',
   autoflowcut_faq_q6: 'Ist AutoFlowCut kostenlos?',
-  autoflowcut_faq_a6: 'Ja, AutoFlowCut ist kostenlos und Open Source. Alle Funktionen sind kostenlos verfügbar. Google Flow AI ist in der aktuellen experimentellen Phase ebenfalls kostenlos. Der Quellcode ist auf GitHub verfügbar.',
+  autoflowcut_faq_a6: 'AI-Bild-/Videogenerierung ist kostenlos (Google Flow AI ist derzeit in der experimentellen Phase kostenlos). Der Export zu CapCut ist eine kostenpflichtige Funktion. Der Quellcode ist als Open Source auf GitHub verfügbar.',
 
   // Calorie Shot
   calorieshot_name: 'Calorie Shot',

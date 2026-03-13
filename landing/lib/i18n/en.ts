@@ -536,7 +536,7 @@ The young prince practices sword fighting in the courtyard`,
   autoflowcut_faq_q5: 'Is the CapCut project compatible with CapCut desktop?',
   autoflowcut_faq_a5: 'Yes, the exported project is fully compatible with CapCut desktop. It includes timeline, media files, subtitles, and Ken Burns animations — ready to edit immediately.',
   autoflowcut_faq_q6: 'Is AutoFlowCut free?',
-  autoflowcut_faq_a6: 'Yes, AutoFlowCut is free and open source. All features are available for free. Google Flow AI is also free during its current experimental phase. The source code is available on GitHub.',
+  autoflowcut_faq_a6: 'AI image/video generation is free (Google Flow AI is currently free during its experimental phase). Export to CapCut is a paid feature. The source code is open source on GitHub.',
 
   // Calorie Shot
   calorieshot_name: 'Calorie Shot',
