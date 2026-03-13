@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home pages -->
+  <url>
+    <loc>https://touchizen.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Whisk2CapCut product pages -->
+  <url>
+    <loc>https://touchizen.com/en/whisk2capcut/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/whisk2capcut/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ko/whisk2capcut/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/whisk2capcut/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ja/whisk2capcut/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/whisk2capcut/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/de/whisk2capcut/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/whisk2capcut/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Calorie Shot product pages -->
+  <url>
+    <loc>https://touchizen.com/en/calorie-shot/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/calorie-shot/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ko/calorie-shot/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/calorie-shot/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ja/calorie-shot/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/calorie-shot/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/de/calorie-shot/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/calorie-shot/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/calorie-shot/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog listing pages -->
+  <url>
+    <loc>https://touchizen.com/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/blog/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/blog/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/blog/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ko/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/blog/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/blog/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/blog/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ja/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/blog/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/blog/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/blog/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/de/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/blog/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/blog/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/blog/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog post: Whisk2CapCut Tutorial (en/ko only) -->
+  <url>
+    <loc>https://touchizen.com/en/blog/whisk2capcut-tutorial/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/blog/whisk2capcut-tutorial/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/blog/whisk2capcut-tutorial/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/blog/whisk2capcut-tutorial/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ko/blog/whisk2capcut-tutorial/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/blog/whisk2capcut-tutorial/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/blog/whisk2capcut-tutorial/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/blog/whisk2capcut-tutorial/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Privacy Policy pages -->
+  <url>
+    <loc>https://touchizen.com/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/privacy/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ko/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/privacy/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ja/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/privacy/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/de/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/privacy/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/privacy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/privacy/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms of Service pages -->
+  <url>
+    <loc>https://touchizen.com/en/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/terms/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/terms/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/terms/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/terms/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ko/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/terms/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/terms/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/terms/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/terms/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ja/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/terms/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/terms/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/terms/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/terms/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/de/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/terms/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/terms/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/terms/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/terms/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.3</priority>
+  </url>
+</urlset>
