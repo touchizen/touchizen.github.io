@@ -44,7 +44,7 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://github.com/touchizen/flow2capcut/releases"
+              href="https://github.com/touchizen/AutoFlowCut/releases"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-semibold text-lg transition-all hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25"
@@ -55,7 +55,7 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
               </svg>
             </a>
             <a
-              href="https://github.com/touchizen/flow2capcut"
+              href="https://github.com/touchizen/AutoFlowCut"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-2xl font-semibold text-lg transition-all hover:-translate-y-0.5 shadow-lg"

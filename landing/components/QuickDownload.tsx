@@ -7,9 +7,9 @@ interface QuickDownloadProps {
   lang: Language;
 }
 
-const DESKTOP_WIN_URL = 'https://github.com/touchizen/flow2capcut/releases';
-const DESKTOP_MAC_URL = 'https://github.com/touchizen/flow2capcut/releases';
-const GITHUB_URL = 'https://github.com/touchizen/flow2capcut';
+const DESKTOP_WIN_URL = 'https://github.com/touchizen/AutoFlowCut/releases';
+const DESKTOP_MAC_URL = 'https://github.com/touchizen/AutoFlowCut/releases';
+const GITHUB_URL = 'https://github.com/touchizen/AutoFlowCut';
 
 export default function QuickDownload({ lang }: QuickDownloadProps) {
   const t = (key: TranslationKey) => translations[lang][key];
