@@ -7,7 +7,7 @@ interface QuickDownloadProps {
   lang: Language;
 }
 
-const DESKTOP_WIN_URL = 'https://github.com/touchizen/AutoFlowCut/releases';
+const DESKTOP_WIN_URL = 'https://apps.microsoft.com/detail/9p2d9g1f4j7q';
 const DESKTOP_MAC_URL = 'https://github.com/touchizen/AutoFlowCut/releases';
 const GITHUB_URL = 'https://github.com/touchizen/AutoFlowCut';
 
@@ -25,9 +25,7 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
         {/* Section Header */}
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-xl">
-              🎥
-            </div>
+            <img src="/images/autoflowcut.svg" alt="AutoFlowCut" className="w-10 h-10 rounded-xl" />
             <h2 className="text-3xl md:text-4xl font-bold">
               <span className="gradient-text">{t('quick_dl_title')}</span>
             </h2>
