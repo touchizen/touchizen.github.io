@@ -80,17 +80,25 @@ export default function Footer({ lang }: FooterProps) {
             <h4 className="font-semibold mb-4">{t('footer_products')}</h4>
             <ul className="space-y-2">
               {products.map((product) => {
-                const href = product.isExternal ? product.link : `/${lang}${product.link}`;
+                const href = product.hasDetailPage
+                  ? (product.isExternal ? product.link : `/${lang}${product.link}`)
+                  : undefined;
                 return (
                   <li key={product.id}>
-                    <a
-                      href={href}
-                      target={product.isExternal ? '_blank' : undefined}
-                      rel={product.isExternal ? 'noopener noreferrer' : undefined}
-                      className="text-gray-400 hover:text-white transition-colors"
-                    >
-                      {t(product.nameKey as TranslationKey)}
-                    </a>
+                    {href ? (
+                      <a
+                        href={href}
+                        target={product.isExternal ? '_blank' : undefined}
+                        rel={product.isExternal ? 'noopener noreferrer' : undefined}
+                        className="text-gray-400 hover:text-white transition-colors"
+                      >
+                        {t(product.nameKey as TranslationKey)}
+                      </a>
+                    ) : (
+                      <span className="text-gray-500">
+                        {t(product.nameKey as TranslationKey)}
+                      </span>
+                    )}
                   </li>
                 );
               })}

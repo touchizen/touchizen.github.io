@@ -26,6 +26,7 @@ export const products: Product[] = [
     isExternal: false,
     gradient: 'from-cyan-500 to-blue-600',
     icon: '🎥',
+    iconImage: '/images/autoflowcut.svg',
     hasDetailPage: true,
   },
   {

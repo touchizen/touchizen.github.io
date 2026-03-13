@@ -12,14 +12,23 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
   const t = (key: TranslationKey) => translations[lang][key];
 
   // Add language prefix to internal links
-  const href = product.isExternal ? product.link : `/${lang}${product.link}`;
+  const href = product.hasDetailPage
+    ? (product.isExternal ? product.link : `/${lang}${product.link}`)
+    : undefined;
+
+  const Tag = href ? 'a' : 'div';
+  const linkProps = href
+    ? {
+        href,
+        target: product.isExternal ? '_blank' : undefined,
+        rel: product.isExternal ? 'noopener noreferrer' : undefined,
+      }
+    : {};
 
   return (
-    <a
-      href={href}
-      target={product.isExternal ? '_blank' : undefined}
-      rel={product.isExternal ? 'noopener noreferrer' : undefined}
-      className="block card-hover bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 cursor-pointer h-full flex flex-col"
+    <Tag
+      {...linkProps}
+      className={`block bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800 h-full flex flex-col ${href ? 'card-hover cursor-pointer' : 'opacity-90'}`}
     >
       {/* Header: Icon + Title/Slogan */}
       <div className="flex items-start gap-4 mb-4">
@@ -70,10 +79,14 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
 
       {/* CTA Button */}
       <div
-        className={`inline-flex items-center justify-center w-full py-3 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r ${product.gradient} text-white hover:shadow-lg hover:opacity-90 active:scale-95`}
+        className={`inline-flex items-center justify-center w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
+          href
+            ? `bg-gradient-to-r ${product.gradient} text-white hover:shadow-lg hover:opacity-90 active:scale-95`
+            : 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-default'
+        }`}
       >
-        {t(product.ctaKey as TranslationKey)}
-        {product.isExternal && (
+        {href ? t(product.ctaKey as TranslationKey) : (lang === 'ko' ? '준비 중' : 'Coming Soon')}
+        {product.isExternal && href && (
           <svg
             className="w-4 h-4 ml-2"
             fill="none"
@@ -89,6 +102,6 @@ export default function ProductCard({ product, lang }: ProductCardProps) {
           </svg>
         )}
       </div>
-    </a>
+    </Tag>
   );
 }
