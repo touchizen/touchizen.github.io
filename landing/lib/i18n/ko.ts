@@ -536,7 +536,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   autoflowcut_faq_q5: 'CapCut 데스크톱과 호환되나요?',
   autoflowcut_faq_a5: '네, 내보낸 프로젝트는 CapCut 데스크톱과 완전 호환됩니다. 타임라인, 미디어 파일, 자막, Ken Burns 애니메이션이 포함되어 바로 편집을 시작할 수 있습니다.',
   autoflowcut_faq_q6: 'AutoFlowCut은 무료인가요?',
-  autoflowcut_faq_a6: '네, AutoFlowCut은 완전 무료 오픈소스입니다. 앱을 다운로드하거나 GitHub에서 소스를 빌드할 수 있습니다. Google Flow AI 사용도 실험 단계에서는 무료입니다.',
+  autoflowcut_faq_a6: 'AI 이미지 생성은 무료 체험이 가능합니다. Google Flow AI는 현재 실험 단계로 무료로 사용할 수 있습니다. CapCut 프로젝트 내보내기는 유료 기능이며, 앱 내에서 구매할 수 있습니다. 소스 코드는 GitHub에서 오픈소스로 공개되어 있습니다.',
 
   // Calorie Shot
   calorieshot_name: '칼로리샷',
