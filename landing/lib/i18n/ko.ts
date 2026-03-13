@@ -530,6 +530,16 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   calorieshot_feature2: '일일 섭취 기록 관리',
   calorieshot_feature3: '맞춤 TDEE 목표 설정',
   calorieshot_cta: '자세히 보기',
+
+  // PriceShot (얼마샷)
+  priceshot_name: '얼마샷',
+  priceshot_slogan: '찍으면 알려주는 최저가',
+  priceshot_desc: '마트나 시장에서 물건 사진을 찍으면 AI가 온라인 최저가를 즉시 비교해줍니다.',
+  priceshot_feature1: 'AI 가격 비교',
+  priceshot_feature2: '실시간 최저가 검색',
+  priceshot_feature3: '스마트 쇼핑 리스트',
+  priceshot_cta: '자세히 보기',
+
   calorieshot_hero_title: '칼로리샷',
   calorieshot_hero_slogan: '📸 찍으면 바로 알려주는 칼로리',
   calorieshot_hero_subtitle: '음식 사진을 찍기만 하면 AI가 3초 만에 칼로리와 영양성분을 분석합니다. 다이어트와 건강 관리를 쉽고 재미있게!',

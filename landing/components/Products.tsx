@@ -24,19 +24,17 @@ export default function Products({ lang }: ProductsProps) {
           </p>
         </div>
 
-        {/* Products Grid */}
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 gap-6 max-w-md w-full">
-            {products.map((product, index) => (
-              <div
-                key={product.id}
-                className={`animate-fade-in stagger-${index + 1}`}
-                style={{ opacity: 0 }}
-              >
-                <ProductCard product={product} lang={lang} />
-              </div>
-            ))}
-          </div>
+        {/* Products Grid — 2 columns x 2 rows */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {products.map((product, index) => (
+            <div
+              key={product.id}
+              className={`animate-fade-in stagger-${index + 1}`}
+              style={{ opacity: 0 }}
+            >
+              <ProductCard product={product} lang={lang} />
+            </div>
+          ))}
         </div>
       </div>
     </section>

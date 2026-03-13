@@ -530,6 +530,16 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   calorieshot_feature2: '毎日の摂取記録管理',
   calorieshot_feature3: 'カスタムTDEE目標設定',
   calorieshot_cta: '詳しく見る',
+
+  // PriceShot (얼마샷)
+  priceshot_name: 'プライスショット',
+  priceshot_slogan: '撮るだけで最安値がわかる',
+  priceshot_desc: 'お店で商品の写真を撮るだけで、AIがオンライン最安値を即座に比較します。',
+  priceshot_feature1: 'AI価格比較',
+  priceshot_feature2: 'リアルタイム最安値検索',
+  priceshot_feature3: 'スマート買い物リスト',
+  priceshot_cta: '詳しく見る',
+
   calorieshot_hero_title: 'カロリーショット',
   calorieshot_hero_slogan: '📸 撮るだけでカロリーがわかる',
   calorieshot_hero_subtitle: '食べ物の写真を撮るだけでAIが3秒でカロリーと栄養素を分析。ダイエットと健康管理を簡単に楽しく！',

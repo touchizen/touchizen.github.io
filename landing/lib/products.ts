@@ -14,20 +14,7 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  {
-    id: 'whisk2capcut',
-    nameKey: 'whisk2capcut_name',
-    sloganKey: 'whisk2capcut_slogan',
-    descKey: 'whisk2capcut_desc',
-    features: ['whisk2capcut_feature1', 'whisk2capcut_feature2', 'whisk2capcut_feature3'],
-    ctaKey: 'whisk2capcut_cta',
-    link: '/whisk2capcut/',
-    isExternal: false,
-    gradient: 'from-violet-500 to-purple-600',
-    icon: '🎬',
-    iconImage: '/images/whisk2capcut.svg',
-    hasDetailPage: true,
-  },
+  // Video Creation Tools
   {
     id: 'autoflowcut',
     nameKey: 'autoflowcut_name',
@@ -42,6 +29,21 @@ export const products: Product[] = [
     hasDetailPage: true,
   },
   {
+    id: 'whisk2capcut',
+    nameKey: 'whisk2capcut_name',
+    sloganKey: 'whisk2capcut_slogan',
+    descKey: 'whisk2capcut_desc',
+    features: ['whisk2capcut_feature1', 'whisk2capcut_feature2', 'whisk2capcut_feature3'],
+    ctaKey: 'whisk2capcut_cta',
+    link: '/whisk2capcut/',
+    isExternal: false,
+    gradient: 'from-violet-500 to-purple-600',
+    icon: '🎬',
+    iconImage: '/images/whisk2capcut.svg',
+    hasDetailPage: true,
+  },
+  // Smart Life Apps
+  {
     id: 'calorie-shot',
     nameKey: 'calorieshot_name',
     sloganKey: 'calorieshot_slogan',
@@ -53,6 +55,19 @@ export const products: Product[] = [
     gradient: 'from-blue-500 to-green-500',
     icon: '📸',
     hasDetailPage: true,
+  },
+  {
+    id: 'price-shot',
+    nameKey: 'priceshot_name',
+    sloganKey: 'priceshot_slogan',
+    descKey: 'priceshot_desc',
+    features: ['priceshot_feature1', 'priceshot_feature2', 'priceshot_feature3'],
+    ctaKey: 'priceshot_cta',
+    link: '/price-shot/',
+    isExternal: false,
+    gradient: 'from-orange-500 to-red-500',
+    icon: '🏷️',
+    hasDetailPage: false,
   },
 ];
 

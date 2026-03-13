@@ -530,6 +530,16 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   calorieshot_feature2: 'Tägliche Aufnahme-Verfolgung',
   calorieshot_feature3: 'Personalisierte TDEE-Ziele',
   calorieshot_cta: 'Mehr erfahren',
+
+  // PriceShot (얼마샷)
+  priceshot_name: 'PriceShot',
+  priceshot_slogan: 'Fotografieren & Bestpreis finden',
+  priceshot_desc: 'Fotografieren Sie ein Produkt im Geschäft und die KI findet sofort den günstigsten Online-Preis.',
+  priceshot_feature1: 'KI-Preisvergleich',
+  priceshot_feature2: 'Echtzeit-Bestpreise',
+  priceshot_feature3: 'Smarte Einkaufsliste',
+  priceshot_cta: 'Mehr erfahren',
+
   calorieshot_hero_title: 'Calorie Shot',
   calorieshot_hero_slogan: '📸 Foto machen, Kalorien kennen',
   calorieshot_hero_subtitle: 'Machen Sie einfach ein Foto Ihres Essens und die KI analysiert Kalorien und Nährstoffe in 3 Sekunden. Diät und Gesundheitsmanagement einfach und unterhaltsam!',

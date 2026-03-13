@@ -530,6 +530,16 @@ The young prince practices sword fighting in the courtyard`,
   calorieshot_feature2: 'Daily Intake Tracking',
   calorieshot_feature3: 'Personalized TDEE Goals',
   calorieshot_cta: 'Learn More',
+
+  // PriceShot (얼마샷)
+  priceshot_name: 'PriceShot',
+  priceshot_slogan: 'Snap & Find the Best Price',
+  priceshot_desc: 'Take a photo of any product at the store and AI instantly finds the lowest price online.',
+  priceshot_feature1: 'AI Price Comparison',
+  priceshot_feature2: 'Real-time Best Deals',
+  priceshot_feature3: 'Smart Shopping List',
+  priceshot_cta: 'Learn More',
+
   calorieshot_hero_title: 'Calorie Shot',
   calorieshot_hero_slogan: '📸 Snap & Know Your Calories',
   calorieshot_hero_subtitle: 'Just take a photo of your food and AI analyzes calories and nutrients in 3 seconds. Make diet and health management easy and fun!',
