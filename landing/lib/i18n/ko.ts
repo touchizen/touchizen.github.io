@@ -81,7 +81,7 @@ export const ko = {
   whisk2capcut_feat8_desc: '레퍼런스 이미지에 태그를 지정하면 각 씬에 자동으로 매칭됩니다 — 200개 이상의 씬에서도 동일한 캐릭터, 배경, 스타일을 유지합니다. AI 스토리 채널에 필수적인 기능입니다.',
 
   whisk2capcut_audience_title: '이런 분께 추천합니다',
-  whisk2capcut_audience_1_title: '페이스리스 YouTube 크리에이터',
+  whisk2capcut_audience_1_title: '얼굴 없는 YouTube 크리에이터',
   whisk2capcut_audience_1_desc: '나레이션 및 슬라이드쇼 채널을 위한 AI 이미지-영상 파이프라인 전체를 자동화.',
   whisk2capcut_audience_2_title: 'AI 스토리 & 잠자리 동화 채널',
   whisk2capcut_audience_2_desc: '200개 이상의 씬에서 캐릭터 일관성을 유지하고 원클릭으로 완성된 CapCut 프로젝트를 내보내기.',

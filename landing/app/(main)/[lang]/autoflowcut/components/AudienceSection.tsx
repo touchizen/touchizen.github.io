@@ -4,7 +4,7 @@ const audiences: Record<string, { icon: string; title: Record<string, string>; d
   all: [
     {
       icon: '🎭',
-      title: { en: 'Faceless YouTube Creators', ko: '페이스리스 YouTube 크리에이터', ja: 'フェイスレスYouTubeクリエイター', de: 'Gesichtslose YouTube-Creator' },
+      title: { en: 'Faceless YouTube Creators', ko: '얼굴 없는 YouTube 크리에이터', ja: 'フェイスレスYouTubeクリエイター', de: 'Gesichtslose YouTube-Creator' },
       desc: { en: 'Automate the entire AI image + video to CapCut pipeline for narration and slideshow channels.', ko: '나레이션/슬라이드쇼 채널을 위한 AI 이미지+비디오 → CapCut 파이프라인 전체 자동화.', ja: 'ナレーション・スライドショーチャンネルのAI画像+動画→CapCutパイプラインを完全自動化。', de: 'Automatisieren Sie die gesamte KI-Bild+Video zu CapCut Pipeline für Narrations- und Slideshow-Kanäle.' },
     },
     {
