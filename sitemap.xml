@@ -209,6 +209,213 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- AutoFlowCut guide sub-pages (ko/ja/de for capcut-export) -->
+  <url>
+    <loc>https://touchizen.com/guide/ko/autoflowcut/capcut-export.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/capcut-export.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/ja/autoflowcut/capcut-export.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/capcut-export.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/de/autoflowcut/capcut-export.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/capcut-export.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <!-- AutoFlowCut guide sub-pages (ko/ja/de for audio-guide) -->
+  <url>
+    <loc>https://touchizen.com/guide/ko/autoflowcut/audio-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/audio-guide.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/ja/autoflowcut/audio-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/audio-guide.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/de/autoflowcut/audio-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/audio-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/audio-guide.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <!-- AutoFlowCut guide sub-pages (ko/ja/de for mcp-guide) -->
+  <url>
+    <loc>https://touchizen.com/guide/ko/autoflowcut/mcp-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/mcp-guide.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/ja/autoflowcut/mcp-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/mcp-guide.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/de/autoflowcut/mcp-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/mcp-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/mcp-guide.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <!-- AutoFlowCut guide sub-pages (ko/ja/de for skills-guide) -->
+  <url>
+    <loc>https://touchizen.com/guide/ko/autoflowcut/skills-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/skills-guide.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/ja/autoflowcut/skills-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/skills-guide.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/de/autoflowcut/skills-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/skills-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/skills-guide.html" />
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Whisk2CapCut guide pages -->
+  <url>
+    <loc>https://touchizen.com/guide/en/whisk2capcut/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/whisk2capcut/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/ko/whisk2capcut/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/whisk2capcut/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/ja/whisk2capcut/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/whisk2capcut/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/de/whisk2capcut/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/whisk2capcut/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/whisk2capcut/" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/en/whisk2capcut/capcut-export.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/whisk2capcut/capcut-export.html" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/ko/whisk2capcut/capcut-export.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/whisk2capcut/capcut-export.html" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/ja/whisk2capcut/capcut-export.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/whisk2capcut/capcut-export.html" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/de/whisk2capcut/capcut-export.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/whisk2capcut/capcut-export.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/whisk2capcut/capcut-export.html" />
+    <lastmod>2026-03-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Calorie Shot product pages -->
   <url>
     <loc>https://touchizen.com/en/calorie-shot/</loc>
