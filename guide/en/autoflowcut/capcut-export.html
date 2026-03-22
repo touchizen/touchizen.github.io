@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlowCut - CapCut Export Guide</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
+  <meta name="description" content="Learn how to import projects exported from AutoFlowCut into CapCut. Find CapCut project folder paths on macOS and Windows.">
+  <meta name="keywords" content="AutoFlowCut, CapCut export, CapCut project, AI image generation, Google Flow AI, video editing, project import">
+  <meta name="author" content="Touchizen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://touchizen.github.io/guide/en/autoflowcut/capcut-export.html">
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="en" href="https://touchizen.github.io/guide/en/autoflowcut/capcut-export.html">
+  <link rel="alternate" hreflang="ko" href="https://touchizen.github.io/guide/ko/autoflowcut/capcut-export.html">
+  <link rel="alternate" hreflang="de" href="https://touchizen.github.io/guide/de/autoflowcut/capcut-export.html">
+  <link rel="alternate" hreflang="ja" href="https://touchizen.github.io/guide/ja/autoflowcut/capcut-export.html">
+  <link rel="alternate" hreflang="x-default" href="https://touchizen.github.io/guide/en/autoflowcut/capcut-export.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://touchizen.github.io/guide/en/autoflowcut/capcut-export.html">
+  <meta property="og:title" content="AutoFlowCut - CapCut Export Guide">
+  <meta property="og:description" content="How to import projects exported from AutoFlowCut into CapCut. macOS and Windows support.">
+  <meta property="og:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Touchizen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@touchizen">
+  <meta name="twitter:title" content="AutoFlowCut - CapCut Export Guide">
+  <meta name="twitter:description" content="How to import projects exported from AutoFlowCut into CapCut.">
+  <meta name="twitter:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "CapCut Project Export Guide",
+    "description": "How to import projects exported from AutoFlowCut into CapCut",
+    "image": "https://touchizen.github.io/images/autoflowcut-og.png",
+    "inLanguage": "en",
+    "step": [
+      {"@type": "HowToStep", "name": "Enter Information", "text": "Enter username and project number in export modal"},
+      {"@type": "HowToStep", "name": "Extract ZIP", "text": "Extract the downloaded ZIP file"},
+      {"@type": "HowToStep", "name": "Copy Folder", "text": "Copy to CapCut projects folder"},
+      {"@type": "HowToStep", "name": "Restart", "text": "Restart CapCut"}
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "Touchizen",
+      "url": "https://touchizen.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/autoflowcut.svg?v=20260313">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="/guide/en/autoflowcut/" class="flex items-center gap-2">
+          <img src="/images/autoflowcut.svg?v=20260313" alt="AutoFlowCut" class="w-8 h-8 rounded-lg">
+          <span class="text-lg font-bold gradient-text">AutoFlowCut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- Language Dropdown -->
+          <div class="relative">
+            <button id="langToggle" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+              <span>🇺🇸</span>
+              <span>English</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="langDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
+              <a href="/guide/en/autoflowcut/capcut-export.html" class="flex items-center gap-2 px-4 py-2.5 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium">
+                <span>🇺🇸</span> English
+              </a>
+              <a href="/guide/ko/autoflowcut/capcut-export.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇰🇷</span> 한국어
+              </a>
+              <a href="/guide/de/autoflowcut/capcut-export.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇩🇪</span> Deutsch
+              </a>
+              <a href="/guide/ja/autoflowcut/capcut-export.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇯🇵</span> 日本語
+              </a>
+            </div>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          </svg>
+          Export Guide
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">CapCut Export Guide</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          How to import projects exported from AutoFlowCut into CapCut
+        </p>
+      </div>
+
+      <!-- Quick Steps -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          Quick Start (4 Steps)
+        </h2>
+        <div class="space-y-6">
+          <!-- Step 1 -->
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div class="flex-1">
+              <p class="font-medium text-gray-900 dark:text-white">Enter information in Export Modal</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Scenes tab > Click <strong>"📦 CapCut"</strong> button, then enter username and project number</p>
+
+              <!-- Export Modal Mockup (Interactive) -->
+              <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 overflow-hidden text-xs shadow-lg">
+                <!-- Modal Header -->
+                <div class="bg-gray-100 dark:bg-gray-700 px-4 py-2 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
+                  <span class="font-bold text-gray-800 dark:text-white">📦 Export to CapCut</span>
+                  <span class="text-gray-400">✕</span>
+                </div>
+                <!-- Modal Content -->
+                <div class="p-4 space-y-3">
+                  <!-- OS Selection (Interactive) -->
+                  <div class="flex gap-2">
+                    <button id="mockup-os-mac" onclick="selectMockupOS('mac')" style="flex:1; padding:10px 16px; border:2px solid #007AFF; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;">🍎 macOS</button>
+                    <button id="mockup-os-win" onclick="selectMockupOS('win')" style="flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;">🪟 Windows</button>
+                  </div>
+                  <!-- Username Input (Interactive) -->
+                  <div>
+                    <label class="block text-gray-600 dark:text-gray-400 mb-1">👤 System Username <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                      <input type="text" id="mockup-username" value="john" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+                      <span class="absolute right-2 top-2 text-green-500">✓</span>
+                    </div>
+                    <p class="text-gray-500 mt-1">💡 Run <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">whoami</code> in Terminal</p>
+                  </div>
+                  <!-- Project Number Input (Interactive) -->
+                  <div>
+                    <label class="block text-gray-600 dark:text-gray-400 mb-1">📁 Project Number <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                      <input type="text" id="mockup-project" value="0131" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+                      <span class="absolute right-2 top-2 text-green-500">✓</span>
+                    </div>
+                    <p class="text-gray-500 mt-1">💡 Check the next number in CapCut folder</p>
+                  </div>
+                  <!-- Preset Selection (pill buttons) -->
+                  <div id="mockup-preset-area">
+                    <label class="block text-gray-600 dark:text-gray-400 mb-1">📂 Path Preset</label>
+                    <div id="mockup-presets" class="flex gap-1 flex-wrap"></div>
+                  </div>
+                  <!-- Generated Path (Dynamic) -->
+                  <div class="bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg p-3">
+                    <label class="block text-green-700 dark:text-green-400 text-xs font-bold mb-1">📂 Generated Path</label>
+                    <code id="mockup-path" class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/john/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
+                  </div>
+                </div>
+                <!-- Modal Footer -->
+                <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 flex justify-end gap-2 border-t border-gray-300 dark:border-gray-600">
+                  <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">Cancel</span>
+                  <span class="px-4 py-2 bg-primary-500 text-white rounded-lg font-medium cursor-pointer hover:bg-primary-600 transition-colors">📦 Export</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Extract the ZIP file</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Double-click the downloaded <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">projectname_capcut.zip</code> to extract</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Copy to CapCut projects folder</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Copy the extracted folder (e.g., <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">0131</code>) to the path below</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Restart CapCut</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Completely close and restart CapCut, then the project will appear in your list</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Find Username -->
+      <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">👤</span>
+          Find Your System Username
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- macOS -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xl">🍎</span>
+              <span class="font-semibold text-gray-900 dark:text-white">macOS</span>
+            </div>
+            <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-decimal list-inside">
+              <li>Open Terminal (Spotlight: <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Space</kbd> → "Terminal")</li>
+              <li>Type <code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> and press Enter</li>
+              <li>The displayed name is your username</li>
+            </ol>
+          </div>
+          <!-- Windows -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xl">🪟</span>
+              <span class="font-semibold text-gray-900 dark:text-white">Windows</span>
+            </div>
+            <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-decimal list-inside">
+              <li>Open Command Prompt (<kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + R</kbd> → "cmd")</li>
+              <li>Type <code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> and press Enter</li>
+              <li>Shown as <code class="text-gray-700 dark:text-gray-300">COMPUTER\username</code> format (use only the username)</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Folder Paths -->
+      <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📁</span>
+          CapCut Project Folder Paths
+        </h2>
+
+        <!-- macOS -->
+        <div class="mb-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-2xl">🍎</span>
+            <span class="font-semibold text-gray-900 dark:text-white">macOS</span>
+          </div>
+          <div class="relative">
+            <pre id="path-macos" class="bg-gray-900 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto">~/Movies/CapCut/User Data/Projects/com.lveditor.draft/</pre>
+            <button onclick="copyPath('path-macos')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </button>
+          </div>
+          <p class="text-sm text-amber-700 dark:text-amber-400 mt-2">
+            💡 In Finder, press <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Shift + G</kbd> and paste the path
+          </p>
+        </div>
+
+        <!-- Windows -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-2xl">🪟</span>
+            <span class="font-semibold text-gray-900 dark:text-white">Windows</span>
+          </div>
+          <!-- CapCut (Default) -->
+          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1 mt-2">CapCut (Default)</p>
+          <div class="relative mb-3">
+            <pre id="path-win-capcut" class="bg-gray-900 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto">C:\Users\[Username]\AppData\Local\CapCut\User Data\Projects\com.lveditor.draft\</pre>
+            <button onclick="copyPath('path-win-capcut')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </button>
+          </div>
+          <!-- CapCut Pro -->
+          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1">CapCut Pro</p>
+          <div class="relative mb-3">
+            <pre id="path-win-capcutpro" class="bg-gray-900 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto">C:\Users\[Username]\AppData\Local\CapCutPro\User Data\Projects\com.lveditor.draft\</pre>
+            <button onclick="copyPath('path-win-capcutpro')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </button>
+          </div>
+          <!-- Documents -->
+          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1">Documents</p>
+          <div class="relative">
+            <pre id="path-win-docs" class="bg-gray-900 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto">C:\Users\[Username]\Documents\CapCut\Projects\</pre>
+            <button onclick="copyPath('path-win-docs')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </button>
+          </div>
+          <p class="text-sm text-amber-700 dark:text-amber-400 mt-2">
+            💡 Type the path directly in File Explorer address bar or press <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + E</kbd>
+          </p>
+        </div>
+      </div>
+
+      <!-- Output Structure -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📂</span>
+          Export Folder Structure
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          After extracting, you'll see the following folder structure. Copy this entire folder to your CapCut project path.
+        </p>
+        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto">
+          <pre>📁 project_folder/
+├── 📄 draft_info.json        # CapCut project data
+├── 📄 draft_meta_info.json   # Project metadata
+├── 📁 media/                 # Image/Video/SFX files
+│   ├── 🖼️ scene_001.png
+│   ├── 🖼️ scene_002.png
+│   └── ...
+└── 📄 README.txt             # Import instructions</pre>
+        </div>
+      </div>
+
+      <!-- Troubleshooting -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🔧</span>
+          Troubleshooting
+        </h2>
+        <div class="space-y-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Project doesn't appear in CapCut</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Try completely closing and restarting CapCut</li>
+              <li>Verify the folder path is correct (copy into com.lveditor.draft folder)</li>
+              <li>Make sure the project folder name doesn't contain special characters</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Media files are missing</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Verify the media folder is inside the project folder</li>
+              <li>Make sure the ZIP file was fully extracted</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Which path should I choose?</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Try switching between preset buttons (CapCut / CapCut Pro / Documents) in AutoFlowCut</li>
+              <li>Open your CapCut project folder to check where existing projects are stored</li>
+              <li>Usually <strong>CapCut</strong> is the default path</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">AppData folder is not visible (Windows)</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>File Explorer > View > Show hidden items</li>
+              <li>Or type %localappdata% directly in the address bar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to Import Guide -->
+      <div class="text-center">
+        <a href="/guide/en/autoflowcut/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Back to AutoFlowCut
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026 Touchizen. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Copy path function
+    function copyPath(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+
+    // Language dropdown toggle
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    // Mockup interactivity
+    let mockupOS = 'mac';
+    let mockupPreset = 'capcut';
+
+    const PRESETS = {
+      mac: [
+        { value: 'capcut', label: 'CapCut' },
+        { value: 'custom', label: 'Custom' }
+      ],
+      win: [
+        { value: 'capcut', label: 'CapCut' },
+        { value: 'capcutpro', label: 'CapCut Pro' },
+        { value: 'capcut_docs', label: 'Documents' },
+        { value: 'custom', label: 'Custom' }
+      ]
+    };
+
+    function renderPresetButtons() {
+      const container = document.getElementById('mockup-presets');
+      const presets = PRESETS[mockupOS] || PRESETS.win;
+      container.innerHTML = presets.map(p =>
+        `<button onclick="selectMockupPreset('${p.value}')" style="padding:4px 10px; font-size:11px; border:${mockupPreset === p.value ? '2px solid #0891b2' : '1px solid #bbb'}; border-radius:14px; background:${mockupPreset === p.value ? '#ecfeff' : '#fff'}; color:${mockupPreset === p.value ? '#0e7490' : '#555'}; cursor:pointer; font-weight:${mockupPreset === p.value ? '600' : '400'};">${p.label}</button>`
+      ).join('');
+    }
+
+    function selectMockupPreset(preset) {
+      mockupPreset = preset;
+      renderPresetButtons();
+      updateMockupPath();
+    }
+
+    function selectMockupOS(os) {
+      mockupOS = os;
+      mockupPreset = 'capcut';
+      const macBtn = document.getElementById('mockup-os-mac');
+      const winBtn = document.getElementById('mockup-os-win');
+
+      if (os === 'mac') {
+        macBtn.style.cssText = 'flex:1; padding:10px 16px; border:2px solid #007AFF; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;';
+        winBtn.style.cssText = 'flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;';
+      } else {
+        winBtn.style.cssText = 'flex:1; padding:10px 16px; border:2px solid #0078D4; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;';
+        macBtn.style.cssText = 'flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;';
+      }
+
+      renderPresetButtons();
+      updateMockupPath();
+    }
+
+    function updateMockupPath() {
+      const username = document.getElementById('mockup-username').value || 'john';
+      const project = document.getElementById('mockup-project').value || '0131';
+      const pathEl = document.getElementById('mockup-path');
+
+      if (mockupOS === 'mac') {
+        pathEl.textContent = `/Users/${username}/Movies/CapCut/User Data/Projects/com.lveditor.draft/${project}`;
+      } else {
+        switch (mockupPreset) {
+          case 'capcutpro':
+            pathEl.textContent = `C:\\Users\\${username}\\AppData\\Local\\CapCutPro\\User Data\\Projects\\com.lveditor.draft\\${project}`;
+            break;
+          case 'capcut_docs':
+            pathEl.textContent = `C:\\Users\\${username}\\Documents\\CapCut\\Projects\\${project}`;
+            break;
+          case 'custom':
+            pathEl.textContent = `C:\\Users\\${username}\\...\\${project}`;
+            break;
+          default:
+            pathEl.textContent = `C:\\Users\\${username}\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\${project}`;
+        }
+      }
+    }
+
+    // Initial preset buttons render
+    renderPresetButtons();
+  </script>
+</body>
+</html>

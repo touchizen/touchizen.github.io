@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlowCut - スキルガイド</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
+  <meta name="description" content="AutoFlowCutスキルシステムの使い方 — 脚本作成、ストーリーボード、映像制作など複雑なワークフローを自動化する再利用可能なClaudeプロンプト。">
+  <meta name="keywords" content="AutoFlowCut, スキル, Claude Code, 自動化, Story Engine, ワークフロー, ストーリーボード, 脚本作成, AI映像制作">
+  <meta name="author" content="Touchizen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://touchizen.github.io/guide/ja/autoflowcut/skills-guide.html">
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="en" href="https://touchizen.github.io/guide/en/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="ko" href="https://touchizen.github.io/guide/ko/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="de" href="https://touchizen.github.io/guide/de/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="ja" href="https://touchizen.github.io/guide/ja/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://touchizen.github.io/guide/en/autoflowcut/skills-guide.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://touchizen.github.io/guide/ja/autoflowcut/skills-guide.html">
+  <meta property="og:title" content="AutoFlowCut - スキルガイド">
+  <meta property="og:description" content="複雑なワークフローを自動化する再利用可能なClaudeプロンプト — 脚本作成、ストーリーボード、映像制作。">
+  <meta property="og:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Touchizen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@touchizen">
+  <meta name="twitter:title" content="AutoFlowCut - スキルガイド">
+  <meta name="twitter:description" content="複雑なワークフローを自動化する再利用可能なClaudeプロンプト。">
+  <meta name="twitter:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "AutoFlowCut スキルガイド",
+    "description": "AutoFlowCutスキルシステムでワークフローを自動化する方法",
+    "image": "https://touchizen.github.io/images/autoflowcut-og.png",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Organization",
+      "name": "Touchizen",
+      "url": "https://touchizen.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/autoflowcut.svg?v=20260313">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+    [id] {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="/guide/ja/autoflowcut/" class="flex items-center gap-2">
+          <img src="/images/autoflowcut.svg?v=20260313" alt="AutoFlowCut" class="w-8 h-8 rounded-lg">
+          <span class="text-lg font-bold gradient-text">AutoFlowCut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <div class="relative">
+            <button id="langToggle" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+              <span>🇯🇵</span>
+              <span>日本語</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="langDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
+              <a href="/guide/en/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇺🇸</span> English
+              </a>
+              <a href="/guide/ko/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇰🇷</span> 한국어
+              </a>
+              <a href="/guide/de/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇩🇪</span> Deutsch
+              </a>
+              <a href="/guide/ja/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium">
+                <span>🇯🇵</span> 日本語
+              </a>
+            </div>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          🎯 スキル
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">スキルシステムガイド</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          複雑なワークフローを自動化する再利用可能なClaudeプロンプト
+        </p>
+      </div>
+
+      <!-- What are Skills? -->
+      <div id="what-are-skills" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🧩</span>
+          スキルとは？
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          スキルは、複雑な多段階ワークフローを自動化する再利用可能なClaudeプロンプトです。各スキルは<code class="text-sm bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded font-mono">~/.claude/skills/</code>に保存されたSKILL.mdファイルで、Claude Codeから直接呼び出せます。
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <div class="text-2xl mb-2">📋</div>
+            <h3 class="font-semibold mb-1">体系的ワークフロー</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">ゲートとチェックポイント付きの多段階プロセス</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <div class="text-2xl mb-2">🔄</div>
+            <h3 class="font-semibold mb-1">再利用可能</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">一度インストールすれば、変数置換で複数プロジェクトに対応</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <div class="text-2xl mb-2">🤖</div>
+            <h3 class="font-semibold mb-1">AI駆動</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">ClaudeがMCP経由でスキルの指示に自動的に従います</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Start -->
+      <div id="quick-start" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          クイックスタート
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">3ステップ</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          数分でスキルのセットアップと使用が可能です。
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div class="flex-1">
+              <h3 class="font-semibold mb-2">利用可能なスキルを確認</h3>
+              <div class="relative">
+                <pre class="bg-gray-900 text-green-400 rounded-xl p-4 text-sm overflow-x-auto"><code id="step1-code">list_skills()</code></pre>
+                <button onclick="copyCode('step1-code')" class="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">コピー</button>
+              </div>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">利用可能なスキルとインストール済みスキルのステータスを表示します。</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div class="flex-1">
+              <h3 class="font-semibold mb-2">変数付きでインストール</h3>
+              <div class="relative">
+                <pre class="bg-gray-900 text-green-400 rounded-xl p-4 text-sm overflow-x-auto"><code id="step2-code">install_skill({
+  name: "story-engine",
+  variables: { PROJECT: "/path/to/episode" }
+})</code></pre>
+                <button onclick="copyCode('step2-code')" class="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">コピー</button>
+              </div>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2"><code class="font-mono">{{PROJECT}}</code>などの変数がインストール時に実際の値に置換されます。</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div class="flex-1">
+              <h3 class="font-semibold mb-2">Claude Codeで使用</h3>
+              <p class="text-gray-600 dark:text-gray-400">インストールされたスキルはClaude Codeのコマンドパレットに表示され、Claudeがスキルで定義されたワークフローに自動的に従います。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Available Skills -->
+      <div id="available-skills" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          利用可能なスキル
+        </h2>
+
+        <div class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-xl border-2 border-primary-300 dark:border-primary-700 p-6 relative overflow-hidden">
+          <div class="absolute top-3 right-3">
+            <span class="text-xs bg-primary-500 text-white px-2 py-0.5 rounded-full font-medium">おすすめ</span>
+          </div>
+          <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
+            📖 Story Engine
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-normal">v0.9</span>
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            YouTubeストーリーチャンネル用の脚本を12段階ワークフローで作成します。民話、伝説、歴史物語の脚本からプロダクションアセットまで、フルパイプラインをカバーします。
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">12段階ワークフロー</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">脚本作成</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">TTS / SFX</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">ストーリーボードCSV</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">画像 / 動画生成</span>
+          </div>
+          <div class="bg-white/60 dark:bg-gray-800/60 rounded-lg p-3">
+            <p class="text-sm font-medium mb-1">変数</p>
+            <div class="flex items-center gap-2">
+              <code class="text-sm font-mono text-primary-600 dark:text-primary-400">PROJECT</code>
+              <span class="text-xs text-gray-500">(必須)</span>
+              <span class="text-sm text-gray-600 dark:text-gray-400">— エピソードフォルダのパス</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12-Step Workflow -->
+      <div id="workflow" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🔄</span>
+          12段階ワークフロー
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Story Engineはフェーズ間のゲートチェック付き厳密な12段階パイプラインに従います。
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R1</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">ストーリー分析</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">参考ストーリーの成功要因、視聴者フック、物語構造を分析します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R2</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">ファクトチェック</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">時代考証、歴史的事実、内容の整合性を検証します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R3</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">シノプシス</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">プロット構成とキャラクターアークを含む20章フレームワークを作成します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R4</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">プリフライト</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">構造レビュー、禁止事項チェック、伏線追跡表を作成します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R5</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">脚本作成</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">起 &rarr; 承 &rarr; 転 &rarr; 結 &rarr; フックの5パートで完全な脚本を作成します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R6</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">レビュー</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">サブエージェントによる反復レビュー（最大5ラウンド）で品質を保証します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R7</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold flex items-center gap-2">確定 <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">ユーザー承認必須</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">ユーザー承認チェックポイント。明示的な確認なしにプロダクションへ進めません。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R8</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">プロダクション抽出</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">脚本をナレーション、キャラクターボイス、SFXキューに分割します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-xs">R8.5</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">抽出レビュー</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">サブエージェントが抽出されたプロダクションデータを検証します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R9</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">TTS / SFX生成</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AI TTS API（ElevenLabs、Typecast）で音声ファイルと効果音を生成します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R10</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">ストーリーボードCSV</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCutでの画像/動画生成用にreferences.csvとscenes.csvを作成します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R11</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">画像 / 動画生成</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCut MCPツールでFlow AIバッチ生成と品質検査を実行します。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R12</div>
+            <div class="flex-1">
+              <h3 class="font-semibold">アップロード情報</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">YouTubeアップロード用のタイトル、説明、タグ、サムネイルを準備します。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Management -->
+      <div id="management" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">⚙️</span>
+          スキル管理
+        </h2>
+
+        <div class="space-y-4">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2 font-mono text-primary-600 dark:text-primary-400">list_skills()</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">利用可能な全スキルとインストール済みスキルのステータスとメタデータを表示します。</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2 font-mono text-primary-600 dark:text-primary-400">install_skill(name, variables)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">テンプレート変数置換付きでスキルをインストールします。スキルファイルが<code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded font-mono">~/.claude/skills/</code>にコピーされます。</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2 font-mono text-primary-600 dark:text-primary-400">uninstall_skill(name)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">インストール済みスキルをスキルディレクトリから削除します。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creating Custom Skills -->
+      <div id="custom-skills" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🛠️</span>
+          カスタムスキルの作成
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          任意のワークフローを自動化する独自のスキルを作成できます。
+        </p>
+
+        <h3 class="font-semibold mb-3">ファイル構造</h3>
+        <div class="relative mb-4">
+          <pre class="bg-gray-900 text-green-400 rounded-xl p-4 text-sm overflow-x-auto"><code id="structure-code">skills/
+  {skill-name}/
+    SKILL.md          # ワークフロー指示書
+    metadata.json     # 名前、説明、変数定義
+    docs/             # 参考資料（オプション）</code></pre>
+          <button onclick="copyCode('structure-code')" class="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">コピー</button>
+        </div>
+
+        <h3 class="font-semibold mb-3">テンプレート変数</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+          SKILL.mdで<code class="font-mono text-primary-600 dark:text-primary-400">{{VAR_NAME}}</code>プレースホルダーを使用します。インストール時に実際の値に置換されます。
+        </p>
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-4">
+          <p class="text-sm text-blue-700 dark:text-blue-400">
+            <strong>例：</strong>スキルファイル内の<code class="font-mono">{{PROJECT}}</code>がインストール後に<code class="font-mono">/Users/me/workspace/ep01</code>に変換されます。
+          </p>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          関連ガイド
+        </h2>
+        <div class="space-y-3">
+          <a href="/guide/ja/autoflowcut/" class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            ファイルインポートガイド
+          </a>
+          <a href="/guide/ja/autoflowcut/capcut-export.html" class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            CapCutエクスポートガイド
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to App -->
+      <div class="text-center">
+        <a href="/guide/ja/autoflowcut/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          AutoFlowCutに戻る
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026 Touchizen. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

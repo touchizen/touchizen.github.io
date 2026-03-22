@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlowCut - MCP-Server-Anleitung</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
+  <meta name="description" content="Erfahren Sie, wie Sie AutoFlowCut mit Claude Code über den MCP-Server integrieren. Verwalten Sie CSV-Szenen, Referenzen und Batch-Bildgenerierung direkt aus Ihrem Terminal.">
+  <meta name="keywords" content="AutoFlowCut, MCP-Server, Claude Code, Model Context Protocol, KI-Automatisierung, CapCut, Batch-Generierung, CSV-Verwaltung">
+  <meta name="author" content="Touchizen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://touchizen.github.io/guide/de/autoflowcut/mcp-guide.html">
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="en" href="https://touchizen.github.io/guide/en/autoflowcut/mcp-guide.html">
+  <link rel="alternate" hreflang="ko" href="https://touchizen.github.io/guide/ko/autoflowcut/mcp-guide.html">
+  <link rel="alternate" hreflang="de" href="https://touchizen.github.io/guide/de/autoflowcut/mcp-guide.html">
+  <link rel="alternate" hreflang="ja" href="https://touchizen.github.io/guide/ja/autoflowcut/mcp-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://touchizen.github.io/guide/en/autoflowcut/mcp-guide.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://touchizen.github.io/guide/de/autoflowcut/mcp-guide.html">
+  <meta property="og:title" content="AutoFlowCut - MCP-Server-Anleitung">
+  <meta property="og:description" content="Integrieren Sie AutoFlowCut mit Claude Code über den MCP-Server. Steuern Sie Szenen, Referenzen und Batch-Generierung aus Ihrem Terminal.">
+  <meta property="og:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Touchizen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@touchizen">
+  <meta name="twitter:title" content="AutoFlowCut - MCP-Server-Anleitung">
+  <meta name="twitter:description" content="Integrieren Sie AutoFlowCut mit Claude Code über den MCP-Server.">
+  <meta name="twitter:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "AutoFlowCut MCP-Server-Anleitung",
+    "description": "Wie Sie AutoFlowCut mit Claude Code über den MCP-Server integrieren",
+    "image": "https://touchizen.github.io/images/autoflowcut-og.png",
+    "inLanguage": "de",
+    "author": {
+      "@type": "Organization",
+      "name": "Touchizen",
+      "url": "https://touchizen.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/autoflowcut.svg?v=20260313">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+    [id] {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="/guide/de/autoflowcut/" class="flex items-center gap-2">
+          <img src="/images/autoflowcut.svg?v=20260313" alt="AutoFlowCut" class="w-8 h-8 rounded-lg">
+          <span class="text-lg font-bold gradient-text">AutoFlowCut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- Language Dropdown -->
+          <div class="relative">
+            <button id="langToggle" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+              <span>🇩🇪</span>
+              <span>Deutsch</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="langDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
+              <a href="/guide/en/autoflowcut/mcp-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇺🇸</span> English
+              </a>
+              <a href="/guide/ko/autoflowcut/mcp-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇰🇷</span> 한국어
+              </a>
+              <a href="/guide/de/autoflowcut/mcp-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium">
+                <span>🇩🇪</span> Deutsch
+              </a>
+              <a href="/guide/ja/autoflowcut/mcp-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇯🇵</span> 日本語
+              </a>
+            </div>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          🔌 MCP-Server
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">Claude Code Integrationsanleitung</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          Steuern Sie AutoFlowCut direkt aus Claude Code via Model Context Protocol
+        </p>
+      </div>
+
+      <!-- What is MCP? -->
+      <div id="what-is-mcp" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🤖</span>
+          Was ist MCP?
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Das Model Context Protocol (MCP) ermöglicht es Ihnen, AutoFlowCut direkt aus Claude Code über Ihr Terminal zu steuern. Laden Sie CSV-Szenen, aktualisieren Sie Prompts, starten Sie die Batch-Bildgenerierung und exportieren Sie nach CapCut — alles durch natürliche Sprachbefehle.
+        </p>
+        <p class="text-gray-600 dark:text-gray-400">
+          Der MCP-Server kommuniziert über stdio mit Claude Code und verbindet sich über eine lokale HTTP-API auf Port 3210 mit der laufenden AutoFlowCut-App.
+        </p>
+      </div>
+
+      <!-- Architecture Diagram -->
+      <div id="architecture" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🏗️</span>
+          Architektur
+        </h2>
+        <div class="relative">
+          <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-4 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">Claude Code ←→ MCP Server (stdio) ←→ Electron App (HTTP :3210)
+                  ↕                            ↕
+           CSV / project.json          React Renderer (IPC)
+           .audio_review.json          Direkte State-Mutation</pre>
+        </div>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <span class="text-primary-500 font-bold">1.</span>
+            <span><strong>Direkte CSV-Verwaltung</strong> — Lesen/Schreiben von CSV- und project.json-Dateien auf der Festplatte</span>
+          </div>
+          <div class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <span class="text-primary-500 font-bold">2.</span>
+            <span><strong>HTTP-App-Steuerung</strong> — Direkte Manipulation des laufenden App-Status über die localhost-API</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Installation -->
+      <div id="installation" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          Installation
+        </h2>
+
+        <!-- Method A -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3 mt-2">Methode A: Global (Empfohlen)</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">In allen Projekten verfügbar. Wird in <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">~/.claude.json</code> gespeichert.</p>
+        <div class="relative mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">Terminal</span>
+            <button onclick="copyCode('install-global')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              Kopieren
+            </button>
+          </div>
+          <pre id="install-global" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">cd /path/to/Flow2CapCut/mcp-server
+npm install
+claude mcp add --scope user --transport stdio flow2capcut -- node $(pwd)/index.js</pre>
+        </div>
+
+        <!-- Method B -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Methode B: Projektlokal (.mcp.json)</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Nur für ein bestimmtes Projekt. Erstellen Sie <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">.mcp.json</code> im Projektstammverzeichnis.</p>
+        <div class="relative mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">.mcp.json</span>
+            <button onclick="copyCode('install-local')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              Kopieren
+            </button>
+          </div>
+          <pre id="install-local" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">{
+  "mcpServers": {
+    "flow2capcut": {
+      "command": "node",
+      "args": ["/path/to/Flow2CapCut/mcp-server/index.js"]
+    }
+  }
+}</pre>
+        </div>
+
+        <!-- Verify -->
+        <div class="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4 mt-4">
+          <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Installation überprüfen:</p>
+          <code class="text-sm font-mono text-emerald-600 dark:text-emerald-400">claude mcp list</code>
+        </div>
+      </div>
+
+      <!-- Tool Categories -->
+      <div id="tool-categories" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🧰</span>
+          Tool-Kategorien
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- CSV Management -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>📊</span> CSV-Verwaltung
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Laden, auflisten, suchen, aktualisieren und speichern Sie Szenen aus CSV-Dateien. Unterstützt Batch-Prompt-Updates und Szenenfeld-Verwaltung.</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded">load_csv</span>
+              <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded">list_scenes</span>
+              <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded">update_prompt</span>
+              <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded">save_csv</span>
+            </div>
+          </div>
+
+          <!-- Reference Tools -->
+          <div class="bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🖼️</span> Referenz-Tools
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Verwalten Sie Charakter- und Szenenreferenzen in project.json. Unterstützt Auflisten, Prüfen und Aktualisieren von Referenz-Prompts.</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">list_references</span>
+              <span class="text-xs bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">get_reference</span>
+              <span class="text-xs bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">update_reference_prompt</span>
+            </div>
+          </div>
+
+          <!-- App Control -->
+          <div class="bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🎬</span> App-Steuerung
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Steuern Sie die laufende App über HTTP. Führen Sie Bildgenerierung, Batch-Verarbeitung, Status-Überwachung und CapCut-Export durch.</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_start_scene_batch</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_wait_batch</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">export_capcut</span>
+            </div>
+          </div>
+
+          <!-- Workflow Gates -->
+          <div class="bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🔧</span> Workflow-Gates
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Verfolgen Sie den Pipeline-Fortschritt durch Review-Schritte. Markieren Sie Schritte als bestanden/fehlgeschlagen und prüfen Sie den Workflow-Status.</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">mark_step_done</span>
+              <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">get_progress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Tools Reference -->
+      <div id="key-tools" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📖</span>
+          Wichtige Tools-Referenz
+        </h2>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-3 text-left border-gray-200 dark:border-gray-700 font-semibold">Tool</th>
+                <th class="px-4 py-3 text-left border-gray-200 dark:border-gray-700 font-semibold">Beschreibung</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-gray-900">
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">load_csv</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">CSV-Datei und Bildverzeichnis laden</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">list_scenes</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Szenen mit optionaler Bereichsfilterung auflisten</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">update_prompt</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Englischen Prompt einer einzelnen Szene aktualisieren</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">batch_update_prompts</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Prompts mehrerer Szenen gleichzeitig aktualisieren</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">app_start_scene_batch</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Batch-Bildgenerierung für ausstehende Szenen starten</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">app_wait_batch</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Auf Batch-Generierung warten (Long-Poll)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">export_capcut</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Projekt ins CapCut-Format exportieren</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">get_schema</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">CSV/SRT/Audio-Schema-Dokumentation abrufen</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">list_styles</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">87 Stil-Presets nach Kategorie auflisten</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Workflow Gate System -->
+      <div id="workflow-gates" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚦</span>
+          Workflow-Gate-System
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Die Pipeline folgt sequenziellen Schritten (R1 bis R12). Jeder Schritt muss die Überprüfung bestehen, bevor der nächste Schritt freigeschaltet wird. Der Fortschritt wird in <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">R_progress.json</code> verfolgt.
+        </p>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Gate-Voraussetzungen</h3>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 mb-4">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Schritt</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Phase</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Voraussetzung</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-gray-900">
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R1-R3</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Skript &amp; CSV-Einrichtung</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Keine</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R4-R6</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Referenzen &amp; Prompts</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R3 bestanden</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R7-R9</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Bildgenerierung &amp; Überprüfung</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R6 bestanden</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R10-R12</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Audio, Export &amp; Abschluss</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R9 bestanden</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Verwendung</h3>
+        <div class="relative">
+          <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700"># Schritt als bestanden markieren
+mark_step_done(step="R10-3_scenes_review", result="pass", reviewer="subagent")
+
+# Gesamtfortschritt prüfen
+get_progress()</pre>
+        </div>
+      </div>
+
+      <!-- HTTP API Endpoints -->
+      <div id="http-api" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🌐</span>
+          HTTP-API-Endpunkte
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Wenn der MCP-HTTP-Server in den AutoFlowCut-Einstellungen aktiviert ist, sind diese Endpunkte unter <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">127.0.0.1:3210</code> verfügbar.
+        </p>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Methode</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Pfad</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Beschreibung</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-gray-900">
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">GET</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/status</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Server-Zustandsprüfung</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">GET</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/references</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Referenzliste (ohne Base64-Bilder)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">GET</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/scenes</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Szenenliste (ohne Bilddaten)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">GET</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/batch-status</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Batch-Generierungsfortschritt</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 px-1.5 py-0.5 rounded">POST</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/generate-reference</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Referenzbild-Generierung auslösen</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 px-1.5 py-0.5 rounded">POST</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/generate-scene</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Einzelne Szenen-Generierung auslösen</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 px-1.5 py-0.5 rounded">POST</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/start-batch</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Batch-Generierung für alle ausstehenden Szenen starten</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 px-1.5 py-0.5 rounded">POST</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/update</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Generische State-Aktualisierung (IPC-Relay)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          Verwandte Anleitungen
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="/guide/de/autoflowcut/" class="block bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-4 hover:border-primary-400 dark:hover:border-primary-600 transition-colors">
+            <h3 class="font-semibold text-primary-600 dark:text-primary-400 mb-1">Datei-Import-Anleitung</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">CSV-, SRT- und Textdateien in AutoFlowCut importieren</p>
+          </a>
+          <a href="/guide/de/autoflowcut/capcut-export.html" class="block bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-4 hover:border-primary-400 dark:hover:border-primary-600 transition-colors">
+            <h3 class="font-semibold text-primary-600 dark:text-primary-400 mb-1">CapCut-Export-Anleitung</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Projekt ins CapCut-Format exportieren</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 dark:border-gray-800 py-8">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm text-gray-500 dark:text-gray-400">
+      <p>&copy; 2025 Touchizen. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Language dropdown toggle
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    // Copy code function
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

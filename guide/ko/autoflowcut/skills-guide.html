@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlowCut - 스킬 가이드</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
+  <meta name="description" content="AutoFlowCut 스킬 시스템 사용법 — 대본 작성, 스토리보드, 영상 프로덕션 등 복잡한 워크플로우를 자동화하는 재사용 가능한 Claude 프롬프트.">
+  <meta name="keywords" content="AutoFlowCut, 스킬, Claude Code, 자동화, Story Engine, 워크플로우, 스토리보드, 대본 작성, AI 영상 제작">
+  <meta name="author" content="Touchizen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://touchizen.github.io/guide/ko/autoflowcut/skills-guide.html">
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="en" href="https://touchizen.github.io/guide/en/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="ko" href="https://touchizen.github.io/guide/ko/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="de" href="https://touchizen.github.io/guide/de/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="ja" href="https://touchizen.github.io/guide/ja/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://touchizen.github.io/guide/en/autoflowcut/skills-guide.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://touchizen.github.io/guide/ko/autoflowcut/skills-guide.html">
+  <meta property="og:title" content="AutoFlowCut - 스킬 가이드">
+  <meta property="og:description" content="복잡한 워크플로우를 자동화하는 재사용 가능한 Claude 프롬프트 — 대본 작성, 스토리보드, 영상 프로덕션.">
+  <meta property="og:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="Touchizen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@touchizen">
+  <meta name="twitter:title" content="AutoFlowCut - 스킬 가이드">
+  <meta name="twitter:description" content="복잡한 워크플로우를 자동화하는 재사용 가능한 Claude 프롬프트.">
+  <meta name="twitter:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "AutoFlowCut 스킬 가이드",
+    "description": "AutoFlowCut 스킬 시스템으로 워크플로우를 자동화하는 방법",
+    "image": "https://touchizen.github.io/images/autoflowcut-og.png",
+    "inLanguage": "ko",
+    "author": {
+      "@type": "Organization",
+      "name": "Touchizen",
+      "url": "https://touchizen.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/autoflowcut.svg?v=20260313">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+    [id] {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="/guide/ko/autoflowcut/" class="flex items-center gap-2">
+          <img src="/images/autoflowcut.svg?v=20260313" alt="AutoFlowCut" class="w-8 h-8 rounded-lg">
+          <span class="text-lg font-bold gradient-text">AutoFlowCut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- Language Dropdown -->
+          <div class="relative">
+            <button id="langToggle" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+              <span>🇰🇷</span>
+              <span>한국어</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="langDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
+              <a href="/guide/en/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇺🇸</span> English
+              </a>
+              <a href="/guide/ko/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium">
+                <span>🇰🇷</span> 한국어
+              </a>
+              <a href="/guide/de/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇩🇪</span> Deutsch
+              </a>
+              <a href="/guide/ja/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇯🇵</span> 日本語
+              </a>
+            </div>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          🎯 스킬
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">스킬 시스템 가이드</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          복잡한 워크플로우를 자동화하는 재사용 가능한 Claude 프롬프트
+        </p>
+      </div>
+
+      <!-- What are Skills? -->
+      <div id="what-are-skills" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🧩</span>
+          스킬이란?
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          스킬은 복잡한 다단계 워크플로우를 자동화하는 재사용 가능한 Claude 프롬프트입니다. 각 스킬은 <code class="text-sm bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded font-mono">~/.claude/skills/</code>에 저장된 SKILL.md 파일이며, Claude Code에서 직접 호출할 수 있습니다.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <div class="text-2xl mb-2">📋</div>
+            <h3 class="font-semibold mb-1">체계적 워크플로우</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">게이트와 체크포인트가 있는 다단계 프로세스</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <div class="text-2xl mb-2">🔄</div>
+            <h3 class="font-semibold mb-1">재사용 가능</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">한 번 설치하고 변수 치환으로 여러 프로젝트에서 사용</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <div class="text-2xl mb-2">🤖</div>
+            <h3 class="font-semibold mb-1">AI 기반</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Claude가 MCP를 통해 스킬 지침을 자동으로 따릅니다</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Start -->
+      <div id="quick-start" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          빠른 시작
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">3단계</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          몇 분 만에 스킬을 설정하고 사용할 수 있습니다.
+        </p>
+
+        <div class="space-y-4">
+          <!-- Step 1 -->
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div class="flex-1">
+              <h3 class="font-semibold mb-2">사용 가능한 스킬 확인</h3>
+              <div class="relative">
+                <pre class="bg-gray-900 text-green-400 rounded-xl p-4 text-sm overflow-x-auto"><code id="step1-code">list_skills()</code></pre>
+                <button onclick="copyCode('step1-code')" class="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">복사</button>
+              </div>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">사용 가능한 스킬과 설치된 스킬의 상태를 확인합니다.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div class="flex-1">
+              <h3 class="font-semibold mb-2">변수와 함께 설치</h3>
+              <div class="relative">
+                <pre class="bg-gray-900 text-green-400 rounded-xl p-4 text-sm overflow-x-auto"><code id="step2-code">install_skill({
+  name: "story-engine",
+  variables: { PROJECT: "/path/to/episode" }
+})</code></pre>
+                <button onclick="copyCode('step2-code')" class="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">복사</button>
+              </div>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2"><code class="font-mono">{{PROJECT}}</code> 같은 변수가 설치 시 실제 경로로 치환됩니다.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div class="flex-1">
+              <h3 class="font-semibold mb-2">Claude Code에서 사용</h3>
+              <p class="text-gray-600 dark:text-gray-400">설치된 스킬은 Claude Code 명령 팔레트에 나타나며, Claude가 스킬에 정의된 워크플로우를 자동으로 따릅니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Available Skills -->
+      <div id="available-skills" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          사용 가능한 스킬
+        </h2>
+
+        <!-- Story Engine Card -->
+        <div class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-xl border-2 border-primary-300 dark:border-primary-700 p-6 relative overflow-hidden">
+          <div class="absolute top-3 right-3">
+            <span class="text-xs bg-primary-500 text-white px-2 py-0.5 rounded-full font-medium">추천</span>
+          </div>
+          <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
+            📖 Story Engine
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-normal">v0.9</span>
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            유튜브 스토리 채널용 대본을 12단계 워크플로우로 작성합니다. 야담, 민담, 설화 등 전통 이야기 대본부터 프로덕션 에셋까지 전체 파이프라인을 커버합니다.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">12단계 워크플로우</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">대본 작성</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">TTS / SFX</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">스토리보드 CSV</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">이미지 / 영상 생성</span>
+          </div>
+          <div class="bg-white/60 dark:bg-gray-800/60 rounded-lg p-3">
+            <p class="text-sm font-medium mb-1">변수</p>
+            <div class="flex items-center gap-2">
+              <code class="text-sm font-mono text-primary-600 dark:text-primary-400">PROJECT</code>
+              <span class="text-xs text-gray-500">(필수)</span>
+              <span class="text-sm text-gray-600 dark:text-gray-400">— 에피소드 폴더 경로</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12-Step Workflow -->
+      <div id="workflow" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🔄</span>
+          12단계 워크플로우
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Story Engine은 단계 간 게이트 체크가 있는 엄격한 12단계 파이프라인을 따릅니다.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R1</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">성공요인 분석</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">레퍼런스 스토리의 성공 요인, 시청자 후킹 포인트, 서사 구조를 분석합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R2</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">팩트체크</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">시대고증, 역사적 사실, 내용의 일관성을 검증합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R3</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">시놉시스</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">플롯 구조와 캐릭터 아크를 포함한 20챕터 프레임워크를 작성합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R4</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">프리플라이트</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">구조 점검, 금지사항 확인, 복선 추적표를 작성합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R5</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">대본 작성</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">기 &rarr; 승 &rarr; 전 &rarr; 결 &rarr; 훅 5파트로 전체 대본을 작성합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R6</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">검토</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">서브에이전트를 통한 반복 검토 (최대 5라운드)로 품질을 보장합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R7</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold flex items-center gap-2">대본 확정 <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">사용자 승인 필수</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">사용자 승인 체크포인트입니다. 명시적 확인 없이는 프로덕션으로 진행할 수 없습니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R8</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">프로덕션 추출</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">대본을 나레이션, 인물 대사, SFX 큐로 분리합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-xs">R8.5</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">추출 검토</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">서브에이전트가 추출된 프로덕션 데이터를 검증합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R9</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">TTS / SFX 생성</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AI TTS API (ElevenLabs, Typecast)로 음성 파일과 효과음을 생성합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R10</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">스토리보드 CSV</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCut으로 이미지/영상 생성을 위한 references.csv와 scenes.csv를 작성합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R11</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">이미지 / 영상 생성</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCut MCP 도구로 Flow AI 배치 생성 및 품질 검수를 진행합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R12</div>
+            <div class="flex-1">
+              <h3 class="font-semibold">업로드 정보</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">유튜브 업로드를 위한 제목, 설명, 태그, 썸네일을 준비합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Management -->
+      <div id="management" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">⚙️</span>
+          스킬 관리
+        </h2>
+
+        <div class="space-y-4">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2 font-mono text-primary-600 dark:text-primary-400">list_skills()</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">사용 가능한 모든 스킬과 설치된 스킬의 상태 및 메타데이터를 확인합니다.</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2 font-mono text-primary-600 dark:text-primary-400">install_skill(name, variables)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">템플릿 변수 치환과 함께 스킬을 설치합니다. 스킬 파일이 <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded font-mono">~/.claude/skills/</code>에 복사됩니다.</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2 font-mono text-primary-600 dark:text-primary-400">uninstall_skill(name)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">설치된 스킬을 스킬 디렉토리에서 제거합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creating Custom Skills -->
+      <div id="custom-skills" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🛠️</span>
+          커스텀 스킬 만들기
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          어떤 워크플로우든 자동화하는 나만의 스킬을 만들 수 있습니다.
+        </p>
+
+        <h3 class="font-semibold mb-3">파일 구조</h3>
+        <div class="relative mb-4">
+          <pre class="bg-gray-900 text-green-400 rounded-xl p-4 text-sm overflow-x-auto"><code id="structure-code">skills/
+  {skill-name}/
+    SKILL.md          # 워크플로우 지침
+    metadata.json     # 이름, 설명, 변수 정의
+    docs/             # 참조 문서 (선택사항)</code></pre>
+          <button onclick="copyCode('structure-code')" class="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">복사</button>
+        </div>
+
+        <h3 class="font-semibold mb-3">템플릿 변수</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+          SKILL.md에서 <code class="font-mono text-primary-600 dark:text-primary-400">{{VAR_NAME}}</code> 플레이스홀더를 사용합니다. 설치 시 실제 값으로 치환됩니다.
+        </p>
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-4">
+          <p class="text-sm text-blue-700 dark:text-blue-400">
+            <strong>예시:</strong> 스킬 파일의 <code class="font-mono">{{PROJECT}}</code>가 설치 후 <code class="font-mono">/Users/me/workspace/ep01</code>로 변환됩니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          관련 가이드
+        </h2>
+        <div class="space-y-3">
+          <a href="/guide/ko/autoflowcut/" class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            파일 가져오기 가이드
+          </a>
+          <a href="/guide/ko/autoflowcut/capcut-export.html" class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            CapCut 내보내기 가이드
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to App -->
+      <div class="text-center">
+        <a href="/guide/ko/autoflowcut/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          AutoFlowCut으로 돌아가기
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026 Touchizen. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Language dropdown toggle
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    // Copy code function
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

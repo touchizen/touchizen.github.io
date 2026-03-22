@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:03,000
+Once upon a time, there was a small village in the mountains.
+
+2
+00:00:03,000 --> 00:00:06,000
+In that village lived a wise old man.
+
+3
+00:00:06,000 --> 00:00:09,000
+One day, a young man came to visit the elder.
+
+4
+00:00:09,000 --> 00:00:12,000
+"Please teach me the wisdom of life."
+
+5
+00:00:12,000 --> 00:00:15,000
+The old man smiled and pointed to the mountain.
+
+6
+00:00:15,000 --> 00:00:18,000
+"Climb that mountain, and you will find your answer."
+
+7
+00:00:18,000 --> 00:00:21,000
+The young man began climbing the treacherous path.
+
+8
+00:00:21,000 --> 00:00:24,000
+Finally reaching the summit, he found enlightenment.
+
+9
+00:00:24,000 --> 00:00:27,000
+"The journey itself was the lesson!"
+
+10
+00:00:27,000 --> 00:00:30,000
+He returned to the village and shared his story.

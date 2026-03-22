@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlowCut - Skills-Anleitung</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
+  <meta name="description" content="Erfahren Sie, wie Sie das AutoFlowCut Skills-System verwenden — wiederverwendbare Claude-Prompts zur Automatisierung komplexer Workflows wie Drehbuchschreiben, Storyboarding und Videoproduktion.">
+  <meta name="keywords" content="AutoFlowCut, Skills, Claude Code, Automatisierung, Story Engine, Workflow, Storyboard, Drehbuch, KI-Videoproduktion">
+  <meta name="author" content="Touchizen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://touchizen.github.io/guide/de/autoflowcut/skills-guide.html">
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="en" href="https://touchizen.github.io/guide/en/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="ko" href="https://touchizen.github.io/guide/ko/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="de" href="https://touchizen.github.io/guide/de/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="ja" href="https://touchizen.github.io/guide/ja/autoflowcut/skills-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://touchizen.github.io/guide/en/autoflowcut/skills-guide.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://touchizen.github.io/guide/de/autoflowcut/skills-guide.html">
+  <meta property="og:title" content="AutoFlowCut - Skills-Anleitung">
+  <meta property="og:description" content="Wiederverwendbare Claude-Prompts zur Automatisierung komplexer Workflows — Drehbuchschreiben, Storyboarding und Videoproduktion.">
+  <meta property="og:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Touchizen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@touchizen">
+  <meta name="twitter:title" content="AutoFlowCut - Skills-Anleitung">
+  <meta name="twitter:description" content="Wiederverwendbare Claude-Prompts zur Automatisierung komplexer Workflows.">
+  <meta name="twitter:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "AutoFlowCut Skills-Anleitung",
+    "description": "So verwenden Sie das AutoFlowCut Skills-System zur Workflow-Automatisierung",
+    "image": "https://touchizen.github.io/images/autoflowcut-og.png",
+    "inLanguage": "de",
+    "author": {
+      "@type": "Organization",
+      "name": "Touchizen",
+      "url": "https://touchizen.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/autoflowcut.svg?v=20260313">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+    [id] {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="/guide/de/autoflowcut/" class="flex items-center gap-2">
+          <img src="/images/autoflowcut.svg?v=20260313" alt="AutoFlowCut" class="w-8 h-8 rounded-lg">
+          <span class="text-lg font-bold gradient-text">AutoFlowCut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <div class="relative">
+            <button id="langToggle" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+              <span>🇩🇪</span>
+              <span>Deutsch</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="langDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
+              <a href="/guide/en/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇺🇸</span> English
+              </a>
+              <a href="/guide/ko/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇰🇷</span> 한국어
+              </a>
+              <a href="/guide/de/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium">
+                <span>🇩🇪</span> Deutsch
+              </a>
+              <a href="/guide/ja/autoflowcut/skills-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇯🇵</span> 日本語
+              </a>
+            </div>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          🎯 Skills
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">Skills-System-Anleitung</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          Wiederverwendbare Claude-Prompts zur Automatisierung komplexer Workflows
+        </p>
+      </div>
+
+      <!-- What are Skills? -->
+      <div id="what-are-skills" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🧩</span>
+          Was sind Skills?
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Skills sind wiederverwendbare Claude-Prompts, die komplexe, mehrstufige Workflows automatisieren. Jeder Skill ist eine strukturierte SKILL.md-Datei, gespeichert in <code class="text-sm bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded font-mono">~/.claude/skills/</code>, und wird direkt aus Claude Code aufgerufen.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <div class="text-2xl mb-2">📋</div>
+            <h3 class="font-semibold mb-1">Strukturierte Workflows</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Mehrstufige Prozesse mit Gates und Checkpoints</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <div class="text-2xl mb-2">🔄</div>
+            <h3 class="font-semibold mb-1">Wiederverwendbar</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Einmal installieren, mit Variablenersetzung projektübergreifend nutzen</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <div class="text-2xl mb-2">🤖</div>
+            <h3 class="font-semibold mb-1">KI-gesteuert</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Claude folgt den Skill-Anweisungen automatisch über MCP</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Start -->
+      <div id="quick-start" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          Schnellstart
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">3 Schritte</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Skills in wenigen Minuten einrichten und verwenden.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div class="flex-1">
+              <h3 class="font-semibold mb-2">Verfügbare Skills anzeigen</h3>
+              <div class="relative">
+                <pre class="bg-gray-900 text-green-400 rounded-xl p-4 text-sm overflow-x-auto"><code id="step1-code">list_skills()</code></pre>
+                <button onclick="copyCode('step1-code')" class="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">Kopieren</button>
+              </div>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Zeigt alle verfügbaren und installierten Skills mit ihrem Status an.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div class="flex-1">
+              <h3 class="font-semibold mb-2">Mit Variablen installieren</h3>
+              <div class="relative">
+                <pre class="bg-gray-900 text-green-400 rounded-xl p-4 text-sm overflow-x-auto"><code id="step2-code">install_skill({
+  name: "story-engine",
+  variables: { PROJECT: "/path/to/episode" }
+})</code></pre>
+                <button onclick="copyCode('step2-code')" class="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">Kopieren</button>
+              </div>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Variablen wie <code class="font-mono">{{PROJECT}}</code> werden bei der Installation durch tatsächliche Werte ersetzt.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div class="flex-1">
+              <h3 class="font-semibold mb-2">In Claude Code verwenden</h3>
+              <p class="text-gray-600 dark:text-gray-400">Der installierte Skill erscheint in der Claude Code Befehlspalette. Claude folgt automatisch dem im Skill definierten Workflow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Available Skills -->
+      <div id="available-skills" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          Verfügbare Skills
+        </h2>
+
+        <div class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-xl border-2 border-primary-300 dark:border-primary-700 p-6 relative overflow-hidden">
+          <div class="absolute top-3 right-3">
+            <span class="text-xs bg-primary-500 text-white px-2 py-0.5 rounded-full font-medium">Empfohlen</span>
+          </div>
+          <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
+            📖 Story Engine
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-normal">v0.9</span>
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            Automatisierte Drehbucherstellung für YouTube-Story-Kanäle in einem 12-Schritte-Workflow. Entwickelt für traditionelle Erzählungen, Volksmärchen und historische Geschichten. Deckt die gesamte Pipeline von der Story-Analyse bis zu upload-fertigen Assets ab.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">12-Schritte-Workflow</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">Drehbuch</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">TTS / SFX</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">Storyboard CSV</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">Bild- / Videogenerierung</span>
+          </div>
+          <div class="bg-white/60 dark:bg-gray-800/60 rounded-lg p-3">
+            <p class="text-sm font-medium mb-1">Variablen</p>
+            <div class="flex items-center gap-2">
+              <code class="text-sm font-mono text-primary-600 dark:text-primary-400">PROJECT</code>
+              <span class="text-xs text-gray-500">(erforderlich)</span>
+              <span class="text-sm text-gray-600 dark:text-gray-400">— Pfad zum Episodenordner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12-Step Workflow -->
+      <div id="workflow" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🔄</span>
+          12-Schritte-Workflow
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Die Story Engine folgt einer strikten 12-Schritte-Pipeline mit Gate-Prüfungen zwischen den Phasen.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R1</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Story-Analyse</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Analyse einer Referenzgeschichte auf Erfolgsfaktoren, Zuschauer-Hooks und Erzählstruktur.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R2</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Faktenprüfung</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Überprüfung historischer Genauigkeit, zeitgemäßer Details und inhaltlicher Konsistenz.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R3</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Synopsis</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Erstellung eines 20-Kapitel-Frameworks mit Plotstruktur und Charakterbögen.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R4</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Preflight</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Strukturprüfung, Verbotsinhalte-Check und Foreshadowing-Tracking.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R5</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Drehbuch schreiben</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Vollständiges Drehbuch in 5 Teilen: Einleitung &rarr; Entwicklung &rarr; Wendung &rarr; Auflösung &rarr; Hook.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R6</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Überprüfung</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Iterative Sub-Agent-Überprüfungsrunden (bis zu 5 Runden) zur Qualitätssicherung.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R7</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold flex items-center gap-2">Finalisierung <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">Benutzerfreigabe erforderlich</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Benutzerfreigabe-Checkpoint. Ohne explizite Bestätigung kann nicht zur Produktion übergegangen werden.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R8</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Produktionsextraktion</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Aufteilung des Drehbuchs in Erzählung, Charakterstimmen und SFX-Cues.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-xs">R8.5</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Extraktionsprüfung</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Sub-Agent-Validierung der extrahierten Produktionsdaten.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R9</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">TTS / SFX-Generierung</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Audiodateien mit KI-TTS-APIs (ElevenLabs, Typecast) und Soundeffekte generieren.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R10</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Storyboard CSV</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Erstellung von references.csv und scenes.csv für die Bild-/Videogenerierung mit AutoFlowCut.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R11</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Bild- / Videogenerierung</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Batch-Generierung mit Flow AI über AutoFlowCut MCP-Tools und Qualitätssicherung.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R12</div>
+            <div class="flex-1">
+              <h3 class="font-semibold">Upload-Informationen</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Vorbereitung von Titel, Beschreibung, Tags und Thumbnail für den YouTube-Upload.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Management -->
+      <div id="management" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">⚙️</span>
+          Skill-Verwaltung
+        </h2>
+
+        <div class="space-y-4">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2 font-mono text-primary-600 dark:text-primary-400">list_skills()</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Alle verfügbaren und installierten Skills mit Status und Metadaten anzeigen.</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2 font-mono text-primary-600 dark:text-primary-400">install_skill(name, variables)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Skill mit Template-Variablenersetzung installieren. Die Skill-Datei wird nach <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded font-mono">~/.claude/skills/</code> kopiert.</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h3 class="font-semibold mb-2 font-mono text-primary-600 dark:text-primary-400">uninstall_skill(name)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Installierten Skill aus dem Skills-Verzeichnis entfernen.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creating Custom Skills -->
+      <div id="custom-skills" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🛠️</span>
+          Eigene Skills erstellen
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Sie können eigene Skills erstellen, um beliebige Workflows zu automatisieren.
+        </p>
+
+        <h3 class="font-semibold mb-3">Dateistruktur</h3>
+        <div class="relative mb-4">
+          <pre class="bg-gray-900 text-green-400 rounded-xl p-4 text-sm overflow-x-auto"><code id="structure-code">skills/
+  {skill-name}/
+    SKILL.md          # Workflow-Anweisungen
+    metadata.json     # Name, Beschreibung, Variablen
+    docs/             # Referenzdokumente (optional)</code></pre>
+          <button onclick="copyCode('structure-code')" class="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">Kopieren</button>
+        </div>
+
+        <h3 class="font-semibold mb-3">Template-Variablen</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+          Verwenden Sie <code class="font-mono text-primary-600 dark:text-primary-400">{{VAR_NAME}}</code>-Platzhalter in SKILL.md. Sie werden bei der Installation durch tatsächliche Werte ersetzt.
+        </p>
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-4">
+          <p class="text-sm text-blue-700 dark:text-blue-400">
+            <strong>Beispiel:</strong> <code class="font-mono">{{PROJECT}}</code> in der Skill-Datei wird nach der Installation zu <code class="font-mono">/Users/me/workspace/ep01</code>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          Verwandte Anleitungen
+        </h2>
+        <div class="space-y-3">
+          <a href="/guide/de/autoflowcut/" class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Dateiimport-Anleitung
+          </a>
+          <a href="/guide/de/autoflowcut/capcut-export.html" class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            CapCut-Export-Anleitung
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to App -->
+      <div class="text-center">
+        <a href="/guide/de/autoflowcut/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Zurück zu AutoFlowCut
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026 Touchizen. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

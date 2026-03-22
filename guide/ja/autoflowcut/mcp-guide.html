@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlowCut - MCPサーバーガイド</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
+  <meta name="description" content="MCPサーバーを使用してAutoFlowCutをClaude Codeと連携する方法を学びましょう。CSVシーン管理、リファレンス制御、バッチ画像生成をターミナルから直接実行できます。">
+  <meta name="keywords" content="AutoFlowCut, MCPサーバー, Claude Code, Model Context Protocol, AI自動化, CapCut, バッチ生成, CSV管理">
+  <meta name="author" content="Touchizen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://touchizen.github.io/guide/ja/autoflowcut/mcp-guide.html">
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="en" href="https://touchizen.github.io/guide/en/autoflowcut/mcp-guide.html">
+  <link rel="alternate" hreflang="ko" href="https://touchizen.github.io/guide/ko/autoflowcut/mcp-guide.html">
+  <link rel="alternate" hreflang="de" href="https://touchizen.github.io/guide/de/autoflowcut/mcp-guide.html">
+  <link rel="alternate" hreflang="ja" href="https://touchizen.github.io/guide/ja/autoflowcut/mcp-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://touchizen.github.io/guide/en/autoflowcut/mcp-guide.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://touchizen.github.io/guide/ja/autoflowcut/mcp-guide.html">
+  <meta property="og:title" content="AutoFlowCut - MCPサーバーガイド">
+  <meta property="og:description" content="MCPサーバーでAutoFlowCutとClaude Codeを連携。シーン、リファレンス、バッチ生成をターミナルから制御します。">
+  <meta property="og:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Touchizen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@touchizen">
+  <meta name="twitter:title" content="AutoFlowCut - MCPサーバーガイド">
+  <meta name="twitter:description" content="MCPサーバーでAutoFlowCutとClaude Codeを連携します。">
+  <meta name="twitter:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "AutoFlowCut MCPサーバーガイド",
+    "description": "MCPサーバーを使用してAutoFlowCutをClaude Codeと連携する方法",
+    "image": "https://touchizen.github.io/images/autoflowcut-og.png",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Organization",
+      "name": "Touchizen",
+      "url": "https://touchizen.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/autoflowcut.svg?v=20260313">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+    [id] {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="/guide/ja/autoflowcut/" class="flex items-center gap-2">
+          <img src="/images/autoflowcut.svg?v=20260313" alt="AutoFlowCut" class="w-8 h-8 rounded-lg">
+          <span class="text-lg font-bold gradient-text">AutoFlowCut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- Language Dropdown -->
+          <div class="relative">
+            <button id="langToggle" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+              <span>🇯🇵</span>
+              <span>日本語</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="langDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
+              <a href="/guide/en/autoflowcut/mcp-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇺🇸</span> English
+              </a>
+              <a href="/guide/ko/autoflowcut/mcp-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇰🇷</span> 한국어
+              </a>
+              <a href="/guide/de/autoflowcut/mcp-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇩🇪</span> Deutsch
+              </a>
+              <a href="/guide/ja/autoflowcut/mcp-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium">
+                <span>🇯🇵</span> 日本語
+              </a>
+            </div>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          🔌 MCPサーバー
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">Claude Code連携ガイド</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          Model Context Protocolを通じてClaude CodeからAutoFlowCutを直接制御
+        </p>
+      </div>
+
+      <!-- What is MCP? -->
+      <div id="what-is-mcp" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🤖</span>
+          MCPとは？
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Model Context Protocol（MCP）を使用すると、Claude CodeからAutoFlowCutをターミナルで直接制御できます。CSVシーンの読み込み、プロンプトの更新、バッチ画像生成、CapCutへのエクスポートまで、すべて自然言語コマンドで実行可能です。
+        </p>
+        <p class="text-gray-600 dark:text-gray-400">
+          MCPサーバーはstdioを通じてClaude Codeと通信し、ローカルHTTP API（ポート3210）を通じて実行中のAutoFlowCutアプリに接続します。
+        </p>
+      </div>
+
+      <!-- Architecture Diagram -->
+      <div id="architecture" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🏗️</span>
+          アーキテクチャ
+        </h2>
+        <div class="relative">
+          <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-4 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">Claude Code ←→ MCP Server (stdio) ←→ Electron App (HTTP :3210)
+                  ↕                            ↕
+           CSV / project.json          React Renderer (IPC)
+           .audio_review.json          State直接変更</pre>
+        </div>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <span class="text-primary-500 font-bold">1.</span>
+            <span><strong>CSV直接管理</strong> — ディスク上のCSVとproject.jsonファイルの読み書き</span>
+          </div>
+          <div class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <span class="text-primary-500 font-bold">2.</span>
+            <span><strong>HTTPアプリ制御</strong> — localhost APIを通じて実行中のアプリ状態を直接操作</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Installation -->
+      <div id="installation" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          インストール
+        </h2>
+
+        <!-- Method A -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3 mt-2">方法A：グローバル設定（推奨）</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">すべてのプロジェクトで使用できます。<code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">~/.claude.json</code>に保存されます。</p>
+        <div class="relative mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">ターミナル</span>
+            <button onclick="copyCode('install-global')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              コピー
+            </button>
+          </div>
+          <pre id="install-global" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">cd /path/to/Flow2CapCut/mcp-server
+npm install
+claude mcp add --scope user --transport stdio flow2capcut -- node $(pwd)/index.js</pre>
+        </div>
+
+        <!-- Method B -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">方法B：プロジェクトローカル（.mcp.json）</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">特定のプロジェクトでのみ使用します。プロジェクトルートに<code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">.mcp.json</code>を作成してください。</p>
+        <div class="relative mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">.mcp.json</span>
+            <button onclick="copyCode('install-local')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              コピー
+            </button>
+          </div>
+          <pre id="install-local" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">{
+  "mcpServers": {
+    "flow2capcut": {
+      "command": "node",
+      "args": ["/path/to/Flow2CapCut/mcp-server/index.js"]
+    }
+  }
+}</pre>
+        </div>
+
+        <!-- Verify -->
+        <div class="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4 mt-4">
+          <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">インストール確認：</p>
+          <code class="text-sm font-mono text-emerald-600 dark:text-emerald-400">claude mcp list</code>
+        </div>
+      </div>
+
+      <!-- Tool Categories -->
+      <div id="tool-categories" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🧰</span>
+          ツールカテゴリ
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- CSV Management -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>📊</span> CSV管理
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">CSVファイルからシーンの読み込み、一覧表示、検索、更新、保存を行います。プロンプトの一括更新やシーンフィールドの管理をサポートします。</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded">load_csv</span>
+              <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded">list_scenes</span>
+              <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded">update_prompt</span>
+              <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded">save_csv</span>
+            </div>
+          </div>
+
+          <!-- Reference Tools -->
+          <div class="bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🖼️</span> リファレンスツール
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">project.jsonのキャラクターおよびシーンリファレンスを管理します。一覧表示、詳細確認、プロンプト更新をサポートします。</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">list_references</span>
+              <span class="text-xs bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">get_reference</span>
+              <span class="text-xs bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">update_reference_prompt</span>
+            </div>
+          </div>
+
+          <!-- App Control -->
+          <div class="bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🎬</span> アプリ制御
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">HTTPを通じて実行中のアプリを制御します。画像生成、バッチ処理、ステータス監視、CapCutエクスポートを実行します。</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_start_scene_batch</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_wait_batch</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">export_capcut</span>
+            </div>
+          </div>
+
+          <!-- Workflow Gates -->
+          <div class="bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🔧</span> ワークフローゲート
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">レビューステップを通じてパイプラインの進捗を追跡します。ステップの合格/不合格判定と全体の進捗状況を確認します。</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">mark_step_done</span>
+              <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">get_progress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Tools Reference -->
+      <div id="key-tools" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📖</span>
+          主要ツールリファレンス
+        </h2>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-3 text-left border-gray-200 dark:border-gray-700 font-semibold">ツール</th>
+                <th class="px-4 py-3 text-left border-gray-200 dark:border-gray-700 font-semibold">説明</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-gray-900">
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">load_csv</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">CSVファイルと画像ディレクトリを読み込み</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">list_scenes</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">範囲指定可能なシーン一覧表示</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">update_prompt</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">個別シーンの英語プロンプトを更新</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">batch_update_prompts</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">複数シーンのプロンプトを一括更新</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">app_start_scene_batch</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">保留中シーンのバッチ画像生成を開始</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">app_wait_batch</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">バッチ生成完了まで待機（ロングポーリング）</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">export_capcut</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">CapCutプロジェクトにエクスポート</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">get_schema</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">CSV/SRT/オーディオスキーマドキュメントを取得</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">list_styles</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">87種類のスタイルプリセットをカテゴリ別に表示</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Workflow Gate System -->
+      <div id="workflow-gates" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚦</span>
+          ワークフローゲートシステム
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          パイプラインは順次ステップ（R1〜R12）に従います。各ステップはレビューに合格してから次のステップが開放されます。進捗状況は<code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">R_progress.json</code>に記録されます。
+        </p>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">ゲート前提条件</h3>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 mb-4">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">ステップ</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">フェーズ</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">前提条件</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-gray-900">
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R1-R3</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">スクリプト &amp; CSV設定</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">なし</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R4-R6</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">リファレンス &amp; プロンプト</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R3合格</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R7-R9</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">画像生成 &amp; レビュー</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R6合格</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R10-R12</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">オーディオ、エクスポート &amp; 最終</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R9合格</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">使用方法</h3>
+        <div class="relative">
+          <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700"># ステップを合格としてマーク
+mark_step_done(step="R10-3_scenes_review", result="pass", reviewer="subagent")
+
+# 全体の進捗を確認
+get_progress()</pre>
+        </div>
+      </div>
+
+      <!-- HTTP API Endpoints -->
+      <div id="http-api" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🌐</span>
+          HTTP APIエンドポイント
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          AutoFlowCutの設定でMCP HTTPサーバーを有効にすると、<code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">127.0.0.1:3210</code>で利用可能になります。
+        </p>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">メソッド</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">パス</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">説明</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-gray-900">
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">GET</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/status</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">サーバーヘルスチェック</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">GET</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/references</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">リファレンス一覧（base64画像除外）</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">GET</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/scenes</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">シーン一覧（画像データ除外）</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">GET</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/batch-status</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">バッチ生成の進捗状況</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 px-1.5 py-0.5 rounded">POST</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/generate-reference</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">リファレンス画像生成をトリガー</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 px-1.5 py-0.5 rounded">POST</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/generate-scene</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">個別シーン画像生成をトリガー</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 px-1.5 py-0.5 rounded">POST</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/start-batch</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">全バッチ生成を開始</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><span class="text-xs font-mono bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 px-1.5 py-0.5 rounded">POST</span></td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">/api/update</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">汎用ステート更新（IPC中継）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          関連ガイド
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="/guide/ja/autoflowcut/" class="block bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-4 hover:border-primary-400 dark:hover:border-primary-600 transition-colors">
+            <h3 class="font-semibold text-primary-600 dark:text-primary-400 mb-1">ファイルインポートガイド</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">CSV、SRT、テキストファイルをAutoFlowCutにインポート</p>
+          </a>
+          <a href="/guide/ja/autoflowcut/capcut-export.html" class="block bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-4 hover:border-primary-400 dark:hover:border-primary-600 transition-colors">
+            <h3 class="font-semibold text-primary-600 dark:text-primary-400 mb-1">CapCutエクスポートガイド</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">プロジェクトをCapCut形式にエクスポート</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 dark:border-gray-800 py-8">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm text-gray-500 dark:text-gray-400">
+      <p>&copy; 2025 Touchizen. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Language dropdown toggle
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    // Copy code function
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

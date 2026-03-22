@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlowCut - Audio-Import-Anleitung</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
+  <meta name="description" content="Erfahren Sie, wie Sie TTS-Dialogaudio und SFX-Soundeffekte fuer AutoFlowCut vorbereiten und importieren. Audiopaket-Struktur, Dateibenennungskonventionen und Review-System-Anleitung.">
+  <meta name="keywords" content="AutoFlowCut, Audio-Import, TTS, Soundeffekte, SFX, Typecast, ElevenLabs, CapCut, Sprachgenerierung, Audiopaket">
+  <meta name="author" content="Touchizen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://touchizen.github.io/guide/de/autoflowcut/audio-guide.html">
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="en" href="https://touchizen.github.io/guide/en/autoflowcut/audio-guide.html">
+  <link rel="alternate" hreflang="ko" href="https://touchizen.github.io/guide/ko/autoflowcut/audio-guide.html">
+  <link rel="alternate" hreflang="de" href="https://touchizen.github.io/guide/de/autoflowcut/audio-guide.html">
+  <link rel="alternate" hreflang="ja" href="https://touchizen.github.io/guide/ja/autoflowcut/audio-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://touchizen.github.io/guide/en/autoflowcut/audio-guide.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://touchizen.github.io/guide/de/autoflowcut/audio-guide.html">
+  <meta property="og:title" content="AutoFlowCut - Audio-Import-Anleitung">
+  <meta property="og:description" content="Erfahren Sie, wie Sie TTS-Dialogaudio und SFX-Soundeffekte fuer AutoFlowCut vorbereiten und importieren.">
+  <meta property="og:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Touchizen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@touchizen">
+  <meta name="twitter:title" content="AutoFlowCut - Audio-Import-Anleitung">
+  <meta name="twitter:description" content="Erfahren Sie, wie Sie TTS-Dialogaudio und SFX-Soundeffekte fuer AutoFlowCut vorbereiten und importieren.">
+  <meta name="twitter:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "AutoFlowCut Audio-Import-Anleitung",
+    "description": "Wie man TTS-Dialogaudio und SFX-Soundeffekte fuer AutoFlowCut vorbereitet und importiert",
+    "image": "https://touchizen.github.io/images/autoflowcut-og.png",
+    "inLanguage": "de",
+    "author": {
+      "@type": "Organization",
+      "name": "Touchizen",
+      "url": "https://touchizen.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/autoflowcut.svg?v=20260313">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+    [id] {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="/guide/de/autoflowcut/" class="flex items-center gap-2">
+          <img src="/images/autoflowcut.svg?v=20260313" alt="AutoFlowCut" class="w-8 h-8 rounded-lg">
+          <span class="text-lg font-bold gradient-text">AutoFlowCut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- Language Dropdown -->
+          <div class="relative">
+            <button id="langToggle" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+              <span>🇩🇪</span>
+              <span>Deutsch</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="langDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
+              <a href="/guide/en/autoflowcut/audio-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇺🇸</span> English
+              </a>
+              <a href="/guide/ko/autoflowcut/audio-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇰🇷</span> 한국어
+              </a>
+              <a href="/guide/de/autoflowcut/audio-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium">
+                <span>🇩🇪</span> Deutsch
+              </a>
+              <a href="/guide/ja/autoflowcut/audio-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇯🇵</span> 日本語
+              </a>
+            </div>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          🎵 Audio-Anleitung
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">Audio-Import-Anleitung</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          So bereiten Sie TTS-Dialogaudio und SFX-Soundeffekte fuer AutoFlowCut vor
+        </p>
+      </div>
+
+      <!-- Quick Start -->
+      <div id="quick-start" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          Schnellstart
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">3 Schritte</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Erstellen Sie Audiodateien extern und importieren Sie dann den Audiopaket-Ordner in AutoFlowCut.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">TTS-Audio aus Ihrem Skript generieren</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Verwenden Sie Typecast oder ElevenLabs, um charakterspezifische Dialogstimmen zu generieren. Organisieren Sie die Dateien nach Charakter-Ordnern.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">SFX-Soundeffekte generieren</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Verwenden Sie die ElevenLabs Sound Generation API, um Umgebungsgeraeusche, Schritte, Requisiten und andere Effekte nach Kategorie zu erstellen.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Audiopaket in AutoFlowCut importieren</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Platzieren Sie alle Audiodateien im <code class="bg-emerald-200 dark:bg-emerald-800 px-1 rounded">media/</code>-Ordner Ihres Projektverzeichnisses. AutoFlowCut erkennt und importiert das Audiopaket automatisch.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-emerald-700 dark:text-emerald-300">
+            💡 <strong>Tipp:</strong> Audiodateien mit Timecodes im Dateinamen werden automatisch den entsprechenden SRT-Untertitel-Zeitstempeln zugeordnet.
+          </p>
+        </div>
+      </div>
+
+      <!-- Audio Package Structure -->
+      <div id="package-structure" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📁</span>
+          Audiopaket-Struktur
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Organisieren Sie Ihre Audiodateien in folgender Verzeichnisstruktur innerhalb Ihres Projektordners:
+        </p>
+
+        <pre class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">media/
+├── voices/                    # TTS-Dateien pro Charakter
+│   ├── narrator/
+│   │   ├── narrator_001_0000.mp3
+│   │   └── narrator_002_0035.mp3
+│   └── scholar/
+│       └── scholar_001_0120.mp3
+├── sfx/                       # Soundeffekte nach Kategorie
+│   ├── 01_props/
+│   ├── 02_ambience_wind/
+│   ├── 03_breath/
+│   ├── 04_footsteps/
+│   ├── 05_metal_doors/
+│   ├── 06_writing/
+│   └── 07_crowd/
+└── .audio_review.json         # Ungeeignete Audio-Verfolgung</pre>
+
+        <div class="mt-4 p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>Hinweis:</strong> Der <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">voices/</code>-Ordner enthaelt Unterordner pro Charakter. Der <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">sfx/</code>-Ordner enthaelt kategoriebasierte Unterordner.
+          </p>
+        </div>
+      </div>
+
+      <!-- TTS -->
+      <div id="tts" class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎙️</span>
+          TTS (Dialogstimme)
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Charakterspezifische Dialogaudio, generiert ueber Text-to-Speech-APIs.
+        </p>
+
+        <!-- API Info -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Generierungs-API: Typecast</h3>
+          <div class="font-mono text-xs text-gray-600 dark:text-gray-400 space-y-1">
+            <p>API: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">https://api.typecast.ai/v1/text-to-speech</code></p>
+          </div>
+        </div>
+
+        <!-- File Naming -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Dateibenennungskonvention</h3>
+          <pre class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">{charakter}_{nummer}_{MMSS}.mp3
+
+Beispiele:
+  narrator/narrator_001_0000.mp3    # Erzaehler, Zeile 1, bei 00:00
+  scholar/scholar_003_0245.mp3      # Gelehrter, Zeile 3, bei 02:45</pre>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            Der Timecode (MMSS) ermoeglicht die automatische Zuordnung zu SRT-Untertitel-Zeitstempeln.
+          </p>
+        </div>
+
+        <!-- Emotions -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Emotionsparameter</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Emotion</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Beschreibung</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>normal</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Standard</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>happy</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Freudig / hell</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>sad</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Traurig</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>angry</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Wuetend / intensiv</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SFX -->
+      <div id="sfx" class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🔊</span>
+          SFX (Soundeffekte)
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Umgebungsgeraeusche, Foley und Effekte, generiert durch KI-Soundgenerierung.
+        </p>
+
+        <!-- API Info -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Generierungs-API: ElevenLabs</h3>
+          <div class="font-mono text-xs text-gray-600 dark:text-gray-400 space-y-1">
+            <p>API: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">https://api.elevenlabs.io/v1/sound-generation</code></p>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3">7 SFX-Kategorien</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="flex items-center gap-3 p-2 bg-orange-100/50 dark:bg-orange-900/20 rounded-lg">
+              <span class="text-lg">🧮</span>
+              <div>
+                <div class="font-medium text-sm">Requisiten</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400"><code>01_props/</code> &mdash; Objektinteraktionen, Klicks</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-orange-100/50 dark:bg-orange-900/20 rounded-lg">
+              <span class="text-lg">🌿</span>
+              <div>
+                <div class="font-medium text-sm">Umgebung</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400"><code>02_ambience_*/</code> &mdash; Wind, Regen, Voegel</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-orange-100/50 dark:bg-orange-900/20 rounded-lg">
+              <span class="text-lg">💨</span>
+              <div>
+                <div class="font-medium text-sm">Atmung</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400"><code>03_breath/</code> &mdash; Atmen, Seufzen</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-orange-100/50 dark:bg-orange-900/20 rounded-lg">
+              <span class="text-lg">👣</span>
+              <div>
+                <div class="font-medium text-sm">Schritte</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400"><code>04_footsteps/</code> &mdash; Gehen, Laufen</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-orange-100/50 dark:bg-orange-900/20 rounded-lg">
+              <span class="text-lg">🚪</span>
+              <div>
+                <div class="font-medium text-sm">Metall / Tueren</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400"><code>05_metal_doors/</code> &mdash; Tueren, Schloesser, Aufprall</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-orange-100/50 dark:bg-orange-900/20 rounded-lg">
+              <span class="text-lg">✍️</span>
+              <div>
+                <div class="font-medium text-sm">Schreiben</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400"><code>06_writing/</code> &mdash; Pinsel, Stiftgeraeusche</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-orange-100/50 dark:bg-orange-900/20 rounded-lg">
+              <span class="text-lg">👥</span>
+              <div>
+                <div class="font-medium text-sm">Menschenmenge</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400"><code>07_crowd/</code> &mdash; Gemurmel, Geplauder</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- File Naming -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Dateibenennung</h3>
+          <pre class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">{kategorie}/{beschreibender_name}.mp3
+
+Timecode-SFX (synchronisiert mit bestimmter Szene):
+  abacus_beads_dark_01_0015.mp3   # fuer Szene 00:15
+  abacus_beads_01_0134.mp3        # fuer Szene 01:34</pre>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            Timecode-Dateinamen (enden auf <code>_MMSS</code>) werden automatisch den entsprechenden Szenen zugeordnet.
+          </p>
+        </div>
+      </div>
+
+      <!-- Audio Review System -->
+      <div id="audio-review" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🔍</span>
+          Audio-Review-System
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Markieren Sie ungeeignete Audiodateien ueber die App-Oberflaeche oder Claude Code MCP-Tools. Markierte Dateien werden in <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.audio_review.json</code> verfolgt.
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2"><code>.audio_review.json</code> Struktur</h3>
+          <pre class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">{
+  "media/sfx/02_ambience_wind/wind_howl_01.mp3": {
+    "status": "flagged",
+    "reason": "Kein Timecode",
+    "flaggedAt": "2026-03-16T05:44:55.228Z"
+  }
+}</pre>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">MCP-Tools</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center gap-3 p-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <code class="text-primary-600 dark:text-primary-400 font-mono text-xs">list_audio_reviews</code>
+              <span class="text-gray-600 dark:text-gray-400">&mdash; Markierte Audiodateien anzeigen</span>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <code class="text-primary-600 dark:text-primary-400 font-mono text-xs">update_audio_review</code>
+              <span class="text-gray-600 dark:text-gray-400">&mdash; Markierungen hinzufuegen oder entfernen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audio Tab in App -->
+      <div id="audio-tab" class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎧</span>
+          Audio-Tab in der App
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Nach dem Import bietet der Audio-Tab eine vollstaendige Uebersicht Ihres Audiopakets.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📊</span>
+              <span class="font-semibold">Zusammenfassungsansicht</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Stimmenanzahl pro Charakter, SFX-Anzahl pro Kategorie, Gesamtdauer-Aufschluesselung.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">⏱️</span>
+              <span class="font-semibold">Zeitleistenansicht</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Chronologische Liste mit automatischer Szenenzuordnung ueber Timecodes.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">▶️</span>
+              <span class="font-semibold">Wiedergabe</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Vorschau jeder Audiodatei direkt in der App mit Inline-Player.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🚩</span>
+              <span class="font-semibold">Markieren &amp; Sortieren</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Ungeeignete Audio markieren. Nach Name, Dauer oder Status sortieren.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          Verwandte Anleitungen
+        </h2>
+        <div class="space-y-3">
+          <a href="/guide/de/autoflowcut/" class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Datei-Import-Anleitung (CSV, SRT, Text)
+          </a>
+          <a href="/guide/de/autoflowcut/capcut-export.html" class="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            CapCut-Export-Anleitung
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to App -->
+      <div class="text-center">
+        <a href="/guide/de/autoflowcut/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Zurueck zu AutoFlowCut
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026 Touchizen. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Language dropdown toggle
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    // Copy code function
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
