@@ -101,6 +101,18 @@ Two warriors facing each other in a bamboo forest`}</pre>
                 ))}
               </div>
 
+              {/* Guide Link */}
+              <div className="text-center my-4">
+                <a
+                  href={`/guide/${lang}/autoflowcut/`}
+                  className="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 hover:underline font-medium"
+                >
+                  <span>📖</span>
+                  {lang === 'ko' ? 'CSV/SRT 파일 형식 가이드 보기' : lang === 'ja' ? 'CSV/SRTファイル形式ガイド' : lang === 'de' ? 'CSV/SRT-Dateiformatanleitung' : 'View CSV/SRT file format guide'}
+                  <span>→</span>
+                </a>
+              </div>
+
               {/* 3 AI Tool Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[

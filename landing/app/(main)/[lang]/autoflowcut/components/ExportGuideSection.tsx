@@ -98,6 +98,18 @@ export default function ExportGuideSection({ lang, t }: { lang: Language; t: (ke
               </div>
             </div>
 
+            {/* Full Guide Link */}
+            <div className="text-center">
+              <a
+                href={`/guide/${lang}/autoflowcut/`}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
+              >
+                <span>📖</span>
+                {lang === 'ko' ? '전체 가이드 보기' : lang === 'ja' ? '完全ガイドを見る' : lang === 'de' ? 'Vollständige Anleitung' : 'View Full Guide'}
+                <span>→</span>
+              </a>
+            </div>
+
             {/* Output Structure */}
             <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8">
               <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white flex items-center gap-3">
