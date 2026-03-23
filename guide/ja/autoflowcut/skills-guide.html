@@ -241,7 +241,7 @@
 })</code></pre>
                 <button onclick="copyCode('step2-code')" class="copy-btn absolute top-2 right-2 text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">コピー</button>
               </div>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2"><code class="font-mono">{{PROJECT}}</code>などの変数がインストール時に実際の値に置換されます。</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-2"><code class="font-mono">{{PROJECT}}</code>などの変数がインストール時に実際の値に置換されます。<strong>yadam</strong>（韓国語）と<strong>dark-history</strong>（英語）の2つのジャンルを含みます。</p>
             </div>
           </div>
 
@@ -287,6 +287,65 @@
               <span class="text-xs text-gray-500">(必須)</span>
               <span class="text-sm text-gray-600 dark:text-gray-400">— エピソードフォルダのパス</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story Engine ジャンル -->
+      <div id="genres" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎭</span>
+          Story Engine ジャンル
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          story-engineスキルは2つのジャンルをサポートし、入力言語に基づいて自動選択されます：
+        </p>
+
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm text-left">
+            <thead>
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                <th class="py-3 px-4 font-semibold">ジャンル</th>
+                <th class="py-3 px-4 font-semibold">言語</th>
+                <th class="py-3 px-4 font-semibold">スタイル</th>
+                <th class="py-3 px-4 font-semibold">例</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100 dark:border-gray-800">
+                <td class="py-3 px-4"><code class="text-sm font-mono text-primary-600 dark:text-primary-400">yadam</code></td>
+                <td class="py-3 px-4">韓国語</td>
+                <td class="py-3 px-4">朝鮮時代の野談、民話、説話、宮廷ミステリー</td>
+                <td class="py-3 px-4"><code class="text-xs">"야담 대본 써줘"</code></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-primary-600 dark:text-primary-400">dark-history</code></td>
+                <td class="py-3 px-4">English</td>
+                <td class="py-3 px-4">西洋ダークヒストリー — 中世ミステリー、チューダー朝、ゴシックテイル</td>
+                <td class="py-3 px-4"><code class="text-xs">"Write a script about Salem witch trials"</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 mb-4">
+          <p class="text-sm text-amber-800 dark:text-amber-300">
+            <strong>自動検出：</strong> ジャンルは入力言語から自動検出されます。<code class="font-mono text-xs">--genre yadam</code>または<code class="font-mono text-xs">--genre dark-history</code>で手動選択できます。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
+              <code class="text-primary-600 dark:text-primary-400">yadam</code> メタプロンプト
+            </h4>
+            <p class="text-xs text-gray-600 dark:text-gray-400">5つの韓国語メタプロンプトファイル：シノプシス、プリフライト、脚本、ナレーション、サスペンス</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
+              <code class="text-primary-600 dark:text-primary-400">dark-history</code> メタプロンプト
+            </h4>
+            <p class="text-xs text-gray-600 dark:text-gray-400">Google DeepMindのDramatronフレームワークに基づく5つの英語メタプロンプトファイル</p>
           </div>
         </div>
       </div>
