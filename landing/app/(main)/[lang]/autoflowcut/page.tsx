@@ -14,6 +14,7 @@ import InstallationSection from './components/InstallationSection';
 import WhatIsSection from './components/WhatIsSection';
 import FlowIntroSection from './components/FlowIntroSection';
 import WorkflowSection from './components/WorkflowSection';
+import StoryPipelineSection from './components/StoryPipelineSection';
 import TimeSavingSection from './components/TimeSavingSection';
 import FeaturesSection from './components/FeaturesSection';
 import VideoGenerationSection from './components/VideoGenerationSection';
@@ -57,6 +58,7 @@ export default function AutoFlowCutPage() {
       <WhatIsSection lang={lang} t={t} />
       <FlowIntroSection lang={lang} t={t} />
       <WorkflowSection lang={lang} t={t} />
+      <StoryPipelineSection lang={lang} t={t} />
       <TimeSavingSection lang={lang} t={t} />
       <FeaturesSection lang={lang} t={t} />
       <VideoGenerationSection lang={lang} t={t} />
