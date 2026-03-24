@@ -44,7 +44,7 @@ export default function CTASection({ lang, t }: { lang: Language; t: (key: Trans
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
-            {lang === 'ko' ? '100% 무료 & 오픈소스' : lang === 'ja' ? '100%無料＆オープンソース' : lang === 'de' ? '100% kostenlos & Open Source' : '100% Free & Open Source'}
+            {lang === 'ko' ? '클라이언트 100% 무료 & 오픈소스' : lang === 'ja' ? 'クライアント100%無料＆オープンソース' : lang === 'de' ? 'Client 100% kostenlos & Open Source' : 'Client 100% Free & Open Source'}
           </div>
         </div>
       </div>
