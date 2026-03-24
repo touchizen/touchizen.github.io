@@ -508,6 +508,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
 
   autoflowcut_diff_title: 'AutoFlowCut vs Whisk2CapCut',
   autoflowcut_diff_subtitle: '同じ基盤、でもGoogle Flow AIで駆動',
+  autoflowcut_diff_whisk_sunset: 'Google Whiskは2026年4月30日にサービスが終了します。その日以降、Whisk2CapCutで新しい画像を生成できなくなります。AutoFlowCutへの移行をお勧めします。',
   autoflowcut_diff_ai: 'AIエンジン',
   autoflowcut_diff_whisk_ai: 'Google Whisk',
   autoflowcut_diff_flow_ai: 'Google Flow AI',

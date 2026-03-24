@@ -508,6 +508,7 @@ The young prince practices sword fighting in the courtyard`,
 
   autoflowcut_diff_title: 'AutoFlowCut vs Whisk2CapCut',
   autoflowcut_diff_subtitle: 'Built on the same foundation, but powered by Google Flow AI',
+  autoflowcut_diff_whisk_sunset: 'Google Whisk will be discontinued on April 30, 2026. Whisk2CapCut will no longer be able to generate new images after that date. We recommend migrating to AutoFlowCut.',
   autoflowcut_diff_ai: 'AI Engine',
   autoflowcut_diff_whisk_ai: 'Google Whisk',
   autoflowcut_diff_flow_ai: 'Google Flow AI',

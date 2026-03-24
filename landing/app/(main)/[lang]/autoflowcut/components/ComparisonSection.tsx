@@ -57,6 +57,14 @@ export default function ComparisonSection({ lang, t }: { lang: Language; t: (key
         </div>
 
         <div className="max-w-3xl mx-auto">
+          {/* Whisk Sunset Warning */}
+          <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-300 dark:border-amber-700 rounded-xl flex items-start gap-3">
+            <span className="text-xl flex-shrink-0">&#x26A0;&#xFE0F;</span>
+            <p className="text-sm text-amber-800 dark:text-amber-200">
+              {t('autoflowcut_diff_whisk_sunset' as TranslationKey)}
+            </p>
+          </div>
+
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden">
             <table className="w-full">
               <thead>

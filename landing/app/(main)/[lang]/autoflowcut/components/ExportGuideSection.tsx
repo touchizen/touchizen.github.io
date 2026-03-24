@@ -1,4 +1,5 @@
 import { Language, TranslationKey } from '@/lib/i18n';
+import KenBurnsDemo from '@/components/KenBurnsDemo';
 
 export default function ExportGuideSection({ lang, t }: { lang: Language; t: (key: TranslationKey) => string }) {
   return (
@@ -38,6 +39,44 @@ export default function ExportGuideSection({ lang, t }: { lang: Language; t: (ke
                   </p>
                 </div>
               ))}
+            </div>
+
+            {/* Ken Burns Effect - Interactive Demo */}
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8">
+              <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-3">
+                <span className="text-2xl">&#x1F3AC;</span>
+                {t('kenburns_title' as TranslationKey)}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
+                {t('kenburns_desc' as TranslationKey)}
+              </p>
+
+              <KenBurnsDemo lang={lang} />
+
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span>&#x1F3AF;</span>
+                    <span className="font-semibold text-gray-900 dark:text-white">
+                      {t('kenburns_mode_pattern' as TranslationKey)}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    {t('kenburns_mode_pattern_desc' as TranslationKey)}
+                  </p>
+                </div>
+                <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span>&#x1F3B2;</span>
+                    <span className="font-semibold text-gray-900 dark:text-white">
+                      {t('kenburns_mode_random' as TranslationKey)}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    {t('kenburns_mode_random_desc' as TranslationKey)}
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Folder Path Section */}

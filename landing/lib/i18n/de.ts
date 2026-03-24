@@ -508,6 +508,7 @@ Der junge Prinz übt im Burghof Schwertkampf`,
 
   autoflowcut_diff_title: 'AutoFlowCut vs Whisk2CapCut',
   autoflowcut_diff_subtitle: 'Gleiche Basis, aber angetrieben von Google Flow AI',
+  autoflowcut_diff_whisk_sunset: 'Google Whisk wird am 30. April 2026 eingestellt. Nach diesem Datum kann Whisk2CapCut keine neuen Bilder mehr generieren. Wir empfehlen den Wechsel zu AutoFlowCut.',
   autoflowcut_diff_ai: 'KI-Engine',
   autoflowcut_diff_whisk_ai: 'Google Whisk',
   autoflowcut_diff_flow_ai: 'Google Flow AI',
