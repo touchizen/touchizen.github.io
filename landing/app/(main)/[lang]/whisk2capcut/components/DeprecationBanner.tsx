@@ -3,22 +3,22 @@ import { Language } from '@/lib/i18n';
 const messages: Record<Language, { title: string; desc: string; cta: string }> = {
   ko: {
     title: '⚠️ Whisk2CapCut 서비스 종료 안내',
-    desc: 'Whisk2CapCut은 2025년 4월 30일부로 서비스가 종료됩니다. 더 강력한 AutoFlowCut으로 전환해 주세요!',
+    desc: 'Google Whisk 종료(4/30)에 따라 Whisk2CapCut도 서비스를 종료합니다. Google Flow AI 기반의 AutoFlowCut으로 전환해 주세요!',
     cta: 'AutoFlowCut으로 이동',
   },
   en: {
     title: '⚠️ Whisk2CapCut End of Service Notice',
-    desc: 'Whisk2CapCut will be discontinued on April 30, 2025. Please switch to the more powerful AutoFlowCut!',
+    desc: 'Google Whisk is shutting down on April 30. Whisk2CapCut will also be discontinued. Please switch to AutoFlowCut, powered by Google Flow AI!',
     cta: 'Switch to AutoFlowCut',
   },
   ja: {
     title: '⚠️ Whisk2CapCut サービス終了のお知らせ',
-    desc: 'Whisk2CapCutは2025年4月30日をもってサービスを終了します。より強力なAutoFlowCutへの移行をお願いします！',
+    desc: 'Google Whisk終了(4/30)に伴い、Whisk2CapCutもサービスを終了します。Google Flow AI搭載のAutoFlowCutへ移行してください！',
     cta: 'AutoFlowCutに移行する',
   },
   de: {
     title: '⚠️ Whisk2CapCut Einstellung des Dienstes',
-    desc: 'Whisk2CapCut wird am 30. April 2025 eingestellt. Bitte wechseln Sie zum leistungsstärkeren AutoFlowCut!',
+    desc: 'Google Whisk wird am 30. April eingestellt. Whisk2CapCut wird ebenfalls beendet. Bitte wechseln Sie zu AutoFlowCut mit Google Flow AI!',
     cta: 'Zu AutoFlowCut wechseln',
   },
 };
