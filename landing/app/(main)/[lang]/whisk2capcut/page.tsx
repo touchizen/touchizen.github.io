@@ -26,6 +26,7 @@ import PricingSection from './components/PricingSection';
 import TrustSection from './components/TrustSection';
 import FAQSection from './components/FAQSection';
 import CTASection from './components/CTASection';
+import DeprecationBanner from './components/DeprecationBanner';
 
 export default function Whisk2CapCutPage() {
   const router = useRouter();
@@ -83,6 +84,7 @@ export default function Whisk2CapCutPage() {
   return (
     <main className="min-h-screen">
       <Header lang={lang} onLanguageChange={handleLanguageChange} />
+      <DeprecationBanner lang={lang} />
 
       <HeroSection lang={lang} t={t} />
       <ScreenshotGallerySection lang={lang} t={t} />
