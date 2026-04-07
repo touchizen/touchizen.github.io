@@ -70,7 +70,7 @@ export default function InstallationSection({ lang, t, isMac }: { lang: Language
                   {t('autoflowcut_install_win_desc' as TranslationKey)}
                 </p>
                 <a
-                  href="https://apps.microsoft.com/detail/autoflowcut"
+                  href="https://apps.microsoft.com/detail/9PNZVP54WRSM"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"

@@ -7,7 +7,7 @@ interface QuickDownloadProps {
   lang: Language;
 }
 
-const DESKTOP_WIN_URL = 'https://github.com/touchizen/AutoFlowCut/releases';
+const DESKTOP_WIN_URL = 'https://apps.microsoft.com/detail/9PNZVP54WRSM';
 const DESKTOP_MAC_URL = 'https://github.com/touchizen/AutoFlowCut/releases';
 const GITHUB_URL = 'https://github.com/touchizen/AutoFlowCut';
 

@@ -15,7 +15,7 @@ export default function CTASection({ lang, t }: { lang: Language; t: (key: Trans
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {/* Download App - Primary */}
             <a
-              href="https://github.com/touchizen/AutoFlowCut/releases"
+              href="https://apps.microsoft.com/detail/9PNZVP54WRSM"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 active:scale-95 shadow-lg"
