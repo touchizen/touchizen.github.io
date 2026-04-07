@@ -43,22 +43,11 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <a href="#install" className="btn-primary text-lg">
-                  {t('whisk2capcut_hero_cta_desktop' as TranslationKey)}
+                <a href={`/${lang}/autoflowcut`} className="btn-primary text-lg">
+                  {lang === 'ko' ? 'AutoFlowCut으로 전환' : lang === 'ja' ? 'AutoFlowCutに移行' : lang === 'de' ? 'Zu AutoFlowCut wechseln' : 'Switch to AutoFlowCut'}
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </a>
-                <a
-                  href="https://chromewebstore.google.com/detail/whisk2capcut/bipgbkcmomdhfclabgdgepdhdfekcldl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary text-lg"
-                >
-                  {t('whisk2capcut_hero_cta')}
-                </a>
-                <a href="#pricing" className="btn-secondary text-lg">
-                  {t('whisk2capcut_hero_cta_secondary')}
                 </a>
               </div>
             </div>

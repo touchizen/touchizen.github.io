@@ -64,44 +64,23 @@ export default function InstallationSection({ lang, t, isMac }: { lang: Language
               </table>
             </div>
 
-            {/* Download Buttons */}
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Desktop - Primary */}
-              <div className="p-6 rounded-2xl border-2 border-violet-500 bg-violet-50 dark:bg-violet-900/20 dark:border-violet-600">
-                <h3 className="text-lg font-bold text-violet-700 dark:text-violet-300 mb-4 flex items-center gap-2">
-                  💻 {t('whisk2capcut_compare_desktop' as TranslationKey)}
-                  <span className="text-xs px-2 py-0.5 bg-violet-200 dark:bg-violet-800 text-violet-700 dark:text-violet-300 rounded-full">
-                    {t('whisk2capcut_compare_recommended' as TranslationKey)}
-                  </span>
-                </h3>
-                <div className="flex flex-col gap-3">
-                  <a
-                    href={isMac ? 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg' : 'https://apps.microsoft.com/detail/9N38G1SCG12J'}
-                    className="flex items-center justify-center gap-2 px-5 py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
-                  >
-                    {isMac ? '🍎' : '🪟'} {t(isMac ? 'whisk2capcut_desktop_dl_mac' as TranslationKey : 'whisk2capcut_desktop_dl_win' as TranslationKey)}
-                  </a>
-                  <a
-                    href={isMac ? 'https://apps.microsoft.com/detail/9N38G1SCG12J' : 'https://github.com/touchizen/whisk2capcut-desktop/releases/latest/download/Whisk2CapCut-arm64.dmg'}
-                    className="flex items-center justify-center gap-2 px-5 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
-                  >
-                    {isMac ? '🪟' : '🍎'} {t(isMac ? 'whisk2capcut_desktop_dl_win' as TranslationKey : 'whisk2capcut_desktop_dl_mac' as TranslationKey)}
-                  </a>
-                </div>
-              </div>
-
-              {/* Plugin - Secondary */}
-              <div className="p-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30">
-                <h3 className="text-lg font-bold text-gray-700 dark:text-gray-300 mb-4 flex items-center gap-2">
-                  🧩 {t('whisk2capcut_compare_plugin' as TranslationKey)}
-                </h3>
+            {/* AutoFlowCut 전환 안내 */}
+            <div className="mt-10 p-6 rounded-2xl border-2 border-amber-400 bg-amber-50 dark:bg-amber-900/20 dark:border-amber-600">
+              <div className="text-center">
+                <p className="text-lg font-bold text-amber-700 dark:text-amber-300 mb-2">
+                  {lang === 'ko' ? '⚠️ Google Whisk 종료로 서비스가 종료됩니다' : lang === 'ja' ? '⚠️ Google Whisk終了によりサービスを終了します' : lang === 'de' ? '⚠️ Dienst wird aufgrund der Einstellung von Google Whisk beendet' : '⚠️ Service ending due to Google Whisk shutdown'}
+                </p>
+                <p className="text-sm text-amber-600 dark:text-amber-400 mb-4">
+                  {lang === 'ko' ? 'Google Flow AI 기반의 AutoFlowCut으로 전환해 주세요.' : lang === 'ja' ? 'Google Flow AI搭載のAutoFlowCutへ移行してください。' : lang === 'de' ? 'Bitte wechseln Sie zu AutoFlowCut mit Google Flow AI.' : 'Please switch to AutoFlowCut, powered by Google Flow AI.'}
+                </p>
                 <a
-                  href="https://chromewebstore.google.com/detail/whisk2capcut/bipgbkcmomdhfclabgdgepdhdfekcldl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-5 py-3 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 rounded-xl font-semibold transition-all hover:-translate-y-0.5"
+                  href={`/${lang}/autoflowcut`}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold text-lg transition-all hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25"
                 >
-                  🌐 {t('whisk2capcut_hero_cta')}
+                  {lang === 'ko' ? 'AutoFlowCut으로 전환하기' : lang === 'ja' ? 'AutoFlowCutに移行する' : lang === 'de' ? 'Zu AutoFlowCut wechseln' : 'Switch to AutoFlowCut'}
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                 </a>
               </div>
             </div>
