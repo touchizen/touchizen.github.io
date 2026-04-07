@@ -460,7 +460,8 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   autoflowcut_hero_title: 'AutoFlowCut',
   autoflowcut_hero_slogan: '🎥 Google Flow AI → CapCut、自動化',
   autoflowcut_hero_subtitle: 'Google Flow AIで数百枚のAI画像と動画を大量自動生成し、タイムライン、字幕、アニメーション付きの完成されたCapCutプロジェクトをワンクリックでエクスポート。',
-  autoflowcut_hero_cta: 'デスクトップアプリをダウンロード',
+  autoflowcut_hero_cta: 'Microsoft Storeで入手',
+  autoflowcut_hero_cta_mac: 'macOS ダウンロード',
   autoflowcut_hero_cta_secondary: 'GitHubで見る',
   autoflowcut_platform_badge: 'デスクトップアプリ · オープンソース',
 
@@ -520,7 +521,8 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
 
   autoflowcut_cta_title: 'ワークフローを自動化する準備はできましたか？',
   autoflowcut_cta_subtitle: 'デスクトップアプリをダウンロードするか、GitHubでソースコードを確認してください。',
-  autoflowcut_cta_download: 'アプリをダウンロード',
+  autoflowcut_cta_download: 'Microsoft Storeで入手',
+  autoflowcut_cta_mac: 'macOS ダウンロード',
   autoflowcut_cta_github: 'GitHubで見る',
 
   // AutoFlowCut FAQ
