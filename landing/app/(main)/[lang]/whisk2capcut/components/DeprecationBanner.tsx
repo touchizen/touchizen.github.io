@@ -27,7 +27,7 @@ export default function DeprecationBanner({ lang }: { lang: Language }) {
   const m = messages[lang];
 
   return (
-    <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white">
+    <div className="relative z-40 mt-16 bg-gradient-to-r from-amber-500 to-orange-500 text-white">
       <div className="container-custom px-4 py-4">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left">
           <div className="flex-1">

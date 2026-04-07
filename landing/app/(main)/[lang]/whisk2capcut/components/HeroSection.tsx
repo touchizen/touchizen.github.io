@@ -3,7 +3,7 @@ import { Language, TranslationKey } from '@/lib/i18n';
 
 export default function HeroSection({ lang, t }: { lang: Language; t: (key: TranslationKey) => string }) {
   return (
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-16 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950" />
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-violet-400/20 rounded-full blur-3xl" />
