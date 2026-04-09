@@ -13,29 +13,17 @@ export default function CTASection({ lang, t }: { lang: Language; t: (key: Trans
             {t('autoflowcut_cta_subtitle' as TranslationKey)}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            {/* Windows - Microsoft Store */}
-            <a
-              href="https://apps.microsoft.com/detail/9PNZVP54WRSM"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 active:scale-95 shadow-lg"
-            >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
-              </svg>
-              {t('autoflowcut_cta_download' as TranslationKey)}
-            </a>
-            {/* macOS - GitHub Releases */}
+            {/* Windows/macOS - GitHub Releases */}
             <a
               href="https://github.com/touchizen/AutoFlowCut/releases/latest"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white/20 text-white border-2 border-white/40 rounded-2xl font-semibold text-lg hover:bg-white/30 transition-all duration-300 active:scale-95"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 active:scale-95 shadow-lg"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              {t('autoflowcut_cta_mac' as TranslationKey)}
+              {t('autoflowcut_cta_download' as TranslationKey)}
             </a>
             {/* GitHub - Source Code */}
             <a
