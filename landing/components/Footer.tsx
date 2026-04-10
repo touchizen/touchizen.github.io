@@ -1,7 +1,7 @@
 'use client';
 
 import { Language, translations, TranslationKey } from '@/lib/i18n';
-import { products, socialLinks } from '@/lib/products';
+import { products, getSocialLinks } from '@/lib/products';
 
 interface FooterProps {
   lang: Language;
@@ -40,6 +40,7 @@ const SocialIcon = ({ icon }: { icon: string }) => {
 
 export default function Footer({ lang }: FooterProps) {
   const t = (key: TranslationKey) => translations[lang][key];
+  const socialLinks = getSocialLinks(lang);
 
   return (
     <footer className="bg-gray-900 dark:bg-black text-white py-16">

@@ -57,19 +57,6 @@ export const products: Product[] = [
     icon: '📸',
     hasDetailPage: true,
   },
-  {
-    id: 'price-shot',
-    nameKey: 'priceshot_name',
-    sloganKey: 'priceshot_slogan',
-    descKey: 'priceshot_desc',
-    features: ['priceshot_feature1', 'priceshot_feature2', 'priceshot_feature3'],
-    ctaKey: 'priceshot_cta',
-    link: '/price-shot/',
-    isExternal: false,
-    gradient: 'from-orange-500 to-red-500',
-    icon: '🏷️',
-    hasDetailPage: false,
-  },
 ];
 
 export interface Feature {
@@ -122,3 +109,16 @@ export const socialLinks = [
     icon: 'x',
   },
 ];
+
+// Language-specific YouTube channel URLs
+// ko: Korean channel (@터치즌)
+// default (en/ja/de): English channel (@touchizen)
+export function getSocialLinks(lang: string) {
+  const youtubeUrl =
+    lang === 'ko'
+      ? 'https://youtube.com/@터치즌'
+      : 'https://youtube.com/@touchizen';
+  return socialLinks.map((link) =>
+    link.name === 'YouTube' ? { ...link, url: youtubeUrl } : link
+  );
+}
