@@ -208,6 +208,46 @@
     <lastmod>2026-03-22</lastmod>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://touchizen.com/guide/en/autoflowcut/import-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/import-guide.html" />
+    <lastmod>2026-04-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/ko/autoflowcut/import-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/import-guide.html" />
+    <lastmod>2026-04-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/ja/autoflowcut/import-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/import-guide.html" />
+    <lastmod>2026-04-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/guide/de/autoflowcut/import-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/import-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/import-guide.html" />
+    <lastmod>2026-04-10</lastmod>
+    <priority>0.7</priority>
+  </url>
 
   <!-- AutoFlowCut guide sub-pages (ko/ja/de for capcut-export) -->
   <url>
