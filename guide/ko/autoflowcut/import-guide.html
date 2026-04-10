@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlowCut - 파일 가져오기 가이드</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
+  <meta name="description" content="CSV, SRT, 텍스트 파일을 AutoFlowCut에 가져오는 방법을 알아보세요. AI 이미지/비디오 생성을 위한 프롬프트 일괄 입력 가이드.">
+  <meta name="keywords" content="AutoFlowCut, CSV 가져오기, SRT 자막, AI 이미지 생성, Google Flow AI, CapCut, 프롬프트 입력, 일괄 이미지 생성">
+  <meta name="author" content="Touchizen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://touchizen.github.io/guide/ko/autoflowcut/import-guide.html">
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="ko" href="https://touchizen.github.io/guide/ko/autoflowcut/import-guide.html">
+  <link rel="alternate" hreflang="en" href="https://touchizen.github.io/guide/en/autoflowcut/import-guide.html">
+  <link rel="alternate" hreflang="de" href="https://touchizen.github.io/guide/de/autoflowcut/import-guide.html">
+  <link rel="alternate" hreflang="ja" href="https://touchizen.github.io/guide/ja/autoflowcut/import-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://touchizen.github.io/guide/en/autoflowcut/import-guide.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://touchizen.github.io/guide/ko/autoflowcut/import-guide.html">
+  <meta property="og:title" content="AutoFlowCut - 파일 가져오기 가이드">
+  <meta property="og:description" content="CSV, SRT, 텍스트 파일을 AutoFlowCut에 가져오는 방법을 알아보세요. AI 이미지/비디오 생성을 위한 프롬프트 일괄 입력 가이드.">
+  <meta property="og:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="Touchizen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@touchizen">
+  <meta name="twitter:title" content="AutoFlowCut - 파일 가져오기 가이드">
+  <meta name="twitter:description" content="CSV, SRT, 텍스트 파일을 AutoFlowCut에 가져오는 방법을 알아보세요.">
+  <meta name="twitter:image" content="https://touchizen.github.io/images/autoflowcut-og.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "AutoFlowCut 파일 가져오기 가이드",
+    "description": "CSV, SRT, 텍스트 파일을 AutoFlowCut에 가져오는 방법",
+    "image": "https://touchizen.github.io/images/autoflowcut-og.png",
+    "inLanguage": "ko",
+    "author": {
+      "@type": "Organization",
+      "name": "Touchizen",
+      "url": "https://touchizen.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/autoflowcut.svg?v=20260313">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+    .tab-btn.active {
+      border-bottom-color: #06b6d4;
+      color: #06b6d4;
+    }
+    .dark .tab-btn.active {
+      color: #22d3ee;
+    }
+    .style-tag-chip {
+      transition: all 0.15s ease;
+    }
+    .style-tag-chip:hover {
+      transform: translateY(-1px);
+    }
+    /* 앵커 스크롤 시 헤더 높이만큼 오프셋 */
+    [id] {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="/ko/autoflowcut/" class="flex items-center gap-2">
+          <img src="/images/autoflowcut.svg?v=20260313" alt="AutoFlowCut" class="w-8 h-8 rounded-lg">
+          <span class="text-lg font-bold gradient-text">AutoFlowCut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- Language Dropdown -->
+          <div class="relative">
+            <button id="langToggle" class="flex items-center gap-1 px-3 py-1.5 text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+              <span>🇰🇷</span>
+              <span>한국어</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="langDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
+              <a href="/guide/en/autoflowcut/import-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇺🇸</span> English
+              </a>
+              <a href="/guide/ko/autoflowcut/import-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-medium">
+                <span>🇰🇷</span> 한국어
+              </a>
+              <a href="/guide/de/autoflowcut/import-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇩🇪</span> Deutsch
+              </a>
+              <a href="/guide/ja/autoflowcut/import-guide.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                <span>🇯🇵</span> 日本語
+              </a>
+            </div>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          </svg>
+          가져오기 가이드
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">파일 가져오기 가이드</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          CSV, SRT, 텍스트 파일을 AutoFlowCut에 가져오는 방법
+        </p>
+      </div>
+
+      <!-- Quick Start -->
+      <div id="quick-start" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          5분 안에 시작하기
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">추천</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          복잡한 설정 없이 바로 시작해보세요. 텍스트 파일 하나면 충분합니다!
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">텍스트 파일 만들기</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">메모장이나 텍스트 편집기에서 장면 설명을 한 줄씩 작성하세요</p>
+              <div class="mt-2 bg-gray-900 dark:bg-black rounded-lg p-3 font-mono text-xs text-green-400">
+                해가 뜨는 산봉우리<br>
+                숲길을 걷는 여행자<br>
+                마을에 도착한 주인공
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div class="flex-1">
+              <p class="font-medium text-gray-900 dark:text-white">파일 가져오기</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">AutoFlowCut 데스크톱 앱에서 <strong>"📂 가져오기"</strong> 버튼 클릭 → <strong>"프롬프트 Text 파일"</strong> 선택</p>
+
+              <!-- 앱 탭 헤더 UI 미리보기 -->
+              <div class="bg-gray-900 dark:bg-black rounded-lg p-3 text-xs">
+                <div class="flex items-center justify-between mb-2 pb-2 border-b border-gray-700">
+                  <div class="flex gap-1">
+                    <span class="px-2 py-1 bg-primary-600 text-white rounded">📝 프롬프트</span>
+                    <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded">📋 씬목록 (0)</span>
+                  </div>
+                  <div class="flex gap-1">
+                    <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded">🖼️ Ref (0)</span>
+                    <span class="px-2 py-1 bg-blue-600 text-white rounded animate-pulse">📂 가져오기</span>
+                  </div>
+                </div>
+                <div class="text-gray-500 text-center py-4">← 여기를 클릭!</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div class="flex-1">
+              <p class="font-medium text-gray-900 dark:text-white">이미지 생성!</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">화면 하단의 <strong>"생성 시작"</strong> 버튼을 누르면 Flow AI가 각 장면의 이미지를 자동으로 생성합니다</p>
+
+              <!-- 앱 하단 버튼 UI 미리보기 -->
+              <div class="bg-gray-900 dark:bg-black rounded-lg p-3 text-xs">
+                <div class="flex gap-2">
+                  <button class="flex-1 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-lg font-medium animate-pulse">
+                    ✨ 생성 시작
+                  </button>
+                </div>
+                <div class="text-gray-500 text-center text-xs mt-2">씬이 있으면 활성화됨</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-emerald-700 dark:text-emerald-300">
+            💡 <strong>다음 단계:</strong> 처음에는 텍스트 파일로 시작하세요. 자막이나 캐릭터 일관성이 필요하면 아래 CSV 형식을 사용하세요.
+          </p>
+        </div>
+      </div>
+
+      <!-- Supported File Types -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📄</span>
+          지원하는 파일 형식
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">📝</span>
+              <span class="font-semibold text-amber-700 dark:text-amber-300">일반 텍스트</span>
+              <span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">가장 쉬움</span>
+            </div>
+            <p class="text-sm text-amber-600 dark:text-amber-400">한 줄에 하나의 장면, 간단한 형식</p>
+          </div>
+          <div class="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">📊</span>
+              <span class="font-semibold text-blue-700 dark:text-blue-300">장면 CSV</span>
+            </div>
+            <p class="text-sm text-blue-600 dark:text-blue-400">프롬프트, 자막, 시간 정보를 포함한 장면 정보</p>
+          </div>
+          <div class="p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">🖼️</span>
+              <span class="font-semibold text-green-700 dark:text-green-300">레퍼런스 CSV</span>
+            </div>
+            <p class="text-sm text-green-600 dark:text-green-400">캐릭터/배경/스타일 정의 (일관성 유지용)</p>
+          </div>
+          <div class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">🎬</span>
+              <span class="font-semibold text-purple-700 dark:text-purple-300">SRT 자막</span>
+              <span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full">나레이션 영상</span>
+            </div>
+            <p class="text-sm text-purple-600 dark:text-purple-400">표준 자막 형식, 자동으로 장면으로 변환</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow Overview -->
+      <div id="workflow" class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-2xl border border-indigo-200 dark:border-indigo-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🔄</span>
+          전체 워크플로우
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          파일들이 어떻게 연결되는지 한눈에 보세요
+        </p>
+
+        <!-- Simple Workflow -->
+        <div class="mb-6">
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 flex items-center gap-2">
+            <span class="text-green-500">●</span> 기본 (텍스트만)
+          </h3>
+          <div class="flex items-center gap-2 flex-wrap text-sm">
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              📝 텍스트 파일
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              📋 씬 목록
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg border border-primary-300 dark:border-primary-700 text-primary-700 dark:text-primary-300">
+              🎨 이미지 생성
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              📦 CapCut 내보내기
+            </div>
+          </div>
+        </div>
+
+        <!-- Advanced Workflow -->
+        <div>
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 flex items-center gap-2">
+            <span class="text-blue-500">●</span> 고급 (캐릭터 일관성 유지)
+          </h3>
+          <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div class="flex items-center gap-2 text-sm">
+                <div class="px-3 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-300">
+                  📊 씬 CSV
+                </div>
+                <span class="text-xs text-gray-500">characters: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">왕</code></span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <div class="px-3 py-2 bg-green-100 dark:bg-green-900/30 rounded-lg border border-green-300 dark:border-green-700 text-green-700 dark:text-green-300">
+                  🖼️ 레퍼런스 CSV
+                </div>
+                <span class="text-xs text-gray-500">name: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">왕</code></span>
+              </div>
+            </div>
+            <div class="flex items-center justify-center gap-2 text-sm">
+              <span class="text-gray-500">태그가 같으면</span>
+              <span class="text-green-500 font-bold">✓</span>
+              <span class="text-gray-500">자동 매칭!</span>
+              <span class="text-gray-400 mx-2">→</span>
+              <span class="text-gray-600 dark:text-gray-400">동일한 캐릭터 외모 유지</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>요약:</strong> 씬 CSV의 <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">characters</code>, <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">scene_tag</code>, <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">style_tag</code> 값이 레퍼런스 CSV의 <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code>과 일치하면 해당 참조 이미지가 자동으로 적용됩니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- Import Modal Preview -->
+      <div id="import-modal" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📂</span>
+          가져오기 모달 미리보기
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          "📂 가져오기" 버튼을 누르면 나타나는 모달입니다. 원하는 파일 형식을 클릭하세요.
+        </p>
+
+        <!-- Import Modal UI -->
+        <div class="bg-gray-900 dark:bg-black rounded-xl p-4 max-w-md mx-auto">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-700">
+            <span class="text-white font-semibold">📂 파일 가져오기</span>
+            <span class="text-gray-500 cursor-pointer">✕</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-4">파일 형식을 선택하세요</p>
+
+          <!-- Import Options -->
+          <div class="space-y-2">
+            <!-- Text Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-amber-500 transition-all">
+              <span class="text-2xl">📝</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">프롬프트 Text 파일</div>
+                <div class="text-gray-400 text-xs">줄바꿈으로 구분된 프롬프트</div>
+                <div class="text-gray-500 text-xs mt-1">한 줄 = 하나의 씬</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- CSV Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-blue-500 transition-all">
+              <span class="text-2xl">📊</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">씬 CSV 파일</div>
+                <div class="text-gray-400 text-xs">구조화된 씬 데이터</div>
+                <div class="text-gray-500 text-xs mt-1">prompt, subtitle, characters...</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- Reference CSV Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-green-500 transition-all">
+              <span class="text-2xl">🖼️</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">레퍼런스 CSV 파일</div>
+                <div class="text-gray-400 text-xs">캐릭터/배경/스타일 정의</div>
+                <div class="text-gray-500 text-xs mt-1">name, type, prompt</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+
+            <!-- SRT Option -->
+            <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-purple-500 transition-all">
+              <span class="text-2xl">📺</span>
+              <div class="flex-1">
+                <div class="text-white font-medium text-sm">자막 SRT 파일</div>
+                <div class="text-gray-400 text-xs">자막에서 자동으로 씬 생성</div>
+                <div class="text-gray-500 text-xs mt-1">타임코드 + 자막 → 프롬프트</div>
+              </div>
+              <span class="text-gray-500">→</span>
+            </div>
+          </div>
+
+          <!-- Option Links -->
+          <div class="mt-4 pt-3 border-t border-gray-700">
+            <p class="text-gray-500 text-xs mb-2">각 옵션 아래에 도움말 버튼이 있습니다:</p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">📖 가이드</span>
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">📄 샘플</span>
+              <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">🤖 AI 생성</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plain Text Format -->
+      <div id="plain-text" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📝</span>
+          프롬프트 Text 파일
+          <span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">가장 쉬움</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          가장 간단한 형식입니다. 한 줄에 하나의 장면 설명을 작성하면 됩니다. 각 줄이 기본 시간으로 별도의 장면이 됩니다.
+        </p>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">예시</h3>
+        <div class="relative">
+          <pre id="text-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">산봉우리 위로 떠오르는 일출
+계곡을 걷는 두 여행자
+별빛 아래 캠프파이어
+평화로운 마을에서의 여정의 끝</pre>
+          <button onclick="copyCode('text-example')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scene CSV Format -->
+      <div id="scene-csv" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📊</span>
+          씬 CSV 파일
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          장면 CSV 파일은 각 장면의 내용을 정의합니다. 이미지 생성 프롬프트, 자막, 타이밍 등을 포함합니다.
+        </p>
+
+        <!-- Why CSV? -->
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-4 mb-6">
+          <h3 class="font-semibold text-blue-800 dark:text-blue-300 mb-2 flex items-center gap-2">
+            <span>🤔</span> 왜 CSV를 사용하나요?
+          </h3>
+          <p class="text-sm text-blue-700 dark:text-blue-400 mb-3">
+            텍스트 파일은 간단하지만, CSV를 사용하면 더 세밀한 컨트롤이 가능합니다:
+          </p>
+          <ul class="text-sm text-blue-600 dark:text-blue-400 space-y-1 ml-4">
+            <li>• <strong>자막</strong>을 별도로 지정 (프롬프트와 다른 내용)</li>
+            <li>• <strong>캐릭터/배경/스타일 태그</strong> → 레퍼런스 이미지와 자동 매칭 (아래 참조)</li>
+            <li>• <strong>장면별 시간</strong>을 다르게 설정 (3초, 5초 등)</li>
+          </ul>
+          <p class="text-xs text-blue-500 dark:text-blue-500 mt-2">
+            💡 태그가 레퍼런스와 매칭되면 씬목록에서 <span class="text-green-600 font-bold">✓</span> 표시가 됩니다
+          </p>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">필수 컬럼</h3>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm border-gray-200 dark:border-gray-700">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">컬럼</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">설명</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">예시</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">prompt</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">이미지 생성 프롬프트</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">석양 속 절벽에 서 있는 영웅</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">subtitle</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">장면의 자막 텍스트</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">여기서 여정이 시작된다.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">characters</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">캐릭터 이름 (세미콜론 구분)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">영웅;멘토</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">scene_tag</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">배경 참조 태그</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">숲, 궁전, 마을</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">style_tag</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">비주얼 스타일 태그</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">cinematic, ghibli, ink-wash</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">duration</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">장면 시간 (초)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- CSV Example with Tabs -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">CSV 예시</h3>
+        <div class="mb-4">
+          <!-- Tab Buttons -->
+          <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+            <button onclick="switchTab('scene', 'text')" id="scene-tab-text" class="tab-btn active px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📝 텍스트
+            </button>
+            <button onclick="switchTab('scene', 'table')" id="scene-tab-table" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📊 표
+            </button>
+          </div>
+
+          <!-- Text View -->
+          <div id="scene-view-text" class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_sample.csv</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('scene-csv-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  복사
+                </button>
+                <a href="samples/sample-scenes.csv" download class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  다운로드
+                </a>
+              </div>
+            </div>
+            <pre id="scene-csv-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne","늙은 현명한 왕이 황금 왕좌에 앉아있다",왕,궁전,cinematic,5
+"Beautiful queen enters through doors","아름다운 왕비가 화려한 문으로 들어온다",왕비,궁전,cinematic,4
+"King and queen discuss matters","왕과 왕비가 중요한 문제를 논의한다",왕;왕비,궁전,cinematic,5</pre>
+            <!-- English Prompt Note -->
+            <div class="mt-3 p-3 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+              <p class="text-xs text-amber-700 dark:text-amber-400">
+                💡 <strong>왜 prompt는 영어인가요?</strong> Flow AI(Google)는 영어 프롬프트를 가장 잘 이해합니다.
+                자막(subtitle)은 원하는 언어로 작성하세요. AI 도구에게 "prompt는 영어, subtitle은 한국어로"라고 요청하면 자동으로 만들어줍니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- Table View -->
+          <div id="scene-view-table" class="hidden">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_sample.csv</span>
+              <a href="samples/sample-scenes.csv" download class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                다운로드
+              </a>
+            </div>
+            <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="bg-gray-100 dark:bg-gray-800">
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">prompt</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">subtitle</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">characters</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">scene_tag</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">style_tag</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">duration</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-gray-900">
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">A wise old king sits on golden throne</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">늙은 현명한 왕이 황금 왕좌에 앉아있다</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">왕</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">궁전</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">5</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">Beautiful queen enters through doors</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">아름다운 왕비가 화려한 문으로 들어온다</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">왕비</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">궁전</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">4</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">King and queen discuss matters</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">왕과 왕비가 중요한 문제를 논의한다</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">왕;왕비</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">궁전</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">5</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reference CSV Format -->
+      <div id="reference-csv" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🖼️</span>
+          레퍼런스 CSV 파일
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          레퍼런스 CSV 파일은 여러 장면에서 일관된 비주얼 생성을 위해 캐릭터, 배경, 스타일을 정의합니다.
+        </p>
+
+        <!-- No Image Required Note -->
+        <div class="bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800 p-4 mb-6">
+          <h3 class="font-semibold text-green-800 dark:text-green-300 mb-2 flex items-center gap-2">
+            <span>✅</span> 이미지가 없어도 괜찮아요!
+          </h3>
+          <p class="text-sm text-green-700 dark:text-green-400 mb-2">
+            CSV 파일에서 <code class="bg-green-200 dark:bg-green-800 px-1 rounded">image_path</code>는 비워둬도 됩니다. 다음 방법으로 이미지를 추가할 수 있습니다:
+          </p>
+          <ul class="text-sm text-green-600 dark:text-green-400 space-y-1 ml-4">
+            <li>• <strong>앱에서 직접 업로드</strong> - 레퍼런스 탭에서 이미지 클릭 → 파일 선택</li>
+            <li>• <strong>AI로 생성</strong> - description을 기반으로 Flow AI에서 참조 이미지 생성</li>
+            <li>• <strong>나중에 추가</strong> - 일단 CSV로 구조만 잡고, 이미지는 나중에</li>
+          </ul>
+        </div>
+
+        <!-- Tag Matching Explanation -->
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-5 mb-6">
+          <h3 class="font-bold text-amber-800 dark:text-amber-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">🔗</span>
+            태그 매칭 시스템 (매우 중요!)
+          </h3>
+          <p class="text-amber-700 dark:text-amber-400 text-sm mb-4">
+            레퍼런스 CSV의 <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">name</code> 필드는 장면 CSV의 태그와 <strong>자동으로 매칭</strong>됩니다.
+            이미지 생성 시 매칭된 참조 이미지가 Flow AI에 업로드되어 일관된 스타일/캐릭터를 유지합니다.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-blue-700 dark:text-blue-300 mb-2">👤 Character 매칭</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">type: character</code><br>
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">name: 왕</code>
+              </div>
+              <div class="mt-2 text-xs">
+                ↔️ 장면 CSV의 <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters</code> 컬럼
+              </div>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-green-700 dark:text-green-300 mb-2">🏞️ Background 매칭</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">type: background</code><br>
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">name: 궁전</code>
+              </div>
+              <div class="mt-2 text-xs">
+                ↔️ 장면 CSV의 <code class="bg-green-100 dark:bg-green-900 px-1 rounded">scene_tag</code> 컬럼
+              </div>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-purple-700 dark:text-purple-300 mb-2">🎨 Style 매칭</div>
+              <div class="text-gray-600 dark:text-gray-400">
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">type: style</code><br>
+                <code class="text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded">name: cinematic</code>
+              </div>
+              <div class="mt-2 text-xs">
+                ↔️ 장면 CSV의 <code class="bg-purple-100 dark:bg-purple-900 px-1 rounded">style_tag</code> 컬럼
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">필수 컬럼</h3>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm border-gray-200 dark:border-gray-700">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">컬럼</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">설명</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">예시</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">type</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">참조 타입 (character / background / style)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">character</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">name</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">태그 매칭에 사용되는 이름 (장면 CSV와 동일해야 함)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">왕, 궁전, cinematic</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">image_path</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">참조 이미지 경로 또는 URL</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">./images/king.png</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">description</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">상세 설명 (이미지 생성에 참고)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">흰 수염의 현명한 왕</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- CSV Example with Tabs -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">CSV 예시</h3>
+        <div class="mb-4">
+          <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+            <button onclick="switchTab('ref', 'text')" id="ref-tab-text" class="tab-btn active px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📝 텍스트
+            </button>
+            <button onclick="switchTab('ref', 'table')" id="ref-tab-table" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📊 표
+            </button>
+          </div>
+
+          <!-- Text View -->
+          <div id="ref-view-text" class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">reference_sample.csv</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('ref-csv-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  복사
+                </button>
+                <a href="samples/sample-references.csv" download class="text-xs px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  다운로드
+                </a>
+              </div>
+            </div>
+            <pre id="ref-csv-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">type,name,image_path,description
+character,왕,./images/king.png,흰 수염과 황금 왕관을 쓴 현명한 왕
+character,왕비,./images/queen.png,붉은 드레스를 입은 우아한 왕비
+background,궁전,./images/palace.png,화려한 장식의 왕실 궁전 내부
+style,cinematic,./images/cinematic.png,영화 같은 드라마틱 조명</pre>
+          </div>
+
+          <!-- Table View -->
+          <div id="ref-view-table" class="hidden">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">reference_sample.csv</span>
+              <a href="samples/sample-references.csv" download class="text-xs px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                다운로드
+              </a>
+            </div>
+            <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="bg-gray-100 dark:bg-gray-800">
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">type</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">name</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">image_path</th>
+                    <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">description</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-gray-900">
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700"><span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded text-xs">character</span></td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-medium">왕</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono text-gray-500">./images/king.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">흰 수염과 황금 왕관을 쓴 현명한 왕</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700"><span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded text-xs">character</span></td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-medium">왕비</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono text-gray-500">./images/queen.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">붉은 드레스를 입은 우아한 왕비</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700"><span class="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded text-xs">background</span></td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-medium">궁전</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono text-gray-500">./images/palace.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">화려한 장식의 왕실 궁전 내부</td>
+                  </tr>
+                  <tr>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700"><span class="px-2 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded text-xs">style</span></td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-medium">cinematic</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono text-gray-500">./images/cinematic.png</td>
+                    <td class="px-3 py-2 border-gray-200 dark:border-gray-700">영화 같은 드라마틱 조명</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SRT Format -->
+      <div id="srt-subtitle" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🎬</span>
+          자막 SRT 파일
+          <span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full">나레이션 영상 제작</span>
+        </h2>
+
+        <!-- SRT Best For -->
+        <div class="bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 p-4 mb-6">
+          <h3 class="font-semibold text-purple-800 dark:text-purple-300 mb-2 flex items-center gap-2">
+            <span>🎙️</span> 이런 분들에게 추천!
+          </h3>
+          <ul class="text-sm text-purple-700 dark:text-purple-400 space-y-1 ml-4">
+            <li>• TTS(텍스트 음성 변환)로 나레이션을 먼저 만들고 영상을 제작하는 분</li>
+            <li>• 유튜브 자막 파일(SRT)을 그대로 활용하고 싶은 분</li>
+            <li>• 타임코드 기반으로 정확한 장면 전환이 필요한 분</li>
+          </ul>
+        </div>
+
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          표준 SRT 자막 파일을 가져옵니다. 각 자막 블록은 자동으로 장면으로 변환되며, 자막 텍스트가 프롬프트와 자막으로 사용됩니다. 시간은 타임코드에서 자동 계산됩니다.
+        </p>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">SRT 구조</h3>
+        <div class="relative">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">sample.srt</span>
+            <div class="flex gap-2">
+              <button onclick="copyCode('srt-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                복사
+              </button>
+              <a href="samples/sample-subtitles.srt" download class="text-xs px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                다운로드
+              </a>
+            </div>
+          </div>
+          <pre id="srt-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">1
+00:00:00,000 --> 00:00:05,000
+The hero awakens in a mystical forest.
+
+2
+00:00:05,000 --> 00:00:09,500
+A strange light guides the way forward.
+
+3
+00:00:09,500 --> 00:00:14,000
+A mysterious figure appears in the distance.</pre>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">
+          번호가 매겨진 각 블록이 하나의 장면이 됩니다. 타임코드로 장면 시간이 자동 결정됩니다.
+        </p>
+
+        <!-- TTS Service Info -->
+        <div id="tts-srt" class="mt-6 bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-xl border border-violet-200 dark:border-violet-800 p-4">
+          <h4 class="font-semibold text-violet-800 dark:text-violet-300 mb-3 flex items-center gap-2">
+            <span class="text-lg">🎙️</span>
+            TTS 서비스에서 SRT 자동 생성하기
+          </h4>
+          <p class="text-sm text-violet-700 dark:text-violet-400 mb-4">
+            아래 TTS(Text-to-Speech) 서비스들은 음성을 생성할 때 <strong>SRT 자막 파일을 자동으로 함께 생성</strong>해 줍니다.
+            나레이션 음성과 함께 자막을 받아서 AutoFlowCut에 바로 가져올 수 있습니다.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-violet-200 dark:border-violet-700 hover:border-violet-400 dark:hover:border-violet-500 transition-colors group">
+              <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">11</div>
+              <div>
+                <div class="font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">ElevenLabs</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">고품질 AI 음성 + SRT 지원</div>
+              </div>
+              <svg class="w-4 h-4 ml-auto text-gray-400 group-hover:text-violet-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <a href="https://typecast.ai" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-violet-200 dark:border-violet-700 hover:border-violet-400 dark:hover:border-violet-500 transition-colors group">
+              <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">TC</div>
+              <div>
+                <div class="font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Typecast</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">한국어 특화 + 다양한 목소리</div>
+              </div>
+              <svg class="w-4 h-4 ml-auto text-gray-400 group-hover:text-violet-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <a href="https://vrew.voyagerx.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-violet-200 dark:border-violet-700 hover:border-violet-400 dark:hover:border-violet-500 transition-colors group">
+              <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">V</div>
+              <div>
+                <div class="font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Vrew</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">영상 편집 + AI 음성/자막</div>
+              </div>
+              <svg class="w-4 h-4 ml-auto text-gray-400 group-hover:text-violet-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
+          <p class="text-xs text-violet-600 dark:text-violet-400 mt-3">
+            💡 <strong>팁:</strong> TTS 서비스에서 음성을 생성한 후, SRT 파일을 다운로드하여 AutoFlowCut에 가져오면 타이밍이 정확하게 맞춰집니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- AI Generation Meta Prompt -->
+      <div id="ai-csv-prompt" class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🤖</span>
+          AI로 CSV 자동 생성하기
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Claude, ChatGPT, Gemini 등의 AI 도구에 아래 프롬프트를 붙여넣고 스토리를 입력하면 CSV 파일을 자동으로 생성할 수 있습니다.
+        </p>
+
+        <!-- Scene CSV Prompt -->
+        <div class="mb-6">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+            📊 장면 CSV 생성 프롬프트
+          </h3>
+          <div class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_csv_prompt_ko.txt</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('scene-prompt')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  복사
+                </button>
+                <button onclick="downloadTextFile('scene-prompt', 'scene_csv_prompt_ko.txt')" class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  다운로드
+                </button>
+              </div>
+            </div>
+            <pre id="scene-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">당신은 AutoFlowCut 영상 제작을 위한 장면 분석 어시스턴트입니다.
+
+스토리나 대본을 받으면, 다음 컬럼을 가진 장면 CSV 파일을 생성하세요:
+- prompt: AI 이미지 생성을 위한 영어 장면 설명 (구도, 조명, 분위기, 카메라 앵글 포함)
+- subtitle: 장면의 한국어 자막 (간결하게, 30자 이내)
+- characters: 장면에 등장하는 캐릭터 이름 (여러 명이면 세미콜론으로 구분, 예: 왕;왕비)
+- scene_tag: 배경/장소 태그 (일관된 태그 사용, 예: 궁전, 숲, 마을)
+- style_tag: 아트 스타일 (일관되게 유지, 예: cinematic, ghibli, ink-wash)
+- duration: 장면 지속 시간(초) (일반 3-5초, 빠른 컷 2초, 극적인 장면 6초 이상)
+
+규칙:
+1. 각 행 = 하나의 시각적 장면 (단일 이미지 프레임)
+2. 프롬프트는 설명적이되 200자 이내로 유지
+3. 일관된 캐릭터 이름 사용 (참조 이미지와 매칭됨)
+4. 유사한 장소는 하나의 scene_tag로 그룹화
+5. 페이싱 고려: 극적 효과를 위해 지속 시간 변화
+6. 헤더 행이 있는 CSV로 출력, 쉼표가 포함된 값은 따옴표로 감싸기
+
+출력 예시:
+prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old king sits on golden throne, dramatic lighting","현명한 왕이 왕좌에 앉아있다",왕,궁전,cinematic,5
+
+이제 이 스토리를 장면으로 분해하세요:</pre>
+          </div>
+        </div>
+
+        <!-- Reference CSV Prompt -->
+        <div class="mb-6">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+            🖼️ 레퍼런스 CSV 생성 프롬프트
+          </h3>
+          <div class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">reference_csv_prompt_ko.txt</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('ref-prompt')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  복사
+                </button>
+                <button onclick="downloadTextFile('ref-prompt', 'reference_csv_prompt_ko.txt')" class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  다운로드
+                </button>
+              </div>
+            </div>
+            <pre id="ref-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">당신은 AutoFlowCut을 위한 참조 계획 어시스턴트입니다.
+
+스토리를 받으면, 다음 컬럼을 가진 레퍼런스 CSV를 생성하세요:
+- type: 참조 타입 (character, background, 또는 style)
+- name: 태그 매칭용 이름 (장면 CSV 태그와 정확히 일치해야 함)
+- image_path: 제안하는 이미지 파일명
+- description: 참조 이미지 생성/검색을 위한 상세 설명
+
+캐릭터: 모든 고유 캐릭터와 시각적 외모 나열
+배경: 언급된 모든 고유 장소/설정 나열
+스타일: 스토리 분위기에 맞는 1-2개 아트 스타일 제안
+
+중요: 'name' 필드는 다음과 정확히 일치해야 합니다:
+- character 타입 → 장면 CSV의 'characters' 컬럼과 매칭
+- background 타입 → 장면 CSV의 'scene_tag' 컬럼과 매칭
+- style 타입 → 장면 CSV의 'style_tag' 컬럼과 매칭
+
+출력 예시:
+type,name,image_path,description
+character,왕,./images/king.png,"흰 수염과 황금 왕관을 쓴 현명한 노왕"
+background,궁전,./images/palace.png,"붉은 카펫이 깔린 웅장한 궁전 왕좌실"
+style,cinematic,./images/cinematic.png,"깊이감 있는 극적인 영화 조명"
+
+이제 이 스토리를 위한 참조 목록을 생성하세요:</pre>
+          </div>
+        </div>
+
+        <!-- AI Tool Usage Tips -->
+        <div class="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4">
+          <h4 class="font-semibold text-gray-900 dark:text-white mb-3">💡 AI 도구별 사용 팁</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
+              <div class="font-semibold text-orange-700 dark:text-orange-300 mb-1">🟠 Claude</div>
+              <p class="text-orange-600 dark:text-orange-400 text-xs">
+                긴 스토리 처리에 강함. Artifacts 기능으로 CSV 파일을 직접 다운로드 가능.
+              </p>
+            </div>
+            <div class="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+              <div class="font-semibold text-green-700 dark:text-green-300 mb-1">🟢 ChatGPT</div>
+              <p class="text-green-600 dark:text-green-400 text-xs">
+                Code Interpreter로 CSV 파일 생성 후 다운로드. 표 형식으로 미리보기 가능.
+              </p>
+            </div>
+            <div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div class="font-semibold text-blue-700 dark:text-blue-300 mb-1">🔵 Gemini</div>
+              <p class="text-blue-600 dark:text-blue-400 text-xs">
+                Google 문서와 연동 가능. 스프레드시트로 직접 내보내기 용이.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How to Import -->
+      <div class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          파일 가져오는 방법
+        </h2>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">AutoFlowCut 데스크톱 앱 열기</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">설치된 AutoFlowCut 앱 실행</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Import 버튼 클릭</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">사이드바 또는 툴바에 위치</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">파일 선택</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">컴퓨터에서 CSV, SRT 또는 TXT 파일 선택</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">검토 및 생성</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">가져온 장면을 확인하고 이미지 생성 시작</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download Sample Files -->
+      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📥</span>
+          샘플 파일 다운로드
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          빠르게 시작하려면 샘플 파일을 다운로드하세요:
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="samples/sample-scenes.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            sample-scenes.csv
+          </a>
+          <a href="samples/sample-references.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            sample-references.csv
+          </a>
+          <a href="samples/sample-subtitles.srt" download class="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            sample-subtitles.srt
+          </a>
+          <a href="samples/sample-prompts.txt" download class="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded-lg hover:bg-amber-200 dark:hover:bg-amber-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            sample-prompts.txt
+          </a>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          관련 가이드
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <a href="/guide/ko/autoflowcut/capcut-export.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            CapCut 내보내기 가이드
+          </a>
+          <a href="/guide/ko/autoflowcut/mcp-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            MCP 서버 가이드
+          </a>
+          <a href="/guide/ko/autoflowcut/skills-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            스킬 가이드
+          </a>
+          <a href="/guide/ko/autoflowcut/audio-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            오디오 패키지 가이드
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to App -->
+      <div class="text-center">
+        <a href="/ko/autoflowcut/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          AutoFlowCut으로 돌아가기
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026 Touchizen. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Language dropdown toggle
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    // Copy code function
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = btn.innerHTML.includes('복사')
+          ? '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 완료!'
+          : '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+
+    // Tab switching function
+    function switchTab(section, tab) {
+      document.getElementById(`${section}-view-text`).classList.add('hidden');
+      document.getElementById(`${section}-view-table`).classList.add('hidden');
+      document.getElementById(`${section}-tab-text`).classList.remove('active');
+      document.getElementById(`${section}-tab-table`).classList.remove('active');
+      document.getElementById(`${section}-view-${tab}`).classList.remove('hidden');
+      document.getElementById(`${section}-tab-${tab}`).classList.add('active');
+    }
+
+    // Download text file from element content
+    function downloadTextFile(elementId, filename) {
+      const element = document.getElementById(elementId);
+      const content = element.textContent;
+      const blob = new Blob([content], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
