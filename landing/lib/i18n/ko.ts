@@ -1,5 +1,6 @@
 export const ko = {
   // Header
+  brand_name: '터치즌',
   brand_slogan: '시간을 선물합니다',
   nav_products: '제품',
   nav_features: '특징',

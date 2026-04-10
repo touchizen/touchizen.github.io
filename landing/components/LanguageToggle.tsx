@@ -39,7 +39,9 @@ export default function LanguageToggle({ lang, onChange }: LanguageToggleProps) 
         aria-label="Select language"
         aria-expanded={isOpen}
       >
-        <span>{currentLang.flag}</span>
+        <span className="inline-flex items-center justify-center w-7 h-5 text-[10px] font-bold bg-primary-500 text-white rounded">
+          {currentLang.country}
+        </span>
         <span className="hidden sm:inline">{currentLang.code.toUpperCase()}</span>
         <svg
           className={`w-3 h-3 transition-transform ${isOpen ? 'rotate-180' : ''}`}
@@ -63,7 +65,9 @@ export default function LanguageToggle({ lang, onChange }: LanguageToggleProps) 
                   : 'text-gray-700 dark:text-gray-300'
               }`}
             >
-              <span>{language.flag}</span>
+              <span className="inline-flex items-center justify-center w-7 h-5 text-[10px] font-bold bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded">
+                {language.country}
+              </span>
               <span>{language.name}</span>
               {lang === language.code && (
                 <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">

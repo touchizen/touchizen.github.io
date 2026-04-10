@@ -5,11 +5,13 @@ import { de } from './de';
 
 export type Language = 'en' | 'ko' | 'ja' | 'de';
 
-export const languages: { code: Language; name: string; flag: string }[] = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'ko', name: '한국어', flag: '🇰🇷' },
-  { code: 'ja', name: '日本語', flag: '🇯🇵' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+// country = ISO 3166-1 alpha-2 (uppercase) — used as badge text since flag emojis
+// don't render on Windows. Displayed as a styled badge in LanguageToggle.
+export const languages: { code: Language; name: string; country: string }[] = [
+  { code: 'en', name: 'English', country: 'US' },
+  { code: 'ko', name: '한국어', country: 'KR' },
+  { code: 'ja', name: '日本語', country: 'JP' },
+  { code: 'de', name: 'Deutsch', country: 'DE' },
 ];
 
 export const translations = {

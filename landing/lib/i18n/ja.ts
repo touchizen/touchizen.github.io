@@ -1,5 +1,6 @@
 export const ja = {
   // Header
+  brand_name: 'Touchizen',
   brand_slogan: '時間をプレゼント',
   nav_products: '製品',
   nav_features: '機能',

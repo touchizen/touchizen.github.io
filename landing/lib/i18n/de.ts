@@ -1,5 +1,6 @@
 export const de = {
   // Header
+  brand_name: 'Touchizen',
   brand_slogan: 'Mehr schaffen, weniger arbeiten',
   nav_products: 'Produkte',
   nav_features: 'Funktionen',
