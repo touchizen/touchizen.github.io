@@ -1,7 +1,7 @@
-name,type,prompt
-king,character,"Medieval king in royal robes with golden crown, dignified expression, Renaissance painting style"
-queen,character,"Medieval queen in elegant gown with jeweled tiara, graceful pose, Renaissance painting style"
-guards,character,"Royal guards in armor with spears, standing at attention, Renaissance painting style"
-palace,scene,"Grand palace interior with marble columns and painted ceiling, Renaissance architecture"
-library,scene,"Medieval library with ancient scrolls and candles, warm lighting"
-watercolor,style,"Soft watercolor painting style, gentle brush strokes, pastel colors with subtle details"
+type,name,image_path,description
+character,könig,,"A wise old medieval German king of the Holy Roman Empire with white beard, golden crown, royal robes with ermine trim, dignified expression"
+character,königin,,"An elegant medieval German queen in a lavish red gown with golden embroidery, jeweled tiara, graceful posture"
+character,wachen,,"Imperial guards in shining armor with halberds, standing at attention, medieval German soldiers"
+scene,palast,,"Grand imperial palace with marble columns, vaulted ceiling, heraldic banners, torch-lit corridors, ornate tapestries"
+scene,burg,,"Mighty medieval German castle on a hill, battlements and towers, stone walls, drawbridge, morning mist"
+style,mittelalterliches historiendrama,,"Medieval German historical drama style, Holy Roman Empire influences, cinematic composition, warm color palette, detailed period costumes"

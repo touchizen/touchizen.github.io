@@ -1,39 +1,39 @@
 1
-00:00:00,000 --> 00:00:03,000
-Once upon a time, there was a small village in the mountains.
+00:00:00,000 --> 00:00:05,000
+昔々、賢明な将軍が平和な国を治めていました。
 
 2
-00:00:03,000 --> 00:00:06,000
-In that village lived a wise old man.
+00:00:05,000 --> 00:00:09,000
+将軍は毎日、大広間で民の声に耳を傾けていました。
 
 3
-00:00:06,000 --> 00:00:09,000
-One day, a young man came to visit the elder.
+00:00:09,000 --> 00:00:14,000
+ある朝、姫が大広間に重要な知らせを携えて参りました。
 
 4
-00:00:09,000 --> 00:00:12,000
-"Please teach me the wisdom of life."
+00:00:14,000 --> 00:00:18,000
+「上様、隣国が同盟を結びたいと申しております。」
 
 5
-00:00:12,000 --> 00:00:15,000
-The old man smiled and pointed to the mountain.
+00:00:18,000 --> 00:00:23,000
+将軍は静かに頷き、忠実な家臣たちを召集しました。
 
 6
-00:00:15,000 --> 00:00:18,000
-"Climb that mountain, and you will find your answer."
+00:00:23,000 --> 00:00:27,000
+侍の衛兵たちは使者を迎えるために江戸城の門を開きました。
 
 7
-00:00:18,000 --> 00:00:21,000
-The young man began climbing the treacherous path.
+00:00:27,000 --> 00:00:32,000
+大広間には国中の大名が集まりました。
 
 8
-00:00:21,000 --> 00:00:24,000
-Finally reaching the summit, he found enlightenment.
+00:00:32,000 --> 00:00:36,000
+長い評定の末、平和の約定が結ばれました。
 
 9
-00:00:24,000 --> 00:00:27,000
-"The journey itself was the lesson!"
+00:00:36,000 --> 00:00:41,000
+将軍と姫の叡智は国中で称えられました。
 
 10
-00:00:27,000 --> 00:00:30,000
-He returned to the village and shared his story.
+00:00:41,000 --> 00:00:45,000
+こうして江戸の世に平和と繁栄が訪れたのでした。

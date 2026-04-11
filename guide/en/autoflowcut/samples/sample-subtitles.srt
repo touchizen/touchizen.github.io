@@ -1,18 +1,18 @@
 1
 00:00:00,000 --> 00:00:05,000
-Once upon a time, a young scholar lived in a village.
+Once upon a time, a young scholar lived in a small village.
 
 2
 00:00:05,000 --> 00:00:09,000
-Every day he studied, reading books under the pine tree.
+Every day he studied, reading books under the old oak tree.
 
 3
 00:00:09,000 --> 00:00:14,000
-One day, he decided to travel to Hanyang for the civil exam.
+One day, he decided to travel to the royal court for the examination.
 
 4
 00:00:14,000 --> 00:00:18,000
-After a long journey, the scholar finally arrived in Hanyang.
+After a long journey, the scholar finally arrived at the castle.
 
 5
 00:00:18,000 --> 00:00:23,000
@@ -20,11 +20,11 @@ Standing before the palace, he marveled at its grandeur.
 
 6
 00:00:23,000 --> 00:00:27,000
-The exam hall was filled with scholars from across the land.
+The great hall was filled with scholars from across the kingdom.
 
 7
 00:00:27,000 --> 00:00:32,000
-The scholar poured all his effort into writing the exam.
+The scholar poured all his effort into writing the examination.
 
 8
 00:00:32,000 --> 00:00:36,000
@@ -32,8 +32,8 @@ At last, the day of the results arrived.
 
 9
 00:00:36,000 --> 00:00:41,000
-The scholar earned first place and became the pride of his village.
+The scholar earned the king's favor and became the pride of his village.
 
 10
 00:00:41,000 --> 00:00:45,000
-And so, the scholar became a great official serving the people.
+And so, the scholar became a trusted court advisor serving the people.

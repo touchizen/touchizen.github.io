@@ -1,39 +1,39 @@
 1
-00:00:00,000 --> 00:00:03,000
-Once upon a time, there was a small village in the mountains.
+00:00:00,000 --> 00:00:05,000
+Es war einmal ein weiser König, der über ein friedliches Reich herrschte.
 
 2
-00:00:03,000 --> 00:00:06,000
-In that village lived a wise old man.
+00:00:05,000 --> 00:00:09,000
+Jeden Tag saß er auf seinem goldenen Thron und sprach Recht.
 
 3
-00:00:06,000 --> 00:00:09,000
-One day, a young man came to visit the elder.
+00:00:09,000 --> 00:00:14,000
+Eines Morgens kam die Königin in den Thronsaal mit wichtigen Nachrichten.
 
 4
-00:00:09,000 --> 00:00:12,000
-"Please teach me the wisdom of life."
+00:00:14,000 --> 00:00:18,000
+"Mein König, unsere Nachbarn bitten um ein Bündnis."
 
 5
-00:00:12,000 --> 00:00:15,000
-The old man smiled and pointed to the mountain.
+00:00:18,000 --> 00:00:23,000
+Der König nickte bedächtig und rief seine treuen Ritter zusammen.
 
 6
-00:00:15,000 --> 00:00:18,000
-"Climb that mountain, and you will find your answer."
+00:00:23,000 --> 00:00:27,000
+Die Wachen öffneten die großen Burgtore für die Gesandten.
 
 7
-00:00:18,000 --> 00:00:21,000
-The young man began climbing the treacherous path.
+00:00:27,000 --> 00:00:32,000
+Im großen Saal versammelten sich die Adligen des ganzen Reiches.
 
 8
-00:00:21,000 --> 00:00:24,000
-Finally reaching the summit, he found enlightenment.
+00:00:32,000 --> 00:00:36,000
+Nach langer Beratung wurde ein Friedensvertrag unterzeichnet.
 
 9
-00:00:24,000 --> 00:00:27,000
-"The journey itself was the lesson!"
+00:00:36,000 --> 00:00:41,000
+Der König und die Königin wurden im ganzen Land für ihre Weisheit gepriesen.
 
 10
-00:00:27,000 --> 00:00:30,000
-He returned to the village and shared his story.
+00:00:41,000 --> 00:00:45,000
+Und so herrschten Frieden und Wohlstand über das mittelalterliche Reich.

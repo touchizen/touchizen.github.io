@@ -1,6 +1,6 @@
 type,name,image_path,description
-character,scholar,,"A young Korean scholar in white dopo (traditional scholar robe), topknot hairstyle with gat (traditional hat), carrying a book bundle, gentle and determined expression"
-character,queen,,"A Joseon dynasty queen in elaborate royal hanbok with phoenix embroidery, jeweled binyeo (hairpin), dignified and graceful posture"
-scene,palace,,"Grand Joseon palace interior with wooden pillars, dancheong (colorful paintwork), stone courtyard, traditional tile roof"
-scene,village,,"Traditional Korean village with thatched-roof houses, stone walls, persimmon trees, mountain backdrop"
-style,korean historical drama,,"Korean historical drama style, Joseon dynasty, cinematic composition, warm color palette, detailed traditional costumes"
+character,scholar,,"A young medieval English scholar in dark academic robes and white linen shirt, neatly combed hair, carrying a leather-bound book, gentle and determined expression"
+character,queen,,"A medieval English queen in elaborate royal gown with golden embroidery, jeweled crown, dignified and graceful posture"
+scene,palace,,"Grand medieval castle interior with stone pillars, heraldic banners, vaulted ceiling, torch-lit corridors, ornate tapestries"
+scene,village,,"Traditional medieval English village with thatched-roof cottages, stone walls, apple orchards, rolling hills backdrop"
+style,medieval historical drama,,"Medieval European historical drama style, Renaissance influences, cinematic composition, warm color palette, detailed period costumes"

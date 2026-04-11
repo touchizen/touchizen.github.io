@@ -1,7 +1,7 @@
-name,type,prompt
-king,character,"Medieval king in royal robes with golden crown, dignified expression, Renaissance painting style"
-queen,character,"Medieval queen in elegant gown with jeweled tiara, graceful pose, Renaissance painting style"
-guards,character,"Royal guards in armor with spears, standing at attention, Renaissance painting style"
-palace,scene,"Grand palace interior with marble columns and painted ceiling, Renaissance architecture"
-library,scene,"Medieval library with ancient scrolls and candles, warm lighting"
-watercolor,style,"Soft watercolor painting style, gentle brush strokes, pastel colors with subtle details"
+type,name,image_path,description
+character,shogun,,"A wise old Edo period Japanese shogun with white beard, black and gold kamishimo (formal samurai attire), dignified expression, jidaigeki style"
+character,hime,,"An elegant Edo period Japanese princess in colorful uchikake kimono with ornate hairpins, graceful posture"
+character,samurai,,"Samurai castle guards in traditional armor holding yari spears, standing at attention, stern expression"
+scene,edojou,,"Grand Edo castle great hall interior with wooden pillars, golden sliding doors (fusuma), tatami floor, warm lantern light, hanging scrolls"
+scene,matsuri,,"Edo period Japanese castle town festival with falling cherry blossoms, red paper lanterns, food stalls, bustling crowd"
+style,jidaigeki,,"Japanese jidaigeki historical drama style, Edo period atmosphere, cinematic composition, warm color palette, detailed traditional period costumes"
