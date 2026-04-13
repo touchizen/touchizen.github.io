@@ -1,6 +1,10 @@
 type,name,image_path,description
 character,scholar,,"A young medieval English scholar in dark academic robes and white linen shirt, neatly combed hair, carrying a leather-bound book, gentle and determined expression"
-character,queen,,"A medieval English queen in elaborate royal gown with golden embroidery, jeweled crown, dignified and graceful posture"
-scene,palace,,"Grand medieval castle interior with stone pillars, heraldic banners, vaulted ceiling, torch-lit corridors, ornate tapestries"
+character,officials,,"Medieval English court officials in long dark robes with chain-of-office necklaces, dignified bearing, stern expressions"
+character,crowd,,"Medieval English townsfolk in simple tunics and dresses, joyful expressions, clapping and cheering"
 scene,village,,"Traditional medieval English village with thatched-roof cottages, stone walls, apple orchards, rolling hills backdrop"
+scene,journey,,"Winding dirt road through medieval English countryside at dawn, rolling green hills, distant castle on the horizon"
+scene,palace,,"Grand medieval castle interior with stone pillars, heraldic banners, vaulted ceiling, torch-lit corridors, ornate tapestries"
+scene,examination,,"Medieval castle study hall with wooden desks, quill pens, parchment scrolls, candlelight, gothic windows"
+scene,celebration,,"Medieval castle courtyard decorated with colorful banners, flower garlands, festive crowd, golden sunlight"
 style,medieval historical drama,,"Medieval European historical drama style, Renaissance influences, cinematic composition, warm color palette, detailed period costumes"

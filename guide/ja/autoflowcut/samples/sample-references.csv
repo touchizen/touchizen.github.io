@@ -2,6 +2,7 @@ type,name,image_path,description
 character,shogun,,"A wise old Edo period Japanese shogun with white beard, black and gold kamishimo (formal samurai attire), dignified expression, jidaigeki style"
 character,hime,,"An elegant Edo period Japanese princess in colorful uchikake kimono with ornate hairpins, graceful posture"
 character,samurai,,"Samurai castle guards in traditional armor holding yari spears, standing at attention, stern expression"
+character,crowd,,"Edo period Japanese townsfolk in colorful yukata and kimono, joyful expressions, enjoying the festival"
 scene,edojou,,"Grand Edo castle great hall interior with wooden pillars, golden sliding doors (fusuma), tatami floor, warm lantern light, hanging scrolls"
 scene,matsuri,,"Edo period Japanese castle town festival with falling cherry blossoms, red paper lanterns, food stalls, bustling crowd"
 style,jidaigeki,,"Japanese jidaigeki historical drama style, Edo period atmosphere, cinematic composition, warm color palette, detailed traditional period costumes"

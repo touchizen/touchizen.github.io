@@ -1,6 +1,10 @@
 type,name,image_path,description
 character,scholar,,"A young Korean scholar in white dopo (traditional scholar robe), topknot hairstyle with gat (traditional hat), carrying a book bundle, gentle and determined expression"
-character,queen,,"A Joseon dynasty queen in elaborate royal hanbok with phoenix embroidery, jeweled binyeo (hairpin), dignified and graceful posture"
-scene,palace,,"Grand Joseon palace interior with wooden pillars, dancheong (colorful paintwork), stone courtyard, traditional tile roof"
+character,officials,,"Joseon dynasty court officials in dark blue dallyeong (official robes) with winged gat hats, dignified bearing, stern expressions"
+character,crowd,,"Joseon dynasty townsfolk in simple hanbok, joyful expressions, clapping and cheering under colorful lanterns"
 scene,village,,"Traditional Korean village with thatched-roof houses, stone walls, persimmon trees, mountain backdrop"
+scene,journey,,"Winding path through Korean countryside at dawn, rice paddies, distant Hanyang city walls on the horizon"
+scene,palace,,"Grand Joseon palace interior with wooden pillars, dancheong (colorful paintwork), stone courtyard, traditional tile roof"
+scene,examination,,"Joseon gwageo (civil exam) hall with wooden desks, brush and ink, mulberry paper, scholars seated in rows"
+scene,celebration,,"Joseon village square decorated with colorful lanterns, flower garlands, festive crowd, golden sunlight"
 style,korean historical drama,,"Korean historical drama style, Joseon dynasty, cinematic composition, warm color palette, detailed traditional costumes"
