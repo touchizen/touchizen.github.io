@@ -1,19 +1,19 @@
 1
 00:00:00,000 --> 00:00:05,000
-The hero awakens in a mystical forest.
+Once upon a time, a young scholar lived in a village.
 
 2
-00:00:05,000 --> 00:00:09,500
-A strange light guides the way forward.
+00:00:05,000 --> 00:00:09,000
+The scholar set off to the capital for the civil exam.
 
 3
-00:00:09,500 --> 00:00:14,000
-A mysterious figure appears in the distance.
+00:00:09,000 --> 00:00:14,000
+The palace in Hanyang was filled with dignified officials.
 
 4
-00:00:14,000 --> 00:00:18,500
-The hero draws a sword and prepares for battle.
+00:00:14,000 --> 00:00:18,000
+The scholar poured all his effort into the exam.
 
 5
-00:00:18,500 --> 00:00:23,000
-An epic clash echoes through the valley.
+00:00:18,000 --> 00:00:23,000
+At last, the scholar earned the glory of first place.
