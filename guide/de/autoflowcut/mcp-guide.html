@@ -174,61 +174,8 @@
         </div>
       </div>
 
-      <!-- Installation -->
-      <div id="installation" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
-        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
-          <span class="text-2xl">📦</span>
-          Installation
-        </h2>
-
-        <!-- Method A -->
-        <h3 class="font-semibold text-gray-900 dark:text-white mb-3 mt-2">Methode A: Global (Empfohlen)</h3>
-        <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">In allen Projekten verfügbar. Wird in <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">~/.claude.json</code> gespeichert.</p>
-        <div class="relative mb-6">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">Terminal</span>
-            <button onclick="copyCode('install-global')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-              </svg>
-              Kopieren
-            </button>
-          </div>
-          <pre id="install-global" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">git clone https://github.com/touchizen/AutoFlowCut.git ~/AutoFlowCut
-cd ~/AutoFlowCut/mcp-server
-npm install
-claude mcp add --scope user --transport stdio flow2capcut -- node $(pwd)/index.js</pre>
-        </div>
-
-        <!-- Method B -->
-        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Methode B: Projektlokal (.mcp.json)</h3>
-        <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Nur für ein bestimmtes Projekt. Erstellen Sie <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">.mcp.json</code> im Projektstammverzeichnis.</p>
-        <div class="relative mb-4">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">.mcp.json</span>
-            <button onclick="copyCode('install-local')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-              </svg>
-              Kopieren
-            </button>
-          </div>
-          <pre id="install-local" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">{
-  "mcpServers": {
-    "flow2capcut": {
-      "command": "node",
-      "args": ["~/AutoFlowCut/mcp-server/index.js"]
-    }
-  }
-}</pre>
-        </div>
-
-        <!-- Verify -->
-        <div class="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4 mt-4">
-          <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Installation überprüfen:</p>
-          <code class="text-sm font-mono text-emerald-600 dark:text-emerald-400">claude mcp list</code>
-        </div>
-      </div>
+      <!-- Installation (rendered by install-section.js) -->
+      <div id="install-section"></div>
 
       <!-- Tool Categories -->
       <div id="tool-categories" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
@@ -524,6 +471,7 @@ get_progress()</pre>
       });
     }
   </script>
+  <script src="/guide/assets/install-section.js"></script>
   <script src="/guide/assets/header.js"></script>
 </body>
 </html>
