@@ -1254,58 +1254,131 @@ style,jidaigeki,,"Japanese jidaigeki historical drama style, Edo period atmosphe
         </div>
       </div>
 
-      <!-- AI Generation - Text Prompt List -->
+      <!-- AI Generation - Text Prompt List (Short/Long tabs) -->
       <div id="ai-text-prompt" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">📝</span>
           AIでTextプロンプトリストを自動生成
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          以下のプロンプトをClaude、ChatGPT、Geminiなどのツールにストーリーと一緒に貼り付けると、1行に1シーンが入ったシンプルなプロンプトリスト(.txt)を自動生成できます。
+          以下のプロンプトをClaude、ChatGPT、GeminiなどのAIツールにストーリーと一緒に貼り付けると、1行に1シーンが入ったプロンプトリスト(.txt)を自動生成できます。映像フォーマットに合ったタブを選択してください。
         </p>
 
-        <div class="mb-2">
-          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-            📝 Textプロンプトリスト生成プロンプト
-          </h3>
+        <!-- Tab Buttons -->
+        <div class="flex border-b border-emerald-200 dark:border-emerald-800 mb-4">
+          <button onclick="switchTab('text-prompt', 'short')" id="text-prompt-tab-short" class="tab-btn active text-emerald-600 dark:text-emerald-400 border-emerald-600 dark:border-emerald-400 px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            📱 ショート (Shorts/Reels)
+          </button>
+          <button onclick="switchTab('text-prompt', 'long')" id="text-prompt-tab-long" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            🎬 ロング (物語/ドキュメンタリー)
+          </button>
+        </div>
 
-          <div class="relative">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">text_prompt_list_ja.txt</span>
-              <div class="flex gap-2">
-                <button onclick="copyCode('text-prompt')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                  </svg>
-                  コピー
-                </button>
-                <button onclick="downloadTextFile('text-prompt', 'text_prompt_list_ja.txt')" class="text-xs px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 rounded-lg transition-colors flex items-center gap-1">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                  </svg>
-                  ダウンロード
-                </button>
-              </div>
+        <!-- Short-form View -->
+        <div id="text-prompt-view-short" class="relative">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">text_prompt_short_ja.txt</span>
+            <div class="flex gap-2">
+              <button onclick="copyCode('text-prompt-short')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                コピー
+              </button>
+              <button onclick="downloadTextFile('text-prompt-short', 'text_prompt_short_ja.txt')" class="text-xs px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                ダウンロード
+              </button>
             </div>
-            <pre id="text-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">あなたはAutoFlowCut動画制作のためのシーンプロンプトリスト作成アシスタントです。
+          </div>
+          <pre id="text-prompt-short" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-64 overflow-y-auto">あなたはAutoFlowCutショート動画制作のためのシーンプロンプトリスト作成アシスタントです。
 
-ストーリーやテーマを受け取ったら、各行が1つのシーンを表す英語のイメージプロンプトリストを.txt形式で出力してください。
+テーマと動画の長さ（15秒/30秒/60秒）を受け取ったら、各行が1つのシーンを表す英語のイメージプロンプトリストを.txt形式で出力してください。
 
 ルール：
 1. 1行 = 1つのビジュアルシーン（単一画像フレーム）
 2. 英語で記述し、構図・照明・雰囲気・カメラアングルを含める
 3. 各プロンプトは200文字以内
-4. 起承転結の流れに沿ってシーンを並べる
-5. プロンプト間に空行を入れない
-6. 番号や追加説明なしでプロンプトのみ出力
+4. 最初のシーンは必ず「フック（Hook）」 — 0〜3秒で好奇心を引き出す強烈なイメージ
+   （結末の暗示、謎、劇的なコントラスト、視覚的衝撃など）
+5. シーン順序：フック → ビルドアップ → 転換/インパクト → 結末
+6. 動画の長さ別シーン数：
+   - 15秒 → 4〜6シーン
+   - 30秒 → 7〜10シーン
+   - 60秒 → 10〜15シーン
+7. ペーシングは速く、息つく間もなく
+8. プロンプト間に空行を入れない
+9. 番号や追加説明なしでプロンプトのみ出力
 
-出力例：
-A sunrise rising over mountain peaks, cinematic wide shot, golden hour
-Two travelers walking through a valley, over-shoulder shot, misty atmosphere
-A sudden storm approaches, dramatic lightning, dark clouds
+出力例（30秒、8シーン）：
+A lone figure stands on a cliff at dawn, silhouette against blood-red sky, dramatic wide shot
+A young scholar reading old scrolls in candlelight, close-up on focused eyes
+A sudden gust scatters pages into the storm, dynamic motion blur
+The scholar chases papers through rain-soaked streets, over-shoulder shot
+A hidden door revealed behind ivy, mysterious green glow, low angle
+Eyes widen as scholar steps inside, reaction shot, soft torchlight
+Ancient chamber unveils a glowing artifact, symmetrical wide shot, golden rays
+The scholar raises the artifact against sunrise, triumphant silhouette, epic composition
 
-では、このストーリーからプロンプトリストを作成してください：</pre>
+では、このテーマでプロンプトリストを作成してください（長さ：[15秒/30秒/60秒]から選択）：</pre>
+        </div>
+
+        <!-- Long-form View -->
+        <div id="text-prompt-view-long" class="hidden relative">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">text_prompt_long_ja.txt</span>
+            <div class="flex gap-2">
+              <button onclick="copyCode('text-prompt-long')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                コピー
+              </button>
+              <button onclick="downloadTextFile('text-prompt-long', 'text_prompt_long_ja.txt')" class="text-xs px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                ダウンロード
+              </button>
+            </div>
           </div>
+          <pre id="text-prompt-long" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-64 overflow-y-auto">あなたはAutoFlowCutロング動画制作のためのシーンプロンプトリスト作成アシスタントです。
+
+脚本（6,000〜8,000文字）またはテーマを受け取ったら、各行が1つのシーンを表す英語のイメージプロンプトリストを.txt形式で出力してください。
+
+ルール：
+1. 1行 = 1つのビジュアルシーン（単一画像フレーム）
+2. 英語で記述し、構図・照明・雰囲気・カメラアングルを含める
+3. 各プロンプトは200文字以内
+4. 最初のシーンは必ず「フック（Hook）」 — 0〜15秒で好奇心を引き出す強烈なイメージ
+   （結末の暗示、謎、劇的なコントラスト、視聴者への問いかけなど）
+5. シーン順序：フック → 起 → 承 → 転 → 結（5パート構造）
+   - フック：1〜5シーン（インパクト）
+   - 起（導入）：15〜25シーン（背景/人物紹介）
+   - 承（展開）：25〜40シーン（葛藤の高まり）
+   - 転（転換）：15〜30シーン（危機/ターニングポイント）
+   - 結（結末）：15〜30シーン（解消/余韻）
+6. 総シーン数：80〜150（脚本6,000〜8,000文字基準、平均100シーン推奨）
+7. 主要キャラクターは一貫した名前で繰り返す（参照マッチング用）
+8. プロンプト間に空行を入れない
+9. 番号や追加説明なしでプロンプトのみ出力
+
+出力例（最初の10シーン）：
+A silhouetted figure stands before a burning village at dusk, dramatic low angle, cinematic mood
+A young scholar reading under an ancient oak tree, medieval England, golden hour
+The scholar walks through a bustling village market, tracking shot
+Children play near a well, warm afternoon light, wide shot
+An old monk watches from a stone tower, mysterious expression, low angle
+Clouds gather over the countryside, ominous wide landscape
+The scholar receives a mysterious letter, close-up on trembling hands
+Village elder whispers in candlelight, intimate two-shot
+Torchlight reveals ancient symbols on cave walls, medium close-up
+The scholar's eyes widen in shock, dramatic reaction shot
+...
+
+では、この脚本（またはテーマ）でプロンプトリストを作成してください：</pre>
         </div>
       </div>
 
@@ -1624,30 +1697,22 @@ style,jidaigeki,,"Japanese jidaigeki historical drama style"
       });
     }
 
-    // Tab switching function
+    // Tab switching function (generic: supports any tab ids & themes)
     function switchTab(section, tab) {
-      // Update tab buttons
-      const textTab = document.getElementById(`${section}-tab-text`);
-      const tableTab = document.getElementById(`${section}-tab-table`);
-
-      if (tab === 'text') {
-        textTab.classList.add('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
-        tableTab.classList.remove('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
+      document.querySelectorAll(`[id^="${section}-view-"]`).forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll(`[id^="${section}-tab-"]`).forEach(el => {
+        el.classList.remove('active',
+          'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400',
+          'text-emerald-600', 'dark:text-emerald-400', 'border-emerald-600', 'dark:border-emerald-400');
+      });
+      const view = document.getElementById(`${section}-view-${tab}`);
+      const btn = document.getElementById(`${section}-tab-${tab}`);
+      if (!view || !btn) return;
+      view.classList.remove('hidden');
+      if (section === 'text-prompt') {
+        btn.classList.add('active', 'text-emerald-600', 'dark:text-emerald-400', 'border-emerald-600', 'dark:border-emerald-400');
       } else {
-        tableTab.classList.add('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
-        textTab.classList.remove('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
-      }
-
-      // Update content views
-      const textView = document.getElementById(`${section}-view-text`);
-      const tableView = document.getElementById(`${section}-view-table`);
-
-      if (tab === 'text') {
-        textView.classList.remove('hidden');
-        tableView.classList.add('hidden');
-      } else {
-        textView.classList.add('hidden');
-        tableView.classList.remove('hidden');
+        btn.classList.add('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
       }
     }
   </script>

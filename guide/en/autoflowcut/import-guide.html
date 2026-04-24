@@ -1015,58 +1015,131 @@ At last, the scholar earned the king's favor and glory.</pre>
         </div>
       </div>
 
-      <!-- AI Generation - Text Prompt List -->
+      <!-- AI Generation - Text Prompt List (Short/Long tabs) -->
       <div id="ai-text-prompt" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">📝</span>
           Auto-generate Text Prompt List with AI
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          Paste the prompt below into Claude, ChatGPT, Gemini, or other AI tools along with your story to automatically generate a simple prompt list (.txt) with one scene per line.
+          Paste the prompt below into Claude, ChatGPT, Gemini, or other AI tools along with your story to automatically generate a simple prompt list (.txt) with one scene per line. Pick the tab that matches your video format.
         </p>
 
-        <div class="mb-2">
-          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-            📝 Text Prompt List Generation Prompt
-          </h3>
+        <!-- Tab Buttons -->
+        <div class="flex border-b border-emerald-200 dark:border-emerald-800 mb-4">
+          <button onclick="switchTab('text-prompt', 'short')" id="text-prompt-tab-short" class="tab-btn active text-emerald-600 dark:text-emerald-400 border-emerald-600 dark:border-emerald-400 px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            📱 Short-form (Shorts/Reels)
+          </button>
+          <button onclick="switchTab('text-prompt', 'long')" id="text-prompt-tab-long" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            🎬 Long-form (Documentary/Story)
+          </button>
+        </div>
 
-          <div class="relative">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">text_prompt_list_en.txt</span>
-              <div class="flex gap-2">
-                <button onclick="copyCode('text-prompt')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                  </svg>
-                  Copy
-                </button>
-                <button onclick="downloadTextFile('text-prompt', 'text_prompt_list_en.txt')" class="text-xs px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 rounded-lg transition-colors flex items-center gap-1">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                  </svg>
-                  Download
-                </button>
-              </div>
+        <!-- Short-form View -->
+        <div id="text-prompt-view-short" class="relative">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">text_prompt_short_en.txt</span>
+            <div class="flex gap-2">
+              <button onclick="copyCode('text-prompt-short')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                Copy
+              </button>
+              <button onclick="downloadTextFile('text-prompt-short', 'text_prompt_short_en.txt')" class="text-xs px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                Download
+              </button>
             </div>
-            <pre id="text-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">You are a scene prompt list assistant for AutoFlowCut video production.
+          </div>
+          <pre id="text-prompt-short" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-64 overflow-y-auto">You are a scene prompt list assistant for AutoFlowCut short-form video production.
 
-Given a story or topic, output a .txt prompt list where each line is a single visual scene in English.
+Given a topic and video length (15s/30s/60s), output a .txt prompt list where each line is a single visual scene in English.
 
 Rules:
 1. One line = one visual scene (single image frame)
 2. Write in English; include composition, lighting, mood, camera angle
 3. Keep each prompt under 200 characters
-4. Follow a clear narrative arc (setup, development, turn, resolution)
-5. No blank lines between prompts
-6. Output only the prompts — no numbering, no commentary
+4. The first scene MUST be a "Hook" — a striking image that sparks curiosity within 0~3 seconds
+   (hint of the ending, mystery, dramatic contrast, visual shock, etc.)
+5. Scene order: Hook → Build-up → Twist/Impact → Resolution
+6. Scene count by length:
+   - 15s → 4~6 scenes
+   - 30s → 7~10 scenes
+   - 60s → 10~15 scenes
+7. Fast pacing, no breathing room
+8. No blank lines between prompts
+9. Output only the prompts — no numbering, no commentary
 
-Example output:
-A sunrise rising over mountain peaks, cinematic wide shot, golden hour
-Two travelers walking through a valley, over-shoulder shot, misty atmosphere
-A sudden storm approaches, dramatic lightning, dark clouds
+Example output (30s, 8 scenes):
+A lone figure stands on a cliff at dawn, silhouette against blood-red sky, dramatic wide shot
+A young scholar reading old scrolls in candlelight, close-up on focused eyes
+A sudden gust scatters pages into the storm, dynamic motion blur
+The scholar chases papers through rain-soaked streets, over-shoulder shot
+A hidden door revealed behind ivy, mysterious green glow, low angle
+Eyes widen as scholar steps inside, reaction shot, soft torchlight
+Ancient chamber unveils a glowing artifact, symmetrical wide shot, golden rays
+The scholar raises the artifact against sunrise, triumphant silhouette, epic composition
 
-Now create a prompt list for this story:</pre>
+Now create a prompt list for this topic (length: pick one of [15s/30s/60s]):</pre>
+        </div>
+
+        <!-- Long-form View -->
+        <div id="text-prompt-view-long" class="hidden relative">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">text_prompt_long_en.txt</span>
+            <div class="flex gap-2">
+              <button onclick="copyCode('text-prompt-long')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                Copy
+              </button>
+              <button onclick="downloadTextFile('text-prompt-long', 'text_prompt_long_en.txt')" class="text-xs px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                Download
+              </button>
+            </div>
           </div>
+          <pre id="text-prompt-long" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-64 overflow-y-auto">You are a scene prompt list assistant for AutoFlowCut long-form video production.
+
+Given a script (6,000~8,000 characters) or topic, output a .txt prompt list where each line is a single visual scene in English.
+
+Rules:
+1. One line = one visual scene (single image frame)
+2. Write in English; include composition, lighting, mood, camera angle
+3. Keep each prompt under 200 characters
+4. The first scene MUST be a "Hook" — a striking image that sparks curiosity within 0~15 seconds
+   (hint of the ending, mystery, dramatic contrast, a question posed to the viewer, etc.)
+5. Scene order: Hook → Setup → Development → Turn → Resolution (5-part structure)
+   - Hook: 1~5 scenes (impact)
+   - Setup: 15~25 scenes (background, characters)
+   - Development: 25~40 scenes (conflict rising)
+   - Turn: 15~30 scenes (crisis, turning point)
+   - Resolution: 15~30 scenes (release, lingering)
+6. Total scene count: 80~150 (based on a 6,000~8,000 character script; aim for ~100)
+7. Reuse consistent names for main characters (for reference matching)
+8. No blank lines between prompts
+9. Output only the prompts — no numbering, no commentary
+
+Example output (first 10 scenes):
+A silhouetted figure stands before a burning village at dusk, dramatic low angle, cinematic mood
+A young scholar reading under an ancient oak tree, medieval England, golden hour
+The scholar walks through a bustling village market, tracking shot
+Children play near a well, warm afternoon light, wide shot
+An old monk watches from a stone tower, mysterious expression, low angle
+Clouds gather over the countryside, ominous wide landscape
+The scholar receives a mysterious letter, close-up on trembling hands
+Village elder whispers in candlelight, intimate two-shot
+Torchlight reveals ancient symbols on cave walls, medium close-up
+The scholar's eyes widen in shock, dramatic reaction shot
+...
+
+Now create a prompt list for this script (or topic):</pre>
         </div>
       </div>
 
@@ -1392,30 +1465,22 @@ Now create the reference list for this story:</pre>
       });
     }
 
-    // Tab switching function
+    // Tab switching function (generic: supports any tab ids & themes)
     function switchTab(section, tab) {
-      // Update tab buttons
-      const textTab = document.getElementById(`${section}-tab-text`);
-      const tableTab = document.getElementById(`${section}-tab-table`);
-
-      if (tab === 'text') {
-        textTab.classList.add('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
-        tableTab.classList.remove('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
+      document.querySelectorAll(`[id^="${section}-view-"]`).forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll(`[id^="${section}-tab-"]`).forEach(el => {
+        el.classList.remove('active',
+          'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400',
+          'text-emerald-600', 'dark:text-emerald-400', 'border-emerald-600', 'dark:border-emerald-400');
+      });
+      const view = document.getElementById(`${section}-view-${tab}`);
+      const btn = document.getElementById(`${section}-tab-${tab}`);
+      if (!view || !btn) return;
+      view.classList.remove('hidden');
+      if (section === 'text-prompt') {
+        btn.classList.add('active', 'text-emerald-600', 'dark:text-emerald-400', 'border-emerald-600', 'dark:border-emerald-400');
       } else {
-        tableTab.classList.add('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
-        textTab.classList.remove('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
-      }
-
-      // Update views
-      const textView = document.getElementById(`${section}-view-text`);
-      const tableView = document.getElementById(`${section}-view-table`);
-
-      if (tab === 'text') {
-        textView.classList.remove('hidden');
-        tableView.classList.add('hidden');
-      } else {
-        textView.classList.add('hidden');
-        tableView.classList.remove('hidden');
+        btn.classList.add('active', 'text-primary-600', 'dark:text-primary-400', 'border-primary-600', 'dark:border-primary-400');
       }
     }
   </script>
