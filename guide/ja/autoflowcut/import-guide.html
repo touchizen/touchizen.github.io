@@ -1254,6 +1254,61 @@ style,jidaigeki,,"Japanese jidaigeki historical drama style, Edo period atmosphe
         </div>
       </div>
 
+      <!-- AI Generation - Text Prompt List -->
+      <div id="ai-text-prompt" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📝</span>
+          AIでTextプロンプトリストを自動生成
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          以下のプロンプトをClaude、ChatGPT、Geminiなどのツールにストーリーと一緒に貼り付けると、1行に1シーンが入ったシンプルなプロンプトリスト(.txt)を自動生成できます。
+        </p>
+
+        <div class="mb-2">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+            📝 Textプロンプトリスト生成プロンプト
+          </h3>
+
+          <div class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">text_prompt_list_ja.txt</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('text-prompt')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  コピー
+                </button>
+                <button onclick="downloadTextFile('text-prompt', 'text_prompt_list_ja.txt')" class="text-xs px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  ダウンロード
+                </button>
+              </div>
+            </div>
+            <pre id="text-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">あなたはAutoFlowCut動画制作のためのシーンプロンプトリスト作成アシスタントです。
+
+ストーリーやテーマを受け取ったら、各行が1つのシーンを表す英語のイメージプロンプトリストを.txt形式で出力してください。
+
+ルール：
+1. 1行 = 1つのビジュアルシーン（単一画像フレーム）
+2. 英語で記述し、構図・照明・雰囲気・カメラアングルを含める
+3. 各プロンプトは200文字以内
+4. 起承転結の流れに沿ってシーンを並べる
+5. プロンプト間に空行を入れない
+6. 番号や追加説明なしでプロンプトのみ出力
+
+出力例：
+A sunrise rising over mountain peaks, cinematic wide shot, golden hour
+Two travelers walking through a valley, over-shoulder shot, misty atmosphere
+A sudden storm approaches, dramatic lightning, dark clouds
+
+では、このストーリーからプロンプトリストを作成してください：</pre>
+          </div>
+        </div>
+      </div>
+
       <!-- AI Generation Meta Prompt -->
       <div id="ai-csv-prompt" class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
