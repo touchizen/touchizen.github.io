@@ -62,7 +62,7 @@ export function generateMetadata({ params }: Props): Metadata {
       images: [{
         url: ogImages[lang],
         width: 1280,
-        height: 800,
+        height: 720,
       }],
     },
     twitter: {
