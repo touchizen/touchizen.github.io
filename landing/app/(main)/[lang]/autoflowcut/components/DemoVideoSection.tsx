@@ -20,23 +20,18 @@ export default function DemoVideoSection({ lang, t }: { lang: Language; t: (key:
               </p>
             </div>
 
-            {/* Video Placeholder */}
-            {/* TODO: Replace with YouTube embed: <iframe src="https://www.youtube.com/embed/VIDEO_ID" ... /> */}
-            <div className="relative aspect-video bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden border-2 border-dashed border-gray-300 dark:border-gray-700">
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400 dark:text-gray-500">
-                <svg className="w-20 h-20 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
-                </svg>
-                <p className="text-lg font-medium">
-                  {t('autoflowcut_demo_placeholder' as TranslationKey)}
-                </p>
-              </div>
+            {/* YouTube Embed */}
+            <div className="relative aspect-video bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/mYnfgqvCkME"
+                title="AutoFlowCut Demo"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
             </div>
-
-            <p className="text-center text-sm text-gray-400 dark:text-gray-500 mt-4">
-              {t('autoflowcut_demo_placeholder' as TranslationKey)}
-            </p>
           </div>
         </div>
       </section>
