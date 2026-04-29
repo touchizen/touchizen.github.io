@@ -52,8 +52,8 @@ export default function AutoFlowCutPage() {
       <Header lang={lang} onLanguageChange={handleLanguageChange} />
 
       <HeroSection lang={lang} t={t} />
-      <ScreenshotGallerySection lang={lang} t={t} />
       <DemoVideoSection lang={lang} t={t} />
+      <ScreenshotGallerySection lang={lang} t={t} />
       <InstallationSection lang={lang} t={t} isMac={isMac} />
       <WhatIsSection lang={lang} t={t} />
       <FlowIntroSection lang={lang} t={t} />
