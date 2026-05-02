@@ -24,7 +24,7 @@ export const ko = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'GitHub에서 보기',
   quick_dl_learn_more: '자세히 보기',
-  quick_dl_version: 'v0.9.0 · 무료 체험 포함',
+  quick_dl_version: 'v0.9.x · 무료 체험 포함',
 
   // Time saving value
   time_save_motto: 'Save Your Time',

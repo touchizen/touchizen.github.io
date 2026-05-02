@@ -24,7 +24,7 @@ export const ja = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'GitHubで見る',
   quick_dl_learn_more: '詳しく見る',
-  quick_dl_version: 'v0.9.0 · 無料トライアル付き',
+  quick_dl_version: 'v0.9.x · 無料トライアル付き',
 
   // Time saving value
   time_save_motto: 'Save Your Time',
