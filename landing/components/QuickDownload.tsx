@@ -2,17 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import { Language, translations, TranslationKey } from '@/lib/i18n';
+import { msStoreUrl } from '@/lib/storeUrl';
 
 interface QuickDownloadProps {
   lang: Language;
 }
 
-const DESKTOP_WIN_URL = 'https://apps.microsoft.com/detail/9PNZVP54WRSM';
+const DESKTOP_WIN_BASE = 'https://apps.microsoft.com/detail/9PNZVP54WRSM';
 const DESKTOP_MAC_URL = 'https://github.com/touchizen/AutoFlowCut/releases';
 const GITHUB_URL = 'https://github.com/touchizen/AutoFlowCut';
 
 export default function QuickDownload({ lang }: QuickDownloadProps) {
   const t = (key: TranslationKey) => translations[lang][key];
+  const DESKTOP_WIN_URL = msStoreUrl(DESKTOP_WIN_BASE, lang);
   const [isMac, setIsMac] = useState(false);
 
   useEffect(() => {

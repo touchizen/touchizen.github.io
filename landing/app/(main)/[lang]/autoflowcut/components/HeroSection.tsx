@@ -1,6 +1,8 @@
 import { Language, TranslationKey } from '@/lib/i18n';
+import { msStoreUrl } from '@/lib/storeUrl';
 
 export default function HeroSection({ lang, t }: { lang: Language; t: (key: TranslationKey) => string }) {
+  const winStoreUrl = msStoreUrl('https://apps.microsoft.com/detail/9PNZVP54WRSM', lang);
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950" />
@@ -43,7 +45,7 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
           <div className="flex flex-wrap justify-center gap-4">
             {/* Windows - Microsoft Store */}
             <a
-              href="https://apps.microsoft.com/detail/9PNZVP54WRSM"
+              href={winStoreUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-semibold text-lg transition-all hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25"
