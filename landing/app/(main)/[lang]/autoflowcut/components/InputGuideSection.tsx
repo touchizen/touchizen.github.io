@@ -25,7 +25,7 @@ export default function InputGuideSection({ lang, t }: { lang: Language; t: (key
             {/* 3 Input Format Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               {/* TXT Card */}
-              <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+              <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 flex flex-col">
                 <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
                   <span>&#x1F4DD;</span>
                   {t('autoflowcut_input_txt_title' as TranslationKey)}
@@ -33,7 +33,7 @@ export default function InputGuideSection({ lang, t }: { lang: Language; t: (key
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                   {t('autoflowcut_input_txt_desc' as TranslationKey)}
                 </p>
-                <div className="bg-gray-900 dark:bg-black rounded-xl p-4 font-mono text-xs text-gray-300 overflow-x-auto">
+                <div className="bg-gray-900 dark:bg-black rounded-xl p-4 font-mono text-xs text-gray-300 overflow-x-auto mt-auto flex-1 flex items-start">
                   <pre>{`A young scholar reading under a pine tree, Joseon era
 A merchant crossing a stone bridge at dawn
 Two warriors facing each other in a bamboo forest`}</pre>
@@ -41,7 +41,7 @@ Two warriors facing each other in a bamboo forest`}</pre>
               </div>
 
               {/* CSV Card */}
-              <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+              <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 flex flex-col">
                 <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
                   <span>&#x1F4CA;</span>
                   {t('autoflowcut_input_csv_title' as TranslationKey)}
@@ -49,14 +49,14 @@ Two warriors facing each other in a bamboo forest`}</pre>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                   {t('autoflowcut_input_csv_desc' as TranslationKey)}
                 </p>
-                <div className="bg-gray-900 dark:bg-black rounded-xl p-4 font-mono text-xs text-gray-300 overflow-x-auto">
+                <div className="bg-gray-900 dark:bg-black rounded-xl p-4 font-mono text-xs text-gray-300 overflow-x-auto mt-auto flex-1 flex items-start">
                   <pre>{`prompt,subtitle,characters,scene_tag,duration
 "Scholar reading under pine","한 선비가 소나무 아래서...",scholar,reading_scene,5`}</pre>
                 </div>
               </div>
 
               {/* SRT Card */}
-              <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+              <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 flex flex-col">
                 <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
                   <span>&#x1F4AC;</span>
                   {t('autoflowcut_input_srt_title' as TranslationKey)}
@@ -64,7 +64,7 @@ Two warriors facing each other in a bamboo forest`}</pre>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                   {t('autoflowcut_input_srt_desc' as TranslationKey)}
                 </p>
-                <div className="bg-gray-900 dark:bg-black rounded-xl p-4 font-mono text-xs text-gray-300 overflow-x-auto">
+                <div className="bg-gray-900 dark:bg-black rounded-xl p-4 font-mono text-xs text-gray-300 overflow-x-auto mt-auto flex-1 flex items-start">
                   <pre>{`1
 00:00:00,000 --> 00:00:05,000
 한 선비가 소나무 아래에서 책을 읽고 있었다.`}</pre>
