@@ -4,118 +4,30 @@ import { useState, useEffect, useCallback } from 'react';
 import { Language, TranslationKey } from '@/lib/i18n';
 
 interface Screenshot {
-  src: string;
-  alt: string;
-  caption: {
-    en: string;
-    ko: string;
-    ja: string;
-    de: string;
-  };
+  alt: string; // a11y label only — actual caption is burned into the image per language
 }
 
+// Keep alt order in sync with the captioning scripts:
+//   AutoFlowCut/docs/ms-store/screenshots/en/add-captions.cjs
+//   AutoFlowCut/docs/ms-store/screenshots/ko/add-captions-v2.cjs
 const screenshots: Screenshot[] = [
-  {
-    src: '/images/autoflowcut/screenshots/ss_01.jpg',
-    alt: 'CapCut Export',
-    caption: {
-      en: 'One-click export to CapCut — your scenes become a ready-to-edit video project',
-      ko: '원클릭 CapCut 내보내기 — 씬이 바로 편집 가능한 영상 프로젝트로',
-      ja: 'ワンクリックでCapCutにエクスポート — シーンがすぐに編集可能な映像プロジェクトに',
-      de: 'Ein-Klick-Export zu CapCut — Szenen werden zum fertigen Videoprojekt',
-    },
-  },
-  {
-    src: '/images/autoflowcut/screenshots/ss_02.jpg',
-    alt: 'Audio & Video Preview',
-    caption: {
-      en: 'Built-in audio & video preview with timeline for precise editing',
-      ko: '타임라인 기반 오디오 & 비디오 미리보기',
-      ja: 'タイムライン付きオーディオ＆ビデオプレビューで正確な編集',
-      de: 'Integrierte Audio- & Videovorschau mit Timeline für präzises Editing',
-    },
-  },
-  {
-    src: '/images/autoflowcut/screenshots/ss_03.jpg',
-    alt: 'Scene Management',
-    caption: {
-      en: 'Manage scenes with subtitles, timecodes, and media in one unified view',
-      ko: '자막, 타임코드, 미디어를 한 화면에서 씬 관리',
-      ja: '字幕、タイムコード、メディアを一つの画面でシーン管理',
-      de: 'Szenen mit Untertiteln, Timecodes und Medien in einer Ansicht verwalten',
-    },
-  },
-  {
-    src: '/images/autoflowcut/screenshots/ss_04.jpg',
-    alt: 'Batch Video Generation',
-    caption: {
-      en: 'AI-powered batch video generation — bring every scene to life with F2V',
-      ko: 'AI 기반 배치 영상 생성 — F2V로 모든 씬을 영상으로',
-      ja: 'AI搭載バッチ動画生成 — F2Vですべてのシーンを映像化',
-      de: 'KI-gestützte Batch-Videogenerierung — jede Szene mit F2V zum Leben erwecken',
-    },
-  },
-  {
-    src: '/images/autoflowcut/screenshots/ss_05.jpg',
-    alt: 'Reference System',
-    caption: {
-      en: 'Reference image system for consistent character visuals across scenes',
-      ko: '레퍼런스 이미지로 캐릭터 비주얼 일관성 유지',
-      ja: 'リファレンス画像システムでシーン間のキャラクタービジュアルを一貫維持',
-      de: 'Referenzbildsystem für konsistente Charaktervisualisierung über Szenen hinweg',
-    },
-  },
-  {
-    src: '/images/autoflowcut/screenshots/ss_06.jpg',
-    alt: 'Auto-Save',
-    caption: {
-      en: 'All generated images and videos are auto-saved to your PC',
-      ko: '생성된 모든 이미지와 영상이 내 PC에 자동 저장',
-      ja: '生成されたすべての画像と動画がPCに自動保存',
-      de: 'Alle generierten Bilder und Videos werden automatisch auf dem PC gespeichert',
-    },
-  },
-  {
-    src: '/images/autoflowcut/screenshots/ss_07.jpg',
-    alt: 'Scene Overview',
-    caption: {
-      en: 'Full scene overview with AI-generated images and detailed prompts',
-      ko: 'AI 생성 이미지와 프롬프트를 한눈에 확인',
-      ja: 'AI生成画像と詳細プロンプトのフルシーン概要',
-      de: 'Komplette Szenenübersicht mit KI-generierten Bildern und detaillierten Prompts',
-    },
-  },
-  {
-    src: '/images/autoflowcut/screenshots/ss_08.jpg',
-    alt: 'MCP Integration',
-    caption: {
-      en: 'MCP server integration — connect Claude AI for automated workflows',
-      ko: 'MCP 서버 연동 — Claude AI로 워크플로우 자동화',
-      ja: 'MCPサーバー連携 — Claude AIでワークフロー自動化',
-      de: 'MCP-Server-Integration — Claude AI für automatisierte Workflows verbinden',
-    },
-  },
-  {
-    src: '/images/autoflowcut/screenshots/ss_09.jpg',
-    alt: 'Claude AI Automation',
-    caption: {
-      en: 'Claude AI assistant automates scene creation and CapCut export',
-      ko: 'Claude AI가 씬 생성부터 CapCut 내보내기까지 자동화',
-      ja: 'Claude AIアシスタントがシーン作成からCapCutエクスポートまで自動化',
-      de: 'Claude AI-Assistent automatisiert Szenenerstellung und CapCut-Export',
-    },
-  },
-  {
-    src: '/images/autoflowcut/screenshots/ss_10.jpg',
-    alt: 'Style Presets',
-    caption: {
-      en: '80+ art style presets — from animation to cinematic photography',
-      ko: '80가지 이상의 아트 스타일 프리셋 제공',
-      ja: '80種以上のアートスタイルプリセット — アニメから映画写真まで',
-      de: '80+ Kunst-Stil-Voreinstellungen — von Animation bis Filmfotografie',
-    },
-  },
+  { alt: 'CapCut Export' },
+  { alt: 'Audio & Video Preview' },
+  { alt: 'Multi-track Audio Timeline' },
+  { alt: 'Scene Management' },
+  { alt: 'Batch Video Generation' },
+  { alt: 'Reference System' },
+  { alt: 'Auto-Save' },
+  { alt: 'Scene Overview' },
+  { alt: 'Claude AI Automation' },
+  { alt: 'Style Presets' },
 ];
+
+// Picks the matching language folder; falls back to English for ja/de.
+function screenshotSrc(lang: Language, index: number): string {
+  const langDir = lang === 'ko' ? 'ko' : 'en';
+  return `/images/autoflowcut/screenshots/${langDir}/ss_${String(index + 1).padStart(2, '0')}.jpg`;
+}
 
 export default function ScreenshotGallerySection({ lang, t }: { lang: Language; t: (key: TranslationKey) => string }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -152,6 +64,7 @@ export default function ScreenshotGallerySection({ lang, t }: { lang: Language; 
   }, [isPaused, currentIndex]);
 
   const current = screenshots[currentIndex];
+  const currentSrc = screenshotSrc(lang, currentIndex);
 
   return (
     <section className="section-padding bg-white dark:bg-gray-950">
@@ -180,7 +93,7 @@ export default function ScreenshotGallerySection({ lang, t }: { lang: Language; 
               onMouseLeave={() => setIsPaused(false)}
             >
               <img
-                src={current.src}
+                src={currentSrc}
                 alt={current.alt}
                 className="w-full h-full object-contain"
               />
@@ -211,10 +124,7 @@ export default function ScreenshotGallerySection({ lang, t }: { lang: Language; 
               </div>
             </div>
 
-            {/* Caption */}
-            <p className="text-center text-lg text-gray-600 dark:text-gray-400 mt-4">
-              {current.caption[lang]}
-            </p>
+            {/* Caption is burned into the image per language — no JSX caption to avoid duplication */}
 
             {/* Progress Bar */}
             <div className="mt-4 max-w-md mx-auto">
@@ -255,7 +165,7 @@ export default function ScreenshotGallerySection({ lang, t }: { lang: Language; 
                   }`}
                 >
                   <img
-                    src={screenshot.src}
+                    src={screenshotSrc(lang, index)}
                     alt={screenshot.alt}
                     className="w-full h-full object-cover"
                   />
