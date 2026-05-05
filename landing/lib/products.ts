@@ -29,20 +29,9 @@ export const products: Product[] = [
     iconImage: '/images/autoflowcut.svg',
     hasDetailPage: true,
   },
-  {
-    id: 'whisk2capcut',
-    nameKey: 'whisk2capcut_name',
-    sloganKey: 'whisk2capcut_slogan',
-    descKey: 'whisk2capcut_desc',
-    features: ['whisk2capcut_feature1', 'whisk2capcut_feature2', 'whisk2capcut_feature3'],
-    ctaKey: 'whisk2capcut_cta',
-    link: '/whisk2capcut/',
-    isExternal: false,
-    gradient: 'from-violet-500 to-purple-600',
-    icon: '🎬',
-    iconImage: '/images/whisk2capcut.svg',
-    hasDetailPage: true,
-  },
+  // whisk2capcut removed from main page — service ended (the standalone
+  // /whisk2capcut/ subpage and its components are kept for reference and
+  // can be cleaned up separately if no longer needed)
   // Smart Life Apps
   {
     id: 'calorie-shot',
