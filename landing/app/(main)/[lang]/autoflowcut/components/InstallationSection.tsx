@@ -25,7 +25,7 @@ export default function InstallationSection({ lang, t, isMac }: { lang: Language
             {/* Platform Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
               {/* Mac Card */}
-              <div className={`p-6 rounded-2xl border-2 ${isMac ? 'border-cyan-500 bg-cyan-50 dark:bg-cyan-900/20 dark:border-cyan-600' : 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30'}`}>
+              <div className={`p-6 rounded-2xl border-2 flex flex-col ${isMac ? 'border-cyan-500 bg-cyan-50 dark:bg-cyan-900/20 dark:border-cyan-600' : 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30'}`}>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl flex items-center justify-center">
                     <svg className="w-7 h-7 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@ export default function InstallationSection({ lang, t, isMac }: { lang: Language
                   href="https://github.com/touchizen/AutoFlowCut/releases/latest"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
+                  className="mt-auto flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -55,7 +55,7 @@ export default function InstallationSection({ lang, t, isMac }: { lang: Language
               </div>
 
               {/* Windows Card */}
-              <div className={`p-6 rounded-2xl border-2 ${!isMac ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20 dark:border-blue-600' : 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30'}`}>
+              <div className={`p-6 rounded-2xl border-2 flex flex-col ${!isMac ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20 dark:border-blue-600' : 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30'}`}>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
                     <svg className="w-7 h-7 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
@@ -75,7 +75,7 @@ export default function InstallationSection({ lang, t, isMac }: { lang: Language
                   href={winStoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
+                  className="mt-auto flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white rounded-xl font-semibold transition-all hover:-translate-y-0.5"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
