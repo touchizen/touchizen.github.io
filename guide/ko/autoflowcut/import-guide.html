@@ -361,12 +361,18 @@
 
           <!-- Import Options -->
           <div class="space-y-2">
-            <!-- Text Option -->
+            <!-- Text Option (with image/video mode segment — mirrors the actual app) -->
             <div class="flex items-center gap-3 p-3 bg-gray-800 hover:bg-gray-700 rounded-lg cursor-pointer border border-transparent hover:border-amber-500 transition-all">
               <span class="text-2xl">📝</span>
               <div class="flex-1">
-                <div class="text-white font-medium text-sm">프롬프트 Text 파일</div>
-                <div class="text-gray-400 text-xs">줄바꿈으로 구분된 프롬프트</div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-white font-medium text-sm">프롬프트 Text 파일</span>
+                  <span class="inline-flex rounded-md border border-gray-600 bg-gray-900 p-0.5 text-[10px] font-medium">
+                    <span class="px-2 py-0.5 rounded bg-emerald-500 text-white">🖼️ 이미지</span>
+                    <span class="px-2 py-0.5 rounded text-gray-400">🎬 비디오</span>
+                  </span>
+                </div>
+                <div class="text-gray-400 text-xs mt-0.5">줄바꿈으로 구분된 프롬프트</div>
                 <div class="text-gray-500 text-xs mt-1">한 줄 = 하나의 씬</div>
               </div>
               <span class="text-gray-500">→</span>
@@ -430,7 +436,19 @@
         </p>
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">예시</h3>
-        <div class="relative">
+
+        <!-- Image / Video tab -->
+        <div class="flex border-b border-gray-200 dark:border-gray-700 mb-3">
+          <button onclick="switchTab('text-example', 'image')" id="text-example-tab-image" class="tab-btn active text-primary-600 dark:text-primary-400 border-primary-600 dark:border-primary-400 px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            🖼️ 이미지
+          </button>
+          <button onclick="switchTab('text-example', 'video')" id="text-example-tab-video" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            🎬 비디오
+          </button>
+        </div>
+
+        <!-- Image example -->
+        <div id="text-example-view-image" class="relative">
           <pre id="text-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">산봉우리 위로 떠오르는 일출
 계곡을 걷는 두 여행자
 갑작스런 폭풍우, 비를 피해 동굴로 뛰어드는 두 사람
@@ -441,6 +459,23 @@
             </svg>
           </button>
         </div>
+
+        <!-- Video example -->
+        <div id="text-example-view-video" class="hidden relative">
+          <pre id="text-example-video" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">산봉우리 너머로 천천히 떠오르는 태양, 빛줄기가 안개를 가르며 퍼짐 (slow zoom in)
+계곡을 따라 걷는 두 여행자, 한 명이 멈춰 서서 멀리 산을 가리키는 동작 (smooth tracking shot)
+갑작스런 폭풍우 속에서 동굴로 달려가는 두 사람, 빗방울이 카메라를 스침 (handheld, fast)
+비가 그친 뒤 카메라가 천천히 뒤로 빠지며 평화로운 마을이 드러나는 풍경 (slow zoom out)</pre>
+          <button onclick="copyCode('text-example-video')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+          </button>
+        </div>
+
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+          💡 <strong>비디오 모드</strong>는 동작 동사 + 카메라 움직임을 함께 적어주면 더 좋은 결과를 얻습니다.
+        </p>
       </div>
 
       <!-- Scene CSV Format -->
