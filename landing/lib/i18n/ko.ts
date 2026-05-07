@@ -24,7 +24,7 @@ export const ko = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'GitHub에서 보기',
   quick_dl_learn_more: '자세히 보기',
-  quick_dl_version: 'v0.9.x · 무료 체험 포함',
+  quick_dl_version: 'v0.9.x · 무료 사용 가능 (월 5회 + 보너스 5회)',
 
   // Time saving value
   time_save_motto: 'Save Your Time',
@@ -269,11 +269,11 @@ export const ko = {
 
   // Pricing
   pricing_title: '심플한 가격 정책',
-  pricing_subtitle: '무료로 시작하고, 필요할 때 업그레이드',
-  pricing_free: '무료 체험',
-  pricing_free_desc: '5회 또는 7일 중 먼저 도달 시 종료',
-  pricing_free_feature1: '최대 5회 CapCut 내보내기',
-  pricing_free_feature2: '최대 7일 체험 기간',
+  pricing_subtitle: '무료로 영구 사용 가능, 필요할 때만 업그레이드',
+  pricing_free: '무료',
+  pricing_free_desc: '매월 5회 + 가입 시 5회 보너스',
+  pricing_free_feature1: '매월 5회 CapCut 내보내기 (1일 자동 갱신)',
+  pricing_free_feature2: '가입 시 5회 영구 보너스 추가',
   pricing_free_feature3: '모든 기본 기능',
   pricing_pro: 'Pro',
   pricing_pro_desc: '진지한 크리에이터를 위해',
@@ -426,7 +426,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   whisk2capcut_desktop_dl_win: 'Whisk2CapCut / W2C Desktop (MS Store)',
   whisk2capcut_desktop_dl_mac: 'macOS 다운로드',
   whisk2capcut_desktop_dl_all: '모든 릴리스 보기',
-  whisk2capcut_desktop_version: 'v1.0.6 · 무료 체험: 5회 내보내기 / 7일',
+  whisk2capcut_desktop_version: 'v1.0.6 · 무료: 매월 5회 + 가입 보너스 5회',
   whisk2capcut_hero_cta_desktop: '데스크톱 앱 다운로드',
 
   // Footer

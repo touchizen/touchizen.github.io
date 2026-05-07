@@ -97,10 +97,10 @@ function generateJsonLd(lang: Language) {
         price: '0',
         priceCurrency: 'USD',
         description: ({
-          en: 'Free (5 exports / 7 days trial)',
-          ko: '무료 (5회 내보내기 / 7일 체험)',
-          ja: '無料（5回エクスポート / 7日間トライアル）',
-          de: 'Kostenlos (5 Exporte / 7 Tage Testversion)',
+          en: 'Free (5 exports/month + 5 signup bonus)',
+          ko: '무료 (월 5회 + 가입 보너스 5회)',
+          ja: '無料（月5回 + 登録ボーナス5回）',
+          de: 'Kostenlos (5 Exporte/Monat + 5 Anmelde-Bonus)',
         })[lang],
       },
       {

@@ -24,7 +24,7 @@ export const de = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'Auf GitHub ansehen',
   quick_dl_learn_more: 'Mehr erfahren',
-  quick_dl_version: 'v0.9.x · Kostenlose Testversion inklusive',
+  quick_dl_version: 'v0.9.x · Kostenlos nutzbar (5/Monat + 5 Bonus)',
 
   // Time saving value
   time_save_motto: 'Save Your Time',
@@ -269,11 +269,11 @@ export const de = {
 
   // Pricing
   pricing_title: 'Einfache Preise',
-  pricing_subtitle: 'Kostenlos starten, upgraden wenn nötig',
-  pricing_free: 'Kostenlose Testversion',
-  pricing_free_desc: '5 Exporte oder 7 Tage, je nachdem was zuerst eintritt',
-  pricing_free_feature1: 'Bis zu 5 CapCut-Exporte',
-  pricing_free_feature2: 'Bis zu 7-Tage-Testzeitraum',
+  pricing_subtitle: 'Für immer kostenlos, nur bei Bedarf upgraden',
+  pricing_free: 'Kostenlos',
+  pricing_free_desc: '5 Exporte pro Monat + 5 Anmelde-Bonus-Exporte',
+  pricing_free_feature1: '5 CapCut-Exporte pro Monat (auto-Reset am 1.)',
+  pricing_free_feature2: '+5 lebenslange Bonus-Exporte bei Anmeldung',
   pricing_free_feature3: 'Alle Grundfunktionen',
   pricing_pro: 'Pro',
   pricing_pro_desc: 'Für ernsthafte Creator',
@@ -426,7 +426,7 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   whisk2capcut_desktop_dl_win: 'Whisk2CapCut / W2C Desktop (MS Store)',
   whisk2capcut_desktop_dl_mac: 'Für macOS herunterladen',
   whisk2capcut_desktop_dl_all: 'Alle Releases anzeigen',
-  whisk2capcut_desktop_version: 'v1.0.6 · Kostenlos testen: 5 Exporte / 7 Tage',
+  whisk2capcut_desktop_version: 'v1.0.6 · Kostenlos: 5 Exporte/Monat + 5 Anmelde-Bonus',
   whisk2capcut_hero_cta_desktop: 'Desktop-App herunterladen',
 
   // Footer

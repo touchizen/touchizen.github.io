@@ -168,7 +168,7 @@ export default function PricingSection({ lang, t, plans }: {
                     </td>
                     <td className="px-4 py-4 text-center">
                       <span className="text-orange-500 font-semibold text-sm">
-                        {lang === 'ko' ? '5회/7일' : lang === 'ja' ? '5回/7日' : lang === 'de' ? '5x/7 Tage' : '5x/7 days'}
+                        {lang === 'ko' ? '월 5회 + 5 보너스' : lang === 'ja' ? '月5回 + 5ボーナス' : lang === 'de' ? '5/Monat + 5 Bonus' : '5/month + 5 bonus'}
                       </span>
                     </td>
                     <td className="px-4 py-4 text-center">

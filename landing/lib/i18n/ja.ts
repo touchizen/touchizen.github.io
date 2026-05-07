@@ -24,7 +24,7 @@ export const ja = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'GitHubで見る',
   quick_dl_learn_more: '詳しく見る',
-  quick_dl_version: 'v0.9.x · 無料トライアル付き',
+  quick_dl_version: 'v0.9.x · 無料利用可能 (月5回 + ボーナス5回)',
 
   // Time saving value
   time_save_motto: 'Save Your Time',
@@ -269,11 +269,11 @@ export const ja = {
 
   // Pricing
   pricing_title: 'シンプルな料金',
-  pricing_subtitle: '無料で始めて、必要に応じてアップグレード',
-  pricing_free: '無料トライアル',
-  pricing_free_desc: '5回または7日間、いずれか早い方まで',
-  pricing_free_feature1: '最大5回CapCutエクスポート',
-  pricing_free_feature2: '最大7日間トライアル',
+  pricing_subtitle: '永久無料、必要なときだけアップグレード',
+  pricing_free: '無料',
+  pricing_free_desc: '毎月5回 + 登録時5回ボーナス',
+  pricing_free_feature1: '毎月5回CapCutエクスポート (1日に自動更新)',
+  pricing_free_feature2: '登録時に5回の永久ボーナスを追加',
   pricing_free_feature3: 'すべての基本機能',
   pricing_pro: 'Pro',
   pricing_pro_desc: '本格的なクリエイター向け',
@@ -426,7 +426,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   whisk2capcut_desktop_dl_win: 'Whisk2CapCut / W2C Desktop (MS Store)',
   whisk2capcut_desktop_dl_mac: 'macOS版ダウンロード',
   whisk2capcut_desktop_dl_all: 'すべてのリリースを見る',
-  whisk2capcut_desktop_version: 'v1.0.6 · 無料トライアル: 5回エクスポート / 7日間',
+  whisk2capcut_desktop_version: 'v1.0.6 · 無料: 毎月5回 + 登録ボーナス5回',
   whisk2capcut_hero_cta_desktop: 'デスクトップアプリをダウンロード',
 
   // Footer

@@ -24,7 +24,7 @@ export const en = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'View on GitHub',
   quick_dl_learn_more: 'Learn more',
-  quick_dl_version: 'v0.9.x · Free trial included',
+  quick_dl_version: 'v0.9.x · Free tier included (5/month + 5 bonus)',
 
   // Time saving value
   time_save_motto: 'Save Your Time',
@@ -269,11 +269,11 @@ export const en = {
 
   // Pricing
   pricing_title: 'Simple Pricing',
-  pricing_subtitle: 'Start free, upgrade when you need more',
-  pricing_free: 'Free Trial',
-  pricing_free_desc: '5 exports or 7 days, whichever comes first',
-  pricing_free_feature1: 'Up to 5 CapCut exports',
-  pricing_free_feature2: 'Up to 7-day trial period',
+  pricing_subtitle: 'Free forever, upgrade only when you need more',
+  pricing_free: 'Free',
+  pricing_free_desc: '5 exports per month + 5 signup-bonus exports',
+  pricing_free_feature1: '5 CapCut exports per month (auto-renews on the 1st)',
+  pricing_free_feature2: '+5 lifetime bonus exports on signup',
   pricing_free_feature3: 'All basic features',
   pricing_pro: 'Pro',
   pricing_pro_desc: 'For serious creators',
@@ -426,7 +426,7 @@ The young prince practices sword fighting in the courtyard`,
   whisk2capcut_desktop_dl_win: 'Whisk2CapCut / W2C Desktop (MS Store)',
   whisk2capcut_desktop_dl_mac: 'Download for macOS',
   whisk2capcut_desktop_dl_all: 'View all releases',
-  whisk2capcut_desktop_version: 'v1.0.6 · Free trial: 5 exports / 7 days',
+  whisk2capcut_desktop_version: 'v1.0.6 · Free: 5 exports/month + 5 signup bonus',
   whisk2capcut_hero_cta_desktop: 'Download Desktop App',
 
   // Footer

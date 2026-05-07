@@ -89,20 +89,6 @@ export default function TermsPage() {
                     <li>서비스의 안정적인 운영에 지장을 주는 행위</li>
                   </ul>
 
-                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">제7조 2항 (콘텐츠 정책)</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Whisk2CapCut은 이미지 생성 엔진이 아니며, Google Labs Whisk (<a href="https://labs.google/whisk" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">https://labs.google/whisk</a>)의 워크플로우를 자동화하는 Chrome 확장 프로그램입니다.
-                  </p>
-                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li>모든 이미지 생성은 Google Labs Whisk에서 전적으로 처리되며, NSFW 및 부적절한 콘텐츠를 소스 수준에서 차단하는 내장 안전 필터 및 콘텐츠 정책이 적용됩니다.</li>
-                    <li>본 확장 프로그램은 전적으로 사용자의 브라우저 내에서 작동하며, 생성된 이미지를 당사 서버를 통해 처리, 저장 또는 전송하지 않습니다.</li>
-                    <li>본 확장 프로그램은 Google의 콘텐츠 검열 시스템을 우회, 수정 또는 회피하지 않습니다.</li>
-                    <li>본 서비스를 통해 금지된 콘텐츠를 생성하는 것은 구조적으로 불가능합니다.</li>
-                    <li>사용자는 본 서비스를 사용하여 NSFW, 폭력적 또는 기타 부적절한 콘텐츠를 생성하려는 시도가 엄격히 금지됩니다. 본 정책 위반 시 환불 없이 즉시 라이선스가 종료됩니다.</li>
-                    <li>본 확장 프로그램은 전적으로 Google Labs Whisk의 콘텐츠 검열 시스템에 의존합니다. 모든 이미지 생성은 Google 서버와 사용자의 브라우저 내에서 이루어지므로, Whisk2CapCut은 Google Labs Whisk가 생성한 콘텐츠를 모니터링, 검사 또는 제어할 기술적 능력이 없습니다.</li>
-                    <li>Whisk2CapCut은 Google Labs Whisk의 AI 엔진이 생성한 콘텐츠에 대해 책임을 지지 않습니다. Google Labs Whisk의 출력에 관한 문의 사항은 Google로 직접 문의하시기 바랍니다.</li>
-                  </ul>
-
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">제8조 (게시물에 대한 권리)</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     게시물에 대한 저작권을 포함한 모든 권리 및 책임은 이를 게시한 회원에게 있습니다.
@@ -129,17 +115,6 @@ export default function TermsPage() {
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     회사가 제공하는 서비스 및 상품은 다음과 같습니다:
                   </p>
-                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
-                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      Google Labs Whisk에서 생성한 정적 이미지를 Ken Burns 효과(줌 인/아웃)가 적용된 CapCut 프로젝트로 자동 변환하는 Chrome 확장 프로그램입니다.
-                    </p>
-                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
-                      <li>Whisk 대량 이미지 생성 및 자동저장: 무료/Pro 모두 무제한</li>
-                      <li>무료 플랜: CapCut 내보내기 5회/7일, Ken Burns 효과, 자막 자동 삽입</li>
-                      <li>Pro 플랜: 월 $4.99 또는 연 $39.99 (무제한 내보내기, 우선 지원)</li>
-                    </ul>
-                  </div>
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">칼로리샷 (Calorie Shot)</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
@@ -234,20 +209,6 @@ export default function TermsPage() {
                     <li>安定したサービス運営を妨げる行為</li>
                   </ul>
 
-                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">第7条 第2項（コンテンツポリシー）</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Whisk2CapCutは画像生成エンジンではなく、Google Labs Whisk（<a href="https://labs.google/whisk" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">https://labs.google/whisk</a>）のワークフローを自動化するChrome拡張機能です。
-                  </p>
-                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li>すべての画像生成はGoogle Labs Whiskによって完全に処理され、NSFWおよび不適切なコンテンツをソースレベルでブロックする組み込みの安全フィルターとコンテンツポリシーが適用されます。</li>
-                    <li>この拡張機能はユーザーのブラウザ内で完全に動作し、生成された画像を当社のサーバーを通じて処理、保存、または送信しません。</li>
-                    <li>この拡張機能はGoogleのコンテンツ審査システムを回避、変更、または迂回しません。</li>
-                    <li>本サービスを通じて禁止されたコンテンツを生成することは構造的に不可能です。</li>
-                    <li>ユーザーは本サービスを使用してNSFW、暴力的、またはその他の不適切なコンテンツを作成しようとすることは厳しく禁止されています。このポリシーに違反した場合、返金なしで即座にライセンスが終了します。</li>
-                    <li>この拡張機能は完全にGoogle Labs Whiskのコンテンツ審査システムに依存しています。すべての画像生成はGoogleのサーバーとユーザーのブラウザ内で行われるため、Whisk2CapCutはGoogle Labs Whiskが生成したコンテンツを監視、検査、または制御する技術的能力を持っていません。</li>
-                    <li>Whisk2CapCutはGoogle Labs WhiskのAIエンジンが生成したコンテンツについて責任を負いません。Google Labs Whiskの出力に関するお問い合わせはGoogleに直接お問い合わせください。</li>
-                  </ul>
-
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">第8条（コンテンツの権利）</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     投稿されたコンテンツに関する著作権を含むすべての権利と責任は、投稿した会員に帰属します。
@@ -274,17 +235,6 @@ export default function TermsPage() {
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     会社が提供するサービスおよび製品は以下の通りです：
                   </p>
-                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
-                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      Google Labs Whiskで生成した静止画像をKen Burns効果（ズームイン/アウト）が適用されたCapCutプロジェクトに自動変換するChrome拡張機能です。
-                    </p>
-                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
-                      <li>Whisk一括画像生成と自動保存：無料/Pro両方無制限</li>
-                      <li>無料プラン：CapCutエクスポート5回/7日、Ken Burnsエフェクト、自動字幕挿入</li>
-                      <li>Proプラン：月額$4.99または年額$39.99（無制限エクスポート、優先サポート）</li>
-                    </ul>
-                  </div>
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">カロリーショット (Calorie Shot)</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
@@ -379,20 +329,6 @@ export default function TermsPage() {
                     <li>Handlungen, die den stabilen Dienstbetrieb stören</li>
                   </ul>
 
-                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">Artikel 7 Absatz 2 (Inhaltsrichtlinie)</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Whisk2CapCut ist keine Bildgenerierungs-Engine, sondern eine Chrome-Erweiterung, die den Workflow von Google Labs Whisk (<a href="https://labs.google/whisk" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">https://labs.google/whisk</a>) automatisiert.
-                  </p>
-                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li>Alle Bildgenerierung wird vollständig von Google Labs Whisk verarbeitet, das integrierte Sicherheitsfilter und Inhaltsrichtlinien durchsetzt, die NSFW- und unangemessene Inhalte auf Quellebene blockieren.</li>
-                    <li>Diese Erweiterung arbeitet vollständig im Browser des Benutzers und verarbeitet, speichert oder überträgt keine generierten Bilder über unsere Server.</li>
-                    <li>Diese Erweiterung umgeht, modifiziert oder umgeht keine Inhaltsmoderation von Google.</li>
-                    <li>Es ist architektonisch unmöglich, über diesen Dienst verbotene Inhalte zu generieren.</li>
-                    <li>Benutzern ist es strengstens untersagt, diesen Dienst zur Erstellung von NSFW-, gewalttätigen oder anderweitig unangemessenen Inhalten zu verwenden. Ein Verstoß gegen diese Richtlinie führt zur sofortigen Lizenzkündigung ohne Rückerstattung.</li>
-                    <li>Diese Erweiterung verlässt sich vollständig auf die Inhaltsmoderationsysteme von Google Labs Whisk. Da alle Bildgenerierung auf Googles Servern und im Browser des Benutzers erfolgt, hat Whisk2CapCut keine technische Fähigkeit, die von Google Labs Whisk generierten Inhalte zu überwachen, zu inspizieren oder zu kontrollieren.</li>
-                    <li>Whisk2CapCut übernimmt keine Verantwortung für Inhalte, die von Google Labs Whisks KI-Engine generiert werden. Anfragen bezüglich der Ausgabe von Google Labs Whisk sollten direkt an Google gerichtet werden.</li>
-                  </ul>
-
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Artikel 8 (Rechte an Inhalten)</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Alle Rechte und Verantwortlichkeiten für gepostete Inhalte, einschließlich Urheberrecht, liegen beim Mitglied, das sie gepostet hat.
@@ -419,17 +355,6 @@ export default function TermsPage() {
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     Die vom Unternehmen angebotenen Dienste und Produkte sind:
                   </p>
-                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
-                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      Eine Chrome-Erweiterung, die mit Google Labs Whisk erstellte statische Bilder automatisch in CapCut-Projekte mit Ken Burns Effekt (Zoom in/out) konvertiert.
-                    </p>
-                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
-                      <li>Whisk-Massenbildgenerierung und Auto-Speichern: Kostenlos/Pro beide unbegrenzt</li>
-                      <li>Kostenloser Plan: CapCut-Export 5x/7 Tage, Ken Burns-Effekt, automatische Untertitel</li>
-                      <li>Pro-Plan: $4,99/Monat oder $39,99/Jahr (unbegrenzter Export, Prioritäts-Support)</li>
-                    </ul>
-                  </div>
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Calorie Shot</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
@@ -524,20 +449,6 @@ export default function TermsPage() {
                     <li>Actions that disrupt stable service operation</li>
                   </ul>
 
-                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">Article 7, Section 2 (Content Policy)</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Whisk2CapCut is not an image generation engine. It is a Chrome extension that automates the workflow on Google Labs Whisk (<a href="https://labs.google/whisk" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">https://labs.google/whisk</a>).
-                  </p>
-                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li>All image generation is processed entirely by Google Labs Whisk, which enforces built-in safety filters and content policies that block NSFW and inappropriate content at the source level.</li>
-                    <li>This extension operates entirely within the user&apos;s browser and does not process, store, or transmit any generated images through our servers.</li>
-                    <li>This extension does not bypass, modify, or circumvent any of Google&apos;s content moderation systems.</li>
-                    <li>It is architecturally impossible to generate prohibited content through this service.</li>
-                    <li>Users are strictly prohibited from attempting to use this service to create NSFW, violent, or otherwise inappropriate content. Violation of this policy will result in immediate license termination without refund.</li>
-                    <li>This extension relies entirely on Google Labs Whisk&apos;s content moderation systems. As all image generation occurs on Google&apos;s servers and within the user&apos;s browser, Whisk2CapCut has no technical capability to monitor, inspect, or control the content generated by Google Labs Whisk.</li>
-                    <li>Whisk2CapCut shall not be held responsible for any content generated by Google Labs Whisk&apos;s AI engine. Any concerns regarding the output of Google Labs Whisk should be directed to Google.</li>
-                  </ul>
-
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Article 8 (Rights to Content)</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     All rights and responsibilities for posted content, including copyright, belong to the member who posted it.
@@ -564,17 +475,6 @@ export default function TermsPage() {
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     The services and products offered by the Company are as follows:
                   </p>
-                  <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
-                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Whisk2CapCut</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-2">
-                      A Chrome extension that automatically converts static images from Google Labs Whisk into CapCut projects with Ken Burns effect (zoom in/out).
-                    </p>
-                    <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 text-sm">
-                      <li>Whisk Bulk Image Generation & Auto-Save: Unlimited for both Free/Pro</li>
-                      <li>Free Plan: CapCut export 5x/7 days, Ken Burns effect, auto subtitle insertion</li>
-                      <li>Pro Plan: $4.99/month or $39.99/year (unlimited exports, priority support)</li>
-                    </ul>
-                  </div>
                   <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-6 mb-6">
                     <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">Calorie Shot</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-2">
