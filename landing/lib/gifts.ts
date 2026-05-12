@@ -5,7 +5,7 @@
  * revealed in the tutorial video, not literally the gift name — light puzzle).
  *
  * Single shared password (`AutoFlowCut`) unlocks the download on every page.
- * Password is case-insensitive and normalized (lowercase + strip whitespace/dashes).
+ * The password is CASE-SENSITIVE and must match the zip extraction password.
  */
 
 export type Gift = {
@@ -31,7 +31,7 @@ export const GIFTS: Record<string, Gift> = {
     longDesc:
       '222 curated CC0 sound effects in 15 categories: UI clicks, impacts, transitions, retro game SFX, voiceovers, and more. All MP3 192k VBR. From Kenney.nl, OpenGameArt CC0 contributors, and Juhani Junkala. Free to use in any project — no attribution required.',
     downloadUrl:
-      'https://github.com/touchizen/AutoFlowCut/releases/download/gifts-v1/AutoFlowCut_SFX_Pack_v1.zip',
+      'https://github.com/touchizen/touchizen.github.io/releases/download/gifts-v1/AutoFlowCut_SFX_Pack_v1.zip',
     filename: 'AutoFlowCut_SFX_Pack_v1.zip',
     size: '2.3 MB',
     accent: '#51CF66',
@@ -45,7 +45,7 @@ export const GIFTS: Record<string, Gift> = {
     longDesc:
       '108 hand-curated AI image generation style prompts in 11 categories: animation, photography, film cinematography, Asian traditional, Western art (public-domain), illustration, digital art, sci-fi/fantasy, game/3D, effects, misc. JSON + CSV format. Includes hardened merge script for AutoFlowCut.',
     downloadUrl:
-      'https://github.com/touchizen/AutoFlowCut/releases/download/gifts-v1/AutoFlowCut_Style_Pack_v1.zip',
+      'https://github.com/touchizen/touchizen.github.io/releases/download/gifts-v1/AutoFlowCut_Style_Pack_v1.zip',
     filename: 'AutoFlowCut_Style_Pack_v1.zip',
     size: '27 KB',
     accent: '#4ECDC4',
@@ -59,7 +59,7 @@ export const GIFTS: Record<string, Gift> = {
     longDesc:
       '111-page strategy book covering niche selection, the YouTube algorithm, scripting (with 7 hook archetypes, 3-act, Freytag 5-act, and 기승전결 frameworks), AI tool stack, voice/audio production, visuals, editing, thumbnails, SEO, monetization, legal/AI disclosure, 10 channel case studies, a 30-day launch plan, and a curated 120-tool directory.',
     downloadUrl:
-      'https://github.com/touchizen/AutoFlowCut/releases/download/gifts-v1/Faceless_YouTube_Guide_v1.zip',
+      'https://github.com/touchizen/touchizen.github.io/releases/download/gifts-v1/Faceless_YouTube_Guide_v1.zip',
     filename: 'Faceless_YouTube_Guide_v1.zip',
     size: '173 KB',
     accent: '#FFA94D',
@@ -73,7 +73,7 @@ export const GIFTS: Record<string, Gift> = {
     longDesc:
       '88 background music tracks (30 curated picks + 58 bonus) in 10 mood folders: trailer-epic, action-driving, cinematic-tense, battle-heroic, dark-dramatic, trailer-percussion, sports-motivation, synthwave-aggressive, rock-energy, and emotional-cinematic. All MP3 192k @ -16 LUFS. 100% safe for commercial use — from OpenGameArt CC0 and Internet Archive Public Domain.',
     downloadUrl:
-      'https://github.com/touchizen/AutoFlowCut/releases/download/gifts-v1/AutoFlowCut_BGM_Pack_v1.zip',
+      'https://github.com/touchizen/touchizen.github.io/releases/download/gifts-v1/AutoFlowCut_BGM_Pack_v1.zip',
     filename: 'AutoFlowCut_BGM_Pack_v1.zip',
     size: '298 MB',
     accent: '#FF6B6B',
@@ -87,7 +87,7 @@ export const GIFTS: Record<string, Gift> = {
     longDesc:
       '5 actionable files extracted from the Faceless YouTube Guide: 7 Hook Archetypes (markdown), 3-Act / Freytag / 기승전결 script template (markdown), AutoFlowCut-compatible storyboard CSV, printable 30-day Channel Launch Checklist (PDF), and a pre-publish QA checklist (PDF). Copy, fill in, ship.',
     downloadUrl:
-      'https://github.com/touchizen/AutoFlowCut/releases/download/gifts-v1/AutoFlowCut_Creator_Templates_v1.zip',
+      'https://github.com/touchizen/touchizen.github.io/releases/download/gifts-v1/AutoFlowCut_Creator_Templates_v1.zip',
     filename: 'AutoFlowCut_Creator_Templates_v1.zip',
     size: '17 KB',
     accent: '#9775FA',
