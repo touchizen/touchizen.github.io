@@ -82,14 +82,14 @@ export const GIFTS: Record<string, Gift> = {
     slug: 'kit',
     icon: '🛠',
     name: 'AutoFlowCut Creator Templates v1',
-    unit: '5 files',
-    description: 'Hook patterns + checklists · ship faster',
+    unit: '9 files',
+    description: 'Hook patterns + checklists + working examples · ship faster',
     longDesc:
-      '5 actionable files extracted from the Faceless YouTube Guide: 7 Hook Archetypes (markdown), 3-Act / Freytag / 기승전결 script template (markdown), AutoFlowCut-compatible storyboard CSV, printable 30-day Channel Launch Checklist (PDF), and a pre-publish QA checklist (PDF). Copy, fill in, ship.',
+      '9 actionable files extracted from the Faceless YouTube Guide and the tutorial production: 7 Hook Archetypes (markdown), 3-Act / Freytag / 기승전결 script template (markdown), AutoFlowCut-compatible storyboard CSV, printable 30-day Channel Launch Checklist (PDF), pre-publish QA checklist (PDF), and 4 real Story Engine example prompts (Dyatlov Pass, Mary Celeste, Blacksmith\'s Three Wives, GameStop short squeeze) covering both dark-history and bespoke genres. Copy, fill in, ship.',
     downloadUrl:
       'https://github.com/touchizen/touchizen.github.io/releases/download/gifts-v1/AutoFlowCut_Creator_Templates_v1.zip',
     filename: 'AutoFlowCut_Creator_Templates_v1.zip',
-    size: '17 KB',
+    size: '24 KB',
     accent: '#9775FA',
   },
 };
