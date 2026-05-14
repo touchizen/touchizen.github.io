@@ -121,7 +121,7 @@ function generateJsonLd(lang: Language) {
       name: 'Touchizen',
       url: 'https://touchizen.com',
       sameAs: [
-        'https://youtube.com/@touchizen',
+        lang === 'ko' ? 'https://youtube.com/@터치즌' : 'https://youtube.com/@touchizen',
         'https://x.com/touchizen',
         'https://github.com/touchizen/AutoFlowCut',
         'https://discord.gg/DTMMs8TZDN',
