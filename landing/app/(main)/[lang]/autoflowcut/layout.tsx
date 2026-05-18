@@ -64,6 +64,12 @@ export function generateMetadata({ params }: Props): Metadata {
         width: 1280,
         height: 720,
       }],
+      videos: [{
+        url: `https://www.youtube.com/embed/${lang === 'ko' ? 'mYnfgqvCkME' : 'cqxvDx9HTvQ'}`,
+        type: 'text/html',
+        width: 1280,
+        height: 720,
+      }],
     },
     twitter: {
       card: 'summary_large_image',
