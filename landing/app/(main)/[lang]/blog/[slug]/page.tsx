@@ -1,6 +1,15 @@
+import type { Metadata } from 'next';
 import { Language, languages } from '@/lib/i18n';
 import { getAllPosts, getPostBySlug } from '@/lib/blog';
 import BlogPostClient from './BlogPostClient';
+
+export function generateMetadata({ params }: { params: { lang: Language; slug: string } }): Metadata {
+  const post = getPostBySlug(params.lang, params.slug);
+  if (post?.noindex) {
+    return { robots: { index: false, follow: true } };
+  }
+  return {};
+}
 
 export function generateStaticParams() {
   const params: { lang: string; slug: string }[] = [];

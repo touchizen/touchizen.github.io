@@ -13,6 +13,7 @@ export interface BlogPost {
   author: string;
   content: string;
   htmlContent: string;
+  noindex: boolean;
 }
 
 const contentDir = path.join(process.cwd(), 'content', 'blog');
@@ -42,6 +43,7 @@ export function getPostBySlug(lang: Language, slug: string): BlogPost | null {
     author: data.author || 'Touchizen',
     content,
     htmlContent,
+    noindex: data.noindex === true,
   };
 }
 

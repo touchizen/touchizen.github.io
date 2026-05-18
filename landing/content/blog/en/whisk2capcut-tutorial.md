@@ -4,6 +4,7 @@ date: "2026-02-25"
 excerpt: "Learn how to generate 200+ AI images with Google Whisk and instantly create a ready-to-edit CapCut project — no more dragging images one by one."
 tags: ["Whisk2CapCut", "Tutorial", "AI Video", "CapCut"]
 author: "Touchizen"
+noindex: true
 ---
 
 ## 240 Images. One by One. Three All-Nighters.

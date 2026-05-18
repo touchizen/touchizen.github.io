@@ -4,6 +4,7 @@ date: "2026-02-25"
 excerpt: "Google Whisk으로 200장 이상의 AI 이미지를 생성하고, 바로 편집 가능한 CapCut 프로젝트로 변환하는 방법을 알려드립니다."
 tags: ["Whisk2CapCut", "튜토리얼", "AI 영상", "CapCut"]
 author: "Touchizen"
+noindex: true
 ---
 
 ## 240장의 이미지. 하나하나 수작업. 밤샘 3일.
