@@ -36,6 +36,10 @@ export function generateMetadata({ params }: Props): Metadata {
 
   const baseUrl = 'https://touchizen.com';
 
+  // Demo video shown in the hero — Korean video for ko, English for the rest.
+  const videoId = lang === 'ko' ? 'mYnfgqvCkME' : 'cqxvDx9HTvQ';
+  const ogImage = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+
   return {
     title: titles[lang],
     description: descriptions[lang],
@@ -68,6 +72,13 @@ export function generateMetadata({ params }: Props): Metadata {
       type: 'website',
       locale: locales[lang],
       alternateLocale: languages.filter((l) => l.code !== lang).map((l) => locales[l.code]),
+      images: [{ url: ogImage, width: 1280, height: 720, alt: titles[lang] }],
+      videos: [{
+        url: `https://www.youtube.com/embed/${videoId}`,
+        type: 'text/html',
+        width: 1280,
+        height: 720,
+      }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -75,6 +86,7 @@ export function generateMetadata({ params }: Props): Metadata {
       creator: '@touchizen',
       title: titles[lang],
       description: descriptions[lang],
+      images: [ogImage],
     },
     robots: {
       index: true,
