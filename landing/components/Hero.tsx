@@ -22,12 +22,12 @@ export default function Hero({ lang }: HeroProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-custom px-4 text-center">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 text-center">
         <div className="animate-fade-in">
           <p className="text-primary-500 dark:text-primary-400 font-semibold mb-4 tracking-wide uppercase text-sm">
             {t('hero_by')}
           </p>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl mx-auto">
             <span className="gradient-text">{t('hero_title')}</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto text-balance">
@@ -35,7 +35,7 @@ export default function Hero({ lang }: HeroProps) {
           </p>
 
           {/* Latest product demo video */}
-          <div className="relative aspect-video max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/10">
+          <div className="relative aspect-video max-w-7xl mx-auto rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/10">
             <iframe
               className="absolute inset-0 w-full h-full"
               src={`https://www.youtube.com/embed/${videoId}`}
