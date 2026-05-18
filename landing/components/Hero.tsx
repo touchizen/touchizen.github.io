@@ -35,7 +35,7 @@ export default function Hero({ lang }: HeroProps) {
           </p>
 
           {/* Latest product demo video */}
-          <div className="relative aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/10">
+          <div className="relative aspect-video max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/10">
             <iframe
               className="absolute inset-0 w-full h-full"
               src={`https://www.youtube.com/embed/${videoId}`}
