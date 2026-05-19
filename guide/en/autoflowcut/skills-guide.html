@@ -195,7 +195,7 @@
             YouTube story channel script writing automation. Designed for traditional tales, folk stories, and historical narratives. Covers the full pipeline from story analysis to upload-ready assets.
           </p>
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">12-step workflow</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">9-Wave workflow</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">Script writing</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">TTS / SFX</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">Storyboard CSV</span>
@@ -219,7 +219,7 @@
           Story Engine Genres
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          The story-engine skill supports two genres, automatically selected by your input language:
+          The story-engine skill supports three genres, automatically selected by your input language and topic keywords:
         </p>
 
         <div class="overflow-x-auto mb-6">
@@ -239,11 +239,17 @@
                 <td class="py-3 px-4">Korean historical tales — Joseon dynasty court intrigue, folk tales, ghost stories</td>
                 <td class="py-3 px-4"><code class="text-xs">"야담 대본 써줘"</code>, <code class="text-xs">"ep11 시작하자"</code></td>
               </tr>
-              <tr>
+              <tr class="border-b border-gray-100 dark:border-gray-800">
                 <td class="py-3 px-4"><code class="text-sm font-mono text-primary-600 dark:text-primary-400">dark-history</code></td>
                 <td class="py-3 px-4">English</td>
                 <td class="py-3 px-4">Western dark history — Medieval mystery, Tudor intrigue, gothic tales, true crime</td>
                 <td class="py-3 px-4"><code class="text-xs">"Write a script about Salem witch trials"</code>, <code class="text-xs">"Start ep1 - Jack the Ripper"</code></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-primary-600 dark:text-primary-400">bespoke</code></td>
+                <td class="py-3 px-4">Any language</td>
+                <td class="py-3 px-4">Universal — synthesizes meta-prompts from 3–5 user-provided successful reference scripts. Any topic, any language</td>
+                <td class="py-3 px-4"><code class="text-xs">"Write an economy YouTube script"</code> (needs 3–5 reference scripts)</td>
               </tr>
             </tbody>
           </table>
@@ -251,11 +257,11 @@
 
         <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 mb-4">
           <p class="text-sm text-amber-800 dark:text-amber-300">
-            <strong>Auto-detection:</strong> Genre is auto-detected from your input language. Use <code class="font-mono text-xs">--genre yadam</code> or <code class="font-mono text-xs">--genre dark-history</code> to override.
+            <strong>Auto-detection:</strong> Genre is auto-detected from your input language and topic keywords. Use <code class="font-mono text-xs">--genre yadam</code>, <code class="font-mono text-xs">--genre dark-history</code>, or <code class="font-mono text-xs">--genre bespoke</code> to override.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
             <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
               <code class="text-primary-600 dark:text-primary-400">yadam</code> Meta-Prompts
@@ -268,119 +274,93 @@
             </h4>
             <p class="text-xs text-gray-600 dark:text-gray-400">5 English meta-prompt files based on Google DeepMind's Dramatron framework</p>
           </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
+              <code class="text-primary-600 dark:text-primary-400">bespoke</code> Meta-Prompts
+            </h4>
+            <p class="text-xs text-gray-600 dark:text-gray-400">Per-output-language ko/en files (5 each) + a per-episode supplement synthesized from 3–5 user reference scripts</p>
+          </div>
         </div>
       </div>
 
-      <!-- 12-Step Workflow -->
+      <!-- 9-Wave Workflow -->
       <div id="workflow" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🔄</span>
-          12-Step Workflow
+          9-Wave Workflow
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          The Story Engine follows a strict 12-step pipeline with gate checks between phases.
+          The Story Engine follows a strict 9-Wave pipeline with gate checks between phases.
         </p>
 
         <div class="space-y-4">
-          <!-- R1 -->
+          <!-- W1 -->
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R1</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W1</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Story Analysis</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Analyze a reference story for success factors, audience hooks, and narrative structure.</p>
+              <h3 class="font-semibold">Story Design</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Analyze references and fact-check to identify patterns and strengths, then set the story direction. Branches between new production and rewrite.</p>
             </div>
           </div>
-          <!-- R2 -->
+          <!-- W2 -->
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R2</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W2</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Fact Check</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Validate historical accuracy, period-correct details, and factual consistency.</p>
+              <h3 class="font-semibold">Synopsis + Preflight</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Create a 20-chapter Setup &rarr; Rising &rarr; Climax &rarr; Resolution &rarr; Hook synopsis, then review structure, foreshadowing, and suspense before writing.</p>
             </div>
           </div>
-          <!-- R3 -->
+          <!-- W3 -->
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R3</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W3</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Synopsis</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Create a 20-chapter framework with plot structure and character arcs.</p>
+              <h3 class="font-semibold flex items-center gap-2">Script Writing + Review <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">User Approval Required</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Write the full script in 5 parts (Introduction &rarr; Development &rarr; Twist &rarr; Resolution &rarr; Hook); a sub-agent reviews up to 5 rounds. Ends with a user approval checkpoint.</p>
             </div>
           </div>
-          <!-- R4 -->
+          <!-- W4 -->
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R4</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Preflight</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Structure review, forbidden-content checks, and foreshadowing tracking.</p>
-            </div>
-          </div>
-          <!-- R5 -->
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R5</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Script Writing</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Write the full script in 5 parts: Introduction &rarr; Development &rarr; Twist &rarr; Resolution &rarr; Hook.</p>
-            </div>
-          </div>
-          <!-- R6 -->
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R6</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Review</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Iterative sub-agent review rounds (up to 5 rounds) for quality assurance.</p>
-            </div>
-          </div>
-          <!-- R7 -->
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R7</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold flex items-center gap-2">Finalize <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">User Approval Required</span></h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">User approval checkpoint. The script cannot proceed to production without explicit confirmation.</p>
-            </div>
-          </div>
-          <!-- R8 -->
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R8</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W4</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">Production Extract</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Split the script into narration, character voices, and SFX cues.</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Split the script into narration, character voices, and SFX cues, then validate.</p>
             </div>
           </div>
-          <!-- R8.5 -->
+          <!-- W5 -->
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-xs">R8.5</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Extract Review</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Sub-agent validation of the extracted production data.</p>
-            </div>
-          </div>
-          <!-- R9 -->
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R9</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W5</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">TTS / SFX Generate</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Generate audio files with AI TTS APIs (ElevenLabs, Typecast) and sound effects.</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Generate audio with AI TTS APIs (ElevenLabs, Typecast) and sound effects, with timecode verification.</p>
             </div>
           </div>
-          <!-- R10 -->
+          <!-- W6 -->
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R10</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W6</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">Storyboard CSV</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Create references.csv and scenes.csv for image/video generation with AutoFlowCut.</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Create references.csv and scenes.csv for image/video generation with AutoFlowCut, reviewed via batch QA.</p>
             </div>
           </div>
-          <!-- R11 -->
+          <!-- W7 -->
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R11</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W7</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Image / Video Generation</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Batch generation with Flow AI via AutoFlowCut MCP tools and quality assurance.</p>
+              <h3 class="font-semibold flex items-center gap-2">Image Production <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">User Approval Required</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Batch-generate reference and scene images/videos via AutoFlowCut MCP tools and run image QA. Ends with a user approval checkpoint.</p>
             </div>
           </div>
-          <!-- R12 -->
+          <!-- W8 -->
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R12</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W8</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Assembly</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">SFX scene matching, audio import, and CapCut export assemble the edit project.</p>
+            </div>
+          </div>
+          <!-- W9 -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W9</div>
             <div class="flex-1">
               <h3 class="font-semibold">Upload Info</h3>
               <p class="text-sm text-gray-600 dark:text-gray-400">Prepare title, description, tags, and thumbnail for YouTube upload.</p>

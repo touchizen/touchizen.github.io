@@ -184,10 +184,10 @@
             <span class="text-xs text-gray-500 dark:text-gray-400 font-normal">v0.9</span>
           </h3>
           <p class="text-gray-600 dark:text-gray-400 mb-4">
-            유튜브 스토리 채널용 대본을 12단계 워크플로우로 작성합니다. 야담, 민담, 설화 등 전통 이야기 대본부터 프로덕션 에셋까지 전체 파이프라인을 커버합니다.
+            유튜브 스토리 채널용 대본을 9-Wave 워크플로우로 작성합니다. 야담, 민담, 설화 등 전통 이야기 대본부터 프로덕션 에셋까지 전체 파이프라인을 커버합니다.
           </p>
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">12단계 워크플로우</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">9-Wave 워크플로우</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">대본 작성</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">TTS / SFX</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">스토리보드 CSV</span>
@@ -211,7 +211,7 @@
           Story Engine 장르
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          story-engine 스킬은 2개의 장르를 지원하며, 입력 언어에 따라 자동 선택됩니다:
+          story-engine 스킬은 3개의 장르를 지원하며, 입력 언어와 주제 키워드에 따라 자동 선택됩니다:
         </p>
 
         <div class="overflow-x-auto mb-6">
@@ -226,16 +226,22 @@
             </thead>
             <tbody>
               <tr class="border-b border-gray-100 dark:border-gray-800">
-                <td class="py-3 px-4"><code class="text-sm font-mono text-primary-600 dark:text-primary-400">yadam</code></td>
+                <td class="py-3 px-4">야담(<code class="text-sm font-mono text-primary-600 dark:text-primary-400">yadam</code>)</td>
                 <td class="py-3 px-4">한국어</td>
                 <td class="py-3 px-4">조선시대 야담, 민담, 설화, 궁중 미스터리, 기담</td>
                 <td class="py-3 px-4"><code class="text-xs">"야담 대본 써줘"</code>, <code class="text-xs">"ep11 시작하자"</code></td>
               </tr>
-              <tr>
-                <td class="py-3 px-4"><code class="text-sm font-mono text-primary-600 dark:text-primary-400">dark-history</code></td>
+              <tr class="border-b border-gray-100 dark:border-gray-800">
+                <td class="py-3 px-4">다크 히스토리(<code class="text-sm font-mono text-primary-600 dark:text-primary-400">dark-history</code>)</td>
                 <td class="py-3 px-4">English</td>
                 <td class="py-3 px-4">서양 다크 히스토리 — 중세 미스터리, 튜더 왕조, 고딕 테일, 실화 범죄</td>
                 <td class="py-3 px-4"><code class="text-xs">"Write a script about Salem witch trials"</code></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">맞춤형(<code class="text-sm font-mono text-primary-600 dark:text-primary-400">bespoke</code>)</td>
+                <td class="py-3 px-4">모든 언어</td>
+                <td class="py-3 px-4">맞춤형 — 사용자가 제공한 성공 대본 3~5개로 메타 프롬프트를 합성. 어떤 주제·언어든 가능</td>
+                <td class="py-3 px-4"><code class="text-xs">"경제 유튜브 대본 써줘"</code> (참고 대본 3~5개 필요)</td>
               </tr>
             </tbody>
           </table>
@@ -243,123 +249,101 @@
 
         <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 mb-4">
           <p class="text-sm text-amber-800 dark:text-amber-300">
-            <strong>자동 감지:</strong> 장르는 입력 언어에서 자동 감지됩니다. <code class="font-mono text-xs">--genre yadam</code> 또는 <code class="font-mono text-xs">--genre dark-history</code>로 수동 선택할 수 있습니다.
+            <strong>자동 감지:</strong> 장르는 입력 언어와 주제 키워드에서 자동 감지됩니다. <code class="font-mono text-xs">--genre yadam</code>, <code class="font-mono text-xs">--genre dark-history</code>, <code class="font-mono text-xs">--genre bespoke</code>로 수동 선택할 수 있습니다.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
             <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
-              <code class="text-primary-600 dark:text-primary-400">yadam</code> 메타 프롬프트
+              야담(<code class="text-primary-600 dark:text-primary-400">yadam</code>) 메타 프롬프트
             </h4>
             <p class="text-xs text-gray-600 dark:text-gray-400">5개의 한국어 메타 프롬프트 파일: 시놉시스, 사전점검, 극본, 내레이션, 서스펜스</p>
           </div>
           <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
             <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
-              <code class="text-primary-600 dark:text-primary-400">dark-history</code> 메타 프롬프트
+              다크 히스토리(<code class="text-primary-600 dark:text-primary-400">dark-history</code>) 메타 프롬프트
             </h4>
             <p class="text-xs text-gray-600 dark:text-gray-400">Google DeepMind Dramatron 프레임워크 기반 5개의 영어 메타 프롬프트 파일</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
+              맞춤형(<code class="text-primary-600 dark:text-primary-400">bespoke</code>) 메타 프롬프트
+            </h4>
+            <p class="text-xs text-gray-600 dark:text-gray-400">출력 언어별 ko/en 각 5개 파일 + 에피소드마다 사용자 레퍼런스 3~5개에서 합성한 보충 프롬프트</p>
           </div>
         </div>
       </div>
 
-      <!-- 12-Step Workflow -->
+      <!-- 9-Wave Workflow -->
       <div id="workflow" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🔄</span>
-          12단계 워크플로우
+          9-Wave 워크플로우
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          Story Engine은 단계 간 게이트 체크가 있는 엄격한 12단계 파이프라인을 따릅니다.
+          Story Engine은 단계 간 게이트 체크가 있는 엄격한 9-Wave 파이프라인을 따릅니다.
         </p>
 
         <div class="space-y-4">
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R1</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W1</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">성공요인 분석</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">레퍼런스 스토리의 성공 요인, 시청자 후킹 포인트, 서사 구조를 분석합니다.</p>
+              <h3 class="font-semibold">스토리 설계</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">레퍼런스 분석과 팩트체크로 패턴·강점을 파악하고 스토리 방향을 잡습니다. 신규 제작과 리라이팅을 분기합니다.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R2</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W2</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">팩트체크</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">시대고증, 역사적 사실, 내용의 일관성을 검증합니다.</p>
+              <h3 class="font-semibold">시놉시스 + 프리플라이트</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">20챕터 기승전결훅 시놉시스를 작성하고, 집필 전 구조·복선·서스펜스를 점검합니다.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R3</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W3</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">시놉시스</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">플롯 구조와 캐릭터 아크를 포함한 20챕터 프레임워크를 작성합니다.</p>
+              <h3 class="font-semibold flex items-center gap-2">대본 작성 + 검토 <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">사용자 승인 필수</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">기 &rarr; 승 &rarr; 전 &rarr; 결 &rarr; 훅 5파트로 대본을 작성하고 서브에이전트가 최대 5라운드 검토합니다. 완료 후 사용자 승인 체크포인트입니다.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R4</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">프리플라이트</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">구조 점검, 금지사항 확인, 복선 추적표를 작성합니다.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R5</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">대본 작성</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">기 &rarr; 승 &rarr; 전 &rarr; 결 &rarr; 훅 5파트로 전체 대본을 작성합니다.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R6</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">검토</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">서브에이전트를 통한 반복 검토 (최대 5라운드)로 품질을 보장합니다.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R7</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold flex items-center gap-2">대본 확정 <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">사용자 승인 필수</span></h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">사용자 승인 체크포인트입니다. 명시적 확인 없이는 프로덕션으로 진행할 수 없습니다.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R8</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W4</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">프로덕션 추출</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">대본을 나레이션, 인물 대사, SFX 큐로 분리합니다.</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">대본을 나레이션, 인물 대사, SFX 큐로 분리하고 검증합니다.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-xs">R8.5</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">추출 검토</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">서브에이전트가 추출된 프로덕션 데이터를 검증합니다.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R9</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W5</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">TTS / SFX 생성</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">AI TTS API (ElevenLabs, Typecast)로 음성 파일과 효과음을 생성합니다.</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AI TTS API (ElevenLabs, Typecast)로 음성과 효과음을 생성하고 타임코드를 검증합니다.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R10</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W6</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">스토리보드 CSV</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCut으로 이미지/영상 생성을 위한 references.csv와 scenes.csv를 작성합니다.</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCut 이미지/영상 생성을 위한 references.csv와 scenes.csv를 작성하고 배치 QA로 검토합니다.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R11</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W7</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">이미지 / 영상 생성</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCut MCP 도구로 Flow AI 배치 생성 및 품질 검수를 진행합니다.</p>
+              <h3 class="font-semibold flex items-center gap-2">이미지 프로덕션 <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">사용자 승인 필수</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCut MCP로 레퍼런스·씬 이미지/영상을 배치 생성하고 이미지 QA를 진행합니다. 완료 후 사용자 승인 체크포인트입니다.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R12</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W8</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">어셈블리</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">SFX 씬 매칭, 오디오 임포트, CapCut 내보내기로 편집 프로젝트를 조립합니다.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W9</div>
             <div class="flex-1">
               <h3 class="font-semibold">업로드 정보</h3>
               <p class="text-sm text-gray-600 dark:text-gray-400">유튜브 업로드를 위한 제목, 설명, 태그, 썸네일을 준비합니다.</p>

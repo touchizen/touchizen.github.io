@@ -183,10 +183,10 @@
             <span class="text-xs text-gray-500 dark:text-gray-400 font-normal">v0.9</span>
           </h3>
           <p class="text-gray-600 dark:text-gray-400 mb-4">
-            YouTubeストーリーチャンネル用の脚本を12段階ワークフローで作成します。民話、伝説、歴史物語の脚本からプロダクションアセットまで、フルパイプラインをカバーします。
+            YouTubeストーリーチャンネル用の脚本を9-Waveワークフローで作成します。民話、伝説、歴史物語の脚本からプロダクションアセットまで、フルパイプラインをカバーします。
           </p>
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">12段階ワークフロー</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">9-Waveワークフロー</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">脚本作成</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">TTS / SFX</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">ストーリーボードCSV</span>
@@ -210,7 +210,7 @@
           Story Engine ジャンル
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          story-engineスキルは2つのジャンルをサポートし、入力言語に基づいて自動選択されます：
+          story-engineスキルは3つのジャンルをサポートし、入力言語と主題キーワードに基づいて自動選択されます：
         </p>
 
         <div class="overflow-x-auto mb-6">
@@ -225,16 +225,22 @@
             </thead>
             <tbody>
               <tr class="border-b border-gray-100 dark:border-gray-800">
-                <td class="py-3 px-4"><code class="text-sm font-mono text-primary-600 dark:text-primary-400">yadam</code></td>
+                <td class="py-3 px-4">野談(<code class="text-sm font-mono text-primary-600 dark:text-primary-400">yadam</code>)</td>
                 <td class="py-3 px-4">韓国語</td>
                 <td class="py-3 px-4">朝鮮時代の野談、民話、説話、宮廷ミステリー</td>
                 <td class="py-3 px-4"><code class="text-xs">"야담 대본 써줘"</code></td>
               </tr>
-              <tr>
-                <td class="py-3 px-4"><code class="text-sm font-mono text-primary-600 dark:text-primary-400">dark-history</code></td>
+              <tr class="border-b border-gray-100 dark:border-gray-800">
+                <td class="py-3 px-4">ダークヒストリー(<code class="text-sm font-mono text-primary-600 dark:text-primary-400">dark-history</code>)</td>
                 <td class="py-3 px-4">English</td>
                 <td class="py-3 px-4">西洋ダークヒストリー — 中世ミステリー、チューダー朝、ゴシックテイル</td>
                 <td class="py-3 px-4"><code class="text-xs">"Write a script about Salem witch trials"</code></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">カスタム(<code class="text-sm font-mono text-primary-600 dark:text-primary-400">bespoke</code>)</td>
+                <td class="py-3 px-4">すべての言語</td>
+                <td class="py-3 px-4">カスタム — ユーザー提供の成功脚本3〜5本からメタプロンプトを合成。あらゆる主題・言語に対応</td>
+                <td class="py-3 px-4"><code class="text-xs">"経済YouTube脚本を書いて"</code>（参考脚本3〜5本が必要）</td>
               </tr>
             </tbody>
           </table>
@@ -242,123 +248,101 @@
 
         <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 mb-4">
           <p class="text-sm text-amber-800 dark:text-amber-300">
-            <strong>自動検出：</strong> ジャンルは入力言語から自動検出されます。<code class="font-mono text-xs">--genre yadam</code>または<code class="font-mono text-xs">--genre dark-history</code>で手動選択できます。
+            <strong>自動検出：</strong> ジャンルは入力言語と主題キーワードから自動検出されます。<code class="font-mono text-xs">--genre yadam</code>、<code class="font-mono text-xs">--genre dark-history</code>、<code class="font-mono text-xs">--genre bespoke</code>で手動選択できます。
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
             <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
-              <code class="text-primary-600 dark:text-primary-400">yadam</code> メタプロンプト
+              野談(<code class="text-primary-600 dark:text-primary-400">yadam</code>) メタプロンプト
             </h4>
             <p class="text-xs text-gray-600 dark:text-gray-400">5つの韓国語メタプロンプトファイル：シノプシス、プリフライト、脚本、ナレーション、サスペンス</p>
           </div>
           <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
             <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
-              <code class="text-primary-600 dark:text-primary-400">dark-history</code> メタプロンプト
+              ダークヒストリー(<code class="text-primary-600 dark:text-primary-400">dark-history</code>) メタプロンプト
             </h4>
             <p class="text-xs text-gray-600 dark:text-gray-400">Google DeepMindのDramatronフレームワークに基づく5つの英語メタプロンプトファイル</p>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
+              カスタム(<code class="text-primary-600 dark:text-primary-400">bespoke</code>) メタプロンプト
+            </h4>
+            <p class="text-xs text-gray-600 dark:text-gray-400">出力言語別にko/en各5ファイル + エピソードごとにユーザー参考脚本3〜5本から合成した補足プロンプト</p>
           </div>
         </div>
       </div>
 
-      <!-- 12-Step Workflow -->
+      <!-- 9-Wave Workflow -->
       <div id="workflow" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🔄</span>
-          12段階ワークフロー
+          9-Waveワークフロー
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          Story Engineはフェーズ間のゲートチェック付き厳密な12段階パイプラインに従います。
+          Story Engineはフェーズ間のゲートチェック付き厳密な9-Waveパイプラインに従います。
         </p>
 
         <div class="space-y-4">
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R1</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W1</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">ストーリー分析</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">参考ストーリーの成功要因、視聴者フック、物語構造を分析します。</p>
+              <h3 class="font-semibold">ストーリー設計</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">リファレンス分析とファクトチェックでパターンと強みを把握し、ストーリーの方向性を決めます。新規制作とリライトを分岐します。</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R2</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W2</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">ファクトチェック</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">時代考証、歴史的事実、内容の整合性を検証します。</p>
+              <h3 class="font-semibold">シノプシス + プリフライト</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">20章の起承転結フック構成のシノプシスを作成し、執筆前に構造・伏線・サスペンスを確認します。</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R3</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W3</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">シノプシス</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">プロット構成とキャラクターアークを含む20章フレームワークを作成します。</p>
+              <h3 class="font-semibold flex items-center gap-2">脚本作成 + レビュー <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">ユーザー承認必須</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">起 &rarr; 承 &rarr; 転 &rarr; 結 &rarr; フックの5パートで脚本を作成し、サブエージェントが最大5ラウンドレビューします。完了後にユーザー承認チェックポイントがあります。</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R4</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">プリフライト</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">構造レビュー、禁止事項チェック、伏線追跡表を作成します。</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R5</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">脚本作成</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">起 &rarr; 承 &rarr; 転 &rarr; 結 &rarr; フックの5パートで完全な脚本を作成します。</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R6</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">レビュー</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">サブエージェントによる反復レビュー（最大5ラウンド）で品質を保証します。</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R7</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold flex items-center gap-2">確定 <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">ユーザー承認必須</span></h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">ユーザー承認チェックポイント。明示的な確認なしにプロダクションへ進めません。</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R8</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W4</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">プロダクション抽出</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">脚本をナレーション、キャラクターボイス、SFXキューに分割します。</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">脚本をナレーション、キャラクターボイス、SFXキューに分割し検証します。</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-xs">R8.5</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">抽出レビュー</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">サブエージェントが抽出されたプロダクションデータを検証します。</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R9</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W5</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">TTS / SFX生成</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">AI TTS API（ElevenLabs、Typecast）で音声ファイルと効果音を生成します。</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AI TTS API（ElevenLabs、Typecast）で音声と効果音を生成し、タイムコードを検証します。</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R10</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W6</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">ストーリーボードCSV</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCutでの画像/動画生成用にreferences.csvとscenes.csvを作成します。</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCutの画像/動画生成用にreferences.csvとscenes.csvを作成し、バッチQAでレビューします。</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R11</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W7</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">画像 / 動画生成</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCut MCPツールでFlow AIバッチ生成と品質検査を実行します。</p>
+              <h3 class="font-semibold flex items-center gap-2">画像プロダクション <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">ユーザー承認必須</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCut MCPでリファレンス・シーン画像/動画をバッチ生成し、画像QAを実行します。完了後にユーザー承認チェックポイントがあります。</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R12</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W8</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">アセンブリ</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">SFXシーンマッチング、オーディオインポート、CapCutエクスポートで編集プロジェクトを組み立てます。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W9</div>
             <div class="flex-1">
               <h3 class="font-semibold">アップロード情報</h3>
               <p class="text-sm text-gray-600 dark:text-gray-400">YouTubeアップロード用のタイトル、説明、タグ、サムネイルを準備します。</p>

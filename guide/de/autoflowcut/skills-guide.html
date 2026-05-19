@@ -183,10 +183,10 @@
             <span class="text-xs text-gray-500 dark:text-gray-400 font-normal">v0.9</span>
           </h3>
           <p class="text-gray-600 dark:text-gray-400 mb-4">
-            Automatisierte Drehbucherstellung für YouTube-Story-Kanäle in einem 12-Schritte-Workflow. Entwickelt für traditionelle Erzählungen, Volksmärchen und historische Geschichten. Deckt die gesamte Pipeline von der Story-Analyse bis zu upload-fertigen Assets ab.
+            Automatisierte Drehbucherstellung für YouTube-Story-Kanäle in einem 9-Wave-Workflow. Entwickelt für traditionelle Erzählungen, Volksmärchen und historische Geschichten. Deckt die gesamte Pipeline von der Story-Analyse bis zu upload-fertigen Assets ab.
           </p>
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">12-Schritte-Workflow</span>
+            <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">9-Wave-Workflow</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">Drehbuch</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">TTS / SFX</span>
             <span class="text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-lg">Storyboard CSV</span>
@@ -210,7 +210,7 @@
           Story Engine Genres
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          Das story-engine Skill unterstützt zwei Genres, die automatisch anhand Ihrer Sprache ausgewählt werden:
+          Das story-engine Skill unterstützt drei Genres, die automatisch anhand Ihrer Sprache und Themen-Keywords ausgewählt werden:
         </p>
 
         <div class="overflow-x-auto mb-6">
@@ -230,11 +230,17 @@
                 <td class="py-3 px-4">Koreanische historische Erzählungen — Joseon-Dynastie, Volksmärchen</td>
                 <td class="py-3 px-4"><code class="text-xs">"야담 대본 써줘"</code></td>
               </tr>
-              <tr>
+              <tr class="border-b border-gray-100 dark:border-gray-800">
                 <td class="py-3 px-4"><code class="text-sm font-mono text-primary-600 dark:text-primary-400">dark-history</code></td>
                 <td class="py-3 px-4">English</td>
                 <td class="py-3 px-4">Westliche dunkle Geschichte — Mittelalter-Mysterien, Tudor-Intrigen, Gothic</td>
                 <td class="py-3 px-4"><code class="text-xs">"Write a script about Salem witch trials"</code></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-primary-600 dark:text-primary-400">bespoke</code></td>
+                <td class="py-3 px-4">Alle Sprachen</td>
+                <td class="py-3 px-4">Maßgeschneidert — synthetisiert Meta-Prompts aus 3–5 vom Benutzer bereitgestellten erfolgreichen Referenzskripten. Jedes Thema, jede Sprache</td>
+                <td class="py-3 px-4"><code class="text-xs">"Schreibe ein Drehbuch für einen Wirtschafts-YouTube-Kanal"</code> (3–5 Referenzskripte erforderlich)</td>
               </tr>
             </tbody>
           </table>
@@ -242,11 +248,11 @@
 
         <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 mb-4">
           <p class="text-sm text-amber-800 dark:text-amber-300">
-            <strong>Automatische Erkennung:</strong> Das Genre wird automatisch anhand Ihrer Eingabesprache erkannt. Verwenden Sie <code class="font-mono text-xs">--genre yadam</code> oder <code class="font-mono text-xs">--genre dark-history</code> zur manuellen Auswahl.
+            <strong>Automatische Erkennung:</strong> Das Genre wird automatisch anhand Ihrer Eingabesprache und Themen-Keywords erkannt. Verwenden Sie <code class="font-mono text-xs">--genre yadam</code>, <code class="font-mono text-xs">--genre dark-history</code> oder <code class="font-mono text-xs">--genre bespoke</code> zur manuellen Auswahl.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
             <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
               <code class="text-primary-600 dark:text-primary-400">yadam</code> Meta-Prompts
@@ -259,106 +265,84 @@
             </h4>
             <p class="text-xs text-gray-600 dark:text-gray-400">5 englische Meta-Prompt-Dateien basierend auf Google DeepMinds Dramatron-Framework</p>
           </div>
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
+            <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
+              <code class="text-primary-600 dark:text-primary-400">bespoke</code> Meta-Prompts
+            </h4>
+            <p class="text-xs text-gray-600 dark:text-gray-400">Pro Ausgabesprache ko/en (je 5 Dateien) + ein pro Episode aus 3–5 Benutzer-Referenzskripten synthetisiertes Supplement</p>
+          </div>
         </div>
       </div>
 
-      <!-- 12-Step Workflow -->
+      <!-- 9-Wave Workflow -->
       <div id="workflow" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🔄</span>
-          12-Schritte-Workflow
+          9-Wave-Workflow
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          Die Story Engine folgt einer strikten 12-Schritte-Pipeline mit Gate-Prüfungen zwischen den Phasen.
+          Die Story Engine folgt einer strikten 9-Wave-Pipeline mit Gate-Prüfungen zwischen den Phasen.
         </p>
 
         <div class="space-y-4">
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R1</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W1</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Story-Analyse</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Analyse einer Referenzgeschichte auf Erfolgsfaktoren, Zuschauer-Hooks und Erzählstruktur.</p>
+              <h3 class="font-semibold">Story-Design</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Referenzen analysieren und Fakten prüfen, um Muster und Stärken zu erkennen und die Story-Richtung festzulegen. Verzweigt zwischen Neuproduktion und Rewrite.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R2</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W2</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Faktenprüfung</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Überprüfung historischer Genauigkeit, zeitgemäßer Details und inhaltlicher Konsistenz.</p>
+              <h3 class="font-semibold">Synopsis + Preflight</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Eine 20-Kapitel-Synopsis (Setup &rarr; Steigerung &rarr; Höhepunkt &rarr; Auflösung &rarr; Hook) erstellen und vor dem Schreiben Struktur, Foreshadowing und Suspense prüfen.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R3</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W3</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Synopsis</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Erstellung eines 20-Kapitel-Frameworks mit Plotstruktur und Charakterbögen.</p>
+              <h3 class="font-semibold flex items-center gap-2">Drehbuch schreiben + Review <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">Benutzerfreigabe erforderlich</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Vollständiges Drehbuch in 5 Teilen (Einleitung &rarr; Entwicklung &rarr; Wendung &rarr; Auflösung &rarr; Hook); ein Sub-Agent prüft bis zu 5 Runden. Endet mit einem Benutzerfreigabe-Checkpoint.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R4</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Preflight</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Strukturprüfung, Verbotsinhalte-Check und Foreshadowing-Tracking.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R5</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Drehbuch schreiben</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Vollständiges Drehbuch in 5 Teilen: Einleitung &rarr; Entwicklung &rarr; Wendung &rarr; Auflösung &rarr; Hook.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R6</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Überprüfung</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Iterative Sub-Agent-Überprüfungsrunden (bis zu 5 Runden) zur Qualitätssicherung.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R7</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold flex items-center gap-2">Finalisierung <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">Benutzerfreigabe erforderlich</span></h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Benutzerfreigabe-Checkpoint. Ohne explizite Bestätigung kann nicht zur Produktion übergegangen werden.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R8</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W4</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">Produktionsextraktion</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Aufteilung des Drehbuchs in Erzählung, Charakterstimmen und SFX-Cues.</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Aufteilung des Drehbuchs in Erzählung, Charakterstimmen und SFX-Cues, dann Validierung.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-xs">R8.5</div>
-            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Extraktionsprüfung</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Sub-Agent-Validierung der extrahierten Produktionsdaten.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R9</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W5</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">TTS / SFX-Generierung</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Audiodateien mit KI-TTS-APIs (ElevenLabs, Typecast) und Soundeffekte generieren.</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Audio mit KI-TTS-APIs (ElevenLabs, Typecast) und Soundeffekte generieren, mit Timecode-Prüfung.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R10</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W6</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
               <h3 class="font-semibold">Storyboard CSV</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Erstellung von references.csv und scenes.csv für die Bild-/Videogenerierung mit AutoFlowCut.</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">references.csv und scenes.csv für die Bild-/Videogenerierung mit AutoFlowCut erstellen, geprüft per Batch-QA.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R11</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W7</div>
             <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
-              <h3 class="font-semibold">Bild- / Videogenerierung</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Batch-Generierung mit Flow AI über AutoFlowCut MCP-Tools und Qualitätssicherung.</p>
+              <h3 class="font-semibold flex items-center gap-2">Bildproduktion <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-0.5 rounded-full">Benutzerfreigabe erforderlich</span></h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Referenz- und Szenenbilder/-videos über AutoFlowCut MCP-Tools batch-weise generieren und Bild-QA durchführen. Endet mit einem Benutzerfreigabe-Checkpoint.</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">R12</div>
+            <div class="w-10 h-10 flex-shrink-0 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W8</div>
+            <div class="flex-1 pb-4 border-b border-gray-100 dark:border-gray-800">
+              <h3 class="font-semibold">Assemblierung</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">SFX-Szenenabgleich, Audio-Import und CapCut-Export setzen das Schnittprojekt zusammen.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">W9</div>
             <div class="flex-1">
               <h3 class="font-semibold">Upload-Informationen</h3>
               <p class="text-sm text-gray-600 dark:text-gray-400">Vorbereitung von Titel, Beschreibung, Tags und Thumbnail für den YouTube-Upload.</p>
