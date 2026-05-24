@@ -291,6 +291,33 @@
           </div>
         </div>
 
+        <!-- Narration Workflow -->
+        <div class="mb-6">
+          <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 flex items-center gap-2">
+            <span class="text-purple-500">●</span> ナレーション動画（台本 → TTS → SRT → シーンCSV）
+          </h3>
+          <div class="flex items-center gap-2 flex-wrap text-sm">
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              📜 台本 (.txt)
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
+              🎙️ TTS (mp3 + srt)
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg border border-purple-300 dark:border-purple-700 text-purple-700 dark:text-purple-300">
+              🤖 AIでSRT→CSV分割
+            </div>
+            <span class="text-gray-400">→</span>
+            <div class="px-3 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg border border-primary-300 dark:border-primary-700 text-primary-700 dark:text-primary-300">
+              📊 シーンCSV
+            </div>
+          </div>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            💡 タイムコードから<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">duration</code>が自動計算され、字幕は<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">subtitle</code>に、英語の<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">prompt</code>はAIが生成します。
+          </p>
+        </div>
+
         <!-- Advanced Workflow -->
         <div>
           <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 flex items-center gap-2">
@@ -1475,6 +1502,77 @@ prompt,subtitle,characters,scene_tag,style_tag,duration
 "A wise old shogun sitting on raised dais in Edo castle, dramatic lighting","賢明な将軍が広間に座っている",shogun,edojou,jidaigeki,5
 
 この物語をシーンに分解してください：</pre>
+          </div>
+        </div>
+
+        <!-- SRT → Scene CSV Prompt -->
+        <div id="ai-srt-to-csv" class="mb-6">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+            🎬 SRT → シーンCSV変換プロンプト
+            <span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full">ナレーション動画</span>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            TTSで作成したSRTファイル（字幕＋タイムコード）をAIに貼り付けると、タイムコードベースの<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">duration</code>と英語<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">prompt</code>を含むシーンCSVへ自動変換されます。
+          </p>
+          <div class="relative">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">srt_to_scene_csv_prompt_ja.txt</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('srt-to-csv-prompt')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  コピー
+                </button>
+                <button onclick="downloadTextFile('srt-to-csv-prompt', 'srt_to_scene_csv_prompt_ja.txt')" class="text-xs px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  ダウンロード
+                </button>
+              </div>
+            </div>
+            <pre id="srt-to-csv-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-64 overflow-y-auto">あなたはAutoFlowCutナレーション動画制作のためのSRT→シーンCSV変換アシスタントです。
+
+SRT字幕ファイルを入力として受け取り、各字幕ブロックを1つのシーン行としたCSVを生成してください。
+
+入力形式（SRT）:
+1
+00:00:00,000 --> 00:00:05,000
+字幕テキスト…
+
+2
+00:00:05,000 --> 00:00:09,000
+次の字幕テキスト…
+
+出力カラム:
+- prompt: 字幕内容を視覚化した英語の画像プロンプト（構図、照明、雰囲気、カメラアングルを含む）
+- subtitle: SRTの原文字幕（変更しないこと）
+- characters: 登場人物の名前（セミコロン区切り、例: 王;王妃）
+- scene_tag: 背景／場所タグ（一貫したタグを使用、例: 城、森、村）
+- style_tag: アートスタイル（動画全体で統一、例: cinematic, ghibli）
+- duration: タイムコードから自動計算（終了 − 開始、小数点1桁）
+
+ルール:
+1. SRTブロック1個 = CSV行1個（厳密な1対1、結合・省略禁止）
+2. durationは必ずSRTタイムコードから計算（例: 00:00:05,000 → 00:00:09,000 = 4.0）
+3. subtitleはSRT原文をそのまま（翻訳・要約禁止）
+4. promptは英語、字幕を視覚的に展開し200文字以内
+5. 登場人物・場所は一貫した名前で（リファレンスマッチング用）
+6. ヘッダー行を含め、カンマを含む値は引用符で囲む
+
+出力例:
+prompt,subtitle,characters,scene_tag,style_tag,duration
+"A young scholar reading under an ancient pine tree, soft morning light","昔々、ある村に若い学者が住んでいました。",scholar,village,jidaigeki,5.0
+"The scholar walking toward a grand castle gate at dawn, wide shot","学者は試験のため都へ旅立ちました。",scholar,journey,jidaigeki,4.0
+
+では、下のSRTをシーンCSVに変換してください：
+[ここにSRT内容を貼り付け]</pre>
+          </div>
+          <div class="mt-3 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
+            <p class="text-xs text-purple-700 dark:text-purple-400">
+              💡 <strong>全体フロー:</strong> 台本 (.txt) → <a href="#tts-srt" class="underline">TTSサービス</a>でmp3+srt生成 → 上のプロンプトでSRTをシーンCSVに変換 → AutoFlowCutにインポート → 画像生成。タイミングがナレーションと正確に揃います。
+            </p>
           </div>
         </div>
 
