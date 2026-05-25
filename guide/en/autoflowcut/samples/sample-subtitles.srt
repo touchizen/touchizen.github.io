@@ -1,39 +1,39 @@
 1
-00:00:00,000 --> 00:00:05,000
+00:00:00,000 --> 00:00:03,483
 Once upon a time, a young scholar lived in a small village.
 
 2
-00:00:05,000 --> 00:00:09,000
+00:00:03,783 --> 00:00:07,452
 Every day he studied, reading books under the old oak tree.
 
 3
-00:00:09,000 --> 00:00:14,000
+00:00:07,752 --> 00:00:12,164
 One day, he decided to travel to the royal court for the examination.
 
 4
-00:00:14,000 --> 00:00:18,000
+00:00:12,464 --> 00:00:16,504
 After a long journey, the scholar finally arrived at the castle.
 
 5
-00:00:18,000 --> 00:00:23,000
+00:00:16,804 --> 00:00:20,055
 Standing before the palace, he marveled at its grandeur.
 
 6
-00:00:23,000 --> 00:00:27,000
+00:00:20,355 --> 00:00:23,977
 The great hall was filled with scholars from across the kingdom.
 
 7
-00:00:27,000 --> 00:00:32,000
+00:00:24,277 --> 00:00:28,410
 The scholar poured all his effort into writing the examination.
 
 8
-00:00:32,000 --> 00:00:36,000
+00:00:28,710 --> 00:00:31,311
 At last, the day of the results arrived.
 
 9
-00:00:36,000 --> 00:00:41,000
+00:00:31,611 --> 00:00:35,605
 The scholar earned the king's favor and became the pride of his village.
 
 10
-00:00:41,000 --> 00:00:45,000
+00:00:35,905 --> 00:00:40,410
 And so, the scholar became a trusted court advisor serving the people.
