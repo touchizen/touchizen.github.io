@@ -1,39 +1,39 @@
 1
-00:00:00,000 --> 00:00:05,100
+00:00:00,000 --> 00:00:05,712
 Es war einmal ein weiser König, der über ein friedliches Reich herrschte.
 
 2
-00:00:05,400 --> 00:00:09,150
+00:00:06,012 --> 00:00:11,260
 Jeden Tag saß er auf seinem goldenen Thron und sprach Recht.
 
 3
-00:00:09,450 --> 00:00:13,800
+00:00:11,560 --> 00:00:17,040
 Eines Morgens kam die Königin in den Thronsaal mit wichtigen Nachrichten.
 
 4
-00:00:14,100 --> 00:00:17,450
+00:00:17,340 --> 00:00:21,287
 "Mein König, unsere Nachbarn bitten um ein Bündnis."
 
 5
-00:00:17,750 --> 00:00:21,750
+00:00:21,587 --> 00:00:26,417
 Der König nickte bedächtig und rief seine treuen Ritter zusammen.
 
 6
-00:00:22,050 --> 00:00:25,650
+00:00:26,717 --> 00:00:30,525
 Die Wachen öffneten die großen Burgtore für die Gesandten.
 
 7
-00:00:25,950 --> 00:00:30,000
+00:00:30,825 --> 00:00:35,376
 Im großen Saal versammelten sich die Adligen des ganzen Reiches.
 
 8
-00:00:30,300 --> 00:00:35,150
+00:00:35,676 --> 00:00:39,809
 Nach langer Beratung wurde ein Friedensvertrag unterzeichnet.
 
 9
-00:00:35,450 --> 00:00:40,150
+00:00:40,109 --> 00:00:46,193
 Der König und die Königin wurden im ganzen Land für ihre Weisheit gepriesen.
 
 10
-00:00:40,450 --> 00:00:44,550
+00:00:46,493 --> 00:00:52,112
 Und so herrschten Frieden und Wohlstand über das mittelalterliche Reich.
