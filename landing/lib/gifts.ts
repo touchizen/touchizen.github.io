@@ -4,12 +4,12 @@
  * Each gift has its own landing page at /gift/{slug}/ (slug is the URL keyword
  * revealed in the tutorial video, not literally the gift name — light puzzle).
  *
- * Single shared password (`AutoFlowCut`) unlocks the download on every page.
- * The password is CASE-SENSITIVE and must match the zip extraction password.
+ * Each gift has its own CASE-SENSITIVE password that must match the zip extraction password.
+ * Different tutorial videos can reveal different passwords for different gifts.
  */
 
 export type Gift = {
-  slug: string;          // URL keyword: effect / look / help / music / kit
+  slug: string;          // URL keyword: effect / look / help / music / kit / start
   icon: string;          // emoji
   name: string;          // display name
   unit: string;          // e.g. "222 sounds"
@@ -19,6 +19,7 @@ export type Gift = {
   filename: string;      // suggested filename when downloaded
   size: string;          // "2.3 MB"
   accent: string;        // hex color
+  password: string;      // per-gift CASE-SENSITIVE password (matches zip extraction password)
 };
 
 export const GIFTS: Record<string, Gift> = {
@@ -35,6 +36,7 @@ export const GIFTS: Record<string, Gift> = {
     filename: 'AutoFlowCut_SFX_Pack_v1.zip',
     size: '2.3 MB',
     accent: '#51CF66',
+    password: 'AutoFlowCut',
   },
   look: {
     slug: 'look',
@@ -49,6 +51,7 @@ export const GIFTS: Record<string, Gift> = {
     filename: 'AutoFlowCut_Style_Pack_v1.zip',
     size: '27 KB',
     accent: '#4ECDC4',
+    password: 'AutoFlowCut',
   },
   help: {
     slug: 'help',
@@ -63,6 +66,7 @@ export const GIFTS: Record<string, Gift> = {
     filename: 'Faceless_YouTube_Guide_v1.zip',
     size: '173 KB',
     accent: '#FFA94D',
+    password: 'AutoFlowCut',
   },
   music: {
     slug: 'music',
@@ -77,6 +81,7 @@ export const GIFTS: Record<string, Gift> = {
     filename: 'AutoFlowCut_BGM_Pack_v1.zip',
     size: '298 MB',
     accent: '#FF6B6B',
+    password: 'AutoFlowCut',
   },
   kit: {
     slug: 'kit',
@@ -91,21 +96,36 @@ export const GIFTS: Record<string, Gift> = {
     filename: 'AutoFlowCut_Creator_Templates_v1.zip',
     size: '24 KB',
     accent: '#9775FA',
+    password: 'AutoFlowCut',
+  },
+  start: {
+    slug: 'start',
+    icon: '🌱',
+    name: 'AutoFlowCut Shortform Starter v1',
+    unit: 'starter kit',
+    description: '30-second economic shortform · meta prompts + samples + ebook',
+    longDesc:
+      'Complete beginner starter kit for AI-driven economic shortform creation. Includes: 2 meta prompts (script generation + scene prompts), sample 8-scene SRT with U.S. Treasury fiscal data (May 2026), Typecast-rendered audio package (combined MP3 + 8 line-MP3s), image prompt template, automation script (generate_tts.py), and a beginner ebook covering the 5-stage workflow from script to CapCut export. Released alongside the ep02 tutorial of the AutoFlowCut series.',
+    downloadUrl:
+      'https://github.com/touchizen/touchizen.github.io/releases/download/gifts-v1/AutoFlowCut_Shortform_Starter_v1.zip',
+    filename: 'AutoFlowCut_Shortform_Starter_v1.zip',
+    size: '2.2 MB',
+    accent: '#339AF0',
+    password: 'AutoFlowCut-DEBT',
   },
 };
-
-/**
- * Single shared password — CASE-SENSITIVE.
- * Must match exactly to also work as the zip extraction password.
- */
-export const PASSWORD = 'AutoFlowCut';
 
 /** Strip whitespace/separators only; preserves case for parity with zip behavior. */
 export function normalizePassword(input: string): string {
   return input.replace(/[\s\-_]/g, '');
 }
 
-/** Check whether an input matches the gift password. Case-sensitive. */
-export function checkPassword(input: string): boolean {
-  return normalizePassword(input) === PASSWORD;
+/**
+ * Check whether an input matches the gift's password. CASE-SENSITIVE.
+ * Whitespace, hyphens, and underscores are normalized away on BOTH sides
+ * so users typing "AutoFlowCut DEBT" or "AutoFlowCutDEBT" can match
+ * "AutoFlowCut-DEBT". For actual zip extraction, the exact stored password is required.
+ */
+export function checkPassword(input: string, expected: string): boolean {
+  return normalizePassword(input) === normalizePassword(expected);
 }

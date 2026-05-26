@@ -14,23 +14,26 @@ export default function GiftPage({ gift }: Props) {
   const [unlocked, setUnlocked] = useState(false);
   const [shake, setShake] = useState(false);
 
-  // Persist unlock state per gift slug so users don't have to re-enter
-  // when switching between gift pages.
+  // Persist unlock state PER gift slug. Each gift has its own password
+  // (different tutorial videos reveal different keys), so unlocking one
+  // gift no longer unlocks the others.
+  const storageKey = `autoflowcut_gift_${gift.slug}_unlocked`;
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
     try {
-      if (window.localStorage.getItem('autoflowcut_gift_unlocked') === 'yes') {
+      if (window.localStorage.getItem(storageKey) === 'yes') {
         setUnlocked(true);
       }
     } catch {}
-  }, []);
+  }, [storageKey]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (checkPassword(input)) {
+    if (checkPassword(input, gift.password)) {
       setUnlocked(true);
       try {
-        window.localStorage.setItem('autoflowcut_gift_unlocked', 'yes');
+        window.localStorage.setItem(storageKey, 'yes');
       } catch {}
     } else {
       setShake(true);
