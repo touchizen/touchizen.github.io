@@ -945,6 +945,12 @@ style,medieval historical drama,,"Medieval European historical drama style, Rena
                   </svg>
                   Download
                 </a>
+                <a href="/guide/en/autoflowcut/samples/sample-subtitles.mp3" download class="text-xs px-3 py-1 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 hover:bg-rose-200 dark:hover:bg-rose-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  🎵 MP3
+                </a>
               </div>
             </div>
             <pre id="srt-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">1
@@ -977,6 +983,12 @@ Standing before the palace, he marveled at its grandeur.</pre>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                 </svg>
                 Download
+              </a>
+              <a href="/guide/en/autoflowcut/samples/sample-subtitles.mp3" download class="text-xs px-3 py-1 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 hover:bg-rose-200 dark:hover:bg-rose-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                🎵 MP3
               </a>
             </div>
             <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
@@ -1273,7 +1285,7 @@ Now break down this story into scenes:</pre>
             <span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full">Narration video</span>
           </h3>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
-            Paste an SRT file (subtitles + timecodes) from your TTS service into AI to auto-convert it into a scene CSV with timecode-based <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">duration</code> and English <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">prompt</code> columns.
+            Paste an SRT file (subtitles + timecodes) from your TTS service into AI to auto-convert it into a <strong>new-format scene CSV</strong> with a <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">scene</code> column that groups subtitles, plus <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">start_time</code>/<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">end_time</code> preserved verbatim from the SRT. The new format lets multiple subtitle lines share the same image, displayed in sequence.
           </p>
           <div class="relative">
             <div class="flex items-center justify-between mb-2">
@@ -1293,9 +1305,9 @@ Now break down this story into scenes:</pre>
                 </button>
               </div>
             </div>
-            <pre id="srt-to-csv-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-64 overflow-y-auto">You are an SRT → Scene CSV conversion assistant for AutoFlowCut narration video production.
+            <pre id="srt-to-csv-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-64 overflow-y-auto">You are an SRT → new-format Scene CSV conversion assistant for AutoFlowCut narration video production.
 
-Given an SRT subtitle file, convert each subtitle block into a single scene row in a CSV.
+Given an SRT subtitle file, generate a new-format scene CSV that groups semantically related subtitle lines into a single scene. The new format lets multiple subtitle lines share the same image, displayed in sequence.
 
 Input format (SRT):
 1
@@ -1307,27 +1319,32 @@ Subtitle text...
 Next subtitle text...
 
 Output columns:
-- prompt: English image prompt that visualizes the subtitle (composition, lighting, mood, camera angle)
-- subtitle: Original subtitle text from the SRT (do NOT modify)
-- characters: Character names mentioned (semicolon-separated, e.g., king;queen)
-- scene_tag: Background/location tag (use consistent tags, e.g., palace, forest, village)
-- style_tag: Art style (keep consistent across the whole video, e.g., cinematic, ghibli)
-- duration: Auto-calculate from timecodes (end − start, 1 decimal place)
+- scene: Scene number (starting from 1). Group continuous subtitles under the same number.
+- prompt: English image prompt (composition / lighting / mood) — only on the first row of each scene.
+- prompt_ko: Localized translation (only on the first row of each scene; leave blank if not used).
+- subtitle: Original SRT subtitle (do NOT modify / translate / summarize).
+- characters: Character names (semicolon-separated) — only on the first row of each scene.
+- scene_tag: Background tag — only on the first row of each scene.
+- style_tag: Art style — only on the first row of each scene, consistent across the video.
+- start_time: SRT start time in seconds (3 decimal places).
+- end_time: SRT end time in seconds (3 decimal places).
 
 Rules:
-1. 1 SRT block = 1 CSV row (strict 1:1 mapping, no merging or skipping)
-2. duration MUST be computed from the SRT timecodes (e.g., 00:00:05,000 → 00:00:09,000 = 4.0)
-3. subtitle must match the SRT text verbatim (no translation or summarization)
-4. prompt is English, visualizes the subtitle, max 200 chars
-5. Use consistent character/location names (for reference matching)
-6. Include a header row; quote values that contain commas
+1. Preserve SRT timecodes exactly (no rounding or modification).
+2. One SRT subtitle line = one CSV row (no omissions; grouped subtitles each still get a row).
+3. From the second row of the same scene number onward, leave prompt / prompt_ko / characters / scene_tag / style_tag blank.
+4. Grouping heuristic: same place + same characters + continuous action → same scene number.
+5. Recommended 1–3 subtitles per scene (too many makes one image last too long).
+6. subtitle must match the SRT text verbatim.
+7. Include a header row; wrap values containing commas or quotes in double quotes.
 
 Example output:
-prompt,subtitle,characters,scene_tag,style_tag,duration
-"A young scholar reading under an ancient oak tree, soft morning light","Once upon a time, a young scholar lived in a small village.",scholar,village,medieval historical drama,5.0
-"The scholar walking toward a grand palace gate at dawn, wide shot","The scholar set off for the capital to take the imperial exam.",scholar,journey,medieval historical drama,4.0
+scene,prompt,prompt_ko,subtitle,characters,scene_tag,style_tag,start_time,end_time
+1,"A young scholar reading under an ancient oak tree","오래된 떡갈나무 아래 책 읽는 젊은 선비","Once upon a time, a young scholar lived in a small village.",scholar,village,medieval historical drama,0.000,3.500
+1,,,"Every day he studied, reading books under the old oak tree.",,,,3.800,7.500
+2,"The scholar walking toward a grand castle gate","위풍당당한 성문으로 향하는 선비","One day, he decided to travel to the royal court for the examination.",scholar,journey,medieval historical drama,7.800,12.200
 
-Now convert the SRT below into a scene CSV:
+Now convert the SRT below into a new-format scene CSV:
 [Paste SRT content here]</pre>
           </div>
           <div class="mt-3 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
@@ -1480,6 +1497,12 @@ Now create the reference list for this story:</pre>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
             </svg>
             sample-subtitles.srt
+          </a>
+          <a href="/guide/en/autoflowcut/samples/sample-subtitles.mp3" download class="inline-flex items-center gap-2 px-4 py-2 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 rounded-lg hover:bg-rose-200 dark:hover:bg-rose-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            sample-subtitles.mp3
           </a>
           <a href="/guide/en/autoflowcut/samples/sample-prompts.txt" download class="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded-lg hover:bg-amber-200 dark:hover:bg-amber-900/50 transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

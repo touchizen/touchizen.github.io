@@ -1194,6 +1194,12 @@ style,mittelalterliches historiendrama,,"Medieval German historical drama style,
                   </svg>
                   Herunterladen
                 </a>
+                <a href="/guide/de/autoflowcut/samples/sample-subtitles.mp3" download class="text-xs px-3 py-1 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 hover:bg-rose-200 dark:hover:bg-rose-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  🎵 MP3
+                </a>
               </div>
             </div>
             <pre id="srt-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">1
@@ -1226,6 +1232,12 @@ Der König nickte bedächtig und rief seine treuen Ritter zusammen.</pre>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                 </svg>
                 Herunterladen
+              </a>
+              <a href="/guide/de/autoflowcut/samples/sample-subtitles.mp3" download class="text-xs px-3 py-1 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 hover:bg-rose-200 dark:hover:bg-rose-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                🎵 MP3
               </a>
             </div>
             <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
@@ -1522,7 +1534,7 @@ Jetzt diese Geschichte in Szenen aufteilen:</pre>
             <span class="text-xs bg-purple-500 text-white px-2 py-0.5 rounded-full">Narrations-Video</span>
           </h3>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
-            Füge eine SRT-Datei (Untertitel + Timecodes) aus deinem TTS-Dienst in die KI ein, um sie automatisch in eine Szenen-CSV mit timecode-basierter <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">duration</code> und englischem <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">prompt</code> umzuwandeln.
+            Fügen Sie eine SRT-Datei (Untertitel + Timecodes) aus Ihrem TTS-Dienst in die KI ein, um sie automatisch in ein <strong>Szenen-CSV im neuen Format</strong> zu konvertieren, mit einer <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">scene</code>-Spalte, die Untertitel gruppiert, und <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">start_time</code>/<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">end_time</code> exakt aus dem SRT übernommen. Das neue Format erlaubt es, dass mehrere Untertitelzeilen dasselbe Bild teilen und nacheinander angezeigt werden.
           </p>
           <div class="relative">
             <div class="flex items-center justify-between mb-2">
@@ -1542,41 +1554,46 @@ Jetzt diese Geschichte in Szenen aufteilen:</pre>
                 </button>
               </div>
             </div>
-            <pre id="srt-to-csv-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-64 overflow-y-auto">Du bist ein SRT → Szenen-CSV-Konvertierungsassistent für die AutoFlowCut Narrations-Videoproduktion.
+            <pre id="srt-to-csv-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-64 overflow-y-auto">Du bist ein SRT → neues Format Szenen-CSV-Konvertierungsassistent für die AutoFlowCut Narrations-Videoproduktion.
 
-Eingabe ist eine SRT-Untertiteldatei. Wandle jeden Untertitelblock in eine einzelne Szenenzeile einer CSV um.
+Nimm eine SRT-Untertiteldatei als Eingabe und erzeuge ein Szenen-CSV im neuen Format, das semantisch zusammengehörige Untertitelzeilen in einer Szene gruppiert. Im neuen Format können mehrere Untertitelzeilen dasselbe Bild nacheinander teilen.
 
 Eingabeformat (SRT):
 1
 00:00:00,000 --> 00:00:05,000
-Untertiteltext…
+Untertiteltext …
 
 2
 00:00:05,000 --> 00:00:09,000
-Nächster Untertiteltext…
+Nächster Untertiteltext …
 
 Ausgabespalten:
-- prompt: Englischer Bildprompt, der den Untertitel visualisiert (Komposition, Beleuchtung, Stimmung, Kamerawinkel)
-- subtitle: Originaler Untertiteltext aus der SRT (NICHT verändern)
-- characters: Genannte Charakternamen (Semikolon-getrennt, z.B. könig;königin)
-- scene_tag: Hintergrund/Ort-Tag (konsistente Tags, z.B. palast, wald, dorf)
-- style_tag: Kunststil (im gesamten Video konsistent halten, z.B. cinematic, ghibli)
-- duration: Automatisch aus Timecodes berechnen (Ende − Start, 1 Dezimalstelle)
+- scene: Szenennummer (ab 1). Semantisch zusammenhängende Untertitel mit derselben Nummer gruppieren.
+- prompt: Englischer Bild-Prompt (Komposition / Beleuchtung / Stimmung) — nur in der ersten Zeile jeder Szene.
+- prompt_ko: Lokalisierte Übersetzung — nur in der ersten Zeile jeder Szene; bei Nichtgebrauch leer lassen.
+- subtitle: Original-SRT-Untertitel (NICHT ändern / übersetzen / zusammenfassen).
+- characters: Charakternamen (durch Semikolon getrennt) — nur in der ersten Zeile jeder Szene.
+- scene_tag: Hintergrund-Tag — nur in der ersten Zeile jeder Szene.
+- style_tag: Kunststil — nur in der ersten Zeile jeder Szene, im gesamten Video konsistent.
+- start_time: SRT-Startzeit in Sekunden (3 Nachkommastellen).
+- end_time: SRT-Endzeit in Sekunden (3 Nachkommastellen).
 
 Regeln:
-1. 1 SRT-Block = 1 CSV-Zeile (strenges 1:1-Mapping, kein Zusammenführen oder Auslassen)
-2. duration MUSS aus den SRT-Timecodes berechnet werden (z.B. 00:00:05,000 → 00:00:09,000 = 4.0)
-3. subtitle muss wortwörtlich dem SRT-Text entsprechen (keine Übersetzung oder Zusammenfassung)
-4. prompt ist Englisch, visualisiert den Untertitel, max. 200 Zeichen
-5. Verwende konsistente Charakter-/Ortsnamen (für Referenz-Matching)
-6. Inkludiere eine Kopfzeile; Werte mit Kommas in Anführungszeichen setzen
+1. SRT-Timecodes exakt beibehalten (kein Runden oder Verändern).
+2. Eine SRT-Untertitelzeile = eine CSV-Zeile (keine Auslassungen; gruppierte Untertitel bekommen jeweils eine Zeile).
+3. Ab der zweiten Zeile derselben Szenennummer prompt / prompt_ko / characters / scene_tag / style_tag leer lassen.
+4. Gruppierungsregel: gleicher Ort + gleiche Charaktere + fortlaufende Handlung → gleiche Szenennummer.
+5. Empfohlen 1–3 Untertitel pro Szene (zu viele machen ein Bild zu lang).
+6. subtitle muss exakt mit dem SRT-Text übereinstimmen.
+7. Kopfzeile einschließen; Werte mit Kommas oder Anführungszeichen in doppelte Anführungszeichen setzen.
 
 Beispielausgabe:
-prompt,subtitle,characters,scene_tag,style_tag,duration
-"A young scholar reading under an ancient oak tree, soft morning light","Es war einmal ein junger Gelehrter in einem kleinen Dorf.",gelehrter,dorf,mittelalterliches historiendrama,5.0
-"The scholar walking toward a grand castle gate at dawn, wide shot","Der Gelehrte machte sich auf den Weg zur Hauptstadt für die Prüfung.",gelehrter,reise,mittelalterliches historiendrama,4.0
+scene,prompt,prompt_ko,subtitle,characters,scene_tag,style_tag,start_time,end_time
+1,"A wise king on his golden throne","황금 왕좌에 앉은 현명한 왕","Es war einmal ein weiser König, der über ein friedliches Reich herrschte.",könig,palast,mittelalterliches historiendrama,0.000,5.100
+1,,,"Jeden Tag saß er auf seinem goldenen Thron und sprach Recht.",,,,5.400,9.150
+2,"Queen entering throne room with news","소식을 가지고 알현실에 들어오는 왕비","Eines Morgens kam die Königin in den Thronsaal mit wichtigen Nachrichten.",könig;königin,palast,mittelalterliches historiendrama,9.450,13.800
 
-Konvertiere nun die folgende SRT in eine Szenen-CSV:
+Konvertiere jetzt das untenstehende SRT in ein Szenen-CSV im neuen Format:
 [SRT-Inhalt hier einfügen]</pre>
           </div>
           <div class="mt-3 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
