@@ -1359,16 +1359,92 @@ style,jidaigeki,,"Japanese jidaigeki historical drama style, Edo period atmosphe
         <!-- Sample audio player -->
         <div class="bg-rose-50 dark:bg-rose-900/20 rounded-xl border border-rose-200 dark:border-rose-800 p-4 mb-6">
           <h3 class="font-semibold text-rose-800 dark:text-rose-300 mb-2 flex items-center gap-2">
-            <span>🎵</span> サンプル音声
+            <span>🎵</span> サンプル音声 (字幕同期再生)
           </h3>
           <p class="text-sm text-rose-700 dark:text-rose-400 mb-3">
-            下の SRT 字幕と同期したナレーション音声 (TTS 生成)。
+            再生中、現在の字幕がハイライトされます。
           </p>
-          <audio controls preload="metadata" class="w-full">
+          <audio id="sample-audio" controls preload="metadata" class="w-full mb-3">
             <source src="samples/sample-subtitles.mp3" type="audio/mpeg">
             このブラウザはオーディオ再生に対応していません。
           </audio>
+          <div id="sample-subtitles-display"
+               class="bg-white dark:bg-gray-900 rounded-lg p-3 max-h-56 overflow-y-auto text-sm border border-rose-200 dark:border-rose-800"
+               data-srt-url="samples/sample-subtitles.srt">
+            <p class="text-gray-400 italic text-xs">字幕を読み込み中...</p>
+          </div>
         </div>
+
+        <script>
+        (function() {
+          const audio = document.getElementById('sample-audio');
+          const display = document.getElementById('sample-subtitles-display');
+          if (!audio || !display) return;
+
+          function parseSRT(text) {
+            const blocks = text.trim().split(/\n\n+/);
+            const cues = [];
+            const tsRe = /(\d{2}):(\d{2}):(\d{2})[,.](\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2})[,.](\d{3})/;
+            for (const blk of blocks) {
+              const lines = blk.trim().split('\n');
+              if (lines.length < 3) continue;
+              const tm = lines[1].match(tsRe);
+              if (!tm) continue;
+              const toSec = (h,m,s,ms) => +h*3600 + +m*60 + +s + +ms/1000;
+              cues.push({
+                start: toSec(tm[1], tm[2], tm[3], tm[4]),
+                end:   toSec(tm[5], tm[6], tm[7], tm[8]),
+                text:  lines.slice(2).join(' ').trim(),
+              });
+            }
+            return cues;
+          }
+
+          function formatTime(sec) {
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return m + ':' + String(s).padStart(2, '0');
+          }
+
+          fetch(display.dataset.srtUrl)
+            .then(r => r.text())
+            .then(text => {
+              const cues = parseSRT(text);
+              display.innerHTML = '';
+              cues.forEach((cue) => {
+                const row = document.createElement('div');
+                row.className = 'srt-cue flex items-baseline gap-2 py-1 px-2 rounded transition-colors cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800';
+                row.dataset.start = cue.start;
+                row.dataset.end = cue.end;
+                row.innerHTML =
+                  '<span class="text-xs text-gray-400 dark:text-gray-500 font-mono shrink-0">' + formatTime(cue.start) + '</span>' +
+                  '<span class="text-gray-800 dark:text-gray-200">' + cue.text + '</span>';
+                row.addEventListener('click', () => { audio.currentTime = cue.start; audio.play(); });
+                display.appendChild(row);
+              });
+
+              let lastActive = null;
+              audio.addEventListener('timeupdate', () => {
+                const t = audio.currentTime;
+                let active = null;
+                for (const c of display.querySelectorAll('.srt-cue')) {
+                  const inRange = t >= +c.dataset.start && t < +c.dataset.end;
+                  c.classList.toggle('bg-rose-200', inRange);
+                  c.classList.toggle('dark:bg-rose-900/40', inRange);
+                  c.classList.toggle('font-semibold', inRange);
+                  if (inRange) active = c;
+                }
+                if (active && active !== lastActive) {
+                  active.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                  lastActive = active;
+                }
+              });
+            })
+            .catch(() => {
+              display.innerHTML = '<p class="text-red-500 text-xs">SRT load failed.</p>';
+            });
+        })();
+        </script>
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">SRT構造</h3>
 
