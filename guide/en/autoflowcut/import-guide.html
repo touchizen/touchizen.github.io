@@ -520,6 +520,28 @@ After the rain stops, camera slowly pulling back to reveal a peaceful village (s
           </p>
         </div>
 
+        <!-- Format choice hint -->
+        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-3 mb-4 text-xs text-blue-800 dark:text-blue-300">
+          <p class="mb-1"><strong>Two CSV formats supported</strong></p>
+          <ul class="space-y-1 ml-4">
+            <li>• <strong>Legacy (duration)</strong> — 1 subtitle = 1 scene. Best for simple videos.</li>
+            <li>• <strong>New format (scene + start/end_time)</strong> — Group multiple subtitle lines into one scene. Recommended for narration videos.</li>
+            <li>• Auto-detected by header — both formats are importable.</li>
+          </ul>
+        </div>
+
+        <!-- Format Tabs -->
+        <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+          <button onclick="switchTab('scene-csv-format', 'legacy')" id="scene-csv-format-tab-legacy" class="tab-btn active text-primary-600 dark:text-primary-400 border-primary-600 dark:border-primary-400 px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            📜 Legacy (duration)
+          </button>
+          <button onclick="switchTab('scene-csv-format', 'new')" id="scene-csv-format-tab-new" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            ✨ New format (scene + start/end_time)
+          </button>
+        </div>
+
+        <!-- Legacy Format View -->
+        <div id="scene-csv-format-view-legacy">
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Required Columns</h3>
         <div class="overflow-x-auto mb-6">
           <table class="w-full text-sm border-gray-200 dark:border-gray-700">
@@ -673,6 +695,169 @@ After the rain stops, camera slowly pulling back to reveal a peaceful village (s
             </div>
           </div>
         </div>
+        </div>
+        <!-- end Legacy Format View -->
+
+        <!-- New Format View -->
+        <div id="scene-csv-format-view-new" class="hidden">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Required Columns</h3>
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-sm border-gray-200 dark:border-gray-700">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Column</th>
+                  <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Description</th>
+                  <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Example</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                <tr>
+                  <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">scene</td>
+                  <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Scene number (same number = grouped subtitles share one image)</td>
+                  <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">1, 2, 3, ...</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">prompt</td>
+                  <td class="px-4 py-2 border-gray-200 dark:border-gray-700">English image prompt <span class="text-xs text-amber-600 dark:text-amber-400">(only on first row of each scene)</span></td>
+                  <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">A young scholar reading...</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">prompt_ko</td>
+                  <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Localized translation <span class="text-xs text-amber-600 dark:text-amber-400">(only on first row; leave blank if unused)</span></td>
+                  <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">오래된 떡갈나무 아래 책 읽는 선비</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">subtitle</td>
+                  <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Subtitle text <span class="text-xs text-violet-600 dark:text-violet-400">(1 subtitle = 1 CSV row)</span></td>
+                  <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">Once upon a time, a young scholar...</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">characters</td>
+                  <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Characters (semicolon-separated) <span class="text-xs text-amber-600 dark:text-amber-400">(only on first row of each scene)</span></td>
+                  <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">scholar;officials</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">scene_tag</td>
+                  <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Background tag <span class="text-xs text-amber-600 dark:text-amber-400">(only on first row of each scene)</span></td>
+                  <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">village, palace</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">style_tag</td>
+                  <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Style tag <span class="text-xs text-amber-600 dark:text-amber-400">(only on first row of each scene)</span></td>
+                  <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">cinematic, ghibli</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">start_time</td>
+                  <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Start time in seconds (3 decimal places)</td>
+                  <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">0.000</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2 font-mono text-primary-600 dark:text-primary-400 border-gray-200 dark:border-gray-700">end_time</td>
+                  <td class="px-4 py-2 border-gray-200 dark:border-gray-700">End time in seconds (3 decimal places)</td>
+                  <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700">3.500</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3">CSV Example</h3>
+          <div class="mb-4">
+            <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+              <button onclick="switchTab('scene-new', 'text')" id="scene-new-tab-text" class="tab-btn active text-primary-600 dark:text-primary-400 border-primary-600 dark:border-primary-400 px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                📝 Text
+              </button>
+              <button onclick="switchTab('scene-new', 'table')" id="scene-new-tab-table" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                📊 Table
+              </button>
+            </div>
+
+            <div id="scene-new-view-text" class="relative">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">sample-scenes-grouped.csv</span>
+                <div class="flex gap-2">
+                  <button onclick="copyCode('scene-new-csv-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    Copy
+                  </button>
+                  <a href="samples/sample-scenes-grouped.csv" download class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download
+                  </a>
+                </div>
+              </div>
+              <pre id="scene-new-csv-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">scene,prompt,prompt_ko,subtitle,characters,scene_tag,style_tag,start_time,end_time
+1,"A young scholar reading under an ancient oak tree","오래된 떡갈나무 아래 책 읽는 선비","Once upon a time, a young scholar lived in a small village.",scholar,village,medieval historical drama,0.000,3.204
+1,,,"Every day he studied, reading books under the old oak tree.",,,,3.504,6.848
+2,"The scholar walking toward a royal castle at dawn","새벽 왕궁으로 향하는 선비","One day, he decided to travel to the royal court for the examination.",scholar,journey,medieval historical drama,7.148,11.142
+3,"The scholar arriving at a grand castle gate","웅장한 성문에 도착한 선비","After a long journey, the scholar finally arrived at the castle.",scholar,palace,medieval historical drama,11.442,15.204
+3,,,"Standing before the palace, he marveled at its grandeur.",,,,15.504,18.383</pre>
+              <p class="text-xs text-violet-700 dark:text-violet-400 mt-2">
+                💡 Same <code class="bg-violet-100 dark:bg-violet-900/40 px-1 rounded">scene</code> number = same image. From the 2nd row onward, prompt/tags are blank.
+              </p>
+            </div>
+
+            <div id="scene-new-view-table" class="hidden">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">sample-scenes-grouped.csv</span>
+                <a href="samples/sample-scenes-grouped.csv" download class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  Download
+                </a>
+              </div>
+              <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+                <table class="w-full text-xs">
+                  <thead>
+                    <tr class="bg-gray-100 dark:bg-gray-800">
+                      <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">scene</th>
+                      <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">prompt</th>
+                      <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">subtitle</th>
+                      <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">start</th>
+                      <th class="px-3 py-2 text-left border-gray-200 dark:border-gray-700">end</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white dark:bg-gray-900">
+                    <tr class="bg-violet-50 dark:bg-violet-900/10">
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-bold">1</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700">A young scholar reading under an ancient oak tree</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700">Once upon a time, a young scholar lived in a small village.</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono">0.000</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono">3.204</td>
+                    </tr>
+                    <tr class="bg-violet-50 dark:bg-violet-900/10">
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-bold">1</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 text-gray-400 italic">↑ Same scene (blank)</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700">Every day he studied, reading books under the old oak tree.</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono">3.504</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono">6.848</td>
+                    </tr>
+                    <tr>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-bold">2</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700">The scholar walking toward a royal castle at dawn</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700">One day, he decided to travel to the royal court for the examination.</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono">7.148</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono">11.142</td>
+                    </tr>
+                    <tr class="bg-violet-50 dark:bg-violet-900/10">
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-bold">3</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700">The scholar arriving at a grand castle gate</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700">After a long journey, the scholar finally arrived at the castle.</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono">11.442</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono">15.204</td>
+                    </tr>
+                    <tr class="bg-violet-50 dark:bg-violet-900/10">
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-bold">3</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 text-gray-400 italic">↑ Same scene (blank)</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700">Standing before the palace, he marveled at its grandeur.</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono">15.504</td>
+                      <td class="px-3 py-2 border-gray-200 dark:border-gray-700 font-mono">18.383</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end New Format View -->
       </div>
 
       <!-- Reference CSV Format -->
@@ -1227,13 +1412,34 @@ Now create a prompt list for this script (or topic):</pre>
           Paste the prompts below into Claude, ChatGPT, Gemini, or other AI tools along with your story to automatically generate CSV files.
         </p>
 
-        <!-- Scene CSV Prompt -->
+        <!-- Scene CSV Prompt (legacy/new tabs) -->
         <div class="mb-6">
           <h3 class="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
             📊 Scene CSV Generation Prompt
           </h3>
 
-          <div class="relative">
+          <!-- Format choice hint -->
+          <div class="bg-white/70 dark:bg-gray-900/40 rounded-xl border border-blue-200 dark:border-blue-800 p-3 mb-4 text-xs text-gray-700 dark:text-gray-300">
+            <p class="mb-1"><strong>Which format should you pick?</strong></p>
+            <ul class="space-y-1 ml-4">
+              <li>• <strong>Legacy (duration)</strong> — 1 subtitle = 1 scene. Best for simple videos.</li>
+              <li>• <strong>New format (scene + start/end_time)</strong> — Group multiple subtitle lines into one scene. Recommended for narration videos.</li>
+              <li>• If you already have an SRT file → use the <a href="#ai-srt-to-csv" class="text-violet-600 dark:text-violet-400 underline">SRT → new-format CSV</a> section to preserve exact timecodes.</li>
+            </ul>
+          </div>
+
+          <!-- Tab Buttons -->
+          <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+            <button onclick="switchTab('scene-prompt-format', 'legacy')" id="scene-prompt-format-tab-legacy" class="tab-btn active text-primary-600 dark:text-primary-400 border-primary-600 dark:border-primary-400 px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              📜 Legacy (duration)
+            </button>
+            <button onclick="switchTab('scene-prompt-format', 'new')" id="scene-prompt-format-tab-new" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              ✨ New format (scene + start/end_time)
+            </button>
+          </div>
+
+          <!-- Legacy View -->
+          <div id="scene-prompt-format-view-legacy" class="relative">
             <div class="flex items-center justify-between mb-2">
               <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_csv_prompt_en.txt</span>
               <div class="flex gap-2">
@@ -1251,7 +1457,6 @@ Now create a prompt list for this script (or topic):</pre>
                 </button>
               </div>
             </div>
-
             <pre id="scene-prompt" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">You are a scene breakdown assistant for AutoFlowCut video production.
 
 Given a story or script, create a Scene CSV file with these columns:
@@ -1273,6 +1478,60 @@ Rules:
 Example output:
 prompt,subtitle,characters,scene_tag,style_tag,duration
 "A young scholar reading under an ancient oak tree, medieval England","Once upon a time, a young scholar lived in a small village.",scholar,village,medieval historical drama,5
+
+Now break down this story into scenes:</pre>
+          </div>
+
+          <!-- New View -->
+          <div id="scene-prompt-format-view-new" class="relative hidden">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">scene_csv_prompt_new_en.txt</span>
+              <div class="flex gap-2">
+                <button onclick="copyCode('scene-prompt-new')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                  Copy
+                </button>
+                <button onclick="downloadTextFile('scene-prompt-new', 'scene_csv_prompt_new_en.txt')" class="text-xs px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 rounded-lg transition-colors flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  Download
+                </button>
+              </div>
+            </div>
+            <pre id="scene-prompt-new" class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700 max-h-48 overflow-y-auto">You are a scene breakdown assistant for AutoFlowCut video production.
+
+Given a story or script, create a new-format Scene CSV that supports subtitle grouping.
+The new format lets multiple subtitle lines share the same image, displayed in sequence.
+
+Output columns:
+- scene: Scene number (starting from 1). Group continuous subtitles under the same number.
+- prompt: English image prompt — only on the first row of each scene.
+- prompt_ko: Localized translation — only on the first row of each scene; leave blank if unused.
+- subtitle: Subtitle text (1 subtitle line = 1 CSV row).
+- characters: Characters (semicolon-separated) — only on the first row of each scene.
+- scene_tag: Background tag — only on the first row of each scene.
+- style_tag: Art style — only on the first row of each scene, consistent across the whole video.
+- start_time: Start time in seconds (3 decimal places).
+- end_time: End time in seconds (3 decimal places).
+
+Rules:
+1. One subtitle line = one CSV row.
+2. From the second row of the same scene number onward, leave prompt / prompt_ko / characters / scene_tag / style_tag blank.
+3. Grouping decision: same place + same characters + continuous action → same scene number.
+4. Recommended 1–3 subtitles per scene (too many makes one image last too long).
+5. Recommended 3–5 seconds per subtitle (average narration pace).
+6. Include the header row; wrap values containing commas or quotes in double quotes.
+
+Example output:
+scene,prompt,prompt_ko,subtitle,characters,scene_tag,style_tag,start_time,end_time
+1,"A wise old king sits on golden throne","왕좌에 앉은 현명한 노왕","Once upon a time, a wise king ruled the kingdom.",king,palace,cinematic,0.000,4.000
+1,,,"He devoted his entire life to serving his people.",,,,4.000,8.500
+2,"Princess walking through palace garden","궁궐 정원의 공주","One spring day, the princess wandered the garden.",princess,garden,cinematic,8.500,12.500
+
+⚠️ If you already have an SRT file, use the '🎬 SRT → new-format Scene CSV' section's prompt instead (it preserves exact timecodes).
 
 Now break down this story into scenes:</pre>
           </div>
