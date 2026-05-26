@@ -1170,6 +1170,20 @@ style,korean historical drama,,"Korean historical drama style, Joseon dynasty, c
           표준 SRT 자막 파일을 가져옵니다. 각 자막 블록은 자동으로 장면으로 변환되며, 자막 텍스트가 프롬프트와 자막으로 사용됩니다. 시간은 타임코드에서 자동 계산됩니다.
         </p>
 
+        <!-- Sample audio player -->
+        <div class="bg-rose-50 dark:bg-rose-900/20 rounded-xl border border-rose-200 dark:border-rose-800 p-4 mb-6">
+          <h3 class="font-semibold text-rose-800 dark:text-rose-300 mb-2 flex items-center gap-2">
+            <span>🎵</span> 샘플 오디오
+          </h3>
+          <p class="text-sm text-rose-700 dark:text-rose-400 mb-3">
+            아래 SRT 자막과 동기화된 나레이션 음성 (TTS 생성).
+          </p>
+          <audio controls preload="metadata" class="w-full">
+            <source src="samples/sample-subtitles.mp3" type="audio/mpeg">
+            이 브라우저는 오디오 재생을 지원하지 않습니다.
+          </audio>
+        </div>
+
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">SRT 구조</h3>
 
           <!-- Tab Buttons -->

@@ -1117,6 +1117,20 @@ style,medieval historical drama,,"Medieval European historical drama style, Rena
           Import standard SRT subtitle files. Each subtitle block is automatically converted to a scene with the subtitle text used as both the prompt and subtitle. Duration is calculated from the timecodes.
         </p>
 
+        <!-- Sample audio player -->
+        <div class="bg-rose-50 dark:bg-rose-900/20 rounded-xl border border-rose-200 dark:border-rose-800 p-4 mb-6">
+          <h3 class="font-semibold text-rose-800 dark:text-rose-300 mb-2 flex items-center gap-2">
+            <span>🎵</span> Sample audio
+          </h3>
+          <p class="text-sm text-rose-700 dark:text-rose-400 mb-3">
+            Narration synced to the SRT below (TTS-generated).
+          </p>
+          <audio controls preload="metadata" class="w-full">
+            <source src="samples/sample-subtitles.mp3" type="audio/mpeg">
+            Your browser does not support audio playback.
+          </audio>
+        </div>
+
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">SRT Structure</h3>
 
           <!-- Tab Buttons -->
