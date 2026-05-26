@@ -1,0 +1,6 @@
+scene,prompt,prompt_ko,subtitle,characters,scene_tag,style_tag,start_time,end_time
+1,"A wise old king sitting on golden throne in medieval castle, regal lighting","중세 성 황금 왕좌에 앉은 현명한 노왕","Es war einmal ein weiser König, der über ein friedliches Reich herrschte.",könig,palast,mittelalterliches historiendrama,0.000,5.248
+1,,,"Jeden Tag saß er auf seinem goldenen Thron und sprach Recht.",,,,5.548,9.913
+2,"Queen entering throne room with urgent news scroll","급한 소식을 가지고 알현실에 들어오는 왕비","Eines Morgens kam die Königin in den Thronsaal mit wichtigen Nachrichten.",könig;königin,palast,mittelalterliches historiendrama,10.213,16.018
+2,,,"""Mein König, unsere Nachbarn bitten um ein Bündnis.""",,,,16.318,20.498
+3,"King summoning loyal knights for council","평의회에 충직한 기사들을 소집하는 왕","Der König nickte bedächtig und rief seine treuen Ritter zusammen.",könig;ritter,palast,mittelalterliches historiendrama,20.798,25.535

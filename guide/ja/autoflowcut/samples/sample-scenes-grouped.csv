@@ -1,0 +1,6 @@
+scene,prompt,prompt_ko,subtitle,characters,scene_tag,style_tag,start_time,end_time
+1,"A wise shogun on raised dais in Edo castle great hall","에도성 대광간 상좌에 앉은 현명한 장군","昔々、賢明な将軍が平和な国を治めていました。",将軍,edojou,jidaigeki,0.000,3.650
+1,,,"将軍は毎日、大広間で民の声に耳を傾けていました。",,,,3.950,8.250
+2,"Princess entering throne room with urgent news","급한 소식을 가지고 알현실에 들어오는 공주","ある朝、姫が大広間に重要な知らせを携えて参りました。",将軍;姫,palace,jidaigeki,8.550,12.800
+2,,,"「上様、隣国が同盟を結びたいと申しております。」",,,,13.100,16.650
+3,"Shogun summoning loyal vassals","충직한 가신들을 소집하는 장군","将軍は静かに頷き、忠実な家臣たちを召集しました。",将軍;家臣,palace,jidaigeki,16.950,20.900
