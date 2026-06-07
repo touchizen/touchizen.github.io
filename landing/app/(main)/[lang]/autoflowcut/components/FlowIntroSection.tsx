@@ -63,7 +63,7 @@ export default function FlowIntroSection({ lang, t }: { lang: Language; t: (key:
             {/* CTA Button */}
             <div className="text-center">
               <a
-                href="https://labs.google/fx"
+                href="https://aistudio.google.com/app/apikey"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-colors"

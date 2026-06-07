@@ -13,8 +13,13 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
 
       <div className="relative z-10 container-custom px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 rounded-full text-cyan-700 dark:text-cyan-300 text-sm font-medium mb-6">
-            🖥️ {t('autoflowcut_platform_badge' as TranslationKey)}
+          <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 rounded-full text-cyan-700 dark:text-cyan-300 text-sm font-medium">
+              🖥️ {t('autoflowcut_platform_badge' as TranslationKey)}
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-full text-sm font-semibold">
+              v1.1.0
+            </div>
           </div>
 
           <div className="flex justify-center mb-6">
@@ -38,7 +43,7 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
           {/* Workflow Summary */}
           <div className="mb-8 max-w-2xl mx-auto p-4 bg-gradient-to-r from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-xl border border-cyan-200 dark:border-cyan-800">
             <p className="text-base md:text-lg font-medium text-gray-800 dark:text-gray-200">
-              📝 {lang === 'ko' ? 'TXT/CSV/SRT 입력 → 이미지 생성 → 비디오 생성 → CapCut 프로젝트 내보내기' : lang === 'ja' ? 'TXT/CSV/SRT入力 → 画像生成 → 動画生成 → CapCutプロジェクトエクスポート' : lang === 'de' ? 'TXT/CSV/SRT Eingabe → Bilder generieren → Videos generieren → CapCut-Projekt exportieren' : 'TXT/CSV/SRT input → Generate images → Generate videos → Export CapCut project'}
+              📝 {lang === 'ko' ? 'API 키 연결 → TXT/CSV/SRT 입력 → Gemini 이미지 → Veo 비디오 → CapCut 내보내기' : lang === 'ja' ? 'APIキー接続 → TXT/CSV/SRT入力 → Gemini画像 → Veo動画 → CapCutエクスポート' : lang === 'de' ? 'API-Schlüssel verbinden → TXT/CSV/SRT → Gemini-Bilder → Veo-Videos → CapCut-Export' : 'Connect API key → TXT/CSV/SRT input → Gemini images → Veo videos → CapCut export'}
             </p>
           </div>
 

@@ -153,7 +153,7 @@ export default function ScreenshotGallerySection({ lang, t }: { lang: Language; 
             </div>
 
             {/* Thumbnail Strip */}
-            <div className="flex justify-center gap-2 mt-6 overflow-x-auto pb-2">
+            <div className="flex justify-start md:justify-center gap-2 mt-6 overflow-x-auto pb-2 max-w-full">
               {screenshots.map((screenshot, index) => (
                 <button
                   key={index}

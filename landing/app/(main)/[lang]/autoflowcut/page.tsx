@@ -23,6 +23,7 @@ import AudienceSection from './components/AudienceSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import InputGuideSection from './components/InputGuideSection';
 import ExportGuideSection from './components/ExportGuideSection';
+import ReleaseNotesSection from './components/ReleaseNotesSection';
 import PricingSection from './components/PricingSection';
 import TrustSection from './components/TrustSection';
 import FAQSection from './components/FAQSection';
@@ -82,7 +83,7 @@ export default function AutoFlowCutPage() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Header lang={lang} onLanguageChange={handleLanguageChange} />
 
       <HeroSection lang={lang} t={t} />
@@ -101,6 +102,7 @@ export default function AutoFlowCutPage() {
       <HowItWorksSection lang={lang} t={t} />
       <InputGuideSection lang={lang} t={t} />
       <ExportGuideSection lang={lang} t={t} />
+      <ReleaseNotesSection lang={lang} />
       <PricingSection lang={lang} t={t} plans={plans} />
       <TrustSection lang={lang} t={t} />
       <FAQSection lang={lang} t={t} />

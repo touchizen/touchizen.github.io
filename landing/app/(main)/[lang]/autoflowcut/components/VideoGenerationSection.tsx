@@ -68,7 +68,7 @@ export default function VideoGenerationSection({ lang, t }: { lang: Language; t:
             <div className="mt-5 flex items-center justify-center gap-2 text-xs text-gray-400 dark:text-gray-500">
               <span className="px-2 py-1 rounded bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400 font-medium">Text</span>
               <span>→</span>
-              <span className="px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-medium">Flow AI</span>
+              <span className="px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-medium">Veo API</span>
               <span>→</span>
               <span className="px-2 py-1 rounded bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium">Video</span>
             </div>
@@ -121,7 +121,7 @@ export default function VideoGenerationSection({ lang, t }: { lang: Language; t:
             <div className="mt-5 flex items-center justify-center gap-2 text-xs text-gray-400 dark:text-gray-500">
               <span className="px-2 py-1 rounded bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400 font-medium">Image</span>
               <span>→</span>
-              <span className="px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-medium">Flow AI</span>
+              <span className="px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-medium">Veo API</span>
               <span>→</span>
               <span className="px-2 py-1 rounded bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 font-medium">Video</span>
             </div>

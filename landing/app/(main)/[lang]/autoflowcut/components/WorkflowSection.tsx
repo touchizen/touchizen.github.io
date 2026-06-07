@@ -81,9 +81,9 @@ export default function WorkflowSection({ lang, t }: { lang: Language; t: (key: 
             <div className="flex flex-wrap items-center justify-center gap-3 text-sm md:text-base font-mono">
               <span className="px-3 py-1.5 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded-lg">TXT / CSV / SRT</span>
               <span className="text-gray-400">→</span>
-              <span className="px-3 py-1.5 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-lg">Flow AI 🖼️</span>
+              <span className="px-3 py-1.5 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-lg">Gemini API 🖼️</span>
               <span className="text-gray-400">→</span>
-              <span className="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg">T2V / I2V 🎬</span>
+              <span className="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg">Veo T2V / I2V 🎬</span>
               <span className="text-gray-400">→</span>
               <span className="px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg">CapCut ✂️</span>
             </div>

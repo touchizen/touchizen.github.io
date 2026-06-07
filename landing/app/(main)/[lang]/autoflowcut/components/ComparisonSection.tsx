@@ -65,18 +65,18 @@ export default function ComparisonSection({ lang, t }: { lang: Language; t: (key
             </p>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden">
-            <table className="w-full">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-x-auto">
+            <table className="w-full table-fixed">
               <thead>
                 <tr className="border-b border-gray-200 dark:border-gray-700">
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-500 dark:text-gray-400">
+                  <th className="px-3 sm:px-6 py-4 text-left text-xs sm:text-sm font-semibold text-gray-500 dark:text-gray-400">
                     {lang === 'ko' ? '기능' : lang === 'ja' ? '機能' : lang === 'de' ? 'Funktion' : 'Feature'}
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-purple-600 dark:text-purple-400">
+                  <th className="px-3 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold text-purple-600 dark:text-purple-400">
                     Whisk2CapCut
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-cyan-600 dark:text-cyan-400">
-                    <div className="flex items-center justify-center gap-1">
+                  <th className="px-3 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400">
+                    <div className="flex flex-wrap items-center justify-center gap-1">
                       AutoFlowCut
                       <span className="px-1.5 py-0.5 bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 rounded text-xs">NEW</span>
                     </div>
@@ -86,13 +86,13 @@ export default function ComparisonSection({ lang, t }: { lang: Language; t: (key
               <tbody>
                 {rows.map((row, i) => (
                   <tr key={i} className={`border-b border-gray-100 dark:border-gray-700/50 ${i % 2 === 0 ? '' : 'bg-gray-50/50 dark:bg-gray-900/20'}`}>
-                    <td className="px-6 py-3.5 text-sm text-gray-700 dark:text-gray-300 font-medium">
+                    <td className="px-3 sm:px-6 py-3.5 text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-medium break-words">
                       {row.feature}
                     </td>
-                    <td className="px-6 py-3.5 text-sm text-center text-gray-600 dark:text-gray-400">
+                    <td className="px-3 sm:px-6 py-3.5 text-xs sm:text-sm text-center text-gray-600 dark:text-gray-400 break-words">
                       {row.whisk}
                     </td>
-                    <td className="px-6 py-3.5 text-sm text-center text-gray-900 dark:text-white font-semibold">
+                    <td className="px-3 sm:px-6 py-3.5 text-xs sm:text-sm text-center text-gray-900 dark:text-white font-semibold break-words">
                       {row.flow}
                     </td>
                   </tr>

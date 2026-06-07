@@ -107,10 +107,10 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
                 </svg>
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">
-                {lang === 'ko' ? 'Local Processing' : 'Local Processing'}
+                {lang === 'ko' ? '로컬 프로젝트' : lang === 'ja' ? 'ローカルプロジェクト' : lang === 'de' ? 'Lokale Projekte' : 'Local Projects'}
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                {lang === 'ko' ? '모든 데이터는 로컬에서 처리' : 'All data processed locally'}
+                {lang === 'ko' ? '프로젝트와 내보내기는 기기에 저장' : lang === 'ja' ? 'プロジェクトとエクスポートは端末に保存' : lang === 'de' ? 'Projekte und Exporte bleiben auf dem Gerät' : 'Projects and exports stay on your device'}
               </p>
             </div>
 
@@ -137,10 +137,10 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
                 </svg>
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">
-                {lang === 'ko' ? 'Free Forever' : 'Free Forever'}
+                {lang === 'ko' ? '투명한 가격' : lang === 'ja' ? '透明な価格' : lang === 'de' ? 'Transparente Preise' : 'Transparent Pricing'}
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                {lang === 'ko' ? '영원히 무료, 숨은 비용 없음' : 'Free forever, no hidden costs'}
+                {lang === 'ko' ? '앱 무료, Google API는 직접 과금' : lang === 'ja' ? 'アプリ無料、Google APIは直接課金' : lang === 'de' ? 'App kostenlos, Google API direkt berechnet' : 'Free app, Google API billed directly'}
               </p>
             </div>
           </div>

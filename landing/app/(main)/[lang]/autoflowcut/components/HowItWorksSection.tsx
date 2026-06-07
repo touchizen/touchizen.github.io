@@ -11,13 +11,13 @@ export default function HowItWorksSection({ lang, t }: { lang: Language; t: (key
     {
       num: '02',
       title: lang === 'ko' ? 'AI 이미지 일괄 생성' : lang === 'ja' ? 'AI画像一括生成' : lang === 'de' ? 'KI-Bilder stapelweise generieren' : 'Batch Generate AI Images',
-      desc: lang === 'ko' ? 'Google Flow AI가 레퍼런스를 활용해 일관된 스타일로 100장 이상의 이미지를 자동 생성합니다. 에러 자동 재시도 포함.' : lang === 'ja' ? 'Google Flow AIがリファレンスを活用して一貫したスタイルで100枚以上の画像を自動生成。エラー自動リトライ付き。' : lang === 'de' ? 'Google Flow AI generiert automatisch 100+ Bilder in konsistentem Stil mit Referenzen. Automatische Fehlerwiederholung inklusive.' : 'Google Flow AI auto-generates 100+ images with consistent style using references. Auto-retry on errors included.',
+      desc: lang === 'ko' ? 'Gemini API가 레퍼런스를 활용해 일관된 스타일로 100장 이상의 이미지를 자동 생성합니다. 에러 자동 재시도 포함.' : lang === 'ja' ? 'Gemini APIがリファレンスを活用して一貫したスタイルで100枚以上の画像を自動生成。エラー自動リトライ付き。' : lang === 'de' ? 'Die Gemini API generiert automatisch 100+ Bilder in konsistentem Stil mit Referenzen. Automatische Fehlerwiederholung inklusive.' : 'The Gemini API auto-generates 100+ images with consistent style using references. Auto-retry on errors included.',
       icon: '🖼️',
     },
     {
       num: '03',
       title: lang === 'ko' ? 'AI 비디오 생성 (T2V / I2V)' : lang === 'ja' ? 'AI動画生成（T2V / I2V）' : lang === 'de' ? 'KI-Videos generieren (T2V / I2V)' : 'Generate AI Videos (T2V / I2V)',
-      desc: lang === 'ko' ? '선택한 씬에 텍스트에서 비디오(T2V) 또는 이미지에서 비디오(I2V)를 생성합니다. 씬별로 이미지/비디오 중 최적의 미디어를 선택.' : lang === 'ja' ? '選択したシーンにテキストから動画（T2V）または画像から動画（I2V）を生成。シーンごとに画像/動画から最適なメディアを選択。' : lang === 'de' ? 'Generieren Sie Text-to-Video (T2V) oder Image-to-Video (I2V) für ausgewählte Szenen. Wählen Sie pro Szene das optimale Medium.' : 'Generate Text-to-Video (T2V) or Image-to-Video (I2V) for selected scenes. Choose the optimal media per scene.',
+      desc: lang === 'ko' ? 'Veo API로 선택한 씬에 텍스트에서 비디오(T2V) 또는 이미지에서 비디오(I2V)를 생성합니다. 씬별로 이미지/비디오 중 최적의 미디어를 선택.' : lang === 'ja' ? 'Veo APIで選択したシーンにテキストから動画（T2V）または画像から動画（I2V）を生成。シーンごとに画像/動画から最適なメディアを選択。' : lang === 'de' ? 'Generieren Sie mit der Veo API Text-to-Video (T2V) oder Image-to-Video (I2V) für ausgewählte Szenen. Wählen Sie pro Szene das optimale Medium.' : 'Use the Veo API to generate Text-to-Video (T2V) or Image-to-Video (I2V) for selected scenes. Choose the optimal media per scene.',
       icon: '🎬',
     },
     {

@@ -8,17 +8,17 @@ export function generateMetadata({ params }: Props): Metadata {
   const baseUrl = 'https://touchizen.com';
 
   const titles: Record<Language, string> = {
-    en: 'AutoFlowCut: Bulk AI Image & Video Generation → CapCut Export',
-    ko: 'AutoFlowCut: AI 이미지 & 영상 대량 생성 → CapCut 내보내기',
-    ja: 'AutoFlowCut: AI画像・動画の一括生成 → CapCutエクスポート',
-    de: 'AutoFlowCut: KI-Bild- & Video-Massenerstellung → CapCut-Export',
+    en: 'AutoFlowCut: Gemini/Veo API Video Pipeline → CapCut Export',
+    ko: 'AutoFlowCut: Gemini/Veo API 영상 파이프라인 → CapCut 내보내기',
+    ja: 'AutoFlowCut: Gemini/Veo API動画パイプライン → CapCutエクスポート',
+    de: 'AutoFlowCut: Gemini/Veo API-Videopipeline → CapCut-Export',
   };
 
   const descriptions: Record<Language, string> = {
-    en: 'Bulk-generate hundreds of AI images and videos with Google Flow AI, then export to CapCut projects in one click. Text-to-Image, Text-to-Video, Image-to-Video.',
-    ko: 'Google Flow AI로 수백 장의 AI 이미지와 영상을 대량 생성하고 CapCut 프로젝트로 원클릭 내보내기. Text-to-Image, Text-to-Video, Image-to-Video 지원.',
-    ja: 'Google Flow AIで数百枚のAI画像・動画を一括生成し、CapCutプロジェクトへワンクリックエクスポート。Text-to-Image、Text-to-Video、Image-to-Video対応。',
-    de: 'Erstellen Sie mit Google Flow AI hunderte KI-Bilder und -Videos in Massen und exportieren Sie sie per Klick in CapCut-Projekte. Text-to-Image, Text-to-Video, Image-to-Video.',
+    en: 'Bring your own Google AI Studio API key, bulk-generate images and videos with Gemini and Veo, then export edit-ready CapCut projects in one click.',
+    ko: 'Google AI Studio API 키를 연결해 Gemini와 Veo로 이미지/비디오를 대량 생성하고, 편집 가능한 CapCut 프로젝트로 원클릭 내보내기.',
+    ja: 'Google AI Studio APIキーを接続し、GeminiとVeoで画像・動画を一括生成。編集可能なCapCutプロジェクトへワンクリックエクスポート。',
+    de: 'Verbinden Sie Ihren Google AI Studio API-Schlüssel, generieren Sie Bilder und Videos mit Gemini und Veo und exportieren Sie editierbare CapCut-Projekte per Klick.',
   };
 
   const ogImages: Record<Language, string> = {
@@ -33,7 +33,10 @@ export function generateMetadata({ params }: Props): Metadata {
     description: descriptions[lang],
     keywords: [
       'AutoFlowCut',
-      'Google Flow AI',
+      'Google Gemini API',
+      'Veo API',
+      'Google AI Studio API key',
+      'BYOK',
       'bulk AI image generation',
       'text to video',
       'image to video',
@@ -96,10 +99,10 @@ function generateJsonLd(lang: Language) {
   const t = (key: string) => translations[lang][key as TranslationKey];
 
   const descriptions: Record<Language, string> = {
-    en: 'Bulk-generate hundreds of AI images and videos with Google Flow AI, then export to CapCut projects in one click.',
-    ko: 'Google Flow AI로 수백 장의 AI 이미지와 영상을 대량 생성하고 CapCut 프로젝트로 원클릭 내보내기.',
-    ja: 'Google Flow AIで数百枚のAI画像・動画を一括生成し、CapCutプロジェクトへワンクリックエクスポート。',
-    de: 'Erstellen Sie mit Google Flow AI hunderte KI-Bilder und -Videos in Massen und exportieren Sie sie per Klick in CapCut-Projekte.',
+    en: 'Bulk-generate AI images and videos with your Google AI Studio API key, then export CapCut projects in one click.',
+    ko: 'Google AI Studio API 키로 AI 이미지와 영상을 대량 생성하고 CapCut 프로젝트로 원클릭 내보내기.',
+    ja: 'Google AI Studio APIキーでAI画像・動画を一括生成し、CapCutプロジェクトへワンクリックエクスポート。',
+    de: 'Generieren Sie KI-Bilder und -Videos mit Ihrem Google AI Studio API-Schlüssel und exportieren Sie CapCut-Projekte per Klick.',
   };
 
   const softwareApp = {
@@ -115,10 +118,10 @@ function generateJsonLd(lang: Language) {
       price: '0',
       priceCurrency: 'USD',
       description: ({
-        en: 'Free (5 CapCut exports/month + 5 signup bonus). Pro: $4.99/mo or $39.99/yr for unlimited.',
-        ko: '무료 (CapCut 내보내기 월 5회 + 가입 보너스 5회). Pro: 월 $4.99 또는 연 $39.99 무제한.',
-        ja: '無料（CapCutエクスポート月5回 + 登録ボーナス5回）。Pro：月額$4.99または年額$39.99で無制限。',
-        de: 'Kostenlos (5 CapCut-Exporte/Monat + 5 Anmelde-Bonus). Pro: $4,99/Mo oder $39,99/Jahr unbegrenzt.',
+        en: 'Free and open source. Includes 5 CapCut exports/month + 5 signup bonus. Pro: $4.99/mo or $39.99/yr for unlimited exports. Google API usage is billed by Google.',
+        ko: '무료 오픈소스. CapCut 내보내기 월 5회 + 가입 보너스 5회 포함. Pro는 월 $4.99 또는 연 $39.99로 내보내기 무제한. Google API 사용량은 Google 계정에 직접 과금됩니다.',
+        ja: '無料のオープンソース。CapCutエクスポート月5回 + 登録ボーナス5回付き。Proは月額$4.99または年額$39.99でエクスポート無制限。Google API利用料はGoogleから直接請求されます。',
+        de: 'Kostenlos und Open Source. Enthält 5 CapCut-Exporte/Monat + 5 Anmelde-Bonus. Pro: $4,99/Mo oder $39,99/Jahr für unbegrenzte Exporte. Google API-Nutzung wird direkt von Google berechnet.',
       })[lang],
     },
     downloadUrl: 'https://github.com/touchizen/AutoFlowCut/releases/latest',

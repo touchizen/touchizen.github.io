@@ -92,7 +92,7 @@ export default function ExportGuideSection({ lang, t }: { lang: Language; t: (ke
                   <span className="text-lg">&#x1F34E;</span>
                   <div className="flex-1">
                     <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">macOS</div>
-                    <code className="block text-xs bg-gray-900 dark:bg-black text-green-400 px-3 py-2 rounded-lg font-mono overflow-x-auto">
+                    <code className="block text-xs bg-gray-900 dark:bg-black text-green-400 px-3 py-2 rounded-lg font-mono overflow-x-auto min-w-0 max-w-full">
                       ~/Movies/CapCut/User Data/Projects/com.lveditor.draft/
                     </code>
                   </div>
@@ -103,7 +103,7 @@ export default function ExportGuideSection({ lang, t }: { lang: Language; t: (ke
                   <span className="text-lg">&#x1FA9F;</span>
                   <div className="flex-1">
                     <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Windows</div>
-                    <code className="block text-xs bg-gray-900 dark:bg-black text-green-400 px-3 py-2 rounded-lg font-mono overflow-x-auto">
+                    <code className="block text-xs bg-gray-900 dark:bg-black text-green-400 px-3 py-2 rounded-lg font-mono overflow-x-auto min-w-0 max-w-full">
                       {`%USERPROFILE%\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\`}
                     </code>
                   </div>
@@ -155,7 +155,7 @@ export default function ExportGuideSection({ lang, t }: { lang: Language; t: (ke
                 <span className="text-2xl">&#x1F4C2;</span>
                 {lang === 'ko' ? '출력 구조' : 'Output Structure'}
               </h3>
-              <div className="bg-gray-900 dark:bg-black rounded-xl p-6 font-mono text-sm text-gray-300 overflow-x-auto">
+              <div className="bg-gray-900 dark:bg-black rounded-xl p-6 font-mono text-sm text-gray-300 overflow-x-auto min-w-0 max-w-full">
                 <pre>{`project_name/
 \u251C\u2500\u2500 draft_info.json
 \u251C\u2500\u2500 draft_meta_info.json

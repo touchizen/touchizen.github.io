@@ -144,21 +144,21 @@ export default function PricingSection({ lang, t, plans }: {
               <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                 <tr>
                   <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300">
-                    {lang === 'ko' ? 'Google Flow 이미지/비디오 대량 생성' : lang === 'ja' ? 'Google Flow 画像/動画一括生成' : lang === 'de' ? 'Google Flow Massen-Bild/Video-Generierung' : 'Google Flow Bulk Image/Video Generation'}
+                    {lang === 'ko' ? 'Gemini/Veo API 이미지·비디오 생성' : lang === 'ja' ? 'Gemini/Veo API 画像・動画生成' : lang === 'de' ? 'Gemini/Veo API Bild- & Videogenerierung' : 'Gemini/Veo API Image & Video Generation'}
                   </td>
                   <td className="px-4 py-4 text-center">
                     <span className="text-green-500 font-semibold text-sm">
-                      {lang === 'ko' ? '무제한' : lang === 'ja' ? '無制限' : lang === 'de' ? 'Unbegrenzt' : 'Unlimited'}
+                      {lang === 'ko' ? '내 API 키' : lang === 'ja' ? '自分のAPIキー' : lang === 'de' ? 'Eigener API-Schlüssel' : 'BYO API key'}
                     </span>
                   </td>
                   <td className="px-4 py-4 text-center">
                     <span className="text-green-500 font-semibold text-sm">
-                      {lang === 'ko' ? '무제한' : lang === 'ja' ? '無制限' : lang === 'de' ? 'Unbegrenzt' : 'Unlimited'}
+                      {lang === 'ko' ? '내 API 키' : lang === 'ja' ? '自分のAPIキー' : lang === 'de' ? 'Eigener API-Schlüssel' : 'BYO API key'}
                     </span>
                   </td>
                   <td className="px-4 py-4 text-center bg-cyan-50/50 dark:bg-cyan-900/10">
                     <span className="text-green-500 font-semibold text-sm">
-                      {lang === 'ko' ? '무제한' : lang === 'ja' ? '無制限' : lang === 'de' ? 'Unbegrenzt' : 'Unlimited'}
+                      {lang === 'ko' ? '내 API 키' : lang === 'ja' ? '自分のAPIキー' : lang === 'de' ? 'Eigener API-Schlüssel' : 'BYO API key'}
                     </span>
                   </td>
                 </tr>
