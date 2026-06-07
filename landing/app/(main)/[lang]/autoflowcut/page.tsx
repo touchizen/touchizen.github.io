@@ -49,6 +49,13 @@ export default function AutoFlowCutPage() {
     router.push(`/${newLang}/autoflowcut`);
   };
 
+  const proSaveText = {
+    en: 'Save 17%',
+    ko: '17% 절약',
+    ja: '17%節約',
+    de: '17% sparen',
+  }[lang];
+
   // B-3 quota model: 5/month + 5 lifetime signup bonus
   const plans = [
     {
@@ -67,11 +74,11 @@ export default function AutoFlowCutPage() {
     {
       name: t('pricing_pro'),
       desc: t('pricing_pro_desc'),
-      price: '$4.99',
+      price: '$9.99',
       period: lang === 'ko' ? '/월' : lang === 'ja' ? '/月' : lang === 'de' ? '/Monat' : '/mo',
-      yearlyPrice: '$39.99',
+      yearlyPrice: '$99.99',
       yearlyPeriod: lang === 'ko' ? '/년' : lang === 'ja' ? '/年' : lang === 'de' ? '/Jahr' : '/yr',
-      saveText: t('pricing_pro_save'),
+      saveText: proSaveText,
       features: [
         t('pricing_pro_feature1'),
         t('pricing_pro_feature2'),

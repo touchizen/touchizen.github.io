@@ -16,6 +16,16 @@ export default function PricingSection({ lang, t, plans }: {
     highlighted: boolean;
   }>;
 }) {
+  const annualDiscount = lang === 'ko' ? '17% 할인' : lang === 'ja' ? '17%オフ' : lang === 'de' ? '17% Rabatt' : '17% OFF';
+  const annualMonthlyEquivalent =
+    lang === 'ko'
+      ? '월 $8.33 (17% 할인)'
+      : lang === 'ja'
+        ? '月額$8.33 (17%オフ)'
+        : lang === 'de'
+          ? '$8.33/Monat (17% Rabatt)'
+          : '$8.33/month (17% OFF)';
+
   return (
     <section id="pricing" className="section-padding bg-gray-50 dark:bg-gray-900/50">
       <div className="container-custom px-4">
@@ -132,12 +142,12 @@ export default function PricingSection({ lang, t, plans }: {
                   </th>
                   <th className="px-4 py-4 text-center text-sm font-semibold text-cyan-600 dark:text-cyan-400">
                     <div>Pro ({lang === 'ko' ? '월간' : lang === 'ja' ? '月額' : lang === 'de' ? 'Monat' : 'Monthly'})</div>
-                    <div className="text-xs font-normal">$4.99/{lang === 'ko' ? '월' : lang === 'ja' ? '月' : lang === 'de' ? 'Mo' : 'mo'}</div>
+                    <div className="text-xs font-normal">$9.99/{lang === 'ko' ? '월' : lang === 'ja' ? '月' : lang === 'de' ? 'Mo' : 'mo'}</div>
                   </th>
                   <th className="px-4 py-4 text-center text-sm font-semibold text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-900/20">
                     <div>Pro ({lang === 'ko' ? '연간' : lang === 'ja' ? '年額' : lang === 'de' ? 'Jahr' : 'Yearly'})</div>
-                    <div className="text-xs font-normal">$39.99/{lang === 'ko' ? '년' : lang === 'ja' ? '年' : lang === 'de' ? 'Jahr' : 'yr'}</div>
-                    <div className="text-xs text-green-500 font-semibold">{lang === 'ko' ? '33% 할인' : lang === 'ja' ? '33%オフ' : lang === 'de' ? '33% Rabatt' : '33% OFF'}</div>
+                    <div className="text-xs font-normal">$99.99/{lang === 'ko' ? '년' : lang === 'ja' ? '年' : lang === 'de' ? 'Jahr' : 'yr'}</div>
+                    <div className="text-xs text-green-500 font-semibold">{annualDiscount}</div>
                   </th>
                 </tr>
               </thead>
@@ -253,14 +263,14 @@ export default function PricingSection({ lang, t, plans }: {
                     <div className="text-xs text-gray-500">{lang === 'ko' ? '영구 무료' : lang === 'ja' ? '永久無料' : lang === 'de' ? 'Für immer kostenlos' : 'Free forever'}</div>
                   </td>
                   <td className="px-4 py-5 text-center">
-                    <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">$4.99</div>
+                    <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">$9.99</div>
                     <div className="text-xs text-gray-500">/{lang === 'ko' ? '월' : lang === 'ja' ? '月' : lang === 'de' ? 'Monat' : 'month'}</div>
                   </td>
                   <td className="px-4 py-5 text-center bg-cyan-100/50 dark:bg-cyan-900/30">
-                    <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">$39.99</div>
+                    <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">$99.99</div>
                     <div className="text-xs text-gray-500">/{lang === 'ko' ? '년' : lang === 'ja' ? '年' : lang === 'de' ? 'Jahr' : 'year'}</div>
                     <div className="text-xs text-green-600 dark:text-green-400 font-semibold mt-1">
-                      {lang === 'ko' ? '월 $3.33 (33% 할인)' : lang === 'ja' ? '月額$3.33 (33%オフ)' : lang === 'de' ? '$3.33/Monat (33% Rabatt)' : '$3.33/month (33% OFF)'}
+                      {annualMonthlyEquivalent}
                     </div>
                   </td>
                 </tr>
