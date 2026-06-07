@@ -32,11 +32,6 @@ export default function ComparisonSection({ lang, t }: { lang: Language; t: (key
       whisk: '✅',
       flow: '✅',
     },
-    {
-      feature: t('autoflowcut_diff_opensource' as TranslationKey),
-      whisk: '❌',
-      flow: '✅',
-    },
   ];
 
   return (

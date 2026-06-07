@@ -33,7 +33,7 @@ export default function PrivacyPage() {
               {lang === 'ko' ? (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    최종 수정일: 2026년 4월 4일
+                    최종 수정일: 2026년 6월 7일
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. 개인정보의 처리 목적</h2>
@@ -71,13 +71,13 @@ export default function PrivacyPage() {
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCut 데스크톱 앱</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    AutoFlowCut은 Google Flow AI(labs.google/fx)와 CapCut을 하나의 워크플로우로 연결하는 데스크톱 앱입니다. AI 이미지 및 비디오 대량 생성 후, 타임라인·자막·애니메이션이 포함된 CapCut 프로젝트로 내보냅니다.
+                    AutoFlowCut은 Google AI Studio API 키로 Gemini/Veo API를 사용해 AI 이미지와 비디오를 대량 생성하고, 타임라인·자막·애니메이션이 포함된 CapCut 프로젝트로 내보내는 데스크톱 앱입니다.
                   </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">무료 클라이언트 (100% 오픈소스)</p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">무료 다운로드 앱</p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
-                    <li>모든 처리가 사용자의 로컬 기기에서 이루어집니다</li>
-                    <li>프로젝트 데이터는 기기에만 저장되며 외부 서버로 전송되지 않습니다</li>
-                    <li>개인정보를 수집하지 않습니다</li>
+                    <li>프로젝트와 내보내기 결과물은 사용자의 로컬 기기에 저장됩니다</li>
+                    <li>Google AI Studio API 키는 앱에서 사용되며, AI 생성 요청은 Google로 직접 전송됩니다</li>
+                    <li>Gemini/Veo API 사용량은 사용자의 Google 계정 정책과 할당량을 따릅니다</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">Pro 버전 (유료 회원제)</p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
@@ -85,7 +85,7 @@ export default function PrivacyPage() {
                     <li><strong>라이선스 정보:</strong> 구독 상태 및 라이선스 키</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    AI 영상 생성 시 콘텐츠가 Google Flow AI API를 통해 처리됩니다. 이는 Google의 개인정보 처리방침에 따릅니다.
+                    AI 이미지와 비디오 생성 시 프롬프트와 참조 콘텐츠는 Gemini/Veo API를 통해 처리됩니다. 이는 Google의 개인정보 처리방침에 따릅니다.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-3. Calorie Shot 모바일 앱</h3>
@@ -170,7 +170,7 @@ export default function PrivacyPage() {
               ) : lang === 'ja' ? (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    最終更新日: 2026年4月4日
+                    最終更新日: 2026年6月7日
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. 個人情報の処理目的</h2>
@@ -208,13 +208,13 @@ export default function PrivacyPage() {
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCutデスクトップアプリ</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    AutoFlowCutは、Google Flow AI（labs.google/fx）とCapCutを一つのワークフローで繋ぐデスクトップアプリです。AI画像・動画の一括生成後、タイムライン・字幕・アニメーション付きのCapCutプロジェクトとしてエクスポートします。
+                    AutoFlowCutは、Google AI Studio APIキーでGemini/Veo APIを使用し、AI画像・動画を一括生成して、タイムライン・字幕・アニメーション付きのCapCutプロジェクトとしてエクスポートするデスクトップアプリです。
                   </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">無料クライアント（100%オープンソース）</p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">無料ダウンロードアプリ</p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
-                    <li>すべての処理はユーザーのローカルデバイスで行われます</li>
-                    <li>プロジェクトデータはデバイスにのみ保存され、外部サーバーに送信されません</li>
-                    <li>個人情報は収集しません</li>
+                    <li>プロジェクトとエクスポート結果はユーザーのローカルデバイスに保存されます</li>
+                    <li>Google AI Studio APIキーはアプリで使用され、AI生成リクエストはGoogleへ直接送信されます</li>
+                    <li>Gemini/Veo APIの利用はユーザーのGoogleアカウントのポリシーと割り当てに従います</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">Pro版（有料会員制）</p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
@@ -222,7 +222,7 @@ export default function PrivacyPage() {
                     <li><strong>ライセンス情報：</strong> サブスクリプション状態とライセンスキー</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    AI動画生成時、コンテンツはGoogle Flow AI APIを通じて処理されます。これはGoogleのプライバシーポリシーに準拠します。
+                    AI画像・動画生成時、プロンプトと参照コンテンツはGemini/Veo APIを通じて処理されます。これはGoogleのプライバシーポリシーに準拠します。
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-3. Calorie Shotモバイルアプリ</h3>
@@ -307,7 +307,7 @@ export default function PrivacyPage() {
               ) : lang === 'de' ? (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    Letzte Aktualisierung: 4. April 2026
+                    Letzte Aktualisierung: 7. Juni 2026
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. Zweck der Datenverarbeitung</h2>
@@ -345,13 +345,13 @@ export default function PrivacyPage() {
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCut Desktop-App</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    AutoFlowCut ist eine Desktop-App, die Google Flow AI (labs.google/fx) und CapCut in einem Workflow verbindet. Nach der KI-gestützten Massen-Bild- und Videogenerierung exportiert sie CapCut-Projekte mit Timeline, Untertiteln und Animationen.
+                    AutoFlowCut ist eine Desktop-App, die mit Ihrem Google AI Studio API-Schlüssel Gemini/Veo APIs nutzt, KI-Bilder und -Videos stapelweise generiert und CapCut-Projekte mit Timeline, Untertiteln und Animationen exportiert.
                   </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">Kostenloser Client (100% Open Source)</p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">Kostenloser Download</p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
-                    <li>Alle Verarbeitung erfolgt lokal auf dem Gerät des Nutzers</li>
-                    <li>Projektdaten werden nur auf dem Gerät gespeichert und nicht an externe Server übertragen</li>
-                    <li>Es werden keine personenbezogenen Daten erhoben</li>
+                    <li>Projekte und Exporte werden lokal auf dem Gerät des Nutzers gespeichert</li>
+                    <li>Der Google AI Studio API-Schlüssel wird in der App verwendet; KI-Generierungsanfragen werden direkt an Google gesendet</li>
+                    <li>Die Nutzung der Gemini/Veo APIs folgt den Richtlinien und Kontingenten des Google-Kontos des Nutzers</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">Pro-Version (kostenpflichtiges Abonnement)</p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
@@ -359,7 +359,7 @@ export default function PrivacyPage() {
                     <li><strong>Lizenzinformationen:</strong> Abonnementstatus und Lizenzschlüssel</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Bei der KI-Videogenerierung werden Inhalte über die Google Flow AI API verarbeitet. Dies unterliegt den Datenschutzrichtlinien von Google.
+                    Bei der KI-Bild- und Videogenerierung werden Prompts und Referenzinhalte über Gemini/Veo APIs verarbeitet. Dies unterliegt den Datenschutzrichtlinien von Google.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-3. Calorie Shot Mobile App</h3>
@@ -444,7 +444,7 @@ export default function PrivacyPage() {
               ) : (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    Last updated: April 4, 2026
+                    Last updated: June 7, 2026
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. Purpose of Processing Personal Information</h2>
@@ -482,13 +482,13 @@ export default function PrivacyPage() {
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCut Desktop App</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    AutoFlowCut is a desktop app that connects Google Flow AI (labs.google/fx) and CapCut into a single workflow. It batch-generates AI images and videos, then exports them as CapCut projects with timeline, subtitles, and animations.
+                    AutoFlowCut is a desktop app that uses Gemini/Veo APIs through your Google AI Studio API key, batch-generates AI images and videos, then exports CapCut projects with timeline, subtitles, and animations.
                   </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">Free Client (100% Open Source)</p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">Free Download App</p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
-                    <li>All processing is done locally on the user&apos;s device</li>
-                    <li>Project data is stored only on the device and is not transmitted to external servers</li>
-                    <li>No personal information is collected</li>
+                    <li>Projects and exports are stored locally on the user&apos;s device</li>
+                    <li>The Google AI Studio API key is used by the app, and AI generation requests are sent directly to Google</li>
+                    <li>Gemini/Veo API usage follows the user&apos;s Google account policy and quota</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">Pro Version (Paid Membership)</p>
                   <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
@@ -496,7 +496,7 @@ export default function PrivacyPage() {
                     <li><strong>License Information:</strong> Subscription status and license key</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    When generating AI videos, content is processed through the Google Flow AI API. This is subject to Google&apos;s privacy policy.
+                    When generating AI images and videos, prompts and reference content are processed through Gemini/Veo APIs. This is subject to Google&apos;s privacy policy.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-3. Calorie Shot Mobile App</h3>
@@ -512,7 +512,7 @@ export default function PrivacyPage() {
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">3. Google API Services User Data Policy</h2>
                   <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 mb-6">
                     <p className="text-gray-700 dark:text-gray-300">
-                      Whisk2CapCut&apos;s use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">Google API Services User Data Policy</a>, including the Limited Use requirements.
+                      Information received from Google APIs will be used and transferred according to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">Google API Services User Data Policy</a>, including the Limited Use requirements.
                     </p>
                   </div>
 

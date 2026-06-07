@@ -29,6 +29,10 @@ const releaseCopy: Record<Language, ReleaseCopy> = {
       'v1.1.0은 대량 생성 작업을 더 예측 가능하게 만들고, 기본 이미지 모델과 한국어 프롬프트 작성 경험을 최신 상태로 맞춘 업데이트입니다.',
     latestHighlights: [
       {
+        title: '이미지 100장 약 2~5분',
+        desc: 'API 기반 이미지 파이프라인과 배치 큐 개선으로 100장 생성 기준 약 2~5분 수준의 속도를 전면에 반영했습니다.',
+      },
+      {
         title: 'Nano Banana 2 기본 적용',
         desc: '기본 이미지 모델을 gemini-3.1-flash-image 기반 Nano Banana 2로 전환하고, 메인 프로세스 기본값까지 동기화했습니다.',
       },
@@ -113,6 +117,10 @@ const releaseCopy: Record<Language, ReleaseCopy> = {
     latestSummary:
       'v1.1.0 focuses on more predictable batch generation, updated image defaults, and smoother Korean prompt editing with reference mentions.',
     latestHighlights: [
+      {
+        title: '100 images in about 2-5 minutes',
+        desc: 'The API-based image pipeline and batch queue improvements keep 100-image generation in the about 2-5 minute range.',
+      },
       {
         title: 'Nano Banana 2 by default',
         desc: 'The default image model now uses Nano Banana 2 on gemini-3.1-flash-image, with the main-process default kept in sync.',
@@ -199,6 +207,10 @@ const releaseCopy: Record<Language, ReleaseCopy> = {
       'v1.1.0は、大量生成の予測しやすさ、画像モデルの既定値、韓国語プロンプト編集を整えたアップデートです。',
     latestHighlights: [
       {
+        title: '画像100枚を約2〜5分',
+        desc: 'APIベースの画像パイプラインとバッチキュー改善により、画像100枚を約2〜5分で生成できる速度を明示しました。',
+      },
+      {
         title: 'Nano Banana 2を標準化',
         desc: '既定の画像モデルをgemini-3.1-flash-imageベースのNano Banana 2へ変更し、メインプロセス側の既定値も同期しました。',
       },
@@ -283,6 +295,10 @@ const releaseCopy: Record<Language, ReleaseCopy> = {
     latestSummary:
       'v1.1.0 macht Batch-Generierung berechenbarer, aktualisiert das Standard-Bildmodell und verbessert koreanische Prompts mit Referenz-Mentions.',
     latestHighlights: [
+      {
+        title: '100 Bilder in ca. 2-5 Minuten',
+        desc: 'Die API-basierte Bildpipeline und Batch-Queue-Verbesserungen halten die Generierung von 100 Bildern im Bereich von ca. 2-5 Minuten.',
+      },
       {
         title: 'Nano Banana 2 als Standard',
         desc: 'Das Standard-Bildmodell nutzt jetzt Nano Banana 2 auf Basis von gemini-3.1-flash-image; der Main-Process-Standard wurde synchronisiert.',

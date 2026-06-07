@@ -9,8 +9,8 @@ interface QuickDownloadProps {
 }
 
 const DESKTOP_WIN_BASE = 'https://apps.microsoft.com/detail/9PNZVP54WRSM';
-const DESKTOP_MAC_URL = 'https://github.com/touchizen/AutoFlowCut/releases';
-const GITHUB_URL = 'https://github.com/touchizen/AutoFlowCut';
+const DESKTOP_MAC_URL = 'https://github.com/touchizen/AutoFlowCut/releases/latest';
+const RELEASES_URL = 'https://github.com/touchizen/AutoFlowCut/releases';
 
 export default function QuickDownload({ lang }: QuickDownloadProps) {
   const t = (key: TranslationKey) => translations[lang][key];
@@ -111,7 +111,7 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
             </div>
           </div>
 
-          {/* GitHub Card */}
+          {/* Release Notes Card */}
           <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800">
             <div className="mt-2">
               {/* Title */}
@@ -131,10 +131,10 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
                 {t('quick_dl_plugin_desc')}
               </p>
 
-              {/* GitHub Button */}
+              {/* Releases Button */}
               <div className="space-y-2">
                 <a
-                  href={GITHUB_URL}
+                  href={RELEASES_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl font-semibold transition-all duration-300 bg-gray-900 dark:bg-gray-700 text-white hover:shadow-lg hover:opacity-90 active:scale-95 text-sm"

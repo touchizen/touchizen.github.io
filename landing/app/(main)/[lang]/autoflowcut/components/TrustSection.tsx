@@ -114,7 +114,7 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
               </p>
             </div>
 
-            {/* Open Source */}
+            {/* Version transparency */}
             <div className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 text-center">
               <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-7 h-7 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,10 +122,10 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
                 </svg>
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">
-                {lang === 'ko' ? 'Open Source' : 'Open Source'}
+                {lang === 'ko' ? '버전 이력' : lang === 'ja' ? 'リリース履歴' : lang === 'de' ? 'Release-Historie' : 'Release History'}
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                {lang === 'ko' ? '소스 코드 공개 및 투명성 보장' : 'Source code open & transparent'}
+                {lang === 'ko' ? '릴리즈 노트와 다운로드 제공 상태 공개' : lang === 'ja' ? 'リリースノートと提供状況を公開' : lang === 'de' ? 'Release Notes und Download-Status dokumentiert' : 'Release notes and download status documented'}
               </p>
             </div>
 
