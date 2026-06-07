@@ -7,7 +7,6 @@ export default function FeaturesSection({ lang, t }: { lang: Language; t: (key: 
     { title: 'autoflowcut_feat3_title', desc: 'autoflowcut_feat3_desc', icon: '✂️', color: 'from-green-500 to-emerald-600' },
     { title: 'autoflowcut_feat4_title', desc: 'autoflowcut_feat4_desc', icon: '🎯', color: 'from-orange-500 to-red-500' },
     { title: 'autoflowcut_feat5_title', desc: 'autoflowcut_feat5_desc', icon: '🔄', color: 'from-pink-500 to-rose-600' },
-    { title: 'autoflowcut_feat6_title', desc: 'autoflowcut_feat6_desc', icon: '💻', color: 'from-gray-600 to-gray-800' },
   ];
 
   return (
