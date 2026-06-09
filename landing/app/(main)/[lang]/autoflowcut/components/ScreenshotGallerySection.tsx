@@ -21,6 +21,8 @@ const screenshots: Screenshot[] = [
   { alt: 'Scene Overview' },
   { alt: 'Claude AI Automation' },
   { alt: 'Style Presets' },
+  { alt: 'Video Prompt Mentions' },
+  { alt: 'Image Prompt Mentions' },
 ];
 
 // Picks the matching language folder; falls back to English for ja/de.
