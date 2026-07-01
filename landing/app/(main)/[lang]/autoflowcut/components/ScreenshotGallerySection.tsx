@@ -11,18 +11,16 @@ interface Screenshot {
 //   AutoFlowCut/docs/ms-store/screenshots/en/add-captions.cjs
 //   AutoFlowCut/docs/ms-store/screenshots/ko/add-captions-v2.cjs
 const screenshots: Screenshot[] = [
-  { alt: 'Multi-Editor Export (CapCut / Premiere / Vrew)' },
-  { alt: 'Audio & Video Preview' },
-  { alt: 'Multi-track Audio Timeline' },
-  { alt: 'Scene Management' },
-  { alt: 'Batch Video Generation' },
-  { alt: 'Reference System' },
-  { alt: 'Auto-Save' },
-  { alt: 'Scene Overview' },
-  { alt: 'Claude AI Automation' },
-  { alt: 'Style Presets' },
-  { alt: 'Video Prompt Mentions' },
-  { alt: 'Image Prompt Mentions' },
+  { alt: 'AI video timeline from scenes, audio, and subtitles' },
+  { alt: 'Dual modes — free Google Flow login or your own API key' },
+  { alt: 'Batch image generation (100 images in ~2-5 min)' },
+  { alt: 'Reference system for consistent characters' },
+  { alt: '@mention character, scene, or style references in prompts' },
+  { alt: 'Instant in-app video scene preview' },
+  { alt: 'Flexible import — scripts, scene CSV, references, subtitles, audio' },
+  { alt: 'One-click export to CapCut, Premiere Pro, or Vrew' },
+  { alt: 'Open the exported project in CapCut' },
+  { alt: 'Export opens automatically in Adobe Premiere Pro' },
 ];
 
 // Picks the matching language folder; falls back to English for ja/de.
