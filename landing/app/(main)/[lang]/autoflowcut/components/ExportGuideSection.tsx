@@ -108,6 +108,9 @@ export default function ExportGuideSection({ lang, t }: { lang: Language; t: (ke
                     </code>
                   </div>
                 </div>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  {lang === 'ko' ? '위 경로는 CapCut 예시입니다. Premiere Pro(.prproj)와 Vrew(.vrew)는 저장 위치를 직접 선택할 수 있습니다.' : lang === 'ja' ? '上記のパスはCapCutの例です。Premiere Pro（.prproj）とVrew（.vrew）は保存場所を自由に選べます。' : lang === 'de' ? 'Die obigen Pfade sind ein CapCut-Beispiel. Für Premiere Pro (.prproj) und Vrew (.vrew) wählen Sie den Speicherort frei.' : 'The paths above are a CapCut example. For Premiere Pro (.prproj) and Vrew (.vrew) you choose the save location yourself.'}
+                </p>
               </div>
             </div>
 
@@ -115,7 +118,7 @@ export default function ExportGuideSection({ lang, t }: { lang: Language; t: (ke
             <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8">
               <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white flex items-center gap-3">
                 <span className="text-2xl">&#x1F4E5;</span>
-                {lang === 'ko' ? 'CapCut 가져오기' : 'Import to CapCut'}
+                {lang === 'ko' ? '에디터로 가져오기 (CapCut / Premiere / Vrew)' : lang === 'ja' ? 'エディターへインポート（CapCut / Premiere / Vrew）' : lang === 'de' ? 'In den Editor importieren (CapCut / Premiere / Vrew)' : 'Import to Your Editor (CapCut / Premiere / Vrew)'}
               </h3>
 
               <div className="space-y-4 mb-8">
@@ -153,7 +156,7 @@ export default function ExportGuideSection({ lang, t }: { lang: Language; t: (ke
             <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-8">
               <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white flex items-center gap-3">
                 <span className="text-2xl">&#x1F4C2;</span>
-                {lang === 'ko' ? '출력 구조' : 'Output Structure'}
+                {lang === 'ko' ? '출력 구조 (CapCut 예시)' : lang === 'ja' ? '出力構造（CapCutの例）' : lang === 'de' ? 'Ausgabestruktur (CapCut-Beispiel)' : 'Output Structure (CapCut example)'}
               </h3>
               <div className="bg-gray-900 dark:bg-black rounded-xl p-6 font-mono text-sm text-gray-300 overflow-x-auto min-w-0 max-w-full">
                 <pre>{`project_name/
@@ -165,6 +168,9 @@ export default function ExportGuideSection({ lang, t }: { lang: Language; t: (ke
 \u2502   \u2514\u2500\u2500 ...
 \u2514\u2500\u2500 README.txt`}</pre>
               </div>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
+                {lang === 'ko' ? 'CapCut은 위와 같은 프로젝트 폴더로 저장됩니다. Premiere Pro는 단일 .prproj 파일, Vrew는 단일 .vrew 파일로 내보냅니다.' : lang === 'ja' ? 'CapCutは上記のプロジェクトフォルダとして保存されます。Premiere Proは単一の.prprojファイル、Vrewは単一の.vrewファイルとして書き出します。' : lang === 'de' ? 'CapCut wird als Projektordner wie oben gespeichert. Premiere Pro exportiert eine einzelne .prproj-Datei, Vrew eine einzelne .vrew-Datei.' : 'CapCut is saved as the project folder above. Premiere Pro exports a single .prproj file, and Vrew a single .vrew file.'}
+              </p>
             </div>
           </div>
         </div>

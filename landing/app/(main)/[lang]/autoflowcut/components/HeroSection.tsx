@@ -18,7 +18,7 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
               🖥️ {t('autoflowcut_platform_badge' as TranslationKey)}
             </div>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-full text-sm font-semibold">
-              v1.1.0
+              v2.1.0
             </div>
           </div>
 
@@ -43,7 +43,7 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
           {/* Workflow Summary */}
           <div className="mb-8 max-w-2xl mx-auto p-4 bg-gradient-to-r from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-xl border border-cyan-200 dark:border-cyan-800">
             <p className="text-base md:text-lg font-medium text-gray-800 dark:text-gray-200">
-              📝 {lang === 'ko' ? 'API 키 연결 → TXT/CSV/SRT 입력 → Gemini 이미지 → Veo 비디오 → CapCut 내보내기' : lang === 'ja' ? 'APIキー接続 → TXT/CSV/SRT入力 → Gemini画像 → Veo動画 → CapCutエクスポート' : lang === 'de' ? 'API-Schlüssel verbinden → TXT/CSV/SRT → Gemini-Bilder → Veo-Videos → CapCut-Export' : 'Connect API key → TXT/CSV/SRT input → Gemini images → Veo videos → CapCut export'}
+              📝 {lang === 'ko' ? 'Flow 로그인 또는 API 키 → TXT/CSV/SRT 입력 → Gemini 이미지 → Veo 비디오 → CapCut / Premiere / Vrew 내보내기' : lang === 'ja' ? 'Flowログインまたはキー → TXT/CSV/SRT入力 → Gemini画像 → Veo動画 → CapCut / Premiere / Vrewエクスポート' : lang === 'de' ? 'Flow-Login oder API-Schlüssel → TXT/CSV/SRT → Gemini-Bilder → Veo-Videos → CapCut / Premiere / Vrew-Export' : 'Flow login or API key → TXT/CSV/SRT input → Gemini images → Veo videos → CapCut / Premiere / Vrew export'}
             </p>
           </div>
 

@@ -11,13 +11,13 @@ export default function HowItWorksSection({ lang, t }: { lang: Language; t: (key
     {
       num: '02',
       title: lang === 'ko' ? 'AI 이미지 일괄 생성' : lang === 'ja' ? 'AI画像一括生成' : lang === 'de' ? 'KI-Bilder stapelweise generieren' : 'Batch Generate AI Images',
-      desc: lang === 'ko' ? 'Gemini API가 레퍼런스를 활용해 일관된 스타일로 100장 이상의 이미지를 자동 생성합니다. 에러 자동 재시도 포함.' : lang === 'ja' ? 'Gemini APIがリファレンスを活用して一貫したスタイルで100枚以上の画像を自動生成。エラー自動リトライ付き。' : lang === 'de' ? 'Die Gemini API generiert automatisch 100+ Bilder in konsistentem Stil mit Referenzen. Automatische Fehlerwiederholung inklusive.' : 'The Gemini API auto-generates 100+ images with consistent style using references. Auto-retry on errors included.',
+      desc: lang === 'ko' ? 'Gemini가 레퍼런스를 활용해 일관된 스타일로 100장 이상의 이미지를 자동 생성합니다 (Flow 로그인 또는 API 키). 에러 자동 재시도 포함.' : lang === 'ja' ? 'Geminiがリファレンスを活用して一貫したスタイルで100枚以上の画像を自動生成（Flowログインまたはキー）。エラー自動リトライ付き。' : lang === 'de' ? 'Gemini generiert automatisch 100+ Bilder in konsistentem Stil mit Referenzen (Flow-Login oder API-Schlüssel). Automatische Fehlerwiederholung inklusive.' : 'Gemini auto-generates 100+ images with consistent style using references — via Flow login or your own API key. Auto-retry on errors included.',
       icon: '🖼️',
     },
     {
       num: '03',
       title: lang === 'ko' ? 'AI 비디오 생성 (T2V / I2V)' : lang === 'ja' ? 'AI動画生成（T2V / I2V）' : lang === 'de' ? 'KI-Videos generieren (T2V / I2V)' : 'Generate AI Videos (T2V / I2V)',
-      desc: lang === 'ko' ? 'Veo API로 선택한 씬에 텍스트에서 비디오(T2V) 또는 이미지에서 비디오(I2V)를 생성합니다. 씬별로 이미지/비디오 중 최적의 미디어를 선택.' : lang === 'ja' ? 'Veo APIで選択したシーンにテキストから動画（T2V）または画像から動画（I2V）を生成。シーンごとに画像/動画から最適なメディアを選択。' : lang === 'de' ? 'Generieren Sie mit der Veo API Text-to-Video (T2V) oder Image-to-Video (I2V) für ausgewählte Szenen. Wählen Sie pro Szene das optimale Medium.' : 'Use the Veo API to generate Text-to-Video (T2V) or Image-to-Video (I2V) for selected scenes. Choose the optimal media per scene.',
+      desc: lang === 'ko' ? 'Veo로 선택한 씬에 텍스트에서 비디오(T2V) 또는 이미지에서 비디오(I2V)를 생성합니다. 씬별로 이미지/비디오 중 최적의 미디어를 선택.' : lang === 'ja' ? 'Veoで選択したシーンにテキストから動画（T2V）または画像から動画（I2V）を生成。シーンごとに画像/動画から最適なメディアを選択。' : lang === 'de' ? 'Generieren Sie mit Veo Text-to-Video (T2V) oder Image-to-Video (I2V) für ausgewählte Szenen. Wählen Sie pro Szene das optimale Medium.' : 'Use Veo to generate Text-to-Video (T2V) or Image-to-Video (I2V) for selected scenes. Choose the optimal media per scene.',
       icon: '🎬',
     },
     {
@@ -28,8 +28,8 @@ export default function HowItWorksSection({ lang, t }: { lang: Language; t: (key
     },
     {
       num: '05',
-      title: lang === 'ko' ? 'CapCut 프로젝트 내보내기' : lang === 'ja' ? 'CapCutプロジェクトエクスポート' : lang === 'de' ? 'CapCut-Projekt exportieren' : 'Export CapCut Project',
-      desc: lang === 'ko' ? '원클릭으로 타임라인, 미디어, 자막, Ken Burns 애니메이션이 포함된 완성된 CapCut 프로젝트를 내보냅니다. 바로 편집 시작!' : lang === 'ja' ? 'ワンクリックでタイムライン、メディア、字幕、Ken Burnsアニメーション付きの完成CapCutプロジェクトをエクスポート。すぐ編集開始！' : lang === 'de' ? 'Ein Klick exportiert ein komplettes CapCut-Projekt mit Timeline, Medien, Untertiteln und Ken Burns-Animationen. Sofort mit der Bearbeitung starten!' : 'One click exports a complete CapCut project with timeline, media, subtitles, and Ken Burns animations. Start editing immediately!',
+      title: lang === 'ko' ? '프로젝트 내보내기 (CapCut / Premiere / Vrew)' : lang === 'ja' ? 'プロジェクトエクスポート（CapCut / Premiere / Vrew）' : lang === 'de' ? 'Projekt exportieren (CapCut / Premiere / Vrew)' : 'Export Project (CapCut / Premiere / Vrew)',
+      desc: lang === 'ko' ? '원클릭으로 타임라인, 미디어, 자막, Ken Burns 애니메이션이 포함된 완성된 프로젝트를 CapCut, Premiere Pro, Vrew로 내보냅니다. 바로 편집 시작!' : lang === 'ja' ? 'ワンクリックでタイムライン、メディア、字幕、Ken Burnsアニメーション付きの完成プロジェクトをCapCut、Premiere Pro、Vrewにエクスポート。すぐ編集開始！' : lang === 'de' ? 'Ein Klick exportiert ein komplettes Projekt mit Timeline, Medien, Untertiteln und Ken Burns-Animationen nach CapCut, Premiere Pro oder Vrew. Sofort mit der Bearbeitung starten!' : 'One click exports a complete project — for CapCut, Premiere Pro, or Vrew — with timeline, media, subtitles, and Ken Burns animations. Start editing immediately!',
       icon: '✂️',
     },
   ];

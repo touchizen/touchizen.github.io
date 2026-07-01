@@ -122,10 +122,10 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
                 </svg>
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">
-                {lang === 'ko' ? '버전 이력' : lang === 'ja' ? 'リリース履歴' : lang === 'de' ? 'Release-Historie' : 'Release History'}
+                {lang === 'ko' ? '오픈소스 (AGPL v3)' : lang === 'ja' ? 'オープンソース (AGPL v3)' : lang === 'de' ? 'Open Source (AGPL v3)' : 'Open Source (AGPL v3)'}
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                {lang === 'ko' ? '릴리즈 노트와 다운로드 제공 상태 공개' : lang === 'ja' ? 'リリースノートと提供状況を公開' : lang === 'de' ? 'Release Notes und Download-Status dokumentiert' : 'Release notes and download status documented'}
+                {lang === 'ko' ? '소스 공개 · GitHub에서 코드 확인과 기여 가능' : lang === 'ja' ? 'ソース公開 · GitHubでコード確認・貢献可能' : lang === 'de' ? 'Quelloffen · Code einsehen und beitragen auf GitHub' : 'Source available — inspect and contribute on GitHub'}
               </p>
             </div>
 
@@ -140,7 +140,7 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
                 {lang === 'ko' ? '투명한 가격' : lang === 'ja' ? '透明な価格' : lang === 'de' ? 'Transparente Preise' : 'Transparent Pricing'}
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                {lang === 'ko' ? '앱 무료, Google API는 직접 과금' : lang === 'ja' ? 'アプリ無料、Google APIは直接課金' : lang === 'de' ? 'App kostenlos, Google API direkt berechnet' : 'Free app, Google API billed directly'}
+                {lang === 'ko' ? '앱 무료 · Flow 로그인(저비용 구독) 또는 내 API 키' : lang === 'ja' ? 'アプリ無料 · Flowログイン（低コスト定期購入）または自分のキー' : lang === 'de' ? 'App kostenlos · Flow-Login (günstiges Abo) oder eigener Schlüssel' : 'Free app · Flow login (low-cost subscription) or your own API key'}
               </p>
             </div>
           </div>

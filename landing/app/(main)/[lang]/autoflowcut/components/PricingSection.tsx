@@ -121,7 +121,7 @@ export default function PricingSection({ lang, t, plans }: {
           ))}
         </div>
         <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
-          {t('pricing_purchase_note' as TranslationKey)}
+          {t('autoflowcut_pricing_purchase_note' as TranslationKey)}
         </p>
 
         {/* Feature Comparison Table */}
@@ -154,27 +154,27 @@ export default function PricingSection({ lang, t, plans }: {
               <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                 <tr>
                   <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300">
-                    {lang === 'ko' ? 'Gemini/Veo API 이미지·비디오 생성' : lang === 'ja' ? 'Gemini/Veo API 画像・動画生成' : lang === 'de' ? 'Gemini/Veo API Bild- & Videogenerierung' : 'Gemini/Veo API Image & Video Generation'}
+                    {lang === 'ko' ? 'Gemini·Veo 이미지·비디오 생성' : lang === 'ja' ? 'Gemini・Veo 画像・動画生成' : lang === 'de' ? 'Gemini- & Veo-Bild- & Videogenerierung' : 'Gemini & Veo Image & Video Generation'}
                   </td>
                   <td className="px-4 py-4 text-center">
                     <span className="text-green-500 font-semibold text-sm">
-                      {lang === 'ko' ? '내 API 키' : lang === 'ja' ? '自分のAPIキー' : lang === 'de' ? 'Eigener API-Schlüssel' : 'BYO API key'}
+                      {lang === 'ko' ? 'Flow 또는 API 키' : lang === 'ja' ? 'FlowまたはAPIキー' : lang === 'de' ? 'Flow oder API-Schlüssel' : 'Flow or API key'}
                     </span>
                   </td>
                   <td className="px-4 py-4 text-center">
                     <span className="text-green-500 font-semibold text-sm">
-                      {lang === 'ko' ? '내 API 키' : lang === 'ja' ? '自分のAPIキー' : lang === 'de' ? 'Eigener API-Schlüssel' : 'BYO API key'}
+                      {lang === 'ko' ? 'Flow 또는 API 키' : lang === 'ja' ? 'FlowまたはAPIキー' : lang === 'de' ? 'Flow oder API-Schlüssel' : 'Flow or API key'}
                     </span>
                   </td>
                   <td className="px-4 py-4 text-center bg-cyan-50/50 dark:bg-cyan-900/10">
                     <span className="text-green-500 font-semibold text-sm">
-                      {lang === 'ko' ? '내 API 키' : lang === 'ja' ? '自分のAPIキー' : lang === 'de' ? 'Eigener API-Schlüssel' : 'BYO API key'}
+                      {lang === 'ko' ? 'Flow 또는 API 키' : lang === 'ja' ? 'FlowまたはAPIキー' : lang === 'de' ? 'Flow oder API-Schlüssel' : 'Flow or API key'}
                     </span>
                   </td>
                 </tr>
                 <tr>
                   <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300">
-                    {lang === 'ko' ? 'CapCut 내보내기' : lang === 'ja' ? 'CapCutエクスポート' : lang === 'de' ? 'CapCut Export' : 'CapCut Export'}
+                    {lang === 'ko' ? '멀티 에디터 내보내기' : lang === 'ja' ? 'マルチエディターエクスポート' : lang === 'de' ? 'Multi-Editor-Export' : 'Multi-Editor Export'}
                   </td>
                   <td className="px-4 py-4 text-center">
                     <span className="text-orange-500 font-semibold text-sm">

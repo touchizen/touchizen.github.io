@@ -25,6 +25,7 @@ import InputGuideSection from './components/InputGuideSection';
 import ExportGuideSection from './components/ExportGuideSection';
 import ReleaseNotesSection from './components/ReleaseNotesSection';
 import PricingSection from './components/PricingSection';
+import ContributeSection from './components/ContributeSection';
 import TrustSection from './components/TrustSection';
 import FAQSection from './components/FAQSection';
 import CTASection from './components/CTASection';
@@ -111,6 +112,7 @@ export default function AutoFlowCutPage() {
       <ExportGuideSection lang={lang} t={t} />
       <ReleaseNotesSection lang={lang} />
       <PricingSection lang={lang} t={t} plans={plans} />
+      <ContributeSection lang={lang} t={t} />
       <TrustSection lang={lang} t={t} />
       <FAQSection lang={lang} t={t} />
       <CTASection lang={lang} t={t} />

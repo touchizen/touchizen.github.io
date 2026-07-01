@@ -174,8 +174,12 @@ export default function KenBurnsDemo({ lang = 'ko' }: KenBurnsDemoProps) {
       <div className="text-center max-w-xl mx-auto">
         <p className="text-gray-600 dark:text-gray-400 text-sm">
           {lang === 'ko'
-            ? 'Ken Burns 효과는 정적인 이미지에 자연스러운 카메라 움직임을 추가하여 영상에 생동감을 더합니다. CapCut으로 내보낼 때 자동으로 적용됩니다.'
-            : 'Ken Burns effect adds natural camera movement to static images, bringing your video to life. Automatically applied when exporting to CapCut.'}
+            ? 'Ken Burns 효과는 정적인 이미지에 자연스러운 카메라 움직임을 추가하여 영상에 생동감을 더합니다. 프로젝트를 내보낼 때 자동으로 적용됩니다.'
+            : lang === 'ja'
+            ? 'Ken Burns効果は静止画に自然なカメラの動きを加え、映像に生命感を与えます。プロジェクトのエクスポート時に自動的に適用されます。'
+            : lang === 'de'
+            ? 'Der Ken Burns-Effekt fügt statischen Bildern natürliche Kamerabewegungen hinzu und erweckt Ihr Video zum Leben. Wird beim Exportieren Ihres Projekts automatisch angewendet.'
+            : 'Ken Burns effect adds natural camera movement to static images, bringing your video to life. Automatically applied when you export your project.'}
         </p>
       </div>
 

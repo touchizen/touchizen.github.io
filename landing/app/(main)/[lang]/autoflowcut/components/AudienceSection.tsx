@@ -5,12 +5,12 @@ const audiences: Record<string, { icon: string; title: Record<string, string>; d
     {
       icon: '🎭',
       title: { en: 'Faceless YouTube Creators', ko: '얼굴 없는 YouTube 크리에이터', ja: 'フェイスレスYouTubeクリエイター', de: 'Gesichtslose YouTube-Creator' },
-      desc: { en: 'Automate the entire AI image + video to CapCut pipeline for narration and slideshow channels.', ko: '나레이션/슬라이드쇼 채널을 위한 AI 이미지+비디오 → CapCut 파이프라인 전체 자동화.', ja: 'ナレーション・スライドショーチャンネルのAI画像+動画→CapCutパイプラインを完全自動化。', de: 'Automatisieren Sie die gesamte KI-Bild+Video zu CapCut Pipeline für Narrations- und Slideshow-Kanäle.' },
+      desc: { en: 'Automate the entire AI image + video pipeline into CapCut, Premiere Pro, or Vrew for narration and slideshow channels.', ko: '나레이션/슬라이드쇼 채널을 위한 AI 이미지+비디오 → CapCut / Premiere / Vrew 파이프라인 전체 자동화.', ja: 'ナレーション・スライドショーチャンネルのAI画像+動画→CapCut / Premiere / Vrewパイプラインを完全自動化。', de: 'Automatisieren Sie die gesamte KI-Bild+Video-Pipeline in CapCut, Premiere Pro oder Vrew für Narrations- und Slideshow-Kanäle.' },
     },
     {
       icon: '📖',
       title: { en: 'AI Story & Bedtime Story Channels', ko: 'AI 스토리 & 잠자리 동화 채널', ja: 'AIストーリー＆おやすみ童話チャンネル', de: 'KI-Story & Gute-Nacht-Geschichte Kanäle' },
-      desc: { en: 'Keep character consistency with references, generate videos for key scenes, export everything to CapCut.', ko: '레퍼런스로 캐릭터 일관성 유지, 핵심 씬에 비디오 생성, 모든 것을 CapCut으로 내보내기.', ja: 'リファレンスでキャラクター一貫性を維持、キーシーンに動画生成、すべてをCapCutにエクスポート。', de: 'Charakterkonsistenz mit Referenzen beibehalten, Videos für Schlüsselszenen generieren, alles nach CapCut exportieren.' },
+      desc: { en: 'Keep character consistency with references, generate videos for key scenes, export everything to CapCut, Premiere Pro, or Vrew.', ko: '레퍼런스로 캐릭터 일관성 유지, 핵심 씬에 비디오 생성, 모든 것을 CapCut / Premiere / Vrew로 내보내기.', ja: 'リファレンスでキャラクター一貫性を維持、キーシーンに動画生成、すべてをCapCut / Premiere / Vrewにエクスポート。', de: 'Charakterkonsistenz mit Referenzen beibehalten, Videos für Schlüsselszenen generieren, alles nach CapCut, Premiere Pro oder Vrew exportieren.' },
     },
     {
       icon: '📱',

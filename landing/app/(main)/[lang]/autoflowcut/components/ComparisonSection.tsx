@@ -19,8 +19,8 @@ export default function ComparisonSection({ lang, t }: { lang: Language; t: (key
     },
     {
       feature: t('autoflowcut_diff_export' as TranslationKey),
-      whisk: '✅',
-      flow: '✅',
+      whisk: '✅ CapCut',
+      flow: '✅ CapCut / Premiere / Vrew',
     },
     {
       feature: t('autoflowcut_diff_media_select' as TranslationKey),

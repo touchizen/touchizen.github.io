@@ -42,7 +42,7 @@ export default function WhatIsSection({ lang, t }: { lang: Language; t: (key: Tr
                 1-Click
               </div>
               <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
-                {lang === 'ko' ? 'CapCut 내보내기' : lang === 'ja' ? 'CapCutエクスポート' : lang === 'de' ? 'CapCut-Export' : 'CapCut Export'}
+                {lang === 'ko' ? '멀티 에디터 내보내기' : lang === 'ja' ? 'マルチエディターエクスポート' : lang === 'de' ? 'Multi-Editor-Export' : 'Multi-Editor Export'}
               </p>
             </div>
           </div>

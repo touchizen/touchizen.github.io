@@ -11,7 +11,7 @@ interface Screenshot {
 //   AutoFlowCut/docs/ms-store/screenshots/en/add-captions.cjs
 //   AutoFlowCut/docs/ms-store/screenshots/ko/add-captions-v2.cjs
 const screenshots: Screenshot[] = [
-  { alt: 'CapCut Export' },
+  { alt: 'Multi-Editor Export (CapCut / Premiere / Vrew)' },
   { alt: 'Audio & Video Preview' },
   { alt: 'Multi-track Audio Timeline' },
   { alt: 'Scene Management' },

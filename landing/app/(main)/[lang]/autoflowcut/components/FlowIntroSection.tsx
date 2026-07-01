@@ -63,7 +63,7 @@ export default function FlowIntroSection({ lang, t }: { lang: Language; t: (key:
             {/* CTA Button */}
             <div className="text-center">
               <a
-                href="https://aistudio.google.com/app/apikey"
+                href="https://github.com/touchizen/AutoFlowCut/releases"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-colors"
