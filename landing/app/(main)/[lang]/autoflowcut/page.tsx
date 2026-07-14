@@ -12,6 +12,7 @@ import ScreenshotGallerySection from './components/ScreenshotGallerySection';
 import DemoVideoSection from './components/DemoVideoSection';
 import InstallationSection from './components/InstallationSection';
 import WhatIsSection from './components/WhatIsSection';
+import StoryModeSection from './components/StoryModeSection';
 import FlowIntroSection from './components/FlowIntroSection';
 import WorkflowSection from './components/WorkflowSection';
 import StoryPipelineSection from './components/StoryPipelineSection';
@@ -99,6 +100,7 @@ export default function AutoFlowCutPage() {
       <ScreenshotGallerySection lang={lang} t={t} />
       <InstallationSection lang={lang} t={t} isMac={isMac} />
       <WhatIsSection lang={lang} t={t} />
+      <StoryModeSection lang={lang} t={t} />
       <FlowIntroSection lang={lang} t={t} />
       <WorkflowSection lang={lang} t={t} />
       <StoryPipelineSection lang={lang} t={t} />

@@ -144,7 +144,7 @@
         <li><a href="#architecture" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🏗️ Architecture</a></li>
         <li><a href="#tool-categories" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🧰 Tool Categories</a></li>
         <li><a href="#key-tools" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📖 Key Tools Reference</a></li>
-        <li><a href="#workflow-gates" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚦 Workflow Gate System</a></li>
+        <li><a href="#workflow-gates" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚦 Workflow Progress</a></li>
         <li><a href="#http-api" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🌐 HTTP API Endpoints</a></li>
         </ul>
       </nav>
@@ -229,23 +229,54 @@
             <h3 class="font-semibold mb-2 flex items-center gap-2">
               <span>🎬</span> App Control
             </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Control the running app via HTTP. Generate images, start batch processing, monitor status, and export to CapCut.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Control the running app via HTTP — 19 <code class="bg-purple-100 dark:bg-purple-900/40 px-1 rounded text-xs">app_*</code> tools plus two exporters. Manage projects, generate images, run batches, monitor status, and export. Only a few are shown here.</p>
             <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_open_project</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_generate_scene</span>
               <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_start_scene_batch</span>
               <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_wait_batch</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_batch_status</span>
               <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">export_capcut</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">export_premiere</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">+14 more app_*</span>
             </div>
           </div>
 
-          <!-- Workflow Gates -->
+          <!-- Workflow Progress -->
           <div class="bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-4">
             <h3 class="font-semibold mb-2 flex items-center gap-2">
-              <span>🔧</span> Workflow Gates
+              <span>🚦</span> Workflow Progress
             </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Track pipeline progress through review steps. Mark steps as pass/fail and check workflow status.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Read the pipeline's wave progress and report QA review status to the app's banner. Progress is read-only — the skill writes it.</p>
             <div class="mt-2 flex flex-wrap gap-1">
-              <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">mark_step_done</span>
               <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">get_progress</span>
+              <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">app_notify_qa</span>
+            </div>
+          </div>
+
+          <!-- Skill Management -->
+          <div class="bg-rose-50 dark:bg-rose-900/20 rounded-xl border border-rose-200 dark:border-rose-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🧩</span> Skill Management
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Install, list, and remove AutoFlowCut skills for Claude Code. Template variables are substituted on install.</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">list_skills</span>
+              <span class="text-xs bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">install_skill</span>
+              <span class="text-xs bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">uninstall_skill</span>
+            </div>
+          </div>
+
+          <!-- Audio Review & Styles -->
+          <div class="bg-teal-50 dark:bg-teal-900/20 rounded-xl border border-teal-200 dark:border-teal-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🎧</span> Audio Review &amp; Styles
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Flag and unflag unsuitable narration/SFX files in an audio package, and browse the built-in style presets.</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 px-2 py-0.5 rounded">list_audio_reviews</span>
+              <span class="text-xs bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 px-2 py-0.5 rounded">update_audio_review</span>
+              <span class="text-xs bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 px-2 py-0.5 rounded">list_styles</span>
             </div>
           </div>
         </div>
@@ -295,58 +326,61 @@
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Export project to CapCut format</td>
               </tr>
               <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">export_premiere</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Export project to Premiere Pro (<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">.prproj</code>) format</td>
+              </tr>
+              <tr>
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">get_schema</td>
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Get CSV/SRT/Audio schema documentation</td>
               </tr>
               <tr>
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">list_styles</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">List all 87 style presets by category</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">List the style presets, grouped by category</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">get_progress</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Read the pipeline's wave progress (read-only)</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- Workflow Gate System -->
+      <!-- Workflow Progress -->
       <div id="workflow-gates" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">🚦</span>
-          Workflow Gate System
+          Workflow Progress
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
-          The pipeline follows sequential steps (R1 through R12). Each step must pass review before the next step unlocks. Progress is tracked in <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">R_progress.json</code>.
+          The nine-wave pipeline (W1–W9) belongs to the <strong>story-engine</strong> Claude Code skill — <em>not</em> to the app's built-in Story mode, which runs script → scene split → audio → prompts and has no waves. The skill's orchestrator writes workflow state directly to files in the project's <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">_story_source/</code> folder. <strong>No MCP tool writes workflow state</strong> — the MCP server only reads it, via <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">get_progress</code>.
         </p>
 
-        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Gate Prerequisites</h3>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Workflow State Files</h3>
         <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 mb-4">
           <table class="w-full text-sm">
             <thead>
               <tr class="bg-gray-100 dark:bg-gray-800">
-                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Step</th>
-                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Phase</th>
-                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Prerequisite</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">File</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Role</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Written by</th>
               </tr>
             </thead>
             <tbody class="bg-white dark:bg-gray-900">
               <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R1-R3</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Script &amp; CSV Setup</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">None</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">STATE.md</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Main state — current wave, completed steps, decisions</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">story-engine skill</td>
               </tr>
               <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R4-R6</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">References &amp; Prompts</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R3 pass</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">W{N}_SUMMARY.md</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Per-wave results, review rounds, issues</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">story-engine skill</td>
               </tr>
               <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R7-R9</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Image Generation &amp; Review</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R6 pass</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R10-R12</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Audio, Export &amp; Final</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R9 pass</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">W_progress.json</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Side log — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">waves.W1</code>…<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">waves.W9</code> status for the app and external tools</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">story-engine skill (read via <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">get_progress</code>)</td>
               </tr>
             </tbody>
           </table>
@@ -354,11 +388,11 @@
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Usage</h3>
         <div class="relative">
-          <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700"># Mark a step as passed
-mark_step_done(step="R10-3_scenes_review", result="pass", reviewer="subagent")
+          <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700"># Read wave progress from W_progress.json
+get_progress()
 
-# Check overall progress
-get_progress()</pre>
+# Report QA review progress to the app's status banner
+app_notify_qa(kind="scene", state="progress", current=12, total=40, round=1, issues=3)</pre>
         </div>
       </div>
 
@@ -456,6 +490,12 @@ get_progress()</pre>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
             Audio Package Guide
+          </a>
+          <a href="/guide/en/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Story Mode Guide
           </a>
         </div>
       </div>

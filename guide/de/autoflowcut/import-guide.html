@@ -150,6 +150,7 @@
         <li><a href="#plain-text" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📝 Prompt-Textdatei</a></li>
         <li><a href="#scene-csv" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📊 Szenen-CSV-Datei</a></li>
         <li><a href="#reference-csv" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🖼️ Referenz-CSV-Datei</a></li>
+        <li><a href="#mention-refs" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📌 Referenzen mit @Erwähnungen anhängen</a></li>
         <li><a href="#srt-subtitle" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎬 Untertitel-SRT-Datei</a></li>
         <li><a href="#ai-text-prompt" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📝 Text-Prompt-Liste automatisch mit KI generieren</a></li>
         <li><a href="#ai-csv-prompt" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🤖 CSV automatisch mit KI generieren</a></li>
@@ -1356,6 +1357,219 @@ style,mittelalterliches historiendrama,,"Medieval German historical drama style,
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">💡 Klicken Sie auf einen Stil-Tag zum Kopieren.</p>
       </div>
 
+      <!-- @mention References -->
+      <div id="mention-refs" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📌</span>
+          Referenzen mit @Erwähnungen anhängen
+          <span class="text-xs bg-cyan-500 text-white px-2 py-0.5 rounded-full">Ergänzung zu Tags</span>
+        </h2>
+
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Neben den Tag-Spalten können Sie einfach <strong><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">@name</code> direkt in den Prompt schreiben</strong>.
+          Die Referenz, deren <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">name</code> mit diesem Token übereinstimmt, wird automatisch an die Generierung dieser Szene angehängt.
+          Es ist dasselbe Prinzip wie die <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">@</code>-Erwähnungen in Google Flow, und es funktioniert auch für Prompts aus dem CSV-Import —
+          eine <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">prompt</code>-Zelle mit <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">@wachen</code> hängt die Referenz <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">wachen</code> an.
+        </p>
+
+        <!-- Syntax -->
+        <div class="bg-cyan-50 dark:bg-cyan-900/20 rounded-xl border border-cyan-200 dark:border-cyan-800 p-5 mb-6">
+          <h3 class="font-semibold text-cyan-800 dark:text-cyan-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">✍️</span> Syntax
+          </h3>
+          <div class="bg-gray-900 dark:bg-black rounded-lg p-3 font-mono text-sm text-green-400 mb-3 overflow-x-auto">
+            <span class="text-cyan-400">@wachen</span> in shining armor standing at the <span class="text-cyan-400">@burg</span> gate, morning mist
+          </div>
+          <ul class="text-sm text-cyan-700 dark:text-cyan-400 space-y-1 ml-4">
+            <li>• <code class="bg-cyan-100 dark:bg-cyan-900 px-1 rounded">@wachen</code> → die Referenz mit dem Namen <code class="bg-cyan-100 dark:bg-cyan-900 px-1 rounded">wachen</code> wird an diese Szene angehängt.</li>
+            <li>• Beliebig viele Erwähnungen, an beliebiger Stelle im Prompt.</li>
+            <li>• Bei der Generierung wird das <code class="bg-cyan-100 dark:bg-cyan-900 px-1 rounded">@</code>-Zeichen entfernt und nur der Name bleibt im Prompt-Text stehen (das Referenzbild wird separat angehängt).</li>
+          </ul>
+        </div>
+
+        <!-- Union with tags -->
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-5 mb-6">
+          <h3 class="font-bold text-amber-800 dark:text-amber-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">➕</span>
+            Es <u>ergänzt</u> die Tag-Spalten — es ersetzt sie nicht
+          </h3>
+          <p class="text-amber-700 dark:text-amber-400 text-sm mb-4">
+            @Erwähnungen sind eine <strong>Ergänzung</strong> zum <a href="#reference-csv" class="underline hover:text-amber-900 dark:hover:text-amber-200">Tag-Matching-System</a>, kein Ersatz.
+            Referenzen aus den Tag-Spalten und Referenzen aus <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">@Erwähnungen</code> werden als <strong>Vereinigungsmenge</strong> zusammengeführt,
+            Duplikate werden automatisch entfernt (zuerst nach id, dann nach Name — ohne Beachtung der Groß-/Kleinschreibung). Nutzen Sie nur Tags, nur @Erwähnungen oder beides.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-blue-700 dark:text-blue-300 mb-2">🏷️ Tag-Spalten</div>
+              <div class="text-gray-600 dark:text-gray-400 text-xs">
+                <strong>Typgebunden.</strong><br>
+                <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">characters</code> → nur character-Referenzen<br>
+                <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">scene_tag</code> → nur scene-Referenzen<br>
+                <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">style_tag</code> → nur style-Referenzen
+              </div>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-cyan-700 dark:text-cyan-300 mb-2">📌 @Erwähnungen</div>
+              <div class="text-gray-600 dark:text-gray-400 text-xs">
+                <strong>Typunabhängig.</strong><br>
+                character / scene / style — jede Referenz<br>
+                lässt sich mit <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@name</code> anhängen, sofern der Name passt.<br>
+                <span class="text-gray-500 dark:text-gray-500">(API-Modus — siehe Flow-Unterschied unten)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Before / After -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Dasselbe Ergebnis, zwei Schreibweisen</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+          Beide CSVs unten hängen <strong>exakt dieselben Referenzen</strong> (wachen + burg) an die Szene an.
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+          <div>
+            <div class="text-xs text-gray-500 dark:text-gray-400 font-mono mb-2">① Tag-Spalten-Stil</div>
+            <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"Imperial guards in shining armor at the castle gate","...",wachen,burg,mittelalterliches historiendrama,4</pre>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 dark:text-gray-400 font-mono mb-2">② @Erwähnungs-Stil</div>
+            <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"@wachen in shining armor at the @burg gate","...",,,mittelalterliches historiendrama,4</pre>
+          </div>
+        </div>
+
+        <!-- Full sample -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">sample-scenes-mentions.csv</span>
+            <div class="flex gap-2">
+              <button onclick="copyCode('mention-csv-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                Kopieren
+              </button>
+              <a href="samples/sample-scenes-mentions.csv" download class="text-xs px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-200 dark:hover:bg-cyan-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                Herunterladen
+              </a>
+            </div>
+          </div>
+          <pre id="mention-csv-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old medieval German king sitting majestically on his golden throne in the @palast, Holy Roman Empire castle","Es war einmal ein weiser König, der über ein friedliches Reich herrschte.",könig,,mittelalterliches historiendrama,5
+"An elegant medieval German queen entering the @palast throne room in a royal gown","Die Königin betrat den Saal in ihrem kostbarsten Gewand.",königin,,mittelalterliches historiendrama,4
+"@wachen in shining armor standing at the @burg gate, morning mist, Holy Roman Empire","Die Wachen bewachten das Tor Tag und Nacht.",,,mittelalterliches historiendrama,4
+"King and queen discussing state affairs in the great hall of the @palast, medieval Germany","König und Königin berieten sich über das Wohl des Reiches.",könig;königin,,mittelalterliches historiendrama,5
+"A grand @feier in the castle courtyard with banners and a joyful @menge, medieval Germany","Das ganze Reich feierte den Frieden und Wohlstand.",könig;königin,,mittelalterliches historiendrama,5</pre>
+          <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+            <p class="text-xs text-blue-700 dark:text-blue-400">
+              💡 Dieses Beispiel greift direkt in die <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">sample-references.csv</code> im selben Ordner.
+              Beachten Sie: <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">könig</code> und <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">königin</code> bleiben in der Spalte
+              <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters</code>, weil <strong>Umlaute in Erwähnungsnamen nicht unterstützt werden</strong> — und
+              <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">style_tag</code> bleibt gesetzt, weil der Name Leerzeichen enthält (siehe Warnung unten).
+              Genau das zeigt: Tags und @Erwähnungen lassen sich frei mischen.
+            </p>
+          </div>
+        </div>
+
+        <!-- Rules -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Regeln</h3>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm border-gray-200 dark:border-gray-700">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Regel</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Beschreibung</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Beispiel</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Groß-/Kleinschreibung egal</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Der Namensabgleich ignoriert Groß- und Kleinschreibung</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@Wachen = @wachen</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Typunabhängig</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">character-, scene- und style-Referenzen können alle erwähnt werden</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@burg (scene-Referenz)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Erlaubte Zeichen im Namen</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">ASCII-Buchstaben, Ziffern, <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">_</code>, <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-</code> und Hangul-Silben. <strong class="text-red-600 dark:text-red-400">Keine Leerzeichen, keine Umlaute</strong></td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@ink-wash, @scene_02, @선비</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Wortgrenze</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Das <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">@</code> muss am Anfang, nach einem Leerzeichen oder nach einem Satzzeichen stehen. E-Mail-Adressen sind keine Erwähnungen</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">user@example.com → ✗</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Koreanische Partikel</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Eine ohne Leerzeichen angehängte koreanische Partikel wird automatisch abgetrennt (koreanische Prompts sind ein realer Anwendungsfall)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@선비가 → 선비 + „가“</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Kein Treffer</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Gibt es keine Referenz mit diesem Namen, bleibt <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">@name</code> <strong>wörtlich im Prompt stehen</strong> — damit der Fehler sichtbar ist</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@wachne → bleibt unverändert</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Gotcha: no spaces / no umlauts -->
+        <div class="bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-200 dark:border-red-800 p-5 mb-6">
+          <h3 class="font-bold text-red-800 dark:text-red-300 mb-2 flex items-center gap-2">
+            <span class="text-xl">⚠️</span>
+            Stolperfalle: Namen mit Leerzeichen oder Umlauten lassen sich nicht erwähnen
+          </h3>
+          <p class="text-sm text-red-700 dark:text-red-400 mb-3">
+            Erwähnungsnamen dürfen <strong>keine Leerzeichen</strong> enthalten. Deshalb lässt sich die Stil-Referenz aus dem Beispiel,
+            <code class="bg-red-200 dark:bg-red-800 px-1 rounded">mittelalterliches historiendrama</code>, nicht erwähnen —
+            bei <code class="bg-red-200 dark:bg-red-800 px-1 rounded">@mittelalterliches historiendrama</code> wird nur <code class="bg-red-200 dark:bg-red-800 px-1 rounded">@mittelalterliches</code> als Name gelesen, und eine solche Referenz existiert nicht.
+          </p>
+          <p class="text-sm text-red-700 dark:text-red-400 mb-3">
+            Ebenso gilt: Der Zeichensatz umfasst nur ASCII-Buchstaben, Ziffern, <code class="bg-red-200 dark:bg-red-800 px-1 rounded">_</code>, <code class="bg-red-200 dark:bg-red-800 px-1 rounded">-</code> und Hangul —
+            <strong>Umlaute wie ä/ö/ü und ß werden nicht erkannt.</strong> <code class="bg-red-200 dark:bg-red-800 px-1 rounded">@könig</code> wird nur bis <code class="bg-red-200 dark:bg-red-800 px-1 rounded">@k</code> als Name gelesen und findet keine Referenz.
+            Deshalb bleiben <code class="bg-red-200 dark:bg-red-800 px-1 rounded">könig</code> und <code class="bg-red-200 dark:bg-red-800 px-1 rounded">königin</code> im Beispiel in der Spalte <code class="bg-red-200 dark:bg-red-800 px-1 rounded">characters</code>.
+          </p>
+          <ul class="text-sm text-red-600 dark:text-red-400 space-y-1 ml-4">
+            <li>• <strong>Lösung A</strong> — Namen mit Leerzeichen oder Umlauten über eine Tag-Spalte anhängen, z. B. <code class="bg-red-200 dark:bg-red-800 px-1 rounded">characters</code> oder <code class="bg-red-200 dark:bg-red-800 px-1 rounded">style_tag</code> (dort sind beide erlaubt).</li>
+            <li>• <strong>Lösung B</strong> — Referenzen, die Sie erwähnen wollen, von Anfang an mit einem <strong>ASCII-Namen aus einem einzigen Token</strong> versehen (<code class="bg-red-200 dark:bg-red-800 px-1 rounded">koenig</code>, <code class="bg-red-200 dark:bg-red-800 px-1 rounded">mittelalter-historiendrama</code>).</li>
+          </ul>
+        </div>
+
+        <!-- Flow vs API -->
+        <div class="bg-violet-50 dark:bg-violet-900/20 rounded-xl border border-violet-200 dark:border-violet-800 p-5 mb-2">
+          <h3 class="font-bold text-violet-800 dark:text-violet-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">🔀</span>
+            Der Flow-Login-Modus ist strenger
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-cyan-700 dark:text-cyan-300 mb-2">🔑 API-Modus (BYOK)</div>
+              <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                <li>• <strong>Jeder Typ</strong> kann erwähnt werden — character / scene / style</li>
+                <li>• Ein nicht zugeordnetes <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@Token</code> bleibt einfach als Text stehen und <strong>der Lauf geht weiter</strong></li>
+              </ul>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-violet-700 dark:text-violet-300 mb-2">🌊 Flow-Login-Modus</div>
+              <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                <li>• Nur Referenzen vom <strong>Typ character</strong>, die zusätzlich <strong>mit Flow synchronisiert</strong> sind, können erwähnt werden</li>
+                <li>• Ein nicht auflösbares <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@Token</code> <strong>blockiert den Lauf</strong> — es sei denn, jeder nicht aufgelöste Name entspricht einer hochgeladenen Charakter-Referenz; dann wird das <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@</code> entfernt und der Lauf mit dieser Referenz fortgesetzt</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-xs text-violet-700 dark:text-violet-400 mt-3">
+            💡 Prüfen Sie vor einem Batch-Lauf im Flow-Modus, ob jeder erwähnte Name eine registrierte und synchronisierte Charakter-Referenz ist. (In einem Projekt ganz ohne Charakter-Referenzen gilt <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@</code> nicht als Erwähnung und bleibt einfacher Text.)
+          </p>
+        </div>
+      </div>
+
       <!-- SRT Format -->
       <div id="srt-subtitle" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
@@ -2129,6 +2343,12 @@ Jetzt die Referenzliste für diese Geschichte erstellen:</pre>
             </svg>
             scene-sample.csv
           </a>
+          <a href="samples/sample-scenes-mentions.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-lg hover:bg-cyan-200 dark:hover:bg-cyan-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            sample-scenes-mentions.csv
+          </a>
           <a href="/samples/reference-sample.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
@@ -2174,6 +2394,12 @@ Jetzt die Referenzliste für diese Geschichte erstellen:</pre>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
             Audio-Paket-Anleitung
+          </a>
+          <a href="/guide/de/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Story-Modus-Anleitung
           </a>
         </div>
       </div>

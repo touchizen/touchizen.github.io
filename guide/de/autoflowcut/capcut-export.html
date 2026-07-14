@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoFlowCut - CapCut Export-Anleitung</title>
+  <title>AutoFlowCut - Export-Anleitung (CapCut · Premiere Pro · Vrew)</title>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
   <script>
@@ -12,8 +12,8 @@
     gtag('js', new Date());
     gtag('config', 'G-S0JLFKK5G0');
   </script>
-  <meta name="description" content="Erfahren Sie, wie Sie aus AutoFlowCut exportierte Projekte in CapCut importieren. CapCut Projektordner-Pfade für macOS und Windows.">
-  <meta name="keywords" content="AutoFlowCut, CapCut Export, CapCut Projekt, KI Bildgenerierung, Google Flow AI, Videobearbeitung, Projekt importieren">
+  <meta name="description" content="So exportierst du ein AutoFlowCut-Projekt nach CapCut, Adobe Premiere Pro (.prproj) und Vrew (.vrew): Speicherorte, CapCut-Projektordnerpfade und was passiert, wenn der Editor nicht installiert ist.">
+  <meta name="keywords" content="AutoFlowCut, CapCut Export, Premiere Pro Export, prproj, Vrew Export, vrew, KI-Bildgenerierung, Videobearbeitung, Projektimport">
   <meta name="author" content="Touchizen">
   <meta name="robots" content="index, follow">
 
@@ -30,8 +30,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://touchizen.com/guide/de/autoflowcut/capcut-export.html">
-  <meta property="og:title" content="AutoFlowCut - CapCut Export-Anleitung">
-  <meta property="og:description" content="Wie man aus AutoFlowCut exportierte Projekte in CapCut importiert. macOS und Windows.">
+  <meta property="og:title" content="AutoFlowCut - Export-Anleitung (CapCut · Premiere Pro · Vrew)">
+  <meta property="og:description" content="So exportierst du ein AutoFlowCut-Projekt nach CapCut, Premiere Pro (.prproj) und Vrew (.vrew). Für macOS und Windows.">
   <meta property="og:image" content="https://touchizen.com/images/autoflowcut-og.png">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Touchizen">
@@ -39,8 +39,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@touchizen">
-  <meta name="twitter:title" content="AutoFlowCut - CapCut Export-Anleitung">
-  <meta name="twitter:description" content="Aus AutoFlowCut exportierte Projekte in CapCut importieren.">
+  <meta name="twitter:title" content="AutoFlowCut - Export-Anleitung (CapCut · Premiere Pro · Vrew)">
+  <meta name="twitter:description" content="So exportierst du ein AutoFlowCut-Projekt nach CapCut, Premiere Pro und Vrew.">
   <meta name="twitter:image" content="https://touchizen.com/images/autoflowcut-og.png">
 
   <!-- Structured Data (JSON-LD) -->
@@ -48,15 +48,15 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "CapCut Projekt Export-Anleitung",
-    "description": "Wie man aus AutoFlowCut exportierte Projekte in CapCut importiert",
+    "name": "AutoFlowCut Export-Anleitung (CapCut · Premiere Pro · Vrew)",
+    "description": "So exportierst du ein AutoFlowCut-Projekt nach CapCut, Adobe Premiere Pro (.prproj) und Vrew (.vrew)",
     "image": "https://touchizen.com/images/autoflowcut-og.png",
     "inLanguage": "de",
     "step": [
-      {"@type": "HowToStep", "name": "Informationen eingeben", "text": "Benutzername und Projektnummer im Export-Modal eingeben"},
-      {"@type": "HowToStep", "name": "ZIP entpacken", "text": "Die heruntergeladene ZIP-Datei entpacken"},
-      {"@type": "HowToStep", "name": "Ordner kopieren", "text": "In den CapCut-Projektordner kopieren"},
-      {"@type": "HowToStep", "name": "Neustart", "text": "CapCut neu starten"}
+      {"@type": "HowToStep", "name": "Ziel wählen", "text": "Im ▾-Menü der Export-Schaltfläche CapCut, Premiere oder Vrew auswählen"},
+      {"@type": "HowToStep", "name": "Optionen prüfen", "text": "Im Export-Dialog Speicherort sowie Skalierung, Ken-Burns- und Untertiteloptionen prüfen"},
+      {"@type": "HowToStep", "name": "Exportieren", "text": "Auf Exportieren klicken — die App schreibt die Projektdatei direkt auf die Festplatte"},
+      {"@type": "HowToStep", "name": "Im Editor öffnen", "text": "Die App startet den Editor mit deinem Projekt"}
     ],
     "author": {
       "@type": "Organization",
@@ -126,117 +126,216 @@
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
           </svg>
-          Export-Anleitung
+          Export Guide
         </div>
         <h1 class="text-3xl md:text-4xl font-bold mb-4">
-          <span class="gradient-text">CapCut Export-Anleitung</span>
+          <span class="gradient-text">Export-Anleitung</span>
         </h1>
         <p class="text-gray-600 dark:text-gray-400 text-lg">
-          So importieren Sie aus AutoFlowCut exportierte Projekte in CapCut
+          So exportierst du ein AutoFlowCut-Projekt nach CapCut, Adobe Premiere Pro oder Vrew
+        </p>
+      </div>
+
+      <!-- Table of Contents -->
+      <nav class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-5 md:p-6 mb-8" aria-label="📑 Inhaltsverzeichnis">
+        <h2 class="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-3">📑 Inhaltsverzeichnis</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
+        <li><a href="#export-targets" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎯 Drei Exportziele</a></li>
+        <li><a href="#quick-start" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚀 Schnellstart (4 Schritte)</a></li>
+        <li><a href="#capcut" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">✂️ Export nach CapCut</a></li>
+        <li><a href="#username" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">👤 Systembenutzernamen finden</a></li>
+        <li><a href="#capcut-paths" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📁 CapCut-Projektordnerpfad</a></li>
+        <li><a href="#premiere" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎬 Export nach Premiere Pro</a></li>
+        <li><a href="#vrew" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📝 Export nach Vrew</a></li>
+        <li><a href="#options" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">⚙️ Gemeinsame Exportoptionen</a></li>
+        <li><a href="#not-installed" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">⬇️ Wenn der Editor fehlt</a></li>
+        <li><a href="#troubleshooting" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔧 Fehlerbehebung</a></li>
+        </ul>
+      </nav>
+
+      <!-- Export Targets -->
+      <div id="export-targets" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🎯</span>
+          Drei Exportziele
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          AutoFlowCut exportiert ein fertiges Projekt in drei Editoren. Wähle das Ziel im <strong>▾</strong>-Menü neben der Export-Schaltfläche oder über die Tabs oben im Export-Dialog.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">✂️ CapCut</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li><strong>Ergebnis</strong> — ein CapCut-Projektordner</li>
+              <li><strong>Speicherort</strong> — dein CapCut-Projektordner (automatisch erkannt)</li>
+              <li><strong>Benutzername nötig</strong> — ja, er ist Teil des Pfads</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">🎬 Premiere Pro</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li><strong>Ergebnis</strong> — eine <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code>-Datei</li>
+              <li><strong>Speicherort</strong> — der Projektordner in deinem Arbeitsordner</li>
+              <li><strong>Benutzername nötig</strong> — nein</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">📝 Vrew</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li><strong>Ergebnis</strong> — eine <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>-Datei</li>
+              <li><strong>Speicherort</strong> — der Projektordner in deinem Arbeitsordner</li>
+              <li><strong>Benutzername nötig</strong> — nein</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">
+          ℹ️ Pro Export wird <strong>genau ein Ziel</strong> geschrieben — es gibt keinen gemeinsamen Export in alle drei Formate. Möchtest du ein zweites Format, wähle es erneut aus und exportiere noch einmal.
+        </p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          💡 Dein <strong>Arbeitsordner</strong> ist der in den Einstellungen gewählte Ordner, in dem die erzeugten Bilder, Videos und Audiodateien liegen. Premiere und Vrew legen ihre Projektdatei direkt neben diese Medien (<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">Arbeitsordner/Projektname/</code>) — du musst also keinen Pfad eingeben.
         </p>
       </div>
 
       <!-- Quick Steps -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+      <div id="quick-start" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🚀</span>
           Schnellstart (4 Schritte)
         </h2>
         <div class="space-y-6">
-          <!-- Schritt 1 -->
+          <!-- Step 1 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
-            <div class="flex-1">
-              <p class="font-medium text-gray-900 dark:text-white">Informationen im Export-Modal eingeben</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Szenen-Tab > Klicken Sie auf <strong>"📦 CapCut"</strong>, dann Benutzername und Projektnummer eingeben</p>
-
-              <!-- Export Modal Mockup (Interaktiv) -->
-              <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 overflow-hidden text-xs shadow-lg">
-                <!-- Modal Header -->
-                <div class="bg-gray-100 dark:bg-gray-700 px-4 py-2 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
-                  <span class="font-bold text-gray-800 dark:text-white">📦 CapCut Export</span>
-                  <span class="text-gray-400">✕</span>
-                </div>
-                <!-- Modal Content -->
-                <div class="p-4 space-y-3">
-                  <!-- OS Selection (Interaktiv) -->
-                  <div class="flex gap-2">
-                    <button id="mockup-os-mac" onclick="selectMockupOS('mac')" style="flex:1; padding:10px 16px; border:2px solid #007AFF; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;">🍎 macOS</button>
-                    <button id="mockup-os-win" onclick="selectMockupOS('win')" style="flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;">🪟 Windows</button>
-                  </div>
-                  <!-- Username Input (Interaktiv) -->
-                  <div>
-                    <label class="block text-gray-600 dark:text-gray-400 mb-1">👤 System-Benutzername <span class="text-red-500">*</span></label>
-                    <div class="relative">
-                      <input type="text" id="mockup-username" value="max" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
-                      <span class="absolute right-2 top-2 text-green-500">✓</span>
-                    </div>
-                    <p class="text-gray-500 mt-1">💡 Im Terminal <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">whoami</code> eingeben</p>
-                  </div>
-                  <!-- Project Number Input (Interaktiv) -->
-                  <div>
-                    <label class="block text-gray-600 dark:text-gray-400 mb-1">📁 Projektnummer <span class="text-red-500">*</span></label>
-                    <div class="relative">
-                      <input type="text" id="mockup-project" value="0131" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
-                      <span class="absolute right-2 top-2 text-green-500">✓</span>
-                    </div>
-                    <p class="text-gray-500 mt-1">💡 Die nächste Nummer im CapCut-Ordner prüfen</p>
-                  </div>
-                  <!-- Preset-Auswahl (Pill-Buttons) -->
-                  <div id="mockup-preset-area">
-                    <label class="block text-gray-600 dark:text-gray-400 mb-1">📂 Pfad-Voreinstellung</label>
-                    <div id="mockup-presets" class="flex gap-1 flex-wrap"></div>
-                  </div>
-                  <!-- Generated Path (Dynamisch) -->
-                  <div class="bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg p-3">
-                    <label class="block text-green-700 dark:text-green-400 text-xs font-bold mb-1">📂 Generierter Pfad</label>
-                    <code id="mockup-path" class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/max/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
-                  </div>
-                </div>
-                <!-- Modal Footer -->
-                <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 flex justify-end gap-2 border-t border-gray-300 dark:border-gray-600">
-                  <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">Abbrechen</span>
-                  <span class="px-4 py-2 bg-primary-500 text-white rounded-lg font-medium cursor-pointer hover:bg-primary-600 transition-colors">📦 Exportieren</span>
-                </div>
-              </div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Exportziel wählen</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Öffne das <strong>▾</strong>-Menü der Schaltfläche <strong>„📦 Exportieren"</strong> und wähle <strong>✂️ CapCut</strong>, <strong>🎬 Premiere</strong> oder <strong>📝 Vrew</strong>. Die Schaltfläche merkt sich deine letzte Wahl; im geöffneten Dialog kannst du über die Tabs weiterhin wechseln.</p>
             </div>
           </div>
 
-          <!-- Schritt 2 -->
+          <!-- Step 2 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">ZIP-Datei entpacken</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Doppelklicken Sie auf die heruntergeladene <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">projektname_capcut.zip</code> zum Entpacken</p>
+              <p class="font-medium text-gray-900 dark:text-white">Speicherort und Optionen prüfen</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Bei CapCut zeigt der Dialog den Projektordnerpfad und die Projektnummer, bei Premiere und Vrew die Datei, die geschrieben wird. Skalierung, Ken Burns und Untertitel gelten für alle drei Ziele gleichermaßen.</p>
             </div>
           </div>
 
-          <!-- Schritt 3 -->
+          <!-- Step 3 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">In den CapCut-Projektordner kopieren</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Kopieren Sie den entpackten Ordner (z.B. <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">0131</code>) in den unten angegebenen Pfad</p>
+              <p class="font-medium text-gray-900 dark:text-white">📦 Exportieren klicken</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Die App schreibt die Projektdatei direkt auf die Festplatte. Nichts muss entpackt oder kopiert werden.</p>
             </div>
           </div>
 
-          <!-- Schritt 4 -->
+          <!-- Step 4 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">CapCut neu starten</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">CapCut vollständig schließen und neu starten, dann erscheint das Projekt in Ihrer Liste</p>
+              <p class="font-medium text-gray-900 dark:text-white">Im Editor öffnen</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Nach dem Export startet die App den Editor für dich. Schlägt das fehl, erscheint ein Hinweis — öffne die gespeicherte Datei dann einfach selbst.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Benutzername finden -->
-      <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 md:p-8 mb-8">
+      <!-- CapCut -->
+      <div id="capcut" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">✂️</span>
+          Export nach CapCut
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Wählst du den Tab <strong>✂️ CapCut</strong>, erkennt die App deinen Systembenutzernamen und den CapCut-Projektordner und trägt die <strong>nächste freie Projektnummer</strong> ein. Wird der Ordner nicht gefunden oder soll das Projekt woanders liegen, wechsle die Voreinstellung (CapCut / CapCut Pro / Documents / Benutzerdefiniert).
+        </p>
+
+        <!-- Export-Dialog-Mockup (interaktiv) -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 overflow-hidden text-xs shadow-lg mb-6">
+          <!-- Dialog-Kopf -->
+          <div class="bg-gray-100 dark:bg-gray-700 px-4 py-2 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
+            <span class="font-bold text-gray-800 dark:text-white">📦 Export nach CapCut</span>
+            <span class="text-gray-400">✕</span>
+          </div>
+          <!-- Dialog-Inhalt -->
+          <div class="p-4 space-y-3">
+            <!-- Format-Tabs -->
+            <div class="flex gap-1">
+              <span class="flex-1 text-center px-2 py-1.5 rounded-lg border-2 border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-semibold">✂️ CapCut</span>
+              <span class="flex-1 text-center px-2 py-1.5 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400">🎬 Premiere</span>
+              <span class="flex-1 text-center px-2 py-1.5 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400">📝 Vrew</span>
+            </div>
+            <!-- Betriebssystem (interaktiv) -->
+            <div class="flex gap-2">
+              <button id="mockup-os-mac" onclick="selectMockupOS('mac')" style="flex:1; padding:10px 16px; border:2px solid #007AFF; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;">🍎 macOS</button>
+              <button id="mockup-os-win" onclick="selectMockupOS('win')" style="flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;">🪟 Windows</button>
+            </div>
+            <!-- Benutzername (automatisch erkannt) -->
+            <div>
+              <label class="block text-gray-600 dark:text-gray-400 mb-1">👤 Systembenutzername</label>
+              <div class="relative">
+                <input type="text" id="mockup-username" value="testUser" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+                <span class="absolute right-2 top-2 text-green-500">✓</span>
+              </div>
+              <p class="text-gray-500 mt-1">💡 Die App erkennt ihn automatisch (hier änderbar, um den Pfad vorzuschauen)</p>
+            </div>
+            <!-- Projektnummer (interaktiv) -->
+            <div>
+              <label class="block text-gray-600 dark:text-gray-400 mb-1">📁 Projektnummer <span class="text-red-500">*</span></label>
+              <div class="relative">
+                <input type="text" id="mockup-project" value="0131" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+                <span class="absolute right-2 top-2 text-green-500">✓</span>
+              </div>
+              <p class="text-gray-500 mt-1">💡 Die nächste freie Nummer wird automatisch eingetragen (änderbar)</p>
+            </div>
+            <!-- Voreinstellungen -->
+            <div id="mockup-preset-area">
+              <label class="block text-gray-600 dark:text-gray-400 mb-1">📂 Pfad-Voreinstellung</label>
+              <div id="mockup-presets" class="flex gap-1 flex-wrap"></div>
+            </div>
+            <!-- Erzeugter Pfad -->
+            <div class="bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg p-3">
+              <label class="block text-green-700 dark:text-green-400 text-xs font-bold mb-1">📂 Erzeugter Pfad</label>
+              <code id="mockup-path" class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/testUser/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
+            </div>
+          </div>
+          <!-- Dialog-Fuß -->
+          <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 flex justify-end gap-2 border-t border-gray-300 dark:border-gray-600">
+            <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">Abbrechen</span>
+            <span class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium cursor-pointer hover:from-cyan-600 hover:to-blue-700 transition-colors">📦 Exportieren</span>
+          </div>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Was wird wohin geschrieben</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Beim Export schreibt die App die Projektdateien <strong>direkt in deinen CapCut-Projektordner</strong>. Bilder, Videos, Audio und Untertitel (SRT) werden <strong>nicht kopiert</strong> — das Projekt verweist per absolutem Pfad auf die Originale in deinem Arbeitsordner.
+        </p>
+        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto mb-4">
+          <pre>📁 com.lveditor.draft/0131/     # CapCut-Projektordner (hierhin geschrieben)
+├── 📄 draft_info.json          # CapCut-Projektdaten
+├── 📄 draft_meta_info.json     # Projekt-Metadaten
+└── 📄 draft_agency_info.json   # von CapCut erwartete Standarddatei
+
+📁 Arbeitsordner/Projektname/   # Medien bleiben hier (per absolutem Pfad referenziert)
+├── 🖼️ scene_001.png
+├── 🎞️ ...
+└── 📄 Projektname_subtitle_ko.srt  # wenn Untertitel enthalten sind</pre>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          ⚠️ Wenn du den <strong>Arbeitsordner</strong> (oder den Projektordner darin) nach dem Export <strong>verschiebst, umbenennst oder löschst</strong>, meldet CapCut fehlende Medien. Sind die Dateien geschrieben, startet die App CapCut für dich.
+        </p>
+      </div>
+
+      <!-- Systembenutzernamen finden -->
+      <div id="username" class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">👤</span>
-          System-Benutzernamen finden
+          Systembenutzernamen finden
         </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          Dein Systembenutzername ist Teil des CapCut-Projektordnerpfads. Normalerweise erkennt die App ihn automatisch — du brauchst ihn aber, wenn du einen <strong>benutzerdefinierten Pfad</strong> eingibst oder den angezeigten Pfad prüfen willst. <strong>Premiere und Vrew speichern in deinen Arbeitsordner und brauchen den Benutzernamen daher nie.</strong>
+        </p>
         <div class="grid md:grid-cols-2 gap-6">
           <!-- macOS -->
           <div>
@@ -245,9 +344,9 @@
               <span class="font-semibold text-gray-900 dark:text-white">macOS</span>
             </div>
             <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-decimal list-inside">
-              <li>Terminal öffnen (Spotlight: <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Space</kbd> → "Terminal")</li>
+              <li>Terminal öffnen (Spotlight: <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Space</kbd> → „Terminal")</li>
               <li><code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> eingeben und Enter drücken</li>
-              <li>Der angezeigte Name ist Ihr Benutzername</li>
+              <li>Der angezeigte Name ist dein Benutzername</li>
             </ol>
           </div>
           <!-- Windows -->
@@ -257,19 +356,19 @@
               <span class="font-semibold text-gray-900 dark:text-white">Windows</span>
             </div>
             <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-decimal list-inside">
-              <li>Eingabeaufforderung öffnen (<kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + R</kbd> → "cmd")</li>
+              <li>Eingabeaufforderung öffnen (<kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + R</kbd> → „cmd")</li>
               <li><code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> eingeben und Enter drücken</li>
-              <li>Angezeigt als <code class="text-gray-700 dark:text-gray-300">COMPUTER\Benutzername</code> Format (nur den Benutzernamen verwenden)</li>
+              <li>Die Ausgabe hat das Format <code class="text-gray-700 dark:text-gray-300">Computername\Benutzername</code> — nur den Benutzernamen verwenden</li>
             </ol>
           </div>
         </div>
       </div>
 
       <!-- Project Folder Paths -->
-      <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-8">
+      <div id="capcut-paths" class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">📁</span>
-          CapCut Projektordner-Pfade
+          CapCut-Projektordnerpfad
         </h2>
 
         <!-- macOS -->
@@ -287,7 +386,7 @@
             </button>
           </div>
           <p class="text-sm text-amber-700 dark:text-amber-400 mt-2">
-            💡 Im Finder drücken Sie <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Shift + G</kbd> und fügen Sie den Pfad ein
+            💡 Im Finder <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Shift + G</kbd> drücken und den Pfad einfügen
           </p>
         </div>
 
@@ -328,67 +427,202 @@
             </button>
           </div>
           <p class="text-sm text-amber-700 dark:text-amber-400 mt-2">
-            💡 Pfad direkt in die Datei-Explorer-Adressleiste eingeben oder <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + E</kbd>
+            💡 Pfad direkt in die Adressleiste des Explorers eingeben oder <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + E</kbd> drücken
           </p>
         </div>
       </div>
 
-      <!-- Output Structure -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+      <!-- Premiere -->
+      <div id="premiere" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-2xl">📂</span>
-          Export-Ordnerstruktur
+          <span class="text-2xl">🎬</span>
+          Export nach Premiere Pro
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
-          Nach dem Entpacken sehen Sie die folgende Ordnerstruktur. Kopieren Sie diesen gesamten Ordner in Ihren CapCut-Projektpfad.
+          Wählst du den Tab <strong>🎬 Premiere</strong>, zeigt der Dialog schlicht die <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code>-Datei an, die geschrieben wird. Kein Pfad zum Eintippen, kein Benutzername zum Nachschlagen — die Datei landet im Projektordner deines Arbeitsordners, direkt neben den Medien.
         </p>
-        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto">
-          <pre>📁 project_folder/
-├── 📄 draft_info.json        # CapCut Projektdaten
-├── 📄 draft_meta_info.json   # Projekt-Metadaten
-├── 📁 media/                 # Bild/Video/SFX-Dateien
-│   ├── 🖼️ scene_001.png
-│   ├── 🖼️ scene_002.png
-│   └── ...
-└── 📄 README.txt             # Import-Anleitung</pre>
+        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto mb-4">
+          <pre>📁 Arbeitsordner/Projektname/
+├── 📄 Projektname.prproj   # Premiere-Pro-Projekt (gzip-komprimiertes XML)
+├── 🖼️ scene_001.png        # Medien bleiben, wo sie sind
+└── 🎞️ ...</pre>
+        </div>
+        <div class="space-y-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Im Editor öffnen</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Nach dem Export öffnet die App die <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code> in Premiere Pro</li>
+              <li>Schlägt der Start fehl, erscheint ein Hinweis — öffne die <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code> stattdessen per Doppelklick im Finder / Explorer</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Gut zu wissen</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li><strong>Untertitel stecken im Projekt selbst</strong> — anders als bei CapCut wird keine separate SRT-Datei geschrieben</li>
+              <li>Die Datei heißt immer wie dein Projekt. Existiert sie bereits, <strong>fragt die App vor dem Überschreiben nach</strong>. Beim Überschreiben gehen deine Bearbeitungen in Premiere Pro verloren</li>
+              <li>Ohne Arbeitsordner bleibt die Export-Schaltfläche deaktiviert — lege ihn zuerst in den Einstellungen fest</li>
+            </ul>
+          </div>
         </div>
       </div>
 
+      <!-- Vrew -->
+      <div id="vrew" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📝</span>
+          Export nach Vrew
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Wählst du den Tab <strong>📝 Vrew</strong>, zeigt der Dialog die <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>-Datei an, die geschrieben wird. Wie bei Premiere brauchst du weder einen Pfad noch deinen Benutzernamen. Die <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>-Datei ist ein Paket, das die Projektdaten samt Medien enthält.
+        </p>
+        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto mb-4">
+          <pre>📁 Arbeitsordner/Projektname/
+├── 📄 Projektname.vrew   # Vrew-Projekt (Paket mit enthaltenen Medien)
+├── 🖼️ scene_001.png
+└── 🎞️ ...</pre>
+        </div>
+        <div class="space-y-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Im Editor öffnen</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Nach dem Export öffnet die App die <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code> in Vrew</li>
+              <li>Schlägt der Start fehl, erscheint ein Hinweis — öffne die gespeicherte <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code> dann selbst</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Gut zu wissen</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Existiert bereits eine <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code> gleichen Namens, <strong>fragt die App vor dem Überschreiben nach</strong></li>
+              <li>Elemente, die der Vrew-Export noch nicht unterstützt, werden <strong>übersprungen</strong> — ein Hinweis nennt dir die Anzahl</li>
+              <li>Erzählersegmente aus dem Story-Modus werden nicht in die <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code> übernommen (nur CapCut und Premiere)</li>
+              <li>Über den MCP-Server lassen sich nur die Exporte nach CapCut und Premiere automatisieren — nach Vrew exportierst du direkt in der App</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shared Options -->
+      <div id="options" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">⚙️</span>
+          Gemeinsame Exportoptionen
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Diese Optionen gelten für alle drei Ziele; die App merkt sich deine letzte Auswahl.
+        </p>
+        <div class="space-y-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">🔍 Bildskalierung</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li><strong>Fill</strong> — das Bild füllt den Rahmen (bei abweichendem Seitenverhältnis können Ränder abgeschnitten werden)</li>
+              <li><strong>Fit</strong> — das ganze Bild bleibt sichtbar (bei abweichendem Seitenverhältnis können Balken entstehen)</li>
+              <li><strong>None</strong> — Originalgröße (100%) verwenden</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">🎬 Ken-Burns-Effekt</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Legt eine automatische Zoom-/Schwenk-Animation über Standbilder</li>
+              <li><strong>Modus</strong> — Zufall (jeder Zyklus eine neue Position) oder Muster (aus Zoom in, Zoom out und Schwenk)</li>
+              <li><strong>Zyklus</strong> — wie oft die Animation wechselt, in Sekunden</li>
+              <li><strong>Skalierung</strong> — Zoombereich in Prozent; 100–150 % sind sinnvoll</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">💬 Untertitel einbeziehen</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Erscheint nur, wenn das Projekt tatsächlich Untertitel hat</li>
+              <li>CapCut schreibt eine SRT-Datei in den Arbeitsordner und verweist darauf; Premiere bettet die Untertitel in die Projektdatei ein</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editor not installed -->
+      <div id="not-installed" class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">⬇️</span>
+          Wenn der Editor fehlt
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Vor dem Export prüft die App, ob der Ziel-Editor installiert ist. Fehlt er, bricht der Export ab und die App <strong>bietet an, die Downloadseite zu öffnen</strong>. Bestätigst du, öffnet sich die folgende Adresse im Browser.
+        </p>
+        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc list-inside mb-4">
+          <li><strong>✂️ CapCut</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded break-all">https://www.capcut.com/download</code> (im Microsoft-Store-Build öffnet sich stattdessen die Store-Seite)</li>
+          <li><strong>🎬 Premiere Pro</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded break-all">https://www.adobe.com/products/premiere.html</code></li>
+          <li><strong>📝 Vrew</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded break-all">https://vrew.voyagerx.com/</code></li>
+        </ul>
+        <p class="text-sm text-amber-700 dark:text-amber-400">
+          💡 Bei einem <strong>benutzerdefinierten</strong> CapCut-Pfad entfällt die Installationsprüfung. Im Microsoft-Store-Build zeigt die App die Downloadadressen für Premiere und Vrew als Text an, statt einen Link zu öffnen.
+        </p>
+      </div>
+
       <!-- Troubleshooting -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+      <div id="troubleshooting" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🔧</span>
-          Problemlösung
+          Fehlerbehebung
         </h2>
         <div class="space-y-4">
           <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Projekt erscheint nicht in CapCut</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Das Projekt erscheint nicht in CapCut</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-              <li>Versuchen Sie, CapCut vollständig zu schließen und neu zu starten</li>
-              <li>Überprüfen Sie, ob der Ordnerpfad korrekt ist (in den com.lveditor.draft Ordner kopieren)</li>
-              <li>Stellen Sie sicher, dass der Projektordnername keine Sonderzeichen enthält</li>
+              <li>CapCut vollständig beenden und neu starten</li>
+              <li>Prüfen, ob der im Dialog gezeigte Pfad wirklich dein genutzter CapCut-Projektordner ist (com.lveditor.draft)</li>
+              <li>Sicherstellen, dass der Projektordnername keine Sonderzeichen enthält</li>
             </ul>
           </div>
           <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Mediendateien fehlen</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">CapCut meldet fehlende Mediendateien</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-              <li>Überprüfen Sie, ob sich der media-Ordner im Projektordner befindet</li>
-              <li>Stellen Sie sicher, dass die ZIP-Datei vollständig entpackt wurde</li>
+              <li>Das CapCut-Projekt kopiert keine Medien — es <strong>verweist per absolutem Pfad auf die Originale im Arbeitsordner</strong></li>
+              <li>Verschiebe, benenne oder lösche den Arbeitsordner (bzw. den Projektordner darin) nach dem Export nicht</li>
+              <li>Ist das schon passiert: an den alten Ort zurücklegen — oder den Arbeitsordner neu festlegen und erneut exportieren</li>
             </ul>
           </div>
           <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Welchen Pfad soll ich wählen?</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Welchen Pfad soll ich wählen? (CapCut)</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-              <li>Wechseln Sie zwischen den Voreinstellungen (CapCut / CapCut Pro / Documents) in der AutoFlowCut-Erweiterung</li>
-              <li>Öffnen Sie Ihren CapCut-Projektordner, um zu sehen, wo bestehende Projekte gespeichert sind</li>
-              <li>Normalerweise ist <strong>CapCut</strong> der Standardpfad</li>
+              <li>In AutoFlowCut die Voreinstellungen (CapCut / CapCut Pro / Documents) durchprobieren und vergleichen</li>
+              <li>Den CapCut-Projektordner direkt öffnen und nachsehen, wo deine bestehenden Projekte liegen</li>
+              <li>Meist ist <strong>CapCut</strong> der Standardpfad</li>
             </ul>
           </div>
           <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">AppData-Ordner ist nicht sichtbar (Windows)</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Der AppData-Ordner ist nicht sichtbar (Windows)</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-              <li>Datei-Explorer > Ansicht > Ausgeblendete Elemente anzeigen</li>
-              <li>Oder geben Sie %localappdata% direkt in die Adressleiste ein</li>
+              <li>Explorer > Ansicht > Ausgeblendete Elemente aktivieren</li>
+              <li>Oder %localappdata% direkt in die Adressleiste eingeben</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Die Export-Schaltfläche ist deaktiviert (Premiere · Vrew)</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Beide Ziele brauchen einen Arbeitsordner; ohne ihn bleibt die Schaltfläche deaktiviert</li>
+              <li>Lege den Arbeitsordner in den Einstellungen fest und versuche es erneut</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Ich werde gefragt, ob ich überschreiben will (Premiere · Vrew)</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Die Projektdatei heißt immer wie dein Projekt — eine vorhandene Datei muss vor dem Ersetzen bestätigt werden</li>
+              <li>Um Bearbeitungen aus Premiere Pro zu behalten: abbrechen, die vorhandene <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code> umbenennen und erneut exportieren</li>
+              <li>CapCut fragt nie, weil es in die nächste freie Projektnummer schreibt</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Der Editor öffnet sich nicht automatisch</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Die Datei ist bereits gespeichert — ein fehlgeschlagener Start macht den Export nicht rückgängig</li>
+              <li>Gehe zum Pfad aus dem Dialog und öffne die <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code> bzw. <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code> selbst</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">„Einige Elemente wurden übersprungen" (Vrew)</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Der Vrew-Export überspringt alles, was er noch nicht unterstützt, und nennt dir die Anzahl</li>
+              <li>Das Projekt selbst wird korrekt gespeichert — füge diese Elemente einfach in Vrew wieder ein</li>
+              <li>Wenn alle Elemente erhalten bleiben sollen, exportiere stattdessen nach CapCut oder Premiere</li>
             </ul>
           </div>
         </div>
@@ -425,6 +659,12 @@
             </svg>
             Audio-Paket-Anleitung
           </a>
+          <a href="/guide/de/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Story-Modus-Anleitung
+          </a>
         </div>
       </div>
 
@@ -444,13 +684,13 @@
   <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <p class="text-sm text-gray-500 dark:text-gray-400">
-        &copy; 2026 Touchizen. Alle Rechte vorbehalten.
+        &copy; 2026 Touchizen. All rights reserved.
       </p>
     </div>
   </footer>
 
   <script>
-    // Copy path function
+    // Pfad kopieren
     function copyPath(elementId) {
       const text = document.getElementById(elementId).textContent;
       navigator.clipboard.writeText(text).then(() => {
@@ -463,7 +703,7 @@
       });
     }
 
-    // Mockup Interaktivität
+    // Mockup-Interaktivität
     let mockupOS = 'mac';
     let mockupPreset = 'capcut';
 
@@ -484,7 +724,7 @@
       const container = document.getElementById('mockup-presets');
       const presets = PRESETS[mockupOS] || PRESETS.win;
       container.innerHTML = presets.map(p =>
-        `<button onclick="selectMockupPreset('${p.value}')" style="padding:4px 10px; font-size:11px; border:${mockupPreset === p.value ? '2px solid #1976d2' : '1px solid #bbb'}; border-radius:14px; background:${mockupPreset === p.value ? '#e3f2fd' : '#fff'}; color:${mockupPreset === p.value ? '#1565c0' : '#555'}; cursor:pointer; font-weight:${mockupPreset === p.value ? '600' : '400'};">${p.label}</button>`
+        `<button onclick="selectMockupPreset('${p.value}')" style="padding:4px 10px; font-size:11px; border:${mockupPreset === p.value ? '2px solid #0891b2' : '1px solid #bbb'}; border-radius:14px; background:${mockupPreset === p.value ? '#ecfeff' : '#fff'}; color:${mockupPreset === p.value ? '#0e7490' : '#555'}; cursor:pointer; font-weight:${mockupPreset === p.value ? '600' : '400'};">${p.label}</button>`
       ).join('');
     }
 
@@ -513,7 +753,7 @@
     }
 
     function updateMockupPath() {
-      const username = document.getElementById('mockup-username').value || 'max';
+      const username = document.getElementById('mockup-username').value || 'testUser';
       const project = document.getElementById('mockup-project').value || '0131';
       const pathEl = document.getElementById('mockup-path');
 
@@ -536,7 +776,7 @@
       }
     }
 
-    // Initiale Voreinstellungs-Buttons rendern
+    // Voreinstellungs-Buttons initial rendern
     renderPresetButtons();
   </script>
   <script src="/guide/assets/header.js"></script>

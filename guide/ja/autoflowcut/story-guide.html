@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlowCut - ストーリーモードガイド</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
+  <meta name="description" content="白紙の状態から完成した動画まで、AutoFlowCutだけで作りきる。ストーリーモードの設定・リサーチ・シノプシス・台本・シーン分割・オーディオ・プロンプトの各ステップを解説します。">
+  <meta name="keywords" content="AutoFlowCut, ストーリーモード, AI台本, シーン分割, TTS, Typecast, ElevenLabs, Gemini, キャラクターリファレンス, CapCut, 動画自動化">
+  <meta name="author" content="Touchizen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://touchizen.com/guide/ja/autoflowcut/story-guide.html">
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/story-guide.html">
+  <link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/story-guide.html">
+  <link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/story-guide.html">
+  <link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/story-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/story-guide.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://touchizen.com/guide/ja/autoflowcut/story-guide.html">
+  <meta property="og:title" content="AutoFlowCut - ストーリーモードガイド">
+  <meta property="og:description" content="白紙の状態から完成した動画まで、AutoFlowCutだけで作りきる。ストーリーパイプラインの全ステップを解説します。">
+  <meta property="og:image" content="https://touchizen.com/images/autoflowcut-og.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Touchizen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@touchizen">
+  <meta name="twitter:title" content="AutoFlowCut - ストーリーモードガイド">
+  <meta name="twitter:description" content="白紙の状態から完成した動画まで、AutoFlowCutだけで作りきる。">
+  <meta name="twitter:image" content="https://touchizen.com/images/autoflowcut-og.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "AutoFlowCut ストーリーモードガイド",
+    "description": "AutoFlowCutのストーリーモードで、白紙の状態から完成した動画まで作る方法",
+    "image": "https://touchizen.com/images/autoflowcut-og.png",
+    "inLanguage": "ja",
+    "author": {
+      "@type": "Organization",
+      "name": "Touchizen",
+      "url": "https://touchizen.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/autoflowcut.svg?v=20260313">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+    [id] {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Shared header (see /guide/assets/header.js) -->
+  <div id="guide-header"></div>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          🎬 ストーリーモード
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">ストーリーモードガイド</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          白紙の状態から完成した動画まで、アプリの中だけで作りきる
+        </p>
+      </div>
+
+      <!-- Page TOC -->
+      <nav class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-5 md:p-6 mb-8" aria-label="📑 目次">
+        <h2 class="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-3">📑 目次</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
+        <li><a href="#what-is-story" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎬 ストーリーモードとは</a></li>
+        <li><a href="#pipeline" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🧭 ステッパーの全体像</a></li>
+        <li><a href="#setup" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">0️⃣ 設定</a></li>
+        <li><a href="#research" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">1️⃣ リサーチ</a></li>
+        <li><a href="#synopsis" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">2️⃣ シノプシス</a></li>
+        <li><a href="#script" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">3️⃣ 台本</a></li>
+        <li><a href="#scenes" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">4️⃣ シーン分割</a></li>
+        <li><a href="#audio" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">5️⃣ オーディオ</a></li>
+        <li><a href="#prompts" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">6️⃣ プロンプト</a></li>
+        <li><a href="#auto-run" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">⚡ 自動と一括実行</a></li>
+        <li><a href="#characters" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎭 登場人物と@メンション</a></li>
+        <li><a href="#generate-export" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚀 生成とエクスポート</a></li>
+        </ul>
+      </nav>
+
+      <!-- What is Story Mode -->
+      <div id="what-is-story" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎬</span>
+          ストーリーモードとは
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">v3.0.0</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          ストーリーモードは、ひとつのアイデアを「プロンプト・ナレーション・効果音まで揃ったシーン表」に変えるパイプラインです。タイトル（あるいは既に書き上げた台本）を渡すだけで、リサーチ → シノプシス → 台本 → シーン分割 → オーディオ → プロンプトと順に進み、各ステップの成果物をそのまま次のステップへ受け渡します。AutoFlowCutの外に出る必要はありません。
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">✍️</span>
+              <span class="font-semibold">ストーリーモードを使う場面</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">題材やタイトル、あるいは完成した台本はあるけれど、シーンもプロンプトも音声もまだ無いとき。その全部をストーリーモードが作ります。</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📥</span>
+              <span class="font-semibold">CSV / SRTインポートを使う場面</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">絵コンテ表や字幕、アプリの外で用意したオーディオパッケージが既にあるとき。<a href="/guide/ja/autoflowcut/import-guide.html" class="text-primary-600 dark:text-primary-400 hover:underline">ファイルインポートガイド</a>をご覧ください。</p>
+          </div>
+        </div>
+
+        <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-emerald-700 dark:text-emerald-300">
+            💡 <strong>ヒント:</strong> 2つの道は結局同じ場所で合流します。シーンがどちらから入ってきても、その後の生成とエクスポートはまったく同じように動きます。
+          </p>
+        </div>
+      </div>
+
+      <!-- The Stepper at a Glance -->
+      <div id="pipeline" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🧭</span>
+          ステッパーの全体像
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          ストーリー画面の上部にステッパーがあります。各ステップはチップになっていて、クリックすればそのステップが作った結果をいつでも見直せます。チップの中の色付きドットが状態を示します — <strong>待機</strong>・<strong>進行中</strong>・<strong>完了</strong>・<strong>エラー</strong>。
+        </p>
+
+        <pre class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">0 設定  →  ① リサーチ  →  ② シノプシス  →  ③ 台本  →  ④ シーン分割  →  ⑤ オーディオ  →  ⑥ プロンプト
+            (任意)        (ゲート)                    [自動]           [自動]            [自動]
+
+                                                                                ▶ 一括実行</pre>
+
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">ステップ</th>
+                <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">次のステップへ渡すもの</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>0 設定</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">ジャンル、生成AI、出力言語、台本の分量、シーン分割単位、レビュー設定、タイトル — そして（任意で）貼り付け・読み込んだ台本</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>① リサーチ</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">参考YouTube動画の構造分析と、ファクトチェック済みの主張</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>② シノプシス</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">あらすじと、確定した登場人物リスト</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>③ 台本</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">完成した台本本文</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>④ シーン分割</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">シーン、話者ごとのセグメント（感情つき）、効果音の指示</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>⑤ オーディオ</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">話者ごとに分かれたナレーショントラックと、生成された効果音</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>⑥ プロンプト</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">シーンごとの画像プロンプトと動画プロンプト</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-4 p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>補足:</strong> リサーチとシノプシスは実行ステップではなくゲートです。プロジェクトに該当する場合だけクリックでき、そうでなければグレーのままです。取り込んだ画像にシーンが固定されているプロジェクトでは、それを書き換えるステップはロックされます。
+          </p>
+        </div>
+      </div>
+
+      <!-- 0 Setup -->
+      <div id="setup" class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">0️⃣</span>
+          設定
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          パイプラインの入口タブです。ここで選んだ内容はプロジェクトと一緒に保存されるので、後で開き直してもフォームはそのまま復元されます。
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3">オプション</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">項目</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">内容</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>物語のタイプ</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">選べるジャンルは出力言語によって変わります。韓国語なら<em>野談</em>（朝鮮の説話）、英語なら<em>ダークヒストリー</em>。どちらの言語でも汎用の既定値である<em>カスタム</em>が使えます。</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>生成AI</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">台本を書くモデル — ClaudeまたはCodex。対応モデルではドロップダウンの隣に<strong>推論レベル</strong>の選択も表示されます。</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>出力言語</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">韓国語または英語。アプリのUI言語ではなく<em>物語の言語</em>です。</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>台本の分量</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">数値と単位。分はどちらの言語でも使え、韓国語なら文字数、英語なら単語数でも指定できます。最大60分。</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>シーン分割単位</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><em>シーン基準</em>（目標の長さを最小～最大秒で指定、既定は5～10秒）または<em>文単位</em>。<a href="#scenes" class="text-primary-600 dark:text-primary-400 hover:underline">シーン分割</a>を参照。</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>レビュー</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">台本・シーン・プロンプトそれぞれの自動レビュー切り替えと、回数（1～5回）。</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>タイトル</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">任意。空のまま台本がある場合は、シーン分割の直前にAutoFlowCutがタイトルを自動生成します。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">2つの始め方</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">A</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">タイトルから始める</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">タイトルを入力して<strong>✨ 開始</strong>を押すと、シノプシスのゲートに進みます。AIがあらすじと登場人物の案を作り、確定するのは人間です。</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">B</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">自分の台本から始める</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">入力欄に台本を貼り付けるか、<code class="bg-violet-200 dark:bg-violet-800 px-1 rounded">.txt</code> / <code class="bg-violet-200 dark:bg-violet-800 px-1 rounded">.md</code> ファイルをドラッグ＆ドロップします（<strong>📁 ファイル選択</strong>でも可）。<strong>✨ 開始</strong>を押すと台本がそのまま保存され、シノプシスのゲートがその台本から登場人物を逆抽出します。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>補足:</strong> 台本が既にある場合、ボタンは<strong>↻ 変更内容で再開</strong>に変わります。実際に何かを変えたときだけ有効になり、押すと台本から作り直すので、意図して押してください。
+          </p>
+        </div>
+      </div>
+
+      <!-- 1 Research -->
+      <div id="research" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">1️⃣</span>
+          リサーチ
+          <span class="text-xs bg-gray-400 dark:bg-gray-600 text-white px-2 py-0.5 rounded-full">任意</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          題材を決める前に、YouTubeで既に通用しているものを確かめます。リサーチはシノプシスの手前にあり、まだ台本が無いプロジェクトで使えます。キーワードで検索するので、タイトルすら不要です。
+        </p>
+
+        <div class="bg-gray-50 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3">進め方</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">検索</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">キーワードを入れ、件数（10 / 20 / 30件）とアップロード期間（すべて・直近1週間・直近30日）を選びます。YouTubeのURLを貼り付けて動画を手動で追加することもできます。</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">参考動画を選ぶ</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">結果はサムネイル・チャンネル・再生回数・投稿日が並ぶカードで返ってきます。使いたいものにチェックを入れ、カードをダブルクリックすると詳細（登録者数、公開日、バイラル指数、インライン再生）が開きます。</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">分析</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400"><strong>まとめて分析</strong>は3段階を続けて実行します — 字幕取得 → 構造分析 → ファクトチェック。<strong>字幕取得</strong>・<strong>構造分析</strong>・<strong>ファクトチェック</strong>を個別に実行することもでき、長引くときは<strong>⏹ 中断</strong>で止められます。</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">確定またはスキップ</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400"><strong>このリサーチを使う</strong>を押すとプロジェクトに保存され、シノプシスへ進みます。<strong>スキップ</strong>ならリサーチ無しでそのままシノプシスへ。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🧱</span>
+              <span class="font-semibold">構造分析</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">参考動画を物語のビートに分解して要約し、共通する論点と主要な主張を抽出します。</p>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🔎</span>
+              <span class="font-semibold">ファクトチェック</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">主張ごとに<em>検証済み</em>・<em>反証</em>・<em>未検証</em>の判定と根拠リンクが付きます。チェックした主張だけがプロジェクトに取り込まれ、既定では検証済みのみです。</p>
+          </div>
+        </div>
+
+        <div class="p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800 mb-4">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            ⚠️ <strong>yt-dlpが必要です。</strong> リサーチは<code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">yt-dlp</code>で検索結果と字幕を取得します。インストールされていない場合は、OSに応じたインストールコマンドがパネルに表示されます。
+          </p>
+        </div>
+
+        <div class="p-3 bg-red-100/50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
+          <p class="text-xs text-red-700 dark:text-red-400">
+            📜 <strong>参考・再構成のための機能です。</strong> 他人の字幕を無断で複製・再配布すると著作権侵害になるおそれがあります。アプリもリサーチパネルの冒頭で同じ注意を表示します。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 Synopsis -->
+      <div id="synopsis" class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">2️⃣</span>
+          シノプシス
+          <span class="text-xs bg-orange-500 text-white px-2 py-0.5 rounded-full">ゲート</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          シノプシスは、機械が物語を持って走り出す前に人間が一度確認する場所です。ここで登場人物を確定するまで、シーン分割もオーディオもプロンプトも始まりません。
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">やること</h3>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc pl-5">
+            <li><strong>タイトルから始めた場合:</strong> AIがあらすじをストリーミングで書き下ろし、編集可能なテキスト欄に流し込みながら、登場人物の案も提示します。</li>
+            <li><strong>自分の台本から始めた場合:</strong> 逆向きに動きます — 持ち込んだ台本から登場人物とあらすじを逆抽出します。</li>
+            <li>リサーチを確定していれば<strong>リサーチのコンテキストを含める</strong>チェックボックスが現れます。これが唯一のスイッチで、リサーチが黙って注入されることはありません。</li>
+            <li>あらすじは自由に編集でき、行数と文字数がリアルタイムで表示されます。</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">登場人物カード</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">1行が1人で、どの欄も自分で書き換えられます。行の追加・削除も自由です。</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">項目</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">使われる場所</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>名前</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">シーン表の話者名になり、のちに<code>@メンション</code>の呼び名になります</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>性別</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">男性 / 女性 / 不明。ナレーター選択モーダルを先に絞り込み、性別の食い違う声を選んだときに警告します</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>民族</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">自由入力。画像プロンプト内の人物の外見描写に組み込まれます</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>年齢</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">自由入力</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>役割</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">自由入力</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>プロンプト</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">人物の外見。リファレンスカードを生成するときに使われるのが、まさにこのテキストです — <a href="#characters" class="text-primary-600 dark:text-primary-400 hover:underline">登場人物と@メンション</a>を参照</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            ナレーションだけの台本などで登場人物がまったく居ない場合は、パネルがそう伝えます。空のまま確定して先に進めます。
+          </p>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">レビューと没入感スコア</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            <strong>レビュー</strong>を押すと、AIが自分の書いたシノプシスを読み直し、没入感を100点満点で採点したうえで書き直します。回数は1～5回で指定します。エディタの下のバッジには最初のスコアと最後のスコアが並んで表示されるので、書き直しが本当に効いたかどうかが目で分かります。スコアが下がった回の修正稿は破棄され、その旨がログに残ります。
+          </p>
+        </div>
+
+        <div class="p-3 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-orange-700 dark:text-orange-300">
+            ✅ <strong>確定:</strong> タイトルから始めた場合、ボタンは<strong>このシノプシスで台本を生成</strong>で、押すとそのまま台本ステップへ進みます。自分の台本から始めた場合は<strong>登場人物を確定</strong>で、台本には手を触れず登場人物だけをコミットします。
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 Script -->
+      <div id="script" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">3️⃣</span>
+          台本
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          台本は、この先のすべての唯一の基準です。モデルが書いている間はリアルタイムで流れ込み、書き終わるとエディタに変わって、いつでも自分の手で直せます。
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">↻</span>
+              <span class="font-semibold">書き直し</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">今のタイトルと設定で台本全体を作り直します。新しい生成が失敗した場合は、前の台本がそのまま残ります。</p>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">➕</span>
+              <span class="font-semibold">続きを書く</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">すでに書かれた分をそのままに、止まったところから書き継ぎます。長い台本が短く終わってしまったときに便利です。</p>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🔍</span>
+              <span class="font-semibold">レビュー</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">シノプシスと同じ検討・修正ループで、没入感スコアと回数指定もそのままあります。設定で<strong>自動レビュー</strong>を入れておけば、生成のたびに自動で回ります。</p>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">✂️</span>
+              <span class="font-semibold">分割開始</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">編集した台本を保存し、シーン分割までを一度に実行します。タイトルが空ならまず自動生成します。</p>
+          </div>
+        </div>
+
+        <div class="p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>補足:</strong> 生成中はストップウォッチが経過時間を示し、<strong>⏹ 中断</strong>で止められます。推論レベルを上げると最初の一文字が出るまで時間がかかることがありますが、そのときも時計が「動いている」ことを教えてくれます。
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 Scene split -->
+      <div id="scenes" class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">4️⃣</span>
+          シーン分割
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          台本をシーンに、シーンをさらにセグメントに刻みます。セグメントとは、話者と感情が紐づいたナレーション・台詞の一行か、効果音の指示です。
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🎞️</span>
+              <span class="font-semibold">シーン基準</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">指定した目標の長さ（最小～最大秒、既定は5～10秒）に合わせてシーンを切ります。</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📝</span>
+              <span class="font-semibold">文単位</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">1文につき1シーン。話者が変わるところでは必ず切り、短すぎる断片は結合し、10秒を超えるものは分割します。</p>
+          </div>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">シーン表</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            列は3つ — 番号、話者、セグメント。キャラクターの台詞にはその下に感情が付きます（<em>普通</em>・<em>喜び</em>・<em>悲しみ</em>・<em>怒り</em>）。ナレーションには付きません。ナレーターには感情を与えないからです。効果音の行は<strong>SFX</strong>と表示され、台詞の代わりに効果音の説明が入ります。
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            感情は飾りではありません。TTSエンジンにそのまま渡される演技の指示です。
+          </p>
+        </div>
+
+        <div class="p-3 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-primary-700 dark:text-primary-300">
+            🔁 <strong>切り方が気に入らない場合は?</strong> 表のすぐ上に分割単位と長さの範囲があります。変更して<strong>↻ シーン再分割</strong>を押してください。何度でもやり直せます。
+          </p>
+        </div>
+      </div>
+
+      <!-- 5 Audio -->
+      <div id="audio" class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">5️⃣</span>
+          オーディオ
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          話者ごとに声を割り当て、効果音の指示ごとに音を付けます。出来上がるのは話者ごとに分かれたナレーショントラックです。登場人物の多い物語が、一人の朗読ではなく配役のある芝居に聞こえるのはこのためです。
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">声のキャスティング</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            パネルの上部に話者の一覧があります。各行に人物名・性別バッジ・外見が表示され、🎙 ボタンを押すと声の選択モーダルが開きます。
+          </p>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc pl-5">
+            <li><strong>話者ごとに別のエンジンを。</strong> <strong>Typecast</strong>・<strong>Gemini</strong>・<strong>ElevenLabs</strong>で絞り込むか、<em>すべて</em>のままにできます。同じ物語の中で人物ごとに違うエンジンを使っても構いません。</li>
+            <li><strong>検索と試聴。</strong> 名前や特性で検索し、性別で絞り、カードの再生ボタンで声を聴いてから決められます。ElevenLabsの共有ボイスはリモート検索なので、最初のページより先を探すには2文字以上の入力が必要です。</li>
+            <li><strong>性別タグ。</strong> どのカードにも男性・女性・不明のタグが付きます。タグが無い、または間違っている場合は、カードを右クリックして自分で指定できます。</li>
+            <li><strong>不一致の警告。</strong> 人物の性別と選んだ声の性別が食い違うと、ボタンに ⚠ が出ます。ブロックはしません — 間違いではなく意図であることを確認させるだけです。</li>
+            <li><strong>デフォルトボイス。</strong> そのままにしておくと、そのエンジンの既定の声にフォールバックします。</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">感情 — キャラクターにだけ</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            シーン分割がキャラクターの台詞に付けた感情は、そのままTTSエンジンに渡され、その場面に合った演技になります。<strong>ナレーターは意図的に除外</strong>しています。感情を込めるナレーターは落ち着きなく聞こえ、揺れないナレーターこそが物語を運ぶからです。
+          </p>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">効果音</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            効果音はシーン分割の段階で台本から自動的に抜き出され、該当するシーンに配置されます。表では説明つきの<strong>SFX</strong>行として現れます。生成はElevenLabsが担当し、行から1つずつ試聴できます。
+          </p>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">行ごとの操作</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">操作</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">動作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>▶ テスト</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">そのセグメント1つだけを、選んだ声で合成してすぐ再生します — キャスティングが合っているかを確かめるためにバッチ全体を回す必要はありません</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>▶ / ⏹</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">すでに生成済みのオーディオを再生・停止します</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>↻</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">そのセグメント1つを強制的に再生成します</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            各行には状態（待機・進行中・完了・エラー）も表示され、バッチの実行中はリアルタイムで更新されます。
+          </p>
+        </div>
+
+        <div class="p-3 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-violet-700 dark:text-violet-300">
+            🎧 <strong>生成が終わると</strong>、表の上にタイムラインが現れ、すべての声のトラックと効果音が字幕に沿って並びます。オーディオパッケージをインポートしたときに見えるのと同じタイムラインです。<strong>↻ オーディオ再生成</strong>は、エンジンや声が実際に変わったセグメントだけを合成し直します。
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 Prompts -->
+      <div id="prompts" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">6️⃣</span>
+          プロンプト
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          最後のステップは、シーンごとに<strong>画像プロンプト</strong>と<strong>動画プロンプト</strong>を書きます。材料はそのシーンの要約とセグメントのテキスト、確定した登場人物の外見描写、そしてスタイルです。表はシーン1つが1行で、2つのプロンプトを並べて表示します。
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          プロンプトも台本と同じ扱いです — 回数を指定できる<strong>レビュー</strong>ボタンと、設定にある自動レビューの切り替え。<strong>↻ プロンプト再生成</strong>ですべて書き直します。
+        </p>
+
+        <div class="p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>補足:</strong> ここで作られたプロンプトは通常のシーン表にそのまま入るので、AutoFlowCutのどこからでも編集を続けられます。アプリで直接でも、Claude Codeから<a href="/guide/ja/autoflowcut/mcp-guide.html" class="underline">MCPサーバー</a>経由でも構いません。
+          </p>
+        </div>
+      </div>
+
+      <!-- Auto & Run all -->
+      <div id="auto-run" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">⚡</span>
+          自動と一括実行
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          任せられるステップに<strong>自動</strong>を入れて<strong>▶ 一括実行</strong>を押せば、パイプラインは最後まで自分で進みます。
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">動作のルール</h3>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc pl-5">
+            <li><strong>自動</strong>のチェックボックスはチップの中にあり、人手なしで回せる3つのステップにだけ付いています — <strong>シーン分割</strong>・<strong>オーディオ</strong>・<strong>プロンプト</strong>。設定と台本にはありません。台本は人が見るべきものだからです。</li>
+            <li><strong>一括実行</strong>は自動が入ったステップだけを順に実行し、残りは飛ばします。台本が完了している必要があり、どこかでエラーが出れば即座に止まります。</li>
+            <li><strong>オーディオは既定でオフ</strong>です。TTSは回すたびに費用がかかるため、オンにするのは意図的な操作にしてあります。</li>
+            <li>先にシノプシスのゲートで登場人物を確定してください。未確定のあいだ、一括実行は無効のままです。</li>
+          </ul>
+        </div>
+
+        <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-emerald-700 dark:text-emerald-300">
+            💡 <strong>おすすめの進め方:</strong> シーン分割とプロンプトは自動のままにし、オーディオは声の選択モーダルで何行か試聴するまでオフにしておきます。声に納得できたらオンにして、一括実行で仕上げましょう。
+          </p>
+        </div>
+      </div>
+
+      <!-- Characters & @mention -->
+      <div id="characters" class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎭</span>
+          登場人物と@メンション
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          登場人物は台本の中に留まりません。シノプシスのゲートで名簿を確定した瞬間、人物たちはリファレンスタブに<strong>リファレンスカード</strong>として自動登録されます。カードで編集した<em>プロンプト</em>欄が、そのままリファレンス画像を生成するテキストです。
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">シーンに人物を指定する</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            シーンのプロンプトの中で<code class="bg-orange-200 dark:bg-orange-800 px-1 rounded">@</code>に続けて人物名を入力すると、そのリファレンス画像に結びついたチップに変わります:
+          </p>
+          <pre class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">@scholar が灯火の下にひとり座り、窓の外には雨の音</pre>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            一致したメンションはシアンのチップになり、一致しなかったメンションは赤い波線の下線が付いたテキストのまま残るので、リファレンスが本当に付いているかが常に分かります。人物名が重要なのはこのためです — 名前がそのまま呼び名になります。
+          </p>
+        </div>
+
+        <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-orange-700 dark:text-orange-300">
+            📖 <strong>@メンションの詳細な仕様</strong>（一致ルール、チップ、リファレンス画像）は<a href="/guide/ja/autoflowcut/import-guide.html" class="underline font-semibold">ファイルインポートガイド</a>にあります。ストーリーモードは、その登場人物をただで用意してくれるだけです。
+          </p>
+        </div>
+      </div>
+
+      <!-- Generate & Export -->
+      <div id="generate-export" class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          生成とエクスポート
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          パイプラインが最後まで進むと、ストーリーモードは完成したプロジェクトを引き渡します — シーン、プロンプト、リファレンスになった登場人物、そしてオーディオ。ここから先に、ストーリー専用の手順はひとつもありません。
+        </p>
+
+        <div class="space-y-4 mb-6">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">画像と動画を生成する</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">インポートしたプロジェクトとまったく同じようにシーンを生成にかけます — Google Flowログイン、または自分のGemini / Veo APIキー。結果パネルのタイムライン・結果表・グリッドで確認してください。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">直すべきところを直す</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">プロンプトを直して1シーンだけ再生成する、台詞を1行だけ録り直す、シーンを分割し直す。どのステップにも、ステッパーのチップからいつでも戻れます。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">編集ソフトへエクスポート</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400"><strong>CapCut</strong>、<strong>Adobe Premiere Pro</strong>（<code class="bg-primary-200 dark:bg-primary-800 px-1 rounded">.prproj</code>）、<strong>Vrew</strong>（<code class="bg-primary-200 dark:bg-primary-800 px-1 rounded">.vrew</code>）へ書き出します。ナレーショントラックと効果音も、別々のオーディオトラックとして一緒に渡ります。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-primary-700 dark:text-primary-300">
+            📖 <strong>次に読むもの:</strong> プロジェクトフォルダをどこに置き、どう開くかは<a href="/guide/ja/autoflowcut/capcut-export.html" class="underline font-semibold">CapCutエクスポートガイド</a>で説明しています。
+          </p>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          関連ガイド
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <a href="/guide/ja/autoflowcut/import-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            ファイルインポートガイド
+          </a>
+          <a href="/guide/ja/autoflowcut/capcut-export.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            CapCutエクスポートガイド
+          </a>
+          <a href="/guide/ja/autoflowcut/audio-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            オーディオパッケージガイド
+          </a>
+          <a href="/guide/ja/autoflowcut/mcp-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            MCPサーバーガイド
+          </a>
+          <a href="/guide/ja/autoflowcut/skills-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            スキルガイド
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to App -->
+      <div class="text-center">
+        <a href="/guide/ja/autoflowcut/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          AutoFlowCutに戻る
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026 Touchizen. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Copy code function
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+  </script>
+  <script src="/guide/assets/header.js"></script>
+</body>
+</html>

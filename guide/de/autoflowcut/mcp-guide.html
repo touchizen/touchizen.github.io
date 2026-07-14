@@ -144,7 +144,7 @@
         <li><a href="#architecture" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🏗️ Architektur</a></li>
         <li><a href="#tool-categories" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🧰 Tool-Kategorien</a></li>
         <li><a href="#key-tools" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📖 Wichtige Tools-Referenz</a></li>
-        <li><a href="#workflow-gates" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚦 Workflow-Gate-System</a></li>
+        <li><a href="#workflow-gates" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚦 Workflow-Fortschritt</a></li>
         <li><a href="#http-api" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🌐 HTTP-API-Endpunkte</a></li>
         </ul>
       </nav>
@@ -229,23 +229,54 @@
             <h3 class="font-semibold mb-2 flex items-center gap-2">
               <span>🎬</span> App-Steuerung
             </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Steuern Sie die laufende App über HTTP. Führen Sie Bildgenerierung, Batch-Verarbeitung, Status-Überwachung und CapCut-Export durch.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Steuern Sie die laufende App über HTTP — 19 <code class="bg-purple-100 dark:bg-purple-900/40 px-1 rounded text-xs">app_*</code>-Tools plus zwei Export-Tools. Projekte verwalten, Bilder generieren, Batches ausführen, Status überwachen und exportieren. Hier ist nur eine Auswahl aufgeführt.</p>
             <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_open_project</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_generate_scene</span>
               <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_start_scene_batch</span>
               <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_wait_batch</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_batch_status</span>
               <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">export_capcut</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">export_premiere</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">+14 weitere app_*</span>
             </div>
           </div>
 
-          <!-- Workflow Gates -->
+          <!-- Workflow Progress -->
           <div class="bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-4">
             <h3 class="font-semibold mb-2 flex items-center gap-2">
-              <span>🔧</span> Workflow-Gates
+              <span>🚦</span> Workflow-Fortschritt
             </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Verfolgen Sie den Pipeline-Fortschritt durch Review-Schritte. Markieren Sie Schritte als bestanden/fehlgeschlagen und prüfen Sie den Workflow-Status.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Lesen Sie den Wave-Fortschritt der Pipeline und melden Sie den QA-Review-Status an das App-Banner. Der Fortschritt ist schreibgeschützt — geschrieben wird er vom Skill.</p>
             <div class="mt-2 flex flex-wrap gap-1">
-              <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">mark_step_done</span>
               <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">get_progress</span>
+              <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">app_notify_qa</span>
+            </div>
+          </div>
+
+          <!-- Skill Management -->
+          <div class="bg-rose-50 dark:bg-rose-900/20 rounded-xl border border-rose-200 dark:border-rose-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🧩</span> Skill-Verwaltung
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">AutoFlowCut-Skills für Claude Code installieren, auflisten und entfernen. Template-Variablen werden bei der Installation ersetzt.</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">list_skills</span>
+              <span class="text-xs bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">install_skill</span>
+              <span class="text-xs bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">uninstall_skill</span>
+            </div>
+          </div>
+
+          <!-- Audio Review & Styles -->
+          <div class="bg-teal-50 dark:bg-teal-900/20 rounded-xl border border-teal-200 dark:border-teal-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🎧</span> Audio-Review &amp; Stile
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Ungeeignete Sprecher- und Soundeffekt-Dateien in einem Audio-Paket markieren bzw. Markierungen aufheben und die integrierten Stil-Presets durchsuchen.</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 px-2 py-0.5 rounded">list_audio_reviews</span>
+              <span class="text-xs bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 px-2 py-0.5 rounded">update_audio_review</span>
+              <span class="text-xs bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 px-2 py-0.5 rounded">list_styles</span>
             </div>
           </div>
         </div>
@@ -295,58 +326,61 @@
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Projekt ins CapCut-Format exportieren</td>
               </tr>
               <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">export_premiere</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Projekt als Premiere-Pro-Projekt (<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">.prproj</code>) exportieren</td>
+              </tr>
+              <tr>
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">get_schema</td>
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700">CSV/SRT/Audio-Schema-Dokumentation abrufen</td>
               </tr>
               <tr>
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">list_styles</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">87 Stil-Presets nach Kategorie auflisten</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Stil-Presets nach Kategorie auflisten</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">get_progress</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Wave-Fortschritt der Pipeline lesen (schreibgeschützt)</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- Workflow Gate System -->
+      <!-- Workflow Progress -->
       <div id="workflow-gates" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">🚦</span>
-          Workflow-Gate-System
+          Workflow-Fortschritt
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
-          Die Pipeline folgt sequenziellen Schritten (R1 bis R12). Jeder Schritt muss die Überprüfung bestehen, bevor der nächste Schritt freigeschaltet wird. Der Fortschritt wird in <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">R_progress.json</code> verfolgt.
+          Die Pipeline aus neun Waves (W1–W9) gehört zum <strong>story-engine</strong>-Skill für Claude Code — <em>nicht</em> zum eingebauten Story-Modus der App, der Drehbuch → Szenenaufteilung → Audio → Prompts durchläuft und keine Waves kennt. Der Orchestrator des Skills schreibt den Workflow-Status direkt in Dateien im Ordner <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">_story_source/</code> des Projekts. <strong>Kein MCP-Tool schreibt den Workflow-Status</strong> — der MCP-Server liest ihn nur, über <code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">get_progress</code>.
         </p>
 
-        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Gate-Voraussetzungen</h3>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Workflow-Statusdateien</h3>
         <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 mb-4">
           <table class="w-full text-sm">
             <thead>
               <tr class="bg-gray-100 dark:bg-gray-800">
-                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Schritt</th>
-                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Phase</th>
-                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Voraussetzung</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Datei</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Rolle</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Geschrieben von</th>
               </tr>
             </thead>
             <tbody class="bg-white dark:bg-gray-900">
               <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R1-R3</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Skript &amp; CSV-Einrichtung</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Keine</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">STATE.md</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Hauptstatus — aktuelle Wave, abgeschlossene Schritte, Entscheidungen</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">story-engine-Skill</td>
               </tr>
               <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R4-R6</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Referenzen &amp; Prompts</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R3 bestanden</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">W{N}_SUMMARY.md</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Ergebnisse pro Wave, Review-Runden, Probleme</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">story-engine-Skill</td>
               </tr>
               <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R7-R9</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Bildgenerierung &amp; Überprüfung</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R6 bestanden</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R10-R12</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Audio, Export &amp; Abschluss</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R9 bestanden</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">W_progress.json</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Seitenprotokoll — Status <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">waves.W1</code>–<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">waves.W9</code> für die App und externe Tools</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">story-engine-Skill (Abruf über <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">get_progress</code>)</td>
               </tr>
             </tbody>
           </table>
@@ -354,11 +388,11 @@
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Verwendung</h3>
         <div class="relative">
-          <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700"># Schritt als bestanden markieren
-mark_step_done(step="R10-3_scenes_review", result="pass", reviewer="subagent")
+          <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700"># Wave-Fortschritt aus W_progress.json lesen
+get_progress()
 
-# Gesamtfortschritt prüfen
-get_progress()</pre>
+# QA-Review-Fortschritt an das Status-Banner der App melden
+app_notify_qa(kind="scene", state="progress", current=12, total=40, round=1, issues=3)</pre>
         </div>
       </div>
 
@@ -456,6 +490,12 @@ get_progress()</pre>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
             Audio-Paket-Anleitung
+          </a>
+          <a href="/guide/de/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Story-Modus-Anleitung
           </a>
         </div>
       </div>

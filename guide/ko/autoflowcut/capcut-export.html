@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoFlowCut - CapCut 내보내기 가이드</title>
+  <title>AutoFlowCut - 내보내기 가이드 (CapCut · Premiere Pro · Vrew)</title>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
   <script>
@@ -12,8 +12,8 @@
     gtag('js', new Date());
     gtag('config', 'G-S0JLFKK5G0');
   </script>
-  <meta name="description" content="AutoFlowCut에서 내보낸 프로젝트를 CapCut으로 가져오는 방법을 안내합니다. macOS와 Windows에서 CapCut 프로젝트 폴더 경로 찾기.">
-  <meta name="keywords" content="AutoFlowCut, CapCut 내보내기, CapCut 프로젝트, AI 이미지 생성, Google Flow AI, 영상 편집, 프로젝트 가져오기">
+  <meta name="description" content="AutoFlowCut 프로젝트를 CapCut, Adobe Premiere Pro(.prproj), Vrew(.vrew)로 내보내는 방법. 저장 위치, CapCut 프로젝트 폴더 경로, 에디터 미설치 시 안내까지.">
+  <meta name="keywords" content="AutoFlowCut, CapCut 내보내기, Premiere Pro 내보내기, prproj, Vrew 내보내기, vrew, AI 이미지 생성, 영상 편집, 프로젝트 가져오기">
   <meta name="author" content="Touchizen">
   <meta name="robots" content="index, follow">
 
@@ -30,8 +30,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://touchizen.com/guide/ko/autoflowcut/capcut-export.html">
-  <meta property="og:title" content="AutoFlowCut - CapCut 내보내기 가이드">
-  <meta property="og:description" content="AutoFlowCut에서 내보낸 프로젝트를 CapCut으로 가져오는 방법. macOS와 Windows 지원.">
+  <meta property="og:title" content="AutoFlowCut - 내보내기 가이드 (CapCut · Premiere Pro · Vrew)">
+  <meta property="og:description" content="AutoFlowCut 프로젝트를 CapCut, Premiere Pro(.prproj), Vrew(.vrew)로 내보내는 방법. macOS와 Windows 지원.">
   <meta property="og:image" content="https://touchizen.com/images/autoflowcut-og.png">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="Touchizen">
@@ -39,8 +39,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@touchizen">
-  <meta name="twitter:title" content="AutoFlowCut - CapCut 내보내기 가이드">
-  <meta name="twitter:description" content="AutoFlowCut에서 내보낸 프로젝트를 CapCut으로 가져오는 방법.">
+  <meta name="twitter:title" content="AutoFlowCut - 내보내기 가이드 (CapCut · Premiere Pro · Vrew)">
+  <meta name="twitter:description" content="AutoFlowCut 프로젝트를 CapCut, Premiere Pro, Vrew로 내보내는 방법.">
   <meta name="twitter:image" content="https://touchizen.com/images/autoflowcut-og.png">
 
   <!-- Structured Data (JSON-LD) -->
@@ -48,15 +48,15 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "CapCut 프로젝트 내보내기 가이드",
-    "description": "AutoFlowCut에서 내보낸 프로젝트를 CapCut으로 가져오는 방법",
+    "name": "AutoFlowCut 내보내기 가이드 (CapCut · Premiere Pro · Vrew)",
+    "description": "AutoFlowCut 프로젝트를 CapCut, Adobe Premiere Pro(.prproj), Vrew(.vrew)로 내보내는 방법",
     "image": "https://touchizen.com/images/autoflowcut-og.png",
     "inLanguage": "ko",
     "step": [
-      {"@type": "HowToStep", "name": "정보 입력", "text": "내보내기 모달에서 사용자명과 프로젝트 번호 입력"},
-      {"@type": "HowToStep", "name": "압축 해제", "text": "다운로드된 ZIP 파일 압축 해제"},
-      {"@type": "HowToStep", "name": "폴더 복사", "text": "CapCut 프로젝트 폴더에 복사"},
-      {"@type": "HowToStep", "name": "재시작", "text": "CapCut 재시작"}
+      {"@type": "HowToStep", "name": "대상 선택", "text": "내보내기 버튼의 ▾ 메뉴에서 CapCut / Premiere / Vrew 중 하나를 선택"},
+      {"@type": "HowToStep", "name": "옵션 확인", "text": "내보내기 모달에서 저장 위치와 이미지 스케일·켄 번스·자막 옵션 확인"},
+      {"@type": "HowToStep", "name": "내보내기", "text": "내보내기 버튼을 눌러 프로젝트 파일을 디스크에 기록"},
+      {"@type": "HowToStep", "name": "에디터에서 열기", "text": "앱이 해당 에디터를 자동으로 실행해 프로젝트를 엽니다"}
     ],
     "author": {
       "@type": "Organization",
@@ -129,15 +129,75 @@
           Export Guide
         </div>
         <h1 class="text-3xl md:text-4xl font-bold mb-4">
-          <span class="gradient-text">CapCut 내보내기 가이드</span>
+          <span class="gradient-text">내보내기 가이드</span>
         </h1>
         <p class="text-gray-600 dark:text-gray-400 text-lg">
-          AutoFlowCut에서 내보낸 프로젝트를 CapCut으로 가져오는 방법
+          AutoFlowCut 프로젝트를 CapCut · Adobe Premiere Pro · Vrew로 내보내는 방법
+        </p>
+      </div>
+
+      <!-- Table of Contents -->
+      <nav class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-5 md:p-6 mb-8" aria-label="📑 페이지 목차">
+        <h2 class="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-3">📑 페이지 목차</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
+        <li><a href="#export-targets" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎯 세 가지 내보내기 대상</a></li>
+        <li><a href="#quick-start" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚀 빠른 시작 (4단계)</a></li>
+        <li><a href="#capcut" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">✂️ CapCut 내보내기</a></li>
+        <li><a href="#username" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">👤 시스템 사용자명 찾기</a></li>
+        <li><a href="#capcut-paths" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📁 CapCut 프로젝트 폴더 경로</a></li>
+        <li><a href="#premiere" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎬 Premiere Pro 내보내기</a></li>
+        <li><a href="#vrew" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📝 Vrew 내보내기</a></li>
+        <li><a href="#options" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">⚙️ 공통 내보내기 옵션</a></li>
+        <li><a href="#not-installed" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">⬇️ 에디터가 설치되어 있지 않다면</a></li>
+        <li><a href="#troubleshooting" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔧 문제 해결</a></li>
+        </ul>
+      </nav>
+
+      <!-- Export Targets -->
+      <div id="export-targets" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🎯</span>
+          세 가지 내보내기 대상
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          AutoFlowCut은 완성된 프로젝트를 세 가지 편집 프로그램으로 내보냅니다. 내보내기 버튼 옆 <strong>▾</strong> 메뉴 또는 내보내기 모달 위쪽의 탭에서 대상을 고르세요.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">✂️ CapCut</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li><strong>결과물</strong> — CapCut 프로젝트 폴더</li>
+              <li><strong>저장 위치</strong> — CapCut 프로젝트 폴더 (앱이 자동 감지)</li>
+              <li><strong>사용자명 필요</strong> — 예 (경로에 포함)</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">🎬 Premiere Pro</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li><strong>결과물</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code> 파일</li>
+              <li><strong>저장 위치</strong> — 작업 폴더 안의 프로젝트 폴더</li>
+              <li><strong>사용자명 필요</strong> — 아니요</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">📝 Vrew</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li><strong>결과물</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code> 파일</li>
+              <li><strong>저장 위치</strong> — 작업 폴더 안의 프로젝트 폴더</li>
+              <li><strong>사용자명 필요</strong> — 아니요</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">
+          ℹ️ 한 번의 내보내기에는 <strong>대상 하나</strong>만 기록됩니다 — 세 형식을 한꺼번에 내보내는 기능은 없습니다. 다른 형식도 필요하면 대상을 다시 골라 한 번 더 내보내세요.
+        </p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          💡 <strong>작업 폴더</strong>는 설정에서 지정한 폴더로, 생성된 이미지·영상·오디오가 저장되는 곳입니다. Premiere와 Vrew는 프로젝트 파일을 이 미디어 옆(<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">작업 폴더/프로젝트명/</code>)에 저장하므로 별도 경로 입력이 필요 없습니다.
         </p>
       </div>
 
       <!-- Quick Steps -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+      <div id="quick-start" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🚀</span>
           빠른 시작 (4단계)
@@ -146,59 +206,9 @@
           <!-- Step 1 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
-            <div class="flex-1">
-              <p class="font-medium text-gray-900 dark:text-white">내보내기 모달에서 정보 입력</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">씬 목록 탭 > <strong>"📦 CapCut"</strong> 버튼 클릭 후 사용자명과 프로젝트 번호 입력</p>
-
-              <!-- Export Modal 목업 (인터랙티브) -->
-              <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 overflow-hidden text-xs shadow-lg">
-                <!-- 모달 헤더 -->
-                <div class="bg-gray-100 dark:bg-gray-700 px-4 py-2 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
-                  <span class="font-bold text-gray-800 dark:text-white">📦 CapCut 내보내기</span>
-                  <span class="text-gray-400">✕</span>
-                </div>
-                <!-- 모달 내용 -->
-                <div class="p-4 space-y-3">
-                  <!-- OS 선택 (인터랙티브) -->
-                  <div class="flex gap-2">
-                    <button id="mockup-os-mac" onclick="selectMockupOS('mac')" style="flex:1; padding:10px 16px; border:2px solid #007AFF; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;">🍎 macOS</button>
-                    <button id="mockup-os-win" onclick="selectMockupOS('win')" style="flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;">🪟 Windows</button>
-                  </div>
-                  <!-- 사용자명 입력 (인터랙티브) -->
-                  <div>
-                    <label class="block text-gray-600 dark:text-gray-400 mb-1">👤 시스템 사용자명 <span class="text-red-500">*</span></label>
-                    <div class="relative">
-                      <input type="text" id="mockup-username" value="testUser" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
-                      <span class="absolute right-2 top-2 text-green-500">✓</span>
-                    </div>
-                    <p class="text-gray-500 mt-1">💡 터미널에서 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">whoami</code> 입력</p>
-                  </div>
-                  <!-- 프로젝트 번호 입력 (인터랙티브) -->
-                  <div>
-                    <label class="block text-gray-600 dark:text-gray-400 mb-1">📁 프로젝트 번호 <span class="text-red-500">*</span></label>
-                    <div class="relative">
-                      <input type="text" id="mockup-project" value="0131" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
-                      <span class="absolute right-2 top-2 text-green-500">✓</span>
-                    </div>
-                    <p class="text-gray-500 mt-1">💡 CapCut 폴더에서 다음 번호 확인</p>
-                  </div>
-                  <!-- 프리셋 선택 -->
-                  <div id="mockup-preset-area">
-                    <label class="block text-gray-600 dark:text-gray-400 mb-1">📂 경로 프리셋</label>
-                    <div id="mockup-presets" class="flex gap-1 flex-wrap"></div>
-                  </div>
-                  <!-- 생성될 경로 -->
-                  <div class="bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg p-3">
-                    <label class="block text-green-700 dark:text-green-400 text-xs font-bold mb-1">📂 생성될 경로</label>
-                    <code id="mockup-path" class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/testUser/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
-                  </div>
-                </div>
-                <!-- 모달 푸터 -->
-                <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 flex justify-end gap-2 border-t border-gray-300 dark:border-gray-600">
-                  <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">취소</span>
-                  <span class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium cursor-pointer hover:from-cyan-600 hover:to-blue-700 transition-colors">📦 내보내기</span>
-                </div>
-              </div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">내보내기 대상 선택</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400"><strong>"📦 내보내기"</strong> 버튼의 <strong>▾</strong> 메뉴에서 <strong>✂️ CapCut</strong> · <strong>🎬 Premiere</strong> · <strong>📝 Vrew</strong> 중 하나를 선택합니다. 버튼 본체는 마지막에 고른 대상을 기억하며, 모달이 열린 뒤에도 위쪽 탭으로 바꿀 수 있습니다.</p>
             </div>
           </div>
 
@@ -206,8 +216,8 @@
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">ZIP 파일 압축 해제</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">다운로드된 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">프로젝트명_capcut.zip</code> 파일을 더블클릭하여 압축 해제</p>
+              <p class="font-medium text-gray-900 dark:text-white">저장 위치와 옵션 확인</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">CapCut은 프로젝트 폴더 경로와 프로젝트 번호를, Premiere·Vrew는 저장될 파일 경로를 모달에서 보여줍니다. 이미지 스케일 · 켄 번스 · 자막 옵션은 세 대상 공통입니다.</p>
             </div>
           </div>
 
@@ -215,8 +225,8 @@
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">CapCut 프로젝트 폴더에 복사</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">압축 해제된 폴더(예: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">0131</code>)를 아래 경로에 복사</p>
+              <p class="font-medium text-gray-900 dark:text-white">📦 내보내기 클릭</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">앱이 프로젝트 파일을 디스크에 직접 기록합니다. 압축을 풀거나 폴더를 복사할 필요가 없습니다.</p>
             </div>
           </div>
 
@@ -224,19 +234,108 @@
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">CapCut 재시작</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">CapCut을 완전히 종료 후 다시 시작하면 프로젝트 목록에 표시됩니다</p>
+              <p class="font-medium text-gray-900 dark:text-white">에디터에서 열기</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">내보내기가 끝나면 앱이 해당 에디터를 자동으로 실행합니다. 실행에 실패하면 알림이 뜨며, 저장된 파일을 직접 열면 됩니다.</p>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- CapCut -->
+      <div id="capcut" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">✂️</span>
+          CapCut 내보내기
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          모달에서 <strong>✂️ CapCut</strong> 탭을 고르면 앱이 시스템 사용자명과 CapCut 프로젝트 폴더 경로를 자동으로 감지하고, 비어 있는 <strong>다음 프로젝트 번호</strong>를 채워 넣습니다. 경로가 감지되지 않거나 다른 위치에 넣고 싶다면 프리셋 버튼(CapCut / CapCut Pro / Documents / 직접 입력)으로 바꿀 수 있습니다.
+        </p>
+
+        <!-- Export Modal 목업 (인터랙티브) -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 overflow-hidden text-xs shadow-lg mb-6">
+          <!-- 모달 헤더 -->
+          <div class="bg-gray-100 dark:bg-gray-700 px-4 py-2 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
+            <span class="font-bold text-gray-800 dark:text-white">📦 CapCut 내보내기</span>
+            <span class="text-gray-400">✕</span>
+          </div>
+          <!-- 모달 내용 -->
+          <div class="p-4 space-y-3">
+            <!-- 포맷 탭 -->
+            <div class="flex gap-1">
+              <span class="flex-1 text-center px-2 py-1.5 rounded-lg border-2 border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-semibold">✂️ CapCut</span>
+              <span class="flex-1 text-center px-2 py-1.5 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400">🎬 Premiere</span>
+              <span class="flex-1 text-center px-2 py-1.5 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400">📝 Vrew</span>
+            </div>
+            <!-- OS 선택 (인터랙티브) -->
+            <div class="flex gap-2">
+              <button id="mockup-os-mac" onclick="selectMockupOS('mac')" style="flex:1; padding:10px 16px; border:2px solid #007AFF; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;">🍎 macOS</button>
+              <button id="mockup-os-win" onclick="selectMockupOS('win')" style="flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;">🪟 Windows</button>
+            </div>
+            <!-- 사용자명 (자동 감지) -->
+            <div>
+              <label class="block text-gray-600 dark:text-gray-400 mb-1">👤 시스템 사용자명</label>
+              <div class="relative">
+                <input type="text" id="mockup-username" value="testUser" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+                <span class="absolute right-2 top-2 text-green-500">✓</span>
+              </div>
+              <p class="text-gray-500 mt-1">💡 앱이 자동으로 감지합니다 (여기서는 경로 미리보기용으로 바꿔볼 수 있습니다)</p>
+            </div>
+            <!-- 프로젝트 번호 입력 (인터랙티브) -->
+            <div>
+              <label class="block text-gray-600 dark:text-gray-400 mb-1">📁 프로젝트 번호 <span class="text-red-500">*</span></label>
+              <div class="relative">
+                <input type="text" id="mockup-project" value="0131" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+                <span class="absolute right-2 top-2 text-green-500">✓</span>
+              </div>
+              <p class="text-gray-500 mt-1">💡 비어 있는 다음 번호가 자동으로 채워집니다 (수정 가능)</p>
+            </div>
+            <!-- 프리셋 선택 -->
+            <div id="mockup-preset-area">
+              <label class="block text-gray-600 dark:text-gray-400 mb-1">📂 경로 프리셋</label>
+              <div id="mockup-presets" class="flex gap-1 flex-wrap"></div>
+            </div>
+            <!-- 생성될 경로 -->
+            <div class="bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg p-3">
+              <label class="block text-green-700 dark:text-green-400 text-xs font-bold mb-1">📂 생성될 경로</label>
+              <code id="mockup-path" class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/testUser/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
+            </div>
+          </div>
+          <!-- 모달 푸터 -->
+          <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 flex justify-end gap-2 border-t border-gray-300 dark:border-gray-600">
+            <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">취소</span>
+            <span class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium cursor-pointer hover:from-cyan-600 hover:to-blue-700 transition-colors">📦 내보내기</span>
+          </div>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">무엇이 어디에 쓰이나요</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          내보내기를 누르면 앱이 <strong>CapCut 프로젝트 폴더에 직접</strong> 프로젝트 파일을 기록합니다. 이미지·영상·오디오·자막(SRT)은 복사하지 않고, <strong>작업 폴더에 있는 원본을 절대 경로로 참조</strong>합니다.
+        </p>
+        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto mb-4">
+          <pre>📁 com.lveditor.draft/0131/     # CapCut 프로젝트 폴더 (여기에 기록)
+├── 📄 draft_info.json          # CapCut 프로젝트 데이터
+├── 📄 draft_meta_info.json     # 프로젝트 메타데이터
+└── 📄 draft_agency_info.json   # CapCut이 요구하는 기본 파일
+
+📁 작업 폴더/프로젝트명/          # 미디어는 여기 그대로 (절대 경로로 참조)
+├── 🖼️ scene_001.png
+├── 🎞️ ...
+└── 📄 프로젝트명_subtitle_ko.srt  # 자막 포함 시</pre>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          ⚠️ 내보내기 이후 <strong>작업 폴더나 그 안의 프로젝트 폴더를 옮기거나 이름을 바꾸거나 지우면</strong> CapCut에서 미디어가 사라진 것으로 표시됩니다. 기록이 끝나면 앱이 CapCut을 자동으로 실행합니다.
+        </p>
+      </div>
+
       <!-- 사용자명 찾기 -->
-      <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 md:p-8 mb-8">
+      <div id="username" class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">👤</span>
           시스템 사용자명 찾기
         </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          CapCut 프로젝트 폴더 경로에는 시스템 사용자명이 들어갑니다. 보통은 앱이 자동으로 감지하지만, 경로를 <strong>직접 입력</strong>하거나 확인해야 할 때 아래 방법으로 찾으세요. <strong>Premiere와 Vrew는 작업 폴더에 저장되므로 사용자명이 필요 없습니다.</strong>
+        </p>
         <div class="grid md:grid-cols-2 gap-6">
           <!-- macOS -->
           <div>
@@ -266,7 +365,7 @@
       </div>
 
       <!-- Project Folder Paths -->
-      <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-8">
+      <div id="capcut-paths" class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">📁</span>
           CapCut 프로젝트 폴더 경로
@@ -333,29 +432,133 @@
         </div>
       </div>
 
-      <!-- Output Structure -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+      <!-- Premiere -->
+      <div id="premiere" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-2xl">📂</span>
-          내보내기 폴더 구조
+          <span class="text-2xl">🎬</span>
+          Premiere Pro 내보내기
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
-          압축 해제 후 아래와 같은 폴더 구조가 나타납니다. 이 폴더 전체를 CapCut 프로젝트 경로에 복사하세요.
+          모달에서 <strong>🎬 Premiere</strong> 탭을 고르면 저장될 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code> 파일 경로가 그대로 표시됩니다. 경로를 입력하거나 사용자명을 찾을 필요가 없습니다 — 미디어가 있는 작업 폴더의 프로젝트 폴더에 그대로 저장됩니다.
         </p>
-        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto">
-          <pre>📁 project_folder/
-├── 📄 draft_info.json        # CapCut 프로젝트 데이터
-├── 📄 draft_meta_info.json   # 프로젝트 메타데이터
-├── 📁 media/                 # 이미지/비디오/SFX 파일
-│   ├── 🖼️ scene_001.png
-│   ├── 🖼️ scene_002.png
-│   └── ...
-└── 📄 README.txt             # 가져오기 안내</pre>
+        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto mb-4">
+          <pre>📁 작업 폴더/프로젝트명/
+├── 📄 프로젝트명.prproj   # Premiere Pro 프로젝트 (gzip 압축된 XML)
+├── 🖼️ scene_001.png      # 미디어는 원래 자리 그대로
+└── 🎞️ ...</pre>
+        </div>
+        <div class="space-y-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">에디터에서 열기</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>내보내기가 끝나면 앱이 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code>를 Premiere Pro로 자동 실행합니다</li>
+              <li>실행에 실패하면 알림이 뜹니다 — Finder/파일 탐색기에서 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code>를 더블클릭하세요</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">알아둘 점</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li><strong>자막은 프로젝트 안에 포함</strong>됩니다 — CapCut처럼 별도 SRT 파일을 만들지 않습니다</li>
+              <li>파일명이 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">프로젝트명.prproj</code>로 고정이라, 같은 이름의 파일이 이미 있으면 <strong>덮어쓸지 묻습니다</strong>. 덮어쓰면 Premiere에서 손본 내용은 사라집니다</li>
+              <li>작업 폴더가 설정되어 있지 않으면 내보내기 버튼이 비활성화됩니다 — 설정에서 작업 폴더를 먼저 지정하세요</li>
+            </ul>
+          </div>
         </div>
       </div>
 
+      <!-- Vrew -->
+      <div id="vrew" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📝</span>
+          Vrew 내보내기
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          모달에서 <strong>📝 Vrew</strong> 탭을 고르면 저장될 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code> 파일 경로가 표시됩니다. Premiere와 마찬가지로 경로 입력이나 사용자명이 필요 없습니다. <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code> 파일에는 프로젝트 데이터와 미디어가 함께 담깁니다.
+        </p>
+        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto mb-4">
+          <pre>📁 작업 폴더/프로젝트명/
+├── 📄 프로젝트명.vrew    # Vrew 프로젝트 (미디어 포함 패키지)
+├── 🖼️ scene_001.png
+└── 🎞️ ...</pre>
+        </div>
+        <div class="space-y-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">에디터에서 열기</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>내보내기가 끝나면 앱이 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>를 Vrew로 자동 실행합니다</li>
+              <li>실행에 실패하면 알림이 뜹니다 — 저장된 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>를 직접 열면 됩니다</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">알아둘 점</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>같은 이름의 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>가 이미 있으면 <strong>덮어쓸지 묻습니다</strong></li>
+              <li>Vrew가 아직 지원하지 않는 항목은 <strong>건너뛰고</strong>, 몇 개를 건너뛰었는지 알림으로 알려줍니다</li>
+              <li>스토리 모드의 나레이션 세그먼트는 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>에 배치되지 않습니다 (CapCut · Premiere 전용)</li>
+              <li>MCP 서버로 자동화할 수 있는 내보내기는 CapCut과 Premiere뿐입니다 — Vrew는 앱에서 직접 내보내세요</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shared Options -->
+      <div id="options" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">⚙️</span>
+          공통 내보내기 옵션
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          아래 옵션은 세 대상 모두에 똑같이 적용되며, 마지막으로 고른 값이 저장됩니다.
+        </p>
+        <div class="space-y-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">🔍 이미지 스케일</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li><strong>Fill</strong> — 화면을 가득 채웁니다 (화면비가 다르면 가장자리가 잘릴 수 있음)</li>
+              <li><strong>Fit</strong> — 이미지 전체가 보입니다 (화면비가 다르면 여백이 생길 수 있음)</li>
+              <li><strong>None</strong> — 원본 크기(100%) 그대로 사용합니다</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">🎬 켄 번스 효과</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>정지 이미지에 자동으로 줌·팬 애니메이션을 넣습니다</li>
+              <li><strong>모드</strong> — 랜덤(매 주기 무작위) 또는 패턴(줌 인·줌 아웃·팬 중에서 선택)</li>
+              <li><strong>주기</strong> — 애니메이션이 바뀌는 간격(초)</li>
+              <li><strong>스케일</strong> — 줌 범위(%). 100~150% 사이를 권장합니다</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">💬 자막 포함</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>자막이 있는 프로젝트에서만 표시되는 옵션입니다</li>
+              <li>CapCut은 작업 폴더에 SRT 파일을 만들어 프로젝트에서 참조하고, Premiere는 프로젝트 파일 안에 자막을 포함합니다</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editor not installed -->
+      <div id="not-installed" class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">⬇️</span>
+          에디터가 설치되어 있지 않다면
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          내보내기를 누르면 앱이 대상 에디터가 설치되어 있는지 먼저 확인합니다. 설치되어 있지 않으면 내보내기를 멈추고 <strong>다운로드 페이지를 열지 물어봅니다</strong>. 확인을 누르면 기본 브라우저에서 아래 주소가 열립니다.
+        </p>
+        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc list-inside mb-4">
+          <li><strong>✂️ CapCut</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded break-all">https://www.capcut.com/download</code> (Microsoft Store 버전 앱에서는 스토어 페이지가 열립니다)</li>
+          <li><strong>🎬 Premiere Pro</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded break-all">https://www.adobe.com/products/premiere.html</code></li>
+          <li><strong>📝 Vrew</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded break-all">https://vrew.voyagerx.com/</code></li>
+        </ul>
+        <p class="text-sm text-amber-700 dark:text-amber-400">
+          💡 CapCut 경로를 <strong>직접 입력</strong>으로 지정한 경우에는 설치 확인을 건너뜁니다. Microsoft Store 버전 앱에서는 Premiere·Vrew의 다운로드 주소를 링크로 열지 않고 안내 문구로 보여줍니다.
+        </p>
+      </div>
+
       <!-- Troubleshooting -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+      <div id="troubleshooting" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🔧</span>
           문제 해결
@@ -365,19 +568,20 @@
             <h3 class="font-semibold text-gray-900 dark:text-white mb-2">프로젝트가 CapCut에 나타나지 않아요</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
               <li>CapCut을 완전히 종료 후 다시 시작해보세요</li>
-              <li>폴더 경로가 정확한지 확인하세요 (com.lveditor.draft 폴더 안에 복사)</li>
+              <li>모달에 표시된 경로가 실제로 쓰고 있는 CapCut 프로젝트 폴더(com.lveditor.draft)인지 확인하세요</li>
               <li>프로젝트 폴더 이름에 특수문자가 없는지 확인하세요</li>
             </ul>
           </div>
           <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">미디어 파일이 누락되었다고 나와요</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">미디어 파일이 누락되었다고 나와요 (CapCut)</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-              <li>media 폴더가 프로젝트 폴더 안에 있는지 확인하세요</li>
-              <li>ZIP 파일을 완전히 압축 해제했는지 확인하세요</li>
+              <li>CapCut 프로젝트는 미디어를 복사하지 않고 <strong>작업 폴더의 원본을 절대 경로로 참조</strong>합니다</li>
+              <li>내보낸 뒤 작업 폴더(또는 그 안의 프로젝트 폴더)를 옮기거나 이름을 바꾸거나 지우지 마세요</li>
+              <li>이미 옮겼다면 원래 자리로 되돌리거나, 작업 폴더를 다시 지정하고 내보내기를 한 번 더 실행하세요</li>
             </ul>
           </div>
           <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">어떤 경로를 선택해야 하나요?</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">어떤 경로를 선택해야 하나요? (CapCut)</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
               <li>AutoFlowCut 앱에서 프리셋 버튼(CapCut / CapCut Pro / Documents)을 바꿔가며 확인하세요</li>
               <li>CapCut 프로젝트 폴더를 직접 열어서 기존 프로젝트가 있는 경로를 확인하세요</li>
@@ -389,6 +593,36 @@
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
               <li>파일 탐색기 > 보기 > 숨긴 항목 체크</li>
               <li>또는 주소창에 %localappdata% 직접 입력</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">내보내기 버튼이 눌리지 않아요 (Premiere · Vrew)</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>작업 폴더가 지정되어 있지 않으면 두 대상의 내보내기 버튼은 비활성 상태입니다</li>
+              <li>설정에서 작업 폴더를 지정한 뒤 다시 시도하세요</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">덮어쓸지 묻는 창이 떠요 (Premiere · Vrew)</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>프로젝트 파일명이 프로젝트명으로 고정이라, 같은 파일이 이미 있으면 덮어쓰기를 확인합니다</li>
+              <li>Premiere에서 손본 내용을 지키려면 취소하고, 기존 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code>의 이름을 바꾼 뒤 다시 내보내세요</li>
+              <li>CapCut은 비어 있는 다음 번호를 쓰기 때문에 덮어쓰기 확인이 없습니다</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">에디터가 자동으로 열리지 않아요</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>파일은 이미 저장된 상태입니다 — 실패 알림이 떠도 내보내기 자체는 끝났습니다</li>
+              <li>모달에 표시됐던 경로로 가서 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code> 또는 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>를 직접 여세요</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">"지원하지 않는 항목을 건너뛰었습니다" 알림이 떠요 (Vrew)</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Vrew 내보내기가 아직 지원하지 않는 항목은 건너뛰고, 건너뛴 개수를 알려줍니다</li>
+              <li>프로젝트 자체는 정상적으로 저장됩니다 — 해당 요소만 Vrew에서 다시 넣으면 됩니다</li>
+              <li>모든 요소가 그대로 필요하다면 CapCut이나 Premiere로 내보내세요</li>
             </ul>
           </div>
         </div>
@@ -424,6 +658,12 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
             오디오 패키지 가이드
+          </a>
+          <a href="/guide/ko/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            스토리 모드 가이드
           </a>
         </div>
       </div>

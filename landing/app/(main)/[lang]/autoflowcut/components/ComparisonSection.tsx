@@ -18,6 +18,21 @@ export default function ComparisonSection({ lang, t }: { lang: Language; t: (key
       flow: '✅ T2V + I2V',
     },
     {
+      feature: t('autoflowcut_diff_story' as TranslationKey),
+      whisk: '❌',
+      flow: '✅ Claude / Codex',
+    },
+    {
+      feature: t('autoflowcut_diff_tts' as TranslationKey),
+      whisk: '❌',
+      flow: '✅ Typecast / ElevenLabs / Gemini',
+    },
+    {
+      feature: t('autoflowcut_diff_sfx' as TranslationKey),
+      whisk: '❌',
+      flow: '✅',
+    },
+    {
       feature: t('autoflowcut_diff_export' as TranslationKey),
       whisk: '✅ CapCut',
       flow: '✅ CapCut / Premiere / Vrew',

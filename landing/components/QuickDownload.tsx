@@ -104,8 +104,13 @@ export default function QuickDownload({ lang }: QuickDownloadProps) {
                 </a>
               </div>
 
+              {/* macOS arch guidance — the UA cannot tell Apple Silicon from Intel, so say it. */}
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 text-center">
+                {t('quick_dl_mac_arch')}
+              </p>
+
               {/* Version info */}
-              <p className="text-xs text-gray-400 dark:text-gray-500 mt-3 text-center">
+              <p className="text-xs text-gray-400 dark:text-gray-500 mt-2 text-center">
                 {t('quick_dl_version')}
               </p>
             </div>

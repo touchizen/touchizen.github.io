@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlowCut - Story Mode Guide</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S0JLFKK5G0');
+  </script>
+  <meta name="description" content="Take a story from a blank page to a finished video without leaving AutoFlowCut. Walk through every Story mode step: Setup, Research, Synopsis, Script, Scene split, Audio and Prompts.">
+  <meta name="keywords" content="AutoFlowCut, Story mode, AI script writing, scene split, TTS, Typecast, ElevenLabs, Gemini, character reference, CapCut, video automation">
+  <meta name="author" content="Touchizen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://touchizen.com/guide/en/autoflowcut/story-guide.html">
+
+  <!-- hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="en" href="https://touchizen.com/guide/en/autoflowcut/story-guide.html">
+  <link rel="alternate" hreflang="ko" href="https://touchizen.com/guide/ko/autoflowcut/story-guide.html">
+  <link rel="alternate" hreflang="de" href="https://touchizen.com/guide/de/autoflowcut/story-guide.html">
+  <link rel="alternate" hreflang="ja" href="https://touchizen.com/guide/ja/autoflowcut/story-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://touchizen.com/guide/en/autoflowcut/story-guide.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://touchizen.com/guide/en/autoflowcut/story-guide.html">
+  <meta property="og:title" content="AutoFlowCut - Story Mode Guide">
+  <meta property="og:description" content="Take a story from a blank page to a finished video without leaving AutoFlowCut. A walkthrough of every step in the Story pipeline.">
+  <meta property="og:image" content="https://touchizen.com/images/autoflowcut-og.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Touchizen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@touchizen">
+  <meta name="twitter:title" content="AutoFlowCut - Story Mode Guide">
+  <meta name="twitter:description" content="Take a story from a blank page to a finished video without leaving AutoFlowCut.">
+  <meta name="twitter:image" content="https://touchizen.com/images/autoflowcut-og.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "AutoFlowCut Story Mode Guide",
+    "description": "How to take a story from a blank page to a finished video with AutoFlowCut Story mode",
+    "image": "https://touchizen.com/images/autoflowcut-og.png",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Organization",
+      "name": "Touchizen",
+      "url": "https://touchizen.com"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/autoflowcut.svg?v=20260313">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(to right, #06b6d4, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    .dark .glass {
+      background: rgba(17, 24, 39, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+    [id] {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white">
+  <!-- Shared header (see /guide/assets/header.js) -->
+  <div id="guide-header"></div>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+          🎬 Story Mode
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="gradient-text">Story Mode Guide</span>
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">
+          Take a story from a blank page to a finished video without leaving the app
+        </p>
+      </div>
+
+      <!-- Page TOC -->
+      <nav class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-5 md:p-6 mb-8" aria-label="📑 Page Contents">
+        <h2 class="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-3">📑 Page Contents</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
+        <li><a href="#what-is-story" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎬 What is Story Mode?</a></li>
+        <li><a href="#pipeline" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🧭 The Stepper at a Glance</a></li>
+        <li><a href="#setup" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">0️⃣ Setup</a></li>
+        <li><a href="#research" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">1️⃣ Research</a></li>
+        <li><a href="#synopsis" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">2️⃣ Synopsis</a></li>
+        <li><a href="#script" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">3️⃣ Script</a></li>
+        <li><a href="#scenes" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">4️⃣ Scene Split</a></li>
+        <li><a href="#audio" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">5️⃣ Audio</a></li>
+        <li><a href="#prompts" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">6️⃣ Prompts</a></li>
+        <li><a href="#auto-run" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">⚡ Auto &amp; Run All</a></li>
+        <li><a href="#characters" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎭 Characters &amp; @mention</a></li>
+        <li><a href="#generate-export" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚀 Generate &amp; Export</a></li>
+        </ul>
+      </nav>
+
+      <!-- What is Story Mode -->
+      <div id="what-is-story" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎬</span>
+          What is Story Mode?
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">v3.0.0</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Story mode is a pipeline that turns an idea into a scene table with prompts, voices and sound effects — all inside AutoFlowCut. You give it a title (or a script you already wrote), and it walks through research, synopsis, script, scene split, audio and prompts, handing each step's output to the next one.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">✍️</span>
+              <span class="font-semibold">Use Story mode when…</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">You have a subject, a title or a finished script — but no scenes, no prompts and no audio yet. Story mode builds all of that for you.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📥</span>
+              <span class="font-semibold">Use CSV / SRT import when…</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">You already have a storyboard table or subtitles plus an audio package built outside the app. See the <a href="/guide/en/autoflowcut/import-guide.html" class="text-primary-600 dark:text-primary-400 hover:underline">File Import Guide</a>.</p>
+          </div>
+        </div>
+
+        <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-emerald-700 dark:text-emerald-300">
+            💡 <strong>Tip:</strong> The two paths meet at the same place. Whichever way your scenes arrive, generation and export work exactly the same afterwards.
+          </p>
+        </div>
+      </div>
+
+      <!-- The Stepper at a Glance -->
+      <div id="pipeline" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🧭</span>
+          The Stepper at a Glance
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          The stepper sits at the top of the Story view. Every step is a chip you can click to go back and look at what it produced. A coloured dot on the chip shows its status: <strong>Pending</strong>, <strong>Running</strong>, <strong>Done</strong> or <strong>Error</strong>.
+        </p>
+
+        <pre class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">0 Setup  →  ① Research  →  ② Synopsis  →  ③ Script  →  ④ Scene split  →  ⑤ Audio  →  ⑥ Prompts
+                (optional)    (gate)                     [auto]           [auto]        [auto]
+
+                                                                          ▶ Run all</pre>
+
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Step</th>
+                <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Hands to the next step</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>0 Setup</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Genre, model, output language, script length, split unit, review settings, title — and optionally a script you paste or import</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>① Research</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">A structural analysis of reference YouTube videos, with fact-checked claims</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>② Synopsis</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">A synopsis and a confirmed cast of characters</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>③ Script</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">The full script text</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>④ Scene split</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Scenes, segments per speaker (with an emotion) and sound-effect cues</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>⑤ Audio</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">A narration track per speaker plus the generated sound effects</td></tr>
+              <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>⑥ Prompts</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">An image prompt and a video prompt for every scene</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-4 p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>Note:</strong> Research and Synopsis are gates, not generation steps — they are only clickable when they apply to your project. If you import a script that already has scenes fixed to imported images, the steps that would rewrite them stay locked.
+          </p>
+        </div>
+      </div>
+
+      <!-- 0 Setup -->
+      <div id="setup" class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">0️⃣</span>
+          Setup
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          The entry tab. Everything you choose here travels with the project — reopen it later and the form comes back exactly as you left it.
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Options</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Field</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">What you get</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Story type</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">The genre offered depends on the output language. Korean projects can pick <em>Yadam</em> (Korean historical tales); English projects can pick <em>Dark history</em>. Both offer <em>Bespoke</em>, the general-purpose default.</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Generation AI</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">The model that writes for you — Claude or Codex. Models that support it also show a <strong>Reasoning level</strong> selector next to the dropdown.</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Output language</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Korean or English. This is the language of the story, not of the app UI.</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Script length</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">A number plus a unit. Minutes work in both languages; you can also give a character count (Korean) or a word count (English). Up to 60 minutes.</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Scene split unit</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><em>By scene</em> with a target length range (5–10 seconds by default), or <em>By sentence</em>. See <a href="#scenes" class="text-primary-600 dark:text-primary-400 hover:underline">Scene split</a>.</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Review</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">An auto-review toggle and a round count (1–5) for the script, the scenes and the prompts.</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Title</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Optional. If you leave it blank and a script exists, AutoFlowCut generates a title for you before splitting scenes.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Two ways in</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">A</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Start from a title</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Type a title, press <strong>✨ Start</strong>, and the pipeline moves to the Synopsis gate, where the AI drafts a synopsis and a cast for you to approve.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-sm">B</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Bring your own script</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Paste the script into the text box, or drop a <code class="bg-violet-200 dark:bg-violet-800 px-1 rounded">.txt</code> / <code class="bg-violet-200 dark:bg-violet-800 px-1 rounded">.md</code> file onto it (<strong>📁 Choose file</strong> works too). Press <strong>✨ Start</strong>: the script is saved as-is, then the Synopsis gate pulls the characters back out of it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>Note:</strong> Once a script exists, the Setup button becomes <strong>↻ Restart with changes</strong> — it only lights up if you actually changed something. It restarts the pipeline from the script, so use it deliberately.
+          </p>
+        </div>
+      </div>
+
+      <!-- 1 Research -->
+      <div id="research" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">1️⃣</span>
+          Research
+          <span class="text-xs bg-gray-400 dark:bg-gray-600 text-white px-2 py-0.5 rounded-full">optional</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Look up what already works on YouTube before you commit to a subject. Research runs before the Synopsis and is available while your project has no script yet — it searches by keyword, so you don't even need a title.
+        </p>
+
+        <div class="bg-gray-50 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3">The flow</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Search</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Enter a keyword, choose how many results (10 / 20 / 30) and an upload period (all time, last week, last 30 days). You can also paste a YouTube URL to add a video by hand.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Pick your references</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Results come back as cards with thumbnail, channel, view count and upload date. Tick the ones you want; double-click a card to open its details — subscribers, publish date, viral score and an inline player.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Analyse</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400"><strong>Analyze all</strong> runs the three stages back to back: fetch transcripts → analyze structure → fact-check. You can also run <strong>Fetch transcripts</strong>, <strong>Analyze structure</strong> and <strong>Fact-check</strong> one at a time, and stop a long run with <strong>⏹ Stop</strong>.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Confirm or skip</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400"><strong>Use this research</strong> saves it with the project and moves on to the Synopsis. <strong>Skip</strong> goes straight to the Synopsis without it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🧱</span>
+              <span class="font-semibold">Structural analysis</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Breaks the reference videos into story beats with a summary each, lists the themes they share, and extracts their key claims.</p>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🔎</span>
+              <span class="font-semibold">Fact check</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Each claim gets a verdict — <em>Supported</em>, <em>Refuted</em> or <em>Unverified</em> — with source links. Only the ones you tick are carried into the project; by default that is the supported ones.</p>
+          </div>
+        </div>
+
+        <div class="p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800 mb-4">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            ⚠️ <strong>Requires yt-dlp.</strong> Research fetches search results and subtitles through <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">yt-dlp</code>. If it isn't installed, the panel shows the exact install command for your OS.
+          </p>
+        </div>
+
+        <div class="p-3 bg-red-100/50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
+          <p class="text-xs text-red-700 dark:text-red-400">
+            📜 <strong>For reference and reconstruction only.</strong> Copying or redistributing someone else's subtitles verbatim can infringe copyright. The app repeats this notice at the top of the Research panel.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 Synopsis -->
+      <div id="synopsis" class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">2️⃣</span>
+          Synopsis
+          <span class="text-xs bg-orange-500 text-white px-2 py-0.5 rounded-full">gate</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          The Synopsis is the one place where a human signs off before the machine runs away with your story. Nothing downstream — no scene split, no audio, no prompts — starts until you confirm the cast here.
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">What it does</h3>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc pl-5">
+            <li><strong>From a title:</strong> the AI writes the synopsis, streaming it into an editable text box, and proposes a cast.</li>
+            <li><strong>From your own script:</strong> it works backwards — the characters and a synopsis are pulled out of the script you brought.</li>
+            <li>If you confirmed a Research step, a <strong>Include research context</strong> checkbox appears. It is the only switch: research is never injected behind your back.</li>
+            <li>The synopsis text is fully editable, with a live line and character count.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">The character cards</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Each row is one character, and every field is yours to edit. Add or remove rows freely.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Field</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Used for</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Name</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Identifies the speaker in the scene table — and becomes the <code>@mention</code> handle later</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Gender</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Male / Female / Unknown. Pre-filters the voice picker and warns you about a mismatched voice</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Ethnicity</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Free text. Folded into the character's visual description in the image prompt</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Age</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Free text</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Role</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Free text</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>Prompt</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">The character's appearance. This is the same text the reference card is generated from — see <a href="#characters" class="text-primary-600 dark:text-primary-400 hover:underline">Characters &amp; @mention</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            If the script has no characters at all — a pure narration piece, for instance — the panel says so and you can confirm an empty cast and move on.
+          </p>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Review and immersion score</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Press <strong>Review</strong> and the AI reads its own synopsis, scores it for immersion out of 100, and rewrites it. Set how many rounds it gets (1–5). The score badge under the editor shows the first score and the last one, so you can see whether the rewrite actually helped — and if a round makes it worse, that revision is discarded and the log tells you so.
+          </p>
+        </div>
+
+        <div class="p-3 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-orange-700 dark:text-orange-300">
+            ✅ <strong>Confirm:</strong> from a title, the button reads <strong>Generate script from this synopsis</strong> and moves straight on to Script. From your own script, it reads <strong>Confirm characters</strong> — your script is left untouched, and only the cast is committed.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 Script -->
+      <div id="script" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">3️⃣</span>
+          Script
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          The script is the single source of truth for everything after it. It streams in live as the model writes, then drops into an editor you can rewrite by hand at any time.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">↻</span>
+              <span class="font-semibold">Rewrite</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Regenerates the whole script from the current title and settings. If the new run fails, the old script stays.</p>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">➕</span>
+              <span class="font-semibold">Continue</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Keeps what is already written and carries on from where it stopped — useful when a long script comes up short.</p>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🔍</span>
+              <span class="font-semibold">Review</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Same review-and-revise loop as the synopsis, with its own immersion score and round count. Tick <strong>Auto review</strong> in Setup to have it run on every generation.</p>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">✂️</span>
+              <span class="font-semibold">Split</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Saves your edits and runs the scene split in one action. If the title is still empty, it is generated first.</p>
+          </div>
+        </div>
+
+        <div class="p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>Note:</strong> While generation runs, a stopwatch shows the elapsed time and <strong>⏹ Stop</strong> cancels it. A high reasoning level can take a while before the first words appear — the clock tells you it is still working.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 Scene split -->
+      <div id="scenes" class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">4️⃣</span>
+          Scene Split
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Cuts the script into scenes, and each scene into segments. A segment is either a line of narration or dialogue — with a speaker and an emotion — or a sound-effect cue.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🎞️</span>
+              <span class="font-semibold">By scene</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Scenes are cut to a target length you set — a minimum and a maximum in seconds (5–10 by default).</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📝</span>
+              <span class="font-semibold">By sentence</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">One scene per sentence, always cutting on a change of speaker. Very short fragments are merged, and anything over 10 seconds is split.</p>
+          </div>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">The scene table</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            Three columns: the scene number, the speaker, and the segment itself. Character lines carry their emotion underneath — <em>normal</em>, <em>happy</em>, <em>sad</em> or <em>angry</em>. Narration does not: the narrator is never given an emotion. Sound-effect rows are marked <strong>SFX</strong> and show the effect description instead of a line.
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            The emotion is not decoration. It is what the TTS engine is told to perform.
+          </p>
+        </div>
+
+        <div class="p-3 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-primary-700 dark:text-primary-300">
+            🔁 <strong>Not happy with the cut?</strong> The split unit and the length range sit right above the table. Change them and press <strong>↻ Re-split scenes</strong> — you can do this as often as you like.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5 Audio -->
+      <div id="audio" class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">5️⃣</span>
+          Audio
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Every speaker gets their own voice, and every sound-effect cue gets a sound. The result is a separate narration track per speaker, which is what makes a multi-character story sound like a cast rather than one person reading aloud.
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Casting the voices</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            The speaker list sits at the top of the panel: each row shows the character's name, a gender badge and their appearance. Click the 🎙 button to open the voice picker.
+          </p>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc pl-5">
+            <li><strong>Any engine, per speaker.</strong> Filter by <strong>Typecast</strong>, <strong>Gemini</strong> or <strong>ElevenLabs</strong> — or leave it on <em>All</em>. Different characters can use different engines in the same story.</li>
+            <li><strong>Search and preview.</strong> Search by name or trait, filter by gender, and hit play on any card to hear the voice before you commit. ElevenLabs' shared library is searched remotely, so type at least two characters to reach beyond the first page.</li>
+            <li><strong>Gender tags.</strong> Every card is tagged male, female or unknown. If a voice is untagged or the tag is wrong, right-click the card to set it yourself.</li>
+            <li><strong>Mismatch warning.</strong> If a character's gender and the chosen voice's gender disagree, a ⚠ appears on the button. It doesn't block you — it just makes sure the mistake was on purpose.</li>
+            <li><strong>Default voice.</strong> Leave a speaker on <em>Default voice</em> and the app falls back to its own default for that engine.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Emotion — characters only</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            The emotion the scene split assigned to a character's line is passed to the TTS engine, so the delivery matches the moment. The <strong>narrator is deliberately excluded</strong>: an emoting narrator sounds unhinged, and a steady one carries the story.
+          </p>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Sound effects</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Sound effects are pulled out of the script during the scene split and placed on the scenes they belong to — they show up as <strong>SFX</strong> rows with their description. They are generated with ElevenLabs, and you can audition them one at a time from the row.
+          </p>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Working row by row</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Action</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">What it does</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>▶ Test</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Synthesises just that one segment with the voice you picked and plays it back — no need to run the whole batch to hear whether the casting works</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>▶ / ⏹</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Plays back audio that has already been generated</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><strong>↻</strong></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Forces that one segment to be generated again</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            Each row also shows its own status — pending, running, done or error — updating live as the batch runs.
+          </p>
+        </div>
+
+        <div class="p-3 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-violet-700 dark:text-violet-300">
+            🎧 <strong>When it's done</strong>, a timeline appears above the table with every voice track and the sound effects laid out against the subtitles — the same timeline you get from an imported audio package. <strong>↻ Regenerate audio</strong> only re-synthesises the segments whose engine or voice actually changed.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 Prompts -->
+      <div id="prompts" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">6️⃣</span>
+          Prompts
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          The last step writes an <strong>image prompt</strong> and a <strong>video prompt</strong> for every scene, using the scene's summary and segment text, the visual description of your confirmed characters, and the style. The table shows them side by side, one row per scene.
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Prompts get the same treatment as the script: a <strong>Review</strong> button with a round count, plus an auto-review toggle in Setup. <strong>↻ Regenerate prompts</strong> rewrites them all.
+        </p>
+
+        <div class="p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>Note:</strong> These prompts land in the normal scene table, so you can keep editing them anywhere else in AutoFlowCut — in the app, or through the <a href="/guide/en/autoflowcut/mcp-guide.html" class="underline">MCP server</a> from Claude Code.
+          </p>
+        </div>
+      </div>
+
+      <!-- Auto & Run all -->
+      <div id="auto-run" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">⚡</span>
+          Auto &amp; Run All
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Tick <strong>auto</strong> on the steps you trust, press <strong>▶ Run all</strong>, and the pipeline carries itself to the end.
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">How it behaves</h3>
+          <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc pl-5">
+            <li>The <strong>auto</strong> checkbox lives inside the chip itself, on the three steps that can run unattended: <strong>Scene split</strong>, <strong>Audio</strong> and <strong>Prompts</strong>. Setup and Script are not on the list — a script needs a human.</li>
+            <li><strong>Run all</strong> runs the auto-ticked steps in order and skips the rest. It needs a finished script, and it stops the moment a step errors.</li>
+            <li><strong>Audio is off by default.</strong> TTS costs money on every run, so you have to opt in on purpose.</li>
+            <li>Confirm the cast in the Synopsis gate first: while it is unconfirmed, Run all stays disabled.</li>
+          </ul>
+        </div>
+
+        <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-emerald-700 dark:text-emerald-300">
+            💡 <strong>A good rhythm:</strong> leave Scene split and Prompts on auto, keep Audio off until you have listened to a few test lines in the voice picker, then tick it and let Run all finish the job.
+          </p>
+        </div>
+      </div>
+
+      <!-- Characters & @mention -->
+      <div id="characters" class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎭</span>
+          Characters &amp; @mention
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Characters do not stay inside the script. Once you confirm the cast in the Synopsis gate, they register themselves as <strong>reference cards</strong> in the References tab — the <em>Prompt</em> field you edited on each card is exactly the text the reference image is generated from.
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Attaching a character to a scene</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            Type <code class="bg-orange-200 dark:bg-orange-800 px-1 rounded">@</code> followed by the character's name inside a scene prompt, and it becomes a chip bound to that reference image:
+          </p>
+          <pre class="bg-gray-900 dark:bg-black text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">@scholar sits alone in a lamplit study, rain against the window</pre>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            A matched mention becomes a cyan chip; an unmatched one stays as plain text with a red wavy underline — so you always know whether the reference is really attached. This is why the character name matters: it is the handle.
+          </p>
+        </div>
+
+        <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-orange-700 dark:text-orange-300">
+            📖 <strong>The full @mention spec</strong> — matching rules, chips, reference images — lives in the <a href="/guide/en/autoflowcut/import-guide.html" class="underline font-semibold">File Import Guide</a>. Story mode simply gives you the cast for free.
+          </p>
+        </div>
+      </div>
+
+      <!-- Generate & Export -->
+      <div id="generate-export" class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🚀</span>
+          Generate &amp; Export
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          When the pipeline reaches the end, Story mode hands over a finished project: scenes, prompts, characters as references, and audio. From here on, nothing is Story-specific.
+        </p>
+
+        <div class="space-y-4 mb-6">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Generate images and video</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Run the scenes through generation exactly as you would for an imported project — via Google Flow login or with your own Gemini / Veo API key. Review the output in the results panel: Timeline, Results or Grid.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Fix what needs fixing</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Edit a prompt and regenerate a single scene, re-record one line of audio, or re-split the scenes. Each step stays reachable from its chip in the stepper.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Export to your editor</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Export to <strong>CapCut</strong>, <strong>Adobe Premiere Pro</strong> (<code class="bg-primary-200 dark:bg-primary-800 px-1 rounded">.prproj</code>) or <strong>Vrew</strong> (<code class="bg-primary-200 dark:bg-primary-800 px-1 rounded">.vrew</code>). Your narration tracks and sound effects come along as separate audio tracks.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-primary-700 dark:text-primary-300">
+            📖 <strong>Next:</strong> the <a href="/guide/en/autoflowcut/capcut-export.html" class="underline font-semibold">Export to CapCut Guide</a> covers where the project folder goes and how to open it.
+          </p>
+        </div>
+      </div>
+
+      <!-- Related Guides -->
+      <div class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📚</span>
+          Related Guides
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <a href="/guide/en/autoflowcut/import-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            File Import Guide
+          </a>
+          <a href="/guide/en/autoflowcut/capcut-export.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Export to CapCut Guide
+          </a>
+          <a href="/guide/en/autoflowcut/audio-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Audio Package Guide
+          </a>
+          <a href="/guide/en/autoflowcut/mcp-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            MCP Server Guide
+          </a>
+          <a href="/guide/en/autoflowcut/skills-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Skills Guide
+          </a>
+        </div>
+      </div>
+
+      <!-- Back to App -->
+      <div class="text-center">
+        <a href="/guide/en/autoflowcut/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Back to AutoFlowCut
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026 Touchizen. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Copy code function
+    function copyCode(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 1500);
+      });
+    }
+  </script>
+  <script src="/guide/assets/header.js"></script>
+</body>
+</html>

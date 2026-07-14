@@ -110,7 +110,7 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
                 {lang === 'ko' ? '로컬 프로젝트' : lang === 'ja' ? 'ローカルプロジェクト' : lang === 'de' ? 'Lokale Projekte' : 'Local Projects'}
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                {lang === 'ko' ? '프로젝트와 내보내기는 기기에 저장' : lang === 'ja' ? 'プロジェクトとエクスポートは端末に保存' : lang === 'de' ? 'Projekte und Exporte bleiben auf dem Gerät' : 'Projects and exports stay on your device'}
+                {lang === 'ko' ? '프로젝트와 내보내기는 기기에 저장 · 익명 오류 리포트에서 토큰 · 키 · 프롬프트 · 이름은 제거' : lang === 'ja' ? 'プロジェクトとエクスポートは端末に保存 · 匿名エラーレポートからトークン・キー・プロンプト・名前を除去' : lang === 'de' ? 'Projekte und Exporte bleiben auf dem Gerät · Anonyme Fehlerberichte ohne Token, Schlüssel, Prompts und Namen' : 'Projects and exports stay on your device — anonymous error reports strip tokens, keys, prompts and names'}
               </p>
             </div>
 

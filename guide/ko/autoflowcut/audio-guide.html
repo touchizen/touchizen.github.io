@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoFlowCut - 오디오 임포트 가이드</title>
+  <title>AutoFlowCut - 오디오 가이드</title>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
   <script>
@@ -12,8 +12,8 @@
     gtag('js', new Date());
     gtag('config', 'G-S0JLFKK5G0');
   </script>
-  <meta name="description" content="AutoFlowCut에 TTS 대사 음성과 SFX 효과음을 준비하고 임포트하는 방법을 알아보세요. 오디오 패키지 구조, 파일 명명 규칙, 리뷰 시스템 가이드.">
-  <meta name="keywords" content="AutoFlowCut, 오디오 임포트, TTS, 효과음, SFX, Typecast, ElevenLabs, CapCut, 음성 생성, 오디오 패키지">
+  <meta name="description" content="AutoFlowCut Story 모드에서 화자별 성우(Typecast · Gemini · ElevenLabs)와 효과음을 앱 안에서 바로 생성하는 방법, 그리고 직접 만든 오디오 패키지를 가져오는 방법.">
+  <meta name="keywords" content="AutoFlowCut, 오디오, TTS, 성우, 효과음, SFX, Typecast, ElevenLabs, Gemini TTS, Story 모드, 오디오 임포트, CapCut">
   <meta name="author" content="Touchizen">
   <meta name="robots" content="index, follow">
 
@@ -30,8 +30,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://touchizen.com/guide/ko/autoflowcut/audio-guide.html">
-  <meta property="og:title" content="AutoFlowCut - 오디오 임포트 가이드">
-  <meta property="og:description" content="AutoFlowCut에 TTS 대사 음성과 SFX 효과음을 준비하고 임포트하는 방법을 알아보세요.">
+  <meta property="og:title" content="AutoFlowCut - 오디오 가이드">
+  <meta property="og:description" content="Story 모드에서 성우·효과음을 바로 생성하고, 직접 만든 오디오를 가져오는 방법.">
   <meta property="og:image" content="https://touchizen.com/images/autoflowcut-og.png">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="Touchizen">
@@ -39,8 +39,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@touchizen">
-  <meta name="twitter:title" content="AutoFlowCut - 오디오 임포트 가이드">
-  <meta name="twitter:description" content="AutoFlowCut에 TTS 대사 음성과 SFX 효과음을 준비하고 임포트하는 방법을 알아보세요.">
+  <meta name="twitter:title" content="AutoFlowCut - 오디오 가이드">
+  <meta name="twitter:description" content="Story 모드에서 성우·효과음을 바로 생성하고, 직접 만든 오디오를 가져오는 방법.">
   <meta name="twitter:image" content="https://touchizen.com/images/autoflowcut-og.png">
 
   <!-- Structured Data (JSON-LD) -->
@@ -48,8 +48,8 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "AutoFlowCut 오디오 임포트 가이드",
-    "description": "AutoFlowCut에 TTS 대사 음성과 SFX 효과음을 준비하고 임포트하는 방법",
+    "name": "AutoFlowCut 오디오 가이드",
+    "description": "Story 모드에서 화자별 성우와 효과음을 생성하는 방법, 그리고 오디오 패키지를 수동으로 가져오는 방법",
     "image": "https://touchizen.com/images/autoflowcut-og.png",
     "inLanguage": "ko",
     "author": {
@@ -129,10 +129,10 @@
           🎵 오디오 가이드
         </div>
         <h1 class="text-3xl md:text-4xl font-bold mb-4">
-          <span class="gradient-text">오디오 임포트 가이드</span>
+          <span class="gradient-text">오디오 생성 &amp; 임포트 가이드</span>
         </h1>
         <p class="text-gray-600 dark:text-gray-400 text-lg">
-          AutoFlowCut용 TTS 대사 음성과 SFX 효과음 준비 방법
+          Story 모드에서 성우·효과음을 바로 만들고, 직접 만든 오디오를 가져오는 방법
         </p>
       </div>
 
@@ -140,64 +140,330 @@
       <nav class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-5 md:p-6 mb-8" aria-label="📑 페이지 목차">
         <h2 class="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-3">📑 페이지 목차</h2>
         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
-        <li><a href="#quick-start" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚀 빠른 시작</a></li>
-        <li><a href="#package-structure" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📁 오디오 패키지 구조</a></li>
-        <li><a href="#tts" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎙️ TTS (대사 음성)</a></li>
-        <li><a href="#sfx" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔊 SFX (효과음)</a></li>
-        <li><a href="#audio-review" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔍 오디오 리뷰 시스템</a></li>
+        <li><a href="#story-audio" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎬 Story 모드 오디오 (권장)</a></li>
+        <li><a href="#voice-assignment" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎙️ 화자별 성우 지정</a></li>
+        <li><a href="#emotion" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎭 감정 처리 규칙</a></li>
+        <li><a href="#story-sfx" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔊 효과음 자동 추출</a></li>
         <li><a href="#audio-tab" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎧 앱 내 오디오 탭</a></li>
+        <li><a href="#manual-import" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📦 직접 만든 오디오 가져오기</a></li>
+        <li><a href="#package-structure" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📁 오디오 패키지 구조</a></li>
+        <li><a href="#tts" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎙️ TTS 파일 (수동)</a></li>
+        <li><a href="#sfx" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔊 SFX 파일 (수동)</a></li>
+        <li><a href="#audio-review" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔍 오디오 리뷰 시스템</a></li>
         </ul>
       </nav>
 
-      <!-- Quick Start -->
-      <div id="quick-start" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+      <!-- Story Mode Audio (native) -->
+      <div id="story-audio" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
-          <span class="text-2xl">🚀</span>
-          빠른 시작
-          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">3단계</span>
+          <span class="text-2xl">🎬</span>
+          Story 모드 오디오 (권장)
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">v3.0.0+</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          외부에서 오디오 파일을 생성한 후, 오디오 패키지 폴더를 AutoFlowCut에 임포트합니다.
+          v3.0.0부터는 외부 API를 직접 호출할 필요가 없습니다. Story 모드의 <strong>⑤ 오디오</strong> 단계에서 대사 음성(TTS)과 효과음(SFX)을 앱 안에서 바로 생성합니다.
         </p>
 
         <div class="space-y-4">
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">스크립트에서 TTS 음성 생성</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Typecast 또는 ElevenLabs를 사용하여 인물별 대사 음성을 생성합니다. 캐릭터별 폴더로 정리하세요.</p>
+              <p class="font-medium text-gray-900 dark:text-white">④ 씬 분리로 세그먼트 만들기</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">대본을 씬으로 나누면 각 씬이 나레이션·대사 세그먼트와 효과음(sfx) 세그먼트로 쪼개집니다. 세그먼트마다 화자와 감정이 함께 붙습니다.</p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">SFX 효과음 생성</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">ElevenLabs Sound Generation API로 환경음, 발소리, 소품 소리 등을 카테고리별로 생성합니다.</p>
+              <p class="font-medium text-gray-900 dark:text-white">⑤ 오디오에서 화자별 성우 지정</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">화자 목록에서 <code class="bg-emerald-200 dark:bg-emerald-800 px-1 rounded">🎙</code> 버튼을 눌러 성우 선택 모달을 엽니다. 지정하지 않은 화자는 <strong>기본 성우</strong>로 생성됩니다.</p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">AutoFlowCut에서 오디오 패키지 임포트</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">프로젝트 디렉토리의 <code class="bg-emerald-200 dark:bg-emerald-800 px-1 rounded">media/</code> 폴더에 모든 오디오 파일을 배치합니다. AutoFlowCut이 자동으로 오디오 패키지를 감지하고 임포트합니다.</p>
+              <p class="font-medium text-gray-900 dark:text-white">실행하고 세그먼트별로 확인</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">생성된 오디오는 프로젝트의 <code class="bg-emerald-200 dark:bg-emerald-800 px-1 rounded">story/audio/segments/</code>에 저장되고, 완료되면 화자별 트랙 타임라인이 패널에 나타납니다. 표에서는 세그먼트마다 <strong>▶테스트 · 미리듣기 · ↻재생성</strong>을 쓸 수 있습니다.</p>
             </div>
           </div>
         </div>
 
         <div class="mt-6 p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
           <p class="text-sm text-emerald-700 dark:text-emerald-300">
+            💡 <strong>팁:</strong> 스텝마다 '자동'을 켜고 '전체 진행'을 누르면 씬 분리 → 오디오 → 프롬프트가 이어서 실행됩니다. Story 모드 전체 흐름은 <a href="/guide/ko/autoflowcut/story-guide.html" class="underline font-medium">스토리 모드 가이드</a>를 참고하세요.
+          </p>
+        </div>
+      </div>
+
+      <!-- Per-speaker voice assignment -->
+      <div id="voice-assignment" class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎙️</span>
+          화자별 성우 지정
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          성우는 <strong>화자 단위</strong>로 지정합니다. 한 대본 안에서 나레이터는 Typecast, 주인공은 ElevenLabs, 조연은 Gemini처럼 엔진을 섞어 쓸 수 있습니다.
+        </p>
+
+        <!-- Engines -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">TTS 엔진 3종</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">엔진</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>Typecast</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">설정 → TTS 키 탭에 API 키를 넣으면 성우 목록이 로드됩니다. 감정 파라미터를 그대로 지원합니다.</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>Gemini TTS</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Gemini API 키를 그대로 재사용합니다(별도 키 불필요). 다국어 프리빌트 보이스를 제공합니다.</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>ElevenLabs</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">설정 → TTS 키 탭에 API 키를 넣습니다. 공유 보이스가 매우 많아, 모달 검색창에 2글자 이상 입력하면 원격 검색으로 더 불러옵니다.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Voice picker -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3">성우 선택 모달</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">🔖</span>
+              <div>
+                <div class="font-medium text-sm">엔진 칩</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">전체 / Typecast / Gemini / ElevenLabs — 칩마다 성우 개수가 표시됩니다.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">⌕</span>
+              <div>
+                <div class="font-medium text-sm">검색</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">이름과 특성(traits)으로 필터링합니다.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">♀♂</span>
+              <div>
+                <div class="font-medium text-sm">성별 세그먼트</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">전체 / 여성 / 남성. 캐릭터 성별이 파악돼 있으면 그 성별로 열립니다.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">▶</span>
+              <div>
+                <div class="font-medium text-sm">미리듣기</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">카드의 재생 버튼으로 샘플 음성을 바로 들어봅니다.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">🏷️</span>
+              <div>
+                <div class="font-medium text-sm">카드 정보</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">이름, 성별 태그, 언어, 특성 태그가 카드에 표시됩니다.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">✔</span>
+              <div>
+                <div class="font-medium text-sm">확정</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">[이 성우로 지정]을 눌러야 화자에 반영됩니다. 취소하면 기존 배정이 유지됩니다.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">알아두면 좋은 것</h3>
+          <div class="space-y-2">
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; 캐릭터 성별과 성우 성별이 다르면 버튼에 <strong>⚠</strong>가 붙습니다. 경고일 뿐, 생성은 그대로 진행됩니다.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; 성별이 확정되지 않은 성우 카드는 <strong>우클릭</strong>해서 여성/남성으로 직접 지정할 수 있습니다.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; 화자마다 <strong>별도의 나레이션 트랙</strong>으로 분리됩니다(나레이터는 0번 트랙). CapCut으로 내보낼 때 그대로 멀티트랙이 됩니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emotion rules -->
+      <div id="emotion" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎭</span>
+          감정 처리 규칙
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          감정 값은 씬 분리 단계에서 세그먼트마다 자동으로 붙고, ⑤ 오디오 표의 <strong>세그먼트(감정)</strong> 열에서 확인할 수 있습니다.
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">감정 값</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">감정</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>normal</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">기본</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>happy</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">밝은 / 기쁜</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>sad</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">슬픈</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>angry</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">화난 / 강한</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">적용 규칙</h3>
+          <div class="space-y-2">
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; 감정은 <strong>캐릭터 대사에만</strong> 적용됩니다. 나레이터 세그먼트는 감정 값과 무관하게 항상 <code>normal</code>로 합성됩니다.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; 엔진마다 처리 방식이 다릅니다 — Typecast는 emotion 파라미터, Gemini TTS는 스타일 지시문, ElevenLabs는 voice settings로 톤을 근사합니다.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; 화자의 성우·엔진·감정이 바뀌면 해당 세그먼트는 재사용되지 않고 다시 합성됩니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SFX auto-extraction (native) -->
+      <div id="story-sfx" class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🔊</span>
+          효과음 자동 추출
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          효과음은 대본에서 자동으로 뽑힙니다. 씬 분리 때 AI가 문 여는 소리·천둥·발소리처럼 효과음이 필요한 지점에 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">sfx</code> 세그먼트(짧은 영문 묘사)를 끼워 넣고, ⑤ 오디오가 그 자리에 맞춰 생성합니다.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🎬</span>
+              <span class="font-semibold">씬에 배치</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">효과음 세그먼트는 대사와 같은 순서 자리를 차지합니다. 씬 안에서 그 대사 사이에 그대로 놓입니다.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📋</span>
+              <span class="font-semibold">표에서 보이는 모습</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">화자 칸에는 <code>SFX</code>, 세그먼트 칸에는 영문 묘사와 소스 선택 드롭다운이 나옵니다. 실제로 생성되는 소스는 <strong>ElevenLabs</strong>(기본값) 하나입니다 — Library는 아직 사용할 수 없습니다.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">▶</span>
+              <span class="font-semibold">하나씩 들어보기</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400"><strong>▶테스트</strong>로 그 효과음만 단건 생성해 들어보고, 마음에 안 들면 <strong>↻</strong>로 재생성합니다.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📁</span>
+              <span class="font-semibold">저장 위치</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">생성된 효과음도 대사 음성과 같이 <code>story/audio/segments/</code>에 저장됩니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="audio-tab" class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎧</span>
+          앱 내 오디오 탭
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          임포트 후, 오디오 탭에서 오디오 패키지의 전체 개요를 확인할 수 있습니다.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📊</span>
+              <span class="font-semibold">요약 뷰</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">캐릭터별 음성 수, 카테고리별 SFX 수, 전체 재생 시간 분석.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">⏱️</span>
+              <span class="font-semibold">타임라인 뷰</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">타임코드를 통한 자동 씬 매칭과 함께 시간순으로 표시.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">▶️</span>
+              <span class="font-semibold">재생</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">인라인 플레이어로 앱 내에서 바로 오디오 파일 미리듣기.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🚩</span>
+              <span class="font-semibold">플래그 및 정렬</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">교체가 필요한 오디오에 플래그. 이름, 재생시간, 상태별 정렬.</p>
+          </div>
+        </div>
+        <div class="mt-4 p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>결과 패널 뷰 3종:</strong> 생성 탭 하단의 결과 패널은 <strong>▶ 타임라인 · ☰ 결과표 · ⊞ 그리드</strong> 세 가지 뷰로 전환됩니다. 그리드 뷰는 v3.0.0에서 추가됐습니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- Manual audio package import (secondary) -->
+      <div id="manual-import" class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          직접 만든 오디오 가져오기
+          <span class="text-xs bg-gray-500 text-white px-2 py-0.5 rounded-full">수동</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          외부에서 만든 오디오를 그대로 쓰고 싶다면, 예전 방식인 <strong>오디오 패키지 임포트</strong>도 그대로 동작합니다. Story 모드를 쓰지 않거나, 이미 확보한 음성·효과음이 있을 때 사용하세요.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">외부에서 TTS 음성 생성</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Typecast 또는 ElevenLabs로 인물별 대사 음성을 생성하고, 캐릭터별 폴더로 정리합니다.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">효과음 생성</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">ElevenLabs Sound Generation API로 환경음, 발소리, 소품 소리 등을 카테고리별로 생성합니다.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">AutoFlowCut에서 임포트</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">프로젝트 디렉토리의 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">media/</code> 폴더에 오디오 파일을 배치하면 AutoFlowCut이 자동으로 오디오 패키지를 감지하고 임포트합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-gray-600 dark:text-gray-400">
             💡 <strong>팁:</strong> 파일명에 타임코드가 포함된 오디오 파일은 해당 SRT 자막 타임스탬프에 자동으로 매칭됩니다.
           </p>
         </div>
       </div>
 
-      <!-- Audio Package Structure -->
       <div id="package-structure" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">📁</span>
           오디오 패키지 구조
+          <span class="text-xs bg-gray-500 text-white px-2 py-0.5 rounded-full">수동</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           프로젝트 폴더 내에서 다음 디렉토리 구조로 오디오 파일을 구성하세요:
@@ -227,11 +493,11 @@
         </div>
       </div>
 
-      <!-- TTS (대사 음성) -->
       <div id="tts" class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">🎙️</span>
           TTS (대사 음성)
+          <span class="text-xs bg-gray-500 text-white px-2 py-0.5 rounded-full">수동</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
           Text-to-Speech API로 생성하는 인물별 대사 음성입니다.
@@ -261,30 +527,15 @@
         <!-- Emotions -->
         <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
           <h3 class="font-semibold text-gray-900 dark:text-white mb-2">감정 파라미터</h3>
-          <div class="overflow-x-auto">
-            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
-              <thead>
-                <tr class="bg-gray-100 dark:bg-gray-800">
-                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">감정</th>
-                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">설명</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>normal</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">기본</td></tr>
-                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>happy</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">밝은 / 기쁜</td></tr>
-                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>sad</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">슬픈</td></tr>
-                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>angry</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">화난 / 강한</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400">감정 값은 앱이 생성할 때와 같습니다(<code>normal</code> / <code>happy</code> / <code>sad</code> / <code>angry</code>). 자세한 내용은 <a href="#emotion" class="text-primary-600 dark:text-primary-400 hover:underline">감정 처리 규칙</a>을 참고하세요.</p>
         </div>
       </div>
 
-      <!-- SFX (효과음) -->
       <div id="sfx" class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">🔊</span>
           SFX (효과음)
+          <span class="text-xs bg-gray-500 text-white px-2 py-0.5 rounded-full">수동</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
           AI 사운드 생성으로 만드는 환경음, 폴리, 효과음입니다.
@@ -368,11 +619,11 @@
         </div>
       </div>
 
-      <!-- Audio Review System -->
       <div id="audio-review" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">🔍</span>
           오디오 리뷰 시스템
+          <span class="text-xs bg-gray-500 text-white px-2 py-0.5 rounded-full">수동</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           앱 UI 또는 Claude Code MCP 도구를 통해 부적합한 오디오 파일에 플래그를 지정합니다. 플래그된 파일은 <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.audio_review.json</code>에서 추적됩니다.
@@ -400,48 +651,6 @@
               <code class="text-primary-600 dark:text-primary-400 font-mono text-xs">update_audio_review</code>
               <span class="text-gray-600 dark:text-gray-400">&mdash; 마크 추가/해제</span>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Audio Tab in App -->
-      <div id="audio-tab" class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
-        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
-          <span class="text-2xl">🎧</span>
-          앱 내 오디오 탭
-        </h2>
-        <p class="text-gray-600 dark:text-gray-400 mb-6">
-          임포트 후, 오디오 탭에서 오디오 패키지의 전체 개요를 확인할 수 있습니다.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">📊</span>
-              <span class="font-semibold">요약 뷰</span>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">캐릭터별 음성 수, 카테고리별 SFX 수, 전체 재생 시간 분석.</p>
-          </div>
-          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">⏱️</span>
-              <span class="font-semibold">타임라인 뷰</span>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">타임코드를 통한 자동 씬 매칭과 함께 시간순으로 표시.</p>
-          </div>
-          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">▶️</span>
-              <span class="font-semibold">재생</span>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">인라인 플레이어로 앱 내에서 바로 오디오 파일 미리듣기.</p>
-          </div>
-          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">🚩</span>
-              <span class="font-semibold">플래그 및 정렬</span>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">교체가 필요한 오디오에 플래그. 이름, 재생시간, 상태별 정렬.</p>
           </div>
         </div>
       </div>
@@ -476,6 +685,12 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
             스킬 가이드
+          </a>
+          <a href="/guide/ko/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            스토리 모드 가이드
           </a>
         </div>
       </div>

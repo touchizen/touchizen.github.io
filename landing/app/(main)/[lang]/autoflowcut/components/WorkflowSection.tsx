@@ -79,7 +79,9 @@ export default function WorkflowSection({ lang, t }: { lang: Language; t: (key: 
           {/* Visual Pipeline */}
           <div className="mt-12 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm">
             <div className="flex flex-wrap items-center justify-center gap-3 text-sm md:text-base font-mono">
-              <span className="px-3 py-1.5 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded-lg">TXT / CSV / SRT</span>
+              <span className="px-3 py-1.5 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded-lg">
+                {lang === 'ko' ? '스토리 모드' : lang === 'ja' ? 'ストーリーモード' : lang === 'de' ? 'Story-Modus' : 'Story mode'} / TXT / CSV / SRT
+              </span>
               <span className="text-gray-400">→</span>
               <span className="px-3 py-1.5 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-lg">Gemini 🖼️</span>
               <span className="text-gray-400">→</span>

@@ -150,6 +150,7 @@
         <li><a href="#plain-text" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📝 プロンプトTextファイル</a></li>
         <li><a href="#scene-csv" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📊 シーンCSVファイル</a></li>
         <li><a href="#reference-csv" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🖼️ リファレンスCSVファイル</a></li>
+        <li><a href="#mention-refs" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📌 @メンションでリファレンスを付ける</a></li>
         <li><a href="#srt-subtitle" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎬 字幕SRTファイル</a></li>
         <li><a href="#ai-text-prompt" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📝 AIでTextプロンプトリストを自動生成</a></li>
         <li><a href="#ai-csv-prompt" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🤖 AIでCSVを自動生成</a></li>
@@ -1346,6 +1347,214 @@ style,jidaigeki,,"Japanese jidaigeki historical drama style, Edo period atmosphe
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">💡 スタイルタグをクリックするとコピーされます。</p>
       </div>
 
+      <!-- @mention References -->
+      <div id="mention-refs" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📌</span>
+          @メンションでリファレンスを付ける
+          <span class="text-xs bg-cyan-500 text-white px-2 py-0.5 rounded-full">タグの相棒</span>
+        </h2>
+
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          タグ列のほかに、<strong>プロンプト本文に <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">@名前</code> と書く</strong>方法があります。
+          <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">name</code> が一致するリファレンスが、そのシーンの生成に自動的に添付されます。
+          Google Flow の <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">@</code> メンションと同じ仕組みで、CSVインポートで取り込んだプロンプトにもそのまま効きます —
+          <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">prompt</code> セルに <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">@shogun</code> があれば <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">shogun</code> リファレンスが付きます。
+        </p>
+
+        <!-- Syntax -->
+        <div class="bg-cyan-50 dark:bg-cyan-900/20 rounded-xl border border-cyan-200 dark:border-cyan-800 p-5 mb-6">
+          <h3 class="font-semibold text-cyan-800 dark:text-cyan-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">✍️</span> 文法
+          </h3>
+          <div class="bg-gray-900 dark:bg-black rounded-lg p-3 font-mono text-sm text-green-400 mb-3 overflow-x-auto">
+            A wise old <span class="text-cyan-400">@shogun</span> sitting in the <span class="text-cyan-400">@edojou</span> great hall
+          </div>
+          <ul class="text-sm text-cyan-700 dark:text-cyan-400 space-y-1 ml-4">
+            <li>• <code class="bg-cyan-100 dark:bg-cyan-900 px-1 rounded">@shogun</code> → 名前が <code class="bg-cyan-100 dark:bg-cyan-900 px-1 rounded">shogun</code> のリファレンスがこのシーンに添付されます。</li>
+            <li>• プロンプトのどこにでも、いくつでも書けます。</li>
+            <li>• 生成時に <code class="bg-cyan-100 dark:bg-cyan-900 px-1 rounded">@</code> 記号は取り除かれ、名前だけがプロンプト本文に残ります（リファレンス画像は別途添付されます）。</li>
+          </ul>
+        </div>
+
+        <!-- Union with tags -->
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-5 mb-6">
+          <h3 class="font-bold text-amber-800 dark:text-amber-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">➕</span>
+            タグの<u>置き換えではなく合算</u>されます
+          </h3>
+          <p class="text-amber-700 dark:text-amber-400 text-sm mb-4">
+            @メンションは<a href="#reference-csv" class="underline hover:text-amber-900 dark:hover:text-amber-200">タグマッチングシステム</a>の<strong>代替ではなく相棒</strong>です。
+            タグ列で見つかったリファレンスと <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">@メンション</code> で見つかったリファレンスは<strong>和集合</strong>としてマージされ、
+            重複は自動的に除去されます（まず id、次に名前で — 大文字小文字は区別しません）。タグだけ、@メンションだけ、あるいは両方 — 自由に使えます。
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-blue-700 dark:text-blue-300 mb-2">🏷️ タグ列</div>
+              <div class="text-gray-600 dark:text-gray-400 text-xs">
+                <strong>タイプが固定</strong>されます。<br>
+                <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">characters</code> → character リファレンスのみ<br>
+                <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">scene_tag</code> → scene リファレンスのみ<br>
+                <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">style_tag</code> → style リファレンスのみ
+              </div>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-cyan-700 dark:text-cyan-300 mb-2">📌 @メンション</div>
+              <div class="text-gray-600 dark:text-gray-400 text-xs">
+                <strong>タイプを問いません。</strong><br>
+                character / scene / style のどのリファレンスでも<br>
+                名前さえ一致すれば <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@名前</code> で添付できます。<br>
+                <span class="text-gray-500 dark:text-gray-500">（APIモードの場合 — 下のFlowモードの違いを参照）</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Before / After -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">同じ結果、2つの書き方</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+          下の2つのCSVは、このシーンに<strong>まったく同じリファレンス</strong>（shogun + edojou）を添付します。
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+          <div>
+            <div class="text-xs text-gray-500 dark:text-gray-400 font-mono mb-2">① タグ列スタイル</div>
+            <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old shogun sitting in the great hall, Edo period","...",shogun,edojou,jidaigeki,5</pre>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 dark:text-gray-400 font-mono mb-2">② @メンションスタイル</div>
+            <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old @shogun sitting in the @edojou great hall, Edo period","...",,,jidaigeki,5</pre>
+          </div>
+        </div>
+
+        <!-- Full sample -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">sample-scenes-mentions.csv</span>
+            <div class="flex gap-2">
+              <button onclick="copyCode('mention-csv-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                コピー
+              </button>
+              <a href="samples/sample-scenes-mentions.csv" download class="text-xs px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-200 dark:hover:bg-cyan-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                ダウンロード
+              </a>
+            </div>
+          </div>
+          <pre id="mention-csv-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"A wise old @shogun sitting on raised dais in the @edojou great hall, golden sliding doors","昔々、賢明な将軍が平和な国を治めていました。",,,jidaigeki,5
+"An elegant @hime in colorful uchikake kimono entering the @edojou great hall, Edo period Japan","姫は最も美しい着物を身にまとい広間に現れました。",,,jidaigeki,4
+"@samurai guards with yari spears standing at the @edojou gate, morning mist","侍たちは昼夜問わず城を守っていました。",,,jidaigeki,4
+"The @shogun and the @hime discussing state affairs in the @edojou great hall","将軍と姫は民の暮らしについて語り合いました。",,,jidaigeki,5
+"A grand @matsuri in the castle town with falling cherry blossoms, paper lanterns and a joyful @crowd, the @shogun and the @hime watching","国中が平和と繁栄を祝いました。",,,jidaigeki,5</pre>
+          <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+            <p class="text-xs text-blue-700 dark:text-blue-400">
+              💡 このサンプルは同じフォルダの <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">sample-references.csv</code> とそのまま噛み合います。
+              <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters</code>・<code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">scene_tag</code> は空にしていますが、
+              <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">style_tag</code> は残しています — タグと@メンションを混ぜて使えることを示すためです
+              （<code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">jidaigeki</code> はスペースを含まないので <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">@jidaigeki</code> とメンションすることもできます）。
+            </p>
+          </div>
+        </div>
+
+        <!-- Rules -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">動作ルール</h3>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm border-gray-200 dark:border-gray-700">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">ルール</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">説明</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">例</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">大文字小文字を区別しない</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">名前のマッチングは大文字小文字を無視します</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@Shogun = @shogun</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">タイプを問わない</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">character / scene / style のすべてをメンションできます</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@edojou（scene タイプ）</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">名前に使える文字</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">ASCII英数字・<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">_</code>・<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-</code>・ハングル。<strong class="text-red-600 dark:text-red-400">スペースは不可</strong></td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@ink-wash, @scene_02, @선비</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">単語境界</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">@</code> は先頭・空白の後・句読点の後に置く必要があります。メールアドレスはメンションになりません</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">user@example.com → ✗</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">韓国語の助詞を自動分離</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">名前の直後にスペースなしで付いた韓国語の助詞は自動的に切り離されます（韓国語プロンプトは実際によく使われます）</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@선비가 → 선비 + 「가」</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">マッチしない場合</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">その名前のリファレンスがなければ <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">@名前</code> は<strong>プロンプトにそのまま残ります</strong> — 失敗が目で見えるように</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@shgoun → そのまま出力</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Gotcha: no spaces -->
+        <div class="bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-200 dark:border-red-800 p-5 mb-6">
+          <h3 class="font-bold text-red-800 dark:text-red-300 mb-2 flex items-center gap-2">
+            <span class="text-xl">⚠️</span>
+            落とし穴：名前にスペースがあると@メンションできません
+          </h3>
+          <p class="text-sm text-red-700 dark:text-red-400 mb-3">
+            メンション名に<strong>スペースは使えません。</strong>たとえばスタイルリファレンスの名前が
+            <code class="bg-red-200 dark:bg-red-800 px-1 rounded">japanese historical drama</code> のようにスペースを含む場合、@メンションはできません —
+            <code class="bg-red-200 dark:bg-red-800 px-1 rounded">@japanese historical drama</code> と書いても <code class="bg-red-200 dark:bg-red-800 px-1 rounded">@japanese</code> までしか名前として読まれず、その名前のリファレンスは存在しないためマッチに失敗します
+            （他言語のサンプルにある <code class="bg-red-200 dark:bg-red-800 px-1 rounded">korean historical drama</code> がまさにこのケースです）。
+          </p>
+          <ul class="text-sm text-red-600 dark:text-red-400 space-y-1 ml-4">
+            <li>• <strong>対処A</strong> — スペースを含む名前は <code class="bg-red-200 dark:bg-red-800 px-1 rounded">style_tag</code> などのタグ列で添付してください（タグはスペースOK）。</li>
+            <li>• <strong>対処B</strong> — @メンションしたいリファレンスは、最初から<strong>スペースなしの単一トークン名</strong>にしましょう（<code class="bg-red-200 dark:bg-red-800 px-1 rounded">jidaigeki</code>、<code class="bg-red-200 dark:bg-red-800 px-1 rounded">ink-wash</code>）。</li>
+          </ul>
+        </div>
+
+        <!-- Flow vs API -->
+        <div class="bg-violet-50 dark:bg-violet-900/20 rounded-xl border border-violet-200 dark:border-violet-800 p-5 mb-2">
+          <h3 class="font-bold text-violet-800 dark:text-violet-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">🔀</span>
+            Flowログインモードはルールがより厳格です
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-cyan-700 dark:text-cyan-300 mb-2">🔑 API（BYOK）モード</div>
+              <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                <li>• character / scene / style <strong>すべてのタイプ</strong>をメンション可能</li>
+                <li>• マッチしない <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@トークン</code> は単なるテキストとして残り、<strong>生成はそのまま続行</strong></li>
+              </ul>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-violet-700 dark:text-violet-300 mb-2">🌊 Flowログインモード</div>
+              <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                <li>• <strong>character タイプのみ</strong>、しかも Flow に同期済みのリファレンスだけメンション可能</li>
+                <li>• 解決できない <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@トークン</code> は<strong>実行をブロック</strong>します — ただし未解決の名前がすべてアップロード済みのキャラクターリファレンスと一致する場合は、<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@</code> を外し、そのリファレンスを添えてそのまま実行します</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-xs text-violet-700 dark:text-violet-400 mt-3">
+            💡 Flowモードでバッチを実行する前に、メンションした名前が登録済み・同期済みのキャラクターリファレンスか確認してください。（キャラクターリファレンスが1つもないプロジェクトでは、<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@</code> はメンションとして扱われず、通常のテキストのままです。）
+          </p>
+        </div>
+      </div>
+
       <!-- SRT Format -->
       <div id="srt-subtitle" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
@@ -2119,6 +2328,12 @@ style,jidaigeki,,"Japanese jidaigeki historical drama style"
             </svg>
             scene-sample.csv
           </a>
+          <a href="samples/sample-scenes-mentions.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-lg hover:bg-cyan-200 dark:hover:bg-cyan-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            sample-scenes-mentions.csv
+          </a>
           <a href="/samples/reference-sample.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
@@ -2164,6 +2379,12 @@ style,jidaigeki,,"Japanese jidaigeki historical drama style"
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
             オーディオパッケージガイド
+          </a>
+          <a href="/guide/ja/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            ストーリーモードガイド
           </a>
         </div>
       </div>

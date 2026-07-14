@@ -18,7 +18,7 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
               🖥️ {t('autoflowcut_platform_badge' as TranslationKey)}
             </div>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white dark:bg-white dark:text-gray-900 rounded-full text-sm font-semibold">
-              v2.1.0
+              v3.0.2
             </div>
           </div>
 
@@ -43,7 +43,7 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
           {/* Workflow Summary */}
           <div className="mb-8 max-w-2xl mx-auto p-4 bg-gradient-to-r from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-xl border border-cyan-200 dark:border-cyan-800">
             <p className="text-base md:text-lg font-medium text-gray-800 dark:text-gray-200">
-              📝 {lang === 'ko' ? 'Flow 로그인 또는 API 키 → TXT/CSV/SRT 입력 → Gemini 이미지 → Veo 비디오 → CapCut / Premiere / Vrew 내보내기' : lang === 'ja' ? 'Flowログインまたはキー → TXT/CSV/SRT入力 → Gemini画像 → Veo動画 → CapCut / Premiere / Vrewエクスポート' : lang === 'de' ? 'Flow-Login oder API-Schlüssel → TXT/CSV/SRT → Gemini-Bilder → Veo-Videos → CapCut / Premiere / Vrew-Export' : 'Flow login or API key → TXT/CSV/SRT input → Gemini images → Veo videos → CapCut / Premiere / Vrew export'}
+              📝 {lang === 'ko' ? '스토리 모드(AI 대본 → 씬 → 음성) 또는 TXT/CSV/SRT 가져오기 → Gemini 이미지 → Veo 비디오 → CapCut / Premiere / Vrew 내보내기' : lang === 'ja' ? 'ストーリーモード（AI台本 → シーン → 音声）または TXT/CSV/SRT 読み込み → Gemini画像 → Veo動画 → CapCut / Premiere / Vrewエクスポート' : lang === 'de' ? 'Story-Modus (KI-Skript → Szenen → Stimme) oder TXT/CSV/SRT-Import → Gemini-Bilder → Veo-Videos → CapCut / Premiere / Vrew-Export' : 'Story mode (AI script → scenes → voice) or TXT/CSV/SRT import → Gemini images → Veo videos → CapCut / Premiere / Vrew export'}
             </p>
           </div>
 
@@ -72,6 +72,16 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
               </svg>
               {t('autoflowcut_hero_cta_mac' as TranslationKey)}
             </a>
+            {/* Story mode guide */}
+            <a
+              href={`/guide/${lang}/autoflowcut/story-guide.html`}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-900 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 rounded-2xl font-semibold text-lg transition-all hover:-translate-y-0.5 shadow-lg"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              {t('autoflowcut_hero_cta_story' as TranslationKey)}
+            </a>
             {/* Release notes */}
             <a
               href="#release-notes"
@@ -84,6 +94,12 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
               {t('autoflowcut_hero_cta_secondary' as TranslationKey)}
             </a>
           </div>
+
+          {/* macOS arch guidance — navigator.platform/UA cannot tell Apple Silicon from Intel,
+              so we tell the user rather than guess for them. */}
+          <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+            {t('autoflowcut_hero_mac_arch' as TranslationKey)}
+          </p>
         </div>
       </div>
     </section>

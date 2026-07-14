@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoFlowCut - CapCut エクスポートガイド</title>
+  <title>AutoFlowCut - エクスポートガイド（CapCut・Premiere Pro・Vrew）</title>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
   <script>
@@ -12,8 +12,8 @@
     gtag('js', new Date());
     gtag('config', 'G-S0JLFKK5G0');
   </script>
-  <meta name="description" content="AutoFlowCutからエクスポートしたプロジェクトをCapCutにインポートする方法をご案内します。macOSとWindowsのCapCutプロジェクトフォルダパス。">
-  <meta name="keywords" content="AutoFlowCut, CapCutエクスポート, CapCutプロジェクト, AI画像生成, Google Flow AI, 動画編集, プロジェクトインポート">
+  <meta name="description" content="AutoFlowCutのプロジェクトをCapCut・Adobe Premiere Pro（.prproj）・Vrew（.vrew）にエクスポートする方法。保存先、CapCutプロジェクトフォルダのパス、エディタ未インストール時の案内まで。">
+  <meta name="keywords" content="AutoFlowCut, CapCutエクスポート, Premiere Proエクスポート, prproj, Vrewエクスポート, vrew, AI画像生成, 動画編集, プロジェクトインポート">
   <meta name="author" content="Touchizen">
   <meta name="robots" content="index, follow">
 
@@ -30,8 +30,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://touchizen.com/guide/ja/autoflowcut/capcut-export.html">
-  <meta property="og:title" content="AutoFlowCut - CapCut エクスポートガイド">
-  <meta property="og:description" content="AutoFlowCutからエクスポートしたプロジェクトをCapCutにインポートする方法。macOSとWindows対応。">
+  <meta property="og:title" content="AutoFlowCut - エクスポートガイド（CapCut・Premiere Pro・Vrew）">
+  <meta property="og:description" content="AutoFlowCutのプロジェクトをCapCut・Premiere Pro（.prproj）・Vrew（.vrew）にエクスポートする方法。macOSとWindowsに対応。">
   <meta property="og:image" content="https://touchizen.com/images/autoflowcut-og.png">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="Touchizen">
@@ -39,8 +39,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@touchizen">
-  <meta name="twitter:title" content="AutoFlowCut - CapCut エクスポートガイド">
-  <meta name="twitter:description" content="AutoFlowCutからCapCutへのプロジェクトインポート方法。">
+  <meta name="twitter:title" content="AutoFlowCut - エクスポートガイド（CapCut・Premiere Pro・Vrew）">
+  <meta name="twitter:description" content="AutoFlowCutのプロジェクトをCapCut・Premiere Pro・Vrewにエクスポートする方法。">
   <meta name="twitter:image" content="https://touchizen.com/images/autoflowcut-og.png">
 
   <!-- Structured Data (JSON-LD) -->
@@ -48,15 +48,15 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "CapCut プロジェクトエクスポートガイド",
-    "description": "AutoFlowCutからエクスポートしたプロジェクトをCapCutにインポートする方法",
+    "name": "AutoFlowCut エクスポートガイド（CapCut・Premiere Pro・Vrew）",
+    "description": "AutoFlowCutのプロジェクトをCapCut・Adobe Premiere Pro（.prproj）・Vrew（.vrew）にエクスポートする方法",
     "image": "https://touchizen.com/images/autoflowcut-og.png",
     "inLanguage": "ja",
     "step": [
-      {"@type": "HowToStep", "name": "情報入力", "text": "エクスポートモーダルでユーザー名とプロジェクト番号を入力"},
-      {"@type": "HowToStep", "name": "ZIP解凍", "text": "ダウンロードしたZIPファイルを解凍"},
-      {"@type": "HowToStep", "name": "フォルダコピー", "text": "CapCutプロジェクトフォルダにコピー"},
-      {"@type": "HowToStep", "name": "再起動", "text": "CapCutを再起動"}
+      {"@type": "HowToStep", "name": "エクスポート先を選ぶ", "text": "エクスポートボタンの▾メニューからCapCut・Premiere・Vrewのいずれかを選択"},
+      {"@type": "HowToStep", "name": "オプションを確認", "text": "エクスポートモーダルで保存先と画像スケール・ケンバーンズ・字幕のオプションを確認"},
+      {"@type": "HowToStep", "name": "エクスポート", "text": "エクスポートを押すと、プロジェクトファイルがディスクに直接書き込まれます"},
+      {"@type": "HowToStep", "name": "エディタで開く", "text": "アプリが該当エディタを自動で起動し、プロジェクトを開きます"}
     ],
     "author": {
       "@type": "Organization",
@@ -126,117 +126,216 @@
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
           </svg>
-          エクスポートガイド
+          Export Guide
         </div>
         <h1 class="text-3xl md:text-4xl font-bold mb-4">
-          <span class="gradient-text">CapCut エクスポートガイド</span>
+          <span class="gradient-text">エクスポートガイド</span>
         </h1>
         <p class="text-gray-600 dark:text-gray-400 text-lg">
-          AutoFlowCutからエクスポートしたプロジェクトをCapCutにインポートする方法
+          AutoFlowCutのプロジェクトをCapCut・Adobe Premiere Pro・Vrewにエクスポートする方法
+        </p>
+      </div>
+
+      <!-- Table of Contents -->
+      <nav class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-5 md:p-6 mb-8" aria-label="📑 ページ目次">
+        <h2 class="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-3">📑 ページ目次</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
+        <li><a href="#export-targets" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎯 3つのエクスポート先</a></li>
+        <li><a href="#quick-start" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚀 クイックスタート（4ステップ）</a></li>
+        <li><a href="#capcut" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">✂️ CapCutにエクスポート</a></li>
+        <li><a href="#username" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">👤 システムユーザー名の調べ方</a></li>
+        <li><a href="#capcut-paths" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📁 CapCutプロジェクトフォルダのパス</a></li>
+        <li><a href="#premiere" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎬 Premiere Proにエクスポート</a></li>
+        <li><a href="#vrew" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📝 Vrewにエクスポート</a></li>
+        <li><a href="#options" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">⚙️ 共通のエクスポートオプション</a></li>
+        <li><a href="#not-installed" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">⬇️ エディタが未インストールの場合</a></li>
+        <li><a href="#troubleshooting" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔧 トラブルシューティング</a></li>
+        </ul>
+      </nav>
+
+      <!-- Export Targets -->
+      <div id="export-targets" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">🎯</span>
+          3つのエクスポート先
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          AutoFlowCutは完成したプロジェクトを3つの編集ソフトにエクスポートできます。エクスポートボタン横の<strong>▾</strong>メニュー、またはエクスポートモーダル上部のタブから選んでください。
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">✂️ CapCut</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li><strong>出力</strong> — CapCutプロジェクトフォルダ</li>
+              <li><strong>保存先</strong> — CapCutプロジェクトフォルダ（自動検出）</li>
+              <li><strong>ユーザー名</strong> — 必要（パスに含まれます）</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">🎬 Premiere Pro</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li><strong>出力</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code> ファイル</li>
+              <li><strong>保存先</strong> — 作業フォルダ内のプロジェクトフォルダ</li>
+              <li><strong>ユーザー名</strong> — 不要</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">📝 Vrew</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li><strong>出力</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code> ファイル</li>
+              <li><strong>保存先</strong> — 作業フォルダ内のプロジェクトフォルダ</li>
+              <li><strong>ユーザー名</strong> — 不要</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">
+          ℹ️ 1回のエクスポートで書き込まれるのは<strong>1つのエクスポート先だけ</strong>です — 3形式をまとめて出力する機能はありません。別の形式も必要な場合は、エクスポート先を選び直してもう一度エクスポートしてください。
+        </p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          💡 <strong>作業フォルダ</strong>は設定で指定したフォルダで、生成された画像・動画・音声が保存される場所です。PremiereとVrewはプロジェクトファイルをそのメディアの隣（<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">作業フォルダ/プロジェクト名/</code>）に保存するため、パスの入力は不要です。
         </p>
       </div>
 
       <!-- Quick Steps -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+      <div id="quick-start" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🚀</span>
           クイックスタート（4ステップ）
         </h2>
         <div class="space-y-6">
-          <!-- ステップ 1 -->
+          <!-- Step 1 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
-            <div class="flex-1">
-              <p class="font-medium text-gray-900 dark:text-white">エクスポートモーダルで情報を入力</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">シーンタブ > <strong>「📦 CapCut」</strong>ボタンをクリックし、ユーザー名とプロジェクト番号を入力</p>
-
-              <!-- Export Modal Mockup (インタラクティブ) -->
-              <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 overflow-hidden text-xs shadow-lg">
-                <!-- Modal Header -->
-                <div class="bg-gray-100 dark:bg-gray-700 px-4 py-2 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
-                  <span class="font-bold text-gray-800 dark:text-white">📦 CapCut エクスポート</span>
-                  <span class="text-gray-400">✕</span>
-                </div>
-                <!-- Modal Content -->
-                <div class="p-4 space-y-3">
-                  <!-- OS Selection (インタラクティブ) -->
-                  <div class="flex gap-2">
-                    <button id="mockup-os-mac" onclick="selectMockupOS('mac')" style="flex:1; padding:10px 16px; border:2px solid #007AFF; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;">🍎 macOS</button>
-                    <button id="mockup-os-win" onclick="selectMockupOS('win')" style="flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;">🪟 Windows</button>
-                  </div>
-                  <!-- Username Input (インタラクティブ) -->
-                  <div>
-                    <label class="block text-gray-600 dark:text-gray-400 mb-1">👤 システムユーザー名 <span class="text-red-500">*</span></label>
-                    <div class="relative">
-                      <input type="text" id="mockup-username" value="taro" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
-                      <span class="absolute right-2 top-2 text-green-500">✓</span>
-                    </div>
-                    <p class="text-gray-500 mt-1">💡 ターミナルで <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">whoami</code> を入力</p>
-                  </div>
-                  <!-- Project Number Input (インタラクティブ) -->
-                  <div>
-                    <label class="block text-gray-600 dark:text-gray-400 mb-1">📁 プロジェクト番号 <span class="text-red-500">*</span></label>
-                    <div class="relative">
-                      <input type="text" id="mockup-project" value="0131" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
-                      <span class="absolute right-2 top-2 text-green-500">✓</span>
-                    </div>
-                    <p class="text-gray-500 mt-1">💡 CapCutフォルダで次の番号を確認</p>
-                  </div>
-                  <!-- プリセット選択（ピルボタン） -->
-                  <div id="mockup-preset-area">
-                    <label class="block text-gray-600 dark:text-gray-400 mb-1">📂 パスプリセット</label>
-                    <div id="mockup-presets" class="flex gap-1 flex-wrap"></div>
-                  </div>
-                  <!-- Generated Path (動的) -->
-                  <div class="bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg p-3">
-                    <label class="block text-green-700 dark:text-green-400 text-xs font-bold mb-1">📂 生成されるパス</label>
-                    <code id="mockup-path" class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/taro/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
-                  </div>
-                </div>
-                <!-- Modal Footer -->
-                <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 flex justify-end gap-2 border-t border-gray-300 dark:border-gray-600">
-                  <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">キャンセル</span>
-                  <span class="px-4 py-2 bg-primary-500 text-white rounded-lg font-medium cursor-pointer hover:bg-primary-600 transition-colors">📦 エクスポート</span>
-                </div>
-              </div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">エクスポート先を選ぶ</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400"><strong>「📦 エクスポート」</strong>ボタンの<strong>▾</strong>メニューから<strong>✂️ CapCut</strong>・<strong>🎬 Premiere</strong>・<strong>📝 Vrew</strong>のいずれかを選びます。ボタン本体は最後に選んだエクスポート先を記憶し、モーダルを開いたあとでも上部のタブで切り替えられます。</p>
             </div>
           </div>
 
-          <!-- ステップ 2 -->
+          <!-- Step 2 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">ZIPファイルを解凍</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">ダウンロードした <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">プロジェクト名_capcut.zip</code> をダブルクリックして解凍</p>
+              <p class="font-medium text-gray-900 dark:text-white">保存先とオプションを確認</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">CapCutではプロジェクトフォルダのパスとプロジェクト番号が、Premiere・Vrewでは書き込まれるファイルのパスがモーダルに表示されます。画像スケール・ケンバーンズ・字幕のオプションは3つ共通です。</p>
             </div>
           </div>
 
-          <!-- ステップ 3 -->
+          <!-- Step 3 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">CapCutプロジェクトフォルダにコピー</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">解凍されたフォルダ（例：<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">0131</code>）を下記のパスにコピー</p>
+              <p class="font-medium text-gray-900 dark:text-white">📦 エクスポートをクリック</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">アプリがプロジェクトファイルをディスクに直接書き込みます。ZIPの解凍やフォルダのコピーは不要です。</p>
             </div>
           </div>
 
-          <!-- ステップ 4 -->
+          <!-- Step 4 -->
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">CapCutを再起動</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">CapCutを完全に終了して再起動すると、プロジェクト一覧に表示されます</p>
+              <p class="font-medium text-gray-900 dark:text-white">エディタで開く</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">エクスポートが終わると、アプリが該当エディタを自動で起動します。起動に失敗した場合は通知が表示されるので、保存されたファイルを直接開いてください。</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ユーザー名を調べる -->
-      <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 md:p-8 mb-8">
+      <!-- CapCut -->
+      <div id="capcut" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">✂️</span>
+          CapCutにエクスポート
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          <strong>✂️ CapCut</strong>タブを選ぶと、アプリがシステムユーザー名とCapCutプロジェクトフォルダを自動検出し、<strong>空いている次のプロジェクト番号</strong>を入力します。フォルダが見つからない場合や別の場所に置きたい場合は、プリセットボタン（CapCut / CapCut Pro / Documents / カスタム）で切り替えられます。
+        </p>
+
+        <!-- エクスポートモーダルのモックアップ（インタラクティブ） -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 overflow-hidden text-xs shadow-lg mb-6">
+          <!-- モーダルヘッダー -->
+          <div class="bg-gray-100 dark:bg-gray-700 px-4 py-2 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
+            <span class="font-bold text-gray-800 dark:text-white">📦 CapCutにエクスポート</span>
+            <span class="text-gray-400">✕</span>
+          </div>
+          <!-- モーダル本体 -->
+          <div class="p-4 space-y-3">
+            <!-- 形式タブ -->
+            <div class="flex gap-1">
+              <span class="flex-1 text-center px-2 py-1.5 rounded-lg border-2 border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-semibold">✂️ CapCut</span>
+              <span class="flex-1 text-center px-2 py-1.5 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400">🎬 Premiere</span>
+              <span class="flex-1 text-center px-2 py-1.5 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400">📝 Vrew</span>
+            </div>
+            <!-- OS選択（インタラクティブ） -->
+            <div class="flex gap-2">
+              <button id="mockup-os-mac" onclick="selectMockupOS('mac')" style="flex:1; padding:10px 16px; border:2px solid #007AFF; border-radius:8px; background:#E3F2FD; color:#333; cursor:pointer; font-weight:bold; font-size:14px; transition:all 0.2s;">🍎 macOS</button>
+              <button id="mockup-os-win" onclick="selectMockupOS('win')" style="flex:1; padding:10px 16px; border:1px solid #ccc; border-radius:8px; background:#fff; color:#333; cursor:pointer; font-weight:normal; font-size:14px; transition:all 0.2s;">🪟 Windows</button>
+            </div>
+            <!-- ユーザー名（自動検出） -->
+            <div>
+              <label class="block text-gray-600 dark:text-gray-400 mb-1">👤 システムユーザー名</label>
+              <div class="relative">
+                <input type="text" id="mockup-username" value="testUser" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+                <span class="absolute right-2 top-2 text-green-500">✓</span>
+              </div>
+              <p class="text-gray-500 mt-1">💡 アプリが自動で検出します（ここではパスのプレビュー用に変更できます）</p>
+            </div>
+            <!-- プロジェクト番号入力（インタラクティブ） -->
+            <div>
+              <label class="block text-gray-600 dark:text-gray-400 mb-1">📁 プロジェクト番号 <span class="text-red-500">*</span></label>
+              <div class="relative">
+                <input type="text" id="mockup-project" value="0131" oninput="updateMockupPath()" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+                <span class="absolute right-2 top-2 text-green-500">✓</span>
+              </div>
+              <p class="text-gray-500 mt-1">💡 空いている次の番号が自動入力されます（変更可能）</p>
+            </div>
+            <!-- プリセット選択 -->
+            <div id="mockup-preset-area">
+              <label class="block text-gray-600 dark:text-gray-400 mb-1">📂 パスプリセット</label>
+              <div id="mockup-presets" class="flex gap-1 flex-wrap"></div>
+            </div>
+            <!-- 生成されるパス -->
+            <div class="bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg p-3">
+              <label class="block text-green-700 dark:text-green-400 text-xs font-bold mb-1">📂 生成されるパス</label>
+              <code id="mockup-path" class="text-xs text-gray-800 dark:text-gray-200 break-all">/Users/testUser/Movies/CapCut/User Data/Projects/com.lveditor.draft/0131</code>
+            </div>
+          </div>
+          <!-- モーダルフッター -->
+          <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 flex justify-end gap-2 border-t border-gray-300 dark:border-gray-600">
+            <span class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">キャンセル</span>
+            <span class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium cursor-pointer hover:from-cyan-600 hover:to-blue-700 transition-colors">📦 エクスポート</span>
+          </div>
+        </div>
+
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">何がどこに書き込まれるか</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          エクスポートを押すと、アプリがプロジェクトファイルを<strong>CapCutプロジェクトフォルダへ直接</strong>書き込みます。画像・動画・音声・字幕（SRT）は<strong>コピーされず</strong>、作業フォルダにある元ファイルを絶対パスで参照します。
+        </p>
+        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto mb-4">
+          <pre>📁 com.lveditor.draft/0131/     # CapCutプロジェクトフォルダ（ここに書き込み）
+├── 📄 draft_info.json          # CapCutプロジェクトデータ
+├── 📄 draft_meta_info.json     # プロジェクトのメタデータ
+└── 📄 draft_agency_info.json   # CapCutが必要とする基本ファイル
+
+📁 作業フォルダ/プロジェクト名/    # メディアはここのまま（絶対パスで参照）
+├── 🖼️ scene_001.png
+├── 🎞️ ...
+└── 📄 プロジェクト名_subtitle_ko.srt  # 字幕を含める場合</pre>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          ⚠️ エクスポート後に<strong>作業フォルダ（またはその中のプロジェクトフォルダ）を移動・名前変更・削除する</strong>と、CapCutでメディアが見つからない状態になります。書き込みが終わると、アプリがCapCutを自動で起動します。
+        </p>
+      </div>
+
+      <!-- ユーザー名の調べ方 -->
+      <div id="username" class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">👤</span>
           システムユーザー名の調べ方
         </h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          CapCutプロジェクトフォルダのパスにはシステムユーザー名が含まれます。通常はアプリが自動検出しますが、パスを<strong>手入力</strong>する場合や表示内容を確認したい場合は、以下の方法で調べてください。<strong>PremiereとVrewは作業フォルダに保存するため、ユーザー名は不要です。</strong>
+        </p>
         <div class="grid md:grid-cols-2 gap-6">
           <!-- macOS -->
           <div>
@@ -245,8 +344,8 @@
               <span class="font-semibold text-gray-900 dark:text-white">macOS</span>
             </div>
             <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-decimal list-inside">
-              <li>ターミナルを開く（Spotlight: <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Space</kbd> → 「ターミナル」）</li>
-              <li><code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> を入力してEnter</li>
+              <li>ターミナルを起動（Spotlight: <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Space</kbd> → 「ターミナル」）</li>
+              <li><code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> と入力してEnter</li>
               <li>表示された名前がユーザー名です</li>
             </ol>
           </div>
@@ -257,19 +356,19 @@
               <span class="font-semibold text-gray-900 dark:text-white">Windows</span>
             </div>
             <ol class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-decimal list-inside">
-              <li>コマンドプロンプトを開く（<kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + R</kbd> → 「cmd」）</li>
-              <li><code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> を入力してEnter</li>
-              <li><code class="text-gray-700 dark:text-gray-300">コンピュータ名\ユーザー名</code> 形式で表示されます（ユーザー名のみ使用）</li>
+              <li>コマンドプロンプトを起動（<kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + R</kbd> → 「cmd」）</li>
+              <li><code class="bg-gray-900 text-green-400 px-2 py-0.5 rounded">whoami</code> と入力してEnter</li>
+              <li><code class="text-gray-700 dark:text-gray-300">コンピュータ名\ユーザー名</code> の形式で表示されます（ユーザー名の部分のみ使用）</li>
             </ol>
           </div>
         </div>
       </div>
 
       <!-- Project Folder Paths -->
-      <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-8">
+      <div id="capcut-paths" class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">📁</span>
-          CapCut プロジェクトフォルダパス
+          CapCutプロジェクトフォルダのパス
         </h2>
 
         <!-- macOS -->
@@ -287,7 +386,7 @@
             </button>
           </div>
           <p class="text-sm text-amber-700 dark:text-amber-400 mt-2">
-            💡 Finderで<kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Shift + G</kbd>を押してパスを貼り付け
+            💡 Finderで <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Cmd + Shift + G</kbd> を押してパスを貼り付け
           </p>
         </div>
 
@@ -297,8 +396,8 @@
             <span class="text-2xl">🪟</span>
             <span class="font-semibold text-gray-900 dark:text-white">Windows</span>
           </div>
-          <!-- CapCut (デフォルト) -->
-          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1 mt-2">CapCut (デフォルト)</p>
+          <!-- CapCut（デフォルト） -->
+          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1 mt-2">CapCut（デフォルト）</p>
           <div class="relative mb-3">
             <pre id="path-win-capcut" class="bg-gray-900 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto">C:\Users\[ユーザー名]\AppData\Local\CapCut\User Data\Projects\com.lveditor.draft\</pre>
             <button onclick="copyPath('path-win-capcut')" class="copy-btn absolute top-2 right-2 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
@@ -328,67 +427,202 @@
             </button>
           </div>
           <p class="text-sm text-amber-700 dark:text-amber-400 mt-2">
-            💡 ファイルエクスプローラーのアドレスバーにパスを直接入力、または <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + E</kbd>
+            💡 エクスプローラーのアドレスバーにパスを直接入力、または <kbd class="px-1.5 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Win + E</kbd>
           </p>
         </div>
       </div>
 
-      <!-- Output Structure -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+      <!-- Premiere -->
+      <div id="premiere" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
-          <span class="text-2xl">📂</span>
-          エクスポートフォルダ構造
+          <span class="text-2xl">🎬</span>
+          Premiere Proにエクスポート
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
-          解凍後、以下のようなフォルダ構造が表示されます。このフォルダ全体をCapCutプロジェクトパスにコピーしてください。
+          <strong>🎬 Premiere</strong>タブを選ぶと、書き込まれる<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code>ファイルのパスがそのまま表示されます。パスの入力もユーザー名の確認も不要で、メディアがある作業フォルダのプロジェクトフォルダにそのまま保存されます。
         </p>
-        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto">
-          <pre>📁 project_folder/
-├── 📄 draft_info.json        # CapCut プロジェクトデータ
-├── 📄 draft_meta_info.json   # プロジェクトメタデータ
-├── 📁 media/                 # 画像/動画/SFXファイル
-│   ├── 🖼️ scene_001.png
-│   ├── 🖼️ scene_002.png
-│   └── ...
-└── 📄 README.txt             # インポート手順</pre>
+        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto mb-4">
+          <pre>📁 作業フォルダ/プロジェクト名/
+├── 📄 プロジェクト名.prproj   # Premiere Proプロジェクト（gzip圧縮されたXML）
+├── 🖼️ scene_001.png          # メディアは元の場所のまま
+└── 🎞️ ...</pre>
+        </div>
+        <div class="space-y-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">エディタで開く</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>エクスポートが終わると、アプリが<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code>をPremiere Proで自動的に開きます</li>
+              <li>起動に失敗した場合は通知が表示されます — Finder / エクスプローラーで<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code>をダブルクリックしてください</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">知っておきたいこと</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li><strong>字幕はプロジェクトに埋め込まれます</strong> — CapCutと違い、別途SRTファイルは作成されません</li>
+              <li>ファイル名はプロジェクト名で固定のため、同名のファイルがあると<strong>上書きの確認</strong>が表示されます。上書きすると、Premiere Proで加えた編集は失われます</li>
+              <li>作業フォルダが未設定だとエクスポートボタンは無効のままです — 先に設定で作業フォルダを指定してください</li>
+            </ul>
+          </div>
         </div>
       </div>
 
+      <!-- Vrew -->
+      <div id="vrew" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📝</span>
+          Vrewにエクスポート
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          <strong>📝 Vrew</strong>タブを選ぶと、書き込まれる<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>ファイルのパスが表示されます。Premiereと同様に、パスの入力もユーザー名も不要です。<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>ファイルには、プロジェクトデータとメディアがまとめて格納されます。
+        </p>
+        <div class="bg-gray-900 rounded-xl p-4 md:p-6 font-mono text-sm text-gray-300 overflow-x-auto mb-4">
+          <pre>📁 作業フォルダ/プロジェクト名/
+├── 📄 プロジェクト名.vrew    # Vrewプロジェクト（メディアを含むパッケージ）
+├── 🖼️ scene_001.png
+└── 🎞️ ...</pre>
+        </div>
+        <div class="space-y-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">エディタで開く</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>エクスポートが終わると、アプリが<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>をVrewで自動的に開きます</li>
+              <li>起動に失敗した場合は通知が表示されます — 保存された<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>を直接開いてください</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">知っておきたいこと</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>同名の<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>がすでにある場合は<strong>上書きの確認</strong>が表示されます</li>
+              <li>Vrewエクスポートがまだ対応していない項目は<strong>スキップ</strong>され、いくつスキップしたかが通知されます</li>
+              <li>ストーリーモードのナレーションのセグメントは<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>には配置されません（CapCutとPremiereのみ）</li>
+              <li>MCPサーバーで自動化できるエクスポートはCapCutとPremiereのみです — Vrewはアプリから直接エクスポートしてください</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shared Options -->
+      <div id="options" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">⚙️</span>
+          共通のエクスポートオプション
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          以下のオプションは3つのエクスポート先すべてに適用され、最後に選んだ設定が記憶されます。
+        </p>
+        <div class="space-y-4">
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">🔍 画像スケール</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li><strong>Fill</strong> — 画面いっぱいに広げます（縦横比が異なると端が切れることがあります）</li>
+              <li><strong>Fit</strong> — 画像全体が表示されます（縦横比が異なると余白が入ることがあります）</li>
+              <li><strong>None</strong> — 元のサイズ（100%）のまま使用します</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">🎬 ケンバーンズ効果</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>静止画に自動でズーム・パンのアニメーションを加えます</li>
+              <li><strong>モード</strong> — ランダム（周期ごとにランダムな位置）またはパターン（ズームイン・ズームアウト・パンから選択）</li>
+              <li><strong>周期</strong> — アニメーションが切り替わる間隔（秒）</li>
+              <li><strong>スケール</strong> — ズームの範囲（%）。100〜150%が目安です</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">💬 字幕を含める</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>字幕があるプロジェクトでのみ表示されるオプションです</li>
+              <li>CapCutは作業フォルダにSRTファイルを作成して参照し、Premiereはプロジェクトファイルに字幕を埋め込みます</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editor not installed -->
+      <div id="not-installed" class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">⬇️</span>
+          エディタが未インストールの場合
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          エクスポート時、アプリはまず対象のエディタがインストールされているかを確認します。見つからない場合はエクスポートを中止し、<strong>ダウンロードページを開くか確認</strong>します。確認すると、既定のブラウザで以下のアドレスが開きます。
+        </p>
+        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc list-inside mb-4">
+          <li><strong>✂️ CapCut</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded break-all">https://www.capcut.com/download</code>（Microsoft Store版アプリではストアページが開きます）</li>
+          <li><strong>🎬 Premiere Pro</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded break-all">https://www.adobe.com/products/premiere.html</code></li>
+          <li><strong>📝 Vrew</strong> — <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded break-all">https://vrew.voyagerx.com/</code></li>
+        </ul>
+        <p class="text-sm text-amber-700 dark:text-amber-400">
+          💡 CapCutのパスを<strong>カスタム</strong>で指定した場合、インストール確認はスキップされます。Microsoft Store版アプリでは、Premiere・Vrewのダウンロードアドレスはリンクではなく案内テキストとして表示されます。
+        </p>
+      </div>
+
       <!-- Troubleshooting -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+      <div id="troubleshooting" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
           <span class="text-2xl">🔧</span>
           トラブルシューティング
         </h2>
         <div class="space-y-4">
           <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">プロジェクトがCapCutに表示されない</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">プロジェクトがCapCutに表示されません</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-              <li>CapCutを完全に終了して再起動してみてください</li>
-              <li>フォルダパスが正しいか確認してください（com.lveditor.draftフォルダ内にコピー）</li>
+              <li>CapCutを完全に終了してから再起動してみてください</li>
+              <li>モーダルに表示されたパスが、実際に使っているCapCutプロジェクトフォルダ（com.lveditor.draft）か確認してください</li>
               <li>プロジェクトフォルダ名に特殊文字が含まれていないか確認してください</li>
             </ul>
           </div>
           <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">メディアファイルが見つからない</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">メディアファイルが見つからないと表示されます（CapCut）</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-              <li>mediaフォルダがプロジェクトフォルダ内にあるか確認してください</li>
-              <li>ZIPファイルが完全に解凍されたか確認してください</li>
+              <li>CapCutプロジェクトはメディアをコピーせず、<strong>作業フォルダの元ファイルを絶対パスで参照</strong>します</li>
+              <li>エクスポート後に作業フォルダ（またはその中のプロジェクトフォルダ）を移動・名前変更・削除しないでください</li>
+              <li>すでに移動してしまった場合は元の場所に戻すか、作業フォルダを再設定してもう一度エクスポートしてください</li>
             </ul>
           </div>
           <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">どのパスを選べばいいですか？</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">どのパスを選べばいいですか？（CapCut）</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-              <li>AutoFlowCut拡張機能でプリセットボタン（CapCut / CapCut Pro / Documents）を切り替えて確認してください</li>
-              <li>CapCutのプロジェクトフォルダを開いて、既存のプロジェクトがどこに保存されているか確認してください</li>
-              <li>通常は<strong>CapCut</strong>がデフォルトパスです</li>
+              <li>AutoFlowCutでプリセットボタン（CapCut / CapCut Pro / Documents）を切り替えて確認してください</li>
+              <li>CapCutプロジェクトフォルダを直接開き、既存のプロジェクトがある場所を確認してください</li>
+              <li>通常は<strong>CapCut</strong>がデフォルトのパスです</li>
             </ul>
           </div>
           <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">AppDataフォルダが表示されない（Windows）</h3>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">AppDataフォルダが見えません（Windows）</h3>
             <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
-              <li>ファイルエクスプローラー > 表示 > 隠しファイルを表示</li>
-              <li>またはアドレスバーに直接 %localappdata% を入力</li>
+              <li>エクスプローラー > 表示 > 隠しファイルにチェック</li>
+              <li>またはアドレスバーに %localappdata% を直接入力</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">エクスポートボタンが押せません（Premiere・Vrew）</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>どちらも作業フォルダが必要で、未設定だとエクスポートボタンは無効のままです</li>
+              <li>設定で作業フォルダを指定してから、もう一度お試しください</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">上書きの確認が表示されます（Premiere・Vrew）</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>プロジェクトファイル名はプロジェクト名で固定のため、同名のファイルがあると上書きの確認が入ります</li>
+              <li>Premiere Proで加えた編集を残したい場合はキャンセルし、既存の<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code>の名前を変えてから再度エクスポートしてください</li>
+              <li>CapCutは空いている次の番号に書き込むため、上書きの確認はありません</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">エディタが自動で開きません</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>ファイルはすでに保存済みです — 起動に失敗しても、エクスポート自体は完了しています</li>
+              <li>モーダルに表示されていたパスを開き、<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.prproj</code>または<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.vrew</code>を直接開いてください</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">「対応していない項目をスキップしました」と表示されます（Vrew）</h3>
+            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+              <li>Vrewエクスポートがまだ対応していない項目はスキップされ、その件数が通知されます</li>
+              <li>プロジェクト自体は正常に保存されます — その要素だけVrewで入れ直してください</li>
+              <li>すべての要素をそのまま残したい場合は、CapCutまたはPremiereにエクスポートしてください</li>
             </ul>
           </div>
         </div>
@@ -425,6 +659,12 @@
             </svg>
             オーディオパッケージガイド
           </a>
+          <a href="/guide/ja/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            ストーリーモードガイド
+          </a>
         </div>
       </div>
 
@@ -450,7 +690,7 @@
   </footer>
 
   <script>
-    // Copy path function
+    // パスをコピーする関数
     function copyPath(elementId) {
       const text = document.getElementById(elementId).textContent;
       navigator.clipboard.writeText(text).then(() => {
@@ -484,7 +724,7 @@
       const container = document.getElementById('mockup-presets');
       const presets = PRESETS[mockupOS] || PRESETS.win;
       container.innerHTML = presets.map(p =>
-        `<button onclick="selectMockupPreset('${p.value}')" style="padding:4px 10px; font-size:11px; border:${mockupPreset === p.value ? '2px solid #1976d2' : '1px solid #bbb'}; border-radius:14px; background:${mockupPreset === p.value ? '#e3f2fd' : '#fff'}; color:${mockupPreset === p.value ? '#1565c0' : '#555'}; cursor:pointer; font-weight:${mockupPreset === p.value ? '600' : '400'};">${p.label}</button>`
+        `<button onclick="selectMockupPreset('${p.value}')" style="padding:4px 10px; font-size:11px; border:${mockupPreset === p.value ? '2px solid #0891b2' : '1px solid #bbb'}; border-radius:14px; background:${mockupPreset === p.value ? '#ecfeff' : '#fff'}; color:${mockupPreset === p.value ? '#0e7490' : '#555'}; cursor:pointer; font-weight:${mockupPreset === p.value ? '600' : '400'};">${p.label}</button>`
       ).join('');
     }
 
@@ -513,7 +753,7 @@
     }
 
     function updateMockupPath() {
-      const username = document.getElementById('mockup-username').value || 'taro';
+      const username = document.getElementById('mockup-username').value || 'testUser';
       const project = document.getElementById('mockup-project').value || '0131';
       const pathEl = document.getElementById('mockup-path');
 
@@ -536,7 +776,7 @@
       }
     }
 
-    // 初期プリセットボタンのレンダリング
+    // 初期プリセットボタンの描画
     renderPresetButtons();
   </script>
   <script src="/guide/assets/header.js"></script>

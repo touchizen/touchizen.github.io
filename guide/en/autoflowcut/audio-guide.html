@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoFlowCut - Audio Import Guide</title>
+  <title>AutoFlowCut - Audio Guide</title>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0"></script>
   <script>
@@ -12,8 +12,8 @@
     gtag('js', new Date());
     gtag('config', 'G-S0JLFKK5G0');
   </script>
-  <meta name="description" content="Learn how to prepare and import TTS dialogue audio and SFX sound effects into AutoFlowCut. Audio package structure, file naming conventions, and review system guide.">
-  <meta name="keywords" content="AutoFlowCut, audio import, TTS, sound effects, SFX, Typecast, ElevenLabs, CapCut, voice generation, audio package">
+  <meta name="description" content="Generate per-speaker voices (Typecast, Gemini, ElevenLabs) and sound effects natively inside AutoFlowCut Story mode, or import your own audio package folder.">
+  <meta name="keywords" content="AutoFlowCut, audio, TTS, voice, sound effects, SFX, Typecast, ElevenLabs, Gemini TTS, Story mode, audio import, CapCut">
   <meta name="author" content="Touchizen">
   <meta name="robots" content="index, follow">
 
@@ -30,8 +30,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://touchizen.com/guide/en/autoflowcut/audio-guide.html">
-  <meta property="og:title" content="AutoFlowCut - Audio Import Guide">
-  <meta property="og:description" content="Learn how to prepare and import TTS dialogue audio and SFX sound effects into AutoFlowCut.">
+  <meta property="og:title" content="AutoFlowCut - Audio Guide">
+  <meta property="og:description" content="Generate voices and sound effects natively in Story mode, or bring your own audio.">
   <meta property="og:image" content="https://touchizen.com/images/autoflowcut-og.png">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Touchizen">
@@ -39,8 +39,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@touchizen">
-  <meta name="twitter:title" content="AutoFlowCut - Audio Import Guide">
-  <meta name="twitter:description" content="Learn how to prepare and import TTS dialogue audio and SFX sound effects into AutoFlowCut.">
+  <meta name="twitter:title" content="AutoFlowCut - Audio Guide">
+  <meta name="twitter:description" content="Generate voices and sound effects natively in Story mode, or bring your own audio.">
   <meta name="twitter:image" content="https://touchizen.com/images/autoflowcut-og.png">
 
   <!-- Structured Data (JSON-LD) -->
@@ -48,8 +48,8 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "AutoFlowCut Audio Import Guide",
-    "description": "How to prepare and import TTS dialogue audio and SFX sound effects into AutoFlowCut",
+    "name": "AutoFlowCut Audio Guide",
+    "description": "How to generate per-speaker voices and sound effects in Story mode, and how to import an audio package manually",
     "image": "https://touchizen.com/images/autoflowcut-og.png",
     "inLanguage": "en",
     "author": {
@@ -129,10 +129,10 @@
           🎵 Audio Guide
         </div>
         <h1 class="text-3xl md:text-4xl font-bold mb-4">
-          <span class="gradient-text">Audio Import Guide</span>
+          <span class="gradient-text">Audio Generation &amp; Import Guide</span>
         </h1>
         <p class="text-gray-600 dark:text-gray-400 text-lg">
-          How to prepare TTS dialogue and SFX sound effects for AutoFlowCut
+          Generate voices and SFX natively in Story mode, or bring your own audio
         </p>
       </div>
 
@@ -140,64 +140,330 @@
       <nav class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-5 md:p-6 mb-8" aria-label="📑 Page Contents">
         <h2 class="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-3">📑 Page Contents</h2>
         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-sm">
-        <li><a href="#quick-start" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚀 Quick Start</a></li>
-        <li><a href="#package-structure" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📁 Audio Package Structure</a></li>
-        <li><a href="#tts" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎙️ TTS (Dialogue Voice)</a></li>
-        <li><a href="#sfx" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔊 SFX (Sound Effects)</a></li>
-        <li><a href="#audio-review" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔍 Audio Review System</a></li>
+        <li><a href="#story-audio" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎬 Story Mode Audio (Recommended)</a></li>
+        <li><a href="#voice-assignment" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎙️ Per-Speaker Voice Assignment</a></li>
+        <li><a href="#emotion" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎭 How Emotion Is Applied</a></li>
+        <li><a href="#story-sfx" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔊 Automatic SFX Extraction</a></li>
         <li><a href="#audio-tab" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎧 Audio Tab in App</a></li>
+        <li><a href="#manual-import" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📦 Bring Your Own Audio</a></li>
+        <li><a href="#package-structure" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📁 Audio Package Structure</a></li>
+        <li><a href="#tts" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎙️ TTS Files (Manual)</a></li>
+        <li><a href="#sfx" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔊 SFX Files (Manual)</a></li>
+        <li><a href="#audio-review" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🔍 Audio Review System</a></li>
         </ul>
       </nav>
 
-      <!-- Quick Start -->
-      <div id="quick-start" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
+      <!-- Story Mode Audio (native) -->
+      <div id="story-audio" class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
-          <span class="text-2xl">🚀</span>
-          Quick Start
-          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">3 Steps</span>
+          <span class="text-2xl">🎬</span>
+          Story Mode Audio (Recommended)
+          <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">v3.0.0+</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
-          Generate audio files externally, then import the audio package folder into AutoFlowCut.
+          As of v3.0.0 you no longer need to call external APIs yourself. The <strong>⑤ Audio</strong> step of Story mode generates dialogue voices (TTS) and sound effects (SFX) right inside the app.
         </p>
 
         <div class="space-y-4">
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">Generate TTS Audio from Your Script</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Use Typecast or ElevenLabs to generate per-character dialogue voices. Organize files by character folder.</p>
+              <p class="font-medium text-gray-900 dark:text-white">Create segments with ④ Scene Split</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Splitting the script into scenes breaks each scene into narration/dialogue segments and sfx segments. Every segment carries a speaker and an emotion.</p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">Generate SFX Sound Effects</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Use ElevenLabs Sound Generation API to create ambient sounds, footsteps, props, and other effects by category.</p>
+              <p class="font-medium text-gray-900 dark:text-white">Assign a voice per speaker in ⑤ Audio</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Click the <code class="bg-emerald-200 dark:bg-emerald-800 px-1 rounded">🎙</code> button next to a speaker to open the voice picker. Speakers you leave alone are generated with the <strong>default voice</strong>.</p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 flex-shrink-0 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
             <div>
-              <p class="font-medium text-gray-900 dark:text-white">Import Audio Package in AutoFlowCut</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Place all audio files in the <code class="bg-emerald-200 dark:bg-emerald-800 px-1 rounded">media/</code> folder of your project directory. AutoFlowCut automatically detects and imports the audio package.</p>
+              <p class="font-medium text-gray-900 dark:text-white">Run it, then check segment by segment</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Generated audio is written to <code class="bg-emerald-200 dark:bg-emerald-800 px-1 rounded">story/audio/segments/</code> in your project, and once the step finishes a per-speaker track timeline appears in the panel. Each row of the table offers <strong>▶Test · Preview · ↻Regenerate</strong>.</p>
             </div>
           </div>
         </div>
 
         <div class="mt-6 p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
           <p class="text-sm text-emerald-700 dark:text-emerald-300">
+            💡 <strong>Tip:</strong> Tick "Auto" on the steps you trust and hit "Run all" — scene split → audio → prompts then run back to back. For the full Story-mode walkthrough, see the <a href="/guide/en/autoflowcut/story-guide.html" class="underline font-medium">Story Mode Guide</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Per-speaker voice assignment -->
+      <div id="voice-assignment" class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎙️</span>
+          Per-Speaker Voice Assignment
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Voices are assigned <strong>per speaker</strong>. Within one script you can mix engines freely — Typecast for the narrator, ElevenLabs for the lead, Gemini for a supporting character.
+        </p>
+
+        <!-- Engines -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Three TTS Engines</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Engine</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>Typecast</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Add your API key in Settings → TTS keys and the voice list loads. Supports the emotion parameter directly.</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>Gemini TTS</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Reuses your Gemini API key — no separate key needed. Offers multilingual prebuilt voices.</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>ElevenLabs</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Add your API key in Settings → TTS keys. There are far too many shared voices to preload, so typing 2+ characters in the picker search fetches more remotely.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Voice picker -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-3">The Voice Picker</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">🔖</span>
+              <div>
+                <div class="font-medium text-sm">Engine chips</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">All / Typecast / Gemini / ElevenLabs — each chip shows how many voices it has.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">⌕</span>
+              <div>
+                <div class="font-medium text-sm">Search</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">Filter by voice name and traits.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">♀♂</span>
+              <div>
+                <div class="font-medium text-sm">Gender segments</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">All / Female / Male. If the character's gender is known, the picker opens on that segment.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">▶</span>
+              <div>
+                <div class="font-medium text-sm">Preview</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">The play button on a card auditions a sample line in that voice.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">🏷️</span>
+              <div>
+                <div class="font-medium text-sm">Card info</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">Each card shows the name, a gender tag, the language, and trait tags.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-violet-100/50 dark:bg-violet-900/20 rounded-lg">
+              <span class="text-lg">✔</span>
+              <div>
+                <div class="font-medium text-sm">Confirm</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">Nothing is applied until you press [Use this voice]. Cancel keeps the previous assignment.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Good to know</h3>
+          <div class="space-y-2">
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; If the character's gender differs from the voice's gender, a <strong>⚠</strong> appears on the button. It is only a warning — generation still runs.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; Voice cards whose gender is not confirmed can be <strong>right-clicked</strong> to mark them female or male yourself.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; Every speaker gets its <strong>own narration track</strong> (the narrator is track 0), so the export lands in CapCut as separate tracks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emotion rules -->
+      <div id="emotion" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎭</span>
+          How Emotion Is Applied
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Emotion is attached to each segment automatically during scene split, and you can read it in the <strong>Segment (emotion)</strong> column of the ⑤ Audio table.
+        </p>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4 mb-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Emotion Values</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-800">
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Emotion</th>
+                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>normal</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Default tone</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>happy</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Bright / joyful</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>sad</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Sad / melancholic</td></tr>
+                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>angry</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Angry / intense</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Rules</h3>
+          <div class="space-y-2">
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; Emotion applies to <strong>character lines only</strong>. Narrator segments are always synthesized as <code>normal</code>, whatever the emotion value says.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; Each engine expresses it differently — Typecast takes an emotion parameter, Gemini TTS uses a style instruction, ElevenLabs approximates the tone via voice settings.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">&mdash; Change a speaker's voice, engine, or emotion and the affected segments are re-synthesized instead of reused.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SFX auto-extraction (native) -->
+      <div id="story-sfx" class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🔊</span>
+          Automatic SFX Extraction
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Sound effects are pulled out of the script for you. During scene split the AI inserts an <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">sfx</code> segment (a short English description) wherever the story needs one — a door creaking open, distant thunder, footsteps — and the ⑤ Audio step generates it in place.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🎬</span>
+              <span class="font-semibold">Placed on the scene</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">An sfx segment holds the same position in the sequence as a line of dialogue, so it lands exactly where it belongs inside the scene.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📋</span>
+              <span class="font-semibold">How it looks in the table</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">The speaker column shows <code>SFX</code>; the segment column shows the English description plus a source dropdown. <strong>ElevenLabs</strong> is the default and the only source that generates — Library is not available yet.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">▶</span>
+              <span class="font-semibold">Audition one at a time</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Use <strong>▶Test</strong> to generate just that one effect and listen to it; hit <strong>↻</strong> to regenerate if it is not right.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📁</span>
+              <span class="font-semibold">Where it is saved</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Sound effects are written alongside the dialogue audio in <code>story/audio/segments/</code>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="audio-tab" class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">🎧</span>
+          Audio Tab in App
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Once imported, the Audio tab provides a full overview of your audio package.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">📊</span>
+              <span class="font-semibold">Summary View</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Voice count per character, SFX count per category, total duration breakdown.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">⏱️</span>
+              <span class="font-semibold">Timeline View</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Chronological list with automatic scene matching via timecodes.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">▶️</span>
+              <span class="font-semibold">Playback</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Preview any audio file directly in the app with inline player.</p>
+          </div>
+          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-lg">🚩</span>
+              <span class="font-semibold">Flag &amp; Sort</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Flag unsuitable audio for replacement. Sort by name, duration, or status.</p>
+          </div>
+        </div>
+        <div class="mt-4 p-3 bg-amber-100/50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+          <p class="text-xs text-amber-700 dark:text-amber-400">
+            💡 <strong>Three Results-Panel Views:</strong> The results panel below the generation tabs switches between <strong>▶ Timeline · ☰ Results · ⊞ Grid</strong>. The Grid view was added in v3.0.0.
+          </p>
+        </div>
+      </div>
+
+      <!-- Manual audio package import (secondary) -->
+      <div id="manual-import" class="bg-gray-100 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          Bring Your Own Audio
+          <span class="text-xs bg-gray-500 text-white px-2 py-0.5 rounded-full">Manual</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          If you would rather use audio you produced elsewhere, the original <strong>audio package import</strong> still works exactly as before. Use it when you are not working in Story mode, or when you already have voices and effects on hand.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Generate TTS audio externally</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Use Typecast or ElevenLabs to generate per-character dialogue voices, and organize the files by character folder.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Generate SFX sound effects</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Use the ElevenLabs Sound Generation API to create ambient sounds, footsteps, props, and other effects by category.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex-shrink-0 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <div>
+              <p class="font-medium text-gray-900 dark:text-white">Import the package in AutoFlowCut</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Place the audio files in the <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">media/</code> folder of your project directory. AutoFlowCut detects and imports the audio package automatically.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
+          <p class="text-sm text-gray-600 dark:text-gray-400">
             💡 <strong>Tip:</strong> Audio files with timecodes in their filenames are automatically matched to the corresponding SRT subtitle timestamps.
           </p>
         </div>
       </div>
 
-      <!-- Audio Package Structure -->
       <div id="package-structure" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">📁</span>
           Audio Package Structure
+          <span class="text-xs bg-gray-500 text-white px-2 py-0.5 rounded-full">Manual</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           Organize your audio files in the following directory structure inside your project folder:
@@ -227,11 +493,11 @@
         </div>
       </div>
 
-      <!-- TTS (Dialogue Voice) -->
       <div id="tts" class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">🎙️</span>
           TTS (Dialogue Voice)
+          <span class="text-xs bg-gray-500 text-white px-2 py-0.5 rounded-full">Manual</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
           Per-character dialogue audio generated via Text-to-Speech APIs.
@@ -261,30 +527,15 @@ Examples:
         <!-- Emotions -->
         <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-4">
           <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Emotion Parameters</h3>
-          <div class="overflow-x-auto">
-            <table class="w-full text-sm border-gray-300 dark:border-gray-600">
-              <thead>
-                <tr class="bg-gray-100 dark:bg-gray-800">
-                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Emotion</th>
-                  <th class="px-4 py-2 text-left border-gray-300 dark:border-gray-600">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>normal</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Default tone</td></tr>
-                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>happy</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Bright / joyful</td></tr>
-                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>sad</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Sad / melancholic</td></tr>
-                <tr><td class="px-4 py-2 border-gray-300 dark:border-gray-600"><code>angry</code></td><td class="px-4 py-2 border-gray-300 dark:border-gray-600">Angry / intense</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400">The emotion values are the same ones the app uses (<code>normal</code> / <code>happy</code> / <code>sad</code> / <code>angry</code>). See <a href="#emotion" class="text-primary-600 dark:text-primary-400 hover:underline">How Emotion Is Applied</a> for the details.</p>
         </div>
       </div>
 
-      <!-- SFX (Sound Effects) -->
       <div id="sfx" class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">🔊</span>
           SFX (Sound Effects)
+          <span class="text-xs bg-gray-500 text-white px-2 py-0.5 rounded-full">Manual</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-6">
           Ambient sounds, foley, and effects generated via AI sound generation.
@@ -368,11 +619,11 @@ Timecoded SFX (synced to a specific scene):
         </div>
       </div>
 
-      <!-- Audio Review System -->
       <div id="audio-review" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">🔍</span>
           Audio Review System
+          <span class="text-xs bg-gray-500 text-white px-2 py-0.5 rounded-full">Manual</span>
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
           Flag unsuitable audio files through the app UI or via Claude Code MCP tools. Flagged files are tracked in <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">.audio_review.json</code>.
@@ -400,48 +651,6 @@ Timecoded SFX (synced to a specific scene):
               <code class="text-primary-600 dark:text-primary-400 font-mono text-xs">update_audio_review</code>
               <span class="text-gray-600 dark:text-gray-400">&mdash; Add or remove flags</span>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Audio Tab in App -->
-      <div id="audio-tab" class="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-2xl border border-primary-200 dark:border-primary-800 p-6 md:p-8 mb-8">
-        <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
-          <span class="text-2xl">🎧</span>
-          Audio Tab in App
-        </h2>
-        <p class="text-gray-600 dark:text-gray-400 mb-6">
-          Once imported, the Audio tab provides a full overview of your audio package.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">📊</span>
-              <span class="font-semibold">Summary View</span>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Voice count per character, SFX count per category, total duration breakdown.</p>
-          </div>
-          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">⏱️</span>
-              <span class="font-semibold">Timeline View</span>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Chronological list with automatic scene matching via timecodes.</p>
-          </div>
-          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">▶️</span>
-              <span class="font-semibold">Playback</span>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Preview any audio file directly in the app with inline player.</p>
-          </div>
-          <div class="p-4 bg-white/60 dark:bg-gray-800/60 rounded-xl">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">🚩</span>
-              <span class="font-semibold">Flag &amp; Sort</span>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Flag unsuitable audio for replacement. Sort by name, duration, or status.</p>
           </div>
         </div>
       </div>
@@ -476,6 +685,12 @@ Timecoded SFX (synced to a specific scene):
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
             Skills Guide
+          </a>
+          <a href="/guide/en/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Story Mode Guide
           </a>
         </div>
       </div>

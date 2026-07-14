@@ -150,6 +150,7 @@
         <li><a href="#plain-text" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📝 Prompt Text File</a></li>
         <li><a href="#scene-csv" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📊 Scene CSV File</a></li>
         <li><a href="#reference-csv" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🖼️ Reference CSV File</a></li>
+        <li><a href="#mention-refs" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📌 Attaching References with @mentions</a></li>
         <li><a href="#srt-subtitle" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🎬 Subtitle SRT File</a></li>
         <li><a href="#ai-text-prompt" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📝 Auto-generate Text Prompt List with AI</a></li>
         <li><a href="#ai-csv-prompt" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🤖 Auto-generate CSV with AI</a></li>
@@ -1107,6 +1108,213 @@ style,medieval historical drama,,"Medieval European historical drama style, Rena
         </div>
       </div>
 
+      <!-- @mention References -->
+      <div id="mention-refs" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-2xl">📌</span>
+          Attaching References with @mentions
+          <span class="text-xs bg-cyan-500 text-white px-2 py-0.5 rounded-full">companion to tags</span>
+        </h2>
+
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Besides the tag columns, you can simply <strong>write <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">@name</code> inline in the prompt</strong>.
+          The reference whose <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">name</code> matches that token is automatically attached to that scene's generation.
+          It's the same idea as Google Flow's <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">@</code> mentions, and it works for prompts that arrive via CSV import too —
+          a <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">prompt</code> cell containing <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">@scholar</code> attaches the <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded font-mono">scholar</code> reference.
+        </p>
+
+        <!-- Syntax -->
+        <div class="bg-cyan-50 dark:bg-cyan-900/20 rounded-xl border border-cyan-200 dark:border-cyan-800 p-5 mb-6">
+          <h3 class="font-semibold text-cyan-800 dark:text-cyan-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">✍️</span> Syntax
+          </h3>
+          <div class="bg-gray-900 dark:bg-black rounded-lg p-3 font-mono text-sm text-green-400 mb-3 overflow-x-auto">
+            A young <span class="text-cyan-400">@scholar</span> reading under an oak tree in <span class="text-cyan-400">@village</span>, medieval England
+          </div>
+          <ul class="text-sm text-cyan-700 dark:text-cyan-400 space-y-1 ml-4">
+            <li>• <code class="bg-cyan-100 dark:bg-cyan-900 px-1 rounded">@scholar</code> → the reference named <code class="bg-cyan-100 dark:bg-cyan-900 px-1 rounded">scholar</code> is attached to this scene.</li>
+            <li>• Put as many mentions as you like, anywhere in the prompt.</li>
+            <li>• At generation time the <code class="bg-cyan-100 dark:bg-cyan-900 px-1 rounded">@</code> sigil is stripped and the plain name stays in the prompt text (the reference image is attached separately).</li>
+          </ul>
+        </div>
+
+        <!-- Union with tags -->
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-5 mb-6">
+          <h3 class="font-bold text-amber-800 dark:text-amber-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">➕</span>
+            It <u>adds to</u> the tag columns — it does not replace them
+          </h3>
+          <p class="text-amber-700 dark:text-amber-400 text-sm mb-4">
+            @mentions are a <strong>companion to</strong>, not a replacement for, the <a href="#reference-csv" class="underline hover:text-amber-900 dark:hover:text-amber-200">Tag Matching System</a>.
+            References found through the tag columns and references found through <code class="bg-amber-200 dark:bg-amber-800 px-1 rounded">@mentions</code> are merged as a <strong>union</strong>,
+            with duplicates removed automatically (by id first, then by name — case-insensitively). Use tags only, @mentions only, or both.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-blue-700 dark:text-blue-300 mb-2">🏷️ Tag columns</div>
+              <div class="text-gray-600 dark:text-gray-400 text-xs">
+                <strong>Type-scoped.</strong><br>
+                <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">characters</code> → character references only<br>
+                <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">scene_tag</code> → scene references only<br>
+                <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">style_tag</code> → style references only
+              </div>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-cyan-700 dark:text-cyan-300 mb-2">📌 @mentions</div>
+              <div class="text-gray-600 dark:text-gray-400 text-xs">
+                <strong>Type-agnostic.</strong><br>
+                character / scene / style — any reference<br>
+                can be attached with <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@name</code> as long as the name matches.<br>
+                <span class="text-gray-500 dark:text-gray-500">(API mode — see the Flow-mode difference below)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Before / After -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Same result, two notations</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+          Both CSVs below attach <strong>exactly the same references</strong> (scholar + village) to the scene.
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+          <div>
+            <div class="text-xs text-gray-500 dark:text-gray-400 font-mono mb-2">① Tag-column style</div>
+            <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"A young scholar reading under an oak tree, medieval England","...",scholar,village,medieval historical drama,5</pre>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 dark:text-gray-400 font-mono mb-2">② @mention style</div>
+            <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-xs overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"A young @scholar reading under an oak tree in @village, medieval England","...",,,medieval historical drama,5</pre>
+          </div>
+        </div>
+
+        <!-- Full sample -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono">sample-scenes-mentions.csv</span>
+            <div class="flex gap-2">
+              <button onclick="copyCode('mention-csv-example')" class="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                Copy
+              </button>
+              <a href="samples/sample-scenes-mentions.csv" download class="text-xs px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-200 dark:hover:bg-cyan-900/50 rounded-lg transition-colors flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                Download
+              </a>
+            </div>
+          </div>
+          <pre id="mention-csv-example" class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700">prompt,subtitle,characters,scene_tag,style_tag,duration
+"A young @scholar reading under an ancient oak tree in @village, medieval England","Once upon a time, a young scholar lived in a small village.",,,medieval historical drama,5
+"The @scholar walking the @journey road toward a grand castle gate at dawn","The scholar set off for the royal court to prove his knowledge.",,,medieval historical drama,4
+"The @palace throne room filled with @officials in formal attire, the @scholar bowing","The great hall was filled with dignified lords and ladies.",,,medieval historical drama,5
+"The @scholar writing with a quill, intense focus, in the @examination hall","The scholar poured all his effort into the royal examination.",,,medieval historical drama,4
+"A @celebration with banners and a joyful @crowd cheering the @scholar","At last, the scholar earned the king's favor and glory.",,,medieval historical drama,5</pre>
+          <div class="mt-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+            <p class="text-xs text-blue-700 dark:text-blue-400">
+              💡 This sample pairs 1:1 with <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">sample-references.csv</code> in the same folder.
+              <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">characters</code> and <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">scene_tag</code> are empty, but
+              <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">style_tag</code> is kept — the style reference is named <code class="bg-blue-100 dark:bg-blue-900 px-1 rounded">medieval historical drama</code>, and
+              <strong>names with spaces cannot be @mentioned</strong> (see the warning below). It also shows that tags and @mentions mix freely.
+            </p>
+          </div>
+        </div>
+
+        <!-- Rules -->
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Rules</h3>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm border-gray-200 dark:border-gray-700">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-800">
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Rule</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Description</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">Example</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Case-insensitive</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Name matching ignores upper/lower case</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@Scholar = @scholar</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Type-agnostic</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">character / scene / style references can all be mentioned</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@village (a scene ref)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Allowed name characters</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">ASCII letters, digits, <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">_</code>, <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-</code>, and Hangul syllables. <strong class="text-red-600 dark:text-red-400">No spaces</strong></td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@ink-wash, @scene_02, @선비</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Word boundary</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">The <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">@</code> must sit at the start, after whitespace, or after punctuation. Email addresses are not mentions</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">user@example.com → ✗</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">Korean particles</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">A Korean particle glued to the name without a space is split off automatically (Korean prompts are a real use case)</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@선비가 → 선비 + "가"</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium border-gray-200 dark:border-gray-700">No match</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">If no reference has that name, the <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">@name</code> is <strong>left in the prompt verbatim</strong>, so the failure is visible</td>
+                <td class="px-4 py-2 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 font-mono text-xs">@schlolar → stays as-is</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Gotcha: no spaces -->
+        <div class="bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-200 dark:border-red-800 p-5 mb-6">
+          <h3 class="font-bold text-red-800 dark:text-red-300 mb-2 flex items-center gap-2">
+            <span class="text-xl">⚠️</span>
+            Gotcha: a reference whose name contains spaces cannot be @mentioned
+          </h3>
+          <p class="text-sm text-red-700 dark:text-red-400 mb-3">
+            Mention names <strong>cannot contain spaces.</strong> That is why the style reference in the sample,
+            <code class="bg-red-200 dark:bg-red-800 px-1 rounded">medieval historical drama</code>, cannot be @mentioned —
+            writing <code class="bg-red-200 dark:bg-red-800 px-1 rounded">@medieval historical drama</code> only parses <code class="bg-red-200 dark:bg-red-800 px-1 rounded">@medieval</code> as the name, and no reference has that name, so the match fails.
+          </p>
+          <ul class="text-sm text-red-600 dark:text-red-400 space-y-1 ml-4">
+            <li>• <strong>Fix A</strong> — attach names with spaces through a tag column such as <code class="bg-red-200 dark:bg-red-800 px-1 rounded">style_tag</code> (tags allow spaces).</li>
+            <li>• <strong>Fix B</strong> — give references you want to mention a <strong>single-token name</strong> from the start (<code class="bg-red-200 dark:bg-red-800 px-1 rounded">medieval-historical-drama</code>, <code class="bg-red-200 dark:bg-red-800 px-1 rounded">sageuk</code>).</li>
+          </ul>
+        </div>
+
+        <!-- Flow vs API -->
+        <div class="bg-violet-50 dark:bg-violet-900/20 rounded-xl border border-violet-200 dark:border-violet-800 p-5 mb-2">
+          <h3 class="font-bold text-violet-800 dark:text-violet-300 mb-3 flex items-center gap-2">
+            <span class="text-xl">🔀</span>
+            Flow-login mode is stricter
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-cyan-700 dark:text-cyan-300 mb-2">🔑 API (BYOK) mode</div>
+              <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                <li>• <strong>Any type</strong> can be mentioned — character / scene / style</li>
+                <li>• An unmatched <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@token</code> simply stays as text and <strong>the run continues</strong></li>
+              </ul>
+            </div>
+            <div class="bg-white/60 dark:bg-gray-800/60 p-3 rounded-lg">
+              <div class="font-semibold text-violet-700 dark:text-violet-300 mb-2">🌊 Flow-login mode</div>
+              <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                <li>• Only <strong>character-type</strong> references that are <strong>synced to Flow</strong> can be mentioned</li>
+                <li>• An unresolvable <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@token</code> <strong>blocks the run</strong> — unless every unresolved name matches an uploaded character reference, in which case the <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@</code> is dropped and the run continues with that reference attached</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-xs text-violet-700 dark:text-violet-400 mt-3">
+            💡 Before running a batch in Flow mode, make sure every mentioned name is a registered, synced character reference. (In a project with no character references at all, <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">@</code> is not treated as a mention and stays plain text.)
+          </p>
+        </div>
+      </div>
+
       <!-- SRT Format -->
       <div id="srt-subtitle" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-6 flex items-center gap-3">
@@ -1883,6 +2091,12 @@ Now create the reference list for this story:</pre>
             </svg>
             sample-scenes.csv
           </a>
+          <a href="/guide/en/autoflowcut/samples/sample-scenes-mentions.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-lg hover:bg-cyan-200 dark:hover:bg-cyan-900/50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            sample-scenes-mentions.csv
+          </a>
           <a href="/guide/en/autoflowcut/samples/sample-references.csv" download class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
@@ -1940,6 +2154,12 @@ Now create the reference list for this story:</pre>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
             Audio Package Guide
+          </a>
+          <a href="/guide/en/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            Story Mode Guide
           </a>
         </div>
       </div>

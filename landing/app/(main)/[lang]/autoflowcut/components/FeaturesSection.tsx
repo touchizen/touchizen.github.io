@@ -2,6 +2,8 @@ import { Language, TranslationKey } from '@/lib/i18n';
 
 export default function FeaturesSection({ lang, t }: { lang: Language; t: (key: TranslationKey) => string }) {
   const features = [
+    { title: 'autoflowcut_feat7_title', desc: 'autoflowcut_feat7_desc', icon: '📖', color: 'from-violet-500 to-cyan-500' },
+    { title: 'autoflowcut_feat8_title', desc: 'autoflowcut_feat8_desc', icon: '🎙️', color: 'from-amber-500 to-orange-500' },
     { title: 'autoflowcut_feat1_title', desc: 'autoflowcut_feat1_desc', icon: '🖼️', color: 'from-violet-500 to-purple-600' },
     { title: 'autoflowcut_feat2_title', desc: 'autoflowcut_feat2_desc', icon: '🎬', color: 'from-cyan-500 to-blue-600' },
     { title: 'autoflowcut_feat3_title', desc: 'autoflowcut_feat3_desc', icon: '✂️', color: 'from-green-500 to-emerald-600' },

@@ -8,17 +8,17 @@ export function generateMetadata({ params }: Props): Metadata {
   const baseUrl = 'https://touchizen.com';
 
   const titles: Record<Language, string> = {
-    en: 'AutoFlowCut: AI Video Pipeline → CapCut, Premiere & Vrew Export',
-    ko: 'AutoFlowCut: AI 영상 파이프라인 → CapCut·Premiere·Vrew 내보내기',
-    ja: 'AutoFlowCut: AI動画パイプライン → CapCut・Premiere・Vrewエクスポート',
-    de: 'AutoFlowCut: KI-Videopipeline → CapCut-, Premiere- & Vrew-Export',
+    en: 'AutoFlowCut: AI Story Mode — Script, Voiceover & Video → CapCut, Premiere, Vrew',
+    ko: 'AutoFlowCut: AI 스토리 모드 — 대본·나레이션·영상 → CapCut·Premiere·Vrew 내보내기',
+    ja: 'AutoFlowCut: AIストーリーモード — 台本・ナレーション・動画 → CapCut・Premiere・Vrew',
+    de: 'AutoFlowCut: KI-Story-Modus — Skript, Sprachausgabe & Video → CapCut, Premiere, Vrew',
   };
 
   const descriptions: Record<Language, string> = {
-    en: 'Bulk-generate images and videos with Gemini and Veo — via Google Flow login or your own API key — then export edit-ready projects for CapCut, Adobe Premiere Pro, or Vrew in one click. Open source (AGPL v3).',
-    ko: 'Google Flow 로그인 또는 내 API 키로 Gemini·Veo 이미지/비디오를 대량 생성하고, 편집 가능한 CapCut·Premiere Pro·Vrew 프로젝트로 원클릭 내보내기. 오픈소스(AGPL v3).',
-    ja: 'Google Flowログインまたは自分のAPIキーでGemini・Veoの画像・動画を一括生成し、CapCut・Adobe Premiere Pro・Vrewの編集可能なプロジェクトへワンクリックエクスポート。オープンソース(AGPL v3)。',
-    de: 'Generieren Sie Bilder und Videos mit Gemini und Veo — per Google-Flow-Login oder eigenem API-Schlüssel — und exportieren Sie editierbare Projekte für CapCut, Adobe Premiere Pro oder Vrew per Klick. Open Source (AGPL v3).',
+    en: 'Story mode writes the script with AI (Claude, Codex), generates AI voiceover (Typecast, ElevenLabs, Gemini) and sound effects, and splits scenes automatically. Then bulk-generate images and video with Gemini and Veo — via Google Flow login or your own API key — and export edit-ready projects for CapCut, Adobe Premiere Pro, or Vrew in one click. Free desktop app, open source (AGPL v3).',
+    ko: '스토리 모드가 AI(Claude·Codex)로 대본을 쓰고, AI 나레이션(Typecast·ElevenLabs·Gemini)과 효과음을 생성하고, 씬을 자동 분리합니다. 이어서 Google Flow 로그인 또는 내 API 키로 Gemini·Veo 이미지/비디오를 대량 생성하고, 편집 가능한 CapCut·Premiere Pro·Vrew 프로젝트로 원클릭 내보내기. 무료 데스크톱 앱, 오픈소스(AGPL v3).',
+    ja: 'ストーリーモードがAI(Claude・Codex)で台本を書き、AIナレーション(Typecast・ElevenLabs・Gemini)と効果音を生成し、シーンを自動分割。続いてGoogle Flowログインまたは自分のAPIキーでGemini・Veoの画像・動画を一括生成し、CapCut・Adobe Premiere Pro・Vrewの編集可能なプロジェクトへワンクリックエクスポート。無料デスクトップアプリ、オープンソース(AGPL v3)。',
+    de: 'Der Story-Modus schreibt das Skript mit KI (Claude, Codex), erzeugt KI-Sprachausgabe (Typecast, ElevenLabs, Gemini) und Soundeffekte und teilt Szenen automatisch auf. Danach generieren Sie Bilder und Videos mit Gemini und Veo — per Google-Flow-Login oder eigenem API-Schlüssel — und exportieren editierbare Projekte für CapCut, Adobe Premiere Pro oder Vrew per Klick. Kostenlose Desktop-App, Open Source (AGPL v3).',
   };
 
   const ogImages: Record<Language, string> = {
@@ -33,6 +33,19 @@ export function generateMetadata({ params }: Props): Metadata {
     description: descriptions[lang],
     keywords: [
       'AutoFlowCut',
+      'AI story mode',
+      'AI script writing',
+      'AI script generator',
+      'YouTube script generator',
+      'AI voiceover',
+      'AI narration',
+      'TTS',
+      'text to speech',
+      'Typecast',
+      'ElevenLabs',
+      'AI sound effects',
+      'automatic scene splitting',
+      'character reference consistency',
       'Google Flow',
       'Google Gemini API',
       'Veo API',
@@ -103,10 +116,10 @@ function generateJsonLd(lang: Language) {
   const t = (key: string) => translations[lang][key as TranslationKey];
 
   const descriptions: Record<Language, string> = {
-    en: 'Bulk-generate AI images and videos with Gemini and Veo — via Google Flow login or your own API key — then export projects for CapCut, Premiere Pro, or Vrew in one click. Open source (AGPL v3).',
-    ko: 'Google Flow 로그인 또는 내 API 키로 Gemini·Veo AI 이미지/영상을 대량 생성하고 CapCut·Premiere Pro·Vrew 프로젝트로 원클릭 내보내기. 오픈소스(AGPL v3).',
-    ja: 'Google Flowログインまたは自分のAPIキーでGemini・VeoのAI画像・動画を一括生成し、CapCut・Premiere Pro・Vrewプロジェクトへワンクリックエクスポート。オープンソース(AGPL v3)。',
-    de: 'Generieren Sie KI-Bilder und -Videos mit Gemini und Veo — per Google-Flow-Login oder eigenem API-Schlüssel — und exportieren Sie Projekte für CapCut, Premiere Pro oder Vrew per Klick. Open Source (AGPL v3).',
+    en: 'Story mode takes a video from a blank page to a finished project: AI script writing (Claude, Codex), YouTube research, synopsis and characters, automatic scene splitting, AI voiceover per speaker (Typecast, ElevenLabs, Gemini), and sound effects pulled from the script. Then bulk-generate AI images and videos with Gemini and Veo — via Google Flow login or your own API key — and export projects for CapCut, Premiere Pro, or Vrew in one click. Open source (AGPL v3).',
+    ko: '스토리 모드가 빈 페이지에서 완성 프로젝트까지 이끕니다: AI 대본 집필(Claude·Codex), YouTube 리서치, 시놉시스와 등장인물, 자동 씬 분리, 화자별 AI 나레이션(Typecast·ElevenLabs·Gemini), 대본에서 뽑아낸 효과음. 이어서 Google Flow 로그인 또는 내 API 키로 Gemini·Veo AI 이미지/영상을 대량 생성하고 CapCut·Premiere Pro·Vrew 프로젝트로 원클릭 내보내기. 오픈소스(AGPL v3).',
+    ja: 'ストーリーモードが白紙から完成プロジェクトまで導きます：AI台本執筆(Claude・Codex)、YouTubeリサーチ、あらすじと登場人物、シーン自動分割、話者ごとのAIナレーション(Typecast・ElevenLabs・Gemini)、台本から抽出した効果音。続いてGoogle Flowログインまたは自分のAPIキーでGemini・VeoのAI画像・動画を一括生成し、CapCut・Premiere Pro・Vrewプロジェクトへワンクリックエクスポート。オープンソース(AGPL v3)。',
+    de: 'Der Story-Modus führt vom leeren Blatt zum fertigen Projekt: KI-Skript (Claude, Codex), YouTube-Recherche, Synopsis und Figuren, automatische Szenenaufteilung, KI-Sprachausgabe pro Sprecher (Typecast, ElevenLabs, Gemini) und Soundeffekte aus dem Skript. Danach KI-Bilder und -Videos mit Gemini und Veo massenhaft generieren — per Google-Flow-Login oder eigenem API-Schlüssel — und Projekte für CapCut, Premiere Pro oder Vrew per Klick exportieren. Open Source (AGPL v3).',
   };
 
   const softwareApp = {
@@ -152,6 +165,9 @@ function generateJsonLd(lang: Language) {
       { q: 'autoflowcut_faq_q4', a: 'autoflowcut_faq_a4' },
       { q: 'autoflowcut_faq_q5', a: 'autoflowcut_faq_a5' },
       { q: 'autoflowcut_faq_q6', a: 'autoflowcut_faq_a6' },
+      { q: 'autoflowcut_faq_q7', a: 'autoflowcut_faq_a7' },
+      { q: 'autoflowcut_faq_q8', a: 'autoflowcut_faq_a8' },
+      { q: 'autoflowcut_faq_q9', a: 'autoflowcut_faq_a9' },
     ].map(({ q, a }) => ({
       '@type': 'Question',
       name: t(q),

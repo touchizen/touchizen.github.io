@@ -38,9 +38,16 @@ export default function InstallationSection({ lang, t, isMac }: { lang: Language
                     </h3>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
                   {t('autoflowcut_install_mac_desc' as TranslationKey)}
                 </p>
+                {/* Which build? navigator.platform/UA cannot reliably distinguish Apple Silicon
+                    from Intel, so we state the rule instead of auto-detecting it wrong. */}
+                <div className="mb-4 p-3 rounded-xl bg-white dark:bg-gray-900 border border-cyan-200 dark:border-cyan-800">
+                  <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+                    {t('autoflowcut_install_mac_arch' as TranslationKey)}
+                  </p>
+                </div>
                 <a
                   href="https://github.com/touchizen/AutoFlowCut/releases/latest"
                   target="_blank"

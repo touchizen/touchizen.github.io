@@ -144,7 +144,7 @@
         <li><a href="#architecture" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🏗️ アーキテクチャ</a></li>
         <li><a href="#tool-categories" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🧰 ツールカテゴリ</a></li>
         <li><a href="#key-tools" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">📖 主要ツールリファレンス</a></li>
-        <li><a href="#workflow-gates" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚦 ワークフローゲートシステム</a></li>
+        <li><a href="#workflow-gates" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🚦 ワークフロー進捗</a></li>
         <li><a href="#http-api" class="text-blue-700 dark:text-blue-400 hover:underline hover:text-blue-900 dark:hover:text-blue-300 transition-colors block py-1">🌐 HTTP APIエンドポイント</a></li>
         </ul>
       </nav>
@@ -229,23 +229,54 @@
             <h3 class="font-semibold mb-2 flex items-center gap-2">
               <span>🎬</span> アプリ制御
             </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">HTTPを通じて実行中のアプリを制御します。画像生成、バッチ処理、ステータス監視、CapCutエクスポートを実行します。</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">HTTPを通じて実行中のアプリを制御します — <code class="bg-purple-100 dark:bg-purple-900/40 px-1 rounded text-xs">app_*</code> ツール19個とエクスポートツール2個。プロジェクト管理、画像生成、バッチ実行、ステータス監視、エクスポートを行います。以下は一部のみの表示です。</p>
             <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_open_project</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_generate_scene</span>
               <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_start_scene_batch</span>
               <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_wait_batch</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">app_batch_status</span>
               <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">export_capcut</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">export_premiere</span>
+              <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded">他14個の app_*</span>
             </div>
           </div>
 
-          <!-- Workflow Gates -->
+          <!-- Workflow Progress -->
           <div class="bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 p-4">
             <h3 class="font-semibold mb-2 flex items-center gap-2">
-              <span>🔧</span> ワークフローゲート
+              <span>🚦</span> ワークフロー進捗
             </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">レビューステップを通じてパイプラインの進捗を追跡します。ステップの合格/不合格判定と全体の進捗状況を確認します。</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">パイプラインのウェーブ進捗を取得し、QAレビューの状況をアプリのバナーに通知します。進捗は読み取り専用で、記録はスキルが行います。</p>
             <div class="mt-2 flex flex-wrap gap-1">
-              <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">mark_step_done</span>
               <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">get_progress</span>
+              <span class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">app_notify_qa</span>
+            </div>
+          </div>
+
+          <!-- Skill Management -->
+          <div class="bg-rose-50 dark:bg-rose-900/20 rounded-xl border border-rose-200 dark:border-rose-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🧩</span> スキル管理
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Claude Code用のAutoFlowCutスキルをインストール・一覧表示・削除します。インストール時にテンプレート変数が置換されます。</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">list_skills</span>
+              <span class="text-xs bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">install_skill</span>
+              <span class="text-xs bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">uninstall_skill</span>
+            </div>
+          </div>
+
+          <!-- Audio Review & Styles -->
+          <div class="bg-teal-50 dark:bg-teal-900/20 rounded-xl border border-teal-200 dark:border-teal-800 p-4">
+            <h3 class="font-semibold mb-2 flex items-center gap-2">
+              <span>🎧</span> オーディオレビュー &amp; スタイル
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">オーディオパッケージ内の不適合なナレーション・効果音ファイルにマークを付け外しし、内蔵のスタイルプリセットを閲覧します。</p>
+            <div class="mt-2 flex flex-wrap gap-1">
+              <span class="text-xs bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 px-2 py-0.5 rounded">list_audio_reviews</span>
+              <span class="text-xs bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 px-2 py-0.5 rounded">update_audio_review</span>
+              <span class="text-xs bg-teal-100 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 px-2 py-0.5 rounded">list_styles</span>
             </div>
           </div>
         </div>
@@ -295,58 +326,61 @@
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700">CapCutプロジェクトにエクスポート</td>
               </tr>
               <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">export_premiere</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">Premiere Proプロジェクト（<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">.prproj</code>）にエクスポート</td>
+              </tr>
+              <tr>
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">get_schema</td>
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700">CSV/SRT/オーディオスキーマドキュメントを取得</td>
               </tr>
               <tr>
                 <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">list_styles</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">87種類のスタイルプリセットをカテゴリ別に表示</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">スタイルプリセットをカテゴリ別に一覧表示</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs text-primary-600 dark:text-primary-400">get_progress</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">パイプラインのウェーブ進捗を取得（読み取り専用）</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- Workflow Gate System -->
+      <!-- Workflow Progress -->
       <div id="workflow-gates" class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8 mb-8">
         <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
           <span class="text-2xl">🚦</span>
-          ワークフローゲートシステム
+          ワークフロー進捗
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-4">
-          パイプラインは順次ステップ（R1〜R12）に従います。各ステップはレビューに合格してから次のステップが開放されます。進捗状況は<code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">R_progress.json</code>に記録されます。
+          9つのウェーブ（W1〜W9）のパイプラインは<strong>story-engine</strong> Claude Codeスキルのものです — アプリ内蔵のストーリーモードでは<em>ありません</em>。内蔵のストーリーモードは台本 → シーン分割 → オーディオ → プロンプトの順に進み、ウェーブはありません。スキルのオーケストレーターが、プロジェクトの<code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">_story_source/</code>フォルダ内のファイルにワークフロー状態を直接書き込みます。<strong>ワークフロー状態を書き込むMCPツールはありません</strong> — MCPサーバーは<code class="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">get_progress</code>で読み取るだけです。
         </p>
 
-        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">ゲート前提条件</h3>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-3">ワークフロー状態ファイル</h3>
         <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 mb-4">
           <table class="w-full text-sm">
             <thead>
               <tr class="bg-gray-100 dark:bg-gray-800">
-                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">ステップ</th>
-                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">フェーズ</th>
-                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">前提条件</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">ファイル</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">役割</th>
+                <th class="px-4 py-2 text-left border-gray-200 dark:border-gray-700">書き込み主体</th>
               </tr>
             </thead>
             <tbody class="bg-white dark:bg-gray-900">
               <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R1-R3</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">スクリプト &amp; CSV設定</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">なし</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">STATE.md</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">メイン状態 — 現在のウェーブ、完了ステップ、決定事項</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">story-engineスキル</td>
               </tr>
               <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R4-R6</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">リファレンス &amp; プロンプト</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R3合格</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">W{N}_SUMMARY.md</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">ウェーブごとの結果、レビューラウンド、課題</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">story-engineスキル</td>
               </tr>
               <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R7-R9</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">画像生成 &amp; レビュー</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R6合格</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">R10-R12</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">オーディオ、エクスポート &amp; 最終</td>
-                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">R9合格</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700 font-mono text-xs">W_progress.json</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">サイドログ — アプリ・外部ツール用の<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">waves.W1</code>〜<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">waves.W9</code>ステータス</td>
+                <td class="px-4 py-2 border-gray-200 dark:border-gray-700">story-engineスキル（<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">get_progress</code>で取得）</td>
               </tr>
             </tbody>
           </table>
@@ -354,11 +388,11 @@
 
         <h3 class="font-semibold text-gray-900 dark:text-white mb-3">使用方法</h3>
         <div class="relative">
-          <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700"># ステップを合格としてマーク
-mark_step_done(step="R10-3_scenes_review", result="pass", reviewer="subagent")
+          <pre class="bg-gray-900 dark:bg-gray-800 text-green-400 px-4 py-3 rounded-xl font-mono text-sm overflow-x-auto border border-gray-700"># W_progress.json からウェーブ進捗を取得
+get_progress()
 
-# 全体の進捗を確認
-get_progress()</pre>
+# QAレビューの進捗をアプリの上部バナーに通知
+app_notify_qa(kind="scene", state="progress", current=12, total=40, round=1, issues=3)</pre>
         </div>
       </div>
 
@@ -456,6 +490,12 @@ get_progress()</pre>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
             オーディオパッケージガイド
+          </a>
+          <a href="/guide/ja/autoflowcut/story-guide.html" class="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            ストーリーモードガイド
           </a>
         </div>
       </div>

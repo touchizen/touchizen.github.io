@@ -8,6 +8,9 @@ export default function FAQSection({ lang, t }: { lang: Language; t: (key: Trans
     { q: 'autoflowcut_faq_q4', a: 'autoflowcut_faq_a4' },
     { q: 'autoflowcut_faq_q5', a: 'autoflowcut_faq_a5' },
     { q: 'autoflowcut_faq_q6', a: 'autoflowcut_faq_a6' },
+    { q: 'autoflowcut_faq_q7', a: 'autoflowcut_faq_a7' },
+    { q: 'autoflowcut_faq_q8', a: 'autoflowcut_faq_a8' },
+    { q: 'autoflowcut_faq_q9', a: 'autoflowcut_faq_a9' },
   ];
 
   return (
