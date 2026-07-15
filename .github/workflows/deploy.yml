@@ -36,6 +36,7 @@ jobs:
       - name: Build Next.js
         run: |
           cd landing
+          rm -rf .next out
           npm run build
 
       - name: Copy static folders to output
