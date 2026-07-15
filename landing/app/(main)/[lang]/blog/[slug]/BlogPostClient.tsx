@@ -15,12 +15,18 @@ interface BlogPost {
   htmlContent: string;
 }
 
-export default function BlogPostClient({ lang, post }: { lang: Language; post: BlogPost }) {
+export default function BlogPostClient({ lang, post, jsonLd }: { lang: Language; post: BlogPost; jsonLd?: object }) {
   const router = useRouter();
   const t = (key: TranslationKey) => translations[lang][key];
 
   return (
     <main className="min-h-screen">
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
       <Header lang={lang} onLanguageChange={(newLang) => router.push(`/${newLang}/blog/${post.slug}`)} />
 
       <article className="pt-24 pb-16">

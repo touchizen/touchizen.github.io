@@ -1,14 +1,10 @@
 import type { Metadata } from 'next';
 import { Language, languages } from '@/lib/i18n';
-import { getAllPosts, getPostBySlug } from '@/lib/blog';
+import { getAllPosts, getPostBySlug, buildPostMetadata, buildPostJsonLd } from '@/lib/blog';
 import BlogPostClient from './BlogPostClient';
 
 export function generateMetadata({ params }: { params: { lang: Language; slug: string } }): Metadata {
-  const post = getPostBySlug(params.lang, params.slug);
-  if (post?.noindex) {
-    return { robots: { index: false, follow: true } };
-  }
-  return {};
+  return buildPostMetadata(params.lang, params.slug);
 }
 
 export function generateStaticParams() {
@@ -31,5 +27,7 @@ export default function BlogPostPage({ params }: { params: { lang: Language; slu
   const post = getPostBySlug(params.lang, params.slug);
   if (!post) return <div>Post not found</div>;
 
-  return <BlogPostClient lang={params.lang} post={post} />;
+  const jsonLd = buildPostJsonLd(params.lang, params.slug, post);
+
+  return <BlogPostClient lang={params.lang} post={post} jsonLd={jsonLd} />;
 }

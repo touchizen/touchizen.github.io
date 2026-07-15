@@ -499,4 +499,44 @@
     <lastmod>2026-03-05</lastmod>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://touchizen.com/en/blog/autoflowcut-external-images/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/blog/autoflowcut-external-images/" />
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ko/blog/autoflowcut-external-images/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/blog/autoflowcut-external-images/" />
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/ja/blog/autoflowcut-external-images/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/blog/autoflowcut-external-images/" />
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://touchizen.com/de/blog/autoflowcut-external-images/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://touchizen.com/en/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://touchizen.com/ko/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://touchizen.com/ja/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://touchizen.com/de/blog/autoflowcut-external-images/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://touchizen.com/en/blog/autoflowcut-external-images/" />
+    <lastmod>2026-07-15</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
