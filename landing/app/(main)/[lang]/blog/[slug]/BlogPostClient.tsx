@@ -21,6 +21,13 @@ export default function BlogPostClient({ lang, post, jsonLd }: { lang: Language;
 
   return (
     <main className="min-h-screen">
+      {/*
+        Inline <style> (not a Tailwind class / globals rule) so the CSS minifier
+        can't drop it: the prose-code:* utilities style inline code but also leak
+        into <pre><code>, painting a light chip over the dark code block and
+        hiding its text. Reset block code to inherit the <pre> background/text.
+      */}
+      <style dangerouslySetInnerHTML={{ __html: '.prose pre code{background-color:transparent!important;padding:0!important;border-radius:0!important;color:inherit!important;font-weight:inherit!important}' }} />
       {jsonLd && (
         <script
           type="application/ld+json"

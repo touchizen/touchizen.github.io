@@ -248,19 +248,3 @@ body {
   animation-name: kenburns-zoom-out-bottom;
   animation-fill-mode: forwards;
 }
-
-/*
- * Blog fenced code blocks.
- * The prose-code:* utilities in BlogPostClient style INLINE code (light chip
- * background + padding), but they also leak into <pre><code>, painting a light
- * chip over the dark code block so its light text becomes unreadable.
- * Reset code inside <pre> so it inherits the block's own background and text.
- * Kept outside @layer so it wins over the Tailwind utilities layer regardless of specificity.
- */
-.prose pre code {
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
-  color: inherit;
-  font-weight: inherit;
-}
