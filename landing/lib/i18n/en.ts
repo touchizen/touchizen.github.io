@@ -24,7 +24,7 @@ export const en = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'Open Releases',
   quick_dl_learn_more: 'Learn more',
-  quick_dl_version: 'v3.0.2 · Flow login or API key · open source (AGPL v3) · free tier (5/month + 5 bonus)',
+  quick_dl_version: 'v3.1.0 · Flow login or API key · open source (AGPL v3) · free tier (5/month + 5 bonus)',
   quick_dl_mac_arch: 'macOS: Apple Silicon (M1 and later) → arm64 · Intel Mac → x64',
 
   // Time saving value

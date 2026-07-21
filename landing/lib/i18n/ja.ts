@@ -24,7 +24,7 @@ export const ja = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: 'リリースを見る',
   quick_dl_learn_more: '詳しく見る',
-  quick_dl_version: 'v3.0.2 · Flowログインまたは APIキー · オープンソース（AGPL v3）· 無料枠（月5回 + ボーナス5回）',
+  quick_dl_version: 'v3.1.0 · Flowログインまたは APIキー · オープンソース（AGPL v3）· 無料枠（月5回 + ボーナス5回）',
   quick_dl_mac_arch: 'macOS: Apple Silicon（M1以降）→ arm64 · Intel Mac → x64',
 
   // Time saving value

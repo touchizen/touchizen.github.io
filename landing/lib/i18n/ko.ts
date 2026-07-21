@@ -24,7 +24,7 @@ export const ko = {
   quick_dl_mac: 'macOS',
   quick_dl_chrome_store: '릴리즈 보기',
   quick_dl_learn_more: '자세히 보기',
-  quick_dl_version: 'v3.0.2 · Flow 로그인 또는 API 키 · 오픈소스 (AGPL v3) · 무료 제공량 (월 5회 + 보너스 5회)',
+  quick_dl_version: 'v3.1.0 · Flow 로그인 또는 API 키 · 오픈소스 (AGPL v3) · 무료 제공량 (월 5회 + 보너스 5회)',
   quick_dl_mac_arch: 'macOS: Apple Silicon(M1 이상) → arm64 · Intel 맥 → x64',
 
   // Time saving value
