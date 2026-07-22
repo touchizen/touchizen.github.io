@@ -1,19 +1,24 @@
 ---
 title: "Make a Video From Just a Title — AutoFlowCut Story Mode"
 date: "2026-07-21"
-excerpt: "No topic, no script, no voice cast — a single title is enough. Story mode chains research through prompts automatically and hands you one scene table, ready to export to your editor."
+modified: "2026-07-22"
+excerpt: "No topic, no script, no voice cast — one title is enough. Story mode chains synopsis through prompts and hands you an export-ready scene table."
 tags: ["AutoFlowCut", "Story mode", "AI video automation", "tutorial"]
 author: "Touchizen"
-image: "/images/blog/story/story-title-hero-en.png"
+image: "/images/blog/story/story-title-setup-en.png"
 ---
 
 ## A single title is enough
 
+> 📌 The screens in this post are **UI mockups** built from a real project's data and the app's own CSS. The values in them (scenes, segments, prompts) are the actual output. The project itself ran in Korean; the story text shown here is an English translation of that output — the numbers, timings, and prompts are unchanged.
+
 Making one video usually takes all of this — a topic, a script, scene splitting, a voice cast, sound effects, image prompts. Story mode fills every one of them in for you, starting from **a single title**.
 
-AutoFlowCut's Story mode is a pipeline that turns one idea into a **scene table with prompts, voices, and sound effects attached**. Give it a title and it runs research → synopsis → script → scene split → audio → prompts in order, passing each step's output straight into the next. You never leave AutoFlowCut.
+AutoFlowCut's Story mode is a pipeline that turns one idea into a **scene table with prompts, voices, and sound effects attached**. Give it a title and it runs synopsis → script → scene split → audio → prompts in order, passing each step's output straight into the next. **Research is optional** — you open and run it yourself, then tick [use research context] in Synopsis for it to count. You never leave AutoFlowCut.
 
-![Story mode pipeline stepper — starts from a single title and runs automatically](/images/blog/story/story-title-hero-en.png)
+![Story mode stepper — the script is done and Run all is ready](/images/blog/story/story-title-hero-en.png)
+
+The values in the screens below are the output of a real project, **"The Rich Man and the Poor Man."** It started from one title and produced **11 scenes, 20 segments, 72.5 seconds**.
 
 ## The pipeline at a glance
 
@@ -48,13 +53,58 @@ Fill in just the title and leave the script empty, and Story mode writes the scr
 
 ## All the way through: Run all
 
-The Script, Scene-split, Audio, and Prompts steps each have an **[auto]** toggle. Turn on auto for the steps you trust, press **▶ Run all**, and the pipeline carries itself to the end.
+The **Scene-split, Audio, and Prompts** steps each have an **[auto]** toggle. Turn on auto for the steps you trust, press **▶ Run all**, and the pipeline carries itself to the end.
+
+Script has no auto toggle — it's the step that needs your title and settings, so **Run all only becomes available once the script is done.**
 
 > 💡 Research and Synopsis are **gate tabs**, not run steps. They activate only when they apply to your project and stay grayed out otherwise. The first time, we recommend stopping once at the Script step to review the result, then letting the rest run automatically.
 
-## Characters become @mention cards automatically
+## 3 Script — the title becomes prose
 
-Characters in your script **register themselves as reference cards**. Type `@` in a prompt to pick one and drop it into a scene — it lands as an inline chip with a thumbnail and attaches to that generation, keeping characters consistent across 200+ scenes.
+The first thing the pipeline hands back is the script itself. This screen is an **editor**, not a read-only preview, so you can fix any line you don't like right where it is.
+
+![Story mode Script tab — the generated script with a speaker line, and the Rewrite / Continue / Split buttons](/images/blog/story/story-step-script-en.png)
+
+- **Rewrite** — start over from scratch with the same title and settings.
+- **Continue** — keep the current text and write onward from it. Use this when the script came up short.
+- **Split scenes** — lock this script in and hand it to step 4.
+
+Lines written with a speaker prefix, like `Gatekeeper:`, **are recognized as dialogue**. That marking is what becomes per-speaker segments and voice assignments downstream, so it's worth prefixing your dialogue.
+
+## 4 Scene split — the script becomes a table
+
+The script is cut into scenes, and each scene into **segments**. Rows are segments, not scenes, so a scene with several segments repeats its number in the `#` column.
+
+![Story mode Scene split tab — the split unit and the segment table with speaker, emotion, and sound effects](/images/blog/story/story-step-scenes-en.png)
+
+What to look at in the table:
+
+- **Speaker** — whatever the script named: `narrator`, `Gatekeeper`, `Chairman Yun`.
+- **Emotion** — the table shows an emotion only on non-narrator dialogue (`(Angry)`, `(Sad)`). Narration has an emotion value too, but it isn't displayed and is always synthesized as `normal` — only **dialogue** emotion reaches the TTS in step 5.
+- **SFX rows** — sound-effect cues arrive as their own tinted rows. They come out as English descriptions like `heavy iron gate slamming shut` because the sound-effect model takes English.
+- **Scene split unit** — change `Scene-based` / `Sentence-based` and the min–max seconds in the bar above, then split again. The example project uses scene-based, 5–10 seconds.
+
+## 5 Audio — a voice per speaker
+
+A speaker list appears above the table. Pick a different voice for each one, and generate just that speaker's lines first if you want to hear them before committing.
+
+![Story mode Audio tab — per-speaker voice assignment and per-segment generation status](/images/blog/story/story-step-audio-en.png)
+
+- **Voice picker** — browse Typecast, Gemini, and ElevenLabs voices in one window. Each speaker's gender and appearance sit under the name, so casting to the role is easy.
+- **Per-speaker progress** — a counter like `16/16` shows how many of that speaker's segments are done.
+- **Segment status** — every row carries an idle / running / done badge, and a **Test** button regenerates just that one line.
+- **Sound-effect source** — SFX rows let you pick the generation source. **ElevenLabs** is the one that works today; the library option is a placeholder that isn't wired up yet.
+- **Your own recordings work too** — drop an mp3 and an SRT onto a speaker row and that file is used instead of TTS.
+
+## 6 Prompts — an image and video prompt per scene
+
+The last run step. Each scene gets one image prompt and one video prompt.
+
+![Story mode Prompts tab — per-scene image and video prompts with plain-text @mentions](/images/blog/story/story-step-prompts-en.png)
+
+The thing to notice is the **`@Park`-style mentions** inside the prompts. Characters from your script register themselves as reference cards, and scenes featuring them get the mention inserted automatically. The card carries the character description pulled from your script as its prompt, and its image slot starts empty. **Generate the reference image once** and it gets attached to every scene that mentions that character from then on — which is what **keeps the same face across 200+ scenes.**
+
+You can also type `@` in a prompt to add or remove a character yourself. Names containing a space are wrapped in braces, like `@{Chairman Yun}`.
 
 ## Generate and export
 
@@ -66,4 +116,6 @@ Once the prompts are ready, the rest is the usual AutoFlowCut flow:
 
 ## In short
 
-One title → a few settings → Run all → export. Decide *what* to make, and Story mode fills in *how* to make it. To source topics well from the start, read [how to benchmark high-view YouTube videos](/en/blog/story-mode-youtube-benchmark/); for a step-by-step reference, see the [Story mode guide](https://touchizen.com/guide/en/autoflowcut/story-guide.html).
+One title → a few settings → Run all → export. Decide *what* to make, and Story mode fills in *how* to make it.
+
+Curious how "The Rich Man and the Poor Man" came out end to end? Read [From one title to 11 scenes — a real run](/en/blog/story-mode-case-study/). To source topics well from the start, read [how to benchmark high-view YouTube videos](/en/blog/story-mode-youtube-benchmark/); for a step-by-step reference, see the [Story mode guide](https://touchizen.com/guide/en/autoflowcut/story-guide.html).

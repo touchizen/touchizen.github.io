@@ -1,0 +1,583 @@
+{
+  "_source": "~/Documents/AutoFlowCut/부자와_빈자 (story.json / scenes.json / synopsis.md / script.md)",
+  "_generatedBy": "landing/scripts/mockups/extract.mjs",
+  "title": {
+    "ko": "부자와 빈자",
+    "en": "The Rich Man and the Poor Man"
+  },
+  "options": {
+    "model": "opus[1m]",
+    "genre": "bespoke",
+    "language": "ko",
+    "engine": "claude",
+    "reasoningEffort": "medium",
+    "lengthValue": "1",
+    "lengthUnit": "min",
+    "sceneGranularity": "scene",
+    "sceneMinSec": 5,
+    "sceneMaxSec": 10,
+    "reviewLoop": false,
+    "resolvedModel": "claude-opus-4-8[1m]"
+  },
+  "stepStatus": {
+    "script": "done",
+    "scenes": "done",
+    "audio": "done",
+    "prompts": "done"
+  },
+  "totalSec": 72.533,
+  "sceneCount": 11,
+  "segmentCount": 20,
+  "synopsis": {
+    "logline": {
+      "ko": "한 부자의 저택에서 매달 봉투를 받아온 가난한 노인이, 부자가 죽은 뒤에야 그 봉투의 진짜 발신인이 자기 자신이었음을 알게 된다.",
+      "en": "A poor old man who received an envelope every month from a rich man's estate learns, only after the rich man dies, that the true sender was himself."
+    },
+    "hook": {
+      "ko": "30년 동안 매달 1일, 그 노인의 문 앞에는 이름 없는 봉투가 놓였다. 그런데 부자가 죽은 날, 봉투 안에서 나온 건 돈이 아니라 낡은 차용증 한 장이었다.",
+      "en": "For thirty years, on the first of every month, an unmarked envelope was left at the old man's door. But on the day the rich man died, what came out of it was not money — it was a single faded promissory note."
+    }
+  },
+  "script": {
+    "ko": [
+      "# 부자와 빈자",
+      "",
+      "## 훅",
+      "",
+      "삼십 년 동안 매달 1일, 그 노인의 문 앞엔 이름 없는 봉투가 놓였습니다. 그런데 부자가 죽던 날, 봉투에서 나온 건 돈이 아니라 누렇게 삭은 차용증 한 장이었습니다.",
+      "",
+      "## 기",
+      "",
+      "시장 골목에서 남의 짐을 지고 사는 박씨는, 그 봉투 하나로 삼십 년을 버텼습니다. 사람들은 언덕 위 저택의 윤 회장이 몰래 베푸는 자선이라 수군댔고, 박씨도 그리 믿으며 끝내 고맙다는 말 한마디 전하지 못했지요.",
+      "",
+      "## 승",
+      "",
+      "윤 회장이 병으로 쓰러지자, 봉투가 끊겼습니다. 평생 처음 언덕을 오른 박씨 앞에서 문은 열리지 않았습니다.",
+      "",
+      "**문지기:** \"회장님이 당신 같은 사람을 아실 리 없소.\"",
+      "",
+      "굶주린 겨울, 박씨는 이를 갈았습니다. 저건 은혜가 아니라 동정이었구나, 하고."
+    ],
+    "en": [
+      "# The Rich Man and the Poor Man",
+      "",
+      "## Hook",
+      "",
+      "For thirty years, on the first of every month, an unmarked envelope was left at the old man's door. But on the day the rich man died, what came out of it was not money — it was a single faded promissory note.",
+      "",
+      "## Setup",
+      "",
+      "Park, who carried other people's loads through the market alley, survived thirty years on that one envelope. People whispered it was quiet charity from Chairman Yun in the mansion on the hill, and Park believed it too, never once managing to say thank you.",
+      "",
+      "## Rise",
+      "",
+      "When Chairman Yun fell ill, the envelopes stopped. Park climbed the hill for the first time in his life, and the gate did not open.",
+      "",
+      "**Gatekeeper:** \"The chairman would never know a man like you.\"",
+      "",
+      "Through a starving winter, Park ground his teeth. So it was not kindness — it was pity."
+    ]
+  },
+  "characters": [
+    {
+      "id": "박씨",
+      "name": {
+        "ko": "박씨",
+        "en": "Park"
+      },
+      "gender": "male",
+      "age": {
+        "ko": "70대",
+        "en": "70s"
+      },
+      "ethnicity": {
+        "ko": "한국인",
+        "en": "Korean"
+      },
+      "role": {
+        "ko": "가난한 짐꾼 노인, 주인공",
+        "en": "Poor old porter, the protagonist"
+      },
+      "appearance": "Korean man in his 70s, deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, quiet dignified sorrow"
+    },
+    {
+      "id": "윤 회장",
+      "name": {
+        "ko": "윤 회장",
+        "en": "Chairman Yun"
+      },
+      "gender": "male",
+      "age": {
+        "ko": "70대",
+        "en": "70s"
+      },
+      "ethnicity": {
+        "ko": "한국인",
+        "en": "Korean"
+      },
+      "role": {
+        "ko": "언덕 위 저택의 부자, 은혜를 갚아온 인물",
+        "en": "The rich man on the hill, repaying an old debt"
+      },
+      "appearance": "Korean man in his 70s, neatly combed gray hair, gaunt refined face, dark tailored suit with wool overcoat, restrained melancholy"
+    },
+    {
+      "id": "문지기",
+      "name": {
+        "ko": "문지기",
+        "en": "Gatekeeper"
+      },
+      "gender": "male",
+      "age": {
+        "ko": "40대",
+        "en": "40s"
+      },
+      "ethnicity": {
+        "ko": "한국인",
+        "en": "Korean"
+      },
+      "role": {
+        "ko": "저택 문지기, 박씨를 내치는 인물",
+        "en": "Mansion gatekeeper who turns Park away"
+      },
+      "appearance": "Korean man in his 40s, stocky build, short cropped hair, dark uniform coat with brass buttons, stern impassive expression"
+    },
+    {
+      "id": "변호사",
+      "name": {
+        "ko": "변호사",
+        "en": "Lawyer"
+      },
+      "gender": "male",
+      "age": {
+        "ko": "50대",
+        "en": "50s"
+      },
+      "ethnicity": {
+        "ko": "한국인",
+        "en": "Korean"
+      },
+      "role": {
+        "ko": "윤 회장의 유언을 전하는 변호사",
+        "en": "The lawyer who delivers Chairman Yun's last wish"
+      },
+      "appearance": "Korean man in his 50s, slicked-back graying hair, rimless glasses, charcoal suit holding a leather document case, composed formal manner"
+    }
+  ],
+  "speakers": [
+    {
+      "id": "박씨",
+      "name": {
+        "ko": "박씨",
+        "en": "Park"
+      },
+      "appearance": "Korean man in his 70s, deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, quiet dignified sorrow",
+      "gender": "male",
+      "voice": null,
+      "segmentCount": 0
+    },
+    {
+      "id": "윤 회장",
+      "name": {
+        "ko": "윤 회장",
+        "en": "Chairman Yun"
+      },
+      "appearance": "Korean man in his 70s, neatly combed gray hair, gaunt refined face, dark tailored suit with wool overcoat, restrained melancholy",
+      "gender": "male",
+      "voice": null,
+      "segmentCount": 1
+    },
+    {
+      "id": "문지기",
+      "name": {
+        "ko": "문지기",
+        "en": "Gatekeeper"
+      },
+      "appearance": "Korean man in his 40s, stocky build, short cropped hair, dark uniform coat with brass buttons, stern impassive expression",
+      "gender": "male",
+      "voice": null,
+      "segmentCount": 1
+    },
+    {
+      "id": "변호사",
+      "name": {
+        "ko": "변호사",
+        "en": "Lawyer"
+      },
+      "appearance": "Korean man in his 50s, slicked-back graying hair, rimless glasses, charcoal suit holding a leather document case, composed formal manner",
+      "gender": "male",
+      "voice": null,
+      "segmentCount": 0
+    },
+    {
+      "id": "narrator",
+      "name": {
+        "ko": "나레이션",
+        "en": "narrator"
+      },
+      "appearance": null,
+      "gender": null,
+      "voice": null,
+      "segmentCount": 16
+    }
+  ],
+  "rows": [
+    {
+      "sceneNo": 1,
+      "id": "s1-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "normal",
+      "status": "done",
+      "durationMs": 4800,
+      "startMs": 0,
+      "sourceLabel": null,
+      "text": {
+        "ko": "삼십 년 동안 매달 1일, 그 노인의 문 앞엔 이름 없는 봉투가 놓였습니다.",
+        "en": "For thirty years, on the first of every month, an unmarked envelope was left at the old man's door."
+      }
+    },
+    {
+      "sceneNo": 2,
+      "id": "s2-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "sad",
+      "status": "done",
+      "durationMs": 5650,
+      "startMs": 4800,
+      "sourceLabel": null,
+      "text": {
+        "ko": "그런데 부자가 죽던 날, 봉투에서 나온 건 돈이 아니라 누렇게 삭은 차용증 한 장이었습니다.",
+        "en": "But on the day the rich man died, what came out of the envelope was not money — it was a yellowed promissory note."
+      }
+    },
+    {
+      "sceneNo": 3,
+      "id": "s3-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "normal",
+      "status": "done",
+      "durationMs": 5100,
+      "startMs": 10450,
+      "sourceLabel": null,
+      "text": {
+        "ko": "시장 골목에서 남의 짐을 지고 사는 박씨는, 그 봉투 하나로 삼십 년을 버텼습니다.",
+        "en": "Park, who carried other people's loads through the market alley, survived thirty years on that one envelope."
+      }
+    },
+    {
+      "sceneNo": 3,
+      "id": "s4-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "normal",
+      "status": "done",
+      "durationMs": 4050,
+      "startMs": 15550,
+      "sourceLabel": null,
+      "text": {
+        "ko": "사람들은 언덕 위 저택의 윤 회장이 몰래 베푸는 자선이라 수군댔고,",
+        "en": "People whispered it was quiet charity from Chairman Yun in the mansion on the hill,"
+      }
+    },
+    {
+      "sceneNo": 4,
+      "id": "s5-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "sad",
+      "status": "done",
+      "durationMs": 3950,
+      "startMs": 19600,
+      "sourceLabel": null,
+      "text": {
+        "ko": "박씨도 그리 믿으며 끝내 고맙다는 말 한마디 전하지 못했지요.",
+        "en": "and Park believed it too, never once managing to say thank you."
+      }
+    },
+    {
+      "sceneNo": 4,
+      "id": "s6-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "sad",
+      "status": "done",
+      "durationMs": 3000,
+      "startMs": 23550,
+      "sourceLabel": null,
+      "text": {
+        "ko": "윤 회장이 병으로 쓰러지자, 봉투가 끊겼습니다.",
+        "en": "When Chairman Yun fell ill, the envelopes stopped."
+      }
+    },
+    {
+      "sceneNo": 5,
+      "id": "s7-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "sad",
+      "status": "done",
+      "durationMs": 4000,
+      "startMs": 26550,
+      "sourceLabel": null,
+      "text": {
+        "ko": "평생 처음 언덕을 오른 박씨 앞에서 문은 열리지 않았습니다.",
+        "en": "Park climbed the hill for the first time in his life, and the gate did not open."
+      }
+    },
+    {
+      "sceneNo": 5,
+      "id": "s7-2",
+      "sfx": true,
+      "speaker": null,
+      "emotion": null,
+      "status": "done",
+      "durationMs": 2038,
+      "startMs": 30550,
+      "sourceLabel": "ElevenLabs",
+      "text": {
+        "ko": "heavy iron gate slamming shut",
+        "en": "heavy iron gate slamming shut"
+      }
+    },
+    {
+      "sceneNo": 6,
+      "id": "s8-1",
+      "sfx": false,
+      "speaker": "문지기",
+      "emotion": "angry",
+      "status": "done",
+      "durationMs": 2650,
+      "startMs": 32588,
+      "sourceLabel": null,
+      "text": {
+        "ko": "회장님이 당신 같은 사람을 아실 리 없소.",
+        "en": "The chairman would never know a man like you."
+      }
+    },
+    {
+      "sceneNo": 6,
+      "id": "s9-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "angry",
+      "status": "done",
+      "durationMs": 4700,
+      "startMs": 35238,
+      "sourceLabel": null,
+      "text": {
+        "ko": "굶주린 겨울, 박씨는 이를 갈았습니다. 저건 은혜가 아니라 동정이었구나, 하고.",
+        "en": "Through a starving winter, Park ground his teeth. So it was not kindness — it was pity."
+      }
+    },
+    {
+      "sceneNo": 7,
+      "id": "s10-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "normal",
+      "status": "done",
+      "durationMs": 3500,
+      "startMs": 39938,
+      "sourceLabel": null,
+      "text": {
+        "ko": "장례 다음 날, 변호사가 찾아와 마지막 봉투를 내밀었습니다.",
+        "en": "The day after the funeral, a lawyer came with one last envelope."
+      }
+    },
+    {
+      "sceneNo": 7,
+      "id": "s11-1",
+      "sfx": true,
+      "speaker": null,
+      "emotion": null,
+      "status": "done",
+      "durationMs": 1045,
+      "startMs": 43438,
+      "sourceLabel": "ElevenLabs",
+      "text": {
+        "ko": "old paper being unfolded",
+        "en": "old paper being unfolded"
+      }
+    },
+    {
+      "sceneNo": 7,
+      "id": "s11-2",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "normal",
+      "status": "done",
+      "durationMs": 2650,
+      "startMs": 44483,
+      "sourceLabel": null,
+      "text": {
+        "ko": "안에는 삼십 년 전 날짜가 적힌 차용증.",
+        "en": "Inside was a promissory note dated thirty years earlier."
+      }
+    },
+    {
+      "sceneNo": 8,
+      "id": "s12-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "normal",
+      "status": "done",
+      "durationMs": 4800,
+      "startMs": 47133,
+      "sourceLabel": null,
+      "text": {
+        "ko": "빈털터리 청년이던 윤 회장이 박씨에게 빌린 쌀 세 가마의 값이었습니다.",
+        "en": "It was the price of three sacks of rice a penniless young Yun had borrowed from Park."
+      }
+    },
+    {
+      "sceneNo": 8,
+      "id": "s13-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "sad",
+      "status": "done",
+      "durationMs": 2600,
+      "startMs": 51933,
+      "sourceLabel": null,
+      "text": {
+        "ko": "박씨는 그날을 기억조차 하지 못했습니다.",
+        "en": "Park could not even remember the day."
+      }
+    },
+    {
+      "sceneNo": 9,
+      "id": "s14-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "sad",
+      "status": "done",
+      "durationMs": 3500,
+      "startMs": 54533,
+      "sourceLabel": null,
+      "text": {
+        "ko": "부자는 그것을 삼십 년간, 매달 갚고 있었던 겁니다.",
+        "en": "The rich man had been repaying it every month for thirty years."
+      }
+    },
+    {
+      "sceneNo": 9,
+      "id": "s15-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "normal",
+      "status": "done",
+      "durationMs": 2000,
+      "startMs": 58033,
+      "sourceLabel": null,
+      "text": {
+        "ko": "종이 뒷면엔 한 줄이 있었습니다.",
+        "en": "On the back of the paper was a single line."
+      }
+    },
+    {
+      "sceneNo": 10,
+      "id": "s16-1",
+      "sfx": false,
+      "speaker": "윤 회장",
+      "emotion": "sad",
+      "status": "done",
+      "durationMs": 4700,
+      "startMs": 60033,
+      "sourceLabel": null,
+      "text": {
+        "ko": "당신은 가진 게 없을 때 나눴고, 나는 다 가진 뒤에야 겨우 갚았소.",
+        "en": "You gave when you had nothing. I could only repay after I had everything."
+      }
+    },
+    {
+      "sceneNo": 10,
+      "id": "s17-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "sad",
+      "status": "done",
+      "durationMs": 3400,
+      "startMs": 64733,
+      "sourceLabel": null,
+      "text": {
+        "ko": "박씨는 봉투를 뜯지 않은 채 품에 넣고 언덕을 내려왔습니다.",
+        "en": "Park tucked the unopened envelope into his coat and walked back down the hill."
+      }
+    },
+    {
+      "sceneNo": 11,
+      "id": "s18-1",
+      "sfx": false,
+      "speaker": "narrator",
+      "emotion": "happy",
+      "status": "done",
+      "durationMs": 4400,
+      "startMs": 68133,
+      "sourceLabel": null,
+      "text": {
+        "ko": "그 겨울, 시장 골목의 다른 문 앞에 이름 없는 봉투가 놓이기 시작했습니다.",
+        "en": "That winter, unmarked envelopes began appearing at other doors in the market alley."
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "sceneNo": 1,
+      "imagePrompt": "Cinematic still, 1970s-80s Korean alley at dawn. A plain unmarked white envelope rests on the worn wooden threshold of a humble shanty door, faint frost on the step, peeling paint, a rusted mailbox above. Cold blue-gray morning light, soft mist, shallow depth of field, 35mm film grain, muted desaturated palette, melancholic nostalgic mood.",
+      "videoPrompt": "Slow push-in on the unmarked envelope resting at the doorstep as thin dawn mist drifts past and a faint breeze lifts one corner of the paper; distant alley sounds, static composition with a gentle dolly forward, cold nostalgic film-grain grade."
+    },
+    {
+      "sceneNo": 2,
+      "imagePrompt": "Cinematic close-up of aged wrinkled hands holding an opened envelope from which slides a yellowed, brittle handwritten promissory note with faded ink and a red seal, dust motes in a shaft of pale window light, dark interior of a poor Korean room, 35mm film grain, muted amber and gray palette, somber revelatory mood.",
+      "videoPrompt": "Macro shot as trembling weathered hands slowly draw the yellowed promissory note out of the envelope, paper crackling, dust motes floating through the shaft of light; subtle rack focus from envelope to the faded ink, slow and reverent pacing."
+    },
+    {
+      "sceneNo": 3,
+      "imagePrompt": "Cinematic wide shot of a crowded old Korean market alley, @박씨, a Korean man in his 70s with a deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, carries a heavy bundle of sacks strapped to his bent back between stalls; behind and above, a grand hillside mansion looms in hazy distance. Overcast winter light, muted earth tones, 35mm film grain, documentary realism.",
+      "videoPrompt": "A slow tracking shot following @박씨 as he shoulders a heavy load through the bustling market alley, vendors blurring past, his breath visible in the cold; camera drifts up to reveal the hillside mansion beyond the rooftops, handheld micro-shake, melancholic film-grain grade."
+    },
+    {
+      "sceneNo": 4,
+      "imagePrompt": "Split-mood cinematic frame: in a dim humble room @박씨, a Korean man in his 70s with deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, sits staring at an empty doorstep, while through a window in the far background @{윤 회장}, a Korean man in his 70s with neatly combed gray hair, gaunt refined face, dark tailored suit with wool overcoat, restrained melancholy, is glimpsed frail and seated in a shadowed mansion study. Cold winter light, muted palette, 35mm film grain.",
+      "videoPrompt": "A slow dolly toward @박씨 as he watches the bare empty doorstep where no envelope waits, then a soft dissolve to @{윤 회장} slumping weakly against his study chair as an attendant rushes in; falling light, quiet somber pacing, film-grain texture."
+    },
+    {
+      "sceneNo": 5,
+      "imagePrompt": "Cinematic wide shot of @박씨, a Korean man in his 70s with deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, standing small and hunched before the towering closed iron gate of a hillside mansion, snow dusting the stone steps, bare winter trees, gray overcast sky, 35mm film grain, muted cold palette, lonely dignified mood.",
+      "videoPrompt": "A slow crane-up behind @박씨 as he climbs the last steps and stops before the tall iron gate, raising a hesitant hand toward the bars while the gate stays shut; snow drifting, wind sound, camera rises to emphasize his smallness against the mansion."
+    },
+    {
+      "sceneNo": 6,
+      "imagePrompt": "Cinematic two-shot at a mansion gate in winter: @문지기, a Korean man in his 40s, stocky build, short cropped hair, dark uniform coat with brass buttons, stern impassive expression, blocks the half-open gate while @박씨, a Korean man in his 70s with deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, stands below in the snow with clenched jaw and lowered eyes. Harsh gray daylight, falling snow, 35mm film grain, bitter melancholic mood.",
+      "videoPrompt": "Shot-reverse feel in one move: @문지기 shakes his head and pushes the gate closed, and the camera pans down to @박씨 clenching his fists and grinding his teeth as snow settles on his cap before he turns away; slow deliberate pacing, cold desaturated grade."
+    },
+    {
+      "sceneNo": 7,
+      "imagePrompt": "Cinematic medium shot in a narrow market alley doorway: @변호사, a Korean man in his 50s with slicked-back graying hair, rimless glasses, charcoal suit holding a leather document case, formally extends a sealed envelope to @박씨, a Korean man in his 70s with deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, who hesitates to take it. Overcast winter light, muted palette, 35mm film grain, solemn mood.",
+      "videoPrompt": "A slow dolly in as @변호사 opens his leather case and offers the final envelope with both hands, while @박씨 slowly reaches out and takes it, his fingers trembling; shallow focus shifting from the envelope to the old man's face, hushed reverent pacing."
+    },
+    {
+      "sceneNo": 8,
+      "imagePrompt": "Cinematic sepia-toned memory image layered over the present: a young penniless Korean man in patched clothes receives three straw sacks of rice from a younger market porter in a 1950s alley, while in soft foreground focus @박씨, a Korean man in his 70s with deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, stares blankly at the yellowed promissory note, unable to remember. Warm faded sepia and cold gray contrast, heavy 35mm grain.",
+      "videoPrompt": "A ghostly cross-dissolve: the sepia memory of rice sacks changing hands fades in and out around @박씨 as he stares at the old promissory note, brow furrowed, slowly shaking his head; gentle drifting camera, dreamlike grain and light leaks."
+    },
+    {
+      "sceneNo": 9,
+      "imagePrompt": "Cinematic extreme close-up of the yellowed promissory note being turned over in weathered hands, revealing a single line of elegant fountain-pen handwriting on the reverse side; behind it, softly out of focus, the face of @박씨, a Korean man in his 70s with deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, eyes glistening. Warm lamplight, deep shadows, 35mm film grain.",
+      "videoPrompt": "A tight macro shot as @박씨 slowly turns the brittle paper over and the single handwritten line comes into focus, then a slow rack focus back to his welling eyes; almost no camera movement, breath and paper rustle, intimate somber tone."
+    },
+    {
+      "sceneNo": 10,
+      "imagePrompt": "Cinematic image with a translucent overlay: a memory of @{윤 회장}, a Korean man in his 70s with neatly combed gray hair, gaunt refined face, dark tailored suit with wool overcoat, restrained melancholy, writing at a desk by lamplight, dissolving into the present where @박씨, a Korean man in his 70s with deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, tucks an unopened envelope into his coat and walks down a snowy hillside road at dusk. Blue-gray twilight, 35mm film grain.",
+      "videoPrompt": "The lamplit image of @{윤 회장} signing the note fades away as the camera settles on @박씨 pressing the unopened envelope against his chest and walking down the snowy hill road, back to camera; slow trailing dolly, falling snow, lingering wide finish."
+    },
+    {
+      "sceneNo": 11,
+      "imagePrompt": "Cinematic still of a different humble door in the same old Korean market alley at winter dawn: a plain unmarked envelope rests on a frosted stone step, fresh snow with a single set of departing footprints leading away into the mist. Cold blue morning light, 35mm film grain, muted palette, quietly hopeful mood.",
+      "videoPrompt": "A slow push-in on the unmarked envelope on the frozen step, then a gentle tilt to follow the lone set of footprints fading into the misty alley as morning light warms slightly; soft ambient wind, patient closing camera move."
+    }
+  ]
+}

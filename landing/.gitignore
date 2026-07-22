@@ -1,3 +1,6 @@
 .next
 out
 node_modules
+
+# 목업 렌더러 중간 HTML
+scripts/mockups/.build

@@ -26,3 +26,6 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+
+# 로컬 에이전트 작업 디렉터리 (worktree/세션 데이터) — 배포물이 아니다
+.claude/

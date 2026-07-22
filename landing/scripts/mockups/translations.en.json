@@ -1,0 +1,67 @@
+{
+  "_comment": "English counterparts of the Korean story artifacts in ~/Documents/AutoFlowCut/부자와_빈자. AutoFlowCut's story output language is ko or en, so the en mockup shows what an English run of the same story produces. ja/de mockups reuse this en block (the app has no ja/de story output).",
+  "title": "The Rich Man and the Poor Man",
+  "logline": "A poor old man who received an envelope every month from a rich man's estate learns, only after the rich man dies, that the true sender was himself.",
+  "hook": "For thirty years, on the first of every month, an unmarked envelope was left at the old man's door. But on the day the rich man died, what came out of it was not money — it was a single faded promissory note.",
+  "speakers": {
+    "narrator": "narrator",
+    "박씨": "Park",
+    "윤 회장": "Chairman Yun",
+    "문지기": "Gatekeeper",
+    "변호사": "Lawyer"
+  },
+  "roles": {
+    "박씨": "Poor old porter, the protagonist",
+    "윤 회장": "The rich man on the hill, repaying an old debt",
+    "문지기": "Mansion gatekeeper who turns Park away",
+    "변호사": "The lawyer who delivers Chairman Yun's last wish"
+  },
+  "ethnicity": {
+    "한국인": "Korean"
+  },
+  "age": {
+    "70대": "70s",
+    "50대": "50s",
+    "40대": "40s"
+  },
+  "segments": {
+    "s1-1": "For thirty years, on the first of every month, an unmarked envelope was left at the old man's door.",
+    "s2-1": "But on the day the rich man died, what came out of the envelope was not money — it was a yellowed promissory note.",
+    "s3-1": "Park, who carried other people's loads through the market alley, survived thirty years on that one envelope.",
+    "s4-1": "People whispered it was quiet charity from Chairman Yun in the mansion on the hill,",
+    "s5-1": "and Park believed it too, never once managing to say thank you.",
+    "s6-1": "When Chairman Yun fell ill, the envelopes stopped.",
+    "s7-1": "Park climbed the hill for the first time in his life, and the gate did not open.",
+    "s8-1": "The chairman would never know a man like you.",
+    "s9-1": "Through a starving winter, Park ground his teeth. So it was not kindness — it was pity.",
+    "s10-1": "The day after the funeral, a lawyer came with one last envelope.",
+    "s11-2": "Inside was a promissory note dated thirty years earlier.",
+    "s12-1": "It was the price of three sacks of rice a penniless young Yun had borrowed from Park.",
+    "s13-1": "Park could not even remember the day.",
+    "s14-1": "The rich man had been repaying it every month for thirty years.",
+    "s15-1": "On the back of the paper was a single line.",
+    "s16-1": "You gave when you had nothing. I could only repay after I had everything.",
+    "s17-1": "Park tucked the unopened envelope into his coat and walked back down the hill.",
+    "s18-1": "That winter, unmarked envelopes began appearing at other doors in the market alley."
+  },
+  "_scriptExcerptNote": "The Script tab's editor holds scriptText verbatim and does not render markdown, so these are raw lines — one numbered paragraph each, blank lines included. Mirrors script.md up to (not including) the '전' section.",
+  "scriptExcerpt": [
+    "# The Rich Man and the Poor Man",
+    "",
+    "## Hook",
+    "",
+    "For thirty years, on the first of every month, an unmarked envelope was left at the old man's door. But on the day the rich man died, what came out of it was not money — it was a single faded promissory note.",
+    "",
+    "## Setup",
+    "",
+    "Park, who carried other people's loads through the market alley, survived thirty years on that one envelope. People whispered it was quiet charity from Chairman Yun in the mansion on the hill, and Park believed it too, never once managing to say thank you.",
+    "",
+    "## Rise",
+    "",
+    "When Chairman Yun fell ill, the envelopes stopped. Park climbed the hill for the first time in his life, and the gate did not open.",
+    "",
+    "**Gatekeeper:** \"The chairman would never know a man like you.\"",
+    "",
+    "Through a starving winter, Park ground his teeth. So it was not kindness — it was pity."
+  ]
+}
