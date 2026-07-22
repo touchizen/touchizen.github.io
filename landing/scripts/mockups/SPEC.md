@@ -59,7 +59,7 @@
 `extract-images.mjs`가 목업에서 실제로 차지하는 폭(레퍼런스 400px · 씬 썸네일 240px ·
 타임라인 프리뷰 800px)까지만 줄여 `assets/`에 굳히고(합계 약 400KB), 렌더가 그걸 읽는다.
 
-## 1. 목업 10종 × ko/en = 20장
+## 1. 목업 12종 × ko/en = 24장
 
 마크업·클래스는 `AutoFlowCut/src/components/story/`의 실제 구조를 따른다.
 
@@ -143,6 +143,16 @@
 - 줌 배지는 실제 기하에서 되계산한다. 전체를 한 화면에 펴면 40%다 — 100%는 40px/s이다
   (`constants.js:11`).
 
+### `story-results-{lang}.png` / `story-grid-{lang}.png` — ☰ 결과 · ⊞ 그리드
+`ResultsTable.jsx` 의 두 레이아웃. 하단 패널 탭(`BottomPanelTabs.jsx:10-12`)의 나머지 둘이다.
+- 표 열은 `# / 이미지 / 프롬프트 / 모델 / 상태`(`:696-700`). 모델 열은 폭 104px에
+  `text-overflow: ellipsis`라 실제 앱에서도 라벨이 잘린다 — 목업도 그대로 둔다.
+- 모델 값은 `Nano Banana 2`(= `gemini-3.1-flash-image`, `genModels.js`의
+  `DEFAULT_IMAGE_MODEL_ID`). **스냅샷에 안 담겨 있고 원 프로젝트가 삭제돼 복구할 수 없어
+  사용자에게 확인받은 값이다.** 다른 값이 필요하면 `render.mjs`의 `IMAGE_MODEL_LABEL`을 고친다.
+- 그리드 카드는 `minmax(160px, 1fr)`(`App.css:1810`). 씬 썸네일 스냅샷이 240px이라
+  1.5배율로 렌더하면 픽셀이 맞아떨어진다.
+
 ## 2. 렌더 파이프라인 (repo에 커밋)
 
 ```
@@ -151,7 +161,7 @@ landing/scripts/mockups/
   data.json          부자와_빈자에서 추출한 실데이터
   strings.json       UI 라벨 ko/en (locales에서 추출) + 캡션 4언어
   story-mockup.css   StoryView.css에서 해당 클래스만 발췌
-  render.mjs         MOCKUPS 레지스트리 → PNG (10종 × ko/en)
+  render.mjs         MOCKUPS 레지스트리 → PNG (12종 × ko/en)
   README.md          재생성 방법
 ```
 

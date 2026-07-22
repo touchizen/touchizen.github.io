@@ -48,6 +48,9 @@ const KEYS = [
   'audioTimeline.title', 'audioTimeline.trackImage', 'audioTimeline.trackSubtitle',
   'audioTimeline.trackNarration', 'audioTimeline.trackVoice', 'audioTimeline.trackSfx',
   'audioTimeline.kenBurns',
+  // Results / Grid 탭 (ResultsTable)
+  'results.image', 'results.prompt', 'results.model', 'results.status', 'status.done',
+  'bottomPanel.results', 'bottomPanel.grid',
 ]
 
 function flatten(obj, prefix = '') {

@@ -59,7 +59,14 @@
       "audioTimeline.trackNarration": "나레이션",
       "audioTimeline.trackVoice": "음성",
       "audioTimeline.trackSfx": "효과음",
-      "audioTimeline.kenBurns": "Ken Burns 효과"
+      "audioTimeline.kenBurns": "Ken Burns 효과",
+      "results.image": "이미지",
+      "results.prompt": "프롬프트",
+      "results.model": "모델",
+      "results.status": "상태",
+      "status.done": "완료!",
+      "bottomPanel.results": "결과표",
+      "bottomPanel.grid": "그리드"
     },
     "en": {
       "story.step.setup": "Setup",
@@ -119,7 +126,14 @@
       "audioTimeline.trackNarration": "Narration",
       "audioTimeline.trackVoice": "Voice",
       "audioTimeline.trackSfx": "SFX",
-      "audioTimeline.kenBurns": "Ken Burns Effect"
+      "audioTimeline.kenBurns": "Ken Burns Effect",
+      "results.image": "Image",
+      "results.prompt": "Prompt",
+      "results.model": "Model",
+      "results.status": "Status",
+      "status.done": "Done!",
+      "bottomPanel.results": "Results",
+      "bottomPanel.grid": "Grid"
     }
   }
 }

@@ -503,8 +503,56 @@ function panelTimeline(lang, t) {
   </div>`
 }
 
+
+/**
+ * ResultsTable의 모델 열 값. 원 프로젝트가 삭제돼 스냅샷에서 복구할 수 없어 사용자가 확인해 준
+ * 값이다 — Nano Banana 2 = `gemini-3.1-flash-image`, genModels.js의 DEFAULT_IMAGE_MODEL_ID.
+ * modelLabel()이 카탈로그 id를 이 라벨로 바꿔 표시한다(genModels.js:48).
+ */
+const IMAGE_MODEL_LABEL = 'Nano Banana 2'
+
+/** ☰ Results — ResultsTable layout="table" (ResultsTable.jsx:684). */
+function panelResults(lang, t) {
+  const rows = gallery.scenes
+    .map((sc) => {
+      const prompt = data.prompts.find((p) => p.sceneNo === sc.no)
+      return `<tr class="status-done">
+        <td class="col-id">${sc.no}</td>
+        <td class="col-img"><div class="image-cell ratio-landscape clickable"><img src="${asset(sc.file)}" alt=""></div></td>
+        <td class="col-prompt"><div class="prompt-preview">${localizeMentions(prompt.imagePrompt, lang)}</div></td>
+        <td class="col-model">${esc(IMAGE_MODEL_LABEL)}</td>
+        <td class="col-status"><span class="status done">✅ ${esc(t('status.done'))}</span></td>
+      </tr>`
+    })
+    .join('')
+  return `<table class="results-table"><thead><tr>
+      <th class="col-id">#</th>
+      <th class="col-img">${esc(t('results.image'))}</th>
+      <th class="col-prompt">${esc(t('results.prompt'))}</th>
+      <th class="col-model">${esc(t('results.model'))}</th>
+      <th class="col-status">${esc(t('results.status'))}</th>
+    </tr></thead><tbody>${rows}</tbody></table>`
+}
+
+/** ⊞ Grid — 같은 데이터를 카드형으로 (ResultsTable.jsx:457). */
+function panelGrid(lang, t) {
+  const cards = gallery.scenes
+    .map(
+      (sc) => `<div class="result-card status-done">
+      <div class="image-cell ratio-landscape clickable"><img src="${asset(sc.file)}" alt=""></div>
+      <div class="card-footer">
+        <span class="card-id">#${sc.no}</span>
+        <span class="card-status"><span class="status done">✅ ${esc(t('status.done'))}</span></span>
+      </div>
+    </div>`,
+    )
+    .join('')
+  return `<div class="results-grid ratio-landscape">${cards}</div>`
+}
+
 const PANELS = { script: panelScript, scenes: panelScenes, audio: panelAudio, prompts: panelPrompts,
-  reftab: panelRefTab, scenelist: panelSceneList, timeline: panelTimeline }
+  reftab: panelRefTab, scenelist: panelSceneList, timeline: panelTimeline,
+  results: panelResults, grid: panelGrid }
 
 /**
  * 목업 정의. `file`은 출력 파일명 접두사, `flow`는 스텝퍼가 그릴 파이프라인 상태,
@@ -533,6 +581,12 @@ const MOCKUPS = {
     flow: 'finished', noStepper: true, noHeading: true, height: 1240 },
   timeline: { file: 'story-timeline', icon: '🎞️', key: 'audioTimeline.title', panel: 'timeline',
     flow: 'finished', noStepper: true, bare: true, height: 660, scale: 1.5 },
+  // 하단 패널의 ☰ Results / ⊞ Grid 탭. 씬 썸네일이 240px 스냅샷이라 Grid는 1.5배율로 —
+  // 카드 최소 폭이 160px이므로 1.5배율에서 240px과 정확히 맞아떨어진다.
+  results: { file: 'story-results', icon: '☰', key: 'bottomPanel.results', panel: 'results',
+    flow: 'finished', noStepper: true, noHeading: true, height: 700 },
+  grid: { file: 'story-grid', icon: '⊞', key: 'bottomPanel.grid', panel: 'grid',
+    flow: 'finished', noStepper: true, noHeading: true, width: 900, height: 560, scale: 1.5 },
 }
 
 function page(name, lang) {

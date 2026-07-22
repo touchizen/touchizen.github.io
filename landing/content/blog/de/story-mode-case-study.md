@@ -118,6 +118,18 @@ Steht die Besetzung, generieren Sie die Szenen im Stapel. Achten Sie auf die Spa
 
 Die Szenen 1, 2 und die Schlussszene 11 haben leere Tags: Sie kreisen um Objekte — den Umschlag, den Schuldschein — es gibt also keine **benannte Figur**, an die eine Referenz zu hängen wäre (in Szene 2 sind Hände zu sehen, aber nicht als bestimmte Figur). Ab Szene 3 treten Figuren als Besetzung auf, und die Tags füllen sich.
 
+## Ergebnisse prüfen — als Tabelle oder als Karten
+
+Das untere Panel zeigt dieselben Generierungen auf zwei Arten: im Tab **☰ Results** und im Tab **⊞ Grid**.
+
+Die Ergebnistabelle listet pro Szene auf, **mit welchem Prompt, welchem Modell und in welchem Status** — je eine Zeile. Das ist die Ansicht, um zu prüfen, was tatsächlich in die Generierung ging; die Mentions `@Park` und `@{Chairman Yun}` stehen wörtlich da.
+
+![AutoFlowCut-Ergebnistabelle — Thumbnail, Prompt, Modell und Status pro Szene](/images/blog/story/story-results-en.png)
+
+Das Raster zeigt dieselben Ergebnisse als **bildzentrierte Karten**. Auf einer Karte bleiben nur Nummer und Status — Prompt und Modell fallen weg. Genau deshalb überfliegen Sie damit alle 11 auf einmal und finden die Einstellung, deren Ton aus der Reihe fällt.
+
+![AutoFlowCut-Ergebnisraster — die 11 generierten Szenen als Karten](/images/blog/story/story-grid-en.png)
+
 ## Timeline-Vorschau — alles zusammensetzen
 
 Sobald die Bilder existieren, können Sie das Ganze in der Timeline unten **abspielen**. Hier prüfen Sie vor dem Export, ob Bild, Untertitel und Ton wirklich zusammenpassen.

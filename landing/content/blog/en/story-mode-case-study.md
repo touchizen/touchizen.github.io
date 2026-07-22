@@ -118,6 +118,18 @@ With the cast fixed, generate the scenes in a batch. Look at the **Match Tags** 
 
 Scenes 1, 2, and the closing scene 11 have empty tags: they center on objects — the envelope, the promissory note — so there's no **named character** to attach a reference to (scene 2 shows a pair of hands, but not as a specific character). Characters enter as cast from scene 3, and the tags fill in from there.
 
+## Checking the results — as a table, or as cards
+
+The bottom panel shows the same generations two ways: the **☰ Results** tab and the **⊞ Grid** tab.
+
+The results table lays out, per scene, **which prompt, which model, what status** — one row each. It's the view for checking what actually went into the generation; the `@Park` and `@{Chairman Yun}` mentions are visible verbatim.
+
+![AutoFlowCut results table — per-scene thumbnail, prompt, model, and status](/images/blog/story/story-results-en.png)
+
+The grid shows the same results as **image-first cards**. A card keeps only its number and status — both the prompt and the model are gone. That's what makes it the view for skimming all 11 at once and spotting the shot whose tone drifts.
+
+![AutoFlowCut results grid — the 11 generated scenes as cards](/images/blog/story/story-grid-en.png)
+
 ## Timeline preview — putting it together
 
 Once the images exist you can **play the whole thing** in the timeline at the bottom. This is where you check that picture, subtitle, and sound actually line up before exporting.
