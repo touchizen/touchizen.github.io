@@ -42,7 +42,24 @@
       "story.review.target.script": "대본",
       "story.action.scenesRedoIcon": "↻ 씬 재분리",
       "story.action.audioRedoIcon": "↻ 오디오 다시 생성",
-      "story.action.promptsRedoIcon": "↻ 프롬프트 다시 생성"
+      "story.action.promptsRedoIcon": "↻ 프롬프트 다시 생성",
+      "reference.title": "레퍼런스 이미지",
+      "reference.generateAll": "일괄 생성",
+      "reference.clearAll": "전체 삭제",
+      "reference.character": "캐릭터",
+      "sceneList.time": "시간(초)",
+      "sceneList.subtitle": "자막",
+      "sceneList.tags": "매칭 태그",
+      "sceneList.media": "미디어",
+      "sceneList.character": "캐릭터",
+      "sceneList.background": "배경",
+      "audioTimeline.title": "오디오 타임라인",
+      "audioTimeline.trackImage": "이미지",
+      "audioTimeline.trackSubtitle": "자막",
+      "audioTimeline.trackNarration": "나레이션",
+      "audioTimeline.trackVoice": "음성",
+      "audioTimeline.trackSfx": "효과음",
+      "audioTimeline.kenBurns": "Ken Burns 효과"
     },
     "en": {
       "story.step.setup": "Setup",
@@ -85,7 +102,24 @@
       "story.review.target.script": "Script",
       "story.action.scenesRedoIcon": "↻ Re-split scenes",
       "story.action.audioRedoIcon": "↻ Regenerate audio",
-      "story.action.promptsRedoIcon": "↻ Regenerate prompts"
+      "story.action.promptsRedoIcon": "↻ Regenerate prompts",
+      "reference.title": "Reference Images",
+      "reference.generateAll": "Generate All",
+      "reference.clearAll": "Clear All",
+      "reference.character": "Character",
+      "sceneList.time": "Time(s)",
+      "sceneList.subtitle": "Subtitle",
+      "sceneList.tags": "Match Tags",
+      "sceneList.media": "Media",
+      "sceneList.character": "Character",
+      "sceneList.background": "Background",
+      "audioTimeline.title": "Audio Timeline",
+      "audioTimeline.trackImage": "Image",
+      "audioTimeline.trackSubtitle": "Subtitle",
+      "audioTimeline.trackNarration": "Narration",
+      "audioTimeline.trackVoice": "Voice",
+      "audioTimeline.trackSfx": "SFX",
+      "audioTimeline.kenBurns": "Ken Burns Effect"
     }
   }
 }

@@ -39,6 +39,15 @@ const KEYS = [
   'story.action.rewrite', 'story.action.continue', 'story.action.split',
   'story.review.autoToggleShort', 'story.review.target.script',
   'story.action.scenesRedoIcon', 'story.action.audioRedoIcon', 'story.action.promptsRedoIcon',
+  // Ref 탭 (ReferencePanel / ReferenceCard)
+  'reference.title', 'reference.generateAll', 'reference.clearAll', 'reference.character',
+  // 씬 목록 (SceneList)
+  'sceneList.time', 'sceneList.subtitle', 'sceneList.tags', 'sceneList.media',
+  'sceneList.character', 'sceneList.background',
+  // 타임라인 프리뷰 (AudioTimeline)
+  'audioTimeline.title', 'audioTimeline.trackImage', 'audioTimeline.trackSubtitle',
+  'audioTimeline.trackNarration', 'audioTimeline.trackVoice', 'audioTimeline.trackSfx',
+  'audioTimeline.kenBurns',
 ]
 
 function flatten(obj, prefix = '') {

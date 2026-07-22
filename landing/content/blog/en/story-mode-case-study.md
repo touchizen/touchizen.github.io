@@ -96,22 +96,52 @@ Scene split done to audio done took **14 minutes 23 seconds** — the longest st
 >
 > **Video** — Slow push-in on the unmarked envelope resting at the doorstep as thin dawn mist drifts past and a faint breeze lifts one corner of the paper; distant alley sounds, static composition with a gentle dolly forward, cold nostalgic film-grain grade.
 
-Scenes featuring a character got **mentions like `@Park` and `@{Chairman Yun}` inserted automatically.** Names with a space are wrapped in braces. The four characters are registered as reference cards, but **their image slots are still empty** — this project never ran generation. Once a card's image exists, it is attached to every scene that mentions that character, which is what keeps the same face across all 11 scenes.
+Scenes featuring a character got **mentions like `@Park` and `@{Chairman Yun}` inserted automatically.** Names with a space are wrapped in braces. The four characters are registered as reference cards when the cast is confirmed. Once a card's image exists, it is attached to every scene that mentions that character — which is what keeps the same face across all 11 scenes.
 
 Audio done to prompts done took **53 seconds**. **From script to prompts, the whole thing took 15 minutes 53 seconds.**
 
+## The Ref tab — the four characters get a face
+
+With prompts in hand the next thing is pictures. But not scene pictures yet — **fix the faces first**, or the same character comes out different in every scene.
+
+The four characters confirmed at Synopsis are already registered as reference cards in the Ref tab. Each card's prompt is assembled from that character's **ethnicity, age, gender, and appearance** fields — the cast table you saw earlier is literally the blueprint for the picture. **Generate All** opens a batch dialog; confirm it and all four are generated together. Once they're all done the button disappears — that's the state in the screen below.
+
+![AutoFlowCut Ref tab — four generated character reference cards](/images/blog/story/story-ref-tab-en.png)
+
+A green border and a ✅ badge mean that character is ready to be used in scene generation. Don't like one? Regenerate just that card — no scenes exist yet, so there's nothing to undo.
+
+## Scene images — 11 scenes become pictures
+
+With the cast fixed, generate the scenes in a batch. Look at the **Match Tags** column: each row carries the characters appearing in that scene — `Park`, `Chairman Yun, Park` — and the border turns green when a tag matches a reference. That match is what attaches the character's reference image to the generation.
+
+![AutoFlowCut scene list — subtitles, match tags, and generated scene thumbnails](/images/blog/story/story-scene-list-en.png)
+
+Scenes 1, 2, and the closing scene 11 have empty tags: they center on objects — the envelope, the promissory note — so there's no **named character** to attach a reference to (scene 2 shows a pair of hands, but not as a specific character). Characters enter as cast from scene 3, and the tags fill in from there.
+
+## Timeline preview — putting it together
+
+Once the images exist you can **play the whole thing** in the timeline at the bottom. This is where you check that picture, subtitle, and sound actually line up before exporting.
+
+![AutoFlowCut audio timeline — preview monitor with image, subtitle, narration, and SFX tracks](/images/blog/story/story-timeline-en.png)
+
+The five lanes lay the episode's structure bare:
+
+- **Subtitle** — the lines sit over the same spans as the scenes.
+- **Image** — 11 scenes, each taking up its own duration. You can see the width gap between the shortest scene (4.4s) and the longest (9.2s).
+- **Narration** — **empty.** That lane is reserved for audio pulled from an imported video, so nothing Story mode synthesized lands there.
+- **Voice** — this is where the 18 segments go, tinted per speaker, so narrator, Gatekeeper, and Chairman Yun are distinguishable at a glance. The gaps are where the sound effects sit.
+- **SFX** — only two, but placed exactly: the gate slamming at 30.5s, the note unfolding at 43.4s.
+
 ## From here it's your call
 
-Prompts are as far as Story mode carries itself. It isn't fully unattended, though — **you have to confirm the cast at step 2** before the downstream steps unlock, and **Audio's auto toggle is off by default** (TTS costs money), so you either switch it on or run that step yourself. What follows is taste:
+That is as far as Story mode carries itself. It isn't fully unattended, though — **you have to confirm the cast at step 2** before the downstream steps unlock, and **Audio's auto toggle is off by default** (TTS costs money), so you either switch it on or run that step yourself. What's left is taste:
 
-1. Batch-generate images per scene — fix the prompt on the scenes you don't like and regenerate just those.
+1. Fix the prompt on the scenes you don't like and regenerate just those.
 2. Generate T2V/I2V video only for scenes that need motion.
 3. **Export to CapCut, Adobe Premiere, or Vrew in one click** — the audio tracks and SRT are already aligned to the scenes, so the timeline opens finished in your editor.
 
-> 📌 This project was run up to the prompts step. Image generation hasn't been run yet, so no final frames are shown.
-
 ## In short
 
-One title produced **synopsis → 4 characters → script → 11 scenes → 20 audio segments → 22 prompts**. The human work was picking a handful of settings, confirming the cast, and running the audio step.
+One title produced **synopsis → 4 characters → script → 11 scenes → 20 audio segments → 22 prompts → 4 reference images → 11 scene images**. The human work was picking a handful of settings, confirming the cast, and pressing generate.
 
 To try the same flow, see [how to start from a single title](/en/blog/story-mode-title-to-video/). Already have a script? See [pasting a script](/en/blog/story-mode-script-to-video/). Want to pick the topic with data first? See [YouTube benchmarking](/en/blog/story-mode-youtube-benchmark/).

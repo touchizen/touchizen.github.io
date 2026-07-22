@@ -96,22 +96,52 @@ Von „Szenenaufteilung fertig" bis „Audio fertig" vergingen **14 Minuten 23 S
 >
 > **Video** — Slow push-in on the unmarked envelope resting at the doorstep as thin dawn mist drifts past and a faint breeze lifts one corner of the paper; distant alley sounds, static composition with a gentle dolly forward, cold nostalgic film-grain grade.
 
-In Szenen mit Figuren wurden **Mentions wie `@Park` und `@{Chairman Yun}` automatisch eingesetzt.** Namen mit Leerzeichen stehen in geschweiften Klammern. Die vier Figuren sind als Referenzkarten registriert, **ihre Bildplätze sind aber noch leer** — in diesem Projekt lief keine Generierung. Sobald das Bild einer Karte existiert, wird es jeder Szene angehängt, die diese Figur erwähnt, und genau das hält dasselbe Gesicht über alle 11 Szenen.
+In Szenen mit Figuren wurden **Mentions wie `@Park` und `@{Chairman Yun}` automatisch eingesetzt.** Namen mit Leerzeichen stehen in geschweiften Klammern. Die vier Figuren werden mit der Bestätigung der Besetzung als Referenzkarten registriert. Sobald das Bild einer Karte existiert, wird es jeder Szene angehängt, die diese Figur erwähnt — genau das hält dasselbe Gesicht über alle 11 Szenen.
 
 Von „Audio fertig" bis „Prompts fertig" vergingen **53 Sekunden**. **Vom Skript bis zu den Prompts dauerte das Ganze 15 Minuten 53 Sekunden.**
 
+## Der Ref-Tab — die vier Figuren bekommen ein Gesicht
+
+Mit den Prompts in der Hand kommen als Nächstes Bilder. Aber noch keine Szenenbilder — **zuerst die Gesichter festzurren**, sonst sieht dieselbe Figur in jeder Szene anders aus.
+
+Die vier in der Synopsis bestätigten Figuren liegen im Ref-Tab bereits als Referenzkarten. Der Prompt jeder Karte setzt sich aus den Feldern **Ethnie, Alter, Geschlecht und Aussehen** dieser Figur zusammen — die Besetzungstabelle von vorhin ist buchstäblich der Bauplan für das Bild. **Alle generieren** öffnet einen Batch-Dialog; bestätigen Sie ihn, und alle vier entstehen gemeinsam. Sind alle vier fertig, verschwindet die Schaltfläche — genau dieser Zustand ist unten zu sehen.
+
+![AutoFlowCut Ref-Tab — vier generierte Figuren-Referenzkarten](/images/blog/story/story-ref-tab-en.png)
+
+Ein grüner Rahmen und ein ✅-Badge heißen: Diese Figur ist bereit für die Szenengenerierung. Eine gefällt nicht? Nur diese Karte neu generieren — es existieren noch keine Szenen, also gibt es nichts rückgängig zu machen.
+
+## Szenenbilder — aus 11 Szenen werden Bilder
+
+Steht die Besetzung, generieren Sie die Szenen im Stapel. Achten Sie auf die Spalte **Match Tags**: Jede Zeile trägt die Figuren, die in dieser Szene vorkommen — `Park`, `Chairman Yun, Park` — und der Rahmen wird grün, sobald ein Tag zu einer Referenz passt. Genau dieser Treffer hängt das Referenzbild der Figur an die Generierung an.
+
+![AutoFlowCut Szenenliste — Untertitel, Match-Tags und generierte Szenen-Thumbnails](/images/blog/story/story-scene-list-en.png)
+
+Die Szenen 1, 2 und die Schlussszene 11 haben leere Tags: Sie kreisen um Objekte — den Umschlag, den Schuldschein — es gibt also keine **benannte Figur**, an die eine Referenz zu hängen wäre (in Szene 2 sind Hände zu sehen, aber nicht als bestimmte Figur). Ab Szene 3 treten Figuren als Besetzung auf, und die Tags füllen sich.
+
+## Timeline-Vorschau — alles zusammensetzen
+
+Sobald die Bilder existieren, können Sie das Ganze in der Timeline unten **abspielen**. Hier prüfen Sie vor dem Export, ob Bild, Untertitel und Ton wirklich zusammenpassen.
+
+![AutoFlowCut Audio-Timeline — Vorschaumonitor mit Bild-, Untertitel-, Erzähl- und SFX-Spur](/images/blog/story/story-timeline-en.png)
+
+Die fünf Spuren legen die Struktur der Folge offen:
+
+- **Untertitel** — die Zeilen liegen über denselben Abschnitten wie die Szenen.
+- **Bild** — 11 Szenen, jede so breit wie ihre Dauer. Der Unterschied zwischen der kürzesten (4,4 s) und der längsten Szene (9,2 s) ist gut zu sehen.
+- **Erzählung** — **leer.** Diese Spur ist für Ton aus einem importierten Video reserviert; nichts, was der Story-Modus synthetisiert hat, landet dort.
+- **Voice** — hier liegen die 18 Segmente, pro Sprecher eingefärbt, sodass Erzähler, Gatekeeper und Chairman Yun auf einen Blick unterscheidbar sind. Die Lücken sind die Stellen der Soundeffekte.
+- **SFX** — nur zwei, aber exakt gesetzt: das zuschlagende Tor bei 30,5 s, das entfaltete Papier bei 43,4 s.
+
 ## Ab hier entscheiden Sie
 
-Bis zu den Prompts trägt sich der Story-Modus selbst. Ganz unbeaufsichtigt läuft er aber nicht — **Sie müssen die Besetzung in Schritt 2 bestätigen**, bevor die Folgeschritte freigeschaltet werden, und **der Auto-Schalter für Audio ist standardmäßig aus** (TTS kostet), Sie schalten ihn also ein oder starten den Schritt selbst. Was folgt, ist Geschmackssache:
+So weit trägt sich der Story-Modus selbst. Ganz unbeaufsichtigt läuft er aber nicht — **Sie müssen die Besetzung in Schritt 2 bestätigen**, bevor die Folgeschritte freigeschaltet werden, und **der Auto-Schalter für Audio ist standardmäßig aus** (TTS kostet), Sie schalten ihn also ein oder starten den Schritt selbst. Was bleibt, ist Geschmackssache:
 
-1. Bilder pro Szene im Stapel generieren — bei Szenen, die nicht gefallen, den Prompt korrigieren und nur diese neu generieren.
+1. Bei Szenen, die nicht gefallen, den Prompt korrigieren und nur diese neu generieren.
 2. T2V/I2V-Video nur für Szenen generieren, die Bewegung brauchen.
 3. **Export nach CapCut, Adobe Premiere oder Vrew mit einem Klick** — Audiospuren und SRT liegen bereits passend auf den Szenen, die Timeline öffnet sich also fertig im Editor.
 
-> 📌 Dieses Projekt wurde bis zum Prompt-Schritt ausgeführt. Die Bildgenerierung lief noch nicht, daher werden keine finalen Frames gezeigt.
-
 ## Kurz gesagt
 
-Aus einem Titel entstanden **Synopsis → 4 Figuren → Skript → 11 Szenen → 20 Audiosegmente → 22 Prompts**. Die menschliche Arbeit bestand darin, eine Handvoll Einstellungen zu wählen, die Besetzung zu bestätigen und den Audio-Schritt zu starten.
+Aus einem Titel entstanden **Synopsis → 4 Figuren → Skript → 11 Szenen → 20 Audiosegmente → 22 Prompts → 4 Referenzbilder → 11 Szenenbilder**. Die menschliche Arbeit bestand darin, eine Handvoll Einstellungen zu wählen, die Besetzung zu bestätigen und auf Generieren zu drücken.
 
 Um denselben Ablauf auszuprobieren, siehe [wie Sie mit einem einzigen Titel starten](/de/blog/story-mode-title-to-video/). Schon ein Skript? Siehe [Skript einfügen](/de/blog/story-mode-script-to-video/). Zuerst das Thema mit Daten festzurren? Siehe [YouTube-Benchmarking](/de/blog/story-mode-youtube-benchmark/).

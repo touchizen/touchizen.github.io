@@ -1,0 +1,131 @@
+{
+  "styleTag": "Korean Anime",
+  "references": [
+    {
+      "id": 1,
+      "name": "박씨",
+      "prompt": "한국인, 70대, male, Korean man in his 70s, deeply weathered face, sparse white hair, thin frame, worn padded jacket and cloth cap, quiet dignified sorrow",
+      "file": "ref-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "윤 회장",
+      "prompt": "한국인, 70대, male, Korean man in his 70s, neatly combed gray hair, gaunt refined face, dark tailored suit with wool overcoat, restrained melancholy",
+      "file": "ref-2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "문지기",
+      "prompt": "한국인, 40대, male, Korean man in his 40s, stocky build, short cropped hair, dark uniform coat with brass buttons, stern impassive expression",
+      "file": "ref-3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "변호사",
+      "prompt": "한국인, 50대, male, Korean man in his 50s, slicked-back graying hair, rimless glasses, charcoal suit holding a leather document case, composed formal manner",
+      "file": "ref-4.jpg"
+    }
+  ],
+  "scenes": [
+    {
+      "no": 1,
+      "startTime": 0,
+      "endTime": 4.8,
+      "duration": 4.8,
+      "subtitle": "삼십 년 동안 매달 1일, 그 노인의 문 앞엔 이름 없는 봉투가 놓였습니다.",
+      "characters": "",
+      "file": "scene-1.jpg",
+      "previewFile": "scene-1-preview.jpg"
+    },
+    {
+      "no": 2,
+      "startTime": 4.8,
+      "endTime": 10.45,
+      "duration": 5.6499999999999995,
+      "subtitle": "그런데 부자가 죽던 날, 봉투에서 나온 건 돈이 아니라 누렇게 삭은 차용증 한 장이었습니다.",
+      "characters": "",
+      "file": "scene-2.jpg"
+    },
+    {
+      "no": 3,
+      "startTime": 10.45,
+      "endTime": 19.6,
+      "duration": 9.150000000000002,
+      "subtitle": "시장 골목에서 남의 짐을 지고 사는 박씨는, 그 봉투 하나로 삼십 년을 버텼습니다. 사람들은 언덕 위 저택의 윤 회장이 몰래 베푸는 자선이라 수군댔고,",
+      "characters": "박씨",
+      "file": "scene-3.jpg"
+    },
+    {
+      "no": 4,
+      "startTime": 19.6,
+      "endTime": 26.55,
+      "duration": 6.949999999999999,
+      "subtitle": "박씨도 그리 믿으며 끝내 고맙다는 말 한마디 전하지 못했지요. 윤 회장이 병으로 쓰러지자, 봉투가 끊겼습니다.",
+      "characters": "박씨, 윤 회장",
+      "file": "scene-4.jpg"
+    },
+    {
+      "no": 5,
+      "startTime": 26.55,
+      "endTime": 32.588,
+      "duration": 6.038,
+      "subtitle": "평생 처음 언덕을 오른 박씨 앞에서 문은 열리지 않았습니다. ",
+      "characters": "박씨",
+      "file": "scene-5.jpg"
+    },
+    {
+      "no": 6,
+      "startTime": 32.588,
+      "endTime": 39.938,
+      "duration": 7.350000000000001,
+      "subtitle": "회장님이 당신 같은 사람을 아실 리 없소. 굶주린 겨울, 박씨는 이를 갈았습니다. 저건 은혜가 아니라 동정이었구나, 하고.",
+      "characters": "문지기, 박씨",
+      "file": "scene-6.jpg"
+    },
+    {
+      "no": 7,
+      "startTime": 39.938,
+      "endTime": 47.133,
+      "duration": 7.195,
+      "subtitle": "장례 다음 날, 변호사가 찾아와 마지막 봉투를 내밀었습니다.  안에는 삼십 년 전 날짜가 적힌 차용증.",
+      "characters": "변호사, 박씨",
+      "file": "scene-7.jpg"
+    },
+    {
+      "no": 8,
+      "startTime": 47.133,
+      "endTime": 54.533,
+      "duration": 7.399999999999999,
+      "subtitle": "빈털터리 청년이던 윤 회장이 박씨에게 빌린 쌀 세 가마의 값이었습니다. 박씨는 그날을 기억조차 하지 못했습니다.",
+      "characters": "박씨",
+      "file": "scene-8.jpg"
+    },
+    {
+      "no": 9,
+      "startTime": 54.533,
+      "endTime": 60.033,
+      "duration": 5.5,
+      "subtitle": "부자는 그것을 삼십 년간, 매달 갚고 있었던 겁니다. 종이 뒷면엔 한 줄이 있었습니다.",
+      "characters": "박씨",
+      "file": "scene-9.jpg"
+    },
+    {
+      "no": 10,
+      "startTime": 60.033,
+      "endTime": 68.133,
+      "duration": 8.099999999999994,
+      "subtitle": "당신은 가진 게 없을 때 나눴고, 나는 다 가진 뒤에야 겨우 갚았소. 박씨는 봉투를 뜯지 않은 채 품에 넣고 언덕을 내려왔습니다.",
+      "characters": "윤 회장, 박씨",
+      "file": "scene-10.jpg"
+    },
+    {
+      "no": 11,
+      "startTime": 68.133,
+      "endTime": 72.533,
+      "duration": 4.400000000000006,
+      "subtitle": "그 겨울, 시장 골목의 다른 문 앞에 이름 없는 봉투가 놓이기 시작했습니다.",
+      "characters": "",
+      "file": "scene-11.jpg"
+    }
+  ]
+}

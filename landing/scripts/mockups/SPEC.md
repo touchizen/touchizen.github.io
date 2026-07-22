@@ -51,11 +51,15 @@
 - `story/audio/` — 세그먼트 20개(나레이션·대사 18은 `.wav`, 효과음 2는 ElevenLabs `.mp3`),
   `final.srt`, `manifest.json`
 
-**제약:** `project.json`의 씬 `status`는 전부 `pending` — 이미지/비디오는 아직 생성되지
-않았다. 따라서 케이스 스터디는 "제목 → 프롬프트·오디오까지"의 산출물로 구성한다.
-나중에 생성하면 최종 프레임을 덧붙인다.
+이후 사용자가 레퍼런스·씬 이미지를 실제로 생성했다(2026-07-22). `references/`의 캐릭터 4장과
+`scenes/`의 씬 11장이 모두 `status: done`이고, 이 그림들이 아래 3종 목업에 그대로 들어간다.
+비디오(T2V/I2V)는 아직 `pending`이라 목업·본문 어디에도 쓰지 않는다.
 
-## 1. 목업 7종 × ko/en = 14장
+**이미지 취급:** 원본은 1376×768 · 각 ~800KB라 그대로 커밋하지 않는다.
+`extract-images.mjs`가 목업에서 실제로 차지하는 폭(레퍼런스 400px · 씬 썸네일 240px ·
+타임라인 프리뷰 800px)까지만 줄여 `assets/`에 굳히고(합계 약 400KB), 렌더가 그걸 읽는다.
+
+## 1. 목업 10종 × ko/en = 20장
 
 마크업·클래스는 `AutoFlowCut/src/components/story/`의 실제 구조를 따른다.
 
@@ -105,6 +109,40 @@
 또한 자동 토글은 `AUTO_STEPS = ['scenes','audio','prompts']`(`StoryStepper.jsx:42`)뿐이라
 **대본에는 [자동]이 없다.** 0번 설정 칩은 상태 배지가 없는 진입 탭이라 점을 달지 않는다.
 
+### `story-ref-tab-{lang}.png` — Ref 탭
+`ReferencePanel.jsx:229` `reference-panel` → `ref-grid`.
+- 카드는 `reference-card ratio-landscape status-done has-image` — 프로젝트 이미지가 16:9라
+  landscape 폭(144px)을 쓴다. 초록 테두리와 ✅ 배지가 생성 완료 표시.
+- 헤더는 `🖼️ 레퍼런스 이미지 (4)`. **[일괄 생성] 버튼은 그리지 않는다** —
+  `generatableRefs`가 `prompt && !data && !filePath`라(`ReferencePanel.jsx:61`) 생성이 끝나
+  filePath가 생기면 비고, 버튼 자체가 사라진다(`:301`). 이 프로젝트는 4장 모두 filePath가 있다.
+- 카드 헤더의 타입은 실제로 `<select>`이고 기본 라벨이 `👤 Character`다(`ReferenceCard.jsx:268`).
+
+### `story-scene-list-{lang}.png` — 씬 목록
+`SceneList.jsx:620` `scene-table`. 컬럼 `# / 시간(초) / 자막 / 매칭 태그 / 미디어`.
+- 태그 입력의 플레이스홀더는 `sceneList.character`(툴팁 `characterTitle`이 아니다, `:193`).
+- 태그 열은 캐릭터·배경·스타일 3줄이다. 이 프로젝트는 전 씬이 스타일 태그 `Korean Anime`.
+- 시간 열은 `시작 ~ 끝` 범위 + 길이 입력이다(`:127-131`).
+- 태그가 레퍼런스와 맞으면 `matched`(초록 테두리). 1·2번 씬은 인물이 없어 태그가 비어 있다.
+- 영어판 자막은 그 씬에 속한 세그먼트의 en 텍스트를 이어 붙여 만든다(효과음 제외).
+
+### `story-timeline-{lang}.png` — 오디오 타임라인 프리뷰
+`AudioTimeline.jsx:939` `atl-root`. 앱 테마 변수가 아니라 자체 다크 팔레트를 쓴다.
+- **프리뷰 패널이 헤더보다 위다**(`:941-946`). 재생 중이면 버튼은 `⏸`(`:1003`).
+- 트랙 순서는 `useAudioTimeline.js:341-367`의 push 순서 — 자막 → 이미지 → Narration → Voice → SFX.
+- **Story 프로젝트의 음성은 Narration이 아니라 Voice로 간다.** `buildStoryAudioPackage`가
+  나레이션·대사를 화자별로 묶어 `voices`로 내보내고(`storyAudioPackage.js:55`), Narration 트랙은
+  가져온 영상 오디오(`pkg.media.video`) 전용이라 이 프로젝트에선 **빈 채로 남는다**
+  (`useAudioTimeline.js:260`). 목업도 빈 Narration 레인을 그대로 그린다.
+- Voice 서브트랙 색은 `shiftHue(COLORS.voice, i*30)`이고 **i는 첫 등장 순**이다(byChar 삽입 순).
+  hex를 유지해야 한다 — 클립 배경이 `색+88`로 알파를 이어 붙이므로 hsl()로 바꾸면 무효가 된다.
+- 트랙 색은 `useAudioTimeline.js:10` COLORS(image `#7E57C2` · subtitle `#FFD54F` ·
+  narration `#4FC3F7` · voice `#BA68C8` · sfx `#FFB74D`), 자막만 `variant: 'text'`라 배경이 `색+26`.
+- **Ken Burns 토글은 항상 꺼진 상태로 그린다** — 실제 입력이 `checked={false} readOnly`이고
+  클릭하면 토스트만 띄우는 표시용이다(`AudioTimeline.jsx:1023-1037`).
+- 줌 배지는 실제 기하에서 되계산한다. 전체를 한 화면에 펴면 40%다 — 100%는 40px/s이다
+  (`constants.js:11`).
+
 ## 2. 렌더 파이프라인 (repo에 커밋)
 
 ```
@@ -113,12 +151,13 @@ landing/scripts/mockups/
   data.json          부자와_빈자에서 추출한 실데이터
   strings.json       UI 라벨 ko/en (locales에서 추출) + 캡션 4언어
   story-mockup.css   StoryView.css에서 해당 클래스만 발췌
-  render.mjs         MOCKUPS 레지스트리 → PNG (7종 × ko/en)
+  render.mjs         MOCKUPS 레지스트리 → PNG (10종 × ko/en)
   README.md          재생성 방법
 ```
 
-렌더: headless Chrome (`--headless --screenshot --force-device-scale-factor=2`),
-기존 이미지와 같은 2x 해상도. npm 의존성 추가 없음.
+렌더: headless Chrome (`--headless --screenshot`). 기본은 1400 CSS px · 2배율이지만
+폭·높이·배율은 `MOCKUPS`에서 목업마다 정한다 — Ref 탭은 카드가 144px이라 폭 900,
+타임라인은 생성 이미지가 많아 2배율이면 PNG가 1MB를 넘어 1.5배율. npm 의존성 추가 없음.
 
 렌더는 **ko와 en만** 만든다. ja/de 글은 `-en.png`를 참조한다 — 앱에 ja/de UI가 없으므로
 같은 그림을 파일명만 바꿔 복제할 이유가 없다(위 「왜 ja/de 이미지를 안 만드나」 참고).
