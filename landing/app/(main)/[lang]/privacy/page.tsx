@@ -98,6 +98,35 @@ export default function PrivacyPage() {
                     <li><strong>구독 정보:</strong> 앱스토어(Apple App Store / Google Play Store)를 통해 관리됩니다</li>
                   </ul>
 
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-4. 매쓰쇼츠(MathShorts) 모바일 앱</h3>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    매쓰쇼츠는 수학 문제의 사진을 찍거나 수식을 입력하면 AI가 풀이를 만들고, 그 풀이를 짧은 영상으로 만들어 주는 모바일 앱입니다.
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li><strong>문제 사진 및 입력한 수식:</strong> 풀이 생성을 위해 <strong>미국에 소재한 OpenAI 서버로 전송</strong>됩니다. 사진 자체는 당사 서버에 저장하지 않으며, 전송 후 풀이 생성에만 사용됩니다.</li>
+                    <li><strong>추출된 수식(LaTeX) 텍스트:</strong> 문제 신고 기능이 참조할 수 있도록 <strong>24시간</strong> 동안 보관한 뒤 처리됩니다.</li>
+                    <li><strong>카카오 계정 정보:</strong> 카카오 로그인으로 수집합니다. 회원 식별자는 카카오 회원번호에서 파생되며, 닉네임·이메일·프로필 사진은 카카오에서 선택 동의한 범위에서만 제공됩니다(제공되지 않을 수 있습니다).</li>
+                    <li><strong>이용 기록:</strong> 푼 문제 수, 크레딧 잔액과 원장(적립·차감·환급 내역), 신고 내역을 저장합니다.</li>
+                    <li><strong>결제 정보:</strong> Google Play 결제의 구매 토큰과 주문번호를 서버 검증 및 중복 적립 방지에 사용합니다. 카드번호 등 결제수단 정보는 당사가 수집하지 않으며 Google Play가 처리합니다.</li>
+                    <li><strong>기기에만 저장되는 것:</strong> 만들어진 영상과 편집 내용은 사용자의 기기에만 저장되며 당사 서버로 전송되지 않습니다.</li>
+                  </ul>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    <strong>국외 이전:</strong> 매쓰쇼츠는 풀이 생성을 위해 개인정보를 국외로 이전합니다.
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li><strong>OpenAI, L.L.C. (미국):</strong> 이전 항목 — 문제 사진, 입력한 수식. 이전 목적 — 풀이 생성. 이전 시기 및 방법 — 사용자가 풀이를 요청할 때 네트워크를 통해 전송. 보유 기간 — 당사는 저장하지 않으며, OpenAI의 보유 정책을 따릅니다.</li>
+                    <li><strong>Google LLC (미국):</strong> 이전 항목 — 계정 식별자, 이용 기록, 결제 검증 정보. 이전 목적 — 인증·데이터베이스·서버 기능(Firebase Authentication, Cloud Firestore, Cloud Functions, 미국 리전). 보유 기간 — 아래 보유 기간에 따릅니다.</li>
+                  </ul>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    이전을 거부하실 수 있으나, 문제를 푸는 처리 자체가 위 이전을 포함하므로 거부 시 앱의 핵심 기능을 제공할 수 없습니다.
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    <strong>계정 삭제 후에도 보관되는 항목:</strong> 동일한 결제로 크레딧이 중복 적립되는 것을 막기 위해, <strong>구매 토큰과 그 적립 시각·상품 ID</strong>는 계정 삭제 후에도 보관합니다. 이 기록에는 문제 사진이나 풀이 내용이 포함되지 않습니다. 부정 이용 방지를 위한 것으로, 삭제할 경우 해당 결제가 다시 적립될 수 있습니다.
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6">
+                    <strong>권리 행사:</strong> 앱의 [서랍 &gt; 프로필]에서 <strong>내 데이터 내보내기</strong>와 <strong>계정 삭제</strong>를 직접 하실 수 있습니다. 계정을 삭제하면 위 예외 항목을 제외한 서버 저장 정보가 삭제됩니다.
+                  </p>
+
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">3. Google API 서비스 사용자 데이터 정책</h2>
                   <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 mb-6">
                     <p className="text-gray-700 dark:text-gray-300">
@@ -112,6 +141,9 @@ export default function PrivacyPage() {
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
                     <li><strong>Lemon Squeezy:</strong> 결제 처리. 구매 시 이메일 주소와 결제 정보가 Lemon Squeezy와 공유됩니다. <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">개인정보 처리방침</a>을 참조하세요.</li>
                     <li><strong>Firebase:</strong> 인증 및 데이터베이스 서비스. Google의 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">개인정보 및 보안 정책</a>을 참조하세요.</li>
+                    <li><strong>OpenAI:</strong> 매쓰쇼츠의 풀이 생성. 문제 사진과 수식이 전송됩니다. <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">개인정보 처리방침</a>을 참조하세요.</li>
+                    <li><strong>Google Play 결제:</strong> 매쓰쇼츠의 인앱 결제 처리. 결제수단 정보는 Google이 처리하며 당사는 구매 토큰과 주문번호만 받습니다.</li>
+                    <li><strong>카카오:</strong> 매쓰쇼츠의 로그인. <a href="https://www.kakao.com/policy/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">개인정보 처리방침</a>을 참조하세요.</li>
                   </ul>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">5. 개인정보의 처리 및 보유 기간</h2>
@@ -121,6 +153,8 @@ export default function PrivacyPage() {
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
                     <li>고객 가입 및 관리: 서비스 이용계약 또는 회원가입 해지시까지</li>
                     <li>전자상거래 관련 기록: 5년</li>
+                    <li>매쓰쇼츠 문제 세션(추출된 수식 텍스트): 24시간</li>
+                    <li>매쓰쇼츠 구매 토큰(중복 적립 방지): 계정 삭제 후에도 보관 — 위 2-4 참조</li>
                   </ul>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">6. 정보주체의 권리·의무</h2>
@@ -509,6 +543,34 @@ export default function PrivacyPage() {
                     <li><strong>Subscription Information:</strong> Managed through app stores (Apple App Store / Google Play Store)</li>
                   </ul>
 
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-4. MathShorts Mobile App</h3>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    MathShorts is a mobile app that solves a maths problem you photograph or type, and turns the solution into a short video.
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li><strong>Problem photos and typed expressions:</strong> Sent to <strong>OpenAI servers in the United States</strong> to generate the solution. We do not store the photo on our servers; it is used only to produce the solution.</li>
+                    <li><strong>Extracted expression (LaTeX) text:</strong> Retained for <strong>24 hours</strong> so that the in-app report feature can reference the problem, then processed.</li>
+                    <li><strong>Kakao account information:</strong> Collected through Kakao Login. The account identifier is derived from your Kakao member number; nickname, email and profile image are provided only within the scope you consented to in Kakao, and may be absent.</li>
+                    <li><strong>Usage records:</strong> Number of problems solved, credit balance and ledger (grants, charges and refunds), and reports you submit.</li>
+                    <li><strong>Purchase information:</strong> The Google Play purchase token and order ID, used for server-side verification and to prevent the same purchase being credited twice. We never collect card or payment instrument details; Google Play handles those.</li>
+                    <li><strong>Kept only on your device:</strong> Videos you create and your edits are stored on your device and are not uploaded to our servers.</li>
+                  </ul>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    <strong>International transfers:</strong> MathShorts transfers personal data outside your country in order to generate solutions.
+                  </p>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li><strong>OpenAI, L.L.C. (United States):</strong> Data — problem photos and typed expressions. Purpose — generating the solution. When and how — transmitted over the network at the moment you request a solution. Retention — we do not store it; OpenAI&apos;s own retention policy applies.</li>
+                    <li><strong>Google LLC (United States):</strong> Data — account identifier, usage records, purchase verification data. Purpose — authentication, database and server functions (Firebase Authentication, Cloud Firestore, Cloud Functions, US region). Retention — as set out below.</li>
+                  </ul>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    You may refuse these transfers, but solving a problem is itself the processing described above, so if you refuse we cannot provide the app&apos;s core function.
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    <strong>Retained after account deletion:</strong> To stop the same payment being credited twice, we keep the <strong>purchase token together with the time it was credited and the product ID</strong> even after an account is deleted. This record contains no problem photo and no solution content. It exists to prevent fraud; deleting it would allow that payment to be credited again.
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6">
+                    <strong>Exercising your rights:</strong> You can <strong>export your data</strong> and <strong>delete your account</strong> yourself from [Drawer &gt; Profile] in the app. Deleting your account removes the information stored on our servers, apart from the exception above.
+                  </p>
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">3. Google API Services User Data Policy</h2>
                   <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 mb-6">
                     <p className="text-gray-700 dark:text-gray-300">
