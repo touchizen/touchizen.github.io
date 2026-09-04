@@ -1,1 +1,13 @@
+# 이 파일은 "이 발행자가 우리 앱의 광고를 팔 권한이 있다"는 선언이다.
+# 없거나 발행자가 빠져 있으면 그 계정의 광고 fill 과 단가가 낮아진다.
+#
+# ⚠️ 배포되는 것은 landing/public/app-ads.txt 뿐이다. 루트 사본은 사람이 보라고
+#    같이 맞춰둔 것이고, docs/ 와 landing/out/ 사본은 배포되지 않는다.
+#    deploy.yml 의 "Copy root-level files" 목록에 app-ads.txt 는 없다.
+
+# 기존 계정
 google.com, pub-7579081712096708, DIRECT, f08c47fec0942fa0
+
+# 눈박자(com.touchizen.snowbeat). 발행자 ID 는 AdMob 앱 ID
+# ca-app-pub-1889477374800958~8339804762 의 앞부분이다.
+google.com, pub-1889477374800958, DIRECT, f08c47fec0942fa0
