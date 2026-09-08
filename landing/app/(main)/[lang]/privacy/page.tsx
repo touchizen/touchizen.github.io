@@ -108,6 +108,8 @@ export default function PrivacyPage() {
                     <li><strong>카카오 계정 정보:</strong> 카카오 로그인으로 수집합니다. 회원 식별자는 카카오 회원번호에서 파생되며, 닉네임·이메일·프로필 사진은 카카오에서 선택 동의한 범위에서만 제공됩니다(제공되지 않을 수 있습니다).</li>
                     <li><strong>이용 기록:</strong> 푼 문제 수, 크레딧 잔액과 원장(적립·차감·환급 내역), 신고 내역을 저장합니다.</li>
                     <li><strong>결제 정보:</strong> Google Play 결제의 구매 토큰과 주문번호를 서버 검증 및 중복 적립 방지에 사용합니다. 카드번호 등 결제수단 정보는 당사가 수집하지 않으며 Google Play가 처리합니다.</li>
+                    <li><strong>광고 식별자(광고 ID):</strong> 앱에는 <strong>사용자가 직접 선택해서 보는 리워드 광고</strong>가 있으며, Google AdMob 이 제공합니다. 광고 게재와 부정 클릭 방지를 위해 Android 광고 ID가 사용됩니다. 유럽경제지역·영국에서는 <strong>광고를 요청하기 전에</strong> Google 의 동의 관리 화면(UMP)으로 동의를 받으며, 동의 전에는 광고를 요청하지 않습니다. 동의는 앱의 [서랍 &gt; 광고 개인정보 설정]에서 언제든 다시 여실 수 있고, 기기 설정에서 광고 ID를 초기화하거나 맞춤 광고를 끄실 수 있습니다.</li>
+                    <li><strong>광고 시청 기록:</strong> 광고를 끝까지 본 것에 대해 크레딧을 적립할 때, 회원 식별자·광고 단위 ID·Google 이 발급한 거래 ID·적립 여부를 원장에 저장합니다(중복 적립과 부정 적립을 막기 위한 것입니다). 광고가 보여준 내용이나 사용자의 관심사 정보는 당사가 수집하지 않습니다.</li>
                     <li><strong>기기에만 저장되는 것:</strong> 만들어진 영상과 편집 내용은 사용자의 기기에만 저장되며 당사 서버로 전송되지 않습니다.</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
@@ -116,6 +118,7 @@ export default function PrivacyPage() {
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
                     <li><strong>OpenAI, L.L.C. (미국):</strong> 이전 항목 — 문제 사진, 입력한 수식. 이전 목적 — 풀이 생성. 이전 시기 및 방법 — 사용자가 풀이를 요청할 때 네트워크를 통해 전송. 보유 기간 — 당사는 저장하지 않으며, OpenAI의 보유 정책을 따릅니다.</li>
                     <li><strong>Google LLC (미국):</strong> 이전 항목 — 계정 식별자, 이용 기록, 결제 검증 정보. 이전 목적 — 인증·데이터베이스·서버 기능(Firebase Authentication, Cloud Firestore, Cloud Functions, 미국 리전). 보유 기간 — 아래 보유 기간에 따릅니다.</li>
+                    <li><strong>Google LLC (Google AdMob, 미국):</strong> 이전 항목 — 광고 식별자(광고 ID), 회원 식별자(적립 확인용), 기기·네트워크 정보. 이전 목적 — 리워드 광고 게재, 적립의 서버 측 검증, 부정 이용 방지. 이전 시기 및 방법 — 사용자가 광고 보기를 선택할 때 네트워크를 통해 전송. 보유 기간 — Google 의 보유 정책을 따르며, 당사는 위 광고 시청 기록만 보관합니다.</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     이전을 거부하실 수 있으나, 문제를 푸는 처리 자체가 위 이전을 포함하므로 거부 시 앱의 핵심 기능을 제공할 수 없습니다.
@@ -144,6 +147,7 @@ export default function PrivacyPage() {
                     <li><strong>OpenAI:</strong> 매쓰쇼츠의 풀이 생성. 문제 사진과 수식이 전송됩니다. <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">개인정보 처리방침</a>을 참조하세요.</li>
                     <li><strong>Google Play 결제:</strong> 매쓰쇼츠의 인앱 결제 처리. 결제수단 정보는 Google이 처리하며 당사는 구매 토큰과 주문번호만 받습니다.</li>
                     <li><strong>카카오:</strong> 매쓰쇼츠의 로그인. <a href="https://www.kakao.com/policy/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">개인정보 처리방침</a>을 참조하세요.</li>
+                    <li><strong>Google AdMob:</strong> 매쓰쇼츠의 리워드 광고 게재 및 적립 검증. <a href="https://business.safety.google/privacy/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">개인정보 처리방침</a>과 <a href="https://support.google.com/admob/answer/9012903" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">사용되는 데이터</a>를 참조하세요.</li>
                   </ul>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">5. 개인정보의 처리 및 보유 기간</h2>
@@ -553,6 +557,8 @@ export default function PrivacyPage() {
                     <li><strong>Kakao account information:</strong> Collected through Kakao Login. The account identifier is derived from your Kakao member number; nickname, email and profile image are provided only within the scope you consented to in Kakao, and may be absent.</li>
                     <li><strong>Usage records:</strong> Number of problems solved, credit balance and ledger (grants, charges and refunds), and reports you submit.</li>
                     <li><strong>Purchase information:</strong> The Google Play purchase token and order ID, used for server-side verification and to prevent the same purchase being credited twice. We never collect card or payment instrument details; Google Play handles those.</li>
+                    <li><strong>Advertising identifier (Ad ID):</strong> The app includes <strong>rewarded ads that you choose to watch</strong>, served by Google AdMob. The Android advertising ID is used to serve those ads and to prevent click fraud. In the EEA and the UK we obtain consent through Google&apos;s consent management form (UMP) <strong>before requesting any ad</strong>, and no ad is requested before consent is given. You can reopen that choice at any time from [Drawer &gt; Ad privacy settings] in the app, and you can reset your advertising ID or opt out of personalised ads in your device settings.</li>
+                    <li><strong>Ad view records:</strong> When credits are granted for finishing an ad, we store the account identifier, the ad unit ID, the transaction ID issued by Google, and whether the grant was made — this exists to prevent duplicate and fraudulent grants. We do not collect what the ad showed you or any interest profile.</li>
                     <li><strong>Kept only on your device:</strong> Videos you create and your edits are stored on your device and are not uploaded to our servers.</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
@@ -561,6 +567,7 @@ export default function PrivacyPage() {
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
                     <li><strong>OpenAI, L.L.C. (United States):</strong> Data — problem photos and typed expressions. Purpose — generating the solution. When and how — transmitted over the network at the moment you request a solution. Retention — we do not store it; OpenAI&apos;s own retention policy applies.</li>
                     <li><strong>Google LLC (United States):</strong> Data — account identifier, usage records, purchase verification data. Purpose — authentication, database and server functions (Firebase Authentication, Cloud Firestore, Cloud Functions, US region). Retention — as set out below.</li>
+                    <li><strong>Google LLC (Google AdMob, United States):</strong> Data — advertising identifier (Ad ID), account identifier (to verify a grant), device and network information. Purpose — serving rewarded ads, server-side verification of the reward, and fraud prevention. When and how — transmitted over the network when you choose to watch an ad. Retention — Google&apos;s own retention policy applies; we keep only the ad view record described above.</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     You may refuse these transfers, but solving a problem is itself the processing described above, so if you refuse we cannot provide the app&apos;s core function.
