@@ -34,8 +34,16 @@ describe('mergeSearchPages', () => {
     expect(Object.keys(merged.stars)).toEqual(['dup/repo']);
   });
 
-  it('takes the highest count when pages disagree mid-run', () => {
+  // Both orders matter. With only the ascending case, "take the highest" and
+  // "take whatever came last" are indistinguishable.
+  it('takes the highest count when a later page reports more', () => {
     const merged = mergeSearchPages([[r('dup/repo', { stars: 500 })], [r('dup/repo', { stars: 507 })]]);
+
+    expect(merged.stars['dup/repo']).toBe(507);
+  });
+
+  it('takes the highest count when a later page reports fewer', () => {
+    const merged = mergeSearchPages([[r('dup/repo', { stars: 507 })], [r('dup/repo', { stars: 500 })]]);
 
     expect(merged.stars['dup/repo']).toBe(507);
   });
