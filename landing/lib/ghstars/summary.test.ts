@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildSummary, GROWTH_WINDOWS } from './summary';
+import { buildSummary, DEFAULT_ENTRY_LIMIT, GROWTH_WINDOWS } from './summary';
 import type { Snapshot } from './gains';
 
 const snap = (date: string, stars: Record<string, number>): Snapshot => ({ date, stars });
@@ -95,6 +95,22 @@ describe('buildSummary', () => {
 
     expect(summary.windows[7].entries).toHaveLength(100);
     expect(summary.windows[7].entries[0].repo).toBe('r/149');
+  });
+
+  it('caps at the default when no limit is given', () => {
+    const wide: Record<string, number> = {};
+    const base: Record<string, number> = {};
+    for (let i = 0; i < DEFAULT_ENTRY_LIMIT + 20; i++) {
+      base[`r/${i}`] = 0;
+      wide[`r/${i}`] = i;
+    }
+    const summary = buildSummary(
+      [snap('2026-09-01', base), snap('2026-09-09', wide)],
+      {},
+      { asOf: '2026-09-09', generatedAt: 'T' }
+    );
+
+    expect(summary.windows[7].entries).toHaveLength(DEFAULT_ENTRY_LIMIT);
   });
 
   it('survives having no snapshots at all', () => {

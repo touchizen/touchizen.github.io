@@ -38,6 +38,18 @@ describe('parseSearchResponse', () => {
     expect(parsed.language).toBeNull();
   });
 
+  // Each guard needs a row that trips only that guard; a fixture missing three
+  // fields at once is caught by whichever check happens to run first.
+  it.each([
+    ['a non-string full_name', { full_name: 42 }],
+    ['a stringified star count', { stargazers_count: '1234' }],
+    ['a missing star count', { stargazers_count: undefined }],
+    ['a non-string html_url', { html_url: null }],
+    ['a missing created_at', { created_at: undefined }],
+  ])('rejects an entry with %s', (_label, over) => {
+    expect(parseSearchResponse({ items: [item(over)] })).toEqual([]);
+  });
+
   it('skips a malformed entry rather than failing the whole page', () => {
     const parsed = parseSearchResponse({
       items: [item(), { full_name: 'broken/one' }, item({ full_name: 'other/name' })],
@@ -50,10 +62,17 @@ describe('parseSearchResponse', () => {
     expect(parseSearchResponse({ total_count: 0, items: [] })).toEqual([]);
   });
 
-  it('throws when the payload is not a search response at all', () => {
-    expect(() => parseSearchResponse(null)).toThrow();
-    expect(() => parseSearchResponse({ message: 'Not Found' })).toThrow();
-    expect(() => parseSearchResponse({ items: 'nope' })).toThrow();
+  // The message reaches the page, so a raw "items.map is not a function" from a
+  // dropped guard is not the same outcome as a rejected payload.
+  it.each([
+    ['null', null],
+    ['an error body', { message: 'Not Found' }],
+    ['a non-array items field', { items: 'nope' }],
+    ['an items field that is an object', { items: { 0: 'x' } }],
+  ])('throws a recognisable error for %s', (_label, payload) => {
+    expect(() => parseSearchResponse(payload)).toThrow(
+      /not a GitHub repository search response/
+    );
   });
 });
 

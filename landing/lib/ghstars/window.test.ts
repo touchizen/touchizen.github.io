@@ -19,6 +19,12 @@ describe('monthsBefore', () => {
     expect(monthsBefore('2026-01-31', 2)).toBe('2025-11-30');
   });
 
+  // A %4 rule alone gets 1900 wrong; a %100 rule alone gets 2000 wrong.
+  it('applies the full leap rule at century boundaries', () => {
+    expect(monthsBefore('1900-03-31', 1)).toBe('1900-02-28'); // divisible by 100, not a leap year
+    expect(monthsBefore('2000-03-31', 1)).toBe('2000-02-29'); // divisible by 400, a leap year
+  });
+
   it('treats a zero-month window as the same day', () => {
     expect(monthsBefore('2026-09-09', 0)).toBe('2026-09-09');
   });
