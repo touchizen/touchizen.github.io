@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { classifyError, parseSearchResponse } from './github';
+import { classifyError, parseSearchResponse, searchCacheKey, searchUrl } from './github';
 
 const item = (over: Record<string, unknown> = {}) => ({
   full_name: 'owner/name',
@@ -91,5 +91,33 @@ describe('classifyError', () => {
   it('falls back to unknown for anything else', () => {
     expect(classifyError(500)).toBe('unknown');
     expect(classifyError(404)).toBe('unknown');
+  });
+});
+
+describe('searchUrl / searchCacheKey', () => {
+  const win = { asOf: '2026-09-09', monthsBack: 3, minStars: 10000 };
+
+  it('encodes the query into a sortable search url', () => {
+    expect(searchUrl(win)).toBe(
+      'https://api.github.com/search/repositories' +
+        '?q=created%3A%3E2026-06-09%20stars%3A%3E%3D10000&sort=stars&order=desc&per_page=50'
+    );
+  });
+
+  // A key that ignored one of the knobs would serve a 3-month answer to a
+  // 6-month question for as long as the entry lived.
+  it('gives every distinct question its own cache key', () => {
+    const keys = new Set([
+      searchCacheKey(win),
+      searchCacheKey({ ...win, monthsBack: 6 }),
+      searchCacheKey({ ...win, minStars: 5000 }),
+      searchCacheKey({ ...win, asOf: '2026-09-10' }),
+    ]);
+
+    expect(keys.size).toBe(4);
+  });
+
+  it('gives the same question the same key', () => {
+    expect(searchCacheKey(win)).toBe(searchCacheKey({ ...win }));
   });
 });

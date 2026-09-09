@@ -79,3 +79,14 @@ export function buildSummary(
     windows,
   };
 }
+
+export type SummaryStatus = 'ok' | 'not_collected_yet' | 'error';
+
+// A missing summary.json is the ordinary state of a deployment whose collector
+// has not committed yet. Folding it into a generic network error would tell
+// every first-day visitor that GitHub is unreachable.
+export function classifySummaryStatus(status: number): SummaryStatus {
+  if (status === 200) return 'ok';
+  if (status === 404) return 'not_collected_yet';
+  return 'error';
+}

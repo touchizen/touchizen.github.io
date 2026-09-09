@@ -1,0 +1,69 @@
+# Daily star snapshot.
+#
+# GitHub serves no star history — the stargazers endpoint that carried
+# `starred_at` now 404s, and the public event firehose has fallen to roughly 1%
+# of its old volume — so the only history that will ever exist is the one this
+# job accumulates. A missed day is a permanent gap, which is why this is
+# scheduled rather than hung off a push.
+#
+# The commit it makes deliberately does NOT redeploy the site: pushes made with
+# GITHUB_TOKEN do not trigger other workflows. The page reads the data straight
+# from raw.githubusercontent.com, so a snapshot is live within that CDN's
+# five-minute cache without a rebuild.
+
+name: Collect star snapshots
+
+on:
+  schedule:
+    # 03:17 UTC — deliberately far from midnight, so a delayed run cannot land
+    # on the wrong calendar day and leave one date with two files and another
+    # with none.
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-stars
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: github.repository == 'touchizen/touchizen.github.io'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: landing/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: landing
+
+      - name: Collect
+        run: npx tsx scripts/collect-stars.ts
+        working-directory: landing
+        env:
+          # Lifts search from 10 requests per minute to 30. Never checked in.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit the snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --staged --quiet; then
+            echo "nothing changed"
+            exit 0
+          fi
+          git commit -m "data: star snapshot for $(date -u +%F)"
+          # Someone may have pushed while the collection was running.
+          git pull --rebase --autostash
+          git push

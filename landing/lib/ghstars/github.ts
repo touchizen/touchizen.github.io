@@ -5,6 +5,8 @@
 // visitor IP. That budget is per visitor rather than per site, which is exactly
 // why this runs client-side instead of behind a proxy.
 
+import { buildSearchQuery, type SearchWindow } from './window';
+
 export const SEARCH_ENDPOINT = 'https://api.github.com/search/repositories';
 
 export type RepoSummary = {
@@ -52,4 +54,17 @@ export function classifyError(status: number): SearchErrorKind {
   if (status === 403 || status === 429) return 'rate_limited';
   if (status === 422) return 'invalid_query';
   return 'unknown';
+}
+
+export const SEARCH_PAGE_SIZE = 50;
+
+// The whole question in one string, so a cache entry can never answer a
+// different one than the one it was stored for.
+export function searchCacheKey(window: SearchWindow): string {
+  return `search:${buildSearchQuery(window)}`;
+}
+
+export function searchUrl(window: SearchWindow): string {
+  const query = encodeURIComponent(buildSearchQuery(window));
+  return `${SEARCH_ENDPOINT}?q=${query}&sort=stars&order=desc&per_page=${SEARCH_PAGE_SIZE}`;
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildSummary, DEFAULT_ENTRY_LIMIT, GROWTH_WINDOWS } from './summary';
+import { buildSummary, classifySummaryStatus, DEFAULT_ENTRY_LIMIT, GROWTH_WINDOWS } from './summary';
 import type { Snapshot } from './gains';
 
 const snap = (date: string, stars: Record<string, number>): Snapshot => ({ date, stars });
@@ -120,5 +120,24 @@ describe('buildSummary', () => {
     expect(summary.firstDate).toBeNull();
     expect(summary.snapshotCount).toBe(0);
     expect(summary.windows[7].entries).toEqual([]);
+  });
+});
+
+describe('classifySummaryStatus', () => {
+  it('accepts a served summary', () => {
+    expect(classifySummaryStatus(200)).toBe('ok');
+  });
+
+  // Before the first collector commit the file simply is not there yet. That is
+  // the expected state of a new deployment, not a failure to reach GitHub, and
+  // telling a visitor the network broke would be a lie.
+  it('reads a missing file as history that has not started', () => {
+    expect(classifySummaryStatus(404)).toBe('not_collected_yet');
+  });
+
+  it('keeps real failures separate', () => {
+    expect(classifySummaryStatus(500)).toBe('error');
+    expect(classifySummaryStatus(403)).toBe('error');
+    expect(classifySummaryStatus(0)).toBe('error');
   });
 });
