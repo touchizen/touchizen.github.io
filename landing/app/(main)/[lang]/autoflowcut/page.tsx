@@ -51,11 +51,20 @@ export default function AutoFlowCutPage() {
     router.push(`/${newLang}/autoflowcut`);
   };
 
+  // Founding-member pricing: $49.99/yr until 2026-09-30, then back to $99.99/yr.
+  // The date is the only constraint — no seat cap, no live counter.
   const proSaveText = {
-    en: 'Save 17%',
-    ko: '17% 절약',
-    ja: '17%節約',
-    de: '17% sparen',
+    en: 'Save 58%',
+    ko: '58% 절약',
+    ja: '58%節約',
+    de: '58% sparen',
+  }[lang];
+
+  const foundingNote = {
+    en: 'Founding-member price through September 30, 2026 — $49.99/yr instead of $99.99/yr, and you keep this price for as long as your subscription stays active. From October 1 the regular $99.99/yr applies.',
+    ko: '파운딩 멤버 가격 — 2026년 9월 30일까지. 연 $99.99 대신 $49.99이며, 구독을 유지하는 동안 이 가격 그대로입니다. 10월 1일부터는 정가 연 $99.99가 적용됩니다.',
+    ja: 'ファウンディングメンバー価格 — 2026年9月30日まで。年額$99.99のところ$49.99で、サブスクリプションを継続する限りこの価格が維持されます。10月1日からは通常価格の年額$99.99となります。',
+    de: 'Gründerpreis — bis zum 30. September 2026. $49,99/Jahr statt $99,99/Jahr, und dieser Preis bleibt erhalten, solange dein Abo aktiv ist. Ab dem 1. Oktober gilt der reguläre Preis von $99,99/Jahr.',
   }[lang];
 
   // B-3 quota model: 5/month + 5 lifetime signup bonus
@@ -78,7 +87,9 @@ export default function AutoFlowCutPage() {
       desc: t('pricing_pro_desc'),
       price: '$9.99',
       period: lang === 'ko' ? '/월' : lang === 'ja' ? '/月' : lang === 'de' ? '/Monat' : '/mo',
-      yearlyPrice: '$99.99',
+      yearlyPrice: '$49.99',
+      yearlyStrikePrice: '$99.99',
+      foundingNote,
       yearlyPeriod: lang === 'ko' ? '/년' : lang === 'ja' ? '/年' : lang === 'de' ? '/Jahr' : '/yr',
       saveText: proSaveText,
       features: [

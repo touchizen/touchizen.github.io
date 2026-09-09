@@ -9,22 +9,24 @@ export default function PricingSection({ lang, t, plans }: {
     price: string;
     period: string;
     yearlyPrice?: string;
+    yearlyStrikePrice?: string;
     yearlyPeriod?: string;
     saveText?: string;
+    foundingNote?: string;
     features: string[];
     cta: string;
     highlighted: boolean;
   }>;
 }) {
-  const annualDiscount = lang === 'ko' ? '17% 할인' : lang === 'ja' ? '17%オフ' : lang === 'de' ? '17% Rabatt' : '17% OFF';
+  const annualDiscount = lang === 'ko' ? '58% 할인' : lang === 'ja' ? '58%オフ' : lang === 'de' ? '58% Rabatt' : '58% OFF';
   const annualMonthlyEquivalent =
     lang === 'ko'
-      ? '월 $8.33 (17% 할인)'
+      ? '월 $4.17 (58% 할인)'
       : lang === 'ja'
-        ? '月額$8.33 (17%オフ)'
+        ? '月額$4.17 (58%オフ)'
         : lang === 'de'
-          ? '$8.33/Monat (17% Rabatt)'
-          : '$8.33/month (17% OFF)';
+          ? '$4,17/Monat (58% Rabatt)'
+          : '$4.17/month (58% OFF)';
 
   return (
     <section id="pricing" className="section-padding bg-gray-50 dark:bg-gray-900/50">
@@ -76,10 +78,23 @@ export default function PricingSection({ lang, t, plans }: {
                 </div>
                 {'yearlyPrice' in plan && plan.yearlyPrice && (
                   <div className={`text-sm ${plan.highlighted ? 'text-white/70' : 'text-gray-500 dark:text-gray-400'}`}>
-                    {lang === 'ko' ? '또는' : lang === 'ja' ? 'または' : lang === 'de' ? 'oder' : 'or'} {plan.yearlyPrice}{plan.yearlyPeriod}
+                    {lang === 'ko' ? '또는' : lang === 'ja' ? 'または' : lang === 'de' ? 'oder' : 'or'}{' '}
+                    {plan.yearlyStrikePrice && (
+                      <span className="line-through opacity-60 mr-1">{plan.yearlyStrikePrice}</span>
+                    )}
+                    {plan.yearlyPrice}{plan.yearlyPeriod}
                     <span className="ml-2 px-2 py-0.5 bg-green-400 text-green-900 text-xs font-bold rounded-full">
                       {plan.saveText}
                     </span>
+                  </div>
+                )}
+                {plan.foundingNote && (
+                  <div className={`mt-3 text-xs leading-relaxed rounded-lg px-3 py-2 ${
+                    plan.highlighted
+                      ? 'bg-white/10 text-white/90'
+                      : 'bg-cyan-50 text-cyan-900 dark:bg-cyan-900/20 dark:text-cyan-200'
+                  }`}>
+                    {plan.foundingNote}
                   </div>
                 )}
               </div>
@@ -146,7 +161,10 @@ export default function PricingSection({ lang, t, plans }: {
                   </th>
                   <th className="px-4 py-4 text-center text-sm font-semibold text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-900/20">
                     <div>Pro ({lang === 'ko' ? '연간' : lang === 'ja' ? '年額' : lang === 'de' ? 'Jahr' : 'Yearly'})</div>
-                    <div className="text-xs font-normal">$99.99/{lang === 'ko' ? '년' : lang === 'ja' ? '年' : lang === 'de' ? 'Jahr' : 'yr'}</div>
+                    <div className="text-xs font-normal">
+                      <span className="line-through opacity-60 mr-1">$99.99</span>
+                      $49.99/{lang === 'ko' ? '년' : lang === 'ja' ? '年' : lang === 'de' ? 'Jahr' : 'yr'}
+                    </div>
                     <div className="text-xs text-green-500 font-semibold">{annualDiscount}</div>
                   </th>
                 </tr>
@@ -267,7 +285,8 @@ export default function PricingSection({ lang, t, plans }: {
                     <div className="text-xs text-gray-500">/{lang === 'ko' ? '월' : lang === 'ja' ? '月' : lang === 'de' ? 'Monat' : 'month'}</div>
                   </td>
                   <td className="px-4 py-5 text-center bg-cyan-100/50 dark:bg-cyan-900/30">
-                    <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">$99.99</div>
+                    <div className="text-sm font-semibold text-gray-400 line-through">$99.99</div>
+                    <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">$49.99</div>
                     <div className="text-xs text-gray-500">/{lang === 'ko' ? '년' : lang === 'ja' ? '年' : lang === 'de' ? 'Jahr' : 'year'}</div>
                     <div className="text-xs text-green-600 dark:text-green-400 font-semibold mt-1">
                       {annualMonthlyEquivalent}
