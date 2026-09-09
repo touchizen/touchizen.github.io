@@ -6,6 +6,10 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    // products.ts carries per-product gradient class names. Without this glob
+    // Tailwind never sees them, and a product whose colours appear nowhere else
+    // renders its CTA with no background at all.
+    './lib/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class',
   theme: {

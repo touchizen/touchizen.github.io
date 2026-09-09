@@ -767,6 +767,15 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   calorieshot_feature3: '맞춤 TDEE 목표 설정',
   calorieshot_cta: '자세히 보기',
 
+  // GitHub 스타 트래커
+  ghstars_name: 'GitHub 스타 트래커',
+  ghstars_slogan: '어떤 저장소가 빠르게 컸나',
+  ghstars_desc: '최근에 스타를 받은 저장소를 찾고, 지금도 오르는 저장소를 지켜봅니다. 무료, 로그인 없음.',
+  ghstars_feature1: '신규 저장소 스타 순위, 실시간',
+  ghstars_feature2: '매일 스냅샷으로 7·30·90일 증가량',
+  ghstars_feature3: '계정도 토큰도 추적도 없음',
+  ghstars_cta: '트래커 열기',
+
   // PriceShot (얼마샷)
   priceshot_name: '얼마샷',
   priceshot_slogan: '찍으면 알려주는 최저가',

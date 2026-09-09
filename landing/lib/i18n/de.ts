@@ -767,6 +767,15 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   calorieshot_feature3: 'Personalisierte TDEE-Ziele',
   calorieshot_cta: 'Mehr erfahren',
 
+  // GitHub-Star-Tracker
+  ghstars_name: 'GitHub-Star-Tracker',
+  ghstars_slogan: 'Welche Repos schnell groß wurden',
+  ghstars_desc: 'Finde Repositories, die ihre Sterne kürzlich gesammelt haben, und beobachte, was weiter steigt. Kostenlos, ohne Anmeldung.',
+  ghstars_feature1: 'Neue Repositories nach Sternen, live',
+  ghstars_feature2: 'Tägliche Snapshots für 7/30/90-Tage-Wachstum',
+  ghstars_feature3: 'Kein Konto, kein Token, kein Tracking',
+  ghstars_cta: 'Tracker öffnen',
+
   // PriceShot (얼마샷)
   priceshot_name: 'PriceShot',
   priceshot_slogan: 'Fotografieren & Bestpreis finden',

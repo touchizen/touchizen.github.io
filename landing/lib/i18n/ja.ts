@@ -767,6 +767,15 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   calorieshot_feature3: 'カスタムTDEE目標設定',
   calorieshot_cta: '詳しく見る',
 
+  // GitHub スタートラッカー
+  ghstars_name: 'GitHub スタートラッカー',
+  ghstars_slogan: 'どのリポジトリが急成長したか',
+  ghstars_desc: '最近スターを集めたリポジトリを探し、今も伸びているものを追跡します。無料・ログイン不要。',
+  ghstars_feature1: '新規リポジトリのスター順位をリアルタイムで',
+  ghstars_feature2: '毎日のスナップショットで7・30・90日の増加数',
+  ghstars_feature3: 'アカウントもトークンも追跡もなし',
+  ghstars_cta: 'トラッカーを開く',
+
   // PriceShot (얼마샷)
   priceshot_name: 'プライスショット',
   priceshot_slogan: '撮るだけで最安値がわかる',

@@ -767,6 +767,15 @@ The young prince practices sword fighting in the courtyard`,
   calorieshot_feature3: 'Personalized TDEE Goals',
   calorieshot_cta: 'Learn More',
 
+  // GitHub Star Tracker
+  ghstars_name: 'GitHub Star Tracker',
+  ghstars_slogan: 'Which repos got big fast',
+  ghstars_desc: 'Find repositories that gained their stars recently, and watch what is still climbing. Free, no sign-in.',
+  ghstars_feature1: 'New repos by star count, live',
+  ghstars_feature2: 'Daily snapshots for 7/30/90-day growth',
+  ghstars_feature3: 'No account, no token, no tracking',
+  ghstars_cta: 'Open Tracker',
+
   // PriceShot (얼마샷)
   priceshot_name: 'PriceShot',
   priceshot_slogan: 'Snap & Find the Best Price',

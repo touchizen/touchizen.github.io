@@ -46,6 +46,20 @@ export const products: Product[] = [
     icon: '📸',
     hasDetailPage: true,
   },
+  // Free developer tools
+  {
+    id: 'ghstars',
+    nameKey: 'ghstars_name',
+    sloganKey: 'ghstars_slogan',
+    descKey: 'ghstars_desc',
+    features: ['ghstars_feature1', 'ghstars_feature2', 'ghstars_feature3'],
+    ctaKey: 'ghstars_cta',
+    link: '/ghstars/',
+    isExternal: false,
+    gradient: 'from-slate-600 to-gray-900',
+    icon: '⭐',
+    hasDetailPage: true,
+  },
 ];
 
 export interface Feature {
