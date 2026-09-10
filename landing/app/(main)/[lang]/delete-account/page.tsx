@@ -1,7 +1,9 @@
 'use client';
 
-import { useRouter, useParams } from 'next/navigation';
+import { Suspense } from 'react';
+import { useRouter, useParams, useSearchParams } from 'next/navigation';
 import { Language, languages } from '@/lib/i18n';
+import { DeleteAccountApp, deleteAccountAppFromSearch, deleteAccountPath } from '@/lib/delete-account';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -9,17 +11,21 @@ import Footer from '@/components/Footer';
 // link resource where users can request app account deletion", submitted in the
 // Data safety form. The web page exists for people who already uninstalled the
 // app and would otherwise have to reinstall it to be forgotten.
-export default function DeleteAccountPage() {
+function DeleteAccountContent() {
   const router = useRouter();
   const params = useParams();
+  const searchParams = useSearchParams();
   const paramLang = params.lang as string;
 
   const isValidLang = languages.some((l) => l.code === paramLang);
   const lang: Language = isValidLang ? (paramLang as Language) : 'en';
+  const app = deleteAccountAppFromSearch(searchParams.get('app'));
 
   const handleLanguageChange = (newLang: Language) => {
-    router.push(`/${newLang}/delete-account`);
+    router.push(deleteAccountPath(newLang, app));
   };
+
+  const selectApp = (next: DeleteAccountApp) => router.replace(deleteAccountPath(lang, next));
 
   return (
     <main className="min-h-screen">
@@ -32,8 +38,103 @@ export default function DeleteAccountPage() {
               {lang === 'ko' ? '계정 및 데이터 삭제' : lang === 'ja' ? 'アカウントとデータの削除' : lang === 'de' ? 'Konto- und Datenlöschung' : 'Account and Data Deletion'}
             </h1>
 
+            <div role="tablist" aria-label={lang === 'ko' ? '앱 선택' : 'Choose app'} className="mb-8 flex gap-2 border-b border-gray-200 dark:border-gray-700">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={app === 'mathshorts'}
+                onClick={() => selectApp('mathshorts')}
+                className={`px-4 py-3 font-semibold ${app === 'mathshorts' ? 'border-b-2 border-blue-600 text-blue-600 dark:text-blue-400' : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'}`}
+              >
+                MathShorts
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={app === 'datrans'}
+                onClick={() => selectApp('datrans')}
+                className={`px-4 py-3 font-semibold ${app === 'datrans' ? 'border-b-2 border-blue-600 text-blue-600 dark:text-blue-400' : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'}`}
+              >
+                다번역 (Datrans)
+              </button>
+            </div>
+
             <div className="prose dark:prose-invert max-w-none">
-              {lang === 'ko' ? (
+              {app === 'datrans' && lang === 'ko' ? (
+                <>
+                  <p className="text-gray-700 dark:text-gray-300 mb-8">
+                    다번역(Datrans) 계정과 당사 서버에 저장되는 데이터를 삭제하는 방법입니다.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">계정 삭제 요청</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    다번역 앱을 이미 삭제했거나 로그인할 수 없는 경우에도 아래 이메일로 계정 삭제를 요청할 수 있습니다.
+                  </p>
+                  <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 mb-6">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <strong>이메일:</strong> <a href="mailto:gordon.ahn@gmail.com?subject=%5BDatrans%5D%20%EA%B3%84%EC%A0%95%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD" className="text-blue-600 dark:text-blue-400 underline">gordon.ahn@gmail.com</a>
+                      <br />
+                      제목에 <strong>[Datrans] 계정 삭제 요청</strong>을 적고, 로그인에 사용한 <strong>이메일 주소</strong>와 로그인 방식(<strong>Google</strong> 또는 <strong>이메일/비밀번호</strong>)을 알려 주세요. 비밀번호, API 키, 문서 내용은 보내지 마세요.
+                    </p>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6">
+                    요청은 본인 확인 후 <strong>30일 이내</strong>에 처리합니다.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">삭제되는 서버 데이터</h2>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>Firebase Authentication에 있는 계정 식별자, 이메일 주소와 로그인 제공업체 연결 정보</li>
+                    <li>계정 인증과 Pro 구독 권한 확인에 필요한 서버 측 계정 정보</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">기기에만 있는 데이터</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    가져온 문서, 번역문, 필기, 번역 대화 기록과 BYOK API 키는 당사 서버에 저장되지 않으며, 이 웹 요청으로 삭제할 수 없습니다. 필요하면 기기에서 문서와 내보낸 사본을 직접 지우고 앱 데이터 삭제 또는 앱 제거를 진행해 주세요.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Google Play 구독</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6">
+                    계정 삭제 요청은 Google Play 구독을 자동으로 취소하지 않습니다. 활성 Pro 구독은 Google Play의 구독 관리 화면에서 별도로 취소해 주세요. 결제수단 및 Google Play 구매 기록은 Google의 정책에 따라 처리됩니다.
+                  </p>
+                </>
+              ) : app === 'datrans' ? (
+                <>
+                  <p className="text-gray-700 dark:text-gray-300 mb-8">
+                    How to request deletion of your Datrans account and the data stored on our servers.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Request account deletion</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    You can request deletion even if you have already uninstalled Datrans or cannot sign in.
+                  </p>
+                  <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 mb-6">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <strong>Email:</strong> <a href="mailto:gordon.ahn@gmail.com?subject=%5BDatrans%5D%20Account%20deletion%20request" className="text-blue-600 dark:text-blue-400 underline">gordon.ahn@gmail.com</a>
+                      <br />
+                      Use the subject <strong>[Datrans] Account deletion request</strong>. Include the <strong>email address</strong> used to sign in and the sign-in method (<strong>Google</strong> or <strong>email/password</strong>). Do not send a password, API key or document content.
+                    </p>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6">
+                    Requests are processed after identity verification and <strong>within 30 days</strong>.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Server data deleted</h2>
+                  <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                    <li>Your Firebase Authentication account identifier, email address and linked sign-in provider</li>
+                    <li>Server-side account information needed for account authentication and Pro subscription-entitlement checks</li>
+                  </ul>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Data stored only on your device</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Imported documents, translations, annotations, translation-chat history and BYOK API keys are not stored on our servers and cannot be deleted by this web request. Delete documents and exported copies from your device, then clear app data or uninstall the app if needed.
+                  </p>
+
+                  <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Google Play subscription</h2>
+                  <p className="text-gray-700 dark:text-gray-300 mb-6">
+                    Deleting an account does not automatically cancel a Google Play subscription. Cancel an active Pro subscription separately in Google Play&apos;s subscription-management screen. Google handles payment methods and its purchase records under its own policies.
+                  </p>
+                </>
+              ) : lang === 'ko' ? (
                 <>
                   <p className="text-gray-700 dark:text-gray-300 mb-8">
                     매쓰쇼츠(MathShorts) 계정과 저장된 데이터를 삭제하는 방법입니다.
@@ -137,5 +238,13 @@ export default function DeleteAccountPage() {
 
       <Footer lang={lang} />
     </main>
+  );
+}
+
+export default function DeleteAccountPage() {
+  return (
+    <Suspense fallback={<main className="min-h-screen bg-white dark:bg-gray-950" />}>
+      <DeleteAccountContent />
+    </Suspense>
   );
 }
