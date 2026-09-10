@@ -33,7 +33,7 @@ export default function PrivacyPage() {
               {lang === 'ko' ? (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    최종 수정일: 2026년 6월 7일
+                    최종 수정일: 2026년 9월 10일
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. 개인정보의 처리 목적</h2>
@@ -50,23 +50,18 @@ export default function PrivacyPage() {
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">2. 서비스별 개인정보 처리</h2>
 
-                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-1. Whisk2CapCut Chrome 확장 프로그램</h3>
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-1. 다번역(Datrans) 모바일 앱</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Whisk2CapCut Chrome 확장 프로그램은 다음과 같은 데이터를 수집하고 저장합니다:
+                    다번역은 PDF와 EPUB 문서를 기기에서 읽고 번역하는 Android 앱입니다. 서비스 제공을 위해 다음과 같이 데이터를 처리합니다:
                   </p>
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li><strong>Google 계정 이메일:</strong> Google OAuth를 통해 수집되며, 라이선스 검증 및 구독 상태 확인에 사용됩니다</li>
-                    <li><strong>로컬 저장 데이터 (Chrome Storage):</strong>
-                      <ul className="list-disc pl-6 mt-2">
-                        <li>라이선스 키</li>
-                        <li>사용 횟수 (무료 체험 추적용)</li>
-                        <li>사용자 설정 (언어, 테마 등)</li>
-                        <li>내보내기 설정</li>
-                      </ul>
-                    </li>
+                    <li><strong>문서, 번역문, 필기와 번역 대화 기록:</strong> 기본적으로 기기에만 저장됩니다. 무료 기기 내 ML Kit 번역은 문서 내용과 대화 내용을 당사 서버로 보내지 않습니다.</li>
+                    <li><strong>선택한 BYOK AI 제공업체:</strong> 사용자가 유료 Pro에서 자신의 API 키와 제공업체를 직접 선택한 경우에만, 번역할 텍스트 조각과 요청 정보가 기기에서 선택한 OpenAI, Anthropic 또는 Google Gemini 제공업체로 직접 전송됩니다. API 키는 기기의 암호화된 저장소에 보관되며 당사 서버로 전송하거나 당사가 보관하지 않습니다.</li>
+                    <li><strong>계정 정보:</strong> Google 로그인 또는 이메일/비밀번호 로그인으로 제공되는 이메일 주소와 Firebase 사용자 식별자는 계정 인증, 구독 권한 확인 및 고객 지원에 사용됩니다.</li>
+                    <li><strong>구독 검증 정보:</strong> Google Play 구매 토큰과 구독 상태는 Pro 권한을 검증하는 데 사용됩니다. 결제수단 정보는 Google Play가 처리하며 당사가 수집하지 않습니다.</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    이 데이터는 사용자의 기기에 로컬로 저장되며, 라이선스 검증을 위해 당사 서버로 전송되는 이메일 주소를 제외하고는 외부로 전송되지 않습니다.
+                    사용자가 BYOK 제공업체를 선택해 번역을 요청할 때 전송되는 문서 텍스트와 요청 정보는 해당 제공업체의 개인정보 처리방침을 따릅니다. 당사는 문서 전체나 API 키를 중계하거나 저장하지 않습니다.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCut 데스크톱 앱</h3>
@@ -208,7 +203,7 @@ export default function PrivacyPage() {
               ) : lang === 'ja' ? (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    最終更新日: 2026年6月7日
+                    最終更新日: 2026年9月10日
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. 個人情報の処理目的</h2>
@@ -225,23 +220,18 @@ export default function PrivacyPage() {
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">2. サービス別の個人情報処理</h2>
 
-                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-1. Whisk2CapCut Chrome拡張機能</h3>
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-1. Datrans（ダボンヨク）モバイルアプリ</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Whisk2CapCut Chrome拡張機能は以下のデータを収集・保存します：
+                    Datransは、PDFおよびEPUB文書を端末上で閲覧・翻訳するAndroidアプリです。サービス提供のため、以下のとおりデータを処理します：
                   </p>
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li><strong>Googleアカウントメール：</strong> Google OAuthを通じて収集され、ライセンス検証とサブスクリプション状態の確認に使用されます</li>
-                    <li><strong>ローカル保存データ（Chrome Storage）：</strong>
-                      <ul className="list-disc pl-6 mt-2">
-                        <li>ライセンスキー</li>
-                        <li>使用回数（無料トライアル追跡用）</li>
-                        <li>ユーザー設定（言語、テーマなど）</li>
-                        <li>エクスポート設定</li>
-                      </ul>
-                    </li>
+                    <li><strong>文書、翻訳、注釈および翻訳チャット履歴：</strong> 原則として端末にのみ保存されます。無料のオンデバイスML Kit翻訳では、文書内容やチャット内容を当社サーバーへ送信しません。</li>
+                    <li><strong>選択したBYOK AIプロバイダー：</strong> 有料Proでユーザー自身のAPIキーとプロバイダーを選択した場合に限り、翻訳対象のテキスト断片とリクエスト情報が端末から選択したOpenAI、AnthropicまたはGoogle Geminiプロバイダーへ直接送信されます。APIキーは端末の暗号化ストレージに保管され、当社サーバーへ送信または当社が保管することはありません。</li>
+                    <li><strong>アカウント情報：</strong> Googleログインまたはメールアドレス/パスワードログインで提供されるメールアドレスおよびFirebaseユーザー識別子は、アカウント認証、サブスクリプション権限の確認およびカスタマーサポートに使用されます。</li>
+                    <li><strong>サブスクリプション検証情報：</strong> Google Playの購入トークンとサブスクリプション状態はPro権限の検証に使用されます。支払手段の情報はGoogle Playが処理し、当社は収集しません。</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    このデータはユーザーのデバイスにローカルで保存され、ライセンス検証のためにサーバーに送信されるメールアドレスを除き、外部に送信されることはありません。
+                    BYOKプロバイダーを選択して翻訳を依頼する際に送信される文書テキストとリクエスト情報は、当該プロバイダーのプライバシーポリシーに従います。当社は文書全体やAPIキーを中継または保存しません。
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCutデスクトップアプリ</h3>
@@ -345,7 +335,7 @@ export default function PrivacyPage() {
               ) : lang === 'de' ? (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    Letzte Aktualisierung: 7. Juni 2026
+                    Letzte Aktualisierung: 10. September 2026
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. Zweck der Datenverarbeitung</h2>
@@ -362,23 +352,18 @@ export default function PrivacyPage() {
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">2. Datenverarbeitung nach Dienst</h2>
 
-                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-1. Whisk2CapCut Chrome-Erweiterung</h3>
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-1. Datrans Mobile App</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Die Whisk2CapCut Chrome-Erweiterung sammelt und speichert folgende Daten:
+                    Datrans ist eine Android-App zum Lesen und Übersetzen von PDF- und EPUB-Dokumenten auf dem Gerät. Für die Bereitstellung des Dienstes verarbeiten wir Daten wie folgt:
                   </p>
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li><strong>Google-Konto-E-Mail:</strong> Wird über Google OAuth erfasst und zur Lizenzverifizierung und Überprüfung des Abonnementstatus verwendet</li>
-                    <li><strong>Lokal gespeicherte Daten (Chrome Storage):</strong>
-                      <ul className="list-disc pl-6 mt-2">
-                        <li>Lizenzschlüssel</li>
-                        <li>Nutzungsanzahl (für kostenlose Testversion)</li>
-                        <li>Benutzereinstellungen (Sprache, Theme usw.)</li>
-                        <li>Exporteinstellungen</li>
-                      </ul>
-                    </li>
+                    <li><strong>Dokumente, Übersetzungen, Anmerkungen und Übersetzungs-Chatverlauf:</strong> Werden grundsätzlich nur auf Ihrem Gerät gespeichert. Die kostenlose On-Device-Übersetzung mit ML Kit sendet weder Dokumentinhalte noch Chatinhalte an unsere Server.</li>
+                    <li><strong>Ausgewählter BYOK-KI-Anbieter:</strong> Nur wenn Sie in Pro Ihren eigenen API-Schlüssel und Anbieter auswählen, werden zu übersetzende Textabschnitte und Anfrageinformationen direkt vom Gerät an den ausgewählten Anbieter OpenAI, Anthropic oder Google Gemini gesendet. API-Schlüssel werden im verschlüsselten Speicher des Geräts aufbewahrt und weder an unsere Server übertragen noch von uns gespeichert.</li>
+                    <li><strong>Kontoinformationen:</strong> Die über Google-Anmeldung oder E-Mail/Passwort-Anmeldung bereitgestellte E-Mail-Adresse und Firebase-Nutzerkennung werden für Kontoauthentifizierung, Prüfung der Abonnementberechtigung und Kundensupport verwendet.</li>
+                    <li><strong>Informationen zur Abonnementprüfung:</strong> Google-Play-Kauftoken und Abonnementstatus werden zur Prüfung der Pro-Berechtigung verwendet. Zahlungsdaten werden von Google Play verarbeitet und nicht von uns erhoben.</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Diese Daten werden lokal auf Ihrem Gerät gespeichert und werden nicht extern übertragen, außer der E-Mail-Adresse, die zur Lizenzverifizierung an unsere Server gesendet wird.
+                    Dokumenttext und Anfrageinformationen, die bei Auswahl eines BYOK-Anbieters zur Übersetzung gesendet werden, unterliegen dessen Datenschutzerklärung. Wir leiten weder vollständige Dokumente noch API-Schlüssel weiter und speichern sie nicht.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCut Desktop-App</h3>
@@ -482,7 +467,7 @@ export default function PrivacyPage() {
               ) : (
                 <>
                   <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    Last updated: June 7, 2026
+                    Last updated: September 10, 2026
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. Purpose of Processing Personal Information</h2>
@@ -499,23 +484,18 @@ export default function PrivacyPage() {
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">2. Data Processing by Service</h2>
 
-                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-1. Whisk2CapCut Chrome Extension</h3>
+                  <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-1. Datrans Mobile App</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    The Whisk2CapCut Chrome extension collects and stores the following data:
+                    Datrans is an Android app for reading and translating PDF and EPUB documents on your device. We process data for the service as follows:
                   </p>
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li><strong>Google Account Email:</strong> Collected via Google OAuth, used for license verification and subscription status checks</li>
-                    <li><strong>Locally Stored Data (Chrome Storage):</strong>
-                      <ul className="list-disc pl-6 mt-2">
-                        <li>License key</li>
-                        <li>Usage count (for free trial tracking)</li>
-                        <li>User preferences (language, theme, etc.)</li>
-                        <li>Export settings</li>
-                      </ul>
-                    </li>
+                    <li><strong>Documents, translations, annotations and translation-chat history:</strong> These are stored on your device by default. Free, on-device ML Kit translation does not send document or chat content to our servers.</li>
+                    <li><strong>Your selected BYOK AI provider:</strong> Only when you choose your own API key and provider in paid Pro do the text segments to translate and request information go directly from your device to your selected OpenAI, Anthropic or Google Gemini provider. API keys remain in encrypted device storage; they are neither sent to nor stored by our servers.</li>
+                    <li><strong>Account information:</strong> The email address and Firebase user identifier supplied through Google sign-in or email/password sign-in are used for account authentication, subscription-entitlement checks and customer support.</li>
+                    <li><strong>Subscription-verification information:</strong> Google Play purchase tokens and subscription status are used to verify Pro access. Google Play processes payment-method information; we do not collect it.</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    This data is stored locally on your device and is not transmitted externally, except for the email address which is sent to our servers for license verification.
+                    Document text and request information sent when you choose a BYOK provider are subject to that provider&apos;s privacy policy. We do not relay or store entire documents or API keys.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCut Desktop App</h3>
