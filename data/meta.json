@@ -288,7 +288,7 @@
   "language": "TypeScript"
  },
  "BuilderIO/skills": {
-  "description": "Skills for coding agents",
+  "description": "Skills for agents",
   "language": "JavaScript"
  },
  "BurntSushi/ripgrep": {
@@ -528,7 +528,7 @@
   "language": null
  },
  "EKKOLearnAI/hermes-studio": {
-  "description": "Web dashboard for Hermes Agent — multi-platform AI chat, session management, scheduled jobs, usage analytics ",
+  "description": "Ekko Studio is a local-first AI workspace for multi-agent chat, coding, and visual workflows, available on desktop and the web.",
   "language": "TypeScript"
  },
  "EbookFoundation/free-programming-books": {
@@ -1421,7 +1421,7 @@
  },
  "QuipNetwork/quip-miner": {
   "description": "The quip network mining stack. This includes a coordinator and links all of the official quip network miners.",
-  "language": "Python"
+  "language": "Rust"
  },
  "QuipNetwork/quip-node-manager": {
   "description": "A simple GUI client to manage a Quip Network node",
@@ -1940,7 +1940,7 @@
   "language": "TypeScript"
  },
  "abhigyanpatwari/GitNexus": {
-  "description": "GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a git repository (Github, Gitlab, Azure, Local) or ZIP file, and get an interactive knowledge graph with a built in Graph RAG Agent. Perfect for code exploration",
+  "description": "GitNexus: The Zero-Server Code Intelligence Engine ",
   "language": "TypeScript"
  },
  "abi/screenshot-to-code": {
@@ -2704,7 +2704,7 @@
   "language": "Shell"
  },
  "byoungd/up": {
-  "description": "An advanced guide which might benefit you a lot 🎉 . 韩先凯的人生进阶指南 人生进阶指南 离谱的人生 人生进阶 离谱的英语学习指南/英语学习教程/英语学习/学英语",
+  "description": "An advanced guide which might benefit you a lot 🎉 . 韩先凯的人生进阶指南 人生进阶指南 离谱的人生 人生进阶 AI学习 AI指南 韩先凯的AI学习指南 英语学习指南/英语学习教程/英语学习/学英语",
   "language": "JavaScript"
  },
  "bytedance/UI-TARS-desktop": {
@@ -2861,7 +2861,7 @@
  },
  "clash-verge-rev/clash-verge-rev": {
   "description": "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience",
-  "language": "TypeScript"
+  "language": "Rust"
  },
  "clashbk/clash": {
   "description": "Clash官网各版本Clash下载地址及备份下载地址",
@@ -3475,6 +3475,10 @@
   "description": "Run frontier AI locally.",
   "language": "Python"
  },
+ "experientiallabs/experiential": {
+  "description": "Experiential is the open source, zero markup gateway for BYOK, self-hosted and 1000+ marketplace models. It learns from your traffic to cut costs, recommend better models, and train a specialized model you own.",
+  "language": "Python"
+ },
  "explosion/spaCy": {
   "description": "💫 Industrial-strength Natural Language Processing (NLP) in Python",
   "language": "Python"
@@ -3668,7 +3672,7 @@
   "language": null
  },
  "freestylefly/awesome-gpt-image-2": {
-  "description": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
+  "description": "Prompt as Code | GPT Image 2 / 2.5 提示词与案例库，530+ 个案例、20+ 套工业级模板与可复用 Skills，新增 2.5 同提示词对比专区，附完整提示词与生成记录，持续更新。",
   "language": "JavaScript"
  },
  "freqtrade/freqtrade": {
@@ -3688,7 +3692,7 @@
   "language": "Python"
  },
  "garinasset/leak-check": {
-  "description": "个人信息 “泄漏” 检测接口 (服务器免费额度已燃尽, 恢复待定)",
+  "description": "个人信息 “泄漏” 检测接口",
   "language": "Python"
  },
  "garrytan/gbrain": {
@@ -3741,6 +3745,10 @@
  },
  "genspark-ai/genoffice": {
   "description": "Free, open-source alternative to Microsoft Office with built-in AI agents — Word (.docx), Excel (.xlsx), PowerPoint (.pptx), PDF and Markdown editing for macOS, Windows & Linux.",
+  "language": "TypeScript"
+ },
+ "get-bb/bb": {
+  "description": "The agent IDE that builds itself",
   "language": "TypeScript"
  },
  "getagentseal/codeburn": {
@@ -4412,11 +4420,11 @@
   "language": null
  },
  "jnMetaCode/agency-agents-zh": {
-  "description": "🎭 267 个即插即用的 AI 专家角色 — 支持 Hermes Agent/Claude Code/Cursor/Copilot 等 18 种工具，覆盖工程/设计/营销/金融等 20 个部门。含 52 个中国市场原创智能体（小红书/抖音/微信/飞书/钉钉等）。搭配编排器 agency-orchestrator，一句话即可让多位专家按 DAG 自动协作。",
+  "description": "🎭 277 个即插即用的 AI 专家角色 — 支持 Claude Code/Cursor/Copilot 等 20 种工具，覆盖工程/设计/营销/金融等 20 个部门。含 64 个中国市场原创智能体（小红书/抖音/微信/飞书/钉钉/Qt 上位机/机械设计）。搭配编排器 agency-orchestrator，一句话即可让多位专家按 DAG 自动协作。",
   "language": "Shell"
  },
  "jnMetaCode/superpowers-zh": {
-  "description": "🦸 AI 编程超能力 · 中文增强版 — superpowers（116k+ ⭐）完整汉化 + 6 个中国原创 skills，让 Claude Code / Copilot CLI / Hermes Agent / Cursor / Windsurf / Kiro / Gemini CLI 等 16 款 AI 编程工具真正会干活",
+  "description": "🦸 AI 编程超能力 · 中文增强版 — superpowers（250k+ ⭐）完整汉化 + 4 个中国原创 skills，让 Claude Code / Copilot CLI / Hermes Agent / Cursor / Windsurf / Kiro / Gemini CLI / Qoder 等 26 款 AI 编程工具真正会干活",
   "language": "JavaScript"
  },
  "jo-inc/camofox-browser": {
@@ -4904,7 +4912,7 @@
   "language": "Objective-C"
  },
  "magnitudedev/magnitude": {
-  "description": "Open source inference server for Apple silicon. Profiles your Mac, recommends the best models for it, then downloads, tunes, and runs them. Plugs into Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.",
+  "description": "Open source inference server for the hardware you already have. It profiles your machine, recommends the right models for it, then downloads, tunes, and runs them. Plug it into Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.",
   "language": "TypeScript"
  },
  "makeplane/plane": {
@@ -5761,7 +5769,7 @@
  },
  "opensandbox-group/OpenSandbox": {
   "description": "Secure, Fast, and Extensible Sandbox runtime for AI agents.",
-  "language": "Go"
+  "language": "Python"
  },
  "opentofu/manifesto": {
   "description": "The OpenTF Manifesto expresses concern over HashiCorp's switch of the Terraform license from open-source to the Business Source License (BSL) and calls for the tool's return to a truly open-source license.",
@@ -5844,7 +5852,7 @@
   "language": "JavaScript"
  },
  "pascalorg/editor": {
-  "description": "Create and share 3D architectural projects.",
+  "description": "Open-source 3D architectural editor with a local CLI, MCP tools, and practical workflows for humans and AI agents.",
   "language": "TypeScript"
  },
  "patchy631/ai-engineering-hub": {
@@ -7360,7 +7368,7 @@
   "language": "Python"
  },
  "wuyoscar/GPT-Image2-Skill": {
-  "description": "GPT Image 2 prompt gallery, image prompt library, agentic skill, and CLI for OpenAI image generation/editing",
+  "description": "GPT Image 2/2.5 prompt gallery, image prompt library, agentic skill, and CLI for OpenAI image generation/editing",
   "language": "Python"
  },
  "x1xhlol/system-prompts-and-models-of-ai-tools": {
