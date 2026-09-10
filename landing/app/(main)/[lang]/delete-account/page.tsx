@@ -85,11 +85,17 @@ function DeleteAccountContent() {
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
                     <li>Firebase Authentication에 있는 계정 식별자, 이메일 주소와 로그인 제공업체 연결 정보</li>
                     <li>계정 인증과 Pro 구독 권한 확인에 필요한 서버 측 계정 정보</li>
+                    <li>계정에 연결된 크레딧 지갑, 구매 검증 및 지급·차감·환불 기록</li>
+                    <li>같은 요청의 복구를 위해 임시 보관 중인 크레딧 번역 결과와 관련 요청 정보</li>
                   </ul>
+
+                  <p className="text-gray-700 dark:text-gray-300 mb-6">
+                    법령에 따라 보존해야 하는 기록은 <a href="/ko/privacy" className="text-blue-600 dark:text-blue-400 underline">개인정보 처리방침</a>에 안내된 보유 기간과 법정 보존 의무에 따라 처리됩니다.
+                  </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">기기에만 있는 데이터</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    가져온 문서, 번역문, 필기, 번역 대화 기록과 BYOK API 키는 당사 서버에 저장되지 않으며, 이 웹 요청으로 삭제할 수 없습니다. 필요하면 기기에서 문서와 내보낸 사본을 직접 지우고 앱 데이터 삭제 또는 앱 제거를 진행해 주세요.
+                    가져온 PDF·EPUB 파일, 완성된 번역 문서 파일, 필기, 번역 대화 기록과 BYOK API 키는 기기에 저장되므로 이 웹 요청으로 기기의 사본을 삭제할 수 없습니다. 필요하면 기기에서 문서와 내보낸 사본을 직접 지우고 앱 데이터 삭제 또는 앱 제거를 진행해 주세요. 크레딧 번역의 서버 임시 결과는 위 삭제 요청 범위에 포함됩니다.
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Google Play 구독</h2>
@@ -122,11 +128,17 @@ function DeleteAccountContent() {
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
                     <li>Your Firebase Authentication account identifier, email address and linked sign-in provider</li>
                     <li>Server-side account information needed for account authentication and Pro subscription-entitlement checks</li>
+                    <li>Credit wallets, purchase-verification records, and credit grant, charge and refund records linked to your account</li>
+                    <li>Credit translation results temporarily stored to recover the same request, and their associated request information</li>
                   </ul>
+
+                  <p className="text-gray-700 dark:text-gray-300 mb-6">
+                    Records that must be retained by law remain subject to the retention periods and legal retention obligations described in our <a href="/en/privacy" className="text-blue-600 dark:text-blue-400 underline">Privacy Policy</a>.
+                  </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Data stored only on your device</h2>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Imported documents, translations, annotations, translation-chat history and BYOK API keys are not stored on our servers and cannot be deleted by this web request. Delete documents and exported copies from your device, then clear app data or uninstall the app if needed.
+                    Imported PDF and EPUB files, completed translated document files, annotations, translation-chat history and BYOK API keys are stored on your device. This web request cannot delete those device copies. Delete documents and exported copies from your device, then clear app data or uninstall the app if needed. Temporary server results from credit translations are included in the deletion request described above.
                   </p>
 
                   <h2 className="text-2xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Google Play subscription</h2>

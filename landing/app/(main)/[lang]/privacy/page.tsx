@@ -55,13 +55,16 @@ export default function PrivacyPage() {
                     다번역은 PDF와 EPUB 문서를 기기에서 읽고 번역하는 Android 앱입니다. 서비스 제공을 위해 다음과 같이 데이터를 처리합니다:
                   </p>
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li><strong>문서, 번역문, 필기와 번역 대화 기록:</strong> 기본적으로 기기에만 저장됩니다. 무료 기기 내 ML Kit 번역은 문서 내용과 대화 내용을 당사 서버로 보내지 않습니다.</li>
+                    <li><strong>기기의 문서와 기록:</strong> 가져온 PDF·EPUB 파일, 완성된 번역 문서 파일, 필기와 번역 대화 기록은 기기에 저장됩니다. 무료 기기 내 ML Kit 번역은 문서 내용과 대화 내용을 당사 서버로 보내지 않습니다.</li>
                     <li><strong>선택한 BYOK AI 제공업체:</strong> 사용자가 유료 Pro에서 자신의 API 키와 제공업체를 직접 선택한 경우에만, 번역할 텍스트 조각과 요청 정보가 기기에서 선택한 OpenAI, Anthropic 또는 Google Gemini 제공업체로 직접 전송됩니다. API 키는 기기의 암호화된 저장소에 보관되며 당사 서버로 전송하거나 당사가 보관하지 않습니다.</li>
-                    <li><strong>계정 정보:</strong> Google 로그인 또는 이메일/비밀번호 로그인으로 제공되는 이메일 주소와 Firebase 사용자 식별자는 계정 인증, 구독 권한 확인 및 고객 지원에 사용됩니다.</li>
-                    <li><strong>구독 검증 정보:</strong> Google Play 구매 토큰과 구독 상태는 Pro 권한을 검증하는 데 사용됩니다. 결제수단 정보는 Google Play가 처리하며 당사가 수집하지 않습니다.</li>
+                    <li><strong>크레딧 번역:</strong> 사용자가 크레딧으로 번역을 요청하면 텍스트 조각, 원문·번역 언어와 요청 정보가 Firebase 인증을 거친 Google Cloud Functions(GCF)를 통해 Google Vertex AI의 Gemini로 전송됩니다. 원문 본문은 Firestore에 저장하지 않으며, 동일 요청 확인을 위한 지문(해시)과 요청 정보를 보관합니다.</li>
+                    <li><strong>임시 번역 결과:</strong> 같은 요청의 결과를 복구하기 위해 번역 결과를 Firestore에 7일간 임시 보관하며, 보관 기간이 지난 결과는 정기 정리 작업으로 삭제합니다.</li>
+                    <li><strong>계정 정보:</strong> Google 로그인 또는 이메일/비밀번호 로그인으로 제공되는 이메일 주소와 Firebase 사용자 식별자는 계정 인증, 구독 권한 확인, 크레딧 서비스 및 고객 지원에 사용됩니다.</li>
+                    <li><strong>크레딧 계정 기록:</strong> 지갑 잔액, 구매 검증, 크레딧 지급·차감과 환불 기록은 사용자 계정에 연결하여 보관합니다. 이 정보는 구매 확인, 중복 지급·차감 방지, 사용량 정산과 환불 처리에 사용됩니다.</li>
+                    <li><strong>구매·구독 검증 정보:</strong> Google Play 구매 토큰과 구매·구독 상태는 크레딧 구매 확인과 Pro 권한 검증에 사용됩니다. 결제수단 정보는 Google Play가 처리하며 당사가 수집하지 않습니다.</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    사용자가 BYOK 제공업체를 선택해 번역을 요청할 때 전송되는 문서 텍스트와 요청 정보는 해당 제공업체의 개인정보 처리방침을 따릅니다. 당사는 문서 전체나 API 키를 중계하거나 저장하지 않습니다.
+                    BYOK 또는 크레딧 번역으로 전송되는 텍스트와 요청 정보에는 해당 AI 제공업체의 개인정보 처리방침이 적용됩니다. 크레딧 번역은 위 서버 처리와 임시 보관을 포함하지만, 기기의 PDF·EPUB 문서 파일 자체와 BYOK API 키는 당사 서버로 전송하거나 당사가 보관하지 않습니다.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCut 데스크톱 앱</h3>
@@ -225,13 +228,16 @@ export default function PrivacyPage() {
                     Datransは、PDFおよびEPUB文書を端末上で閲覧・翻訳するAndroidアプリです。サービス提供のため、以下のとおりデータを処理します：
                   </p>
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li><strong>文書、翻訳、注釈および翻訳チャット履歴：</strong> 原則として端末にのみ保存されます。無料のオンデバイスML Kit翻訳では、文書内容やチャット内容を当社サーバーへ送信しません。</li>
+                    <li><strong>端末上の文書と履歴：</strong> インポートしたPDF・EPUBファイル、完成した翻訳文書ファイル、注釈および翻訳チャット履歴は端末に保存されます。無料のオンデバイスML Kit翻訳では、文書内容やチャット内容を当社サーバーへ送信しません。</li>
                     <li><strong>選択したBYOK AIプロバイダー：</strong> 有料Proでユーザー自身のAPIキーとプロバイダーを選択した場合に限り、翻訳対象のテキスト断片とリクエスト情報が端末から選択したOpenAI、AnthropicまたはGoogle Geminiプロバイダーへ直接送信されます。APIキーは端末の暗号化ストレージに保管され、当社サーバーへ送信または当社が保管することはありません。</li>
-                    <li><strong>アカウント情報：</strong> Googleログインまたはメールアドレス/パスワードログインで提供されるメールアドレスおよびFirebaseユーザー識別子は、アカウント認証、サブスクリプション権限の確認およびカスタマーサポートに使用されます。</li>
-                    <li><strong>サブスクリプション検証情報：</strong> Google Playの購入トークンとサブスクリプション状態はPro権限の検証に使用されます。支払手段の情報はGoogle Playが処理し、当社は収集しません。</li>
+                    <li><strong>クレジットによる翻訳：</strong> ユーザーがクレジットで翻訳を依頼すると、テキスト断片、原文・翻訳先の言語およびリクエスト情報が、Firebase認証を行うGoogle Cloud Functions（GCF）を経由してGoogle Vertex AIのGeminiへ送信されます。原文の本文はFirestoreに保存せず、同一リクエストの確認に使用するフィンガープリント（ハッシュ）とリクエスト情報を保存します。</li>
+                    <li><strong>一時的な翻訳結果：</strong> 同じリクエストの結果を復元するため、翻訳結果をFirestoreに7日間一時保存します。保存期間を過ぎた結果は定期的なクリーンアップで削除します。</li>
+                    <li><strong>アカウント情報：</strong> Googleログインまたはメールアドレス/パスワードログインで提供されるメールアドレスおよびFirebaseユーザー識別子は、アカウント認証、サブスクリプション権限の確認、クレジットサービスおよびカスタマーサポートに使用されます。</li>
+                    <li><strong>クレジットのアカウント記録：</strong> ウォレット残高、購入検証、クレジットの付与・消費および返金の記録をユーザーアカウントに関連付けて保存します。購入確認、重複付与・重複課金の防止、利用量の精算および返金処理に使用します。</li>
+                    <li><strong>購入・サブスクリプション検証情報：</strong> Google Playの購入トークンと購入・サブスクリプション状態は、クレジット購入の確認とPro権限の検証に使用されます。支払手段の情報はGoogle Playが処理し、当社は収集しません。</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    BYOKプロバイダーを選択して翻訳を依頼する際に送信される文書テキストとリクエスト情報は、当該プロバイダーのプライバシーポリシーに従います。当社は文書全体やAPIキーを中継または保存しません。
+                    BYOKまたはクレジットによる翻訳で送信されるテキストとリクエスト情報には、該当するAIプロバイダーのプライバシーポリシーが適用されます。クレジットによる翻訳には上記のサーバー処理と一時保存が含まれますが、端末のPDF・EPUB文書ファイル自体やBYOK APIキーを当社サーバーへ送信したり、当社が保存したりすることはありません。
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCutデスクトップアプリ</h3>
@@ -357,13 +363,16 @@ export default function PrivacyPage() {
                     Datrans ist eine Android-App zum Lesen und Übersetzen von PDF- und EPUB-Dokumenten auf dem Gerät. Für die Bereitstellung des Dienstes verarbeiten wir Daten wie folgt:
                   </p>
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li><strong>Dokumente, Übersetzungen, Anmerkungen und Übersetzungs-Chatverlauf:</strong> Werden grundsätzlich nur auf Ihrem Gerät gespeichert. Die kostenlose On-Device-Übersetzung mit ML Kit sendet weder Dokumentinhalte noch Chatinhalte an unsere Server.</li>
+                    <li><strong>Dokumente und Verlauf auf dem Gerät:</strong> Importierte PDF- und EPUB-Dateien, fertiggestellte übersetzte Dokumentdateien, Anmerkungen und der Übersetzungs-Chatverlauf werden auf Ihrem Gerät gespeichert. Die kostenlose On-Device-Übersetzung mit ML Kit sendet weder Dokumentinhalte noch Chatinhalte an unsere Server.</li>
                     <li><strong>Ausgewählter BYOK-KI-Anbieter:</strong> Nur wenn Sie in Pro Ihren eigenen API-Schlüssel und Anbieter auswählen, werden zu übersetzende Textabschnitte und Anfrageinformationen direkt vom Gerät an den ausgewählten Anbieter OpenAI, Anthropic oder Google Gemini gesendet. API-Schlüssel werden im verschlüsselten Speicher des Geräts aufbewahrt und weder an unsere Server übertragen noch von uns gespeichert.</li>
-                    <li><strong>Kontoinformationen:</strong> Die über Google-Anmeldung oder E-Mail/Passwort-Anmeldung bereitgestellte E-Mail-Adresse und Firebase-Nutzerkennung werden für Kontoauthentifizierung, Prüfung der Abonnementberechtigung und Kundensupport verwendet.</li>
-                    <li><strong>Informationen zur Abonnementprüfung:</strong> Google-Play-Kauftoken und Abonnementstatus werden zur Prüfung der Pro-Berechtigung verwendet. Zahlungsdaten werden von Google Play verarbeitet und nicht von uns erhoben.</li>
+                    <li><strong>Übersetzung mit Credits:</strong> Wenn Sie eine Übersetzung mit Credits anfordern, werden Textabschnitte, Ausgangs- und Zielsprache sowie Anfrageinformationen über Google Cloud Functions (GCF) mit Firebase-Authentifizierung an Gemini in Google Vertex AI gesendet. Der Ausgangstext wird nicht in Firestore gespeichert. Wir speichern einen Fingerabdruck (Hash) und Anfrageinformationen, um dieselbe Anfrage wiederzuerkennen.</li>
+                    <li><strong>Temporäre Übersetzungsergebnisse:</strong> Übersetzungsergebnisse werden zur Wiederherstellung derselben Anfrage für 7 Tage in Firestore zwischengespeichert. Ergebnisse mit abgelaufener Aufbewahrungsfrist werden bei der regelmäßigen Bereinigung gelöscht.</li>
+                    <li><strong>Kontoinformationen:</strong> Die über Google-Anmeldung oder E-Mail/Passwort-Anmeldung bereitgestellte E-Mail-Adresse und Firebase-Nutzerkennung werden für Kontoauthentifizierung, Prüfung der Abonnementberechtigung, den Credit-Dienst und Kundensupport verwendet.</li>
+                    <li><strong>Kontobezogene Credit-Daten:</strong> Guthaben sowie Aufzeichnungen zur Kaufprüfung, Gutschrift, Abbuchung und Erstattung von Credits werden Ihrem Nutzerkonto zugeordnet gespeichert. Sie dienen der Kaufbestätigung, der Vermeidung doppelter Gutschriften und Abbuchungen, der Nutzungsabrechnung und der Bearbeitung von Erstattungen.</li>
+                    <li><strong>Informationen zur Kauf- und Abonnementprüfung:</strong> Google-Play-Kauftoken sowie Kauf- und Abonnementstatus werden zur Bestätigung von Credit-Käufen und zur Prüfung der Pro-Berechtigung verwendet. Zahlungsdaten werden von Google Play verarbeitet und nicht von uns erhoben.</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Dokumenttext und Anfrageinformationen, die bei Auswahl eines BYOK-Anbieters zur Übersetzung gesendet werden, unterliegen dessen Datenschutzerklärung. Wir leiten weder vollständige Dokumente noch API-Schlüssel weiter und speichern sie nicht.
+                    Für Text und Anfrageinformationen, die bei BYOK- oder Credit-Übersetzungen gesendet werden, gilt die Datenschutzerklärung des jeweiligen KI-Anbieters. Credit-Übersetzungen umfassen die oben beschriebene Serververarbeitung und Zwischenspeicherung. Die PDF- und EPUB-Dokumentdateien selbst sowie die BYOK-API-Schlüssel Ihres Geräts werden jedoch weder an unsere Server übertragen noch von uns gespeichert.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCut Desktop-App</h3>
@@ -489,13 +498,16 @@ export default function PrivacyPage() {
                     Datrans is an Android app for reading and translating PDF and EPUB documents on your device. We process data for the service as follows:
                   </p>
                   <ul className="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
-                    <li><strong>Documents, translations, annotations and translation-chat history:</strong> These are stored on your device by default. Free, on-device ML Kit translation does not send document or chat content to our servers.</li>
+                    <li><strong>Documents and history on your device:</strong> Imported PDF and EPUB files, completed translated document files, annotations and translation-chat history are stored on your device. Free, on-device ML Kit translation does not send document or chat content to our servers.</li>
                     <li><strong>Your selected BYOK AI provider:</strong> Only when you choose your own API key and provider in paid Pro do the text segments to translate and request information go directly from your device to your selected OpenAI, Anthropic or Google Gemini provider. API keys remain in encrypted device storage; they are neither sent to nor stored by our servers.</li>
-                    <li><strong>Account information:</strong> The email address and Firebase user identifier supplied through Google sign-in or email/password sign-in are used for account authentication, subscription-entitlement checks and customer support.</li>
-                    <li><strong>Subscription-verification information:</strong> Google Play purchase tokens and subscription status are used to verify Pro access. Google Play processes payment-method information; we do not collect it.</li>
+                    <li><strong>Translation using credits:</strong> When you request a translation using credits, text segments, source and target languages, and request information are sent through Google Cloud Functions (GCF) with Firebase authentication to Gemini on Google Vertex AI. We do not store the source text in Firestore. We store a fingerprint (hash) and request information to recognize the same request.</li>
+                    <li><strong>Temporary translation results:</strong> Translation results are temporarily stored in Firestore for 7 days to recover the result of the same request. Results past their retention period are deleted by a scheduled cleanup process.</li>
+                    <li><strong>Account information:</strong> The email address and Firebase user identifier supplied through Google sign-in or email/password sign-in are used for account authentication, subscription-entitlement checks, the credit service and customer support.</li>
+                    <li><strong>Credit account records:</strong> Wallet balances and records of purchase verification, credit grants, charges and refunds are stored in association with your account. They are used to verify purchases, prevent duplicate grants and charges, settle usage, and process refunds.</li>
+                    <li><strong>Purchase and subscription verification:</strong> Google Play purchase tokens and purchase/subscription status are used to verify credit purchases and Pro access. Google Play processes payment-method information; we do not collect it.</li>
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Document text and request information sent when you choose a BYOK provider are subject to that provider&apos;s privacy policy. We do not relay or store entire documents or API keys.
+                    Text and request information sent for BYOK or credit translations are subject to the applicable AI provider&apos;s privacy policy. Credit translations involve the server processing and temporary storage described above. The PDF and EPUB document files themselves and your device&apos;s BYOK API keys are not sent to or stored by our servers.
                   </p>
 
                   <h3 className="text-xl font-semibold mt-6 mb-3 text-gray-900 dark:text-white">2-2. AutoFlowCut Desktop App</h3>
