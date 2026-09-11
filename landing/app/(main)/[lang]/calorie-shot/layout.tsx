@@ -35,10 +35,13 @@ export function generateMetadata({ params }: Props): Metadata {
       title: titles[lang],
       description: descriptions[lang],
       url: `${baseUrl}/${lang}/calorie-shot`,
+      // ⛔ 선언한 크기가 실제 파일과 같아야 한다 — 다르면 크롤러가 잘못 잡는다.
+      //    카드는 `scripts/og-calorie-shot.py` 가 1200×630(1.91:1)으로 만든다.
       images: [{
         url: ogImages[lang],
-        width: 1280,
-        height: 800,
+        width: 1200,
+        height: 630,
+        alt: titles[lang],
       }],
     },
     twitter: {
