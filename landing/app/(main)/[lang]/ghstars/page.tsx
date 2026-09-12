@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Language, languages } from '@/lib/i18n';
 import { readCache, writeCache, type CacheStorage } from '@/lib/ghstars/cache';
+import { SUMMARY_TTL_MS } from '@/lib/ghstars/freshness';
 import {
   classifyError,
   parseSearchResponse,
@@ -25,12 +26,15 @@ import { strings } from './strings';
 
 // Read straight from the raw CDN rather than from this site's own build output.
 // The collector commits a snapshot daily; going to the source means that commit
-// is live within a five-minute cache without redeploying the site at all.
+// is live within that CDN's own cache without redeploying the site at all.
 const SUMMARY_URL =
   'https://raw.githubusercontent.com/touchizen/touchizen.github.io/main/data/summary.json';
 
+// Stays here, and stays short: this one guards the GitHub *search* API, which
+// allows ten requests a minute per visitor IP and answers with live star counts.
+// It has nothing to do with the snapshot's cadence, which is why the summary TTL
+// lives in `lib/ghstars/freshness.ts` next to the test that ties it to the cron.
 const SEARCH_TTL_MS = 10 * 60 * 1000;
-const SUMMARY_TTL_MS = 5 * 60 * 1000;
 
 const PERIOD_OPTIONS = [1, 3, 6, 12];
 const STAR_OPTIONS = [1000, 5000, 10000, 50000];
