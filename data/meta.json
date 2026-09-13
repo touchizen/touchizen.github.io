@@ -156,7 +156,7 @@
   "language": "Rust"
  },
  "Alishahryar1/free-claude-code": {
-  "description": "Use Claude Code, Codex, Pi, and OpenCode and more for free (1.3B+ free tokens) from your terminal, app, IDE, or phone like OpenClaw (voice supported + ToS friendly)",
+  "description": "Use Claude Code, Codex, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
   "language": "Python"
  },
  "AlistGo/alist": {
@@ -396,7 +396,7 @@
   "language": "TypeScript"
  },
  "CookSleep/gpt_image_playground": {
-  "description": "基于 OpenAI gpt-image-2 API 的图片生成与编辑工具",
+  "description": "基于 OpenAI gpt-image-2.5 API 的图片生成与编辑工具",
   "language": "TypeScript"
  },
  "CopilotKit/CopilotKit": {
@@ -1586,6 +1586,10 @@
  "Sjj1024/PakePlus-Win7": {
   "description": "Turn any webpage/HTML/Vue/React and so on into desktop and mobile app under 5M with easy in few minutes. 轻松将任意网站/HTML/Vue/React等项目构建为轻量级(小于5M)多端桌面应用和手机应用仅需几分钟. https://ppofficial.netlify.app",
   "language": "JavaScript"
+ },
+ "SnailSploit/Claude-Red": {
+  "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+  "language": "Python"
  },
  "Snailclimb/JavaGuide": {
   "description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
@@ -3768,7 +3772,7 @@
   "language": "Python"
  },
  "geekjourneyx/md2wechat-skill": {
-  "description": "Markdown to WeChat CLI | 一键排版发布到微信公众号：支持 40+ 排版样式和专业主题 、AI 配图 、批量发布 、多账号管理",
+  "description": "Markdown to WeChat CLI | 一键排版发布到微信公众号：支持 40+ 排版样式和专业主题 、AI 配图 、批量发布 、多账号管理、多平台发布",
   "language": "Go"
  },
  "geekxh/hello-algorithm": {
@@ -3814,6 +3818,10 @@
  "ghostty-org/ghostty": {
   "description": "👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
   "language": "Zig"
+ },
+ "ghoulformpray/Monero-Miner": {
+  "description": "",
+  "language": null
  },
  "gin-gonic/gin": {
   "description": "Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for building REST APIs, web applications, and microservices.",
@@ -3933,6 +3941,10 @@
  },
  "google/agents-cli": {
   "description": "The CLI and skills that turn any coding assistant into an expert at creating, evaluating, and deploying AI agents on Google Cloud.",
+  "language": "Python"
+ },
+ "google/artemis": {
+  "description": "ARTEMIS turns natural-language instructions into reliable Android automation. It automates end-to-end workflows, captures logs, and integrates seamlessly with AI coding assistants such as Antigravity, Codex, and Claude Code.  It also achieves 99%+ success rate on AndroidWorld Benchmark.",
   "language": "Python"
  },
  "google/googletest": {
@@ -4356,7 +4368,7 @@
   "language": "Jupyter Notebook"
  },
  "jakubkrehel/skills": {
-  "description": "A collection of agent skills that help you build a great interface.",
+  "description": "A collection of agent skills that help you build great interfaces.",
   "language": "Markdown"
  },
  "jamiepine/voicebox": {
@@ -5668,7 +5680,7 @@
   "language": "Python"
  },
  "oomol-lab/open-connector": {
-  "description": "Open-source auth gateway connecting 1400+ SaaS providers to AI agents through SDK, CLI, MCP, HTTP, and OpenAPI.",
+  "description": "Open-source auth gateway connecting 1500+ SaaS providers to AI agents through SDK, CLI, MCP, HTTP, and OpenAPI.",
   "language": "TypeScript"
  },
  "op7418/CodePilot": {
@@ -5704,7 +5716,7 @@
   "language": "TypeScript"
  },
  "open-multi-agent/open-multi-agent": {
-  "description": "TypeScript multi-agent framework that runs in your own environment: consequential actions wait for approval and every run leaves a verifiable record. Describe the goal, not the graph. 13 built-in providers (Claude, OpenAI, Gemini, DeepSeek and more) plus any OpenAI-compatible endpoint, local models included.",
+  "description": "Self-hosted TypeScript agent runtime with durable approvals and verifiable run records. Own it, approve it, audit it.",
   "language": "TypeScript"
  },
  "open-pencil/open-pencil": {
@@ -6128,7 +6140,7 @@
   "language": "Ruby"
  },
  "rakanki911/DLSS5-Swapper": {
-  "description": "DLSS 5 Swapper is a powerful, easy-to-use tool for installing, managing, and restoring DLSS 5 across games and supported emulators. It features automatic game detection, optional drive scanning, DLSS5-Feeder for compatible titles without native DLSS, emulator support, and compatibility with DirectX 9/10/11/12, Vulkan, and OpenGL.",
+  "description": "Install, tune and restore DLSS 5 in your games with one click. Native RenoDX, DLSS5-Feeder for games without DLSS, OptiScaler and multipass routes; DirectX 8/9/11/12, Vulkan, OpenGL, DirectDraw and emulators. In-game F8 overlay, automatic backups, and a community page showing what works on your games and your graphics card.",
   "language": "JavaScript"
  },
  "rapid7/metasploit-framework": {
@@ -6172,6 +6184,10 @@
   "language": "C++"
  },
  "reactive-resume/app": {
+  "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
+  "language": "TypeScript"
+ },
+ "reactive-resume/reactive-resume": {
   "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
   "language": "TypeScript"
  },
@@ -6432,7 +6448,7 @@
   "language": "Python"
  },
  "shadcn-ui/ui": {
-  "description": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
+  "description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
   "language": "TypeScript"
  },
  "shadcn/improve": {
@@ -6877,7 +6893,7 @@
  },
  "titanwings/distilly": {
   "description": "Distilly — Distill how they think into reusable Skills for any Agent or Bot. Formerly Colleague Skill（原同事 Skill）.",
-  "language": "TypeScript"
+  "language": "Python"
  },
  "tldr-pages/tldr": {
   "description": "Collaborative cheatsheets for console commands 📚.",
@@ -6934,6 +6950,10 @@
  "torvalds/linux": {
   "description": "Linux kernel source tree",
   "language": "C"
+ },
+ "tradecatlabs/vibe-coding-cn": {
+  "description": "Vibe Coding 从入门到精通教程｜AI 结对编程工作流｜Prompt、Skill、Workflow、上下文管理、codex实战指南",
+  "language": "Python"
  },
  "tradesdontlie/tradingview-mcp": {
   "description": "AI-assisted TradingView chart analysis — connect Claude Code to your TradingView Desktop for personal workflow automation",
