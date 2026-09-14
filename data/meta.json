@@ -120,7 +120,7 @@
   "language": "TypeScript"
  },
  "Agents365-ai/drawio-skill": {
-  "description": "Agent skill that turns natural language, code, Terraform/K8s, SQL, OpenAPI, AsyncAPI and Protobuf sources into editable, tested draw.io architecture diagrams: incremental sync, multi-view projection, drift diff, CI architecture tests, whiteboard derasterize, interactive HTML/PPTX/Mermaid exports.",
+  "description": "Agent skill that turns natural language, code, Terraform/K8s, SQL, OpenAPI, AsyncAPI, Protobuf and GraphQL sources into editable, tested draw.io architecture diagrams: incremental sync, multi-view projection, drift diff, CI architecture tests, whiteboard derasterize, interactive HTML/PPTX/Mermaid exports.",
   "language": "Python"
  },
  "AgnesAI-Labs/AgnesAI-Models": {
@@ -166,6 +166,10 @@
  "AnInsomniacy/motrix-next": {
   "description": "A full-featured download manager — rebuilt from the ground up",
   "language": "TypeScript"
+ },
+ "Anakin-Inc/anakin": {
+  "description": "Open-source web scraping API. Turn any website into clean markdown or structured JSON. Anti-detect browser, proxy auto-selection, self-hosted. One command: make up",
+  "language": "Go"
  },
  "Anduin2017/HowToCook": {
   "description": "Programmer's guide about how to cook at home.",
@@ -855,6 +859,10 @@
   "description": "Qiushi-Skill: Build agents that investigate first, focus on the main contradiction, validate in practice, and keep pushing until the work is actually done. 求是Skill——从经典唯物辩证法与实践哲学中提炼出一条总原则和九大方法论工具武装AI大脑。",
   "language": "JavaScript"
  },
+ "Hypostasis-Cat/HypoMux": {
+  "description": "CN Windows 多网卡聚合与网络加速工具。一键融合有线、Wi-Fi、热点等连接，实现多路径传输与智能流量调度。 EN Windows multi-NIC network accelerator. Combine Ethernet, Wi-Fi, hotspots and more for multi-path transmission and smart traffic routing.",
+  "language": "Go"
+ },
  "IAmTomShaw/f1-race-replay": {
   "description": "An interactive Formula 1 race visualisation and data analysis tool built with Python! 🏎️",
   "language": "Python"
@@ -1329,7 +1337,7 @@
  },
  "OthmanAdi/planning-with-files": {
   "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-  "language": "Python"
+  "language": "Shell"
  },
  "PDFCraftTool/pdfcraft": {
   "description": "PDFCraft is a free, privacy-focused PDF toolkit that runs entirely in your browser. With 90+ professional tools, you can edit, convert, merge, split, and secure your PDF files without ever uploading them to a server.",
@@ -3027,6 +3035,10 @@
   "description": "Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.",
   "language": "Rust"
  },
+ "crmne/spotifast": {
+  "description": "Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.",
+  "language": "Rust"
+ },
  "crosspoint-reader/crosspoint-reader": {
   "description": "Open-source e-reader firmware",
   "language": "C"
@@ -3711,6 +3723,10 @@
   "description": "翻墙、免费翻墙、免费科学上网、免费节点、免费梯子、免费ss/v2ray/trojan节点、蓝灯、谷歌商店、翻墙梯子",
   "language": null
  },
+ "freestylefly/CodexGuide": {
+  "description": "CodexGuide：面向全球初学者、创作者、开发者与团队的 Codex 实践指南",
+  "language": "TypeScript"
+ },
  "freestylefly/awesome-gpt-image-2": {
   "description": "Prompt as Code | GPT Image 2 / 2.5 提示词与案例库，530+ 个案例、20+ 套工业级模板与可复用 Skills，新增 2.5 同提示词对比专区，附完整提示词与生成记录，持续更新。",
   "language": "JavaScript"
@@ -3784,7 +3800,7 @@
   "language": "Python"
  },
  "genspark-ai/genoffice": {
-  "description": "Free, open-source AI Office suite: Docs, Sheets, Slides, PDF, Markdown and HTML editors with a built-in AI agent. Edits real .docx/.xlsx/.pptx files, converts PDF to Word on-device, bring your own key. macOS, Windows & Linux.",
+  "description": "Free, open-source AI Office suite: Docs, Sheets, Slides, PDF, Markdown and HTML editors with a built-in AI agent, plus a `genoffice` CLI and agent skill so Claude Code, Codex and Cursor can create and edit real .docx/.xlsx/.pptx files locally. Bring your own key. macOS, Windows & Linux.",
   "language": "TypeScript"
  },
  "get-bb/bb": {
@@ -5863,6 +5879,10 @@
   "description": "Truly universal online file converter",
   "language": "TypeScript"
  },
+ "pacifio/atlas": {
+  "description": "Source control for agents. Use multiple coding agents, track their changes and query them in one place",
+  "language": "Rust"
+ },
  "pageman/sutskever-30-implementations": {
   "description": "Sutskever 30 implementations inspired by https://papercode.vercel.app/ | For Agents, use https://github.com/pageman/Sutskever-Agent | Polyglot / Multi-Backed version at https://github.com/pageman/sutskever-30-beyond-numpy",
   "language": "Jupyter Notebook"
@@ -6508,7 +6528,7 @@
   "language": "TypeScript"
  },
  "shy3130/tick-stock-panel": {
-  "description": "TSP自托管、零运维的 A 股「选股 + 监控 + 回测」量化工作台  | LLM能力驱使策略定制+个股分析+复盘 | 自由接入第三方数据源与个性化扩展数据 | 个人开源 ,非第三方官方项目",
+  "description": "TSP自托管、零运维的 A 股「选股 + 监控 + 回测」量化工作台  | LLM能力驱使策略定制+个股分析+复盘 | 自由接入第三方数据源与个性化扩展数据 | 个人开源",
   "language": "Python"
  },
  "sickcodes/Docker-OSX": {
@@ -7432,7 +7452,7 @@
   "language": "JavaScript"
  },
  "wshobson/agents": {
-  "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, and Google Antigravity",
+  "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi",
   "language": "Python"
  },
  "wuyoscar/GPT-Image2-Skill": {
@@ -7579,6 +7599,10 @@
   "description": "🚀 Transparent proxy injector for Antigravity. Force SOCKS5/HTTP proxy without TUN mode on Windows. | 专为 Antigravity 打造的免 TUN 强制代理工具，支持 DLL 注入与进程流量劫持。",
   "language": "C++"
  },
+ "yuliskov/SmartTube": {
+  "description": "Browse media content with your own rules on Android TV",
+  "language": "Java"
+ },
  "yusufkaraaslan/Skill_Seekers": {
   "description": "Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with automatic conflict detection",
   "language": "Python"
@@ -7656,7 +7680,7 @@
   "language": "JavaScript"
  },
  "zenstory-ai/oh-story-claudecode": {
-  "description": "网文/小说写作 skill 包，覆盖长篇与短篇网络小说的扫榜、拆文、写作、去AI味、封面图全流程 | An all-in-one skill pack for long- and short-form web fiction.",
+  "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
   "language": "JavaScript"
  },
  "zeroclaw-labs/zeroclaw": {
