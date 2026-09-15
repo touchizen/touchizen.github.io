@@ -46,6 +46,20 @@ export const products: Product[] = [
     icon: '📸',
     hasDetailPage: true,
   },
+  {
+    id: 'mathshorts',
+    nameKey: 'mathshorts_name',
+    sloganKey: 'mathshorts_slogan',
+    descKey: 'mathshorts_desc',
+    features: ['mathshorts_feature1', 'mathshorts_feature2', 'mathshorts_feature3'],
+    ctaKey: 'mathshorts_cta',
+    link: '/mathshorts/',
+    isExternal: false,
+    gradient: 'from-violet-500 to-indigo-600',
+    icon: '📐',
+    iconImage: '/images/mathshorts/icon.png',
+    hasDetailPage: true,
+  },
   // Free developer tools
   {
     id: 'ghstars',

@@ -766,6 +766,13 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   calorieshot_feature2: '毎日の摂取記録管理',
   calorieshot_feature3: 'カスタムTDEE目標設定',
   calorieshot_cta: '詳しく見る',
+  mathshorts_name: 'マスショーツ',
+  mathshorts_slogan: '数式が動く動画',
+  mathshorts_desc: '数学の問題を撮影するか数式を入力すると、手順の解説とともに短い縦型動画をつくります。',
+  mathshorts_feature1: '写真1枚から手順つきの解説',
+  mathshorts_feature2: '数式が描かれていくグラフ動画',
+  mathshorts_feature3: '球と螺旋は3次元で',
+  mathshorts_cta: '詳しく見る',
 
   // GitHub スタートラッカー
   ghstars_name: 'GitHub スタートラッカー',

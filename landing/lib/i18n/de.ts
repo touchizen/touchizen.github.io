@@ -766,6 +766,13 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   calorieshot_feature2: 'Tägliche Aufnahme-Verfolgung',
   calorieshot_feature3: 'Personalisierte TDEE-Ziele',
   calorieshot_cta: 'Mehr erfahren',
+  mathshorts_name: 'MathShorts',
+  mathshorts_slogan: 'Formeln, die sich bewegen',
+  mathshorts_desc: 'Fotografieren Sie eine Matheaufgabe oder tippen Sie eine Formel — Sie erhalten den Lösungsweg als kurzes Hochkant-Video.',
+  mathshorts_feature1: 'Lösungsweg Schritt für Schritt aus einem Foto',
+  mathshorts_feature2: 'Formeln, die beim Zeichnen animiert werden',
+  mathshorts_feature3: 'Kugeln und Helices in 3D',
+  mathshorts_cta: 'Mehr erfahren',
 
   // GitHub-Star-Tracker
   ghstars_name: 'GitHub-Star-Tracker',

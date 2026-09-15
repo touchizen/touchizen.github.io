@@ -766,6 +766,13 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   calorieshot_feature2: '일일 섭취 기록 관리',
   calorieshot_feature3: '맞춤 TDEE 목표 설정',
   calorieshot_cta: '자세히 보기',
+  mathshorts_name: '매쓰쇼츠',
+  mathshorts_slogan: '수식이 움직이는 영상',
+  mathshorts_desc: '수학 문제를 사진으로 찍거나 수식을 입력하면, 단계별 풀이와 함께 짧은 세로 영상을 만들어 줍니다.',
+  mathshorts_feature1: '사진 한 장으로 단계별 풀이',
+  mathshorts_feature2: '공식이 자라나는 그래프 영상',
+  mathshorts_feature3: '구와 나선은 3차원으로',
+  mathshorts_cta: '자세히 보기',
 
   // GitHub 스타 트래커
   ghstars_name: 'GitHub 스타 트래커',

@@ -766,6 +766,13 @@ The young prince practices sword fighting in the courtyard`,
   calorieshot_feature2: 'Daily Intake Tracking',
   calorieshot_feature3: 'Personalized TDEE Goals',
   calorieshot_cta: 'Learn More',
+  mathshorts_name: 'MathShorts',
+  mathshorts_slogan: 'Formulas that move',
+  mathshorts_desc: 'Photograph a maths problem or type a formula, and get the working step by step as a short vertical video.',
+  mathshorts_feature1: 'Step-by-step solutions from a photo',
+  mathshorts_feature2: 'Formulas animated as they are drawn',
+  mathshorts_feature3: 'Spheres and helices in 3D',
+  mathshorts_cta: 'Learn more',
 
   // GitHub Star Tracker
   ghstars_name: 'GitHub Star Tracker',
