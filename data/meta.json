@@ -436,7 +436,7 @@
   "language": null
  },
  "D4Vinci/Scrapling": {
-  "description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!",
+  "description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ",
   "language": "Python"
  },
  "DIYgod/RSSHub": {
@@ -912,7 +912,7 @@
   "language": "Python"
  },
  "JimLiu/baoyu-design": {
-  "description": "Run Claude Design locally as an Agent Skill — Cursor, Claude Code & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus 4.8.",
+  "description": "Run Claude Design locally as an Agent Skill — Cursor, Claude Code & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus or Claude.",
   "language": "JavaScript"
  },
  "JimLiu/baoyu-skills": {
@@ -928,7 +928,7 @@
   "language": "Julia"
  },
  "JuliusBrussee/caveman": {
-  "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
+  "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
   "language": "Go"
  },
  "JustVugg/colibri": {
@@ -1836,7 +1836,7 @@
   "language": null
  },
  "WUBING2023/PaperSpine": {
-  "description": "PaperSpine is a motivation-driven skill for learning from strong academic papers, building a paper’s central argument, and rewriting manuscripts through evidence-aware blueprints, revision matrices, and LaTeX-safe audits.",
+  "description": "PaperSpine5 — local-first, evidence-bound paper research, writing, figures, review and delivery. Download: https://wubing2023.github.io/PaperSpine/v5/",
   "language": "Python"
  },
  "Waishnav/devspace": {
@@ -1975,6 +1975,10 @@
   "description": "Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)",
   "language": "Python"
  },
+ "abue-ammar/tinycast": {
+  "description": "Tinycast — a tiny, fully native macOS launcher, hotkeys, and clipboard history.",
+  "language": "Swift"
+ },
  "accomplish-ai/coworker": {
   "description": "",
   "language": null
@@ -2029,7 +2033,7 @@
  },
  "agentscope-ai/QwenPaw": {
   "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
-  "language": "Python"
+  "language": "TypeScript"
  },
  "agentscope-ai/agentscope-java": {
   "description": "Build distributed, production-grade, long-running agents.",
@@ -2249,7 +2253,7 @@
  },
  "anthropics/claude-code": {
   "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
-  "language": "Python"
+  "language": "TypeScript"
  },
  "anthropics/claude-cookbooks": {
   "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
@@ -2739,6 +2743,10 @@
   "description": "An image loading and caching library for Android focused on smooth scrolling",
   "language": "Java"
  },
+ "butterbase-ai/butterbase": {
+  "description": "Open-source backend-as-a-service. Postgres, auth, storage, functions, AI gateway, MCP.",
+  "language": "TypeScript"
+ },
  "bwya77/vscode-dark-islands": {
   "description": "VSCode theme based off the easemate IDE and Jetbrains islands theme",
   "language": "Shell"
@@ -2938,6 +2946,10 @@
  "cloudflare/moltworker": {
   "description": "Run OpenClaw, (formerly Moltbot, formerly Clawdbot) on Cloudflare Workers",
   "language": "TypeScript"
+ },
+ "cloudflare/security-audit-skill": {
+  "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+  "language": "JavaScript"
  },
  "cloudflare/vinext": {
   "description": "Vite plugin that reimplements the Next.js API surface — deploy anywhere",
@@ -3629,7 +3641,7 @@
  },
  "fengshao1227/ccg-workflow": {
   "description": "多模型协作工作流引擎 — /ccg:go 一个命令，AI 自动分析意图、选择策略、编排 Codex + Gemini + Claude 协作执行",
-  "language": "Go"
+  "language": "TypeScript"
  },
  "fffaraz/awesome-cpp": {
   "description": "A curated list of awesome C++ (or C) frameworks, libraries, resources, and shiny things. Inspired by awesome-... stuff.",
@@ -4208,7 +4220,7 @@
   "language": "Python"
  },
  "huggingface/ml-intern": {
-  "description": "🤗 ml-intern: an open-source ML engineer that reads papers, trains models, and ships ML models",
+  "description": "Archived — ML Intern is no longer maintained. Continue with HuggingChat.",
   "language": "Python"
  },
  "huggingface/pytorch-image-models": {
@@ -4694,6 +4706,10 @@
  "kunchenguid/gnhf": {
   "description": "Before I go to bed, I tell my agents: good night, have fun",
   "language": "TypeScript"
+ },
+ "kunchenguid/lavish-axi": {
+  "description": "HTML is the new markdown. Lavish is the new editor for your HTML artifacts.",
+  "language": "JavaScript"
  },
  "kunchenguid/no-mistakes": {
   "description": "git push no-mistakes",
@@ -5620,7 +5636,7 @@
   "language": "Python"
  },
  "nvm-sh/nvm": {
-  "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions. $nvm: 3ArcxqLtXMmBnWbbtfwQgVL3MNnDsggzgGDtXMnjpump",
+  "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
   "language": "Shell"
  },
  "nvm-windows/nvm": {
@@ -5672,7 +5688,7 @@
   "language": "Shell"
  },
  "ollama/ollama": {
-  "description": "Get up and running with Kimi-K2.6, GLM-5.2, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+  "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
   "language": "Go"
  },
  "omacom/omarchy": {
@@ -5967,6 +5983,10 @@
   "description": "Pear 🍐 is extension for music player",
   "language": "TypeScript"
  },
+ "peetzweg/opendisplay": {
+  "description": "Free, open-source Sidecar/Duet alternative — use your iPhone or iPad as a true second monitor for your Mac over USB or WiFi. Low latency H.264, Retina HiDPI, touch input.",
+  "language": "Swift"
+ },
  "penpot/penpot": {
   "description": "Penpot: The open-source design platform for Product teams that need scalable collaboration.",
   "language": "Clojure"
@@ -6237,7 +6257,7 @@
  },
  "remorses/playwriter": {
   "description": "Chrome extension & CLI to let agents control your browser. Runs Playwright snippets in a stateful sandbox. Available as CLI or MCP",
-  "language": "HTML"
+  "language": "TypeScript"
  },
  "remoteintech/remote-jobs": {
   "description": "Source for remoteintech.company — a community-maintained directory of remote-friendly tech companies",
@@ -7100,7 +7120,7 @@
   "language": "TypeScript"
  },
  "ultralytics/ultralytics": {
-  "description": "Ultralytics YOLO26, YOLO11, YOLOv8 — object detection, instance segmentation, semantic segmentation, image classification, pose estimation, object tracking",
+  "description": "Ultralytics YOLO27, YOLO26, YOLO11, YOLOv8 — object detection, instance segmentation, semantic segmentation, image classification, pose estimation, object tracking",
   "language": "Python"
  },
  "ultralytics/yolov5": {
@@ -7301,7 +7321,7 @@
  },
  "vinvcn/mattpocock-skills-zh-CN": {
   "description": "这是 mattpocock/skills 的简体中文本地化版本。",
-  "language": "Shell"
+  "language": "JavaScript"
  },
  "virattt/ai-hedge-fund": {
   "description": "An AI Hedge Fund Team",
