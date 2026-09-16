@@ -164,7 +164,7 @@
   "language": "Go"
  },
  "AnInsomniacy/motrix-next": {
-  "description": "A full-featured download manager — rebuilt from the ground up",
+  "description": "A pure, versatile open source download manager",
   "language": "TypeScript"
  },
  "Anakin-Inc/anakin": {
@@ -903,6 +903,10 @@
   "description": "The automatic work journal/time tracker. Privately turns your screen into a timeline of what you actually accomplished. Open-source and local-first.",
   "language": "Swift"
  },
+ "JetBrains/go-modern-guidelines": {
+  "description": "Help AI coding agents write modern Go",
+  "language": "Go"
+ },
  "JetBrains/kotlin": {
   "description": "The Kotlin Programming Language. ",
   "language": "Kotlin"
@@ -1625,7 +1629,7 @@
  },
  "Stirling-Tools/Stirling-PDF": {
   "description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
-  "language": "Java"
+  "language": "TypeScript"
  },
  "SuanmoSuanyangTechnology/MemoryBear": {
   "description": "MemoryBear Equip AI with human-like memory capability",
@@ -1648,7 +1652,7 @@
   "language": "Swift"
  },
  "TabularisDB/tabularis": {
-  "description": "Open-source desktop SQL workspace for PostgreSQL, MySQL/MariaDB, SQLite and 15+ more databases like DuckDB, ClickHouse, Redis and Firestore. Built-in MCP server for Claude, Cursor and Devin, SQL notebooks and visual EXPLAIN.",
+  "description": "Open-source desktop SQL workspace with 3 built-in database drivers and 16 shipped plugins, including SQL Server, DuckDB, ClickHouse and Redis. Built-in MCP server for Claude, Cursor and Devin, SQL notebooks and visual EXPLAIN.",
   "language": "TypeScript"
  },
  "TanStack/query": {
@@ -2171,6 +2175,10 @@
   "description": "reverse engineering Gemini's SynthID detection",
   "language": "Python"
  },
+ "alphaXiv/OpenResearch": {
+  "description": "Turn your coding agents into research agents",
+  "language": "Rust"
+ },
  "altic-dev/FluidVoice": {
   "description": "Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model. Windows pre-build available! A local Wispr Flow alternative. DM us on X exclusive model access! 😉 - https://x.com/fluidvoiceapp",
   "language": "Swift"
@@ -2373,7 +2381,7 @@
  },
  "appwrite/appwrite": {
   "description": "Appwrite® - complete cloud infrastructure for your web, mobile and AI apps. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime and more",
-  "language": "TypeScript"
+  "language": "PHP"
  },
  "aquasecurity/trivy": {
   "description": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more",
@@ -2474,6 +2482,10 @@
  "averygan/reclip": {
   "description": "Download videos from almost any website. Lightweight, self-hosted media downloader with a clean web UI.",
   "language": "HTML"
+ },
+ "awarexone/Agentic-Bug-Hunter": {
+  "description": "AI-powered bug bounty hunting toolkit that works with or without subscription.",
+  "language": "Python"
  },
  "awesome-dsh-plugin/awesome-dsh-plugin": {
   "description": "A curated list of plugins for DeepSeek Harness (dsh) · DeepSeek Harness 插件精选列表",
@@ -2653,6 +2665,10 @@
  },
  "bojieli/ai-agent-book": {
   "description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
+  "language": "Python"
+ },
+ "bojieli/ai-infra-book": {
+  "description": "《深入理解 AI Infra：量化分析与系统设计》（李博杰 著）开源书稿：从硬件约束和模型架构出发，量化推导 LLM 推理与训练系统设计。含全书正文、PDF、配套计算工具与实验",
   "language": "Python"
  },
  "bol-van/zapret2": {
@@ -3394,6 +3410,10 @@
  "duoan/TorchCode": {
   "description": "🔥 LeetCode for PyTorch — practice implementing softmax, attention, GPT-2 and more from scratch with instant auto-grading. Jupyter-based, self-hosted or try online.",
   "language": "Jupyter Notebook"
+ },
+ "duolahypercho/codex-router": {
+  "description": "External-model router for Codex with guided Kimi OAuth/API, DeepSeek, safe migration, and rollback.",
+  "language": "JavaScript"
  },
  "dwzhu-pku/PaperBanana": {
   "description": "PaperBanana: Automating Academic Illustration For AI Scientists",
@@ -4259,6 +4279,10 @@
   "description": "a list of domains and ips that stay live in russia when the mobile internet gets restricted",
   "language": null
  },
+ "hypit-ai/hypit": {
+  "description": "Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get your 100M views.",
+  "language": "TypeScript"
+ },
  "hyprwm/Hyprland": {
   "description": "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
   "language": "C++"
@@ -4289,7 +4313,7 @@
  },
  "iflytek/astron-rpa": {
   "description": "Agent-ready RPA suite with out-of-the-box automation tools. Built for individuals and enterprises.",
-  "language": "Java"
+  "language": "Python"
  },
  "iflytek/skillhub": {
   "description": "Self-hosted, open-source agent skill registry for enterprises. Publish & version skill packages, govern with RBAC and audit logs, deploy   on-premise with Docker or Kubernetes.",
@@ -4584,7 +4608,7 @@
   "language": null
  },
  "kaifcodec/user-scanner": {
-  "description": "🕵️‍♂️ (2-in-1) Email & Username OSINT suite featuring native MCP support for deep data extraction just from a single Email/Username. Analyzes 550+ actively maintained scan vectors (175+ email / 375+ username) for security research, investigations, and digital footprinting.",
+  "description": "🕵️‍♂️ (2-in-1) Email & Username OSINT suite featuring native MCP support for deep data extraction just from a single Email/Username. Analyzes 715+ actively maintained scan vectors (185+ email / 530+ username) for security research, investigations, and digital footprinting.",
   "language": "Python"
  },
  "kangarooking/cangjie-skill": {
@@ -5984,7 +6008,7 @@
   "language": "TypeScript"
  },
  "peetzweg/opendisplay": {
-  "description": "Free, open-source Sidecar/Duet alternative — use your iPhone or iPad as a true second monitor for your Mac over USB or WiFi. Low latency H.264, Retina HiDPI, touch input.",
+  "description": "Free, open-source Sidecar/Duet alternative — use your iPhone, iPad or Mac as a true second monitor for your primary Mac over USB or WiFi. Low latency H.264, Retina HiDPI, touch input.",
   "language": "Swift"
  },
  "penpot/penpot": {
@@ -7758,6 +7782,10 @@
  "zubair-trabzada/geo-seo-claude": {
   "description": "GEO-first SEO skill for Claude Code. Comprehensive AI search optimization for any website — citability scoring, AI crawler analysis, brand authority, schema markup, platform-specific optimization, and PDF reports.  If you want learn how to sell this to real businesses, check out the skool community",
   "language": "Python"
+ },
+ "zvec-ai/zvec-grep": {
+  "description": "Local-first search across your workspace, built for humans and AI agents.",
+  "language": "TypeScript"
  },
  "zxing/zxing": {
   "description": "ZXing (\"Zebra Crossing\") barcode scanning library for Java, Android",
