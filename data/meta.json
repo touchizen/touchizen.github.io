@@ -603,6 +603,10 @@
   "description": "s&box is a modern game engine, built on Valve's Source 2 and the latest .NET technology, it provides a modern intuitive editor for creating games",
   "language": "C#"
  },
+ "FailproofAI/failproofai": {
+  "description": "Observability and enforcement for AI agent harnesses. Capture every run and runtime reliability with policy enforcement.  ",
+  "language": "MDX"
+ },
  "FareedKhan-dev/all-agentic-architectures": {
   "description": "35 production-grade agentic AI architectures (Reflexion, LATS, GraphRAG, MemGPT, Voyager, BrowserAgent, ...) — a Python library and runnable textbook with multi-provider LLM support and a 17-task benchmark leaderboard.",
   "language": "Jupyter Notebook"
@@ -774,6 +778,10 @@
  "HBAI-Ltd/Toonflow-app": {
   "description": "Toonflow 是开源一站式 AI 短剧创作工具，将小说、剧本快速转化为动画短剧。集成 AI 编剧、智能分镜、角色与视频生成，跨平台桌面端轻量部署，助力创作者低成本批量产出视觉内容。Toonflow is an open-source AI tool that turns stories and scripts into animated short dramas. Features AI scriptwriting, storyboarding, character and video generation. A cross-platform desktop app for efficient content creation.",
   "language": "TypeScript"
+ },
+ "HEJustinSun/my-girlfriend-jingtian-latex": {
+  "description": "",
+  "language": "TeX"
  },
  "HKUDS/AI-Trader": {
   "description": "\"AI-Trader: 100% Fully-Automated Agent-Native Trading\"  ",
@@ -1512,7 +1520,7 @@
   "language": "Rust"
  },
  "Robbyant/lingbot-map": {
-  "description": "(ECCV 2026 oral) LingBot-Map: Geometric Context Transformer for Streaming 3D Reconstruction",
+  "description": "(ECCV 2026 oral & best paper candidate) LingBot-Map: Geometric Context Transformer for Streaming 3D Reconstruction",
   "language": "Python"
  },
  "Robbyant/lingbot-world": {
@@ -2419,6 +2427,10 @@
   "description": "Extracted system prompts from Anthropic - Claude Fable 5.1, Opus 5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
   "language": "JavaScript"
  },
+ "ashemag/human-atlas": {
+  "description": "Open-source 3D anatomy explorer: 2,234 selectable BodyParts3D meshes, system layers, search, and exploded views.",
+  "language": "TypeScript"
+ },
  "ashishpatel26/500-AI-Agents-Projects": {
   "description": "The 500 AI Agents Projects is a curated collection of AI agent use cases across various industries. It showcases practical applications and provides links to open-source projects for implementation, illustrating how AI agents are transforming sectors such as healthcare, finance, education, retail, and more.",
   "language": "Python"
@@ -2853,6 +2865,10 @@
  },
  "charlax/professional-programming": {
   "description": "A collection of learning resources for curious software engineers",
+  "language": "Python"
+ },
+ "charlie947/social-media-skills": {
+  "description": "",
   "language": "Python"
  },
  "charmbracelet/bubbletea": {
@@ -3688,7 +3704,7 @@
   "language": "Rust"
  },
  "firecrawl/firecrawl": {
-  "description": "The context API to search, scrape, and interact with the web at scale. 🔥",
+  "description": "The web data API to search, scrape, and interact at scale. 🔥",
   "language": "TypeScript"
  },
  "firecrawl/pdf-inspector": {
@@ -7076,7 +7092,7 @@
   "language": "Python"
  },
  "tw93/Kaku": {
-  "description": "🎃 A fast, out-of-the-box terminal built for AI coding.",
+  "description": "🎃 A fast, out-of-the-box macOS terminal built for AI coding.",
   "language": "Rust"
  },
  "tw93/Kami": {
@@ -7756,7 +7772,7 @@
   "language": "C++"
  },
  "zhu1090093659/dsh-web": {
-  "description": "DeepSeek Harness (DSH) Web Plugin Aggregation Ecosystem · Everything is a plugin, distributed via the Creative Workshop",
+  "description": "DeepSeek Harness (DSH) Web 插件聚合生态 · 万物皆插件，通过创意工坊分发｜｜DeepSeek Harness (DSH) Web Plugin Aggregation Ecosystem · Everything is a plugin, distributed via the Creative Workshop",
   "language": "TypeScript"
  },
  "zhukunpenglinyutong/desktop-cc-gui": {
