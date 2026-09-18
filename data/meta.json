@@ -167,6 +167,10 @@
   "description": "A pure, versatile open source download manager",
   "language": "TypeScript"
  },
+ "AnInsomniacy/rayburst": {
+  "description": "Redefining the open-source download manager",
+  "language": "TypeScript"
+ },
  "Anakin-Inc/anakin": {
   "description": "Open-source web scraping API. Turn any website into clean markdown or structured JSON. Anti-detect browser, proxy auto-selection, self-hosted. One command: make up",
   "language": "Go"
@@ -198,6 +202,10 @@
  "AobingJava/JavaFamily": {
   "description": "【Java面试+Java学习指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。",
   "language": null
+ },
+ "ApodexAI/FrontierAgent": {
+  "description": "🧩 FrontierAgent, our agent framework, open-sourced alongside it — native command-line TUI, ReAct and Agent Team modes, one command on macOS and Linux, no preinstall, no hard Docker dependency.",
+  "language": "Python"
  },
  "AppFlowy-IO/AppFlowy": {
   "description": "Bring projects, wikis, and teams together with AI. AppFlowy is the AI collaborative workspace where you achieve more without losing control of your data. The leading open source Notion alternative.",
@@ -847,6 +855,10 @@
   "description": "🌐 The Internet Computer! Free, Open-Source, and Self-Hostable.",
   "language": "TypeScript"
  },
+ "HiThink-Tech/Financial-API": {
+  "description": "同花顺官方 A股金融数据服务，提供股票实时行情、历史行情、财务报表、指数、板块、涨停等数据，适用于 AI Agent、量化研究和应用开发，支持 API、MCP、CLI 和 Python。Official Tonghuashun (HiThink) A-share financial data service providing real-time and historical stock market data, financial statements, indices, sectors and limit-up data for AI agents, quantitative research and application development.",
+  "language": "TypeScript"
+ },
  "HisMax/RedInk": {
   "description": "Red Ink - A one-stop Xiaohongshu image-and-text generator based on the 🍌Nano Banana Pro🍌, \"One Sentence, One Image: Generate Xiaohongshu Text and Images.\"",
   "language": "Python"
@@ -897,7 +909,7 @@
  },
  "JCodesMore/ai-website-cloner-template": {
   "description": "Clone any website with one command using AI coding agents",
-  "language": "JavaScript"
+  "language": "TypeScript"
  },
  "Jakubantalik/transitions.dev": {
   "description": "Collection of the most essential transitions for web apps, skill for agents and Refine tool for agents",
@@ -1637,7 +1649,7 @@
  },
  "Stirling-Tools/Stirling-PDF": {
   "description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
-  "language": "TypeScript"
+  "language": "Java"
  },
  "SuanmoSuanyangTechnology/MemoryBear": {
   "description": "MemoryBear Equip AI with human-like memory capability",
@@ -1683,6 +1695,10 @@
   "description": "HunyuanVideo-1.5: A leading lightweight video generation model",
   "language": "Python"
  },
+ "Tencent/BrowserSkill": {
+  "description": "Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.",
+  "language": "TypeScript"
+ },
  "Tencent/teamai-cli": {
   "description": "Make Every Team AI Native",
   "language": "TypeScript"
@@ -1694,6 +1710,10 @@
  "TencentCloud/CubeSandbox": {
   "description": "Instant, Concurrent, Secure & Lightweight Sandbox for AI Agents.",
   "language": "Go"
+ },
+ "TencentCloud/Octop": {
+  "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+  "language": "Python"
  },
  "TencentCloud/TencentDB-Agent-Memory": {
   "description": "TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
@@ -2080,7 +2100,7 @@
   "language": "Python"
  },
  "aipoch/open-science": {
-  "description": "AIPOCH Open-Science is an open-source, local-first, model-agnostic AI research workbench for macOS, Windows, and Linux, with scientific agents, Python/R notebooks, data connectors, and reproducible provenance.",
+  "description": "Open-source AI research workbench for scientific research—local-first and model-agnostic.",
   "language": "TypeScript"
  },
  "airbnb/javascript": {
@@ -2800,7 +2820,7 @@
   "language": "Go"
  },
  "cactus-compute/needle": {
-  "description": "14MB foundation model for tiny devices; phones, wearables, smart home, and robots.",
+  "description": "Automation foundation model for tiny devices: 2-bit, 8-29 MB, tool calls, structured extraction and embeddings on phones, wearables, smart homes, robots, cars and microcontrollers.",
   "language": "Python"
  },
  "caddyserver/caddy": {
@@ -3530,6 +3550,10 @@
  "etcd-io/etcd": {
   "description": "Distributed reliable key-value store for the most critical data of a distributed system",
   "language": "Go"
+ },
+ "eternity4719/HowToLiveBetter": {
+  "description": "按性价比排序的循证生活指南：长寿防病、急救、省钱理财、法律红线、失业与工伤、医保社保、恋爱婚育、怀孕育儿、创业与做平台合规、出国与技能。每条写明成本、收益、证据等级和原始出处，只引期刊论文与官方文件。",
+  "language": "HTML"
  },
  "ethereum/go-ethereum": {
   "description": "Go implementation of the Ethereum protocol",
@@ -4624,7 +4648,7 @@
   "language": null
  },
  "kaifcodec/user-scanner": {
-  "description": "🕵️‍♂️ (2-in-1) Email & Username OSINT suite featuring native MCP support for deep data extraction just from a single Email/Username. Analyzes 715+ actively maintained scan vectors (185+ email / 530+ username) for security research, investigations, and digital footprinting.",
+  "description": "🕵️‍♂️ (2-in-1) Email & Username OSINT suite featuring native MCP support for deep data extraction just from a single Email/Username. Analyzes 1080+ actively maintained scan vectors (200+ email / 880+ username) for security research, investigations, and digital footprinting.",
   "language": "Python"
  },
  "kangarooking/cangjie-skill": {
@@ -5032,7 +5056,7 @@
   "language": "Objective-C"
  },
  "magnitudedev/magnitude": {
-  "description": "Open source local inference engine. It runs models on the hardware you already have, whether that's a Mac, an NVIDIA or AMD GPU, or just a CPU. Plug it into Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.",
+  "description": "Open source inference engine optimized for consumer hardware. Profiles your machine, recommends the best models for it, then downloads, tunes, and runs them. Works on Apple Silicon, NVIDIA, AMD, or nothing but a CPU.",
   "language": "TypeScript"
  },
  "makeplane/plane": {
