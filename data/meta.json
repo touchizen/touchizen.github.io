@@ -395,6 +395,10 @@
   "description": "A latent text-to-image diffusion model",
   "language": "Jupyter Notebook"
  },
+ "Companion-Inc/feynman": {
+  "description": "The open source AI research agent.",
+  "language": "TypeScript"
+ },
  "ComposioHQ/awesome-claude-skills": {
   "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
   "language": "Python"
@@ -728,7 +732,7 @@
   "language": "Go"
  },
  "Gentleman-Programming/gentle-ai": {
-  "description": "Gentle-AI configures the AI coding agents you already use: Claude Code, Cursor, OpenCode, Codex, Pi, and more. Choose persistent memory, Spec-Driven Development, curated skills, MCP servers, personas, and optional bounded review. Open source, no agent lock-in.",
+  "description": "Gentle-AI configures the AI coding agents you already use: Claude Code, Cursor, OpenCode, Codex, Pi, and more. Choose persistent memory, Organic-Driven Development, curated skills, MCP servers, personas, and optional bounded review. Open source, no agent lock-in.",
   "language": "Go"
  },
  "Genymobile/scrcpy": {
@@ -2096,7 +2100,7 @@
   "language": "Python"
  },
  "aiming-lab/SimpleMem": {
-  "description": "SimpleMem: Efficient Lifelong Memory for LLM Agents — Text & Multimodal",
+  "description": "[ICML'26] SimpleMem: Efficient Lifelong Memory for LLM Agents — Text & Multimodal",
   "language": "Python"
  },
  "aipoch/open-science": {
@@ -2184,7 +2188,7 @@
   "language": "Java"
  },
  "alibaba/open-code-review": {
-  "description": "Fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+  "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
   "language": "Go"
  },
  "alibaba/page-agent": {
@@ -2759,6 +2763,10 @@
   "description": "Agents that use the browser.",
   "language": "Python"
  },
+ "browser-use/jev-ultrafast": {
+  "description": "i. am. speed.",
+  "language": "Python"
+ },
  "browser-use/video-use": {
   "description": "Edit videos with coding agents",
   "language": "Python"
@@ -2864,7 +2872,7 @@
   "language": "Rust"
  },
  "cathrynlavery/diagram-design": {
-  "description": "38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+  "description": "Editorial diagram design for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
   "language": "HTML"
  },
  "ccxt/ccxt": {
@@ -4843,6 +4851,10 @@
   "description": "The official Lark/飞书 CLI tool, maintained by the larksuite team — built for humans and AI Agents. Covers core business domains including Messenger, Docs, Base, Sheets, Calendar, Mail, Tasks, Meetings, and more, with 200+ commands and 20+ AI Agent Skills.",
   "language": "Go"
  },
+ "latent-spaces/brag": {
+  "description": "You built it. Now brag. Turn the project you just created into a short, shareable launch video with one command.",
+  "language": "Python"
+ },
  "laurent22/joplin": {
   "description": "Joplin - the privacy-focused note taking app with sync capabilities for Windows, macOS, Linux, Android and iOS.",
   "language": "TypeScript"
@@ -5133,6 +5145,10 @@
  },
  "maziyarpanahi/openmed": {
   "description": "Local-first healthcare AI: clinical NER & HIPAA PII de-identification that runs 100% on-device. 2,200+ medical models, 21 languages, Apple MLX + Python, no cloud, no patient data leaving your network. Apache-2.0",
+  "language": "Python"
+ },
+ "mcncarl/yichen-skills": {
+  "description": "",
   "language": "Python"
  },
  "medusajs/medusa": {
@@ -5961,7 +5977,7 @@
  },
  "pacifio/atlas": {
   "description": "Source control for agents. Use multiple coding agents, track their changes and query them in one place",
-  "language": "Rust"
+  "language": "TypeScript"
  },
  "pageman/sutskever-30-implementations": {
   "description": "Sutskever 30 implementations inspired by https://papercode.vercel.app/ | For Agents, use https://github.com/pageman/Sutskever-Agent | Polyglot / Multi-Backed version at https://github.com/pageman/sutskever-30-beyond-numpy",
@@ -6400,7 +6416,7 @@
   "language": "Go"
  },
  "router-for-me/CLIProxyAPI": {
-  "description": "Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 3.1 Pro, GPT 5.6 Series, Grok 4.5, Claude model through API",
+  "description": "Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build, Muse Code, Davin as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini Series, GPT Series, Grok Series, Claude model through API",
   "language": "Go"
  },
  "rtk-ai/rtk": {
@@ -6530,6 +6546,10 @@
  "seaweedfs/seaweedfs": {
   "description": "SeaweedFS is a distributed storage system for object storage (S3), file systems, and Iceberg tables, designed to handle billions of files with O(1) disk access and effortless horizontal scaling.",
   "language": "Go"
+ },
+ "securo-finance/securo": {
+  "description": "Open-source personal finance manager. Self-hosted, privacy-first.",
+  "language": "Python"
  },
  "serenakeyitan/awesome-notebookLM-prompts": {
   "description": "A curated collection of the strongest NotebookLM slide prompts sourced from the real creative underground . Your go-to resource for AI powerpoint :P",
@@ -6885,6 +6905,10 @@
  },
  "tailwindlabs/tailwindcss": {
   "description": "A utility-first CSS framework for rapid UI development.",
+  "language": "TypeScript"
+ },
+ "tamaratran/fast-jev-compaction": {
+  "description": "Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
   "language": "TypeScript"
  },
  "tanweai/pua": {
@@ -7765,7 +7789,7 @@
  },
  "zenstory-ai/oh-story-claudecode": {
   "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
-  "language": "JavaScript"
+  "language": "Python"
  },
  "zeroclaw-labs/zeroclaw": {
   "description": "Fast, small, and fully autonomous AI personal assistant infrastructure, any OS, any platform — deploy anywhere, swap anything 🦀",
