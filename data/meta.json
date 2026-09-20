@@ -883,6 +883,10 @@
   "description": "Qiushi-Skill: Build agents that investigate first, focus on the main contradiction, validate in practice, and keep pushing until the work is actually done. 求是Skill——从经典唯物辩证法与实践哲学中提炼出一条总原则和九大方法论工具武装AI大脑。",
   "language": "JavaScript"
  },
+ "Human-Agent-Society/reef": {
+  "description": "Continual learning infra for self-improving agents",
+  "language": "Python"
+ },
  "Hypostasis-Cat/HypoMux": {
   "description": "CN Windows 多网卡聚合与网络加速工具。一键融合有线、Wi-Fi、热点等连接，实现多路径传输与智能流量调度。 EN Windows multi-NIC network accelerator. Combine Ethernet, Wi-Fi, hotspots and more for multi-path transmission and smart traffic routing.",
   "language": "Go"
@@ -1316,7 +1320,7 @@
   "language": "Python"
  },
  "OpenByteInc/QuantDinger": {
-  "description": "Open-source AI Trading OS and commercial-ready multi-tenant SaaS platform — research markets, build Python strategies, backtest, paper/live trade, and monitor crypto, stocks, and forex, with built-in user management, billing, payments, and settlement to launch and operate your own trading service.",
+  "description": "Open-source AI Trading OS, agent trading, and vibe trading, with Jev System One integration. Research, build Python strategies, backtest, and paper/live trade across crypto, stocks, and forex. Launch your own multi-tenant trading SaaS with built-in user management, billing, payments, and settlement.",
   "language": "Python"
  },
  "OpenCoworkAI/open-codesign": {
@@ -2104,7 +2108,7 @@
   "language": "Python"
  },
  "aipoch/open-science": {
-  "description": "Open-source AI research workbench for scientific research—local-first and model-agnostic.",
+  "description": "AIPOCH Open-Science: an open-source AI research workbench for scientific agent workflows and reproducible science. Local-first, model-agnostic desktop app with skills and MCP tools for macOS, Windows and Linux.",
   "language": "TypeScript"
  },
  "airbnb/javascript": {
@@ -2877,7 +2881,7 @@
  },
  "ccxt/ccxt": {
   "description": "A unified trading API with more than 100 crypto exchanges and prediction markets in JavaScript / TypeScript / Python / C# / PHP / Go / Java / Rust",
-  "language": "Rust"
+  "language": "Python"
  },
  "cft0808/edict": {
   "description": "🏛️ 三省六部制 · OpenClaw Multi-Agent Orchestration System — 9 specialized AI agents with real-time dashboard, model config, and full audit trails",
@@ -3562,6 +3566,10 @@
  "eternity4719/HowToLiveBetter": {
   "description": "按性价比排序的循证生活指南：长寿防病、急救、省钱理财、法律红线、失业与工伤、医保社保、恋爱婚育、怀孕育儿、创业与做平台合规、出国与技能。每条写明成本、收益、证据等级和原始出处，只引期刊论文与官方文件。",
   "language": "HTML"
+ },
+ "eternityspring/shuohao-skills": {
+  "description": "AI 短剧制作的 skill 集合：拆角色、排大纲、出场景与道具设定、写剧本、切分镜 | Agent skills for AI short-drama production — character bibles, adaptation outlines, art bibles, screenplays, storyboards. Runs in Claude Code & codex.",
+  "language": "JavaScript"
  },
  "ethereum/go-ethereum": {
   "description": "Go implementation of the Ethereum protocol",
@@ -4994,6 +5002,10 @@
  "logseq/logseq": {
   "description": "A privacy-first, open-source platform for knowledge management and collaboration. Download link:  http://github.com/logseq/logseq/releases. roadmap: https://logseq.io/p/NX4mc_ggEV",
   "language": "Clojure"
+ },
+ "loopx-project/loopx": {
+  "description": "Long-horizon agent control plane for durable, governed work across Codex, Claude Code, and other harnesses.",
+  "language": "Python"
  },
  "louislam/uptime-kuma": {
   "description": "A fancy self-hosted monitoring tool",
@@ -6648,7 +6660,7 @@
   "language": "TypeScript"
  },
  "simonlin1212/a-stock-data": {
-  "description": "A股全栈数据工具包 · 十二层架构 · 60端点 · 22数据源 · 零鉴权 | Full-stack China A-share data toolkit for AI agents — 12 layers, 60 endpoints, 22 sources, zero-auth",
+  "description": "A股全栈数据工具包：行情K线·研报·信号·资金面·新闻·财务·公告·打板·ETF期权·舆情·宏观利率·指数日历·期货大宗·事件驱动·可转债 | 15层·85端点·34数据源·除iwencai外免Key | A-share data for AI agents: K-lines, reports, signals, fund flow, news, financials, filings, limit-up, ETF options, sentiment, macro/rates, index, futures/commodities, events, convertibles | 15 layers·85 endpoints·34 sources·no key except iwencai",
   "language": "Python"
  },
  "simplifaisoul/osiris": {
@@ -6728,7 +6740,7 @@
   "language": null
  },
  "soxoj/maigret": {
-  "description": "🕵️‍♂️ Collect a dossier on a person by username from 3000+ sites",
+  "description": "🕵️‍♂️ Collect a dossier on a person by username from 6K websites",
   "language": "Python"
  },
  "spacedriveapp/spacedrive": {
@@ -6888,7 +6900,7 @@
   "language": "TypeScript"
  },
  "t8y2/dbx": {
-  "description": "20 MB lightweight cross-platform database client for 90+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 90+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
+  "description": "25 MB lightweight cross-platform database client for 90+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 90+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
   "language": "Rust"
  },
  "tabler/tabler": {
@@ -7052,7 +7064,7 @@
   "language": "Rust"
  },
  "tonhowtf/omniget": {
-  "description": "Download Udemy and Hotmart courses, YouTube videos, music and books — 1,800+ sites, no terminal. Free open-source desktop app for Windows, macOS and Linux, with a built-in course player, PDF/EPUB reader and music library. Powered by yt-dlp. Your files stay on your computer.",
+  "description": "Udemy & Hotmart course downloader, YouTube downloader (yt-dlp GUI, 1,800+ sites) + desktop app for AI agents: Claude Code, Codex, Gemini CLI, Ollama. Permissions, undo, jobs, loops until tests pass, MCP server, 156 tools, course player. Free and open source for Windows, macOS and Linux. No terminal. Your files stay on your computer.",
   "language": "Rust"
  },
  "tonsky/FiraCode": {
