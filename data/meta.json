@@ -1184,7 +1184,7 @@
   "language": null
  },
  "MoonshotAI/kimi-cli": {
-  "description": "Kimi Code CLI is your next CLI agent.",
+  "description": "[Archived] Legacy Python Kimi CLI, no longer maintained. Please use Kimi Code CLI: https://github.com/MoonshotAI/kimi-code",
   "language": "Python"
  },
  "MoonshotAI/kimi-code": {
@@ -1232,7 +1232,7 @@
   "language": "Python"
  },
  "Nagi-ovo/voyager": {
-  "description": "Enhancement suite for Gemini, AI Studio, Claude & ChatGPT — plus a prompt manager for any websites, DeepSeek Harness included. / 面向 Gemini、AI Studio、Claude 与 ChatGPT 的增强套件；其中的提示词管理器可用于任意网站，如 DeepSeek Harness。",
+  "description": "Enhancement suite for Gemini, AI Studio, Claude, ChatGPT & DeepSeek — plus a prompt manager for any website, DeepSeek Harness included. / 面向 Gemini、AI Studio、Claude、ChatGPT 与 DeepSeek 的增强套件；其中的提示词管理器可用于任意网站，如 DeepSeek Harness。",
   "language": "TypeScript"
  },
  "NaiboWang/EasySpider": {
@@ -1623,6 +1623,10 @@
   "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
   "language": "Python"
  },
+ "SillyTavern/SillyTavern": {
+  "description": "LLM Frontend for Power Users.",
+  "language": "JavaScript"
+ },
  "SimoneAvogadro/android-reverse-engineering-skill": {
   "description": "Claude Code skill to support Android app's reverse engineering",
   "language": "Shell"
@@ -1665,7 +1669,7 @@
  },
  "Stirling-Tools/Stirling-PDF": {
   "description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
-  "language": "Java"
+  "language": "TypeScript"
  },
  "SuanmoSuanyangTechnology/MemoryBear": {
   "description": "MemoryBear Equip AI with human-like memory capability",
@@ -2713,7 +2717,7 @@
  },
  "blakeblackshear/frigate": {
   "description": "NVR with realtime local object detection for IP cameras",
-  "language": "TypeScript"
+  "language": "Python"
  },
  "block/buzz": {
   "description": "A hive mind communication platform",
@@ -2788,7 +2792,7 @@
   "language": "Python"
  },
  "browser-use/jev-ultrafast": {
-  "description": "i. am. speed.",
+  "description": "Fastest and cheapest web agent",
   "language": "Python"
  },
  "browser-use/video-use": {
@@ -2801,7 +2805,7 @@
  },
  "bryanthaboi/gen1recomp": {
   "description": "Gen1Recomp - A native Lua / LÖVE2D recreation of Gen 1 and 2 Poke",
-  "language": "C"
+  "language": "Lua"
  },
  "brycewang-stanford/Auto-Empirical-Research-Skills": {
   "description": "🔬 A curated collection of 23,000+ agent skills for empirical research across 8 social science disciplines. | 精选 23,000+ AI Agent 技能库，覆盖8大社会科学学科的实证研究。CoPaper.AI 20分钟完成一篇可复现的规范实证论文，并支持用户上传 Skills。-- Maintained by CoPaper.AI from Stanford REAP.",
@@ -3245,7 +3249,7 @@
  },
  "davidondrej/skills": {
   "description": "access to david ondrej's personal agent skills",
-  "language": "Python"
+  "language": "Shell"
  },
  "daytonaio/daytona": {
   "description": "Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code",
@@ -3352,7 +3356,7 @@
   "language": "Python"
  },
  "diegosouzapw/OmniRoute": {
-  "description": "Never stop coding. Free MIT AI gateway: one endpoint, 352 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 550+ contributors",
+  "description": "Never stop coding. Free MIT AI gateway: one endpoint, 359 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by hundreds of contributors",
   "language": "TypeScript"
  },
  "diet103/claude-code-infrastructure-showcase": {
@@ -4072,7 +4076,7 @@
   "language": "Python"
  },
  "google/ax": {
-  "description": "Google's open agentic orchestrator",
+  "description": "Google's open agentic orchestration runtime",
   "language": "Go"
  },
  "google/googletest": {
@@ -4358,6 +4362,10 @@
  "hxehex/russia-mobile-internet-whitelist": {
   "description": "a list of domains and ips that stay live in russia when the mobile internet gets restricted",
   "language": null
+ },
+ "hydra-db/hydradb": {
+  "description": "HydraDB - fast graph database on object storage",
+  "language": "Rust"
  },
  "hypit-ai/hypit": {
   "description": "Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get your 100M views.",
@@ -5129,7 +5137,7 @@
  },
  "markedjs/marked": {
   "description": "A markdown parser and compiler. Built for speed.",
-  "language": "JavaScript"
+  "language": "TypeScript"
  },
  "marktext/marktext": {
   "description": "📝A simple and elegant markdown editor, available for Linux, macOS and Windows.",
@@ -5422,6 +5430,10 @@
  "mixedbread-ai/mgrep": {
   "description": "A calm, CLI-native way to semantically grep everything, like code, images, pdfs and more.",
   "language": "TypeScript"
+ },
+ "mizorewww/laya-mlx": {
+  "description": "Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
+  "language": "Python"
  },
  "mksglu/context-mode": {
   "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and   enforces routing across 17 platforms via MCP + hooks.",
@@ -6684,7 +6696,7 @@
   "language": "Shell"
  },
  "sickn33/agentic-awesome-skills": {
-  "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,400+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
+  "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,445+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
   "language": "Python"
  },
  "siddharthvaddem/openscreen": {
@@ -7123,6 +7135,10 @@
   "description": "Linux kernel source tree",
   "language": "C"
  },
+ "totec448-spec/chat-on-steroids": {
+  "description": "Cross-platform local MCP capabilities for ChatGPT with Chrome integration, Goal, Compact & Resume, and durable multi-agent workflows.",
+  "language": "TypeScript"
+ },
  "tradecatlabs/vibe-coding-cn": {
   "description": "Vibe Coding 从入门到精通教程｜AI 结对编程工作流｜Prompt、Skill、Workflow、上下文管理、codex实战指南",
   "language": "Python"
@@ -7519,6 +7535,10 @@
   "description": "🐉 Vue Component Framework",
   "language": "TypeScript"
  },
+ "wafer-ai/gpu-perf-engineering-resources": {
+  "description": "A curated resource list for learning AI performance engineering, from GPU fundamentals to production inference.",
+  "language": "Python"
+ },
  "wagoodman/dive": {
   "description": "A tool for exploring each layer in a docker image",
   "language": "Go"
@@ -7763,6 +7783,10 @@
   "description": "LeanCTX — Context Intelligence for AI systems.",
   "language": "Rust"
  },
+ "yynxxxxx/Codex-X": {
+  "description": "OpenAI Codex 桌面端/CLI 的可视化管理工具，具有Provider/API 切换、会话同步、提示词注入、Skills/MCP 管理、TOML 配置可视化的跨平台工具。",
+  "language": "Rust"
+ },
  "z-lab/dflash": {
   "description": "DFlash: Block Diffusion for Flash Speculative Decoding",
   "language": "Python"
@@ -7852,7 +7876,7 @@
   "language": "PowerShell"
  },
  "zhayujie/CowAgent": {
-  "description": "Open-source super AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-agent, multi-model, multi-channel. Lightweight, extensible, one-line install. (formerly chatgpt-on-wechat)",
+  "description": "Open-source super AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-agent, multi-model, multi-channel. Lightweight, extensible, one-line install.",
   "language": "Python"
  },
  "zhishile/codex-auth-helper": {
