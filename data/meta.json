@@ -452,7 +452,7 @@
   "language": null
  },
  "D4Vinci/Scrapling": {
-  "description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ",
+  "description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
   "language": "Python"
  },
  "DIYgod/RSSHub": {
@@ -546,6 +546,10 @@
  "DovAmir/awesome-design-patterns": {
   "description": "A curated list of software and architecture related design patterns.",
   "language": null
+ },
+ "EKKOLearnAI/ekko-studio": {
+  "description": "Ekko Studio is a local-first AI workspace for multi-agent chat, coding, and visual workflows, available on desktop and the web.",
+  "language": "TypeScript"
  },
  "EKKOLearnAI/hermes-studio": {
   "description": "Ekko Studio is a local-first AI workspace for multi-agent chat, coding, and visual workflows, available on desktop and the web.",
@@ -1240,7 +1244,7 @@
   "language": "JavaScript"
  },
  "NandhaKishorM/laya": {
-  "description": "",
+  "description": "Non-autoregressive System 1 decision engine. Typed choice, score and yes/no decisions over any text in a single forward pass, in 100+ languages, with a router that picks the right checkpoint per request.",
   "language": "Python"
  },
  "NanmiCoder/MediaCrawler": {
@@ -1781,6 +1785,10 @@
  },
  "TheTom/turboquant_plus": {
   "description": "",
+  "language": "Python"
+ },
+ "TheoLeeCJ/SemIf": {
+  "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
   "language": "Python"
  },
  "Thysrael/Horizon": {
@@ -2476,7 +2484,7 @@
   "language": "C++"
  },
  "asgeirtj/system_prompts_leaks": {
-  "description": "Extracted system prompts from Anthropic - Claude Fable 5.1, Opus 5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
+  "description": "Documented system prompts from Anthropic - Claude Fable 5.1, Opus 5.5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
   "language": "JavaScript"
  },
  "ashemag/human-atlas": {
@@ -3860,7 +3868,7 @@
   "language": "Python"
  },
  "garinasset/leak-check": {
-  "description": "个人信息 “泄漏” 检测接口",
+  "description": "厘查 API © 嘉林数据 ",
   "language": "Python"
  },
  "garrytan/gbrain": {
@@ -3900,7 +3908,7 @@
   "language": "Python"
  },
  "geekjourneyx/md2wechat-skill": {
-  "description": "Markdown to WeChat CLI | 一键排版发布到微信公众号：支持 40+ 排版样式和专业主题 、AI 配图 、批量发布 、多账号管理、多平台发布",
+  "description": "面向 AI Agent 的微信公众号创作与发布 CLI：Markdown 排版、AI 配图、预览与草稿创建；支持由浏览器 Agent 保存知乎、CSDN、头条未发布草稿。",
   "language": "Go"
  },
  "geekxh/hello-algorithm": {
@@ -3965,7 +3973,7 @@
  },
  "github/copilot-sdk": {
   "description": "Multi-platform SDK for integrating GitHub Copilot Agent into apps and services",
-  "language": "Java"
+  "language": "TypeScript"
  },
  "github/gitignore": {
   "description": "A collection of useful .gitignore templates",
@@ -4408,7 +4416,7 @@
   "language": "Java"
  },
  "igareck/vpn-configs-for-russia": {
-  "description": "🗽Бесплатные и проверенные VPN конфигурации, работающие в РФ ⚪ Белые списки / обход белых списков ⚪ Free and checked VPN configurations that work in Russia ⚪ Whitelists bypass",
+  "description": "🗽Бесплатные и проверенные VPN/Tor конфигурации, работающие в РФ ⚪ Белые списки / обход белых списков ⚪ Free and checked VPN/Tor configurations that work in Russia ⚪ Whitelists bypass",
   "language": null
  },
  "iina/iina": {
@@ -4523,6 +4531,10 @@
   "description": "Build forms in React, without the tears 😭 ",
   "language": "TypeScript"
  },
+ "jaredpalmer/kev": {
+  "description": "tiny Jev-like family of decision models built on top of Qwen3.5 you can train and run on your own",
+  "language": "Python"
+ },
  "jarrodwatts/claude-hud": {
   "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
   "language": "JavaScript"
@@ -4574,6 +4586,10 @@
  "jestjs/jest": {
   "description": "Delightful JavaScript Testing.",
   "language": "TypeScript"
+ },
+ "jev-chat/jev-chat-jarvis": {
+  "description": "装在手机上的对话副驾：在微信 / QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
+  "language": "Kotlin"
  },
  "jgm/pandoc": {
   "description": "Universal markup converter",
@@ -5112,7 +5128,7 @@
   "language": "Objective-C"
  },
  "magnitudedev/magnitude": {
-  "description": "Open source inference engine optimized for consumer hardware. Profiles your machine, recommends the best models for it, then downloads, tunes, and runs them. Works on Apple Silicon, NVIDIA, AMD, or nothing but a CPU.",
+  "description": "Open source inference engine for the hardware you already own. Profiles your machine, recommends the best open models for it, and tunes them for your exact hardware. Works on Apple Silicon, NVIDIA, AMD, or nothing but a CPU.",
   "language": "TypeScript"
  },
  "makeplane/plane": {
@@ -5849,7 +5865,7 @@
  },
  "op7418/Humanizer-zh": {
   "description": "Humanizer 的汉化版本，Claude Code Skills，旨在消除文本中 AI 生成的痕迹。",
-  "language": null
+  "language": "Python"
  },
  "op7418/guizang-ppt-skill": {
   "description": "AI-agent Skill for generating polished HTML slide decks: editorial magazine and Swiss layouts, image prompts, social covers, and a WebGL/low-power presentation runtime.",
@@ -5881,6 +5897,10 @@
  },
  "open-pencil/open-pencil": {
   "description": "AI-native design editor. Open-source Figma alternative.",
+  "language": "TypeScript"
+ },
+ "open-slide/open-slide": {
+  "description": "A slide framework built for agents.",
   "language": "TypeScript"
  },
  "open-webui/open-webui": {
@@ -6112,7 +6132,7 @@
   "language": "TypeScript"
  },
  "peetzweg/opendisplay": {
-  "description": "Free, open-source Sidecar/Duet alternative — use your iPhone, iPad or Mac as a true second monitor for your primary Mac over USB or WiFi. Low latency H.264, Retina HiDPI, touch input.",
+  "description": "Use an iPhone, iPad, or spare Mac as a true second display for your Mac without restrictions.",
   "language": "Swift"
  },
  "penpot/penpot": {
@@ -6511,6 +6531,10 @@
   "description": "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
   "language": "Rust"
  },
+ "rustfs/rustfs": {
+  "description": "RustFS is an open-source, S3-compatible high-performance object storage system supporting migration and coexistence with other S3-compatible platforms such as MinIO and Ceph.",
+  "language": "Rust"
+ },
  "ruvnet/RuVector": {
   "description": "RuVector is a High Performance, Real-Time, Self-Learning Ai, Vector GNN, Memory DB built in Rust.",
   "language": "Rust"
@@ -6667,6 +6691,10 @@
   "description": "An experimental PlayStation 5 emulator for Windows, Linux and macOS.",
   "language": "C#"
  },
+ "shengjidaguai-china/goutoujunshi": {
+  "description": "一个先接住情绪、再分析关系并给出可执行策略的 Codex 恋爱军师，内置心理、法律、社会、人文、哲学、婚姻家庭与性学知识库，支持多元关系。",
+  "language": "Python"
+ },
  "sherlock-project/sherlock": {
   "description": "Hunt down social media accounts by username across social networks",
   "language": "Python"
@@ -6704,7 +6732,7 @@
   "language": "TypeScript"
  },
  "simonlin1212/a-stock-data": {
-  "description": "A股全栈数据工具包：行情K线·研报·信号·资金面·新闻·财务·公告·打板·ETF期权·舆情·宏观利率·指数日历·期货大宗·事件驱动·可转债 | 15层·85端点·34数据源·除iwencai外免Key | A-share data for AI agents: K-lines, reports, signals, fund flow, news, financials, filings, limit-up, ETF options, sentiment, macro/rates, index, futures/commodities, events, convertibles | 15 layers·85 endpoints·34 sources·no key except iwencai",
+  "description": "A股全栈数据工具包：行情K线·当日逐笔·研报·信号·资金面·新闻·财务·公告·打板·ETF期权·舆情·宏观利率·期货大宗(含大商所日K)·事件驱动·可转债 | 15层·87端点·34数据源·除iwencai外免Key | A-share data for AI agents: K-lines, ticks, reports, fund flow, news, financials, filings, options, macro, futures, events, convertibles | 15 layers·87 endpoints·34 sources",
   "language": "Python"
  },
  "simplifaisoul/osiris": {
@@ -7682,6 +7710,10 @@
  "xinntao/Real-ESRGAN": {
   "description": "Real-ESRGAN aims at developing Practical Algorithms for General Image/Video Restoration.",
   "language": "Python"
+ },
+ "xintaofei/codeg": {
+  "description": "Collaborative multi-agent AI coding workspace: aggregate sessions from Claude Code, Codex, OpenCode, Pi, Grok Build, etc. Desktop app, self-hosted server, or Docker.",
+  "language": "Rust"
  },
  "xitu/gold-miner": {
   "description": "🥇掘金翻译计划，可能是世界最大最好的英译中技术社区，最懂读者和译者的翻译平台：",
