@@ -136,7 +136,7 @@
   "language": "Python"
  },
  "AgriciDaniel/claude-seo": {
-  "description": "Universal SEO skill for Claude Code. 25 sub-skills + 18 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, backlinks, local SEO, maps intelligence, semantic clustering, e-commerce SEO, international SEO, Google APIs, and PDF/Excel reporting. Optional DataForSEO, Firecrawl, and Banana extensions.",
+  "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions, including DataForSEO, Firecrawl, Ahrefs and Matomo.",
   "language": "Python"
  },
  "Aider-AI/aider": {
@@ -166,6 +166,10 @@
  "AlistGo/alist": {
   "description": "🗂️A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs. / 一个支持多存储的文件列表/WebDAV程序，使用 Gin 和 Solidjs。",
   "language": "Go"
+ },
+ "AlphaGBM/skills": {
+  "description": "Bring realtime market data and research workflows into Claude Code, Cursor & beyond — 29 open-source Skills for stocks, options and commodities.",
+  "language": "Python"
  },
  "AnInsomniacy/motrix-next": {
   "description": "A pure, versatile open source download manager",
@@ -796,7 +800,7 @@
   "language": "Rust"
  },
  "HBAI-Ltd/Toonflow-app": {
-  "description": "Toonflow 是开源一站式 AI 短剧创作工具，将小说、剧本快速转化为动画短剧。集成 AI 编剧、智能分镜、角色与视频生成，跨平台桌面端轻量部署，助力创作者低成本批量产出视觉内容。Toonflow is an open-source AI tool that turns stories and scripts into animated short dramas. Features AI scriptwriting, storyboarding, character and video generation. A cross-platform desktop app for efficient content creation.",
+  "description": "Toonflow 是开源 AI 创作平台，融合无限画布、AI Agent 与可视化工作流，支持图像生成、视频生成、智能分镜及短剧创作。支持本地部署、自由接入模型，提供跨平台桌面端，并可通过 MCP 与插件扩展创作能力。Open-source AI creative platform with an infinite canvas, AI agents and visual workflows for image generation, video generation and filmmaking, with a canvas-based approach similar to LibTV and TapNow.",
   "language": "TypeScript"
  },
  "HEJustinSun/my-girlfriend-jingtian-latex": {
@@ -927,6 +931,10 @@
   "description": "Clone any website with one command using AI coding agents",
   "language": "TypeScript"
  },
+ "Jakubantalik/Libraries.dev": {
+  "description": "High-crafted UI libraries for AI agents: Border beam, Orbs, Metal, Gooey, Voice, Image, Avatar bots",
+  "language": "TypeScript"
+ },
  "Jakubantalik/transitions.dev": {
   "description": "Collection of the most essential transitions for web apps, skill for agents and Refine tool for agents",
   "language": "HTML"
@@ -1027,6 +1035,10 @@
   "description": "Local-first AI agent workspace for coding, writing, design, research, and automation — one runtime for desktop GUI and TUI.",
   "language": "TypeScript"
  },
+ "KytyPS5/KytyPS5": {
+  "description": "PlayStation 5 emulator for Windows, Linux and MacOS",
+  "language": "C++"
+ },
  "LAION-AI/Open-Assistant": {
   "description": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
   "language": "Python"
@@ -1075,6 +1087,10 @@
   "description": "Codex skill for generating quiet minimal zine-style editorial poster prompts and images.",
   "language": null
  },
+ "LibreChat-AI/LibreChat": {
+  "description": "Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active",
+  "language": "TypeScript"
+ },
  "Light-City/CPlusPlusThings": {
   "description": "C++那些事",
   "language": "C++"
@@ -1106,6 +1122,10 @@
  "MadsLorentzen/ai-job-search": {
   "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
   "language": "Python"
+ },
+ "Mak5er/AirCard": {
+  "description": "Apple Wallet Card Skinner for iOS 18+ (No Jailbreak Required)",
+  "language": "Swift"
  },
  "MakazhanAlpamys/Soup": {
   "description": "Fine-tune LLMs from one YAML. Layer streaming trains an 8B model on a 4 GB laptop GPU.",
@@ -1673,7 +1693,7 @@
  },
  "Stirling-Tools/Stirling-PDF": {
   "description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
-  "language": "TypeScript"
+  "language": "Java"
  },
  "SuanmoSuanyangTechnology/MemoryBear": {
   "description": "MemoryBear Equip AI with human-like memory capability",
@@ -1788,6 +1808,10 @@
   "language": "Python"
  },
  "TheoLeeCJ/SemIf": {
+  "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
+  "language": "Python"
+ },
+ "TheoLeeCJ/SemIf-OpenJev": {
   "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
   "language": "Python"
  },
@@ -2888,7 +2912,7 @@
   "language": "TypeScript"
  },
  "can1357/oh-my-pi": {
-  "description": "⌥ Coding agent with the IDE wired in",
+  "description": "⌥ Coding agent with the IDE wired in. Built by Stencil Labs.",
   "language": "TypeScript"
  },
  "carbon-app/carbon": {
@@ -5052,7 +5076,7 @@
   "language": "Clojure"
  },
  "loopx-project/loopx": {
-  "description": "Long-horizon agent control plane for durable, governed work across Codex, Claude Code, and other harnesses.",
+  "description": "Open-source, local-first control plane for long-running personal agents and agent teams. Keep goals, decisions, and work moving across sessions.",
   "language": "Python"
  },
  "louislam/uptime-kuma": {
@@ -6536,7 +6560,7 @@
   "language": "Rust"
  },
  "ruvnet/RuVector": {
-  "description": "RuVector is a High Performance, Real-Time, Self-Learning Ai, Vector GNN, Memory DB built in Rust.",
+  "description": "RuVector provides High Performance, Real-Time decisions and agent memory , Self-Learning Ai, Vector GNN DB built in Rust.",
   "language": "Rust"
  },
  "ruvnet/RuView": {
@@ -7630,6 +7654,10 @@
  "wg/wrk": {
   "description": "Modern HTTP benchmarking tool",
   "language": "C"
+ },
+ "wide-trace/open-higgsfield": {
+  "description": "A studio for image and video generation — one prompt bar, each model’s own settings, and every finished run in one gallery.",
+  "language": "TypeScript"
  },
  "wiltodelta/remove-ai-watermarks": {
   "description": "Remove visible and invisible AI watermarks and provenance metadata from images and video. Python library and CLI for SynthID, C2PA, EXIF, IPTC, XMP, and common generative-AI marks.",
