@@ -629,7 +629,7 @@
  },
  "FailproofAI/failproofai": {
   "description": "Observability and enforcement for AI agent harnesses. Capture every run and runtime reliability with policy enforcement.  ",
-  "language": "MDX"
+  "language": "TypeScript"
  },
  "FareedKhan-dev/all-agentic-architectures": {
   "description": "35 production-grade agentic AI architectures (Reflexion, LATS, GraphRAG, MemGPT, Voyager, BrowserAgent, ...) — a Python library and runnable textbook with multi-provider LLM support and a 17-task benchmark leaderboard.",
@@ -674,6 +674,10 @@
  "Flowseal/tg-ws-proxy": {
   "description": "Local MTProto proxy server for partial bypassing of Telegram loading",
   "language": "Python"
+ },
+ "Flowseal/zapret-discord-youtube": {
+  "description": "",
+  "language": "Batchfile"
  },
  "Fokkyp/SoftwareCopyright-Skill": {
   "description": "中国软件著作权申请材料 生成器 Skills，本 Skills 通过阅读本地项目，自动生成全套 .docx 软著申请材料，全开源，无须再付费购买任何软著申请服务",
@@ -1396,7 +1400,7 @@
   "language": "TeX"
  },
  "Osmantic/ODS": {
-  "description": "Turn your PC, Mac, or Linux box into an AI server.  LLM inference, chat UI, voice, agents, workflows, RAG, and image generation.",
+  "description": "ODS V3 Pre-Release: Public testing and refinement ahead of the official V3 launch. Turn your PC, Mac, or Linux box into a private AI server.",
   "language": "Python"
  },
  "OthmanAdi/planning-with-files": {
@@ -2115,6 +2119,10 @@
   "description": "The world's simplest facial recognition api for Python and the command line",
   "language": "Python"
  },
+ "agent-substrate/substrate": {
+  "description": "Agent Substrate: the core system",
+  "language": "Go"
+ },
  "agenticnotetaking/arscontexta": {
   "description": "Claude Code plugin that generates individualized knowledge systems from conversation. You describe how you think and work, have a conversation and get a complete second brain as markdown files you own.",
   "language": "Shell"
@@ -2585,7 +2593,7 @@
  },
  "awesome-dsh-plugin/awesome-dsh-plugin": {
   "description": "A curated list of plugins for DeepSeek Harness (dsh) · DeepSeek Harness 插件精选列表",
-  "language": "Python"
+  "language": "JavaScript"
  },
  "awesome-foss/awesome-sysadmin": {
   "description": "A curated list of amazingly awesome open-source sysadmin resources.",
@@ -4556,7 +4564,7 @@
   "language": "TypeScript"
  },
  "jaredpalmer/kev": {
-  "description": "tiny Jev-like family of decision models built on top of Qwen3.5 you can train and run on your own",
+  "description": "Jev-like family of decision models built on top of Qwen3.5/3.8 you can train and run on your own",
   "language": "Python"
  },
  "jarrodwatts/claude-hud": {
@@ -4612,7 +4620,7 @@
   "language": "TypeScript"
  },
  "jev-chat/jev-chat-jarvis": {
-  "description": "装在手机上的对话副驾：在微信 / QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
+  "description": "装在手机上的对话副驾：在 QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
   "language": "Kotlin"
  },
  "jgm/pandoc": {
@@ -5076,7 +5084,7 @@
   "language": "Clojure"
  },
  "loopx-project/loopx": {
-  "description": "Open-source, local-first control plane for long-running personal agents and agent teams. Keep goals, decisions, and work moving across sessions.",
+  "description": "A control plane with a durable state kernel for long-horizon agents and teams. Keep work moving and improving across sessions, with less human attention.",
   "language": "Python"
  },
  "louislam/uptime-kuma": {
@@ -5138,6 +5146,10 @@
  "m1heng/clawdbot-feishu": {
   "description": "",
   "language": "TypeScript"
+ },
+ "maboloshi/github-chinese": {
+  "description": "GitHub 汉化插件，GitHub 中文化界面。 (GitHub Translation To Chinese)",
+  "language": "JavaScript"
  },
  "macro-inc/macro": {
   "description": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
@@ -5250,6 +5262,10 @@
  "mekos2772/ios-location-spoofer": {
   "description": "Standalone iOS app to spoof GPS location without jailbreak. Includes Shadowrocket/Surge/Loon/QX/Stash module.",
   "language": "JavaScript"
+ },
+ "melgarafael/DeskcommCRM": {
+  "description": "Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+  "language": "TypeScript"
  },
  "mem0ai/mem0": {
   "description": "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production.",
@@ -5450,6 +5466,10 @@
  "ministackorg/ministack": {
   "description": "Ministack: Free, open-source local AWS emulator - 60+ services, Terraform compatible, real databases. Free forever. MIT   licensed.",
   "language": "Python"
+ },
+ "miqdadbadjuber/anti-slop": {
+  "description": "Rules for an AI coding agent to filter out generic AI-generated UI designs, text, and code.",
+  "language": "JavaScript"
  },
  "mistralai/mistral-vibe": {
   "description": "Minimal CLI coding agent by Mistral",
@@ -5744,7 +5764,7 @@
   "language": null
  },
  "nolabs-ai/nono": {
-  "description": "secure multiplexed execution paths for agents - zero trust, zero setup, zero latency.",
+  "description": "agent runtime security - zero trust, zero setup, zero latency.",
   "language": "Rust"
  },
  "nolimits4web/swiper": {
@@ -6996,7 +7016,7 @@
   "language": "TypeScript"
  },
  "t8y2/dbx": {
-  "description": "25 MB lightweight cross-platform database client for 90+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 90+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
+  "description": "25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 100+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP。",
   "language": "Rust"
  },
  "tabler/tabler": {
@@ -7030,6 +7050,10 @@
  "tauri-apps/tauri": {
   "description": "Build smaller, faster, and more secure desktop and mobile applications with a web frontend.",
   "language": "Rust"
+ },
+ "team-spotube/spotube": {
+  "description": "🎧 Open source music streaming app! Available for both desktop & mobile!",
+  "language": "Dart"
  },
  "teamchong/pxpipe": {
   "description": "cut Claude Code token usage by rendering text context as images",
@@ -7120,7 +7144,7 @@
   "language": "Python"
  },
  "tinyhumansai/openhuman": {
-  "description": "OpenHuman is an open source agent harness with local-first memory, agent orchestration, and workflows",
+  "description": "OpenHuman is the fastest, cheapest, most efficient open-source agent harness. Written in Rust",
   "language": "Rust"
  },
  "tirth8205/code-review-graph": {
@@ -7344,7 +7368,7 @@
   "language": "Clojure"
  },
  "unclecode/crawl4ai": {
-  "description": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
+  "description": "Open-source web crawler and scraper for LLMs and AI agents: any website into clean, LLM-ready Markdown. Run it yourself, or use Crawl4AI Cloud with one key.",
   "language": "Python"
  },
  "unhappychoice/gitlogue": {
