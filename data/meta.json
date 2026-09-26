@@ -396,7 +396,7 @@
   "language": "Astro"
  },
  "Comfy-Org/ComfyUI": {
-  "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+  "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
   "language": "Python"
  },
  "CompVis/stable-diffusion": {
@@ -900,7 +900,7 @@
   "language": "JavaScript"
  },
  "Human-Agent-Society/reef": {
-  "description": "Continual learning infra for self-improving agents",
+  "description": "Infrastructure for continually self‑improving agents",
   "language": "Python"
  },
  "Hypostasis-Cat/HypoMux": {
@@ -1453,7 +1453,7 @@
  },
  "PhilJay/MPAndroidChart": {
   "description": "A powerful 🚀 Android chart view / graph view library, supporting line- bar- pie- radar- bubble- and candlestick charts as well as scaling, panning and animations.",
-  "language": "Java"
+  "language": "Kotlin"
  },
  "Piebald-AI/claude-code-system-prompts": {
   "description": "All parts of Claude Code's system prompt, 27 builtin tool descriptions, sub agent prompts (Plan/Explore/Task), utility prompts (CLAUDE.md, compact,  statusline, magic docs, WebFetch, Bash cmd, security review, agent creation).  Updated for each Claude Code version.",
@@ -4012,7 +4012,7 @@
   "language": null
  },
  "github/spec-kit": {
-  "description": "💫 Toolkit to help you get started with Spec-Driven Development",
+  "description": "💫 Toolkit to help you get started with SDD or any other process!",
   "language": "Python"
  },
  "gitroomhq/postiz-app": {
@@ -4106,6 +4106,10 @@
  "google-research/google-research": {
   "description": "Google Research",
   "language": "Jupyter Notebook"
+ },
+ "google-research/timesfm": {
+  "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+  "language": "Python"
  },
  "google/agents-cli": {
   "description": "The CLI and skills that turn any coding assistant into an expert at creating, evaluating, and deploying AI agents on Google Cloud.",
@@ -4395,6 +4399,10 @@
   "description": ":trollface: A hex editor for WeChat/QQ/TIM - PC版微信/QQ/TIM防撤回补丁（我已经看到了，撤回也没用了）",
   "language": "C#"
  },
+ "humanitas-labs/quill": {
+  "description": "Ultra-minimalist macOS recording + transcription.",
+  "language": "Swift"
+ },
  "humanlayer/skills": {
   "description": "",
   "language": "TypeScript"
@@ -4572,7 +4580,7 @@
   "language": "JavaScript"
  },
  "javaht/claude-desktop-zh-cn": {
-  "description": "Claude Desktop Chinese Patch (macOS & Windows)",
+  "description": "Claude Desktop Chinese Patch (macOS & Windows & Linux)",
   "language": "Python"
  },
  "jax-ml/jax": {
@@ -4690,6 +4698,10 @@
  "juanfont/headscale": {
   "description": "An open source, self-hosted implementation of the Tailscale control server",
   "language": "Go"
+ },
+ "jub0t/Concat": {
+  "description": "The truly free, and open-source cross-platform CapCut replacement (supports MCPs).",
+  "language": "Rust"
  },
  "juliangarnier/anime": {
   "description": "JavaScript animation engine",
