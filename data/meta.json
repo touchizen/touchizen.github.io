@@ -160,7 +160,7 @@
   "language": "Rust"
  },
  "Alishahryar1/free-claude-code": {
-  "description": "Use Claude Code, Codex, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+  "description": "Use Claude Code, Codex, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
   "language": "Python"
  },
  "AlistGo/alist": {
@@ -1085,6 +1085,10 @@
  },
  "Leonxlnx/taste-skill": {
   "description": "Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop ",
+  "language": "JavaScript"
+ },
+ "Leonxlnx/unlazy": {
+  "description": "Anti-laziness skill for AI agents. Core: the Depth Tree method, which splits a task N layers deep and gives every leaf the full time budget of the whole task, so effort multiplies with depth. Grounded in 2025-2026 research on model laziness, underthinking and premature completion.",
   "language": "JavaScript"
  },
  "LiamGvchi/gc-minimal-zine-poster": {
@@ -4005,7 +4009,7 @@
  },
  "github/copilot-sdk": {
   "description": "Multi-platform SDK for integrating GitHub Copilot Agent into apps and services",
-  "language": "TypeScript"
+  "language": "Java"
  },
  "github/gitignore": {
   "description": "A collection of useful .gitignore templates",
@@ -6101,7 +6105,7 @@
  },
  "pacifio/atlas": {
   "description": "Source control for agents. Use multiple coding agents, track their changes and query them in one place",
-  "language": "TypeScript"
+  "language": "Rust"
  },
  "pageman/sutskever-30-implementations": {
   "description": "Sutskever 30 implementations inspired by https://papercode.vercel.app/ | For Agents, use https://github.com/pageman/Sutskever-Agent | Polyglot / Multi-Backed version at https://github.com/pageman/sutskever-30-beyond-numpy",
@@ -6396,7 +6400,7 @@
   "language": "Jupyter Notebook"
  },
  "raullenchai/Rapid-MLX": {
-  "description": "The fastest local AI engine for Apple Silicon. 4.2x faster than Ollama, 0.08s cached TTFT, 100% tool calling. 17 tool parsers, prompt cache, reasoning separation, cloud routing. Drop-in OpenAI replacement. Works with Claude Code, Cursor, Aider.",
+  "description": "Rapid-MLX is an open-source (Apache 2.0) OpenAI- and Anthropic-compatible LLM inference server and Mac app for Apple Silicon, built on MLX, focused on reliable tool calling for coding agents. Release-gated with Claude Code, Codex CLI, Aider, Hermes and DeepSeek Harness.",
   "language": "Python"
  },
  "ray-project/ray": {
@@ -6489,7 +6493,7 @@
  },
  "revfactory/harness": {
   "description": "A meta-skill that designs domain-specific agent teams, defines specialized agents, and generates the skills they use.",
-  "language": "HTML"
+  "language": null
  },
  "reworkd/AgentGPT": {
   "description": "🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.",
