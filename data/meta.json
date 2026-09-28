@@ -592,7 +592,7 @@
   "language": "Python"
  },
  "EverMind-AI/Raven": {
-  "description": "The Harness of Harnesses: a trusted, persistent, self-evolving multi-agent ecosystem for all-domain collaboration.",
+  "description": "The Harness of Harnesses • built for RSI: a trusted, persistent, self-evolving multi-agent ecosystem for all-domain collaboration.",
   "language": "Python"
  },
  "EveryInc/compound-engineering-plugin": {
@@ -1334,6 +1334,10 @@
  "Nutlope/hallmark": {
   "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
   "language": "CSS"
+ },
+ "Observal/Observal": {
+  "description": "Observal is self-hosted registry for your coding agent extensions with a built in insight engine.  Setup Observal, define the scope and share your Skills, MCPs and Agents with your peers.",
+  "language": "Python"
  },
  "Open-Dev-Society/OpenStock": {
   "description": "OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free.",
@@ -2761,7 +2765,7 @@
  },
  "blakeblackshear/frigate": {
   "description": "NVR with realtime local object detection for IP cameras",
-  "language": "Python"
+  "language": "TypeScript"
  },
  "block/buzz": {
   "description": "A hive mind communication platform",
@@ -4323,6 +4327,10 @@
   "description": "WeFlow - 一个本地的微信聊天记录导出和年度报告应用",
   "language": null
  },
+ "hieunc229/mailflare": {
+  "description": "Email for professionals and teams",
+  "language": "TypeScript"
+ },
  "hipcityreg/situation-monitor": {
   "description": "Real-time dashboard for monitoring global news, markets, and geopolitical events",
   "language": "TypeScript"
@@ -5181,7 +5189,7 @@
  },
  "magnitudedev/magnitude": {
   "description": "Open source inference engine for the hardware you already own. Profiles your machine, recommends the best open models for it, and tunes them for your exact hardware. Works on Apple Silicon, NVIDIA, AMD, or nothing but a CPU.",
-  "language": "TypeScript"
+  "language": "Rust"
  },
  "makeplane/plane": {
   "description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
@@ -6784,7 +6792,7 @@
   "language": "Shell"
  },
  "sickn33/agentic-awesome-skills": {
-  "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,445+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
+  "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,400+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
   "language": "Python"
  },
  "siddharthvaddem/openscreen": {
@@ -7602,6 +7610,10 @@
  "vorssaint/vorssaint-utils": {
   "description": "Free and open-source macOS menu bar toolkit.",
   "language": "Swift"
+ },
+ "voyager-crew/voyager": {
+  "description": "Enhancement suite for Gemini, AI Studio, Claude, ChatGPT & DeepSeek — plus a prompt manager for any website, DeepSeek Harness included. / 面向 Gemini、AI Studio、Claude、ChatGPT 与 DeepSeek 的增强套件；其中的提示词管理器可用于任意网站，如 DeepSeek Harness。",
+  "language": "TypeScript"
  },
  "vsouza/awesome-ios": {
   "description": "A curated list of awesome iOS ecosystem, including Objective-C and Swift Projects ",
