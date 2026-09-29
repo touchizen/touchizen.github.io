@@ -1811,6 +1811,10 @@
   "description": "A specialized Claude Code workspace for creating long-form, SEO-optimized blog content for any business. This system helps you research, write, analyze, and optimize content that ranks well and serves your target audience.",
   "language": "Python"
  },
+ "TheMythologist/GenP": {
+  "description": "Automatically builds GenP executables from source",
+  "language": "AutoIt"
+ },
  "ThePrimeagen/99": {
   "description": "Neovim AI agent done right",
   "language": "Lua"
@@ -2940,7 +2944,7 @@
   "language": "C++"
  },
  "career-ops-hq/career-ops": {
-  "description": "Open-source AI job search: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
+  "description": "Open-source AI job search agent: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
   "language": "JavaScript"
  },
  "casey/just": {
@@ -2951,9 +2955,17 @@
   "description": "Editorial diagram design for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
   "language": "HTML"
  },
+ "ccch1mneyyy/dsh-TUI": {
+  "description": "DSH 官方公众号收录的 TUI 补位插件：鲸鱼顶栏/实时状态/流式思考/双击 Esc 回滚/上下文进度+TPS。npm 一键装。  DSH official WeChat featured TUI plugin — whale bar, live status, streaming thoughts, double-Esc rollback, context bar + TPS. npm one-click.",
+  "language": "TypeScript"
+ },
  "ccxt/ccxt": {
   "description": "A unified trading API with more than 100 crypto exchanges and prediction markets in JavaScript / TypeScript / Python / C# / PHP / Go / Java / Rust",
   "language": "Python"
+ },
+ "cdyforever/how-to-live-better": {
+  "description": "《高性价比人生指南》全书 528 条的在线单页阅读版：手机可读、可搜索、零依赖、支持离线",
+  "language": "HTML"
  },
  "cft0808/edict": {
   "description": "🏛️ 三省六部制 · OpenClaw Multi-Agent Orchestration System — 9 specialized AI agents with real-time dashboard, model config, and full audit trails",
@@ -3951,6 +3963,10 @@
   "description": "面向 AI Agent 的微信公众号创作与发布 CLI：Markdown 排版、AI 配图、预览与草稿创建；支持由浏览器 Agent 保存知乎、CSDN、头条未发布草稿。",
   "language": "Go"
  },
+ "geeklee/srt-whiteboard-animation": {
+  "description": "将 SRT 字幕做成暖米黄纸张底的流式笔迹白板手绘动画 skill：mask 分区遮罩编排 + stream 连续笔迹（ink→color）。",
+  "language": "Python"
+ },
  "geekxh/hello-algorithm": {
   "description": "🌍 针对小白的算法训练 | 包括四部分：①.大厂面经 ②.力扣图解  ③.千本开源电子书 ④.百张技术思维导图（项目花了上百小时，希望可以点 star 支持，🌹感谢~）推荐免费ChatGPT使用网站",
   "language": "Java"
@@ -4325,7 +4341,7 @@
  },
  "hicccc77/WeFlow": {
   "description": "WeFlow - 一个本地的微信聊天记录导出和年度报告应用",
-  "language": null
+  "language": "TypeScript"
  },
  "hieunc229/mailflare": {
   "description": "Email for professionals and teams",
@@ -5213,7 +5229,7 @@
  },
  "markedjs/marked": {
   "description": "A markdown parser and compiler. Built for speed.",
-  "language": "TypeScript"
+  "language": "JavaScript"
  },
  "marktext/marktext": {
   "description": "📝A simple and elegant markdown editor, available for Linux, macOS and Windows.",
@@ -7003,6 +7019,10 @@
   "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
   "language": "TypeScript"
  },
+ "superdesigndev/treg": {
+  "description": "OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn",
+  "language": "Python"
+ },
  "superset-sh/superset": {
   "description": "Superset is an agentic IDE to orchestrate 100+ coding agents in parallel. Run any agent with your own subscription.",
   "language": "TypeScript"
@@ -7456,7 +7476,7 @@
   "language": "JavaScript"
  },
  "usememos/memos": {
-  "description": "Open-source, self-hosted note-taking tool built for quick capture. Markdown-native, lightweight, and fully yours.",
+  "description": "A personal timeline for quick notes. Write short memos, find them later by search, tag, or date. Open source and self-hosted.",
   "language": "Go"
  },
  "usestrix/strix": {
