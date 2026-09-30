@@ -940,7 +940,7 @@
   "language": "TypeScript"
  },
  "Jakubantalik/transitions.dev": {
-  "description": "Collection of the most essential transitions for web apps, skill for agents and Refine tool for agents",
+  "description": "UI montion AI agent, a library of 43+ crafted transitions, a skill that fits your workflow.",
   "language": "HTML"
  },
  "Jeffallan/claude-skills": {
@@ -988,8 +988,12 @@
   "language": "C"
  },
  "K-Dense-AI/scientific-agent-skills": {
-  "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+  "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 168 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
   "language": "Python"
+ },
+ "KKKKhazix/AIHOT": {
+  "description": "一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。",
+  "language": "TypeScript"
  },
  "KKKKhazix/human-writing": {
   "description": "让 AI 写的中文读起来像一个具体的人在说话。通用创作与改稿 Skill，开箱即用。",
@@ -1288,7 +1292,7 @@
   "language": "TypeScript"
  },
  "Nasiko-Labs/nasiko": {
-  "description": "Developer Control Plane for your AI Agents",
+  "description": "The Open Runtime for AI Agents",
   "language": "Rust"
  },
  "NateBJones-Projects/OB1": {
@@ -1489,7 +1493,7 @@
  },
  "PrimeIntellect-ai/prime-agent": {
   "description": "A self-improving RLM agent for coding workflows and long-running autonomous tasks.",
-  "language": "TypeScript"
+  "language": "Rust"
  },
  "Pythagora-io/gpt-pilot": {
   "description": "The first real AI developer",
@@ -1879,6 +1883,10 @@
   "description": "Independent technology for modern publishing, memberships, subscriptions and newsletters.",
   "language": "TypeScript"
  },
+ "Twigpine/openclaude": {
+  "description": "runs anywhere. uses anything",
+  "language": "TypeScript"
+ },
  "TwilitRealm/dusklight": {
   "description": "Dusklight brings a classic adventure to PC and mobile platforms with a variety of fixes and improvements.",
   "language": "C++"
@@ -1962,6 +1970,10 @@
  "Windy3f3f3f3f/how-claude-code-works": {
   "description": "Deep dive into Claude Code internals — architecture, agent loop, context engineering, and more. / 深入解析 Claude Code 源码：架构、Agent 循环、上下文工程、工具系统等",
   "language": null
+ },
+ "WorldFlowAI/everything-claude-code": {
+  "description": "Claude Code toolkit - agents, commands, skills, rules, and hooks for productive AI-assisted development",
+  "language": "JavaScript"
  },
  "XBuilderLAB/cheat-on-content": {
   "description": "You're reading this. The skill predicted it. A workflow that turns every post into a calibrated experiment—score, blind-predict, retro, evolve. The future doesn't reward effort, it rewards those who see the pattern first. 1M followers in a month — not luck, system.",
@@ -2769,7 +2781,7 @@
  },
  "blakeblackshear/frigate": {
   "description": "NVR with realtime local object detection for IP cameras",
-  "language": "TypeScript"
+  "language": "Python"
  },
  "block/buzz": {
   "description": "A hive mind communication platform",
@@ -3564,7 +3576,7 @@
   "language": "TypeScript"
  },
  "earthtojake/text-to-cad": {
-  "description": "A library of agent skills for CAD, CAE and CAM",
+  "description": "Give your agent CAD superpowers.",
   "language": "Python"
  },
  "echo-loop/Echo-Loop": {
@@ -3640,7 +3652,7 @@
   "language": "C"
  },
  "esengine/DeepSeek-Reasonix": {
-  "description": "DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.",
+  "description": "A reliable coding agent for complex software engineering tasks.",
   "language": "Go"
  },
  "etcd-io/etcd": {
@@ -3760,7 +3772,7 @@
   "language": "Python"
  },
  "fallow-rs/fallow": {
-  "description": "Codebase intelligence for TypeScript and JavaScript. Free static analysis of code and styles: unused code, duplication, circular deps, complexity hotspots, architecture boundaries, design-system drift. Optional paid runtime layer (Fallow Runtime): hot-path review and cold-path deletion evidence from real production traffic.",
+  "description": "Codebase intelligence for TypeScript and JavaScript. Health, complexity hotspots, duplication, architecture boundaries, circular dependencies, design-system drift, and unused code, from one graph. CLI, GitHub Action, LSP, MCP, and VS Code. Rust, MIT licensed.",
   "language": "Rust"
  },
  "farion1231/cc-switch": {
@@ -3828,7 +3840,7 @@
   "language": "Rust"
  },
  "firecrawl/firecrawl": {
-  "description": "The web data API to search, scrape, and interact at scale. 🔥",
+  "description": "🔥 Supercharge your AI agents with data from the web and beyond. A web data API to search, scrape, and access more sources.",
   "language": "TypeScript"
  },
  "firecrawl/pdf-inspector": {
@@ -4029,7 +4041,7 @@
  },
  "github/copilot-sdk": {
   "description": "Multi-platform SDK for integrating GitHub Copilot Agent into apps and services",
-  "language": "Java"
+  "language": "TypeScript"
  },
  "github/gitignore": {
   "description": "A collection of useful .gitignore templates",
@@ -5229,7 +5241,7 @@
  },
  "markedjs/marked": {
   "description": "A markdown parser and compiler. Built for speed.",
-  "language": "JavaScript"
+  "language": "TypeScript"
  },
  "marktext/marktext": {
   "description": "📝A simple and elegant markdown editor, available for Linux, macOS and Windows.",
@@ -6719,6 +6731,10 @@
   "description": "A curated collection of the strongest NotebookLM slide prompts sourced from the real creative underground . Your go-to resource for AI powerpoint :P",
   "language": null
  },
+ "sergebulaev/linkedin-skills": {
+  "description": "Claude skills for LinkedIn. 11 Claude Code and Codex skills that write human-sounding LinkedIn posts, craft comments that get noticed, analyze your feed, and build a publishing cadence, all from your terminal. Content engineering by Creative Content Crafts. MIT.",
+  "language": "Python"
+ },
  "serhii-londar/open-source-mac-os-apps": {
   "description": "🚀 Awesome list of open source applications for macOS. https://t.me/s/opensourcemacosapps",
   "language": null
@@ -7835,6 +7851,10 @@
   "description": "React Flow | Svelte Flow - Powerful open source libraries for building node-based UIs with React (https://reactflow.dev) or Svelte (https://svelteflow.dev). Ready out-of-the-box and infinitely customizable.",
   "language": "TypeScript"
  },
+ "yang0/handraw-style": {
+  "description": "手绘风格编号画廊与双语提示词 Skill",
+  "language": "HTML"
+ },
  "yangshun/front-end-interview-handbook": {
   "description": "Front End interview preparation materials for busy engineers (updated for 2026)",
   "language": "JavaScript"
@@ -7862,6 +7882,10 @@
  "yetone/cumora": {
   "description": "Where agent teams gather. Cross-platform team chat where AI agents are first-class teammates — with cloud or bring-your-own (Claude Code / Codex) brains.",
   "language": "TypeScript"
+ },
+ "yi1108/printfilm": {
+  "description": "PRINTFILM：AI 视频获客与 AI短剧创作平台",
+  "language": "Python"
  },
  "yifanfeng97/Hyper-Extract": {
   "description": "Hypergraph is more powerful. Transform unstructured text into structured knowledge with LLMs. Graphs, hypergraphs, and spatio-temporal extractions — with one command.",
@@ -8008,7 +8032,7 @@
   "language": "PowerShell"
  },
  "zhayujie/CowAgent": {
-  "description": "Open-source super AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-agent, multi-model, multi-channel. Lightweight, extensible, one-line install.",
+  "description": "Open-source personal AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-agent, multi-model, multi-channel. Lightweight, extensible, one-line install.",
   "language": "Python"
  },
  "zhishile/codex-auth-helper": {
