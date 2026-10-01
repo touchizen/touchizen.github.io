@@ -4,6 +4,7 @@ import { Language, translations, TranslationKey } from '@/lib/i18n';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { FALLBACK_THUMBNAIL } from '../BlogPageClient';
 
 interface BlogPost {
   slug: string;
@@ -15,7 +16,15 @@ interface BlogPost {
   htmlContent: string;
 }
 
-export default function BlogPostClient({ lang, post, jsonLd }: { lang: Language; post: BlogPost; jsonLd?: object }) {
+/** Just what a sidebar entry shows — post bodies stay out of the page payload. */
+export interface RelatedPost {
+  slug: string;
+  title: string;
+  date: string;
+  image?: string;
+}
+
+export default function BlogPostClient({ lang, post, related = [], jsonLd }: { lang: Language; post: BlogPost; related?: RelatedPost[]; jsonLd?: object }) {
   const router = useRouter();
   const t = (key: TranslationKey) => translations[lang][key];
 
@@ -37,8 +46,8 @@ export default function BlogPostClient({ lang, post, jsonLd }: { lang: Language;
       <Header lang={lang} onLanguageChange={(newLang) => router.push(`/${newLang}/blog/${post.slug}`)} />
 
       <article className="pt-24 pb-16">
-        <div className="container-custom px-4">
-          <div className="max-w-3xl mx-auto">
+        <div className="container-custom px-4 lg:flex lg:justify-center lg:gap-12">
+          <div className="max-w-3xl mx-auto lg:mx-0 lg:flex-1 min-w-0">
             {/* Back link */}
             <a href={`/${lang}/blog/`} className="inline-flex items-center text-sm text-primary-500 hover:text-primary-600 mb-8 transition-colors">
               <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
@@ -80,6 +89,37 @@ export default function BlogPostClient({ lang, post, jsonLd }: { lang: Language;
               dangerouslySetInnerHTML={{ __html: post.htmlContent }}
             />
           </div>
+
+          {/* Beside the post on wide screens (follows the scroll), below it on phones. */}
+          {related.length > 0 && (
+            <aside aria-labelledby="related-heading" className="max-w-3xl mx-auto mt-16 lg:mx-0 lg:mt-0 lg:w-72 lg:shrink-0">
+              <div className="lg:sticky lg:top-24">
+                <h2 id="related-heading" className="text-lg font-bold mb-4">{t('blog_related' as TranslationKey)}</h2>
+                <ul className="space-y-4">
+                  {related.map((p) => (
+                    <li key={p.slug}>
+                      <a href={`/${lang}/blog/${p.slug}/`} className="group flex items-start gap-3">
+                        {/* Decorative, as in the blog list: the title beside it names the post. */}
+                        <img
+                          src={p.image ?? FALLBACK_THUMBNAIL}
+                          alt=""
+                          loading="lazy"
+                          decoding="async"
+                          className={`shrink-0 w-28 aspect-video rounded-md border border-gray-200 dark:border-gray-800 ${
+                            p.image ? 'object-cover' : 'object-contain p-1 bg-gray-50 dark:bg-gray-900'
+                          }`}
+                        />
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold leading-snug line-clamp-3 group-hover:text-primary-500 transition-colors">{p.title}</p>
+                          <time className="text-xs text-gray-400 dark:text-gray-500">{p.date}</time>
+                        </div>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+          )}
         </div>
       </article>
 

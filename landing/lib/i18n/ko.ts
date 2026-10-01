@@ -448,6 +448,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   blog_subtitle: 'AI 영상 크리에이터를 위한 튜토리얼, 팁, 업데이트',
   blog_read_more: '더 보기',
   blog_back: '블로그로 돌아가기',
+  blog_related: '다른 글',
   blog_published: '게시일',
   blog_tags: '태그',
 

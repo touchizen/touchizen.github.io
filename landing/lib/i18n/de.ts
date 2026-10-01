@@ -448,6 +448,7 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   blog_subtitle: 'Tutorials, Tipps und Updates für KI-Video-Creator',
   blog_read_more: 'Weiterlesen',
   blog_back: 'Zurück zum Blog',
+  blog_related: 'Weitere Beiträge',
   blog_published: 'Veröffentlicht',
   blog_tags: 'Tags',
 

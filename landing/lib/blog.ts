@@ -259,3 +259,14 @@ export function getAllPosts(lang: Language): BlogPost[] {
     .filter((post): post is BlogPost => post !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
+
+type Relatable = { slug: string; date: string; tags: string[] };
+
+/** Up to five other posts for the sidebar of `current`: most shared tags first, newest first among equals. */
+export function relatedPosts<T extends Relatable>(current: Relatable, posts: T[], limit = 5): T[] {
+  const shared = (p: Relatable) => p.tags.filter((tag) => current.tags.includes(tag)).length;
+  return posts
+    .filter((p) => p.slug !== current.slug)
+    .sort((a, b) => shared(b) - shared(a) || new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, limit);
+}

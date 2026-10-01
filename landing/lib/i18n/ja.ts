@@ -448,6 +448,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   blog_subtitle: 'AIビデオクリエイター向けのチュートリアル、ヒント、アップデート',
   blog_read_more: '続きを読む',
   blog_back: 'ブログに戻る',
+  blog_related: '他の記事',
   blog_published: '公開日',
   blog_tags: 'タグ',
 

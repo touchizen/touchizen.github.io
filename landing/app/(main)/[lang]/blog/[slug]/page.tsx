@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Language, languages } from '@/lib/i18n';
-import { getAllPosts, getPostBySlug, buildPostMetadata, buildPostJsonLd } from '@/lib/blog';
+import { getAllPosts, getPostBySlug, buildPostMetadata, buildPostJsonLd, relatedPosts } from '@/lib/blog';
 import BlogPostClient from './BlogPostClient';
 
 export function generateMetadata({ params }: { params: { lang: Language; slug: string } }): Metadata {
@@ -29,5 +29,7 @@ export default function BlogPostPage({ params }: { params: { lang: Language; slu
 
   const jsonLd = buildPostJsonLd(params.lang, params.slug, post);
 
-  return <BlogPostClient lang={params.lang} post={post} jsonLd={jsonLd} />;
+  const related = relatedPosts(post, getAllPosts(params.lang)).map(({ slug, title, date, image }) => ({ slug, title, date, image }));
+
+  return <BlogPostClient lang={params.lang} post={post} related={related} jsonLd={jsonLd} />;
 }

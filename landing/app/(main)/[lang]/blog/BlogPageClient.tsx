@@ -15,7 +15,7 @@ interface BlogPost {
 }
 
 // Same image a post shares as when it sets none (lib/blog.ts DEFAULT_OG_IMAGE) — a square logo.
-const FALLBACK_THUMBNAIL = '/images/touchizen.png';
+export const FALLBACK_THUMBNAIL = '/images/touchizen.png';
 
 export default function BlogPageClient({ lang, posts }: { lang: Language; posts: BlogPost[] }) {
   const router = useRouter();
