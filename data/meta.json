@@ -36,7 +36,7 @@
   "language": null
  },
  "1jehuang/jcode": {
-  "description": "The most RAM efficient harness",
+  "description": "High performance coding agent harness written in rust",
   "language": "Rust"
  },
  "1weiho/open-slide": {
@@ -1186,6 +1186,10 @@
  "MetaCubeX/mihomo": {
   "description": "A simple Python Pydantic model for Honkai: Star Rail parsed data from the Mihomo API.",
   "language": "Python"
+ },
+ "MicYou-Dev/MicYou": {
+  "description": "MicYou is a powerful tool that turns your Android device into a high-quality microphone for your PC.",
+  "language": "Rust"
  },
  "MiniMax-AI/MiniMax-H3": {
   "description": "",
@@ -2781,7 +2785,7 @@
  },
  "blakeblackshear/frigate": {
   "description": "NVR with realtime local object detection for IP cameras",
-  "language": "Python"
+  "language": "TypeScript"
  },
  "block/buzz": {
   "description": "A hive mind communication platform",
@@ -2968,7 +2972,7 @@
   "language": "HTML"
  },
  "ccch1mneyyy/dsh-TUI": {
-  "description": "DSH 官方公众号收录的 TUI 补位插件：鲸鱼顶栏/实时状态/流式思考/双击 Esc 回滚/上下文进度+TPS。npm 一键装。  DSH official WeChat featured TUI plugin — whale bar, live status, streaming thoughts, double-Esc rollback, context bar + TPS. npm one-click.",
+  "description": "DSH's officially recommended TUI plugin — high performance, low overhead, cute pixel whale, smooth mouse interaction. One-command install via npm. / DSH 官方推荐的 TUI 插件, 高性能低占用, 可爱像素鲸鱼, 流畅鼠标交互, npm一键安装",
   "language": "TypeScript"
  },
  "ccxt/ccxt": {
@@ -3660,7 +3664,7 @@
   "language": "Go"
  },
  "eternity4719/HowToLiveBetter": {
-  "description": "按性价比排序的循证生活指南：长寿防病、急救、省钱理财、法律红线、失业与工伤、医保社保、恋爱婚育、怀孕育儿、创业与做平台合规、出国与技能。每条写明成本、收益、证据等级和原始出处，只引期刊论文与官方文件。",
+  "description": "高性价比人生指南: 长寿防病、急救、省钱理财、法律红线、失业与工伤、医保社保、恋爱婚育、怀孕育儿、创业与做平台合规、出国与技能。每条写明成本、收益、证据等级和原始出处，只引期刊论文与官方文件。",
   "language": "HTML"
  },
  "eternityspring/shuohao-skills": {
@@ -4740,7 +4744,7 @@
   "language": "Go"
  },
  "jub0t/Concat": {
-  "description": "The truly free, and open-source cross-platform CapCut replacement (supports MCPs).",
+  "description": "Beta: The truly free, and open-source cross-platform CapCut replacement (supports MCPs).",
   "language": "Rust"
  },
  "juliangarnier/anime": {
@@ -4796,7 +4800,7 @@
   "language": null
  },
  "kaifcodec/user-scanner": {
-  "description": "🕵️‍♂️ (2-in-1) Email & Username OSINT suite featuring native MCP support for deep data extraction just from a single Email/Username. Analyzes 1080+ actively maintained scan vectors (200+ email / 880+ username) for security research, investigations, and digital footprinting.",
+  "description": "🕵️‍♂️ (2-in-1) Email & Username OSINT suite featuring native MCP support for deep data extraction just from a single Email/Username. Analyzes 2720+ actively maintained scan vectors (210+ email / 2510+ username) for security research, investigations, and digital footprinting.",
   "language": "Python"
  },
  "kangarooking/cangjie-skill": {
@@ -5216,7 +5220,7 @@
   "language": "Objective-C"
  },
  "magnitudedev/magnitude": {
-  "description": "Open source inference engine for the hardware you already own. Profiles your machine, recommends the best open models for it, and tunes them for your exact hardware. Works on Apple Silicon, NVIDIA, AMD, or nothing but a CPU.",
+  "description": "Open source inference engine for agents that optimizes itself for your exact hardware. Compiles and tunes its kernels on your device, so open models run up to 2x faster than llama.cpp. Works on Apple Silicon, NVIDIA, AMD, or just a CPU.",
   "language": "Rust"
  },
  "makeplane/plane": {
@@ -5324,7 +5328,7 @@
   "language": "Python"
  },
  "memovai/mimiclaw": {
-  "description": "MimiClaw: Harness on a $5 chip. No OS(Linux). No Node.js. No Mac mini. No Raspberry Pi. No VPS. Hardware agents OS.",
+  "description": "MimiClaw: Personal Agent on a $5 chip. No OS(Linux). No Node.js. No Mac mini. No Raspberry Pi. No VPS. Hardware agents OS.",
   "language": "C"
  },
  "mergisi/awesome-openclaw-agents": {
@@ -5481,6 +5485,10 @@
  },
  "mifi/lossless-cut": {
   "description": "The swiss army knife of lossless video/audio editing",
+  "language": "TypeScript"
+ },
+ "milind-soni/OpenMausBot": {
+  "description": "Open Source Alternative to Grok Bot with a virtual machine that bots can use",
   "language": "TypeScript"
  },
  "millionco/expect": {
@@ -6053,6 +6061,10 @@
  },
  "openai/whisper": {
   "description": "Robust Speech Recognition via Large-Scale Weak Supervision",
+  "language": "Python"
+ },
+ "openbq-org/OpenBB": {
+  "description": "Open Data Platform for analysts, quants and AI agents.",
   "language": "Python"
  },
  "openchamber/openchamber": {
@@ -7883,6 +7895,10 @@
   "description": "Where agent teams gather. Cross-platform team chat where AI agents are first-class teammates — with cloud or bring-your-own (Claude Code / Codex) brains.",
   "language": "TypeScript"
  },
+ "yetone/magpie": {
+  "description": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
+  "language": "Go"
+ },
  "yi1108/printfilm": {
   "description": "PRINTFILM：AI 视频获客与 AI短剧创作平台",
   "language": "Python"
@@ -8018,6 +8034,10 @@
  "zenstory-ai/oh-story-claudecode": {
   "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
   "language": "Python"
+ },
+ "zerobrewhq/zerobrew": {
+  "description": "A 5-20x faster experimental Homebrew alternative",
+  "language": "Rust"
  },
  "zeroclaw-labs/zeroclaw": {
   "description": "Fast, small, and fully autonomous AI personal assistant infrastructure, any OS, any platform — deploy anywhere, swap anything 🦀",
