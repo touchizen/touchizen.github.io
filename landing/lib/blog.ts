@@ -262,11 +262,26 @@ export function getAllPosts(lang: Language): BlogPost[] {
 
 type Relatable = { slug: string; date: string; tags: string[] };
 
-/** Up to five other posts for the sidebar of `current`: most shared tags first, newest first among equals. */
-export function relatedPosts<T extends Relatable>(current: Relatable, posts: T[], limit = 5): T[] {
+const newestFirst = (a: Relatable, b: Relatable) => new Date(b.date).getTime() - new Date(a.date).getTime();
+
+/** Up to three other posts sharing a tag with `current`: most shared tags first, newest first among equals. */
+export function relatedPosts<T extends Relatable>(current: Relatable, posts: T[], limit = 3): T[] {
   const shared = (p: Relatable) => p.tags.filter((tag) => current.tags.includes(tag)).length;
   return posts
-    .filter((p) => p.slug !== current.slug)
-    .sort((a, b) => shared(b) - shared(a) || new Date(b.date).getTime() - new Date(a.date).getTime())
+    .filter((p) => p.slug !== current.slug && shared(p) > 0)
+    .sort((a, b) => shared(b) - shared(a) || newestFirst(a, b))
     .slice(0, limit);
+}
+
+/** Up to three of the newest posts other than `current` and those in `skip`. */
+export function latestPosts<T extends Relatable>(current: Relatable, posts: T[], skip: Relatable[], limit = 3): T[] {
+  const left = new Set([current, ...skip].map((p) => p.slug));
+  return posts.filter((p) => !left.has(p.slug)).sort(newestFirst).slice(0, limit);
+}
+
+/** The posts either side of `current` in `posts` (newest first, as getAllPosts returns them): prev is older, next is newer. */
+export function adjacentPosts<T extends Relatable>(current: Relatable, posts: T[]): { prev?: T; next?: T } {
+  const i = posts.findIndex((p) => p.slug === current.slug);
+  if (i < 0) return {};
+  return { prev: posts[i + 1], next: i > 0 ? posts[i - 1] : undefined };
 }
