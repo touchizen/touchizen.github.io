@@ -863,6 +863,10 @@
   "description": "A collection of various awesome lists for hackers, pentesters and security researchers",
   "language": null
  },
+ "HarnessMD/munder-difflin": {
+  "description": "A local multi-agent harness that works with your existing Claude Code, Codex subscriptions, allows you to run an office of agents",
+  "language": "TypeScript"
+ },
  "HeartMuLa/heartlib": {
   "description": "HeartMuLa Official Repo: The Most Powerful Open-Source Music Generation Model of 2026",
   "language": "Python"
@@ -988,7 +992,7 @@
   "language": "C"
  },
  "K-Dense-AI/scientific-agent-skills": {
-  "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 168 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+  "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
   "language": "Python"
  },
  "KKKKhazix/AIHOT": {
@@ -1187,6 +1191,10 @@
   "description": "A simple Python Pydantic model for Honkai: Star Rail parsed data from the Mihomo API.",
   "language": "Python"
  },
+ "MeteorNOX/DeepSeek-Balance-Whale-Widget": {
+  "description": "DeepSeek Harness（DSH）一只住在 DSH 界面右下角的小鲸鱼娘，帮你盯着DeepSeek账户余额。QQ弹弹，支持拖拽吸附、左吸附翻转、数字滚动动画，随界面自动启用，建议直接喊来你的dsh安装",
+  "language": "JavaScript"
+ },
  "MicYou-Dev/MicYou": {
   "description": "MicYou is a powerful tool that turns your Android device into a high-quality microphone for your PC.",
   "language": "Rust"
@@ -1318,6 +1326,10 @@
  "NginxProxyManager/nginx-proxy-manager": {
   "description": "Docker container for managing Nginx proxy hosts with a simple, powerful interface",
   "language": "TypeScript"
+ },
+ "Niko1221/Strata": {
+  "description": "Qwen3.8-Flash-Next on any consumer hardware: one-click install for Windows / Linux. Strata inference engine, OpenAI/Anthropic API on localhost, optional image input.",
+  "language": "C++"
  },
  "NoFxAiOS/nofx": {
   "description": "Your AI trading terminal assistant for US stocks, commodities, forex, and crypto.",
@@ -1785,6 +1797,10 @@
  },
  "TencentCloud/TencentDB-Agent-Memory": {
   "description": "TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
+  "language": "TypeScript"
+ },
+ "TestSprite/testsprite-cli": {
+  "description": "Official TestSprite CLI — AI-powered automated testing from your terminal",
   "language": "TypeScript"
  },
  "Textualize/rich": {
@@ -2785,7 +2801,7 @@
  },
  "blakeblackshear/frigate": {
   "description": "NVR with realtime local object detection for IP cameras",
-  "language": "TypeScript"
+  "language": "Python"
  },
  "block/buzz": {
   "description": "A hive mind communication platform",
@@ -2968,7 +2984,7 @@
   "language": "Rust"
  },
  "cathrynlavery/diagram-design": {
-  "description": "Editorial diagram design for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Factory Droid, and Pi. 42 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
   "language": "HTML"
  },
  "ccch1mneyyy/dsh-TUI": {
@@ -5663,6 +5679,10 @@
   "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
   "language": "Python"
  },
+ "mvschwarz/openrig": {
+  "description": "Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work.",
+  "language": "TypeScript"
+ },
  "myshell-ai/OpenVoice": {
   "description": "Instant voice cloning by MIT and MyShell. Audio foundation model.",
   "language": "Python"
@@ -5824,7 +5844,7 @@
   "language": null
  },
  "nolabs-ai/nono": {
-  "description": "agent runtime security - zero trust, zero setup, zero latency.",
+  "description": "agent runtime security - zero trust, zero setup, zero latency micro sandboxes",
   "language": "Rust"
  },
  "nolimits4web/swiper": {
@@ -7952,7 +7972,7 @@
   "language": "Python"
  },
  "yvgude/lean-ctx": {
-  "description": "LeanCTX — Context Intelligence for AI systems.",
+  "description": "LeanCTX — Context Gateway for AI systems.",
   "language": "Rust"
  },
  "yynxxxxx/Codex-X": {
