@@ -864,7 +864,7 @@
   "language": null
  },
  "HarnessMD/munder-difflin": {
-  "description": "A local multi-agent harness that works with your existing Claude Code, Codex subscriptions, allows you to run an office of agents",
+  "description": "an open-source alternative to the dots, bots and muses of the world, run an office of claude code/codex like agents on your laptop, sandboxes or anywhere, uses your existing subscriptions",
   "language": "TypeScript"
  },
  "HeartMuLa/heartlib": {
@@ -1021,7 +1021,7 @@
  },
  "KimYx0207/AI-Coding-Guide-Zh": {
   "description": "Claude Code + OpenClaw + Codex + WorkBuddy 中文教程 | 50篇完整教程 + 1张速查卡 | 80万+内容量 | 1500+实操示例 | AI Coding / Agent 四线学习路径（编程+助手+Agent+办公）",
-  "language": null
+  "language": "Python"
  },
  "KnockOutEZ/wigolo": {
   "description": "The go-to web for your AI coding agent — local-first search, fetch, crawl & research over MCP. No API keys, no cloud, $0/query. Public beta.",
@@ -1592,7 +1592,7 @@
   "language": "Java"
  },
  "Renhuai123/ziwei-doushu": {
-  "description": "紫微斗数开源排盘引擎 — 基于倪海夏《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+  "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
   "language": "TypeScript"
  },
  "ResearAI/AutoFigure-Edit": {
@@ -2888,7 +2888,7 @@
   "language": "JavaScript"
  },
  "bryanthaboi/gen1recomp": {
-  "description": "Gen1Recomp - A native Lua / LÖVE2D recreation of Gen 1 and 2 Poke",
+  "description": "Gen1Recomp - A native Lua / LÖVE2D recreation of Gen 1, 2, and 3 Poke",
   "language": "Lua"
  },
  "brycewang-stanford/Auto-Empirical-Research-Skills": {
@@ -2976,7 +2976,7 @@
   "language": "C++"
  },
  "career-ops-hq/career-ops": {
-  "description": "Open-source AI job search agent: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
+  "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and a job application tracker. It helps you fill in each application; you press Submit. Runs locally in your AI coding CLI (Claude Code, Codex, OpenCode and more).",
   "language": "JavaScript"
  },
  "casey/just": {
@@ -2988,7 +2988,7 @@
   "language": "HTML"
  },
  "ccch1mneyyy/dsh-TUI": {
-  "description": "DSH's officially recommended TUI plugin — high performance, low overhead, cute pixel whale, smooth mouse interaction. One-command install via npm. / DSH 官方推荐的 TUI 插件, 高性能低占用, 可爱像素鲸鱼, 流畅鼠标交互, npm一键安装",
+  "description": "DSH's officially top-recommended TUI plugin — high performance, low overhead, cute pixel whale, smooth mouse interaction. One-command install via npm. / DSH 官方首推的 TUI 插件，高性能低占用，可爱像素鲸鱼，流畅鼠标交互，npm 一键安装",
   "language": "TypeScript"
  },
  "ccxt/ccxt": {
@@ -3860,7 +3860,7 @@
   "language": "Rust"
  },
  "firecrawl/firecrawl": {
-  "description": "🔥 Supercharge your AI agents with data from the web and beyond. A web data API to search, scrape, and access more sources.",
+  "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
   "language": "TypeScript"
  },
  "firecrawl/pdf-inspector": {
@@ -5042,6 +5042,10 @@
  "lewislulu/html-ppt-skill": {
   "description": "HTML PPT Studio — AgentSkill with 24 themes, 31 layouts, 20+ animations for building professional HTML presentations",
   "language": "HTML"
+ },
+ "lexmount/moli": {
+  "description": "Best headless browser for AI agents. Lite, Fast, High-Compatibility. Built in Rust",
+  "language": "Rust"
  },
  "lfnovo/open-notebook": {
   "description": "An Open Source implementation of Notebook LM with more flexibility and features",
@@ -6616,7 +6620,7 @@
   "language": "Go"
  },
  "router-for-me/CLIProxyAPI": {
-  "description": "Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build, Muse Code, Davin as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini Series, GPT Series, Grok Series, Claude model through API",
+  "description": "Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build, Muse Code, Devin as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini Series, GPT Series, Grok Series, Claude model through API",
   "language": "Go"
  },
  "rtk-ai/rtk": {
@@ -7752,7 +7756,7 @@
   "language": null
  },
  "waydabber/BetterDisplay": {
-  "description": "Unlock your displays on your Mac! Flexible HiDPI scaling, XDR/HDR extra brightness, virtual screens, DDC control, extra dimming, PIP/streaming, EDID override and lots more!",
+  "description": "Unlock your displays on your Mac. Flexible HiDPI scaling, XDR/HDR extra brightness, virtual screens, DDC control, image adjustments, PIP/streaming, EDID override. More info -  betterdisplay.pro/guide",
   "language": null
  },
  "wbh604/UZI-Skill": {
@@ -7867,6 +7871,10 @@
   "description": "🥇掘金翻译计划，可能是世界最大最好的英译中技术社区，最懂读者和译者的翻译平台：",
   "language": null
  },
+ "xixu-me/awesome-persona-distill-skills": {
+  "description": "Curated list of Agent Skills centered on people, relationships, commemorative scenes, and methodological perspectives",
+  "language": "JavaScript"
+ },
  "xkcoding/spring-boot-demo": {
   "description": "🚀一个用来深入学习并实战 Spring Boot 的项目。",
   "language": "Java"
@@ -7972,7 +7980,7 @@
   "language": "Python"
  },
  "yvgude/lean-ctx": {
-  "description": "LeanCTX — Context Gateway for AI systems.",
+  "description": "LeanCTX — Context Gateway for AI Systems. Control what your AI can see. Open-source Engine for context selection, supported controls, and evidence.",
   "language": "Rust"
  },
  "yynxxxxx/Codex-X": {
