@@ -431,6 +431,10 @@
   "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
   "language": "TypeScript"
  },
+ "CopilotKit/openmuse": {
+  "description": "A personal agent with a browser, terminal, files, and work that keeps going built with CopilotKit and AG-UI.",
+  "language": "TypeScript"
+ },
  "CoreBunch/Instatic": {
   "description": "The open-source alternative to Webflow, Framer and WordPress. Agentic self-hosted visual CMS outputting clean static pages. Users, roles, plugins, content, database, it's all there. ",
   "language": "TypeScript"
@@ -2561,7 +2565,7 @@
  },
  "asgeirtj/system_prompts_leaks": {
   "description": "Documented system prompts from Anthropic - Claude Fable 5.1, Opus 5.5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
-  "language": "JavaScript"
+  "language": "Python"
  },
  "ashemag/human-atlas": {
   "description": "Open-source 3D anatomy explorer: 2,234 selectable BodyParts3D meshes, system layers, search, and exploded views.",
@@ -2848,7 +2852,7 @@
   "language": "TypeScript"
  },
  "breferrari/obsidian-mind": {
-  "description": "A self-organizing Obsidian vault that gives AI coding agents persistent memory. Claude Code, Codex CLI, Gemini CLI.",
+  "description": "A self-organizing Obsidian vault that gives AI coding agents persistent memory.",
   "language": "TypeScript"
  },
  "bregman-arie/devops-exercises": {
@@ -5188,7 +5192,7 @@
   "language": "TypeScript"
  },
  "luolangaga/tubatools": {
-  "description": "图吧工具箱 CE",
+  "description": "图吧工具箱 CE，也非常适配笔记本电脑使用！",
   "language": "C#"
  },
  "luongnv89/claude-howto": {
@@ -5348,7 +5352,7 @@
   "language": "Python"
  },
  "memovai/mimiclaw": {
-  "description": "MimiClaw: Personal Agent on a $5 chip. No OS(Linux). No Node.js. No Mac mini. No Raspberry Pi. No VPS. Hardware agents OS.",
+  "description": "MimiClaw: Personal Agent on a $5 chip. No OS(Linux). No Node.js. No Mac mini. No Raspberry Pi. No VPS. Hardware agents OS. On device Muse.",
   "language": "C"
  },
  "mergisi/awesome-openclaw-agents": {
@@ -5508,7 +5512,7 @@
   "language": "TypeScript"
  },
  "milind-soni/OpenMausBot": {
-  "description": "Open Source Alternative to Grok Bot with a virtual machine that bots can use",
+  "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
   "language": "TypeScript"
  },
  "millionco/expect": {
@@ -6175,6 +6179,10 @@
   "description": "Truly universal online file converter",
   "language": "TypeScript"
  },
+ "pablostanley/yoinks": {
+  "description": "yoink any video from your terminal. no shady ads.",
+  "language": "TypeScript"
+ },
  "pacifio/atlas": {
   "description": "Source control for agents. Use multiple coding agents, track their changes and query them in one place",
   "language": "Rust"
@@ -6449,6 +6457,10 @@
  },
  "qdrant/qdrant": {
   "description": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+  "language": "Rust"
+ },
+ "qingjian-team/qingjian": {
+  "description": "青简 Qingjian：用 Rust 写的拼音输入法，候选词旁多一条正在学的语言的译词",
   "language": "Rust"
  },
  "qishibo/AnotherRedisDesktopManager": {
@@ -7231,6 +7243,10 @@
   "description": "Autoharness — a self-learning skill layer for Claude Code — distills skills from your real sessions, updates them as you work, and prunes the ones that stop getting used. No daemon, no benchmark.",
   "language": "Python"
  },
+ "tigerless-labs/cost-xray": {
+  "description": "See what Claude Code and Codex actually send to the API — and what each part costs.",
+  "language": "Python"
+ },
  "tiimgreen/github-cheat-sheet": {
   "description": "A list of cool features of Git and GitHub.",
   "language": null
@@ -7360,7 +7376,7 @@
   "language": "TypeScript"
  },
  "tt-a1i/archify": {
-  "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
+  "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
   "language": "JavaScript"
  },
  "tutti-os/tutti": {
@@ -7840,7 +7856,7 @@
   "language": null
  },
  "xianyu110/awesome-openclaw-tutorial": {
-  "description": "从零开始玩转OpenClaw：最全面的中文教程，涵盖安装、配置、实战案例和避坑指南（github版）",
+  "description": "OpenClaw 中文教程（4500+ Star · 已出版纸质书）：安装、配置、Skills、飞书接入与避坑｜作者的 GPT-6 / Codex / Claude Code 新项目见 README 顶部",
   "language": "Shell"
  },
  "xiaobright/dsh-anchored-standard": {
