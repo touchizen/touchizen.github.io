@@ -555,6 +555,10 @@
   "description": "A curated list of software and architecture related design patterns.",
   "language": null
  },
+ "DuarteSantos8/openGym": {
+  "description": "Self-hosted gym & body-weight tracker — plan routines, log workouts (supersets, warm-ups, cardio), see which muscles are trained, fatigued or detrained, import from FitNotes/Strong/Hevy, passkey login. Your data, your server.",
+  "language": "JavaScript"
+ },
  "EKKOLearnAI/ekko-studio": {
   "description": "Ekko Studio is a local-first AI workspace for multi-agent chat, coding, and visual workflows, available on desktop and the web.",
   "language": "TypeScript"
@@ -809,7 +813,7 @@
  },
  "HBAI-Ltd/Toonflow-app": {
   "description": "Toonflow 是开源 AI 创作平台，融合无限画布、AI Agent 与可视化工作流，支持图像生成、视频生成、智能分镜及短剧创作。支持本地部署、自由接入模型，提供跨平台桌面端，并可通过 MCP 与插件扩展创作能力。Open-source AI creative platform with an infinite canvas, AI agents and visual workflows for image generation, video generation and filmmaking, with a canvas-based approach similar to LibTV and TapNow.",
-  "language": "TypeScript"
+  "language": "Vue"
  },
  "HEJustinSun/my-girlfriend-jingtian-latex": {
   "description": "",
@@ -1616,7 +1620,7 @@
   "language": "Rust"
  },
  "Robbyant/lingbot-map": {
-  "description": "(ECCV 2026 oral & best paper candidate) LingBot-Map: Geometric Context Transformer for Streaming 3D Reconstruction",
+  "description": "[ECCV 2026 Best Paper Award Candidate] LingBot-Map: Geometric Context Transformer for Streaming 3D Reconstruction",
   "language": "Python"
  },
  "Robbyant/lingbot-world": {
@@ -1741,7 +1745,7 @@
  },
  "Stirling-Tools/Stirling-PDF": {
   "description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
-  "language": "Java"
+  "language": "TypeScript"
  },
  "SuanmoSuanyangTechnology/MemoryBear": {
   "description": "MemoryBear Equip AI with human-like memory capability",
@@ -2429,7 +2433,7 @@
  },
  "anthropics/claude-plugins-community": {
   "description": "Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-directory-submission.",
-  "language": "Python"
+  "language": "JavaScript"
  },
  "anthropics/claude-plugins-official": {
   "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
@@ -4607,6 +4611,10 @@
   "description": "Collection of publicly available IPTV channels from all over the world",
   "language": "TypeScript"
  },
+ "irinabuht12-oss/google-ads-meta-ads-mcp": {
+  "description": "Google Ads MCP server + Meta Ads MCP (Facebook Ads MCP) + GA4 + Search Console in one hosted remote MCP for Claude, ChatGPT, Cursor & n8n: 250+ tools, OAuth login, no API keys, approval-gated writes, free. By Ryze AI.",
+  "language": null
+ },
  "isjiamu/gzh-design-skill": {
   "description": "把 Markdown 一键排成可直接粘进公众号编辑器的精致 HTML —— 6 套精选主题 + 主题生成器 + 双关卡校验。An AI-agent skill that turns Markdown into paste-ready WeChat article HTML.",
   "language": "HTML"
@@ -5019,6 +5027,10 @@
   "description": "免费无广告的追剧资源指南，人工精选资源、每天检测资源有效性。收录在线影视、影视APP、网盘搜索、磁力BT、字幕、TVBox / 影视仓空壳软件/配置地址、IPTV直播源、会员拼团、影视相关开源项目。开源，社区共同维护。",
   "language": "JavaScript"
  },
+ "laoma528/awesome-zhuiju-free": {
+  "description": "免费无广告的追剧资源指南，人工精选资源、每天检测资源有效性。收录在线影视、影视APP、网盘搜索、磁力BT、字幕、TVBox / 影视仓空壳软件/配置地址、IPTV直播源、会员拼团、影视相关开源项目。开源，社区共同维护。",
+  "language": "JavaScript"
+ },
  "lapce/lapce": {
   "description": "Lightning-fast and Powerful Code Editor written in Rust",
   "language": "Rust"
@@ -5411,6 +5423,10 @@
   "description": "Official inference framework for 1-bit LLMs",
   "language": "C++"
  },
+ "microsoft/CUAWright": {
+  "description": "A simple SWE style browser+desktop agent framework that achieves SOTA results on long horizon web tasks. ",
+  "language": "Python"
+ },
  "microsoft/Data-Science-For-Beginners": {
   "description": "10 Weeks, 20 Lessons, Data Science for All!",
   "language": "Jupyter Notebook"
@@ -5643,6 +5659,10 @@
   "description": "Parse, validate, manipulate, and display dates in javascript.",
   "language": "JavaScript"
  },
+ "morluto/rea": {
+  "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+  "language": "TypeScript"
+ },
  "motiondivision/motion": {
   "description": "A modern animation library for React and JavaScript",
   "language": "TypeScript"
@@ -5829,7 +5849,7 @@
  },
  "nicobailon/visual-explainer": {
   "description": "Agent skill that generates rich HTML pages or slide decks for diagrams, diff reviews, plan audits, data tables, and project recaps",
-  "language": "HTML"
+  "language": "JavaScript"
  },
  "nicolargo/glances": {
   "description": "Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, macOS and Windows operating systems.",
@@ -5876,7 +5896,7 @@
   "language": null
  },
  "nolabs-ai/nono": {
-  "description": "agent runtime security - zero trust, zero setup, zero latency micro sandboxes",
+  "description": "agent runtime security - zero trust, zero setup, zero latency agent sandbox",
   "language": "Rust"
  },
  "nolimits4web/swiper": {
@@ -6508,7 +6528,7 @@
   "language": "Jupyter Notebook"
  },
  "raullenchai/Rapid-MLX": {
-  "description": "Rapid-MLX is an open-source (Apache 2.0) OpenAI- and Anthropic-compatible LLM inference server and Mac app for Apple Silicon, built on MLX, focused on reliable tool calling for coding agents. Release-gated with Claude Code, Codex CLI, Aider, Hermes and DeepSeek Harness.",
+  "description": "Rapid-MLX is an open-source (Apache 2.0) OpenAI- and Anthropic-compatible LLM inference server for Apple Silicon, built on MLX, focused on reliable tool calling for coding agents. Up to 4× faster than Apple's MLX (mlx-lm) on the same weights.",
   "language": "Python"
  },
  "ray-project/ray": {
@@ -6566,6 +6586,10 @@
  "refinedev/refine": {
   "description": "A React Framework for building  internal tools, admin panels, dashboards & B2B apps with unmatched flexibility.",
   "language": "TypeScript"
+ },
+ "rehan-remade/universal-modder": {
+  "description": "Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos.",
+  "language": "Python"
  },
  "remix-run/react-router": {
   "description": "Declarative routing for React",
@@ -7223,6 +7247,10 @@
   "description": "Tesseract Open Source OCR Engine (main repository)",
   "language": "C++"
  },
+ "tester-army/e2e": {
+  "description": "Next generation e2e testing framework for web and mobile apps.",
+  "language": "TypeScript"
+ },
  "testerSunshine/12306": {
   "description": "12306智能刷票，订票",
   "language": "Python"
@@ -7832,7 +7860,7 @@
   "language": "Python"
  },
  "withastro/astro": {
-  "description": "The web framework for content-driven websites. ⭐️ Star to support our work!",
+  "description": "The web framework for content-driven websites.",
   "language": "TypeScript"
  },
  "withastro/flue": {
