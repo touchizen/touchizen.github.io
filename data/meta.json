@@ -431,6 +431,10 @@
   "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
   "language": "TypeScript"
  },
+ "CopilotKit/OpenDots": {
+  "description": "Your always-on AI coworkers that move between text, calls, and Slack.",
+  "language": "TypeScript"
+ },
  "CopilotKit/openmuse": {
   "description": "A personal agent with a browser, terminal, files, and work that keeps going built with CopilotKit and AG-UI.",
   "language": "TypeScript"
@@ -1138,6 +1142,10 @@
  "Lordog/dive-into-llms": {
   "description": "《动手学大模型Dive into LLMs》系列编程实践教程",
   "language": "Jupyter Notebook"
+ },
+ "Louis-CFM/coucou": {
+  "description": "A tiny friend in your Mac's notch and on your iPhone that keeps an eye on your AI coding agents: Claude Code, Codex, Cursor, Gemini CLI, Antigravity and more. Approve from the notch or your Lock Screen.",
+  "language": "Swift"
  },
  "MDX-Tom/gpt-instruct": {
   "description": "A Codex jailbreak prompt and test pack for gpt. 针对 gpt 系列的 Codex 破甲提示词与测试包。",
@@ -2219,6 +2227,10 @@
   "description": "Copy any UI element for your agent",
   "language": "TypeScript"
  },
+ "aieln/awesome-persona-distill-skills": {
+  "description": "Curated list of Agent Skills centered on people, relationships, commemorative scenes, and methodological perspectives",
+  "language": "JavaScript"
+ },
  "aiming-lab/AutoResearchClaw": {
   "description": "Fully autonomous & self-evolving research from idea to paper. Chat an Idea. Get a Paper. 🦞",
   "language": "Python"
@@ -2944,7 +2956,7 @@
   "language": "Shell"
  },
  "byoungd/up": {
-  "description": "An advanced guide which might benefit you a lot 🎉 . 韩先凯的人生进阶指南 人生进阶指南 离谱的人生 人生进阶 AI学习 AI指南 韩先凯的AI学习指南 英语学习指南/英语学习教程/英语学习/学英语",
+  "description": "中英双语终身学习指南：英语学习、AI 协作、真实项目与成长证据。A bilingual guide to English learning and AI-era growth.",
   "language": "JavaScript"
  },
  "bytedance/UI-TARS-desktop": {
@@ -3319,6 +3331,10 @@
   "description": "Running a big model on a small laptop",
   "language": "Objective-C"
  },
+ "danyuchn/asd-ste100-skill": {
+  "description": "ASD-STE100 Simplified Technical English rules, repurposed as a Claude Code skill for rewriting ambiguous agent-facing English.",
+  "language": "Python"
+ },
  "darrylmorley/whatcable": {
   "description": "macOS menu bar app that tells you, in plain English, what each USB-C cable plugged into your Mac can actually do",
   "language": "Swift"
@@ -3520,8 +3536,8 @@
   "language": "TypeScript"
  },
  "dnshe/DNSHE-FreeDomains": {
-  "description": "🌐 DNSHE Official - Stable & Free Subdomains for Developers. Support 180-day renewal window, Anycast DNS, and REST API. (us.ci, cc.cd, de5.net, ccwu.cc)",
-  "language": null
+  "description": "🌐 DNSHE — Free subdomains for developers, with Anycast DNS, a REST API, and free renewal within 180 days before expiry. Available suffixes: us.ci, cc.cd, de5.net, ccwu.cc.",
+  "language": "JavaScript"
  },
  "docker/awesome-compose": {
   "description": "Awesome Docker Compose samples",
@@ -3549,7 +3565,7 @@
  },
  "dontbesilent2025/dbskill": {
   "description": "dontbesilent 的商业诊断 Skills",
-  "language": "JavaScript"
+  "language": "Python"
  },
  "doocs/advanced-java": {
   "description": "😮 Core Interview Questions & Answers For Experienced Java(Backend) Developers | 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识",
@@ -4653,7 +4669,7 @@
  },
  "jamiepine/voicebox": {
   "description": "The open-source AI voice studio. Clone, dictate, create.",
-  "language": "TypeScript"
+  "language": "Python"
  },
  "janhq/jan": {
   "description": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer.",
@@ -4720,7 +4736,7 @@
   "language": "TypeScript"
  },
  "jev-chat/jev-chat-jarvis": {
-  "description": "装在手机上的对话副驾：在 QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
+  "description": "The chat decision assistant: before you reply, Jev reads the chat, judges intent and risk, and drafts replies you fill in with one tap. You press send. Android · Windows · macOS · iOS | 聊天辅助决策工具：先看懂对方再回复，发不发由你。",
   "language": "Kotlin"
  },
  "jgm/pandoc": {
@@ -5305,7 +5321,7 @@
  },
  "markedjs/marked": {
   "description": "A markdown parser and compiler. Built for speed.",
-  "language": "TypeScript"
+  "language": "JavaScript"
  },
  "marktext/marktext": {
   "description": "📝A simple and elegant markdown editor, available for Linux, macOS and Windows.",
@@ -5528,7 +5544,7 @@
   "language": "Python"
  },
  "microsoft/skill-recorder": {
-  "description": "Desktop app that records your on-screen work session and uses the GitHub Copilot CLI to reconstruct it as an intent + ordered steps, then builds a reusable Skill or Automation for Microsoft Scout, Microsoft Copilot Cowork, or Copilot Studio.",
+  "description": "Desktop app that records your on-screen work session and uses the GitHub Copilot SDK to reconstruct it as an intent + ordered steps, then builds a reusable Skill or Automation for Microsoft Autopilots like Scout, Microsoft Copilot Cowork, or Copilot Studio.",
   "language": "TypeScript"
  },
  "microsoft/terminal": {
@@ -6110,6 +6126,10 @@
  "openai/gym": {
   "description": "A toolkit for developing and comparing reinforcement learning algorithms.",
   "language": "Python"
+ },
+ "openai/math": {
+  "description": "",
+  "language": "Lean"
  },
  "openai/openai-cookbook": {
   "description": "Examples and guides for using the OpenAI API",
@@ -7095,6 +7115,10 @@
   "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
   "language": "TypeScript"
  },
+ "storytold/photocraft": {
+  "description": "An open-source, clean-room reimplementation of Adobe Photoshop in pure Rust",
+  "language": "Rust"
+ },
  "straight-tamago/misaka26": {
   "description": "iOS /iPadOS 16.0 - 26.1, An ultimate customization tool, uilitizing the bug that makes TrollRestore possible. ",
   "language": null
@@ -7180,7 +7204,7 @@
   "language": "Rust"
  },
  "tabler/tabler": {
-  "description": "Tabler is free and open-source HTML Dashboard UI Kit built on Bootstrap",
+  "description": "Free and open source admin dashboard UI kit built on Bootstrap: 100+ pages, 5,000+ icons, dark mode, RTL.",
   "language": "Astro"
  },
  "taigrr/spank": {
@@ -7700,8 +7724,8 @@
   "language": "JavaScript"
  },
  "videojs/video.js": {
-  "description": "Video.js - open source HTML5 video player",
-  "language": "JavaScript"
+  "description": "Video.js v10 - open source media player framework for HTML and React.",
+  "language": "TypeScript"
  },
  "vim/vim": {
   "description": "The official Vim repository",
@@ -8136,7 +8160,7 @@
   "language": "Python"
  },
  "zerobrewhq/zerobrew": {
-  "description": "A 5-20x faster experimental Homebrew alternative",
+  "description": "An up to 100x faster Homebrew alternative",
   "language": "Rust"
  },
  "zeroclaw-labs/zeroclaw": {
