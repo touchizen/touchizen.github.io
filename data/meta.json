@@ -303,6 +303,10 @@
   "description": "A list of tools that are open-source, in-browser, and require no-signups!",
   "language": "TypeScript"
  },
+ "BraveOPotato/NoSignups": {
+  "description": "A list of tools that are open-source, in-browser, and require no-signups!",
+  "language": "TypeScript"
+ },
  "BuilderIO/agent-native": {
   "description": "A framework for building agentic apps",
   "language": "TypeScript"
@@ -334,6 +338,10 @@
  "CMU-Perceptual-Computing-Lab/openpose": {
   "description": "OpenPose: Real-time multi-person keypoint detection library for body, face, hands, and foot estimation",
   "language": "C++"
+ },
+ "CYQawa/YunX": {
+  "description": "✨一个安卓网盘解析下载app✨",
+  "language": "Kotlin"
  },
  "CalvinXKY/InfraTech": {
   "description": "分享AI Infra知识&代码练习：PyTorch、vLLM/SGLang、slime/vime框架入门⚡️、性能加速🚀、大模型基础🧠、AI软硬件🔧等",
@@ -570,6 +578,10 @@
  "EKKOLearnAI/hermes-studio": {
   "description": "Ekko Studio is a local-first AI workspace for multi-agent chat, coding, and visual workflows, available on desktop and the web.",
   "language": "TypeScript"
+ },
+ "Ebony-Vinyl/dsh-our-free-model": {
+  "description": "在 dsh 里装上这个插件即可，无需登录、注册或填 API Key，就能使用包括 DeepSeek V4.1 Flash、Kimi K3 在内的前沿模型——完全免费，不限量。 All you do is install this plugin in dsh: no login, no sign-up, no API key — the frontier models are just there, DeepSeek V4.1 Flash and Kimi K3 among them. Completely free, with no usage cap.",
+  "language": "JavaScript"
  },
  "EbookFoundation/free-programming-books": {
   "description": ":books: Freely available programming books",
@@ -4631,6 +4643,10 @@
   "description": "Google Ads MCP server + Meta Ads MCP (Facebook Ads MCP) + GA4 + Search Console in one hosted remote MCP for Claude, ChatGPT, Cursor & n8n: 250+ tools, OAuth login, no API keys, approval-gated writes, free. By Ryze AI.",
   "language": null
  },
+ "irinabuht12-oss/marketing-skills": {
+  "description": "Claude skills for marketing: 49 free marketing skills for Claude Code and claude.ai (Google Ads, Meta Ads, SEO, AI visibility) + the Ryze Google Ads MCP / Meta Ads MCP: claude mcp add ryze --transport http https://connector.get-ryze.ai/mcp",
+  "language": null
+ },
  "isjiamu/gzh-design-skill": {
   "description": "把 Markdown 一键排成可直接粘进公众号编辑器的精致 HTML —— 6 套精选主题 + 主题生成器 + 双关卡校验。An AI-agent skill that turns Markdown into paste-ready WeChat article HTML.",
   "language": "HTML"
@@ -6067,6 +6083,10 @@
   "description": "🪧 Claude Code / Codex skill — generate Xiaohongshu carousels & WeChat 21:9+1:1 cover pairs. Editorial × Swiss visual systems, 28 layouts, 10 themes, single-file HTML → PNG. 小红书图文 + 公众号封面对",
   "language": "HTML"
  },
+ "open-free-llm-api/awesome-freellm-apis": {
+  "description": "134+ free LLM APIs & AI API keys from 40+ providers. Google Gemini, NVIDIA NIM, Groq, OpenRouter & more. One-click setup for Claude Code, Cursor and Codex.",
+  "language": null
+ },
  "open-gsd/gsd-core": {
   "description": "Git. Ship. Done - Core",
   "language": "JavaScript"
@@ -7115,6 +7135,10 @@
   "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
   "language": "TypeScript"
  },
+ "storytold/filmcraft": {
+  "description": "An open-source, clean-room reimplementation of Adobe Premiere Pro built in pure Rust.",
+  "language": "Rust"
+ },
  "storytold/photocraft": {
   "description": "An open-source, clean-room reimplementation of Adobe Photoshop in pure Rust",
   "language": "Rust"
@@ -8024,7 +8048,7 @@
   "language": "Go"
  },
  "yi1108/printfilm": {
-  "description": "PRINTFILM：AI 视频获客与 AI短剧创作平台",
+  "description": "PRINTFILM: AI short-video marketing and AI short-drama creation platform",
   "language": "Python"
  },
  "yifanfeng97/Hyper-Extract": {
@@ -8160,7 +8184,7 @@
   "language": "Python"
  },
  "zerobrewhq/zerobrew": {
-  "description": "An up to 100x faster Homebrew alternative",
+  "description": "An up to 100x* faster Homebrew alternative",
   "language": "Rust"
  },
  "zeroclaw-labs/zeroclaw": {
