@@ -587,6 +587,10 @@
   "description": ":books: Freely available programming books",
   "language": "Python"
  },
+ "Edge0-AI/Edge0": {
+  "description": "Run 35B MoE models in ~2.5 GB of RAM. Weights stream from SSD; a trained router predicts loads a step ahead. Mac, iPhone, Android, Windows supported",
+  "language": "Python"
+ },
  "Egonex-AI/Understand-Anything": {
   "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
   "language": "TypeScript"
@@ -1072,7 +1076,7 @@
   "language": "TypeScript"
  },
  "KytyPS5/KytyPS5": {
-  "description": "PlayStation 5 emulator for Windows, Linux and MacOS",
+  "description": "PlayStation 5 translation layer for Windows, Linux and macOS",
   "language": "C++"
  },
  "LAION-AI/Open-Assistant": {
@@ -2091,6 +2095,10 @@
   "description": "修改 Apple 网络定位（gs-loc）返回坐标 · 支持 Surge / Quantumult X / Loon / Stash · 快捷指令一键设置/恢复定位",
   "language": "JavaScript"
  },
+ "YuJunZhiXue/dsh-purge": {
+  "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
+  "language": "JavaScript"
+ },
  "Yuan1z0825/nature-skills": {
   "description": "符合nature论文学术表达和科研绘图的Skill",
   "language": "Python"
@@ -2565,7 +2573,7 @@
  },
  "appwrite/appwrite": {
   "description": "Appwrite® - complete cloud infrastructure for your web, mobile and AI apps. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime and more",
-  "language": "PHP"
+  "language": "TypeScript"
  },
  "aquasecurity/trivy": {
   "description": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more",
@@ -2968,7 +2976,7 @@
   "language": "Shell"
  },
  "byoungd/up": {
-  "description": "中英双语终身学习指南：英语学习、AI 协作、真实项目与成长证据。A bilingual guide to English learning and AI-era growth.",
+  "description": "人生进阶指南 韩先凯的人生进阶指南 英语学习指南 离谱的人生 AI时代终身学习：AI、学习、创业与成长。",
   "language": "JavaScript"
  },
  "bytedance/UI-TARS-desktop": {
@@ -2988,7 +2996,7 @@
   "language": "Go"
  },
  "cactus-compute/needle": {
-  "description": "Automation foundation model for tiny devices: 2-bit, 8-29 MB, tool calls, structured extraction and embeddings on phones, wearables, smart homes, robots, cars and microcontrollers.",
+  "description": "Automation foundation model for tiny devices: 2-bit, 8-29 MB, tool calls, ASR, structured extraction and embeddings on phones, wearables, smart homes, robots, cars and microcontrollers.",
   "language": "Python"
  },
  "caddyserver/caddy": {
@@ -3123,6 +3131,10 @@
   "description": "Original Apollo 11 Guidance Computer (AGC) source code for the command and lunar modules.",
   "language": "Assembly"
  },
+ "chthollyphile/folia-major": {
+  "description": "专注于绚丽的歌词动画效果的本地音乐/navidrome/第三方多平台在线音乐播放器",
+  "language": "TypeScript"
+ },
  "chubin/cheat.sh": {
   "description": "the only cheat sheet you need",
   "language": "Python"
@@ -3204,7 +3216,7 @@
   "language": "TypeScript"
  },
  "codewhale-hq/Codewhale": {
-  "description": "Open-source coding agent for your terminal, built in Rust and on a journey of continuous community improvement. Issues and PRs welcome.",
+  "description": "Open-source Rust agent engine and terminal client for Codewhale, with provider choice, tools, approvals and receipts.",
   "language": "Rust"
  },
  "colbymchenry/codegraph": {
@@ -7139,8 +7151,20 @@
   "description": "An open-source, clean-room reimplementation of Adobe Premiere Pro built in pure Rust.",
   "language": "Rust"
  },
+ "storytold/lightcraft": {
+  "description": "An open-source, clean-room reimplementation of Adobe Lightroom in pure Rust.",
+  "language": "Rust"
+ },
+ "storytold/pdfcraft": {
+  "description": "An open-source, clean-room reimplementation of Adobe Acrobat built in pure Rust",
+  "language": "Rust"
+ },
  "storytold/photocraft": {
   "description": "An open-source, clean-room reimplementation of Adobe Photoshop in pure Rust",
+  "language": "Rust"
+ },
+ "storytold/vectorcraft": {
+  "description": "An open-source, clean-room reimplementation of Adobe Illustrator, built in pure Rust.",
   "language": "Rust"
  },
  "straight-tamago/misaka26": {
@@ -7360,7 +7384,7 @@
   "language": "Python"
  },
  "tinyhumansai/openhuman": {
-  "description": "OpenHuman is the fastest, cheapest, most efficient open-source agent harness. Written in Rust",
+  "description": "The fastest, cheapest, most efficient open-source agent harness. Run more than 500 agents on a $10 VPS.",
   "language": "Rust"
  },
  "tirth8205/code-review-graph": {
@@ -7492,23 +7516,23 @@
   "language": "Python"
  },
  "tw93/Kaku": {
-  "description": "🎃 A fast, out-of-the-box macOS terminal built for AI coding.",
+  "description": "🎃 A blazing-fast Mac terminal, built for coding with AI.",
   "language": "Rust"
  },
  "tw93/Kami": {
-  "description": "👩‍🚒 Good content deserves good paper.",
+  "description": "👩‍🚒 Paper-inspired typography for elegant reading on screen. Good content deserves good paper.",
   "language": "HTML"
  },
  "tw93/Mole": {
-  "description": "🐹 Clean, uninstall, analyze, optimize, and monitor your Mac. Free open-source CLI, plus a native Mac app.",
+  "description": "🐹 Keep your Mac clean, light, and running like new. Fast open-source CLI, plus a native Mac app.",
   "language": "Shell"
  },
  "tw93/Pake": {
-  "description": "🤱🏻 Turn any webpage into a desktop app with one command.",
+  "description": "🤱🏻 Turn any website into a tiny, fast desktop app.",
   "language": "Rust"
  },
  "tw93/Waza": {
-  "description": "🥷 Engineering habits you already know, turned into skills Claude can run.",
+  "description": "🥷 Engineering habits you already know, turned into skills AI assistants can run.",
   "language": "Python"
  },
  "twbs/bootstrap": {
@@ -8184,7 +8208,7 @@
   "language": "Python"
  },
  "zerobrewhq/zerobrew": {
-  "description": "An up to 100x* faster Homebrew alternative",
+  "description": "An up to 6.6x faster Homebrew alternative",
   "language": "Rust"
  },
  "zeroclaw-labs/zeroclaw": {
