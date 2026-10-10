@@ -48,8 +48,8 @@ const COPY: Record<Language, Copy> = {
       },
       {
         icon: '💬',
-        title: '슬라이드 번역창',
-        desc: '문서를 읽으며 우측 슬라이드 창을 열어 원하는 문장이나 단어를 즉시 번역하고 이전 번역 내역을 확인합니다.',
+        title: '독서 보조 AI & 실시간 대화',
+        desc: '문서를 읽다 궁금한 내용이 생기면 AI에게 바로 질문하고, 어려운 문장의 [쉬운 해설], 핵심 [3줄 요약], [번역]을 슬라이드 창에서 즉시 확인하세요.',
       },
       {
         icon: '✏️',
@@ -90,8 +90,8 @@ const COPY: Record<Language, Copy> = {
       },
       {
         icon: '💬',
-        title: 'Slide-Over Translation Panel',
-        desc: 'Open the slide-over translation panel while reading to instantly translate selected text and review past translations.',
+        title: 'AI Reading Assistant & Chat',
+        desc: 'Ask questions about the document, get clear explanations of difficult concepts, 3-point summaries, or instant translations right in the slide-over panel.',
       },
       {
         icon: '✏️',
@@ -132,8 +132,8 @@ const COPY: Record<Language, Copy> = {
       },
       {
         icon: '💬',
-        title: 'スライド翻訳パネル',
-        desc: '文書を読みながら右側のスライド画面を開き、気になる文章や単語をその場ですぐ翻訳・履歴確認できます。',
+        title: '読書補助AI＆リアルタイム対話',
+        desc: '文書を読みながら疑問があればAIに質問し、難しい文章の【分かりやすい解説】、【3行要約】、【即時翻訳】をスライド画面ですぐ確認できます。',
       },
       {
         icon: '✏️',
@@ -174,8 +174,8 @@ const COPY: Record<Language, Copy> = {
       },
       {
         icon: '💬',
-        title: 'Seitliches Übersetzungs-Panel',
-        desc: 'Öffnen Sie beim Lesen das seitliche Übersetzungsfenster, um Textabschnitte sofort zu übersetzen und den Verlauf einzusehen.',
+        title: 'Lese-Assistent & KI-Chat',
+        desc: 'Stellen Sie Fragen zum Dokument, erhalten Sie verständliche Erklärungen schwieriger Passagen, 3-Punkte-Zusammenfassungen und sofortige Übersetzungen im Seitenpanel.',
       },
       {
         icon: '✏️',

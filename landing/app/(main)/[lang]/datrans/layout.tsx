@@ -15,10 +15,10 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 
   const descriptions: Record<Language, string> = {
-    ko: '문서의 서식과 배치를 그대로 유지하며 자연스럽게 번역합니다. 무료 온디바이스 번역부터 최신 AI 번역까지.',
-    en: 'Translates PDF and EPUB while preserving original layout and formatting. Free on-device translation to state-of-the-art AI.',
-    ja: 'PDFとEPUBのレイアウトをそのまま保ちながら自然に翻訳。無料のオンデバイス翻訳から最新AIまで。',
-    de: 'Übersetzen Sie PDFs und EPUBs unter Beibehaltung des Original-Layouts. Von kostenloser On-Device-Übersetzung bis hin zu modernster KI.',
+    ko: '문서의 서식과 배치를 그대로 유지하며 자연스럽게 번역합니다. 무료 온디바이스 번역부터 최신 AI 번역, 독서 보조 AI 대화까지.',
+    en: 'Translates PDF and EPUB while preserving original layout and formatting. Free on-device translation to state-of-the-art AI reading assistant.',
+    ja: 'PDFとEPUBのレイアウトをそのまま保ちながら自然に翻訳。無料のオンデバイス翻訳から最新AI読書アシスタントまで。',
+    de: 'Übersetzen Sie PDFs und EPUBs unter Beibehaltung des Original-Layouts. Von kostenloser On-Device-Übersetzung bis zum KI-Lese-Assistenten.',
   };
 
   const ogImage = `${baseUrl}/images/datrans/og-${lang}.png`;

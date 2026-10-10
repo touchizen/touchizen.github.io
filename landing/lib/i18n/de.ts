@@ -785,7 +785,7 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   datrans_desc: 'Übersetzen Sie PDF- und EPUB-Dokumente unter Beibehaltung von Layout und Formatierung. Kostenlose On-Device-Übersetzung bis Cloud-KI.',
   datrans_feature1: 'Behält das Original-Layout bei',
   datrans_feature2: 'Kostenlose & private On-Device-Übersetzung',
-  datrans_feature3: 'Seitliches Schnellübersetzungs-Panel',
+  datrans_feature3: 'KI-Lese-Assistent und interaktiver Chat',
   datrans_cta: 'Mehr erfahren',
 
   // GitHub-Star-Tracker
