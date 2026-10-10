@@ -779,6 +779,15 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   mathshorts_feature3: 'Kugeln und Helices in 3D',
   mathshorts_cta: 'Mehr erfahren',
 
+  // DaTrans
+  datrans_name: 'DaTrans',
+  datrans_slogan: 'Layouttreuer KI-Reader und Übersetzer',
+  datrans_desc: 'Übersetzen Sie PDF- und EPUB-Dokumente unter Beibehaltung von Layout und Formatierung. Kostenlose On-Device-Übersetzung bis Cloud-KI.',
+  datrans_feature1: 'Behält das Original-Layout bei',
+  datrans_feature2: 'Kostenlose & private On-Device-Übersetzung',
+  datrans_feature3: 'KI-Chat und Fragen zum Dokument',
+  datrans_cta: 'Mehr erfahren',
+
   // GitHub-Star-Tracker
   ghstars_name: 'GitHub-Star-Tracker',
   ghstars_slogan: 'Welche Repos schnell groß wurden',

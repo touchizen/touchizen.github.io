@@ -60,6 +60,20 @@ export const products: Product[] = [
     iconImage: '/images/mathshorts/icon.png',
     hasDetailPage: true,
   },
+  {
+    id: 'datrans',
+    nameKey: 'datrans_name',
+    sloganKey: 'datrans_slogan',
+    descKey: 'datrans_desc',
+    features: ['datrans_feature1', 'datrans_feature2', 'datrans_feature3'],
+    ctaKey: 'datrans_cta',
+    link: '/datrans/',
+    isExternal: false,
+    gradient: 'from-blue-600 to-indigo-700',
+    icon: '📄',
+    iconImage: '/images/datrans/icon.png',
+    hasDetailPage: true,
+  },
   // Free developer tools
   {
     id: 'ghstars',

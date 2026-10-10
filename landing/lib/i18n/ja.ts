@@ -779,6 +779,15 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   mathshorts_feature3: '球と螺旋は3次元で',
   mathshorts_cta: '詳しく見る',
 
+  // DaTrans
+  datrans_name: 'DaTrans (ダ・トランス)',
+  datrans_slogan: 'レイアウトを崩さない AI ドキュメント翻訳',
+  datrans_desc: 'PDFやEPUBのレイアウトと書式をそのまま保ちながら自然に翻訳します。無料のオンデバイス翻訳からクラウドAI翻訳まで。',
+  datrans_feature1: '原文レイアウトを忠実に再現',
+  datrans_feature2: '漏洩のない無料オンデバイス翻訳',
+  datrans_feature3: '文書ベースのAIチャット・質疑応答',
+  datrans_cta: '詳しく見る',
+
   // GitHub スタートラッカー
   ghstars_name: 'GitHub スタートラッカー',
   ghstars_slogan: 'どのリポジトリが急成長したか',

@@ -779,6 +779,15 @@ The young prince practices sword fighting in the courtyard`,
   mathshorts_feature3: 'Spheres and helices in 3D',
   mathshorts_cta: 'Learn more',
 
+  // DaTrans
+  datrans_name: 'DaTrans',
+  datrans_slogan: 'Layout-preserving AI reader and translator',
+  datrans_desc: 'Translates PDF and EPUB documents while preserving original formatting and layout. Free on-device translation to cloud AI.',
+  datrans_feature1: 'Preserves original document layout',
+  datrans_feature2: 'Free & private on-device translation',
+  datrans_feature3: 'AI chat and Q&A on documents',
+  datrans_cta: 'Learn more',
+
   // GitHub Star Tracker
   ghstars_name: 'GitHub Star Tracker',
   ghstars_slogan: 'Which repos got big fast',

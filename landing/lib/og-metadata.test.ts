@@ -16,6 +16,7 @@ import { generateMetadata as mathshorts } from '@/app/(main)/[lang]/mathshorts/l
 import { generateMetadata as autoflowcut } from '@/app/(main)/[lang]/autoflowcut/layout';
 import { generateMetadata as calorieShot } from '@/app/(main)/[lang]/calorie-shot/layout';
 import { generateMetadata as whisk2capcut } from '@/app/(main)/[lang]/whisk2capcut/layout';
+import { generateMetadata as datrans } from '@/app/(main)/[lang]/datrans/layout';
 
 type Generator = (props: { params: { lang: Language } }) => Metadata | Promise<Metadata>;
 
@@ -25,6 +26,7 @@ const APP_PAGES: [string, Generator][] = [
   ['autoflowcut', autoflowcut as Generator],
   ['calorie-shot', calorieShot as Generator],
   ['whisk2capcut', whisk2capcut as Generator],
+  ['datrans', datrans as Generator],
 ];
 
 describe.each(APP_PAGES)('%s link preview card', (name, generateMetadata) => {
