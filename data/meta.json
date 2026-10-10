@@ -500,7 +500,7 @@
   "language": "TypeScript"
  },
  "DavidHDev/react-bits": {
-  "description": "An open source collection of animated, interactive & fully customizable React components for building memorable websites.",
+  "description": "The biggest open source library of animated, interactive & fully customizable React and NextJS components for building memorable websites.",
   "language": "JavaScript"
  },
  "DayuanJiang/next-ai-draw-io": {
@@ -566,6 +566,10 @@
  "DovAmir/awesome-design-patterns": {
   "description": "A curated list of software and architecture related design patterns.",
   "language": null
+ },
+ "Droid-Deck/DroidDeck": {
+  "description": "DroidDeck brings the SteamOS experience to Android",
+  "language": "Kotlin"
  },
  "DuarteSantos8/openGym": {
   "description": "Self-hosted gym & body-weight tracker — plan routines, log workouts (supersets, warm-ups, cardio), see which muscles are trained, fatigued or detrained, import from FitNotes/Strong/Hevy, passkey login. Your data, your server.",
@@ -832,8 +836,8 @@
   "language": "Rust"
  },
  "HBAI-Ltd/Toonflow-app": {
-  "description": "Toonflow 是开源 AI 创作平台，融合无限画布、AI Agent 与可视化工作流，支持图像生成、视频生成、智能分镜及短剧创作。支持本地部署、自由接入模型，提供跨平台桌面端，并可通过 MCP 与插件扩展创作能力。Open-source AI creative platform with an infinite canvas, AI agents and visual workflows for image generation, video generation and filmmaking, with a canvas-based approach similar to LibTV and TapNow.",
-  "language": "Vue"
+  "description": "短剧、漫剧制作工具 Toonflow：开源 AI 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、AI Agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、MCP 与插件扩展。Open-source AI short drama and motion comic creation tool with an infinite canvas, AI agents, storyboarding, image and video generation. Self-hosted and extensible, with a canvas-based approach similar to LibTV and TapNow.",
+  "language": "TypeScript"
  },
  "HEJustinSun/my-girlfriend-jingtian-latex": {
   "description": "",
@@ -1100,7 +1104,7 @@
   "language": "TypeScript"
  },
  "Lakr233/vphone-cli": {
-  "description": "",
+  "description": "Run a virtual iPhone on an Apple Silicon Mac.",
   "language": "Swift"
  },
  "LanRhyme/MicYou": {
@@ -1332,7 +1336,7 @@
   "language": "Python"
  },
  "NanmiCoder/cc-haha": {
-  "description": "Local-first cross-platform desktop workspace for Claude Code / agents: multi-agent, Git worktrees, code diffs, skill marketplace, multi-model, Computer Use, task-aware desktop pets, with WeChat, Feishu, DingTalk, Telegram, WhatsApp and H5 access.",
+  "description": "本地优先的跨平台 Claude Code / AI Agent 桌面工作台：多 Agent 协作、Git Worktree、代码 Diff、技能市场、多模型、Computer Use、桌面宠物；支持微信、飞书、钉钉及 H5 等远程访问。 | Local-first Claude Code / AI Agent desktop workspace: multi-agent teams, Git worktrees, diffs, skills marketplace, multi-model, Computer Use, task-aware desktop pets; remote via WeChat, Feishu, DingTalk, Telegram, WhatsApp & H5.",
   "language": "TypeScript"
  },
  "Narcooo/inkos": {
@@ -1547,6 +1551,10 @@
   "description": "PowerShell for every system!",
   "language": "C#"
  },
+ "Predidit/Kazumi": {
+  "description": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
+  "language": "Dart"
+ },
  "PrimeIntellect-ai/prime-agent": {
   "description": "A self-improving RLM agent for coding workflows and long-running autonomous tasks.",
   "language": "Rust"
@@ -1577,6 +1585,10 @@
  },
  "QuipNetwork/quip-node-manager": {
   "description": "A simple GUI client to manage a Quip Network node",
+  "language": "Rust"
+ },
+ "QuipNetwork/quip-solver": {
+  "description": "The quip network mining stack. This includes a coordinator and links all of the official quip network miners.",
   "language": "Rust"
  },
  "QuipNetwork/quip-validator": {
@@ -1929,7 +1941,7 @@
  },
  "ToolJet/ToolJet": {
   "description": "Open-source foundation of ToolJet AI - the enterprise app generation platform for internal tools, dashboards, business applications, workflows and AI agents. Build visually, from a prompt, or from Claude Code, Codex and Cursor over MCP 🚀",
-  "language": "JavaScript"
+  "language": "HTML"
  },
  "Tracer-Cloud/opensre": {
   "description": "Build your own AI SRE agents. The open source toolkit for the AI era.",
@@ -2572,7 +2584,7 @@
   "language": "TypeScript"
  },
  "appwrite/appwrite": {
-  "description": "Appwrite® - complete cloud infrastructure for your web, mobile and AI apps. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime and more",
+  "description": "The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more",
   "language": "TypeScript"
  },
  "aquasecurity/trivy": {
@@ -3040,7 +3052,7 @@
   "language": "Rust"
  },
  "cathrynlavery/diagram-design": {
-  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Factory Droid, and Pi. 42 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
   "language": "HTML"
  },
  "ccch1mneyyy/dsh-TUI": {
@@ -4383,6 +4395,10 @@
   "description": "Harness Open Source is an end-to-end developer platform with Source Control Management, CI/CD Pipelines, Hosted Developer Environments, and Artifact Registries.",
   "language": "Go"
  },
+ "harry0703/MangoDisk": {
+  "description": "Safety-first disk cleaner and space analyzer for macOS and Windows, with duplicate cleanup, app uninstall, startup management, system optimization, and maintenance.",
+  "language": "Rust"
+ },
  "harry0703/MoneyPrinterTurbo": {
   "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
   "language": "Python"
@@ -4428,7 +4444,7 @@
   "language": null
  },
  "hesreallyhim/awesome-claude-code": {
-  "description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC. A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
+  "description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC (no affiliation). A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
   "language": "Python"
  },
  "hexojs/hexo": {
@@ -4840,7 +4856,7 @@
   "language": "Rust"
  },
  "jub0t/concat": {
-  "description": "Beta: The truly free, and open-source cross-platform CapCut replacement (supports MCPs).",
+  "description": "The truly free, and open-source cross-platform CapCut replacement (supports MCPs).",
   "language": "Rust"
  },
  "juliangarnier/anime": {
@@ -6063,6 +6079,10 @@
   "description": "开放的侧边栏底座，支持三方拓展注册新侧边栏页面。内置文件渲染编辑/终端/侧边对话/Git/子代理页面 ｜ Open sidebar foundation, supports third-party extensions to register new sidebar pages. Built-in file rendering/editing, terminal, side chat, Git, and sub-agent pages.",
   "language": "TypeScript"
  },
+ "omlahore/RemoveMacAI": {
+  "description": "Debloat macOS: turn off Apple Intelligence, analytics, ads and pop-ups. A native app and CLI, and every change can be undone.",
+  "language": "Swift"
+ },
  "omnigent-ai/omnigent": {
   "description": "Omnigent is an open-source AI agent framework and meta-harness: orchestrate Claude Code, Codex, Cursor, Pi, and custom agents — swap harnesses without rewriting, enforce policies and sandboxing, and collaborate in real time from any device.",
   "language": "Python"
@@ -6968,7 +6988,7 @@
   "language": "TypeScript"
  },
  "shy3130/tick-stock-panel": {
-  "description": "TSP自托管、零运维的 A 股「选股 + 监控 + 回测」量化工作台  | LLM能力驱使策略定制+个股分析+复盘 | 自由接入第三方数据源与个性化扩展数据 | 个人开源",
+  "description": "TSP自托管、零运维的 A 股「自建策略 + 监控 + 回测」量化工作台  | LLM能力驱使策略定制+个股分析+复盘 | 自由接入第三方数据源与个性化扩展数据 | 个人开源",
   "language": "Python"
  },
  "sickcodes/Docker-OSX": {
@@ -7146,6 +7166,10 @@
  "storybookjs/storybook": {
   "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
   "language": "TypeScript"
+ },
+ "storytold/effectcraft": {
+  "description": "",
+  "language": "Rust"
  },
  "storytold/filmcraft": {
   "description": "An open-source, clean-room reimplementation of Adobe Premiere Pro built in pure Rust.",
@@ -8208,7 +8232,7 @@
   "language": "Python"
  },
  "zerobrewhq/zerobrew": {
-  "description": "An up to 6.6x faster Homebrew alternative",
+  "description": "An up to 6.6x faster Homebrew client",
   "language": "Rust"
  },
  "zeroclaw-labs/zeroclaw": {
