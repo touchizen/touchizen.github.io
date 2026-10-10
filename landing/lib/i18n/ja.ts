@@ -785,7 +785,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   datrans_desc: 'PDFやEPUBのレイアウトと書式をそのまま保ちながら自然に翻訳します。無料のオンデバイス翻訳からクラウドAI翻訳まで。',
   datrans_feature1: '原文レイアウトを忠実に再現',
   datrans_feature2: '漏洩のない無料オンデバイス翻訳',
-  datrans_feature3: '文書ベースのAIチャット・質疑応答',
+  datrans_feature3: 'スライド即時翻訳パネル',
   datrans_cta: '詳しく見る',
 
   // GitHub スタートラッカー

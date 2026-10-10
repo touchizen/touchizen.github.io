@@ -785,7 +785,7 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   datrans_desc: 'PDF와 EPUB 문서의 레이아웃과 서식을 원본 그대로 유지하며 번역합니다. 무료 온디바이스 번역부터 최신 클라우드 AI 번역까지.',
   datrans_feature1: '문서 레이아웃 원본 그대로 유지',
   datrans_feature2: '데이터 유출 없는 무료 온디바이스 번역',
-  datrans_feature3: '문서 기반 AI 대화 및 질의응답',
+  datrans_feature3: '우측 슬라이드 즉시 번역창',
   datrans_cta: '자세히 보기',
 
   // GitHub 스타 트래커

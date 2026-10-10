@@ -48,8 +48,8 @@ const COPY: Record<Language, Copy> = {
       },
       {
         icon: '💬',
-        title: '문서 기반 AI 대화',
-        desc: '문서를 읽다 궁금한 내용이 생기면 AI에게 바로 질문하고 핵심 내용 요약이나 심층 설명을 받아보세요.',
+        title: '슬라이드 번역창',
+        desc: '문서를 읽으며 우측 슬라이드 창을 열어 원하는 문장이나 단어를 즉시 번역하고 이전 번역 내역을 확인합니다.',
       },
       {
         icon: '✏️',
@@ -90,8 +90,8 @@ const COPY: Record<Language, Copy> = {
       },
       {
         icon: '💬',
-        title: 'Document AI Chat',
-        desc: 'Ask questions about the document you are reading to get instant explanations, summaries, and in-depth insights.',
+        title: 'Slide-Over Translation Panel',
+        desc: 'Open the slide-over translation panel while reading to instantly translate selected text and review past translations.',
       },
       {
         icon: '✏️',
@@ -132,8 +132,8 @@ const COPY: Record<Language, Copy> = {
       },
       {
         icon: '💬',
-        title: '文書ベースのAIチャット',
-        desc: '読んでいる文書について疑問があれば、AIに質問して要約や詳しい解説をその場ですぐ確認できます。',
+        title: 'スライド翻訳パネル',
+        desc: '文書を読みながら右側のスライド画面を開き、気になる文章や単語をその場ですぐ翻訳・履歴確認できます。',
       },
       {
         icon: '✏️',
@@ -174,8 +174,8 @@ const COPY: Record<Language, Copy> = {
       },
       {
         icon: '💬',
-        title: 'KI-Chat zum Dokument',
-        desc: 'Stellen Sie Fragen zum gelesenen Dokument und erhalten Sie sofortige Zusammenfassungen und Erklärungen.',
+        title: 'Seitliches Übersetzungs-Panel',
+        desc: 'Öffnen Sie beim Lesen das seitliche Übersetzungsfenster, um Textabschnitte sofort zu übersetzen und den Verlauf einzusehen.',
       },
       {
         icon: '✏️',

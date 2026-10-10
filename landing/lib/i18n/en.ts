@@ -785,7 +785,7 @@ The young prince practices sword fighting in the courtyard`,
   datrans_desc: 'Translates PDF and EPUB documents while preserving original formatting and layout. Free on-device translation to cloud AI.',
   datrans_feature1: 'Preserves original document layout',
   datrans_feature2: 'Free & private on-device translation',
-  datrans_feature3: 'AI chat and Q&A on documents',
+  datrans_feature3: 'Slide-over quick translation panel',
   datrans_cta: 'Learn more',
 
   // GitHub Star Tracker
