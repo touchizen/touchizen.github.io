@@ -49,7 +49,7 @@ const COPY: Record<Language, Copy> = {
       {
         icon: '💬',
         title: '독서 보조 AI & 실시간 대화',
-        desc: '문서를 읽다 궁금한 내용이 생기면 AI에게 바로 질문하고, 어려운 문장의 [쉬운 해설], 핵심 [3줄 요약], [번역]을 슬라이드 창에서 즉시 확인하세요.',
+        desc: '선택한 글이나 직접 입력한 발췌문을 번역하세요. 설정한 클라우드 AI로 발췌문의 쉬운 해설, 3줄 요약, 발췌문과 함께 입력한 질문의 답변을 슬라이드 창에서 확인할 수 있습니다.',
       },
       {
         icon: '✏️',
@@ -91,7 +91,7 @@ const COPY: Record<Language, Copy> = {
       {
         icon: '💬',
         title: 'AI Reading Assistant & Chat',
-        desc: 'Ask questions about the document, get clear explanations of difficult concepts, 3-point summaries, or instant translations right in the slide-over panel.',
+        desc: 'Translate selected or pasted excerpts in the slide-over panel. With a configured cloud AI provider, get explanations, 3-point summaries, or answers to questions you enter with the relevant excerpt.',
       },
       {
         icon: '✏️',
@@ -133,7 +133,7 @@ const COPY: Record<Language, Copy> = {
       {
         icon: '💬',
         title: '読書補助AI＆リアルタイム対話',
-        desc: '文書を読みながら疑問があればAIに質問し、難しい文章の【分かりやすい解説】、【3行要約】、【即時翻訳】をスライド画面ですぐ確認できます。',
+        desc: '選択した文章や入力した抜粋をスライド画面で翻訳できます。設定済みのクラウドAIで、抜粋の解説・3行要約や、関連する抜粋と一緒に入力した質問への回答を確認できます。',
       },
       {
         icon: '✏️',
@@ -175,7 +175,7 @@ const COPY: Record<Language, Copy> = {
       {
         icon: '💬',
         title: 'Lese-Assistent & KI-Chat',
-        desc: 'Stellen Sie Fragen zum Dokument, erhalten Sie verständliche Erklärungen schwieriger Passagen, 3-Punkte-Zusammenfassungen und sofortige Übersetzungen im Seitenpanel.',
+        desc: 'Übersetzen Sie ausgewählte oder eingefügte Auszüge im Seitenpanel. Mit einem eingerichteten Cloud-KI-Anbieter erhalten Sie Erklärungen, 3-Punkte-Zusammenfassungen und Antworten auf Fragen, die Sie zusammen mit dem passenden Auszug eingeben.',
       },
       {
         icon: '✏️',
