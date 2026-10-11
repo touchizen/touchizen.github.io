@@ -500,7 +500,7 @@
   "language": "TypeScript"
  },
  "DavidHDev/react-bits": {
-  "description": "The biggest open source library of animated, interactive & fully customizable React and NextJS components for building memorable websites.",
+  "description": "The largest open-source library of animated, interactive, and customizable React & Next.js components for building standout web products and experiences. Built for humans and AI agents.",
   "language": "JavaScript"
  },
  "DayuanJiang/next-ai-draw-io": {
@@ -1236,7 +1236,7 @@
   "language": "JavaScript"
  },
  "MicYou-Dev/MicYou": {
-  "description": "MicYou is a powerful tool that turns your Android device into a high-quality microphone for your PC.",
+  "description": "MicYou is a powerful tool that turns your mobile device into a high-quality microphone for your PC.",
   "language": "Rust"
  },
  "MiniMax-AI/MiniMax-H3": {
@@ -1477,7 +1477,7 @@
  },
  "OthmanAdi/planning-with-files": {
   "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-  "language": "Shell"
+  "language": "Python"
  },
  "PDFCraftTool/pdfcraft": {
   "description": "PDFCraft is a free, privacy-focused PDF toolkit that runs entirely in your browser. With 90+ professional tools, you can edit, convert, merge, split, and secure your PDF files without ever uploading them to a server.",
@@ -2988,7 +2988,7 @@
   "language": "Shell"
  },
  "byoungd/up": {
-  "description": "人生进阶指南 韩先凯的人生进阶指南 英语学习指南 离谱的人生 AI时代终身学习：AI、学习、创业与成长。",
+  "description": "韩先凯的人生进阶指南 人生进阶指南 英语学习指南 离谱的人生 AI AI时代终身学习：AI、学习、创业与成长。",
   "language": "JavaScript"
  },
  "bytedance/UI-TARS-desktop": {
@@ -3052,7 +3052,7 @@
   "language": "Rust"
  },
  "cathrynlavery/diagram-design": {
-  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
   "language": "HTML"
  },
  "ccch1mneyyy/dsh-TUI": {
@@ -4103,6 +4103,10 @@
   "description": "A book series (2 published editions) on the JS language.",
   "language": null
  },
+ "getopenscreen/openscreen": {
+  "description": "Record your screen, ship a demo. Free and open-source, GPU-accelerated, no watermarks, no subscriptions. Windows, macOS, Linux. Actively maintained.",
+  "language": "TypeScript"
+ },
  "getpaseo/paseo": {
   "description": "Orchestrate multiple coding agents from desktop and mobile",
   "language": "TypeScript"
@@ -4348,7 +4352,7 @@
   "language": "Go"
  },
  "guokaigdg/animal-island-ui": {
-  "description": "A Kawaii React UI component library  一个可爱的 React UI 组件库",
+  "description": "A Kawaii React UI component library  一个可爱的 React UI  组件库",
   "language": "TypeScript"
  },
  "h4ckf0r0day/obscura": {
@@ -4856,7 +4860,7 @@
   "language": "Rust"
  },
  "jub0t/concat": {
-  "description": "The truly free, and open-source cross-platform CapCut replacement (supports MCPs).",
+  "description": "⭐ Concat: The truly free, and open-source cross-platform CapCut replacement (supports MCPs).",
   "language": "Rust"
  },
  "juliangarnier/anime": {
@@ -5701,7 +5705,7 @@
  },
  "modelcontextprotocol/servers": {
   "description": "Model Context Protocol Servers",
-  "language": "TypeScript"
+  "language": "JavaScript"
  },
  "modem-dev/hunk": {
   "description": "Review-first terminal diff viewer for agentic coders",
@@ -6736,7 +6740,7 @@
   "language": "TypeScript"
  },
  "rohitg00/ai-engineering-from-scratch": {
-  "description": "Learn it. Build it. Ship it for others.",
+  "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
   "language": "Python"
  },
  "romkatv/powerlevel10k": {
@@ -6926,6 +6930,10 @@
  "shadcn/improve": {
   "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
   "language": null
+ },
+ "shader-effects-inc/shaders": {
+  "description": "WebGPU components for React, Vue, Svelte, Solid, JS & Framer",
+  "language": "TypeScript"
  },
  "shadowsocks/shadowsocks": {
   "description": "",
@@ -8102,6 +8110,10 @@
  "yifanfeng97/Hyper-Extract": {
   "description": "Hypergraph is more powerful. Transform unstructured text into structured knowledge with LLMs. Graphs, hypergraphs, and spatio-temporal extractions — with one command.",
   "language": "Python"
+ },
+ "yihui-dev/awesome-opus5-5-videos": {
+  "description": "A growing collection of viral videos made with Claude Opus 5.5 and the prompts behind them. Watch each original next to a live remake on Skillry. Updated regularly.",
+  "language": null
  },
  "yizhiyanhua-ai/fireworks-tech-graph": {
   "description": "Generate production-quality SVG+PNG technical diagrams from natural language. 7 styles, UML support, and AI/Agent workflow patterns.",
