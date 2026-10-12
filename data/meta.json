@@ -4672,7 +4672,7 @@
   "language": "TypeScript"
  },
  "irinabuht12-oss/google-ads-meta-ads-mcp": {
-  "description": "Google Ads MCP server + Meta Ads MCP (Facebook Ads MCP) + GA4 + Search Console in one hosted remote MCP for Claude, ChatGPT, Cursor & n8n: 250+ tools, OAuth login, no API keys, approval-gated writes, free. By Ryze AI.",
+  "description": "Google Ads MCP server + Meta Ads MCP (Facebook Ads MCP) + Google Analytics MCP (GA4) + Search Console in one hosted remote MCP for Claude, ChatGPT, Cursor & n8n: OAuth login, no API keys, approval-gated writes, 7-day free trial. By Ryze AI.",
   "language": null
  },
  "irinabuht12-oss/marketing-skills": {
@@ -4860,7 +4860,7 @@
   "language": "Rust"
  },
  "jub0t/concat": {
-  "description": "⭐ Concat: The truly free, and open-source cross-platform CapCut replacement (supports MCPs).",
+  "description": "⭐ Concat: The truly free, and open-source cross-platform CapCut replacement. Supports MCPs & API.",
   "language": "Rust"
  },
  "juliangarnier/anime": {
@@ -7176,27 +7176,31 @@
   "language": "TypeScript"
  },
  "storytold/effectcraft": {
-  "description": "",
+  "description": "EffectCraft: An open-source motion graphics and compositing tool written by scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/filmcraft": {
-  "description": "An open-source, clean-room reimplementation of Adobe Premiere Pro built in pure Rust.",
+  "description": "FilmCraft: An open-source, nonlinear video editor written by scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/lightcraft": {
-  "description": "An open-source, clean-room reimplementation of Adobe Lightroom in pure Rust.",
+  "description": "LightCraft: An open-source non-destructive photo editor written by scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/pdfcraft": {
-  "description": "An open-source, clean-room reimplementation of Adobe Acrobat built in pure Rust",
+  "description": "PdfCraft: An open-source PDF reader and editor written by scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/photocraft": {
-  "description": "An open-source, clean-room reimplementation of Adobe Photoshop in pure Rust",
+  "description": "PhotoCraft: An open-source, photo editor written by scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/vectorcraft": {
-  "description": "An open-source, clean-room reimplementation of Adobe Illustrator, built in pure Rust.",
+  "description": "VectorCraft: An open-source, vector art tool written by scratch in pure Rust",
+  "language": "Rust"
+ },
+ "storytold/wordcraft": {
+  "description": "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
   "language": "Rust"
  },
  "straight-tamago/misaka26": {
@@ -7955,6 +7959,10 @@
   "description": "Modern HTTP benchmarking tool",
   "language": "C"
  },
+ "wheresryan22/anatomy": {
+  "description": "An agent skill for creating detailed, interactive isometric illustrations of real-world machines and complex systems. Generates polished SVGs with optional WebGL shaders and 3D effects.",
+  "language": "JavaScript"
+ },
  "wide-trace/open-higgsfield": {
   "description": "A studio for image and video generation — one prompt bar, each model’s own settings, and every finished run in one gallery.",
   "language": "TypeScript"
@@ -8244,7 +8252,7 @@
   "language": "Python"
  },
  "zerobrewhq/zerobrew": {
-  "description": "An up to 6.6x faster Homebrew client",
+  "description": "An up to 5x faster Homebrew client",
   "language": "Rust"
  },
  "zeroclaw-labs/zeroclaw": {
