@@ -976,7 +976,7 @@
   "language": "TypeScript"
  },
  "Jakubantalik/transitions.dev": {
-  "description": "UI montion AI agent, a library of 43+ crafted transitions, a skill that fits your workflow.",
+  "description": "UI motion agent, a library of 43+ crafted transitions, a skill that fits your workflow.",
   "language": "HTML"
  },
  "Jeffallan/claude-skills": {
@@ -2988,7 +2988,7 @@
   "language": "Shell"
  },
  "byoungd/up": {
-  "description": "韩先凯的人生进阶指南 人生进阶指南 英语学习指南 离谱的人生 AI AI时代终身学习：AI、学习、创业与成长。",
+  "description": "韩先凯的人生进阶指南 人生进阶指南 AI时代生存指南 英语学习指南 离谱的人生 AI AI时代终身学习：AI、学习、创业与成长。",
   "language": "JavaScript"
  },
  "bytedance/UI-TARS-desktop": {
@@ -5295,6 +5295,10 @@
   "description": "这是图吧工具箱基于 WinUI 3 全新重构的版本，一款由社区驱动、深度契合 Windows 11 设计美学的现代化工具箱。它不仅确保你始终使用最新版本的工具，还集成了更加丰富的实用功能，更可满足高度自定义的个性化需求。",
   "language": "C#"
  },
+ "luoluoluo22/jianying-editor-skill": {
+  "description": "Skill for Agent automating JianYing (CapCut Chinese version) video editing.",
+  "language": "Python"
+ },
  "luongnv89/claude-howto": {
   "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
   "language": "Python"
@@ -5308,7 +5312,7 @@
   "language": null
  },
  "lyogavin/airllm": {
-  "description": "AirLLM 70B inference with single 4GB GPU",
+  "description": "AirLLM 2.8T LLM inference with single 4GB GPU",
   "language": "Jupyter Notebook"
  },
  "lysine-dev/okhttp": {
@@ -7183,6 +7187,10 @@
   "description": "FilmCraft: An open-source, nonlinear video editor written by scratch in pure Rust",
   "language": "Rust"
  },
+ "storytold/gridcraft": {
+  "description": "GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust. By ArtCraft.",
+  "language": "Rust"
+ },
  "storytold/lightcraft": {
   "description": "LightCraft: An open-source non-destructive photo editor written by scratch in pure Rust",
   "language": "Rust"
@@ -7980,7 +7988,7 @@
   "language": "TypeScript"
  },
  "withcoral/coral": {
-  "description": "One SQL interface over APIs, files, and live sources — built for agents.",
+  "description": "The execution layer for AI agents. Act across more of your systems with precise controls: safer, faster and more efficient than MCP tools and gateways.",
   "language": "Rust"
  },
  "withmarbleapp/os-taxonomy": {
