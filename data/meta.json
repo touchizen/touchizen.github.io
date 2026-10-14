@@ -392,7 +392,7 @@
   "language": "C++"
  },
  "CloakHQ/CloakBrowser": {
-  "description": "Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement with source-level fingerprint patches. 30/30 tests passed.",
+  "description": "Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement with source-level fingerprint patches. 50+ tests passed.",
   "language": "Python"
  },
  "Cocoon-AI/architecture-diagram-generator": {
@@ -1128,7 +1128,7 @@
   "language": null
  },
  "Leonxlnx/taste-skill": {
-  "description": "Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop ",
+  "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
   "language": "JavaScript"
  },
  "Leonxlnx/unlazy": {
@@ -2439,6 +2439,10 @@
   "description": "🍿 A cross-browser library of CSS animations. As easy to use as an easy thing.",
   "language": "CSS"
  },
+ "anmolkapil/plexo": {
+  "description": "Speed up downloads by combining multiple network connections in parallel",
+  "language": "TypeScript"
+ },
  "anoma/anoma": {
   "description": "Reference implementation of Anoma",
   "language": "Elixir"
@@ -3550,6 +3554,10 @@
  "digitalinnovationone/potencializando-estudos-carreira-com-ia": {
   "description": "Curso \"Potencializando Seus Estudos e Carreira com IA: De Chatbots a Agentes\"",
   "language": null
+ },
+ "dimthink/PriceAI": {
+  "description": "AI 订阅卡网渠道比价工具：聚合100+卡网渠道包含 ChatGPT、Claude、Gemini、Grok 等多渠道报价，展示有货最低价、库存状态和原站购买链接。",
+  "language": "TypeScript"
  },
  "directus/directus": {
   "description": "The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more.",
@@ -5348,7 +5356,7 @@
   "language": "Objective-C"
  },
  "magnitudedev/magnitude": {
-  "description": "Open source inference engine for agents that optimizes itself for your exact hardware. Compiles and tunes its kernels on your device, so open models run up to 2x faster than llama.cpp. Works on Apple Silicon, NVIDIA, AMD, or just a CPU.",
+  "description": "Open source inference engine that tunes its kernels on your hardware to find the fastest way to run each model. 2x faster than Ollama. Works on Apple Silicon, NVIDIA, AMD, or just a CPU.",
   "language": "Rust"
  },
  "makeplane/plane": {
@@ -5478,6 +5486,10 @@
  "meteor/meteor": {
   "description": "Meteor, the JavaScript App Platform",
   "language": "JavaScript"
+ },
+ "mhtsec/ARTEX": {
+  "description": "AI 自主渗透测试系统 | 百度“agent+”攻防挑战赛冠军项目",
+  "language": "Go"
  },
  "microsoft/AI-Engineering-Coach": {
   "description": "better agentic engineering",
@@ -5727,6 +5739,10 @@
   "description": "Parse, validate, manipulate, and display dates in javascript.",
   "language": "JavaScript"
  },
+ "monid-ai/monid": {
+  "description": "Monid - OpenRouter for agent tools. Join our community at https://discord.gg/rQzztcgJV8",
+  "language": "TypeScript"
+ },
  "morluto/rea": {
   "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
   "language": "TypeScript"
@@ -5875,6 +5891,10 @@
   "description": "On-device TTS model by Neuphonic",
   "language": "Python"
  },
+ "newliver666/apk-reverse": {
+  "description": "Suitable for Android APK reverse engineering analysis",
+  "language": "Python"
+ },
  "nexmoe/VidBee": {
   "description": "Download video and audio from  YouTube ,  TikTok ,  Twitter ,  Instagram ,  Facebook ,  Twitch ,  Bilibili , and 1000+ sites—or import local media. Create searchable transcripts on your computer, then summarize, translate, or ask questions with your preferred AI provider.",
   "language": "TypeScript"
@@ -5900,7 +5920,7 @@
   "language": "HTML"
  },
  "nexu-io/open-design": {
-  "description": "🎨 Best DeepSeek Harness Design Plugin. The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, slides, images & video — real files, HTML/PDF/PPTX/MP4 export. 🤖 Claude Code / Codex / Cursor / DeepSeek Harness / OpenCode & 20+ CLIs via BYOK.",
+  "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
   "language": "TypeScript"
  },
  "ngosang/trackerslist": {
@@ -7103,6 +7123,10 @@
   "description": "Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.",
   "language": "Rust"
  },
+ "spacering-net/codeg": {
+  "description": "Collaborative multi-agent AI coding workspace: aggregate sessions from Claude Code, Codex, OpenCode, Pi, Grok Build, etc. Desktop app, self-hosted server, or Docker.",
+  "language": "Rust"
+ },
  "spf13/cobra": {
   "description": "A Commander for modern Go CLI interactions",
   "language": "Go"
@@ -7178,6 +7202,10 @@
  "storybookjs/storybook": {
   "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
   "language": "TypeScript"
+ },
+ "storytold/cadcraft": {
+  "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
+  "language": "Rust"
  },
  "storytold/effectcraft": {
   "description": "EffectCraft: An open-source motion graphics and compositing tool written by scratch in pure Rust",
@@ -7344,7 +7372,7 @@
   "language": "Rust"
  },
  "teng-lin/notebooklm-py": {
-  "description": "Unofficial Python API and agentic skill for Google Gemini Notebook. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.",
+  "description": "Unofficial Python API and agentic skill for Google Gemini Notebook. Full programmatic access to Gemini Notebook's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.",
   "language": "Python"
  },
  "tensorflow/models": {
@@ -7501,7 +7529,7 @@
  },
  "tradecatlabs/vibe-coding-cn": {
   "description": "Vibe Coding 从入门到精通教程｜AI 结对编程工作流｜Prompt、Skill、Workflow、上下文管理、codex实战指南",
-  "language": "Python"
+  "language": "Makefile"
  },
  "tradesdontlie/tradingview-mcp": {
   "description": "AI-assisted TradingView chart analysis — connect Claude Code to your TradingView Desktop for personal workflow automation",
@@ -7512,6 +7540,10 @@
   "language": "Go"
  },
  "trailhq/Graft": {
+  "description": "Turbocharge Claude Code, Cursor, Codex, Gemini & every coding agent: faster, cheaper, with contextual understanding specific to your codebase.",
+  "language": "TypeScript"
+ },
+ "trailhq/Trail-Code": {
   "description": "Turbocharge Claude Code, Cursor, Codex, Gemini & every coding agent: faster, cheaper, with contextual understanding specific to your codebase.",
   "language": "TypeScript"
  },
@@ -8030,6 +8062,10 @@
  "xdash/FDE-the-Guidance-Book-of-Forward-Deployed-Engineer": {
   "description": "FDE（前沿部署工程师）从零入门指南（基于范冰《增长黑客》原书框架）",
   "language": null
+ },
+ "xerj-org/xerj": {
+  "description": "XERJ is the new way for AI to search data. Its autoindex capability activates agents to know your data without the token waste of grep and sed. One command indexes code, docs, logs and PDFs for search, RAG, security audits and agent memory, using 40x fewer tokens than grep. Elasticsearch compatible, so existing clients just work.",
+  "language": "Rust"
  },
  "xianyu110/awesome-openclaw-tutorial": {
   "description": "OpenClaw 中文教程（4500+ Star · 已出版纸质书）：安装、配置、Skills、飞书接入与避坑｜作者的 GPT-6 / Codex / Claude Code 新项目见 README 顶部",
