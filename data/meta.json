@@ -1600,7 +1600,7 @@
   "language": null
  },
  "QuipNetwork/xquad": {
-  "description": "A rust implementation of the Quip Network's quantum virtual machine.",
+  "description": "A hardware-agnostic SDK for optimization problems: define a problem once, then lower it to any quantum or classical solver",
   "language": "Python"
  },
  "QwenLM/Qwen3-ASR": {
@@ -2319,6 +2319,10 @@
   "description": "Hermes Agent 从入门到精通 · 橙皮书系列 · Nous Research 开源 AI Agent 框架实战指南",
   "language": "Python"
  },
+ "alchaincyf/huashu-art-motion": {
+  "description": "艺术动画skill：35种艺术风格、9种解说语法，用代码让画动起来。",
+  "language": "JavaScript"
+ },
  "alchaincyf/huashu-design": {
   "description": "Huashu Design · HTML-native design skill for Claude Code · Claude Code 里 HTML 原生的设计 skill · 高保真原型 / 幻灯片 / 动画 + 20 设计哲学 + 5 维评审 + MP4 导出 · Agent-agnostic",
   "language": "HTML"
@@ -2425,7 +2429,7 @@
  },
  "android/skills": {
   "description": "",
-  "language": "Python"
+  "language": "Kotlin"
  },
  "angular/angular": {
   "description": "Deliver web apps with confidence 🚀",
@@ -2940,11 +2944,11 @@
   "language": "Python"
  },
  "browser-use/browser-harness": {
-  "description": "Browser Harness | Self-healing harness that enables LLMs to complete any task.",
+  "description": "Let Claude Code, Codex or Cursor use your real Chrome, logged in as you. One prompt to set up. Open source, MIT.",
   "language": "Python"
  },
  "browser-use/browser-use": {
-  "description": "Agents that use the browser.",
+  "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
   "language": "Python"
  },
  "browser-use/jev-ultrafast": {
@@ -3316,11 +3320,11 @@
   "language": "C"
  },
  "crynta/terax-ai": {
-  "description": "Lightweight (7MB) Terminal-first AI-native dev workspace",
+  "description": "Lightweight (7MB) terminal-first AI-native devevelopment environment",
   "language": "TypeScript"
  },
  "curl/curl": {
-  "description": "A command line tool and library for transferring data with URL syntax, supporting DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, MQTTS, POP3, POP3S, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET, TFTP, WS and WSS. libcurl offers a myriad of powerful features",
+  "description": "A command line tool and library for transferring data with URL syntax, supporting DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, MQTTS, POP3, POP3S, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET, TFTP, WS and WSS. libcurl offers a myriad of powerful features",
   "language": "C"
  },
  "cursor/cookbook": {
@@ -3726,6 +3730,10 @@
  "elementalsouls/Claude-BugHunter": {
   "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
   "language": "Python"
+ },
+ "elie222/rakazo": {
+  "description": "Open-source Grok Bot alternative. Choose your own model and sandbox.",
+  "language": "TypeScript"
  },
  "emdash-cms/emdash": {
   "description": "EmDash is a full-stack TypeScript CMS based on Astro; the spiritual successor to WordPress",
@@ -4868,7 +4876,7 @@
   "language": "Rust"
  },
  "jub0t/concat": {
-  "description": "⭐ Concat: The truly free, and open-source cross-platform CapCut replacement. Supports MCPs & API.",
+  "description": "Concat: The truly free, and open-source cross-platform CapCut replacement. Supports MCPs & API.",
   "language": "Rust"
  },
  "juliangarnier/anime": {
@@ -5827,6 +5835,10 @@
   "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
   "language": "TypeScript"
  },
+ "nab138/iloader": {
+  "description": "User friendly sideloader",
+  "language": "TypeScript"
+ },
  "nageoffer/ragent": {
   "description": "企业级 Agentic RAG 智能体 - 全链路覆盖文档解析、多路检索、意图识别、问题重写、会话记忆、MCP 工具调用与深度思考。面向真实业务场景，从 0 到 1 完整工程实现。",
   "language": "Java"
@@ -5929,7 +5941,7 @@
  },
  "nguyenphutrong/quotio": {
   "description": "Stop juggling AI accounts. Quotio is a beautiful native macOS menu bar app that unifies your Claude, Gemini, OpenAI, Qwen, and Antigravity subscriptions – with real-time quota tracking and smart auto-failover for AI coding tools like Claude Code, OpenCode, and Droid.",
-  "language": "Swift"
+  "language": "Rust"
  },
  "nicobailon/pi-subagents": {
   "description": "Pi extension for async subagent delegation with truncation, artifacts, and session sharing",
@@ -6390,6 +6402,10 @@
  "pathwaycom/pathway": {
   "description": "Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.",
   "language": "Python"
+ },
+ "pathwaycom/serviette": {
+  "description": "Ready-to-run cloud templates for RAG, AI pipelines, and enterprise search with live data. 🐳Docker-friendly.⚡Always in sync with Sharepoint, Google Drive, S3, Kafka, PostgreSQL, real-time data APIs, and more.",
+  "language": "Jupyter Notebook"
  },
  "paullarionov/claude-certified-architect": {
   "description": "This repository contains study materials for the **Claude Certified Architect — Foundations** certification.",
@@ -6905,7 +6921,7 @@
  },
  "sdli1995/dlssg_for_sm86": {
   "description": "Here is a dlssg for RTX30 Series GPU ",
-  "language": null
+  "language": "HTML"
  },
  "sdmg15/Best-websites-a-programmer-should-visit": {
   "description": ":link: Some useful websites for programmers.",
@@ -6928,7 +6944,7 @@
   "language": null
  },
  "sergebulaev/linkedin-skills": {
-  "description": "Claude skills for LinkedIn. 11 Claude Code and Codex skills that write human-sounding LinkedIn posts, craft comments that get noticed, analyze your feed, and build a publishing cadence, all from your terminal. Content engineering by Creative Content Crafts. MIT.",
+  "description": "Claude skills for LinkedIn. 12 Claude Code and Codex skills that write human-sounding LinkedIn posts, craft comments that get noticed, analyze your feed, and build a publishing cadence, all from your terminal. Content engineering by Creative Content Crafts. MIT.",
   "language": "Python"
  },
  "serhii-londar/open-source-mac-os-apps": {
@@ -7028,7 +7044,7 @@
   "language": "Shell"
  },
  "sickn33/agentic-awesome-skills": {
-  "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,400+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
+  "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,600+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
   "language": "Python"
  },
  "siddharthvaddem/openscreen": {
@@ -7205,6 +7221,10 @@
  },
  "storytold/cadcraft": {
   "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
+  "language": "Rust"
+ },
+ "storytold/designcraft": {
+  "description": "DesignCraft: An open-source page and layout design editor written by scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/effectcraft": {
@@ -7596,11 +7616,11 @@
   "language": "Rust"
  },
  "tw93/Kami": {
-  "description": "👩‍🚒 Paper-inspired typography for elegant reading on screen. Good content deserves good paper.",
+  "description": "👩‍🚒 Good content deserves good paper. Layout rules and templates that let AI agents export PDF, PNG and editable PowerPoint.",
   "language": "HTML"
  },
  "tw93/Mole": {
-  "description": "🐹 Keep your Mac clean, light, and running like new. Fast open-source CLI, plus a native Mac app.",
+  "description": "🐹 Keep your Mac and PC clean, light, and running like new. Fast open-source CLI, plus native Mac and Windows apps.",
   "language": "Shell"
  },
  "tw93/Pake": {
@@ -7608,7 +7628,7 @@
   "language": "Rust"
  },
  "tw93/Waza": {
-  "description": "🥷 Engineering habits you already know, turned into skills AI assistants can run.",
+  "description": "🥷 Engineering habits you already know, turned into skills AI assistants like Claude Code, Codex and Cursor can run.",
   "language": "Python"
  },
  "twbs/bootstrap": {
