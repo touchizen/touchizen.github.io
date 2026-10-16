@@ -103,6 +103,10 @@
   "description": "The system of action for AI-native cybersecurity—where intent becomes governed execution, evidence becomes operational memory, and every operation improves the next.",
   "language": "Go"
  },
+ "ARahim3/DigUp": {
+  "description": "Search your computer by what's in your files: photos, PDFs, documents, recordings, videos and code. On-device on Mac, Windows and Linux, built on Google DeepMind's EmbeddingGemma 2.",
+  "language": "Swift"
+ },
  "ATH-MaaS/Pixelle-Video": {
   "description": "🚀 AI 全自动短视频引擎 | AI Fully Automated Short Video Engine",
   "language": "Python"
@@ -196,7 +200,7 @@
   "language": "Python"
  },
  "Anionex/banana-slides": {
-  "description": "一站式原生AI PPT生成应用，几分钟内生成一套幻灯片; 支持上传任意模板图片，上传任意素材&智能解析，一句话/大纲/页面描述自动生成PPT，口头修改指定区域、一键导出可编辑ppt、视频等 - An AI-native slides generator based on nano banana pro🍌",
+  "description": "一站式原生AI PPT生成应用，几分钟内生成一套幻灯片; 支持上传任意模板图片，上传任意素材&智能解析，一句话/大纲/页面描述自动生成PPT，口头修改指定区域、一键导出可编辑ppt、视频等 - An AI-native slides generator based on nano banana/gpt-image🏞️",
   "language": "TypeScript"
  },
  "AnmolSaini16/mapcn": {
@@ -504,7 +508,7 @@
   "language": "JavaScript"
  },
  "DayuanJiang/next-ai-draw-io": {
-  "description": "A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.",
+  "description": "Draw and edit draw.io diagrams by chatting with an AI. Web app, desktop app, and an MCP server for Claude Code, Cursor, Codex and VS Code.",
   "language": "TypeScript"
  },
  "DefinitelyTyped/DefinitelyTyped": {
@@ -512,7 +516,7 @@
   "language": "TypeScript"
  },
  "DeusData/codebase-memory-mcp": {
-  "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+  "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 162 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
   "language": "C"
  },
  "Developer-Y/cs-video-courses": {
@@ -1834,6 +1838,10 @@
  "Tencent/BrowserSkill": {
   "description": "Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.",
   "language": "TypeScript"
+ },
+ "Tencent/WeKnora": {
+  "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+  "language": "Go"
  },
  "Tencent/teamai-cli": {
   "description": "Make Every Team AI Native",
@@ -3389,7 +3397,7 @@
  },
  "dataelement/dsh-desktop": {
   "description": "DSHDesktop：DeepSeek Harness Desktop / DeepSeek Harness 桌面版",
-  "language": "TypeScript"
+  "language": "JavaScript"
  },
  "datalab-to/chandra": {
   "description": "OCR model that handles complex tables, forms, handwriting with full layout.",
@@ -4161,7 +4169,7 @@
  },
  "github/copilot-sdk": {
   "description": "Multi-platform SDK for integrating GitHub Copilot Agent into apps and services",
-  "language": "TypeScript"
+  "language": "Java"
  },
  "github/gitignore": {
   "description": "A collection of useful .gitignore templates",
@@ -4872,7 +4880,7 @@
   "language": "Go"
  },
  "jub0t/Concat": {
-  "description": "Beta: The truly free, and open-source cross-platform CapCut replacement (supports MCPs).",
+  "description": "The truly free, and open-source cross-platform CapCut replacement. Supports MCPs & API.",
   "language": "Rust"
  },
  "jub0t/concat": {
@@ -5101,7 +5109,7 @@
  },
  "langgenius/dify": {
   "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
-  "language": "TypeScript"
+  "language": "Python"
  },
  "laoma2053/awesome-zhuiju-free": {
   "description": "免费无广告的追剧资源指南，人工精选资源、每天检测资源有效性。收录在线影视、影视APP、网盘搜索、磁力BT、字幕、TVBox / 影视仓空壳软件/配置地址、IPTV直播源、会员拼团、影视相关开源项目。开源，社区共同维护。",
@@ -5496,7 +5504,7 @@
   "language": "JavaScript"
  },
  "mhtsec/ARTEX": {
-  "description": "AI 自主渗透测试系统 | 百度“agent+”攻防挑战赛冠军项目",
+  "description": "AI 自主渗透测试系统",
   "language": "Go"
  },
  "microsoft/AI-Engineering-Coach": {
@@ -6405,7 +6413,7 @@
  },
  "pathwaycom/serviette": {
   "description": "Ready-to-run cloud templates for RAG, AI pipelines, and enterprise search with live data. 🐳Docker-friendly.⚡Always in sync with Sharepoint, Google Drive, S3, Kafka, PostgreSQL, real-time data APIs, and more.",
-  "language": "Jupyter Notebook"
+  "language": "Python"
  },
  "paullarionov/claude-certified-architect": {
   "description": "This repository contains study materials for the **Claude Certified Architect — Foundations** certification.",
@@ -6417,7 +6425,7 @@
  },
  "pbakaus/impeccable": {
   "description": "The design language that makes your AI harness better at design.",
-  "language": "JavaScript"
+  "language": "Rust"
  },
  "pbatard/rufus": {
   "description": "The Reliable USB Formatting Utility",
@@ -7344,7 +7352,7 @@
   "language": "Rust"
  },
  "tabler/tabler": {
-  "description": "Free and open source admin dashboard UI kit built on Bootstrap: 100+ pages, 5,000+ icons, dark mode, RTL.",
+  "description": "Free and open source admin dashboard UI kit built on Bootstrap: 100+ pages, 6,000+ icons, dark mode, RTL.",
   "language": "Astro"
  },
  "taigrr/spank": {
@@ -7760,7 +7768,7 @@
   "language": "TypeScript"
  },
  "upstash/context7": {
-  "description": "Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors",
+  "description": "Context7 Platform -- Up-to-date docs for AI agents",
   "language": "TypeScript"
  },
  "usebruno/bruno": {
