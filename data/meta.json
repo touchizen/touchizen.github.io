@@ -36,7 +36,7 @@
   "language": null
  },
  "1jehuang/jcode": {
-  "description": "High performance coding agent harness written in rust",
+  "description": "High performance coding agent harness written in Rust, built for heavy multi-agent dev workflows",
   "language": "Rust"
  },
  "1weiho/open-slide": {
@@ -132,7 +132,7 @@
   "language": null
  },
  "AgriciDaniel/claude-ads": {
-  "description": "Claude-first paid-media operations skill for Claude Code across 12 ad platforms (Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pinterest, Snapchat, X): source-grounded audits, deterministic scoring, versioned JSON reports, and capability-gated account changes.",
+  "description": "Claude-first paid-media operations skill for Claude Code across 12 ad platforms (Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pinterest, Snapchat, X): source-grounded audits, deterministic findings and evidence coverage, versioned JSON reports, and capability-gated account changes.",
   "language": "Python"
  },
  "AgriciDaniel/claude-obsidian": {
@@ -173,6 +173,10 @@
  },
  "AlphaGBM/skills": {
   "description": "Bring realtime market data and research workflows into Claude Code, Cursor & beyond — 29 open-source Skills for stocks, options and commodities.",
+  "language": "Python"
+ },
+ "AminBlg/SimpleEnglish": {
+  "description": "Agent skill: make LLMs write docs in ASD-STE100 Simplified Technical",
   "language": "Python"
  },
  "AnInsomniacy/motrix-next": {
@@ -1167,6 +1171,10 @@
   "description": "《动手学大模型Dive into LLMs》系列编程实践教程",
   "language": "Jupyter Notebook"
  },
+ "LosaLosSantos/aurelio-finance": {
+  "description": "Open-source personal finance app with an AI financial advisor: track your net worth, investments, ETFs, cash and debts on your own computer.",
+  "language": "Python"
+ },
  "Louis-CFM/coucou": {
   "description": "A tiny friend in your Mac's notch and on your iPhone that keeps an eye on your AI coding agents: Claude Code, Codex, Cursor, Gemini CLI, Antigravity and more. Approve from the notch or your Lock Screen.",
   "language": "Swift"
@@ -1694,6 +1702,10 @@
  "SawyerHood/dev-browser": {
   "description": "A Claude Skill to give your agent the ability to use a web browser",
   "language": "TypeScript"
+ },
+ "ScrapeCreators/social-media-research-skills": {
+  "description": "AI agent skills for social media research. Outlier posts, comment mining, competitor teardowns, ad libraries & trends across TikTok, Instagram, YouTube, Reddit, X, LinkedIn & more. Powered by ScrapeCreators. Works with Claude Code, Cursor, Codex, Gemini CLI.",
+  "language": "Python"
  },
  "Seeed-Projects/reBot-DevArm": {
   "description": "Open Source Robotic Arm for All Developers",
@@ -3796,7 +3808,7 @@
   "language": "Go"
  },
  "eugeniughelbur/obsidian-second-brain": {
-  "description": "Persistent memory for Claude Code and 6 other CLI agents, stored as plain markdown in your Obsidian vault. Stop re-explaining your projects, decisions and people every session. 45 commands: hybrid semantic search, self-rewriting notes, key-less web research, and scheduled agents that maintain the vault while you sleep.",
+  "description": "Persistent memory for Claude Code, Codex and 6 other AI agents, stored as plain markdown in your Obsidian vault. New: Crew, one shared logbook so Claude Code, Codex, Cursor and Grok Bot know what each other did. 48 commands: semantic search, self-rewriting notes, key-less research, scheduled agents.",
   "language": "Python"
  },
  "eugenp/tutorials": {
@@ -5520,7 +5532,7 @@
   "language": "C++"
  },
  "microsoft/CUAWright": {
-  "description": "A simple SWE style browser+desktop agent framework that achieves SOTA results on long horizon web tasks. ",
+  "description": "A simple SWE-style browser+desktop agent framework that achieves SOTA results on long-horizon CUA tasks",
   "language": "Python"
  },
  "microsoft/Data-Science-For-Beginners": {
@@ -6004,7 +6016,7 @@
   "language": null
  },
  "nolabs-ai/nono": {
-  "description": "agent runtime security - zero trust, zero setup, zero latency agent sandbox",
+  "description": "agent runtime security - zero trust, zero setup, zero latency agent sandboxing",
   "language": "Rust"
  },
  "nolimits4web/swiper": {
@@ -6029,7 +6041,7 @@
  },
  "nowork-studio/notfair-plugin": {
   "description": "Open-source SEO, GEO, and marketing skills for AI agents.",
-  "language": "TypeScript"
+  "language": "Python"
  },
  "npmx-dev/npmx.dev": {
   "description": "a fast, modern browser for the npm registry",
@@ -6412,7 +6424,7 @@
   "language": "Python"
  },
  "pathwaycom/serviette": {
-  "description": "Ready-to-run cloud templates for RAG, AI pipelines, and enterprise search with live data. 🐳Docker-friendly.⚡Always in sync with Sharepoint, Google Drive, S3, Kafka, PostgreSQL, real-time data APIs, and more.",
+  "description": "A no-code RAG server that keeps answers in sync with your documents. Works with 8 vector databases. Built on Pathway.",
   "language": "Python"
  },
  "paullarionov/claude-certified-architect": {
@@ -7184,7 +7196,7 @@
   "language": "Python"
  },
  "stablyai/orca": {
-  "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+  "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Codex). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
   "language": "TypeScript"
  },
  "stackryze/FreeDomains": {
@@ -7467,6 +7479,10 @@
   "description": "App for Codex / Claude Code / Pi / OpenCode / Kimi Code / Grok Build, vibe coding anytime, anywhere",
   "language": "TypeScript"
  },
+ "tigerless-labs/agent-memory": {
+  "description": "Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an independent sleep-time Manage layer. Claude Code and Codex share one store. No API key.",
+  "language": "Python"
+ },
  "tigerless-labs/autoharness": {
   "description": "Autoharness — a self-learning skill layer for Claude Code — distills skills from your real sessions, updates them as you work, and prunes the ones that stop getting used. No daemon, no benchmark.",
   "language": "Python"
@@ -7620,7 +7636,7 @@
   "language": "Python"
  },
  "tw93/Kaku": {
-  "description": "🎃 A blazing-fast Mac terminal, built for coding with AI.",
+  "description": "An AI-friendly Mac terminal with sensible defaults, ready out of the box.",
   "language": "Rust"
  },
  "tw93/Kami": {
@@ -7632,7 +7648,7 @@
   "language": "Shell"
  },
  "tw93/Pake": {
-  "description": "🤱🏻 Turn any website into a tiny, fast desktop app.",
+  "description": "Turn any website into a lightweight desktop app with one command, on macOS, Windows and Linux.",
   "language": "Rust"
  },
  "tw93/Waza": {
@@ -8354,6 +8370,10 @@
  "zhongerxin/Cowart": {
   "description": "",
   "language": "JavaScript"
+ },
+ "zhongerxin/iPhone-use": {
+  "description": "让 Codex 通过 USB 操作真实 iPhone：引导安装、App 自动化、实时屏幕与截图回退。",
+  "language": "Python"
  },
  "zhongyang219/TrafficMonitor": {
   "description": "这是一个用于显示当前网速、CPU及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。",
