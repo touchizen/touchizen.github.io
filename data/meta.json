@@ -123,6 +123,10 @@
   "description": "Network-wide ads & trackers blocking DNS server",
   "language": "TypeScript"
  },
+ "AdventDevInc/kudu": {
+  "description": "Free Windows, Mac and Linux cleaner, scanner, and more.",
+  "language": "TypeScript"
+ },
  "Agents365-ai/drawio-skill": {
   "description": "Agent skill that turns natural language, code, Terraform/K8s, SQL, OpenAPI, AsyncAPI, Protobuf and GraphQL sources into editable, tested draw.io architecture diagrams: incremental sync, multi-view projection, drift diff, CI architecture tests, whiteboard derasterize, interactive HTML/PPTX/Mermaid exports.",
   "language": "Python"
@@ -480,7 +484,7 @@
   "language": null
  },
  "D4Vinci/Scrapling": {
-  "description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+  "description": "🕷️ A Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
   "language": "Python"
  },
  "DIYgod/RSSHub": {
@@ -653,6 +657,10 @@
  },
  "EvoScientist/EvoScientist": {
   "description": "🔬 Harness Vibe Research with Self-evolving AI Scientists",
+  "language": "Python"
+ },
+ "Evolink-AI/awesome-gpt-image-2-API-Prompts": {
+  "description": "GPT-Image-2 API and Prompts",
   "language": "Python"
  },
  "FFmpeg/FFmpeg": {
@@ -1820,7 +1828,7 @@
   "language": "Swift"
  },
  "TabularisDB/tabularis": {
-  "description": "Open-source desktop SQL workspace with 3 built-in database drivers and 16 shipped plugins, including SQL Server, DuckDB, ClickHouse and Redis. Built-in MCP server for Claude, Cursor and Devin, SQL notebooks and visual EXPLAIN.",
+  "description": "Open-source desktop SQL workspace with 3 built-in database drivers and 24 shipped driver plugins, including SQL Server, DuckDB, ClickHouse and Redis. Built-in MCP server for Claude, Cursor and Devin, SQL notebooks and visual EXPLAIN.",
   "language": "TypeScript"
  },
  "TanStack/query": {
@@ -3340,7 +3348,7 @@
   "language": "C"
  },
  "crynta/terax-ai": {
-  "description": "Lightweight (7MB) terminal-first AI-native devevelopment environment",
+  "description": "Lightweight (7MB) terminal-first AI-native development environment",
   "language": "TypeScript"
  },
  "curl/curl": {
@@ -3864,7 +3872,7 @@
   "language": "JavaScript"
  },
  "eze-is/web-access": {
-  "description": "给 Claude Code 装上完整联网能力的 skill：三层通道调度 + 浏览器 CDP + 并行分治",
+  "description": "给你的本机 Agent（如 Claude Code、Grok Bot 等）装上完整联网能力的 Skill：三层通道调度 + 浏览器 CDP + 并行分治，自动积累站点经验，不断优化联网效率",
   "language": "JavaScript"
  },
  "f/prompts.chat": {
@@ -4536,7 +4544,7 @@
   "language": "Python"
  },
  "htdt/godogen": {
-  "description": "Autonomous game development for Godot, Bevy, and Babylon.js with Claude Code and Codex",
+  "description": "Autonomous game development with Claude Code and Codex",
   "language": "Python"
  },
  "httpie/cli": {
@@ -4892,7 +4900,7 @@
   "language": "Go"
  },
  "jub0t/Concat": {
-  "description": "The truly free, and open-source cross-platform CapCut replacement. Supports MCPs & API.",
+  "description": "The truly free, open-source, local-first, cross-platform CapCut replacement. Scriptable through a JSON-RPC API & MCP.",
   "language": "Rust"
  },
  "jub0t/concat": {
@@ -7196,7 +7204,7 @@
   "language": "Python"
  },
  "stablyai/orca": {
-  "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Codex). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+  "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
   "language": "TypeScript"
  },
  "stackryze/FreeDomains": {
@@ -7382,6 +7390,10 @@
  "tamaratran/fast-jev-compaction": {
   "description": "Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
   "language": "TypeScript"
+ },
+ "tangency-labs/solidcraft": {
+  "description": "SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP.",
+  "language": "Rust"
  },
  "tanweai/pua": {
   "description": "你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.",
@@ -7987,6 +7999,10 @@
   "description": "Create beautiful applications using Go",
   "language": "Go"
  },
+ "waligoraamodio288-rgb/hongguo-desktop-releases": {
+  "description": "红果短剧｜Windows 10/11 桌面版 + Android TV 测试版。真人剧、漫剧、AI 剧；电视 APK 4.08 MB，Android 5.0+ / ARM64，支持遥控、续播与换一部；免费使用，由渠道有数独立维护。",
+  "language": null
+ },
  "walkinglabs/awesome-harness-engineering": {
   "description": "🛠️ Awesome tools & guides for harness engineering.",
   "language": null
@@ -8052,7 +8068,7 @@
   "language": "TypeScript"
  },
  "wiltodelta/remove-ai-watermarks": {
-  "description": "Remove visible and invisible AI watermarks and provenance metadata from images and video. Python library and CLI for SynthID, C2PA, EXIF, IPTC, XMP, and common generative-AI marks.",
+  "description": "Remove visible and invisible AI watermarks from images and video, and AI provenance metadata from images, video, and audio. Python library, CLI, and agent skill for SynthID, C2PA, EXIF, IPTC, XMP, and common generative-AI marks.",
   "language": "Python"
  },
  "withastro/astro": {
@@ -8108,7 +8124,7 @@
   "language": null
  },
  "xerj-org/xerj": {
-  "description": "XERJ is the new way for AI to search data. Its autoindex capability activates agents to know your data without the token waste of grep and sed. One command indexes code, docs, logs and PDFs for search, RAG, security audits and agent memory, using 40x fewer tokens than grep. Elasticsearch compatible, so existing clients just work.",
+  "description": "XERJ is the new way for AI to search data. Its autoindex capability activates agents to know your data without the token waste of grep (1974 tool). One command indexes code, docs, logs and PDFs for search, RAG, security audits and agent memory, using 40x fewer tokens than grep. It’s durable and can replace ElasticSearch saving you x10 infra costs.",
   "language": "Rust"
  },
  "xianyu110/awesome-openclaw-tutorial": {
