@@ -1071,6 +1071,10 @@
   "description": "Claude Code + OpenClaw + Codex + WorkBuddy 中文教程 | 50篇完整教程 + 1张速查卡 | 80万+内容量 | 1500+实操示例 | AI Coding / Agent 四线学习路径（编程+助手+Agent+办公）",
   "language": "Python"
  },
+ "KnifeLemon/Filee": {
+  "description": "Free, open-source file converter. Convert 180+ formats offline by drag & drop — images, PDF, Word, Excel, PowerPoint, HWP/HWPX, video, audio, e-books and archives. No upload, no Office needed.",
+  "language": "C#"
+ },
  "KnockOutEZ/wigolo": {
   "description": "The go-to web for your AI coding agent — local-first search, fetch, crawl & research over MCP. No API keys, no cloud, $0/query. Public beta.",
   "language": "TypeScript"
@@ -1488,7 +1492,7 @@
   "language": "TeX"
  },
  "OrchestratorInc/agent-orchestrator": {
-  "description": "Run and supervise teams of coding agents from planning to merge. Any harness (Claude code, codex, +25 more). Desktop, web, mobile, and cloud agents.",
+  "description": "Open-source (Apache-2.0) orchestrator for Claude Code, Codex & 30+ coding agents. Plan, run and supervise agent teams from task to merged PR. Desktop (macOS, Windows, Linux) + iPhone & Android apps.",
   "language": "Go"
  },
  "Osmantic/ODS": {
@@ -3432,7 +3436,7 @@
   "language": "HTML"
  },
  "datawhalechina/easy-vibe": {
-  "description": "💻  vibe coding 101｜The first course for AI-native product builders.",
+  "description": "💻  Vibe Coding 101｜Your First Course For AI Product Builders.",
   "language": "JavaScript"
  },
  "datawhalechina/happy-llm": {
@@ -3564,7 +3568,7 @@
   "language": "Python"
  },
  "diegosouzapw/OmniRoute": {
-  "description": "Never stop coding. Free MIT AI gateway: one endpoint, 359 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by hundreds of contributors",
+  "description": "Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors",
   "language": "TypeScript"
  },
  "diet103/claude-code-infrastructure-showcase": {
@@ -4291,6 +4295,10 @@
   "description": "Google Research",
   "language": "Jupyter Notebook"
  },
+ "google-research/harness2": {
+  "description": "",
+  "language": "Python"
+ },
  "google-research/timesfm": {
   "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
   "language": "Python"
@@ -4304,7 +4312,7 @@
   "language": "Python"
  },
  "google/ax": {
-  "description": "Google's open agentic orchestration runtime",
+  "description": "Agent Executor (AX) is Google's open agentic orchestration runtime",
   "language": "Go"
  },
  "google/googletest": {
@@ -4781,7 +4789,7 @@
  },
  "javaht/claude-desktop-zh-cn": {
   "description": "Claude Desktop Chinese Patch (macOS & Windows & Linux)",
-  "language": "Python"
+  "language": "PowerShell"
  },
  "jax-ml/jax": {
   "description": "Composable transformations of Python+NumPy programs: differentiate, vectorize, JIT to GPU/TPU, and more",
@@ -4846,6 +4854,10 @@
  "jgthms/bulma": {
   "description": "Modern CSS framework based on Flexbox",
   "language": "CSS"
+ },
+ "jhaizhou-ops/d2r-mobile": {
+  "description": "Open-source iOS / macOS compatibility layer for Diablo II: Resurrected with the Reign of the Warlock expansion. Runs your own Switch copy natively on iPhone, iPad and Mac — full touch controls, 60 fps, new endgame modes. Bring your own game files. 开源的《暗黑破坏神 II：狱火重生》术士君临 iOS / macOS 兼容层",
+  "language": "C"
  },
  "jingyaogong/minimind": {
   "description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
@@ -5757,7 +5769,7 @@
  },
  "modelcontextprotocol/servers": {
   "description": "Model Context Protocol Servers",
-  "language": "JavaScript"
+  "language": "TypeScript"
  },
  "modem-dev/hunk": {
   "description": "Review-first terminal diff viewer for agentic coders",
@@ -5960,7 +5972,7 @@
   "language": "HTML"
  },
  "nexu-io/open-design": {
-  "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
+  "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
   "language": "TypeScript"
  },
  "ngosang/trackerslist": {
@@ -6658,6 +6670,10 @@
  "rails/rails": {
   "description": "Ruby on Rails",
   "language": "Ruby"
+ },
+ "raiyanyahya/how-to-train-your-gpt": {
+  "description": "Build a modern LLM from scratch. Every line commented. Explained like we are five.",
+  "language": "Jupyter Notebook"
  },
  "rakanki911/DLSS5-Swapper": {
   "description": "Install, tune and restore DLSS 5 in your games with one click. Native RenoDX, DLSS5-Feeder for games without DLSS, OptiScaler and multipass routes; DirectX 8/9/11/12, Vulkan, OpenGL, DirectDraw and emulators. In-game F8 overlay, automatic backups, and a community page showing what works on your games and your graphics card.",
@@ -7584,7 +7600,7 @@
   "language": "TypeScript"
  },
  "tradecatlabs/vibe-coding-cn": {
-  "description": "Vibe Coding 从入门到精通教程｜AI 结对编程工作流｜Prompt、Skill、Workflow、上下文管理、codex实战指南",
+  "description": "Vibe Coding 非严肃开发的从入门到精通的工具箱",
   "language": "Makefile"
  },
  "tradesdontlie/tradingview-mcp": {
@@ -7804,7 +7820,7 @@
   "language": "JavaScript"
  },
  "usememos/memos": {
-  "description": "A personal timeline for quick notes. Write short memos, find them later by search, tag, or date. Open source and self-hosted.",
+  "description": "A timeline for your thoughts. Just type. It stays yours.",
   "language": "Go"
  },
  "usestrix/strix": {
