@@ -787,6 +787,10 @@
   "description": "A high-performance, 100% client-side tool for removing Gemini AI image & video watermarks. Built with pure JavaScript using mathematically precise Reverse Alpha Blending. / 基于 JavaScript 的纯浏览器端 Gemini AI 图像和视频无损去水印工具，使用数学精确的反向 Alpha 混合算法",
   "language": "JavaScript"
  },
+ "Gathin23/cleanyourtv": {
+  "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
+  "language": "Java"
+ },
  "Gen-Verse/OpenClaw-RL": {
   "description": "OpenClaw-RL: Train any agent simply by talking",
   "language": "Python"
@@ -1072,7 +1076,7 @@
   "language": "Python"
  },
  "KnifeLemon/Filee": {
-  "description": "Free, open-source file converter. Convert 180+ formats offline by drag & drop — images, PDF, Word, Excel, PowerPoint, HWP/HWPX, video, audio, e-books and archives. No upload, no Office needed.",
+  "description": "Free, open-source file converter. Convert 244+ formats offline by drag & drop — images, PDF, Word, Excel, PowerPoint, HWP/HWPX, video, audio, e-books and archives. No upload, no Office needed.",
   "language": "C#"
  },
  "KnockOutEZ/wigolo": {
@@ -1539,6 +1543,10 @@
   "description": "📄  Configuration files that enhance Cursor AI editor experience with custom rules and behaviors",
   "language": "JavaScript"
  },
+ "PenglongHuang/chinese-novelist-skill": {
+  "description": "🎭 AI 写小说：从零生成 10-50 章完整中文小说，三层问答 · 创作记忆 · 悬念钩子 · 自动校验，长篇网文连载皆宜｜开源免费，适配主流 coding agent｜🤝 Infistar.cc 赞助 · 注册送 $5｜AI novel writing skill",
+  "language": "Python"
+ },
  "PeonPing/peon-ping": {
   "description": "Warcraft III Peon voice notifications (+ more!) for Claude Code, Codex, IDEs, and any AI agent. Stop babysitting your terminal. Employ a Peon today.",
   "language": "Shell"
@@ -1598,6 +1606,10 @@
  "QSCTech/zju-icicles": {
   "description": "浙江大学课程攻略共享计划",
   "language": "HTML"
+ },
+ "QingYunA/answer-me-with-html": {
+  "description": "Answer me with HTML — an agent skill that answers hard questions with a one-page HTML you can actually read. 让 AI Agent 用一页 HTML 回答复杂问题。",
+  "language": "JavaScript"
  },
  "QuantumNous/new-api": {
   "description": "A unified AI model hub for aggregation & distribution. It supports cross-converting various LLMs into OpenAI-compatible, Claude-compatible, or Gemini-compatible formats. A centralized gateway for personal and enterprise model management.",
@@ -3199,6 +3211,10 @@
   "description": "The fastest browser for AI agents to run browser automation, built for sharing your logged-in browser state with your AI agents, like Codex or Claude Code, without disturbing you. Zero cost, zero config.",
   "language": "JavaScript"
  },
+ "cjpais/Handy": {
+  "description": "A free, open source, and extensible speech-to-text application that works completely offline.",
+  "language": "Rust"
+ },
  "clash-verge-rev/clash-verge-rev": {
   "description": "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience",
   "language": "Rust"
@@ -3304,7 +3320,7 @@
   "language": "TypeScript"
  },
  "coollabsio/coolify": {
-  "description": "An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 280+ one-click services on your own servers.",
+  "description": "An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers.",
   "language": "PHP"
  },
  "coqui-ai/TTS": {
@@ -4452,7 +4468,7 @@
   "language": "Go"
  },
  "harry0703/MangoDisk": {
-  "description": "Safety-first disk cleaner and space analyzer for macOS and Windows, with duplicate cleanup, app uninstall, startup management, system optimization, and maintenance.",
+  "description": "Safety-first disk cleaner and space analyzer for macOS, Windows and Linux, with duplicate cleanup, app uninstall, startup management, system optimization, and maintenance.",
   "language": "Rust"
  },
  "harry0703/MoneyPrinterTurbo": {
@@ -5183,6 +5199,10 @@
   "description": "Professional Antigravity Account Manager & Switcher. One-click seamless account switching for Antigravity Tools. Built with Tauri v2 + React (Rust).专业的 Antigravity 账号管理与切换工具。为 Antigravity 提供一键无缝账号切换功能。",
   "language": "Rust"
  },
+ "lemomo-ai/lemo-opuscar": {
+  "description": "Claude Code skill for short films with no video model: 51 film styles, each a style prompt plus a demo film made entirely in code by Claude Opus 5.5 (incl. OPUSCAR 98 and the new Evidence Films). By Lemomo. · Opus5.5 x 51 种影片风格：风格提示词 + 纯代码样片 + 导演与技术指南（新增「实证影像」）",
+  "language": "JavaScript"
+ },
  "lemony-ai/cascadeflow": {
   "description": "Cascading runtime for AI agents. Optimize cost, latency, quality, and policy decisions inside the agent loop.",
   "language": "Python"
@@ -5246,6 +5266,10 @@
  "lingfengQAQ/webnovel-writer": {
   "description": "基于 Claude Code 的长篇网文辅助创作系统，解决 AI 写作中的「遗忘」和「幻觉」问题，支持 200 万字量级 连载创作。",
   "language": "Python"
+ },
+ "linguo2625469/workbuddy2api-panel": {
+  "description": "把腾讯WorkBuddy账号变成 OpenAI 兼容 API 的多账号网关，同时自动完成任务中心全部任务，附 Web 管理面板（账号池可视化 / 积分任务 / 配置热更新）。基于 Sliverkiss/workbuddy2api 的增强分支",
+  "language": "Go"
  },
  "linshenkx/prompt-optimizer": {
   "description": "An AI prompt optimizer for writing better prompts and getting better AI results.",
@@ -5320,7 +5344,7 @@
   "language": "Clojure"
  },
  "loopx-project/loopx": {
-  "description": "A control plane with a durable state kernel for long-horizon agents and teams. Keep work moving and improving across sessions, with less human attention.",
+  "description": "Local-first control plane and research workbench for long-horizon agents and teams. Durable goals, governed collaboration, and cited trajectory analysis.",
   "language": "Python"
  },
  "louislam/uptime-kuma": {
@@ -5429,7 +5453,7 @@
  },
  "markedjs/marked": {
   "description": "A markdown parser and compiler. Built for speed.",
-  "language": "JavaScript"
+  "language": "TypeScript"
  },
  "marktext/marktext": {
   "description": "📝A simple and elegant markdown editor, available for Linux, macOS and Windows.",
@@ -5794,6 +5818,10 @@
  "morluto/rea": {
   "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
   "language": "TypeScript"
+ },
+ "mornyeapp/Mornye": {
+  "description": "Mobile music utility built with Flutter and Rust. High-quality audio management for your personal library. open source, no ads, no subscription.",
+  "language": "Dart"
  },
  "motiondivision/motion": {
   "description": "A modern animation library for React and JavaScript",
@@ -7600,7 +7628,7 @@
   "language": "TypeScript"
  },
  "tradecatlabs/vibe-coding-cn": {
-  "description": "Vibe Coding 非严肃开发的从入门到精通的工具箱",
+  "description": "Vibe Coding 非严肃开发的从入门到门入的工具箱",
   "language": "Makefile"
  },
  "tradesdontlie/tradingview-mcp": {
@@ -7756,7 +7784,7 @@
   "language": "Clojure"
  },
  "unclecode/crawl4ai": {
-  "description": "Open-source web crawler and scraper for LLMs and AI agents: any website into clean, LLM-ready Markdown. Run it yourself, or use Crawl4AI Cloud with one key.",
+  "description": "Open-source web crawler and scraper for LLMs and AI agents: any website into clean, LLM-ready Markdown. Run it yourself, or use Crawl4AI Cloud with one key. Join our Discord https://discord.gg/VuxzM8mtf",
   "language": "Python"
  },
  "unhappychoice/gitlogue": {
@@ -7820,7 +7848,7 @@
   "language": "JavaScript"
  },
  "usememos/memos": {
-  "description": "A timeline for your thoughts. Just type. It stays yours.",
+  "description": "Memos is an open-source, self-hosted note-taking app that brings your everyday thoughts together in a personal timeline. Your data stays yours, and you choose what to keep private or share.",
   "language": "Go"
  },
  "usestrix/strix": {
@@ -7932,7 +7960,7 @@
   "language": "Python"
  },
  "vinvcn/mattpocock-skills-zh-CN": {
-  "description": "这是 mattpocock/skills 的简体中文本地化版本。",
+  "description": "Matt Pocock skills 的简体中文本地化：人工审核每一次更新，定期同步上游，支持 Claude、Codex 和 DSH 插件。",
   "language": "JavaScript"
  },
  "virattt/ai-hedge-fund": {
@@ -8140,7 +8168,7 @@
   "language": null
  },
  "xerj-org/xerj": {
-  "description": "XERJ is the new way for AI to search data. Its autoindex capability activates agents to know your data without the token waste of grep (1974 tool). One command indexes code, docs, logs and PDFs for search, RAG, security audits and agent memory, using 40x fewer tokens than grep. It’s durable and can replace ElasticSearch saving you x10 infra costs.",
+  "description": "Local-first search engine and MCP server for AI agents. One Rust binary indexes code, docs, logs, JSONL/CSV and PDFs for BM25 full-text, vector and hybrid search, code search without grep, agent memory and RAG. Elasticsearch-compatible API; Corpus Hub serves hundreds of reference memory corpora.",
   "language": "Rust"
  },
  "xianyu110/awesome-openclaw-tutorial": {
@@ -8358,6 +8386,10 @@
  "zen-browser/desktop": {
   "description": "Welcome to a calmer internet",
   "language": "C++"
+ },
+ "zenbu-labs/terminal-browser": {
+  "description": "A real browser inside your terminal",
+  "language": "TypeScript"
  },
  "zenc-lang/zenc": {
   "description": "Write like a high-level language, run like C.",
