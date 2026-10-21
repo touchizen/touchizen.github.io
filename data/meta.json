@@ -524,7 +524,7 @@
   "language": "TypeScript"
  },
  "DeusData/codebase-memory-mcp": {
-  "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 162 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+  "description": "Local code intelligence for developers and AI agents. Connect code, docs and infrastructure in a persistent graph, with CBM Lens, MCP tools, agent integrations and change-aware test selection.",
   "language": "C"
  },
  "Developer-Y/cs-video-courses": {
@@ -992,7 +992,7 @@
   "language": "TypeScript"
  },
  "Jakubantalik/Libraries.dev": {
-  "description": "High-crafted UI libraries for AI agents: Border beam, Orbs, Metal, Gooey, Voice, Image, Avatar bots",
+  "description": "Libraries and models for next-gen UI",
   "language": "TypeScript"
  },
  "Jakubantalik/transitions.dev": {
@@ -1076,7 +1076,7 @@
   "language": "Python"
  },
  "KnifeLemon/Filee": {
-  "description": "Free, open-source file converter. Convert 244+ formats offline by drag & drop — images, PDF, Word, Excel, PowerPoint, HWP/HWPX, video, audio, e-books and archives. No upload, no Office needed.",
+  "description": "Free, open-source file converter. Convert 255 formats offline by drag & drop — images, PDF, Word, Excel, PowerPoint, HWP/HWPX, video, audio, e-books and archives. No upload, no Office needed.",
   "language": "C#"
  },
  "KnockOutEZ/wigolo": {
@@ -3511,6 +3511,10 @@
   "description": "World's first open-source enterprise world model.",
   "language": "Rust"
  },
+ "deepseek-ai/DeepInfer": {
+  "description": "DeepInfer: High-performance, large-scale inference framework for DeepSeek models",
+  "language": "Python"
+ },
  "deepseek-ai/DeepSeek-OCR": {
   "description": "Contexts Optical Compression",
   "language": "Python"
@@ -3708,7 +3712,7 @@
   "language": "TypeScript"
  },
  "duckdb/duckdb": {
-  "description": "DuckDB is an analytical in-process SQL database management system",
+  "description": "DuckDB is a high-performance analytical database system",
   "language": "C++"
  },
  "duoan/TorchCode": {
@@ -5344,7 +5348,7 @@
   "language": "Clojure"
  },
  "loopx-project/loopx": {
-  "description": "Local-first control plane and research workbench for long-horizon agents and teams. Durable goals, governed collaboration, and cited trajectory analysis.",
+  "description": "Turn long-horizon goals into verifiable results. A local-first control plane and research workbench for agents and teams, across sessions and runtimes.",
   "language": "Python"
  },
  "louislam/uptime-kuma": {
@@ -6371,6 +6375,10 @@
   "description": "Transform your favorite cities into beautiful, minimalist designs. MapToPoster lets you create and export visually striking map posters with code.",
   "language": "Python"
  },
+ "oritera/Cairn": {
+  "description": "Cairn is a general-purpose AI state-space search engine, validated first on autonomous penetration testing. Sometimes misspelled as Carin.",
+  "language": "Python"
+ },
  "oso95/scroll-world": {
   "description": "A skill that turn any brand into a scrollable 3D world landing page",
   "language": "JavaScript"
@@ -7291,8 +7299,16 @@
   "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
   "language": "TypeScript"
  },
+ "storytold/artcraft": {
+  "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+  "language": "Rust"
+ },
  "storytold/cadcraft": {
   "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
+  "language": "Rust"
+ },
+ "storytold/deckcraft": {
+  "description": "Presentations and slide shows: an open-source, clean-room reimplementation of Microsoft PowerPoint in pure Rust. Part of the ArtCraft Crafting Apps.",
   "language": "Rust"
  },
  "storytold/designcraft": {
