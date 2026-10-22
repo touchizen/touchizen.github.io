@@ -147,6 +147,10 @@
   "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
   "language": "Python"
  },
+ "AhmadHassan-BTed/Turnitout-Humanizer": {
+  "description": "FREE FOREVER, NO LIMITS 100% Programmatic, Zero-AI Plagiarism Remover & Similarity Evader. Bypass Turnitin, iThenticate, GPTZero, CopyLeaks, & ZeroGPT for LaTeX, DOCX, & Multi-Language Source Code.",
+  "language": "HTML"
+ },
  "Aider-AI/aider": {
   "description": "aider is AI pair programming in your terminal",
   "language": "Python"
@@ -990,6 +994,10 @@
  "JCodesMore/ai-website-cloner-template": {
   "description": "Clone any website with one command using AI coding agents",
   "language": "TypeScript"
+ },
+ "Jakeschincariol/replica-skill": {
+  "description": "Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
+  "language": "Python"
  },
  "Jakubantalik/Libraries.dev": {
   "description": "Libraries and models for next-gen UI",
@@ -2281,7 +2289,7 @@
  },
  "agentscope-ai/QwenPaw": {
   "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
-  "language": "TypeScript"
+  "language": "Python"
  },
  "agentscope-ai/agentscope-java": {
   "description": "Build distributed, production-grade, long-running agents.",
@@ -2297,6 +2305,10 @@
  },
  "ai-boost/awesome-harness-engineering": {
   "description": "Awesome list for AI agent harness engineering: tools, patterns, evals, memory, MCP, permissions, observability, and orchestration.",
+  "language": "Python"
+ },
+ "ai-job-search-dev/ai-job-search": {
+  "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
   "language": "Python"
  },
  "aidenybai/react-grab": {
@@ -2628,8 +2640,8 @@
   "language": "Python"
  },
  "appshubcc/Bettbox": {
-  "description": "Another Better Mihomo Client",
-  "language": "Go"
+  "description": "Another Better Network Toolbox",
+  "language": "Dart"
  },
  "appsmithorg/appsmith": {
   "description": "Platform to build admin panels, internal tools, and dashboards. Integrates with 25+ databases and any API.",
@@ -3040,7 +3052,7 @@
   "language": "Shell"
  },
  "byoungd/up": {
-  "description": "韩先凯的人生进阶指南 人生进阶指南 AI时代生存指南 英语学习指南 离谱的人生 AI AI时代终身学习：AI、学习、创业与成长。",
+  "description": "中英双语终身学习指南：英语学习、AI 协作、真实项目与成长证据。",
   "language": "JavaScript"
  },
  "bytedance/UI-TARS-desktop": {
@@ -3104,7 +3116,7 @@
   "language": "Rust"
  },
  "cathrynlavery/diagram-design": {
-  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
   "language": "HTML"
  },
  "ccch1mneyyy/dsh-TUI": {
@@ -3166,6 +3178,10 @@
  "chatwoot/chatwoot": {
   "description": "Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬",
   "language": "Ruby"
+ },
+ "cheaper-inference/OmniRoute": {
+  "description": "Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors",
+  "language": "TypeScript"
  },
  "chen08209/FlClash": {
   "description": "A multi-platform proxy client based on ClashMeta,simple and easy to use, open-source and ad-free.",
@@ -3284,7 +3300,7 @@
   "language": "TypeScript"
  },
  "codewhale-hq/Codewhale": {
-  "description": "Open-source Rust agent engine and terminal client for Codewhale, with provider choice, tools, approvals and receipts.",
+  "description": "Open-source agent for the terminal written in Rust. Use any provider or model. Issues & PRs always welcome",
   "language": "Rust"
  },
  "colbymchenry/codegraph": {
@@ -4132,8 +4148,8 @@
   "language": "Kotlin"
  },
  "geekan/HowToLiveLonger": {
-  "description": "程序员延寿指南 | A programmer's guide to live longer",
-  "language": null
+  "description": "A Programmer’s Guide to Longevity | Helping everyone live a longer, healthier, happier life. Available in 8 languages.",
+  "language": "HTML"
  },
  "geekcomputers/Python": {
   "description": "My Python Examples",
@@ -4991,6 +5007,10 @@
   "description": "Flight rules for git",
   "language": null
  },
+ "kaankiziltug/logo-design-skill": {
+  "description": "A comprehensive logo-design skill for Claude, Gemini CLI, Codex and other AI agents: principles, process, SVG craft, testing tools and a 1,400+ logo reference library.",
+  "language": "HTML"
+ },
  "kaifcodec/user-scanner": {
   "description": "🕵️‍♂️ (2-in-1) Email & Username OSINT suite featuring native MCP support for deep data extraction just from a single Email/Username. Analyzes 2720+ actively maintained scan vectors (210+ email / 2510+ username) for security research, investigations, and digital footprinting.",
   "language": "Python"
@@ -5123,6 +5143,10 @@
   "description": "git push no-mistakes",
   "language": "Go"
  },
+ "kushagrasinghx/BitChord": {
+  "description": "BitChord - A modern YouTube music client with clean aesthetics inspired from Apple Music",
+  "language": "Kotlin"
+ },
  "kyegomez/OpenMythos": {
   "description": "A theoretical reconstruction of the Claude Mythos architecture, built from first principles using the available research literature.",
   "language": "Python"
@@ -5204,7 +5228,7 @@
   "language": "Rust"
  },
  "lemomo-ai/lemo-opuscar": {
-  "description": "Claude Code skill for short films with no video model: 51 film styles, each a style prompt plus a demo film made entirely in code by Claude Opus 5.5 (incl. OPUSCAR 98 and the new Evidence Films). By Lemomo. · Opus5.5 x 51 种影片风格：风格提示词 + 纯代码样片 + 导演与技术指南（新增「实证影像」）",
+  "description": "A toolbox of film styles made in code for Claude Code: 59 ready to use, and your own. Each style is a style prompt plus a demo film made entirely in code by Claude Opus 5.5, with no video model. By Lemomo. · 一套用代码做片的风格工具箱：59 种现成风格，也能做出你自己的",
   "language": "JavaScript"
  },
  "lemony-ai/cascadeflow": {
@@ -5390,6 +5414,10 @@
  "lutzroeder/netron": {
   "description": "Visualizer for neural network, deep learning and machine learning models",
   "language": "JavaScript"
+ },
+ "ly05010419/MacNativeGames": {
+  "description": "",
+  "language": "C"
  },
  "lydiahallie/javascript-questions": {
   "description": "A long list of (advanced) JavaScript questions, and their explanations :sparkles:  ",
@@ -7096,7 +7124,7 @@
   "language": "Python"
  },
  "shiaho777/web-to-app": {
-  "description": "The most full featured web-to-app toolkit on Android, a complete APK workshop that runs entirely on your phone",
+  "description": "The most full featured web-to-app toolkit on Android, a complete APK workshop that runs entirely on your phone    Ca: H2mNeSJV75VuQpGA9C11FwWoT9DU7sMCYUNVaMyQpump",
   "language": "Kotlin"
  },
  "shihabal3amri/DiPlay": {
@@ -7708,7 +7736,7 @@
   "language": "Python"
  },
  "tw93/Kaku": {
-  "description": "An AI-friendly Mac terminal with sensible defaults, ready out of the box.",
+  "description": "A fast, good-looking, AI-friendly terminal for the Mac.",
   "language": "Rust"
  },
  "tw93/Kami": {
@@ -7848,7 +7876,7 @@
   "language": "Go"
  },
  "unslothai/unsloth": {
-  "description": "Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4, MiniMax-H3, Gemma 4, FLUX and more.",
+  "description": "Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4.1, MiniMax-H3, Gemma 4, FLUX and more.",
   "language": "Python"
  },
  "upscayl/upscayl": {
@@ -8069,7 +8097,7 @@
  },
  "walkinglabs/hands-on-modern-rl": {
   "description": "🚀 An open-source, hands-on curriculum bridging the gap from basic RL concepts to LLM alignment, RLVR, and advanced Agentic systems. ",
-  "language": "Python"
+  "language": "Jupyter Notebook"
  },
  "walkinglabs/learn-harness-engineering": {
   "description": "Harness engineering beginner tutorial, from 0 to 1",
