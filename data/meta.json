@@ -1435,6 +1435,10 @@
   "description": "Observal is self-hosted registry for your coding agent extensions with a built in insight engine.  Setup Observal, define the scope and share your Skills, MCPs and Agents with your peers.",
   "language": "Python"
  },
+ "OffGridPete/Fieldwatch": {
+  "description": "Receive-only Wi-Fi and Bluetooth LE observer for Android. MIT.",
+  "language": "Kotlin"
+ },
  "Open-Dev-Society/OpenStock": {
   "description": "OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free.",
   "language": "TypeScript"
@@ -2173,6 +2177,10 @@
  },
  "Z4nzu/hackingtool": {
   "description": "ALL IN ONE Hacking Tool For Hackers",
+  "language": "Python"
+ },
+ "ZJU-REAL/Easel": {
+  "description": "An open-source AI agent for social media — discover trends, create content, publish everywhere, and learn what works across Xiaohongshu, Douyin, Zhihu, Bilibili, and more.🎨一个开源的 AI 社交媒体智能体——发现热点趋势、创作内容、一键发布至各大平台，并学习分析哪些内容真正有效，覆盖小红书、抖音、知乎、哔哩哔哩等平台。",
   "language": "Python"
  },
  "ZSeven-W/openpencil": {
@@ -3052,7 +3060,7 @@
   "language": "Shell"
  },
  "byoungd/up": {
-  "description": "中英双语终身学习指南：英语学习、AI 协作、真实项目与成长证据。",
+  "description": "韩先凯的人生进阶指南 AI时代 中英双语终身学习指南：英语学习、AI 协作、真实项目与成长证据。",
   "language": "JavaScript"
  },
  "bytedance/UI-TARS-desktop": {
@@ -4892,7 +4900,7 @@
   "language": "CSS"
  },
  "jhaizhou-ops/d2r-mobile": {
-  "description": "Open-source iOS / macOS compatibility layer for Diablo II: Resurrected with the Reign of the Warlock expansion. Runs your own Switch copy natively on iPhone, iPad and Mac — full touch controls, 60 fps, new endgame modes. Bring your own game files. 开源的《暗黑破坏神 II：狱火重生》术士君临 iOS / macOS 兼容层",
+  "description": "Open-source compatibility layer for Diablo II: Resurrected with the Reign of the Warlock expansion. Runs your own Switch copy natively on iPhone, iPad, Mac, Android and HarmonyOS — full touch controls, 60 fps, new endgame modes. Bring your own game files. 开源的《暗黑破坏神 II：狱火重生》术士君临 iOS / macOS / 安卓 / 鸿蒙兼容层",
   "language": "C"
  },
  "jingyaogong/minimind": {
@@ -5064,7 +5072,7 @@
   "language": "Dockerfile"
  },
  "kenn-io/agentsview": {
-  "description": "Local-first session search, analytics, insights, and token use statistics for coding agents, supporting Claude Code, Codex, and more than 20 other agents. ",
+  "description": "Local-first session search, analytics, insights, and token use statistics for coding agents, supporting Claude Code, Codex, and more than 50 other agents. ",
   "language": "Go"
  },
  "kepano/obsidian-skills": {
@@ -6531,13 +6539,17 @@
   "description": "An interactive git visualization and tutorial. Aspiring students of git can use this app to educate and challenge themselves towards mastery of git!",
   "language": "JavaScript"
  },
+ "peach-mitao/peach": {
+  "description": "Peach 蜜桃：单用户、本地优先的个人媒体系统 · Single-user, local-first personal media system",
+  "language": "Python"
+ },
  "pear-devs/pear-desktop": {
   "description": "Pear 🍐 is extension for music player",
   "language": "TypeScript"
  },
  "peetzweg/opendisplay": {
   "description": "Use an iPhone, iPad, or spare Mac as a true second display for your Mac without restrictions.",
-  "language": "Swift"
+  "language": "Rust"
  },
  "penpot/penpot": {
   "description": "Penpot: The open-source design platform for Product teams that need scalable collaboration.",
@@ -6656,7 +6668,7 @@
   "language": "JavaScript"
  },
  "prisma/orm": {
-  "description": "Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB and CockroachDB",
+  "description": "The Prisma ORM: write your application in TypeScript with human-readable queries instead of SQL. Host your database on Prisma Postgres and your app on Prisma Compute.",
   "language": "TypeScript"
  },
  "productdevbook/port-killer": {
@@ -7692,7 +7704,7 @@
   "language": "TypeScript"
  },
  "trailofbits/skills": {
-  "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows",
+  "description": "Trail of Bits skills for security research, vulnerability detection, and audit workflows",
   "language": "Python"
  },
  "travisvn/awesome-claude-skills": {
@@ -7820,7 +7832,7 @@
   "language": "Rust"
  },
  "umami-software/umami": {
-  "description": "Umami is a privacy-first analytics platform. Traffic, campaigns, behavior, conversions, and revenue in one place — no cookies, no surveillance, self-hosted or in the cloud.",
+  "description": "Umami is a privacy-first web and product analytics platform. Traffic, campaigns, behavior, conversions, and revenue in one place. No cookies, no surveillance, self-hosted or in the cloud.",
   "language": "TypeScript"
  },
  "unclebob/swarm-forge": {
