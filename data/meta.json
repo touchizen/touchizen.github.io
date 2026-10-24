@@ -364,7 +364,7 @@
   "language": "Jupyter Notebook"
  },
  "CarterPerez-dev/Cybersecurity-Projects": {
-  "description": "Building 70 Projects ranging from beginner to advanced so anyone can — learn from, build upon, use as a reference, or even copy directly. Gamified Cybersecurity learning 👇",
+  "description": "Building 70 Projects ranging from beginner to advanced so anyone can — learn from, build upon, use as a reference, or even copy directly. Owned by my cybersecurity company 👇",
   "language": "Go"
  },
  "CaviraOSS/LongMemory": {
@@ -437,7 +437,7 @@
  },
  "ConardLi/garden-skills": {
   "description": "ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.",
-  "language": "CSS"
+  "language": "JavaScript"
  },
  "Conway-Research/automaton": {
   "description": "The first AI that can earn its own existence, replicate, and evolve — without needing a human",
@@ -588,7 +588,7 @@
   "language": "Kotlin"
  },
  "DuarteSantos8/openGym": {
-  "description": "Self-hosted gym & body-weight tracker — plan routines, log workouts (supersets, warm-ups, cardio), see which muscles are trained, fatigued or detrained, import from FitNotes/Strong/Hevy, passkey login. Your data, your server.",
+  "description": "Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or use it on the phone alone.",
   "language": "JavaScript"
  },
  "EKKOLearnAI/ekko-studio": {
@@ -753,6 +753,10 @@
  },
  "FoundationAgents/OpenManus": {
   "description": "No fortress, purely open ground.  OpenManus is Coming.",
+  "language": "Python"
+ },
+ "Fractal-Compute-Orchestrations/FractalWorkspace": {
+  "description": "A unified ecosystem and workspace for large-scale federated learning, bridging the gap between centralized model evolution and decentralized edge intelligence.",
   "language": "Python"
  },
  "FreeCAD/FreeCAD": {
@@ -1843,6 +1847,10 @@
   "description": "Blazing fast TUI download manager built in Go for power users",
   "language": "Go"
  },
+ "T-Auto/dsh-ops": {
+  "description": "A toolkit for low-level operations in DSH, designed to reduce token usage and task execution time / DSH 底层操作工具插件，旨在减少 Token 消耗与任务耗时",
+  "language": "JavaScript"
+ },
  "THU-MAIC/OpenMAIC": {
   "description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
   "language": "TypeScript"
@@ -2388,7 +2396,7 @@
   "language": "JavaScript"
  },
  "alchaincyf/huashu-design": {
-  "description": "Huashu Design · HTML-native design skill for Claude Code · Claude Code 里 HTML 原生的设计 skill · 高保真原型 / 幻灯片 / 动画 + 20 设计哲学 + 5 维评审 + MP4 导出 · Agent-agnostic",
+  "description": "Huashu Design 3.0 · 在 agent 里打一句话，拿回能交付的设计：网页 / App 原型 / 可编辑 PPTX / 动画 / 信息图 · 六个候选挑三个方向 · 84 种带样张的风格库 · 越用越懂你的外观账本与设计体检 · HTML-native design skill for Claude Code, Codex, Cursor & any agent",
   "language": "HTML"
  },
  "alchaincyf/nuwa-skill": {
@@ -6453,7 +6461,7 @@
  },
  "pacifio/atlas": {
   "description": "Source control for agents. Use multiple coding agents, track their changes and query them in one place",
-  "language": "Rust"
+  "language": "TypeScript"
  },
  "pageman/sutskever-30-implementations": {
   "description": "Sutskever 30 implementations inspired by https://papercode.vercel.app/ | For Agents, use https://github.com/pageman/Sutskever-Agent | Polyglot / Multi-Backed version at https://github.com/pageman/sutskever-30-beyond-numpy",
@@ -6550,6 +6558,10 @@
  "peetzweg/opendisplay": {
   "description": "Use an iPhone, iPad, or spare Mac as a true second display for your Mac without restrictions.",
   "language": "Rust"
+ },
+ "pengchujin/aerial-tv": {
+  "description": "给国产电视的一块干净桌面：参照 tvOS 设计的开源 Android TV 桌面，没有广告，开机自动接管。A tvOS-style launcher for Xiaomi, TCL and other China-market TVs.",
+  "language": "Kotlin"
  },
  "penpot/penpot": {
   "description": "Penpot: The open-source design platform for Product teams that need scalable collaboration.",
@@ -7170,6 +7182,10 @@
  "siddharthvaddem/openscreen": {
   "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
   "language": "TypeScript"
+ },
+ "simbasjungles/free-my-tv": {
+  "description": "A fast, ad-free home screen for Google TV, LG webOS and Samsung Tizen. One button to undo.",
+  "language": "Java"
  },
  "simonlin1212/a-stock-data": {
   "description": "A股全栈数据工具包：行情K线·当日逐笔·研报·信号·资金面·新闻·财务·公告·打板·ETF期权·舆情·宏观利率·期货大宗(含大商所日K)·事件驱动·可转债 | 15层·87端点·34数据源·除iwencai外免Key | A-share data for AI agents: K-lines, ticks, reports, fund flow, news, financials, filings, options, macro, futures, events, convertibles | 15 layers·87 endpoints·34 sources",
@@ -8460,7 +8476,7 @@
   "language": "Python"
  },
  "zerobrewhq/zerobrew": {
-  "description": "An up to 5x faster Homebrew client",
+  "description": "An up to 10x faster Homebrew client",
   "language": "Rust"
  },
  "zeroclaw-labs/zeroclaw": {
