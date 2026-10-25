@@ -147,6 +147,10 @@
   "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
   "language": "Python"
  },
+ "AhmadHassan-BTed/Jantt": {
+  "description": "The AI-native JSON Gantt chart engine. Dependency-free interactive timelines with React, script-tag, CLI, topological DAG solver, and formal JSON schema.",
+  "language": "TypeScript"
+ },
  "AhmadHassan-BTed/Turnitout-Humanizer": {
   "description": "FREE FOREVER, NO LIMITS 100% Programmatic, Zero-AI Plagiarism Remover & Similarity Evader. Bypass Turnitin, iThenticate, GPTZero, CopyLeaks, & ZeroGPT for LaTeX, DOCX, & Multi-Language Source Code.",
   "language": "HTML"
@@ -1443,6 +1447,10 @@
   "description": "Receive-only Wi-Fi and Bluetooth LE observer for Android. MIT.",
   "language": "Kotlin"
  },
+ "Oldcircle/geo-sleuth": {
+  "description": "An agent skill that finds where a photo was taken — OpenStreetMap geometry, elevation skylines, satellite imagery and street view — and shows its work. Works with Claude Code, Codex, Cursor, Gemini CLI, OpenCode and GitHub Copilot.",
+  "language": "Python"
+ },
  "Open-Dev-Society/OpenStock": {
   "description": "OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free.",
   "language": "TypeScript"
@@ -1726,6 +1734,10 @@
  "Ryze-AI-Adgent/open-seo-mcp-skills": {
   "description": "Free SEO MCP server + open-source SEO and GEO skills for Claude: keyword research, rank tracking, audits, backlinks, AI visibility on your real GSC/GA4/ads data. claude mcp add ryze --transport http https://connector.get-ryze.ai/mcp",
   "language": "Shell"
+ },
+ "Saffsanity/sill": {
+  "description": "Any window from your Mac, live on your iPhone or iPad. Touch, Apple Pencil, trackpad and keys. Free, open source, no servers.",
+  "language": "Swift"
  },
  "SagerNet/sing-box": {
   "description": "The universal proxy platform",
@@ -2214,6 +2226,10 @@
  "Zie619/n8n-workflows": {
   "description": "all of the workflows of n8n i could find (also from the site itself)",
   "language": "Python"
+ },
+ "Zuhaitz-dev/zenc-lang": {
+  "description": "Write like a high-level language, run like C.",
+  "language": "C"
  },
  "ZuodaoTech/everyone-can-use-english": {
   "description": "人人都能用英语",
@@ -4131,6 +4147,10 @@
   "description": "Raptor turns Claude Code into a general-purpose AI offensive/defensive security agent. By using Claude.md and creating rules, sub-agents, and skills, and orchestrating security tool usage, we configure the agent for adversarial thinking, and perform research or attack/defense operations.",
   "language": "Python"
  },
+ "gamedev-skills/awesome-gamedev-agent-skills": {
+  "description": "74 game-dev skills for AI coding agents — Godot, Unity, Unreal, Phaser, PixiJS, three.js, Bevy, pygame, LÖVE, Roblox. Portable SKILL.md Agent Skills (the format Anthropic launched as Claude Skills), with a router that loads the right skill for your engine and task. Runs in Claude Code, Cursor, Kiro, Codex, Copilot, Gemini CLI and more.",
+  "language": "Python"
+ },
  "garinasset/leak-check": {
   "description": "厘查 API © 嘉林数据 ",
   "language": "Python"
@@ -4947,6 +4967,10 @@
   "description": "Awesome React Native components, news, tools, and learning material!",
   "language": null
  },
+ "jordan-gibbs/hyperresearch": {
+  "description": "Convert Claude Code or Codex into the most intelligent Deep Research Agent. Collect, search, and synthesize web research into a persistent, searchable wiki that builds on itself. Hosted API + MCP: hyperresearch.ai",
+  "language": "Python"
+ },
  "josephmisiti/awesome-machine-learning": {
   "description": "A curated list of awesome Machine Learning frameworks, libraries and software.",
   "language": "Python"
@@ -5219,6 +5243,10 @@
   "description": "Data visualization Skill for AI Agents, turning data into polished, interactive HTML charts. 面向 AI Agents 的数据可视化 Skill，将数据快速生成精致、可交互的 HTML 图表。",
   "language": "HTML"
  },
+ "larashero3-dotcom/lieflat-less-ai-tone": {
+  "description": "一个基于 283 万字语料统计的去 AI 味 skill · An AI-tone removal skill grounded in a 2.83-million-character corpus study",
+  "language": "Python"
+ },
  "laravel/framework": {
   "description": "Laravel is a web application framework with expressive, elegant syntax.",
   "language": "PHP"
@@ -5388,7 +5416,7 @@
   "language": "Clojure"
  },
  "loopx-project/loopx": {
-  "description": "Turn long-horizon goals into verifiable results. A local-first control plane and research workbench for agents and teams, across sessions and runtimes.",
+  "description": "Turn long-horizon goals into verifiable results. A local-first semantic control plane and research workbench for long-running agent teams, across sessions and runtimes.",
   "language": "Python"
  },
  "louislam/uptime-kuma": {
@@ -5478,6 +5506,10 @@
  "magnitudedev/magnitude": {
   "description": "Open source inference engine that tunes its kernels on your hardware to find the fastest way to run each model. 2x faster than Ollama. Works on Apple Silicon, NVIDIA, AMD, or just a CPU.",
   "language": "Rust"
+ },
+ "makecindy/cindy": {
+  "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+  "language": "TypeScript"
  },
  "makeplane/plane": {
   "description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
@@ -7136,7 +7168,7 @@
   "language": "Rust"
  },
  "sharpemu/sharpemu": {
-  "description": "An experimental PlayStation 5 emulator for Windows, Linux and macOS.",
+  "description": "An experimental PlayStation 5 emulator for Windows and Linux",
   "language": "C#"
  },
  "shengjidaguai-china/goutoujunshi": {
@@ -7148,7 +7180,7 @@
   "language": "Python"
  },
  "shiaho777/web-to-app": {
-  "description": "The most full featured web-to-app toolkit on Android, a complete APK workshop that runs entirely on your phone    Ca: H2mNeSJV75VuQpGA9C11FwWoT9DU7sMCYUNVaMyQpump",
+  "description": "The most full featured web-to-app toolkit on Android, a complete APK workshop that runs entirely on your phone Ca: H2mNeSJV75VuQpGA9C11FwWoT9DU7sMCYUNVaMyQpump",
   "language": "Kotlin"
  },
  "shihabal3amri/DiPlay": {
@@ -7176,7 +7208,7 @@
   "language": "Shell"
  },
  "sickn33/agentic-awesome-skills": {
-  "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,600+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
+  "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,750+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
   "language": "Python"
  },
  "siddharthvaddem/openscreen": {
