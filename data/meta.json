@@ -151,8 +151,16 @@
   "description": "The AI-native JSON Gantt chart engine. Dependency-free interactive timelines with React, script-tag, CLI, topological DAG solver, and formal JSON schema.",
   "language": "TypeScript"
  },
+ "AhmadHassan-BTed/OpenHeart": {
+  "description": "Succinct Compositional Program Graph (SCPG) static analysis engine & 14-diagram UML generator in Rust.",
+  "language": "Rust"
+ },
+ "AhmadHassan-BTed/SilentSniffer": {
+  "description": "A professional, high-fidelity de-anonymization and vulnerability diagnostic framework. Features a zero-coupling modular architecture for browser-based intelligence gathering, hardware fingerprinting, and security research.",
+  "language": "JavaScript"
+ },
  "AhmadHassan-BTed/Turnitout-Humanizer": {
-  "description": "FREE FOREVER, NO LIMITS 100% Programmatic, Zero-AI Plagiarism Remover & Similarity Evader. Bypass Turnitin, iThenticate, GPTZero, CopyLeaks, & ZeroGPT for LaTeX, DOCX, & Multi-Language Source Code.",
+  "description": "FREE FOREVER, NO LIMITS 100% Programmatic, Zero-AI Plagiarism Remover & Similarity Evader. Bypass Turnitin, iThenticate, GPTZero, CopyLeaks, Quillbot & ZeroGPT for LaTeX, DOCX, & Multi-Language Source Code.",
   "language": "HTML"
  },
  "Aider-AI/aider": {
@@ -176,7 +184,7 @@
   "language": "Rust"
  },
  "Alishahryar1/free-claude-code": {
-  "description": "Use Claude Code, Codex, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+  "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
   "language": "Python"
  },
  "AlistGo/alist": {
@@ -308,7 +316,7 @@
   "language": "Python"
  },
  "BigPizzaV3/CodexPlusPlus": {
-  "description": "An enhanced tool for CodexApp, striving to make Codex better to use and more comfortable 一个CodexApp的增强工具，努力让Codex变得更好用更舒服",
+  "description": "An enhanced tool for CodexApp, striving to make Codex better to use and more comfortable 一个CodexApp的增强工具，努力让Codex和其他 AI Agent变得更好用更舒服",
   "language": "Rust"
  },
  "Blankj/AndroidUtilCode": {
@@ -489,7 +497,7 @@
  },
  "CyC2018/CS-Notes": {
   "description": ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计",
-  "language": null
+  "language": "Python"
  },
  "D4Vinci/Scrapling": {
   "description": "🕷️ A Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
@@ -801,7 +809,7 @@
  },
  "Gathin23/cleanyourtv": {
   "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
-  "language": "Java"
+  "language": "Python"
  },
  "Gen-Verse/OpenClaw-RL": {
   "description": "OpenClaw-RL: Train any agent simply by talking",
@@ -1092,7 +1100,7 @@
   "language": "Python"
  },
  "KnifeLemon/Filee": {
-  "description": "Free, open-source file converter. Convert 255 formats offline by drag & drop — images, PDF, Word, Excel, PowerPoint, HWP/HWPX, video, audio, e-books and archives. No upload, no Office needed.",
+  "description": "Free, open-source file converter. Convert 263 formats offline by drag & drop — images, PDF, Word, Excel, PowerPoint, HWP/HWPX, video, audio, e-books and archives. No upload, no Office needed.",
   "language": "C#"
  },
  "KnockOutEZ/wigolo": {
@@ -1531,6 +1539,10 @@
   "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
   "language": "Python"
  },
+ "PC2005-cloud/dsh-pet": {
+  "description": "DSH 桌面宠物：一行命令装好即用的透明动画小桌宠，支持多开、大小位置随心配置；还内置 DIY 素材链，能用 AI 视频自造专属宠物",
+  "language": "TypeScript"
+ },
  "PDFCraftTool/pdfcraft": {
   "description": "PDFCraft is a free, privacy-focused PDF toolkit that runs entirely in your browser. With 90+ professional tools, you can edit, convert, merge, split, and secure your PDF files without ever uploading them to a server.",
   "language": "TypeScript"
@@ -1885,7 +1897,7 @@
  },
  "TapXWorld/ChinaTextbook": {
   "description": "所有小初高、大学PDF教材。",
-  "language": "Roff"
+  "language": null
  },
  "Tarquinen/opencode-dynamic-context-pruning": {
   "description": "Dynamic context pruning plugin for OpenCode - intelligently manages conversation context to optimize token usage",
@@ -2211,6 +2223,10 @@
   "description": "An open-source implementation of uTools, a high-performance, scalable application launcher and plugin platform | Supports macOS and Windows, 一个高性能、可扩展的应用启动器和插件平台  uTools 的开源实现 | 支持 macOS 和 Windows",
   "language": "TypeScript"
  },
+ "Zagitta/gpu-unlock": {
+  "description": "Unlock FP/BF16 instruction issue rate on Nvidia 3000's cards to their professional equivalents",
+  "language": "C"
+ },
  "Zeejay0/gathered-scenes-zine-skill": {
   "description": "",
   "language": "Python"
@@ -2332,7 +2348,7 @@
   "language": "Python"
  },
  "agno-agi/agno": {
-  "description": "Build, run, and manage agent platforms.",
+  "description": "The self-improving agent platform",
   "language": "Python"
  },
  "ai-boost/awesome-harness-engineering": {
@@ -3806,6 +3822,10 @@
  "elastic/elasticsearch": {
   "description": "Free and Open Source, Distributed, RESTful Search Engine",
   "language": "Java"
+ },
+ "elayadesign/ai-design-skills": {
+  "description": "",
+  "language": null
  },
  "elder-plinius/CL4R1T4S": {
   "description": "LEAKED SYSTEM PROMPTS FOR CHATGPT, CLAUDE, GEMINI, GROK, PERPLEXITY, CURSOR, LOVABLE, REPLIT, AND MORE! - AI SYSTEMS TRANSPARENCY FOR ALL! 👐",
@@ -5460,7 +5480,7 @@
   "language": "JavaScript"
  },
  "ly05010419/MacNativeGames": {
-  "description": "",
+  "description": "Play your own Tears of the Kingdom and Breath of the Wild natively on Apple silicon Mac, iPhone and iPad. Not an emulator: the game's ARM64 code runs directly, NVN rebuilt on Metal. Bring your own game.",
   "language": "C"
  },
  "lydiahallie/javascript-questions": {
@@ -5533,7 +5553,7 @@
  },
  "markedjs/marked": {
   "description": "A markdown parser and compiler. Built for speed.",
-  "language": "TypeScript"
+  "language": "JavaScript"
  },
  "marktext/marktext": {
   "description": "📝A simple and elegant markdown editor, available for Linux, macOS and Windows.",
@@ -6919,6 +6939,10 @@
   "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
   "language": "HTML"
  },
+ "rlaope/oh-my-hermes": {
+  "description": "The coding intelligence and skills for Hermes Agent ⚚ just install once. then type 'dag-ulw' to be graph engineering master.",
+  "language": "Python"
+ },
  "rmyndharis/OpenWA": {
   "description": "Free, Open Source, Self-Hosted WhatsApp API Gateway",
   "language": "TypeScript"
@@ -7102,6 +7126,10 @@
  "securo-finance/securo": {
   "description": "Open-source personal finance manager. Self-hosted, privacy-first.",
   "language": "Python"
+ },
+ "seedds/nxnative": {
+  "description": "Switch games running natively on iPhone, iPad and Mac: an NSP folder becomes an unsigned IPA (NSO rewriter, Horizon HLE host, NVN→Metal)",
+  "language": "Objective-C"
  },
  "serenakeyitan/awesome-notebookLM-prompts": {
   "description": "A curated collection of the strongest NotebookLM slide prompts sourced from the real creative underground . Your go-to resource for AI powerpoint :P",
@@ -7393,6 +7421,10 @@
  },
  "storytold/cadcraft": {
   "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
+  "language": "Rust"
+ },
+ "storytold/craft-launcher": {
+  "description": "The Craft App Launcher",
   "language": "Rust"
  },
  "storytold/deckcraft": {
