@@ -455,6 +455,8 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   blog_next: '次の記事',
   blog_published: '公開日',
   blog_tags: 'タグ',
+  blog_cat_tech: 'IT・AI',
+  blog_hub_subtitle: 'Touchizenの記事をテーマ別にまとめました',
 
   // AutoFlowCut
   autoflowcut_name: 'AutoFlowCut',

@@ -455,6 +455,8 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   blog_next: 'Nächster Beitrag',
   blog_published: 'Veröffentlicht',
   blog_tags: 'Tags',
+  blog_cat_tech: 'Tech & KI',
+  blog_hub_subtitle: 'Alle Beiträge von Touchizen nach Themen',
 
   // AutoFlowCut
   autoflowcut_name: 'AutoFlowCut',

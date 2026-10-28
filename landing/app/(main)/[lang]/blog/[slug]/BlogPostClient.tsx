@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { FALLBACK_THUMBNAIL } from '../BlogPageClient';
+import { TECH, categoryListPath, categoryPostPath, type BlogCategory } from '@/lib/blog-categories';
 
 interface BlogPost {
   slug: string;
@@ -24,12 +25,12 @@ export interface PostSummary {
   image?: string;
 }
 
-function PostList({ lang, posts }: { lang: Language; posts: PostSummary[] }) {
+function PostList({ lang, category, posts }: { lang: Language; category: BlogCategory; posts: PostSummary[] }) {
   return (
     <ul className="space-y-4">
       {posts.map((p) => (
         <li key={p.slug}>
-          <a href={`/${lang}/blog/${p.slug}/`} className="group flex items-start gap-3">
+          <a href={categoryPostPath(category, lang, p.slug)} className="group flex items-start gap-3">
             {/* Decorative, as in the blog list: the title beside it names the post. */}
             <img
               src={p.image ?? FALLBACK_THUMBNAIL}
@@ -51,7 +52,7 @@ function PostList({ lang, posts }: { lang: Language; posts: PostSummary[] }) {
   );
 }
 
-export default function BlogPostClient({ lang, post, related = [], others = [], latest = [], prev, next, jsonLd }: {
+export default function BlogPostClient({ lang, post, related = [], others = [], latest = [], prev, next, jsonLd, category = TECH }: {
   lang: Language;
   post: BlogPost;
   related?: PostSummary[];
@@ -61,6 +62,8 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
   prev?: PostSummary;
   next?: PostSummary;
   jsonLd?: object;
+  /** Which blog the post belongs to — its links, back link and language switch stay inside it. */
+  category?: BlogCategory;
 }) {
   const router = useRouter();
   const t = (key: TranslationKey) => translations[lang][key];
@@ -80,13 +83,13 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
-      <Header lang={lang} onLanguageChange={(newLang) => router.push(`/${newLang}/blog/${post.slug}`)} />
+      <Header lang={lang} onLanguageChange={(newLang) => router.push(categoryPostPath(category, newLang, post.slug))} />
 
       <article className="pt-24 pb-16">
         <div className="container-custom px-4 lg:flex lg:justify-center lg:gap-12">
           <div className="max-w-3xl mx-auto lg:mx-0 lg:flex-1 min-w-0">
             {/* Back link */}
-            <a href={`/${lang}/blog/`} className="inline-flex items-center text-sm text-primary-500 hover:text-primary-600 mb-8 transition-colors">
+            <a href={categoryListPath(category, lang)} className="inline-flex items-center text-sm text-primary-500 hover:text-primary-600 mb-8 transition-colors">
               <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
               {t('blog_back' as TranslationKey)}
             </a>
@@ -130,13 +133,13 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
             {(prev || next) && (
               <nav className="grid gap-4 sm:grid-cols-2 mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
                 {prev && (
-                  <a href={`/${lang}/blog/${prev.slug}/`} className="group rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-primary-500 transition-colors">
+                  <a href={categoryPostPath(category, lang, prev.slug)} className="group rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-primary-500 transition-colors">
                     <span className="text-xs text-gray-400 dark:text-gray-500">&larr; {t('blog_prev')}</span>
                     <p className="mt-1 text-sm font-semibold leading-snug line-clamp-2 group-hover:text-primary-500 transition-colors">{prev.title}</p>
                   </a>
                 )}
                 {next && (
-                  <a href={`/${lang}/blog/${next.slug}/`} className="group rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-primary-500 transition-colors sm:col-start-2 sm:text-right">
+                  <a href={categoryPostPath(category, lang, next.slug)} className="group rounded-xl border border-gray-200 dark:border-gray-800 p-4 hover:border-primary-500 transition-colors sm:col-start-2 sm:text-right">
                     <span className="text-xs text-gray-400 dark:text-gray-500">{t('blog_next')} &rarr;</span>
                     <p className="mt-1 text-sm font-semibold leading-snug line-clamp-2 group-hover:text-primary-500 transition-colors">{next.title}</p>
                   </a>
@@ -152,19 +155,19 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
                 {related.length > 0 && (
                   <section aria-labelledby="related-heading">
                     <h2 id="related-heading" className="text-lg font-bold mb-4">{t('blog_related')}</h2>
-                    <PostList lang={lang} posts={related} />
+                    <PostList lang={lang} category={category} posts={related} />
                   </section>
                 )}
                 {others.length > 0 && (
                   <section aria-labelledby="others-heading">
                     <h2 id="others-heading" className="text-lg font-bold mb-4">{t('blog_others')}</h2>
-                    <PostList lang={lang} posts={others} />
+                    <PostList lang={lang} category={category} posts={others} />
                   </section>
                 )}
                 {latest.length > 0 && (
                   <section aria-labelledby="latest-heading">
                     <h2 id="latest-heading" className="text-lg font-bold mb-4">{t('blog_latest')}</h2>
-                    <PostList lang={lang} posts={latest} />
+                    <PostList lang={lang} category={category} posts={latest} />
                   </section>
                 )}
               </div>

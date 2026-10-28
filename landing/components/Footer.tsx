@@ -2,9 +2,11 @@
 
 import { Language, translations, TranslationKey } from '@/lib/i18n';
 import { products, getSocialLinks } from '@/lib/products';
+import { BLOG_CATEGORIES, categoryListPath, type BlogCategory } from '@/lib/blog-categories';
 
 interface FooterProps {
   lang: Language;
+  categories?: readonly BlogCategory[];
 }
 
 const SocialIcon = ({ icon }: { icon: string }) => {
@@ -38,14 +40,14 @@ const SocialIcon = ({ icon }: { icon: string }) => {
   }
 };
 
-export default function Footer({ lang }: FooterProps) {
+export default function Footer({ lang, categories = BLOG_CATEGORIES }: FooterProps) {
   const t = (key: TranslationKey) => translations[lang][key];
   const socialLinks = getSocialLinks(lang);
 
   return (
     <footer className="bg-gray-900 dark:bg-black text-white py-16">
       <div className="container-custom px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
@@ -103,6 +105,23 @@ export default function Footer({ lang }: FooterProps) {
                   </li>
                 );
               })}
+            </ul>
+          </div>
+
+          {/* Blog categories — a path for readers and crawlers to every list page */}
+          <div>
+            <h4 className="font-semibold mb-4">{t('nav_blog')}</h4>
+            <ul className="space-y-2">
+              {categories.map((category) => (
+                <li key={category.id}>
+                  <a
+                    href={categoryListPath(category, lang)}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    {t(category.nameKey)}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

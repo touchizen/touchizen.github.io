@@ -1,10 +1,11 @@
 import { getPostBySlug, getPostSlugs } from './blog';
 import { Language, languages } from './i18n';
+import { BLOG_CATEGORIES, TECH, categoryPostPath, type BlogCategory } from './blog-categories';
 
 /**
- * The blog half of the sitemap, built from content/blog at every build (served as /sitemap-blog.xml),
- * so a new post is listed by adding its file — public/sitemap.xml is only the index, and
- * public/sitemap-pages.xml keeps the hand-written non-blog pages.
+ * The blog sitemaps, one per category, built from the posts at every build (IT: content/blog served as
+ * /sitemap-blog.xml), so a new post is listed by adding its file. /sitemap.xml is the generated index of
+ * them, and public/sitemap-pages.xml keeps the hand-written non-blog pages.
  */
 
 const SITE_URL = 'https://touchizen.com';
@@ -18,19 +19,18 @@ export interface SitemapEntry {
   noindex: boolean;
 }
 
-// trailingSlash: true in next.config.js — same URL shape as the emitted pages and their canonical links.
-const postUrl = (lang: Language, slug: string) => `${SITE_URL}/${lang}/blog/${slug}/`;
+const postUrl = (lang: Language, slug: string, category: BlogCategory) => `${SITE_URL}${categoryPostPath(category, lang, slug)}`;
 
-/** One entry per post file in content/blog. */
-export function blogSitemapEntries(): SitemapEntry[] {
-  return ORDER.flatMap((lang) => getPostSlugs(lang).flatMap((slug) => {
-    const post = getPostBySlug(lang, slug);
+/** One entry per post file of the category (IT: content/blog). */
+export function blogSitemapEntries(category: BlogCategory = TECH): SitemapEntry[] {
+  return ORDER.flatMap((lang) => getPostSlugs(lang, category).flatMap((slug) => {
+    const post = getPostBySlug(lang, slug, category);
     return post ? [{ lang, slug, date: post.date, modified: post.modified, noindex: post.noindex }] : [];
   }));
 }
 
 /** Sitemap <urlset> for the indexable posts: newest first, each post's languages linked with hreflang (x-default = English). */
-export function blogSitemapXml(entries: SitemapEntry[]): string {
+export function blogSitemapXml(entries: SitemapEntry[], category: BlogCategory = TECH): string {
   const bySlug = new Map<string, SitemapEntry[]>();
   for (const e of entries.filter((x) => !x.noindex)) bySlug.set(e.slug, [...(bySlug.get(e.slug) ?? []), e]);
 
@@ -39,11 +39,11 @@ export function blogSitemapXml(entries: SitemapEntry[]): string {
 
   const urls = posts.flatMap(([slug, list]) => {
     const langs = ORDER.filter((code) => list.some((e) => e.lang === code));
-    const links = [...langs.map((code) => [code, postUrl(code, slug)]), ...(langs.includes('en') ? [['x-default', postUrl('en', slug)]] : [])]
+    const links = [...langs.map((code) => [code, postUrl(code, slug, category)]), ...(langs.includes('en') ? [['x-default', postUrl('en', slug, category)]] : [])]
       .map(([hreflang, href]) => `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${href}" />`);
     return langs.map((code) => {
       const e = list.find((x) => x.lang === code)!;
-      return ['  <url>', `    <loc>${postUrl(code, slug)}</loc>`, ...links, `    <lastmod>${e.modified || e.date}</lastmod>`, '    <priority>0.7</priority>', '  </url>'].join('\n');
+      return ['  <url>', `    <loc>${postUrl(code, slug, category)}</loc>`, ...links, `    <lastmod>${e.modified || e.date}</lastmod>`, '    <priority>0.7</priority>', '  </url>'].join('\n');
     });
   });
 
@@ -51,4 +51,18 @@ export function blogSitemapXml(entries: SitemapEntry[]): string {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
     '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     ...urls, '</urlset>', ''].join('\n');
+}
+
+/** What a category's sitemap route serves (app/<sitemapFile>/route.ts). */
+export function categorySitemapResponse(category: BlogCategory): Response {
+  return new Response(blogSitemapXml(blogSitemapEntries(category), category), { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
+}
+
+/** /sitemap.xml: the hand-written page sitemap, then each blog category's sitemap. */
+export function sitemapIndexXml(categories: readonly BlogCategory[] = BLOG_CATEGORIES): string {
+  const files = ['sitemap-pages.xml', ...categories.map((c) => c.sitemapFile)];
+  return ['<?xml version="1.0" encoding="UTF-8"?>',
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...files.map((f) => `  <sitemap>\n    <loc>${SITE_URL}/${f}</loc>\n  </sitemap>`),
+    '</sitemapindex>', ''].join('\n');
 }

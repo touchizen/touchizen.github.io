@@ -455,6 +455,8 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   blog_next: '다음 글',
   blog_published: '게시일',
   blog_tags: '태그',
+  blog_cat_tech: 'IT·AI',
+  blog_hub_subtitle: '터치즌의 글을 주제별로 모았습니다',
 
   // AutoFlowCut
   autoflowcut_name: 'AutoFlowCut',

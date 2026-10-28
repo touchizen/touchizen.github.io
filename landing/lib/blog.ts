@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { Marked } from 'marked';
 import type { Metadata } from 'next';
 import { Language, languages } from './i18n';
+import { TECH, categoryPostPath, type BlogCategory } from './blog-categories';
 
 export interface BlogPost {
   slug: string;
@@ -20,7 +21,7 @@ export interface BlogPost {
   image?: string;
 }
 
-const contentDir = path.join(process.cwd(), 'content', 'blog');
+const contentDir = (category: BlogCategory) => path.join(process.cwd(), 'content', category.contentDir);
 const publicDir = path.join(process.cwd(), 'public');
 
 /**
@@ -118,9 +119,8 @@ const localeMap: Record<Language, string> = {
   de: 'de_DE',
 };
 
-function postUrl(lang: Language, slug: string): string {
-  // trailingSlash: true in next.config.js — keep the trailing slash so URLs match the emitted static pages.
-  return `${SITE_URL}/${lang}/blog/${slug}/`;
+function postUrl(lang: Language, slug: string, category: BlogCategory): string {
+  return `${SITE_URL}${categoryPostPath(category, lang, slug)}`;
 }
 
 function resolveOgImage(post: BlogPost): string {
@@ -128,16 +128,16 @@ function resolveOgImage(post: BlogPost): string {
   return post.image.startsWith('http') ? post.image : `${SITE_URL}${post.image}`;
 }
 
-export function getPostSlugs(lang: Language): string[] {
-  const langDir = path.join(contentDir, lang);
+export function getPostSlugs(lang: Language, category: BlogCategory = TECH): string[] {
+  const langDir = path.join(contentDir(category), lang);
   if (!fs.existsSync(langDir)) return [];
   return fs.readdirSync(langDir)
     .filter(f => f.endsWith('.md'))
     .map(f => f.replace(/\.md$/, ''));
 }
 
-export function getPostBySlug(lang: Language, slug: string): BlogPost | null {
-  const filePath = path.join(contentDir, lang, `${slug}.md`);
+export function getPostBySlug(lang: Language, slug: string, category: BlogCategory = TECH): BlogPost | null {
+  const filePath = path.join(contentDir(category), lang, `${slug}.md`);
   if (!fs.existsSync(filePath)) return null;
 
   const fileContent = fs.readFileSync(filePath, 'utf-8');
@@ -160,26 +160,26 @@ export function getPostBySlug(lang: Language, slug: string): BlogPost | null {
 }
 
 /** Languages that actually have a published post for this slug (drives per-post hreflang). */
-export function getPostLanguages(slug: string): Language[] {
+export function getPostLanguages(slug: string, category: BlogCategory = TECH): Language[] {
   return languages
     .map((l) => l.code)
-    .filter((code) => fs.existsSync(path.join(contentDir, code, `${slug}.md`)));
+    .filter((code) => fs.existsSync(path.join(contentDir(category), code, `${slug}.md`)));
 }
 
 /** Per-post SEO metadata: real title/description/canonical/OG/Twitter/hreflang instead of inheriting the language home. */
-export function buildPostMetadata(lang: Language, slug: string): Metadata {
-  const post = getPostBySlug(lang, slug);
+export function buildPostMetadata(lang: Language, slug: string, category: BlogCategory = TECH): Metadata {
+  const post = getPostBySlug(lang, slug, category);
   if (!post) return {};
 
-  const url = postUrl(lang, slug);
+  const url = postUrl(lang, slug, category);
   const ogImage = resolveOgImage(post);
 
-  const availableLangs = getPostLanguages(slug);
+  const availableLangs = getPostLanguages(slug, category);
   const languageAlternates: Record<string, string> = Object.fromEntries(
-    availableLangs.map((code) => [code, postUrl(code, slug)])
+    availableLangs.map((code) => [code, postUrl(code, slug, category)])
   );
   if (availableLangs.includes('en')) {
-    languageAlternates['x-default'] = postUrl('en', slug);
+    languageAlternates['x-default'] = postUrl('en', slug, category);
   }
 
   return {
@@ -228,9 +228,32 @@ export function buildPostMetadata(lang: Language, slug: string): Metadata {
   };
 }
 
+/**
+ * Metadata for a blog list page (the hub or a category list): its own canonical, hreflang and share card.
+ * Without it the page inherits the language home's, telling crawlers it is a copy of /{lang}/.
+ */
+export function buildListMetadata(lang: Language, pathFor: (lang: Language) => string, title: string, description: string): Metadata {
+  const url = `${SITE_URL}${pathFor(lang)}`;
+  return {
+    title,
+    description,
+    metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical: url,
+      languages: {
+        ...Object.fromEntries(languages.map((l) => [l.code, `${SITE_URL}${pathFor(l.code)}`])),
+        'x-default': `${SITE_URL}${pathFor('en')}`,
+      },
+    },
+    // A child's openGraph replaces the parent's whole, so the image has to be restated here.
+    openGraph: { title, description, url, siteName: 'Touchizen', type: 'website', locale: localeMap[lang], images: [{ url: DEFAULT_OG_IMAGE, alt: title }] },
+    twitter: { card: 'summary', site: '@touchizen', creator: '@touchizen', title, description, images: [DEFAULT_OG_IMAGE] },
+  };
+}
+
 /** BlogPosting JSON-LD structured data. Pure (no fs) — safe to build in the server page and pass to the client. */
-export function buildPostJsonLd(lang: Language, slug: string, post: BlogPost) {
-  const url = postUrl(lang, slug);
+export function buildPostJsonLd(lang: Language, slug: string, post: BlogPost, category: BlogCategory = TECH) {
+  const url = postUrl(lang, slug, category);
   const ogImage = resolveOgImage(post);
   return {
     '@context': 'https://schema.org',
@@ -252,10 +275,15 @@ export function buildPostJsonLd(lang: Language, slug: string, post: BlogPost) {
   };
 }
 
-export function getAllPosts(lang: Language): BlogPost[] {
-  const slugs = getPostSlugs(lang);
+/** What a post card in a list shows — no body, so a list page doesn't carry every post's content. */
+export type CardPost = Pick<BlogPost, 'slug' | 'title' | 'date' | 'excerpt' | 'tags' | 'image'>;
+
+export const toCardPost = ({ slug, title, date, excerpt, tags, image }: BlogPost): CardPost => ({ slug, title, date, excerpt, tags, image });
+
+export function getAllPosts(lang: Language, category: BlogCategory = TECH): BlogPost[] {
+  const slugs = getPostSlugs(lang, category);
   return slugs
-    .map(slug => getPostBySlug(lang, slug))
+    .map(slug => getPostBySlug(lang, slug, category))
     .filter((post): post is BlogPost => post !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }

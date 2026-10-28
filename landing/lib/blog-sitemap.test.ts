@@ -2,8 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 import { describe, expect, it } from 'vitest';
-import { blogSitemapEntries, blogSitemapXml, type SitemapEntry } from './blog-sitemap';
+import { blogSitemapEntries, blogSitemapXml, sitemapIndexXml, type SitemapEntry } from './blog-sitemap';
+import { BLOG_CATEGORIES, TECH, type BlogCategory } from './blog-categories';
 import { GET } from '@/app/sitemap-blog.xml/route';
+import { GET as GET_INDEX } from '@/app/sitemap.xml/route';
 
 const SITE = 'https://touchizen.com';
 const entry = (lang: SitemapEntry['lang'], slug: string, date: string, extra: Partial<SitemapEntry> = {}): SitemapEntry =>
@@ -80,10 +82,24 @@ describe('blog sitemap from the real posts', () => {
 describe('sitemap files in public/', () => {
   const read = (name: string) => fs.readFileSync(path.join(process.cwd(), 'public', name), 'utf-8');
 
-  it('sitemap.xml is an index of the page sitemap and the generated blog sitemap', () => {
-    const xml = read('sitemap.xml');
+  // The index is generated (app/sitemap.xml/route.ts) so that opening a blog category lists its
+  // sitemap by itself — the blog will grow more categories.
+  it('serves the index at /sitemap.xml: the page sitemap, then one sitemap per category', async () => {
+    const res = GET_INDEX();
+    expect(res.headers.get('content-type')).toContain('application/xml');
+    const xml = await res.text();
     expect(xml).toContain('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
+    expect(locs(xml)).toEqual([`${SITE}/sitemap-pages.xml`, ...BLOG_CATEGORIES.map((c) => `${SITE}/${c.sitemapFile}`)]);
     expect(locs(xml)).toEqual([`${SITE}/sitemap-pages.xml`, `${SITE}/sitemap-blog.xml`]);
+  });
+
+  it("adds a category's sitemap to the index by itself", () => {
+    const fake: BlogCategory = { id: 'drama', contentDir: 'blog', postBase: 'x/y', listBase: 'x/list', sitemapFile: 'sitemap-x.xml', nameKey: 'blog_cat_tech' };
+    expect(locs(sitemapIndexXml([TECH, fake]))).toEqual([`${SITE}/sitemap-pages.xml`, `${SITE}/sitemap-blog.xml`, `${SITE}/sitemap-x.xml`]);
+  });
+
+  it('leaves /sitemap.xml to the route alone', () => {
+    expect(fs.existsSync(path.join(process.cwd(), 'public', 'sitemap.xml'))).toBe(false);
   });
 
   it('sitemap-pages.xml keeps the blog index pages but no posts — those come from sitemap-blog.xml', () => {

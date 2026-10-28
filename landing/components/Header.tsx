@@ -4,13 +4,32 @@ import { useState, useEffect } from 'react';
 import { Language, translations, TranslationKey } from '@/lib/i18n';
 import ThemeToggle from './ThemeToggle';
 import LanguageToggle from './LanguageToggle';
+import { BLOG_CATEGORIES, categoryListPath, type BlogCategory } from '@/lib/blog-categories';
 
 interface HeaderProps {
   lang: Language;
   onLanguageChange: (lang: Language) => void;
+  categories?: readonly BlogCategory[];
 }
 
-export default function Header({ lang, onLanguageChange }: HeaderProps) {
+/** One link per blog category list — the desktop dropdown and the mobile menu share it. */
+export function BlogCategoryLinks({ lang, categories, className = '' }: { lang: Language; categories: readonly BlogCategory[]; className?: string }) {
+  return (
+    <div className={className}>
+      {categories.map((category) => (
+        <a
+          key={category.id}
+          href={categoryListPath(category, lang)}
+          className="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium whitespace-nowrap"
+        >
+          {translations[lang][category.nameKey]}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+export default function Header({ lang, onLanguageChange, categories = BLOG_CATEGORIES }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -27,8 +46,10 @@ export default function Header({ lang, onLanguageChange }: HeaderProps) {
   const navItems = [
     { key: 'nav_products' as TranslationKey, href: '#products' },
     { key: 'nav_features' as TranslationKey, href: '#features' },
-    { key: 'nav_blog' as TranslationKey, href: `/${lang}/blog` },
+    { key: 'nav_blog' as TranslationKey, href: `/${lang}/blog/` },
   ];
+  // A single category needs no menu: the blog link already leads to it.
+  const blogMenu = categories.length > 1;
 
   return (
     <header
@@ -55,15 +76,26 @@ export default function Header({ lang, onLanguageChange }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.key}
-                href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
-              >
-                {t(item.key)}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const link = (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  className="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
+                >
+                  {t(item.key)}
+                </a>
+              );
+              if (item.key !== 'nav_blog' || !blogMenu) return link;
+              return (
+                <div key={item.key} className="relative group">
+                  {link}
+                  <div className="absolute left-0 top-full pt-2 hidden group-hover:block group-focus-within:block">
+                    <BlogCategoryLinks lang={lang} categories={categories} className="glass rounded-xl border border-gray-200 dark:border-gray-800 px-4 py-2 shadow-lg" />
+                  </div>
+                </div>
+              );
+            })}
             <a
               href="https://touchizen.lemonsqueezy.com/affiliates"
               target="_blank"
@@ -115,14 +147,16 @@ export default function Header({ lang, onLanguageChange }: HeaderProps) {
         {isMobileMenuOpen && (
           <nav className="md:hidden py-4 px-4 border-t border-gray-200 dark:border-gray-800 glass">
             {navItems.map((item) => (
-              <a
-                key={item.key}
-                href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-3 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
-              >
-                {t(item.key)}
-              </a>
+              <div key={item.key}>
+                <a
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-3 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
+                >
+                  {t(item.key)}
+                </a>
+                {item.key === 'nav_blog' && blogMenu && <BlogCategoryLinks lang={lang} categories={categories} className="pl-4 pb-2" />}
+              </div>
             ))}
             <a
               href="https://touchizen.lemonsqueezy.com/affiliates"
