@@ -11,7 +11,7 @@ vi.mock('@/components/Footer', () => ({ default: () => null }));
 
 import { buildPostJsonLd, getAllPosts, getPostBySlug, getPostSlugs, toCardPost } from './blog';
 import { hubSections } from './blog-hub';
-import { DRAMA, TECH, type BlogCategory } from './blog-categories';
+import { BLOG_CATEGORIES, DRAMA, TECH, type BlogCategory } from './blog-categories';
 import BlogPageClient from '@/app/(main)/[lang]/blog/BlogPageClient';
 import BlogPostClient from '@/app/(main)/[lang]/blog/[slug]/BlogPostClient';
 import BlogHubClient from '@/app/(main)/[lang]/blog/BlogHubClient';
@@ -23,6 +23,10 @@ import type { HubSection } from '@/app/(main)/[lang]/blog/BlogHubClient';
 export const FIXTURE: BlogCategory = { ...DRAMA, contentDir: '../lib/__fixtures__/drama' };
 
 describe('drama category', () => {
+  it('is open, after IT', () => {
+    expect(BLOG_CATEGORIES).toEqual([TECH, DRAMA]);
+  });
+
   it('lives under the blog with its own sitemap and channel', () => {
     expect(DRAMA).toMatchObject({
       id: 'drama', contentDir: 'drama', postBase: 'blog/drama', listBase: 'blog/drama',

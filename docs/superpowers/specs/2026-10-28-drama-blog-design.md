@@ -22,9 +22,9 @@ touchizen.com 블로그(`/{lang}/blog/`)에는 IT·AutoFlowCut 글만 있다. �
 - 블로그를 **카테고리 여러 개**로 운영하는 틀을 만든다: 지금 IT·AI(기존), 이번에 드라마, 나중에
   경제. 메인에서는 헤더의 "블로그" 하나로 들어가 카테고리로 갈라진다(사용자와 합의한 구조).
 - `/{lang}/blog/drama/` 에 드라마 블로그를 연다. 4개 언어(ko·en·ja·de) — 사용자 결정.
-- 첫 묶음: 「100일의 거짓말」 롱폼 중 **유튜브에 올라간 4편 → 글 4편 × 4개 언어 = 16개 파일**.
-  7화 상상 시나리오(5번째 영상)는 사용자가 "당장 안 해도 돼, 배포 후에 게시돼도 상관없어" — 첫 배포 뒤
-  같은 틀로 따로 올린다(아래 표에 남겨 둔다).
+- 첫 묶음: 「100일의 거짓말」 롱폼 중 **유튜브에 올라간 5편 → 글 5편 × 4개 언어 = 20개 파일**.
+  7화 상상 시나리오(5번째)는 처음엔 "배포 후에 게시돼도 상관없어"였다가, 2026-10-28 공개 직후 사용자가
+  "그것도 같이 작성해줘" — 같은 묶음에 넣는다. 실제 7화가 아닌 상상이라는 점을 글 맨 위에 밝힌다.
 - 글마다 맨 위에 그 영상 임베드, 끝에 "유튜브에서 보기"·"채널 구독" 링크.
 - 드라마가 늘어나도(다음은 「닥터X」, 사용자가 100일 끝나면 원본을 준다) 콘텐츠 폴더에 파일만
   더하면 되는 구조.
@@ -62,7 +62,7 @@ touchizen.com 블로그(`/{lang}/blog/`)에는 IT·AutoFlowCut 글만 있다. �
 **카테고리 목록에는 글이 있는 카테고리만 들어간다** — 이게 숨김 규칙을 구조로 보장한다(테스트로 강제:
 목록의 모든 카테고리는 4개 언어 모두에 글이 있다).
 
-## 원본 (첫 묶음 4편 + 다음 1편)
+## 원본 (첫 묶음 5편)
 
 대본은 `script.md` 의 표(`| # | 내레이션 | 화면 | 자막 |`)다. 글의 재료는 **내레이션 열**과
 `youtube-meta.md`(확정 제목·설명·챕터·출처)다. 날짜는 유튜브 공개 시각(KST)의 날짜.
@@ -73,7 +73,7 @@ touchizen.com 블로그(`/{lang}/blog/`)에는 IT·AutoFlowCut 글만 있다. �
 | 13년 전 계암리 | `~/workspace/drama-review/100일의-거짓말/100days-wk-1026` | `NOGipYzCOHg` | 10-26 20:00 | 없음 → 새로 번역 |
 | 히데오와 사토 집안의 숨은 과거 | `~/workspace/drama-review/100일의-거짓말/100days-wk-1027` (`~/premiere-workspace/100days-wk-1027` 과 대본 동일) | `yNq92DR86z8` | 10-27 16:30 | `youtube-meta-langs.md` |
 | '상해 가정부'의 정체 | `~/premiere-workspace/100days-wk-1028` | `H6l9WgOiK58` | 10-28 05:00 | `youtube-meta-langs.md` |
-| (다음) 7화 상상 시나리오 | `~/premiere-workspace/100days-wk-1028b` | `_KXkb5pRSw0` | 10-28 16:30 | `youtube-meta-langs.md` |
+| 7화 상상 시나리오 (유튜브 제목은 "7화 상상 공개") | `~/premiere-workspace/100days-wk-1028b` | `_KXkb5pRSw0` | 10-28 16:30 | `youtube-meta-langs.md` |
 
 - 각 폴더의 `STATE.md` 가 정본 기록이다. 대본이 여러 판이면 `script.md`(판 번호 없는 것)가 최종.
 - 경로: `~/premiere-workspace/100days-wk-1027` 은 drama-review 폴더를 가리키는 심링크다. 1028·1028b 는
@@ -222,11 +222,11 @@ touchizen.com 블로그(`/{lang}/blog/`)에는 IT·AutoFlowCut 글만 있다. �
 ### 순서와 검토
 1. 코드(TDD): 카테고리 일반화 → 허브·IT 목록 → 드라마 목록·글 화면 → 임베드·CTA·JSON-LD → sitemap →
    헤더 드롭다운·푸터.
-2. ko 글 4편 + 스틸·썸네일.
+2. ko 글 5편 + 스틸·썸네일.
 3. ko 글 검토(Opus 서브에이전트 — 대본과 대조해 사실·스포 범위·저작권 분량·말투).
 4. en·ja·de 번역 + 검토(용어집 일관성).
-5. 빌드 산출물 확인: 허브·`tech/`·`drama/` 목록 각 4개 + 드라마 글 16개, 각 글에 iframe·AdSense 태그·
-   hreflang·JSON-LD, `sitemap-drama.xml` 에 글 16개, 색인에 `sitemap-drama.xml`, 기존 IT 글 주소가 하나도 안 사라짐(빌드 전후 목록 대조),
+5. 빌드 산출물 확인: 허브·`tech/`·`drama/` 목록 각 4개 + 드라마 글 20개, 각 글에 iframe·AdSense 태그·
+   hreflang·JSON-LD, `sitemap-drama.xml` 에 글 20개, 색인에 `sitemap-drama.xml`, 기존 IT 글 주소가 하나도 안 사라짐(빌드 전후 목록 대조),
    `economy/` 는 아무 데도 없음.
 6. **배포(main push)는 사용자가 "올려" 한 뒤에만.**
 

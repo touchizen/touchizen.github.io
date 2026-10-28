@@ -48,7 +48,7 @@ export const DRAMA: BlogCategory = {
  * Only categories with posts in every language. A category opens together with its first post —
  * a static export can't build an empty one without placeholder pages (lib/blog-categories.test.ts).
  */
-export const BLOG_CATEGORIES: readonly BlogCategory[] = [TECH];
+export const BLOG_CATEGORIES: readonly BlogCategory[] = [TECH, DRAMA];
 
 // trailingSlash: true in next.config.js — same shape as the emitted pages.
 export function categoryListPath(category: BlogCategory, lang: Language): string {

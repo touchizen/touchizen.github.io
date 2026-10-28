@@ -91,7 +91,6 @@ describe('sitemap files in public/', () => {
     const xml = await res.text();
     expect(xml).toContain('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
     expect(locs(xml)).toEqual([`${SITE}/sitemap-pages.xml`, ...BLOG_CATEGORIES.map((c) => `${SITE}/${c.sitemapFile}`)]);
-    expect(locs(xml)).toEqual([`${SITE}/sitemap-pages.xml`, `${SITE}/sitemap-blog.xml`]);
   });
 
   it("adds a category's sitemap to the index by itself", () => {
