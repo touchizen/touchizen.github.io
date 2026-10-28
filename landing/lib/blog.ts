@@ -296,9 +296,10 @@ export function buildPostJsonLd(lang: Language, slug: string, post: BlogPost, ca
 }
 
 /** What a post card in a list shows — no body, so a list page doesn't carry every post's content. */
-export type CardPost = Pick<BlogPost, 'slug' | 'title' | 'date' | 'excerpt' | 'tags' | 'image'>;
+export type CardPost = Pick<BlogPost, 'slug' | 'title' | 'date' | 'excerpt' | 'tags' | 'image' | 'series' | 'seriesId'>;
 
-export const toCardPost = ({ slug, title, date, excerpt, tags, image }: BlogPost): CardPost => ({ slug, title, date, excerpt, tags, image });
+export const toCardPost = ({ slug, title, date, excerpt, tags, image, series, seriesId }: BlogPost): CardPost =>
+  ({ slug, title, date, excerpt, tags, image, series, seriesId });
 
 export function getAllPosts(lang: Language, category: BlogCategory = TECH): BlogPost[] {
   const slugs = getPostSlugs(lang, category);
