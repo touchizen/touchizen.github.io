@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Language, languages } from '@/lib/i18n';
 import { getAllPosts, getPostBySlug, buildPostMetadata, buildPostJsonLd, relatedPosts, latestPosts, adjacentPosts, type BlogPost } from '@/lib/blog';
+import { TECH } from '@/lib/blog-categories';
 import BlogPostClient, { type PostSummary } from './BlogPostClient';
 
 export function generateMetadata({ params }: { params: { lang: Language; slug: string } }): Metadata {
@@ -48,6 +49,7 @@ export default function BlogPostPage({ params }: { params: { lang: Language; slu
       prev={prev && summary(prev)}
       next={next && summary(next)}
       jsonLd={jsonLd}
+      category={TECH}
     />
   );
 }

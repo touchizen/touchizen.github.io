@@ -3,6 +3,8 @@
 // 카테고리 목록에는 **글이 있는 카테고리만** 넣는다. 정적 export 는 글이 0개인 카테고리를 빈 페이지나
 // 자리표시 페이지로밖에 못 만들고, 빈 페이지는 애드센스가 가치 없는 콘텐츠로 본다. 그래서 숨김 규칙을
 // 화면마다 조건문으로 두지 않고, 목록에 들어가는 조건 하나로 건다.
+import fs from 'node:fs';
+import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 import { buildPostJsonLd, buildPostMetadata, getPostBySlug, getPostSlugs } from './blog';
@@ -40,6 +42,18 @@ describe('blog categories', () => {
     const categoryIds = ['tech', 'drama', 'economy'];
     const clashes = languages.flatMap((l) => getPostSlugs(l.code, TECH).filter((slug) => categoryIds.includes(slug)));
     expect(clashes).toEqual([]);
+  });
+
+  // Catches a category opened in BLOG_CATEGORIES without its route folders (drama, later economy).
+  it('gives every category its list page, post page and sitemap route', () => {
+    const missing = BLOG_CATEGORIES.flatMap((cat) =>
+      [
+        path.join('app', '(main)', '[lang]', cat.listBase, 'page.tsx'),
+        path.join('app', '(main)', '[lang]', cat.postBase, '[slug]', 'page.tsx'),
+        path.join('app', cat.sitemapFile, 'route.ts'),
+      ].filter((f) => !fs.existsSync(path.join(process.cwd(), f))),
+    );
+    expect(missing).toEqual([]);
   });
 
   it("builds a post's canonical, hreflang and JSON-LD from its category", () => {
