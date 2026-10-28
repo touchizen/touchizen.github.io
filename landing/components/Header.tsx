@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type KeyboardEvent } from 'react';
 import { Language, translations, TranslationKey } from '@/lib/i18n';
 import ThemeToggle from './ThemeToggle';
 import LanguageToggle from './LanguageToggle';
@@ -27,6 +27,11 @@ export function BlogCategoryLinks({ lang, categories, className = '' }: { lang: 
       ))}
     </div>
   );
+}
+
+/** The blog dropdown opens on hover or on focus inside it; Escape drops that focus so it closes. */
+export function closeMenuOnEscape(e: KeyboardEvent) {
+  if (e.key === 'Escape') (e.target as HTMLElement).blur?.();
 }
 
 export default function Header({ lang, onLanguageChange, categories = BLOG_CATEGORIES }: HeaderProps) {
@@ -77,18 +82,20 @@ export default function Header({ lang, onLanguageChange, categories = BLOG_CATEG
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
+              const opensMenu = item.key === 'nav_blog' && blogMenu;
               const link = (
                 <a
                   key={item.key}
                   href={item.href}
+                  aria-haspopup={opensMenu || undefined}
                   className="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
                 >
                   {t(item.key)}
                 </a>
               );
-              if (item.key !== 'nav_blog' || !blogMenu) return link;
+              if (!opensMenu) return link;
               return (
-                <div key={item.key} className="relative group">
+                <div key={item.key} className="relative group" onKeyDown={closeMenuOnEscape}>
                   {link}
                   <div className="absolute left-0 top-full pt-2 hidden group-hover:block group-focus-within:block">
                     <BlogCategoryLinks lang={lang} categories={categories} className="glass rounded-xl border border-gray-200 dark:border-gray-800 px-4 py-2 shadow-lg" />

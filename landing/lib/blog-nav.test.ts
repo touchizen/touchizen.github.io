@@ -2,13 +2,13 @@
 // 카테고리마다 헤더 항목을 따로 두지 않는다 — 네 언어, 특히 독일어에서 헤더가 넘친다.
 // 푸터는 카테고리가 하나여도 링크를 둔다(크롤러가 목록 페이지를 찾는 길).
 import { describe, expect, it, vi } from 'vitest';
-import { createElement } from 'react';
+import { createElement, type KeyboardEvent } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 vi.mock('@/components/ThemeToggle', () => ({ default: () => null }));
 vi.mock('@/components/LanguageToggle', () => ({ default: () => null }));
 
-import Header, { BlogCategoryLinks } from '@/components/Header';
+import Header, { BlogCategoryLinks, closeMenuOnEscape } from '@/components/Header';
 import Footer from '@/components/Footer';
 import { TECH, type BlogCategory } from './blog-categories';
 import { FAKE } from './__fixtures__/categories';
@@ -48,5 +48,20 @@ describe('blog navigation', () => {
     const two = renderToStaticMarkup(createElement(Footer, { lang: 'ko', categories: [TECH, FAKE] }));
     expect(count(two, '/ko/blog/tech/')).toBe(1);
     expect(count(two, '/ko/x/list/')).toBe(1);
+  });
+});
+
+describe('blog menu accessibility', () => {
+  it('tells assistive tech the blog link opens a menu, only when it does', () => {
+    const blogLink = (html: string) => html.match(/<a [^>]*href="\/ko\/blog\/"[^>]*>/)?.[0] ?? '';
+    expect(blogLink(header([TECH, FAKE]))).toContain('aria-haspopup="true"');
+    expect(blogLink(header([TECH]))).not.toContain('aria-haspopup');
+  });
+
+  it('lets Escape close the menu by dropping focus out of it', () => {
+    const blur = vi.fn();
+    closeMenuOnEscape({ key: 'Escape', target: { blur } } as unknown as KeyboardEvent);
+    closeMenuOnEscape({ key: 'Tab', target: { blur } } as unknown as KeyboardEvent);
+    expect(blur).toHaveBeenCalledTimes(1);
   });
 });
