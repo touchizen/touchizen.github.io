@@ -455,6 +455,8 @@ The young prince practices sword fighting in the courtyard`,
   blog_next: 'Next post',
   blog_published: 'Published',
   blog_tags: 'Tags',
+  blog_cat_tech: 'Tech & AI',
+  blog_hub_subtitle: 'Everything Touchizen writes, by topic',
 
   // AutoFlowCut
   autoflowcut_name: 'AutoFlowCut',
