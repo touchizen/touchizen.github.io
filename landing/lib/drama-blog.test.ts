@@ -143,3 +143,12 @@ describe('posts published the same day', () => {
     }
   });
 });
+
+describe('quotes in a post', () => {
+  // Posts quote dialogue in their own quotation marks; the typography plugin adds a second pair around
+  // every blockquote ("" … ""). The reset is an inline <style> so no CSS minifier can drop it.
+  it('get no automatic quotation marks around them', () => {
+    const html = renderToStaticMarkup(createElement(BlogPostClient, { lang: 'ko', post: reading, category: FIXTURE }));
+    expect(html).toContain('.prose blockquote p:first-of-type::before,.prose blockquote p:last-of-type::after{content:none!important}');
+  });
+});

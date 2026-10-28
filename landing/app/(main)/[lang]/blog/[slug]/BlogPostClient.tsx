@@ -76,8 +76,10 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
         can't drop it: the prose-code:* utilities style inline code but also leak
         into <pre><code>, painting a light chip over the dark code block and
         hiding its text. Reset block code to inherit the <pre> background/text.
+        Posts also put their own quotation marks around quoted lines, so the plugin's automatic
+        blockquote quotes are reset too — otherwise every quote reads ""like this"".
       */}
-      <style dangerouslySetInnerHTML={{ __html: '.prose pre code{background-color:transparent!important;padding:0!important;border-radius:0!important;color:inherit!important;font-weight:inherit!important}' }} />
+      <style dangerouslySetInnerHTML={{ __html: '.prose pre code{background-color:transparent!important;padding:0!important;border-radius:0!important;color:inherit!important;font-weight:inherit!important}.prose blockquote p:first-of-type::before,.prose blockquote p:last-of-type::after{content:none!important}' }} />
       {jsonLd && (
         <script
           type="application/ld+json"
