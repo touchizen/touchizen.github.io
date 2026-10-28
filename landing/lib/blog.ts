@@ -280,6 +280,18 @@ export function buildPostJsonLd(lang: Language, slug: string, post: BlogPost, ca
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     keywords: post.tags.join(', '),
+    // Lets search show the post's video (drama posts are the written side of one).
+    ...(post.youtube && {
+      video: {
+        '@type': 'VideoObject',
+        name: post.title,
+        description: post.excerpt,
+        thumbnailUrl: `https://i.ytimg.com/vi/${post.youtube}/maxresdefault.jpg`,
+        uploadDate: post.date,
+        embedUrl: `https://www.youtube.com/embed/${post.youtube}`,
+        url: `https://www.youtube.com/watch?v=${post.youtube}`,
+      },
+    }),
   };
 }
 

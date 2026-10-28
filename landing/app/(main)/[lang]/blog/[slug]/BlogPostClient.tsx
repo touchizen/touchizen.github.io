@@ -15,6 +15,7 @@ interface BlogPost {
   tags: string[];
   author: string;
   htmlContent: string;
+  youtube?: string;
 }
 
 /** Just what a link to another post shows — post bodies stay out of the page payload. */
@@ -113,6 +114,20 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
               <time>{post.date}</time>
             </div>
 
+            {/* The video this post is the written side of — playing it here counts as a YouTube view. */}
+            {post.youtube && (
+              <div className="aspect-video mb-10 rounded-xl overflow-hidden bg-black shadow-lg">
+                <iframe
+                  src={`https://www.youtube.com/embed/${post.youtube}`}
+                  title={post.title}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            )}
+
             {/* Content */}
             <div
               className="prose prose-lg dark:prose-invert max-w-none
@@ -128,6 +143,29 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
                 prose-img:rounded-xl prose-img:shadow-lg"
               dangerouslySetInnerHTML={{ __html: post.htmlContent }}
             />
+
+            {post.youtube && (
+              <div className="flex flex-wrap gap-3 mt-12">
+                <a
+                  href={`https://youtu.be/${post.youtube}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-5 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold transition-colors"
+                >
+                  {t('blog_watch_youtube')}
+                </a>
+                {category.youtubeChannel && (
+                  <a
+                    href={`https://www.youtube.com/channel/${category.youtubeChannel}?sub_confirmation=1`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-5 py-3 rounded-xl border border-gray-300 dark:border-gray-700 hover:border-red-600 font-semibold transition-colors"
+                  >
+                    {t('blog_subscribe_channel')}
+                  </a>
+                )}
+              </div>
+            )}
 
             {/* Previous (older) and next (newer) post, in the blog list's date order. */}
             {(prev || next) && (

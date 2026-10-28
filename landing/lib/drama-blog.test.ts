@@ -9,9 +9,10 @@ vi.mock('next/navigation', () => ({ useRouter: () => ({ push: () => {} }) }));
 vi.mock('@/components/Header', () => ({ default: () => null }));
 vi.mock('@/components/Footer', () => ({ default: () => null }));
 
-import { getPostBySlug } from './blog';
+import { buildPostJsonLd, getPostBySlug, getPostSlugs } from './blog';
 import { DRAMA, TECH, type BlogCategory } from './blog-categories';
 import BlogPageClient from '@/app/(main)/[lang]/blog/BlogPageClient';
+import BlogPostClient from '@/app/(main)/[lang]/blog/[slug]/BlogPostClient';
 
 /** DRAMA with its posts read from the test fixtures instead of content/drama. */
 export const FIXTURE: BlogCategory = { ...DRAMA, contentDir: '../lib/__fixtures__/drama' };
@@ -34,5 +35,45 @@ describe('drama category', () => {
     const html = renderToStaticMarkup(createElement(BlogPageClient, { lang: 'ko', posts: [], category: FIXTURE }));
     expect(html).toContain('드라마');
     expect(html).not.toContain('AI 영상 크리에이터를 위한');
+  });
+});
+
+const reading = { slug: 'cur', title: 'Current', date: '2026-10-27', excerpt: '', tags: [], author: '고든인사이트', htmlContent: '<p>body</p>' };
+const hrefs = (html: string) => Array.from(html.matchAll(/<a href="([^"]+)"/g), (m) => m[1]);
+
+describe('a post with a video', () => {
+  it('embeds the video under the title and links it at the end', () => {
+    const html = renderToStaticMarkup(createElement(BlogPostClient, { lang: 'ko', post: { ...reading, youtube: 'abcdefghijk' }, category: FIXTURE }));
+    const iframe = html.match(/<iframe[^>]*>/)?.[0] ?? '';
+    expect(iframe).toContain('src="https://www.youtube.com/embed/abcdefghijk"');
+    expect(iframe).toContain('title="Current"');
+    expect(html.indexOf('<iframe')).toBeLessThan(html.indexOf('<p>body</p>'));
+    const links = hrefs(html.slice(html.indexOf('<p>body</p>')));
+    expect(links).toEqual(expect.arrayContaining([
+      'https://youtu.be/abcdefghijk',
+      'https://www.youtube.com/channel/UCF79bfcre5z5WZmN8ncsA2Q?sub_confirmation=1',
+    ]));
+    expect(html).toContain('유튜브에서 보기');
+  });
+
+  it('leaves a post without a video as it was', () => {
+    const html = renderToStaticMarkup(createElement(BlogPostClient, { lang: 'ko', post: reading, category: TECH }));
+    expect(html).not.toContain('<iframe');
+    expect(html).not.toContain('youtu');
+  });
+
+  it("describes the video in the post's structured data", () => {
+    const post = getPostBySlug('ko', 'sample-a', FIXTURE)!;
+    expect(buildPostJsonLd('ko', 'sample-a', post, FIXTURE).video).toEqual({
+      '@type': 'VideoObject',
+      name: post.title,
+      description: post.excerpt,
+      thumbnailUrl: 'https://i.ytimg.com/vi/abcdefghijk/maxresdefault.jpg',
+      uploadDate: '2026-10-27',
+      embedUrl: 'https://www.youtube.com/embed/abcdefghijk',
+      url: 'https://www.youtube.com/watch?v=abcdefghijk',
+    });
+    const it = getPostSlugs('ko')[0];
+    expect(buildPostJsonLd('ko', it, getPostBySlug('ko', it)!).video).toBeUndefined();
   });
 });
