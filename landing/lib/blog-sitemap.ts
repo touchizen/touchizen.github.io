@@ -1,11 +1,11 @@
 import { getPostBySlug, getPostSlugs } from './blog';
 import { Language, languages } from './i18n';
-import { TECH, categoryPostPath, type BlogCategory } from './blog-categories';
+import { BLOG_CATEGORIES, TECH, categoryPostPath, type BlogCategory } from './blog-categories';
 
 /**
- * The blog half of the sitemap, built from content/blog at every build (served as /sitemap-blog.xml),
- * so a new post is listed by adding its file — public/sitemap.xml is only the index, and
- * public/sitemap-pages.xml keeps the hand-written non-blog pages.
+ * The blog sitemaps, one per category, built from the posts at every build (IT: content/blog served as
+ * /sitemap-blog.xml), so a new post is listed by adding its file. /sitemap.xml is the generated index of
+ * them, and public/sitemap-pages.xml keeps the hand-written non-blog pages.
  */
 
 const SITE_URL = 'https://touchizen.com';
@@ -51,4 +51,13 @@ export function blogSitemapXml(entries: SitemapEntry[], category: BlogCategory =
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
     '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     ...urls, '</urlset>', ''].join('\n');
+}
+
+/** /sitemap.xml: the hand-written page sitemap, then each blog category's sitemap. */
+export function sitemapIndexXml(categories: readonly BlogCategory[] = BLOG_CATEGORIES): string {
+  const files = ['sitemap-pages.xml', ...categories.map((c) => c.sitemapFile)];
+  return ['<?xml version="1.0" encoding="UTF-8"?>',
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...files.map((f) => `  <sitemap>\n    <loc>${SITE_URL}/${f}</loc>\n  </sitemap>`),
+    '</sitemapindex>', ''].join('\n');
 }
