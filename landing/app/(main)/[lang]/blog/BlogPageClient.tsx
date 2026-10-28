@@ -56,7 +56,7 @@ export default function BlogPageClient({ lang, posts, category = TECH }: { lang:
         <div className="container-custom px-4">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold mb-2 gradient-text">{t(category.nameKey)}</h1>
-            <p className="text-gray-500 dark:text-gray-400 mb-12">{t('blog_subtitle' as TranslationKey)}</p>
+            <p className="text-gray-500 dark:text-gray-400 mb-12">{t(category.subtitleKey)}</p>
 
             {posts.length === 0 ? (
               <p className="text-gray-500 dark:text-gray-400">No posts yet.</p>

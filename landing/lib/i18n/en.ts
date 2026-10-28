@@ -457,6 +457,10 @@ The young prince practices sword fighting in the courtyard`,
   blog_tags: 'Tags',
   blog_cat_tech: 'Tech & AI',
   blog_hub_subtitle: 'Everything Touchizen writes, by topic',
+  blog_cat_drama: 'Drama',
+  blog_drama_subtitle: 'Drama analysis and next-episode predictions — the Gordon Insight videos, written up',
+  blog_watch_youtube: 'Watch on YouTube',
+  blog_subscribe_channel: 'Subscribe to Gordon Insight',
 
   // AutoFlowCut
   autoflowcut_name: 'AutoFlowCut',

@@ -19,6 +19,11 @@ export interface BlogPost {
   htmlContent: string;
   noindex: boolean;
   image?: string;
+  /** YouTube video ID the post is the written side of — drama posts embed it. */
+  youtube?: string;
+  /** Show the post belongs to, as named in the post's language, and a language-independent key for it. */
+  series?: string;
+  seriesId?: string;
 }
 
 const contentDir = (category: BlogCategory) => path.join(process.cwd(), 'content', category.contentDir);
@@ -156,6 +161,9 @@ export function getPostBySlug(lang: Language, slug: string, category: BlogCatego
     htmlContent,
     noindex: data.noindex === true,
     image: data.image || undefined,
+    youtube: data.youtube || undefined,
+    series: data.series || undefined,
+    seriesId: data.seriesId || undefined,
   };
 }
 

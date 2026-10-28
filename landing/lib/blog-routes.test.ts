@@ -14,20 +14,13 @@ vi.mock('@/components/Footer', () => ({ default: () => null }));
 
 import { getPostSlugs } from './blog';
 import { BLOG_CATEGORIES, TECH, type BlogCategory } from './blog-categories';
+import { FAKE } from './__fixtures__/categories';
 import { blogSitemapEntries, blogSitemapXml, categorySitemapResponse } from './blog-sitemap';
 import { languages, type Language } from './i18n';
 import { postMetadata, postStaticParams, renderPostPage } from '@/app/(main)/[lang]/blog/postRoute';
 import { generateMetadata as hubMetadata } from '@/app/(main)/[lang]/blog/page';
 import { generateMetadata as techListMetadata } from '@/app/(main)/[lang]/blog/tech/page';
 
-const FAKE: BlogCategory = {
-  id: 'drama',
-  contentDir: 'blog',
-  postBase: 'x/y',
-  listBase: 'x/list',
-  sitemapFile: 'sitemap-x.xml',
-  nameKey: 'blog_cat_tech',
-};
 const SITE = 'https://touchizen.com';
 const slug = getPostSlugs('ko')[0];
 

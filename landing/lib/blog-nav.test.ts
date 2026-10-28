@@ -11,15 +11,8 @@ vi.mock('@/components/LanguageToggle', () => ({ default: () => null }));
 import Header, { BlogCategoryLinks } from '@/components/Header';
 import Footer from '@/components/Footer';
 import { TECH, type BlogCategory } from './blog-categories';
+import { FAKE } from './__fixtures__/categories';
 
-const FAKE: BlogCategory = {
-  id: 'drama',
-  contentDir: 'blog',
-  postBase: 'x/y',
-  listBase: 'x/list',
-  sitemapFile: 'sitemap-x.xml',
-  nameKey: 'blog_cat_tech',
-};
 
 const hrefs = (html: string) => Array.from(html.matchAll(/<a href="([^"]+)"/g), (m) => m[1]);
 const count = (html: string, href: string) => hrefs(html).filter((h) => h === href).length;

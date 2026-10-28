@@ -9,18 +9,10 @@ import { describe, expect, it } from 'vitest';
 
 import { buildPostJsonLd, buildPostMetadata, getPostBySlug, getPostSlugs } from './blog';
 import { BLOG_CATEGORIES, TECH, categoryListPath, categoryPostPath, type BlogCategory } from './blog-categories';
+import { FAKE } from './__fixtures__/categories';
 import { blogSitemapXml } from './blog-sitemap';
 import { languages } from './i18n';
 
-/** IT 글을 다른 주소로 내보내 보는 가짜 카테고리 — 주소가 카테고리에서 나오는지 본다. */
-const FAKE: BlogCategory = {
-  id: 'drama',
-  contentDir: 'blog',
-  postBase: 'x/y',
-  listBase: 'x/list',
-  sitemapFile: 'sitemap-x.xml',
-  nameKey: 'blog_cat_tech',
-};
 
 const SITE = 'https://touchizen.com';
 

@@ -21,19 +21,12 @@ vi.mock('@/components/Footer', () => ({ default: () => null }));
 
 import { getAllPosts } from './blog';
 import { TECH, type BlogCategory } from './blog-categories';
+import { FAKE } from './__fixtures__/categories';
 import BlogHubClient, { type HubSection } from '@/app/(main)/[lang]/blog/BlogHubClient';
 import BlogHubPage from '@/app/(main)/[lang]/blog/page';
 import BlogPageClient from '@/app/(main)/[lang]/blog/BlogPageClient';
 import BlogPostClient from '@/app/(main)/[lang]/blog/[slug]/BlogPostClient';
 
-const FAKE: BlogCategory = {
-  id: 'drama',
-  contentDir: 'blog',
-  postBase: 'x/y',
-  listBase: 'x/list',
-  sitemapFile: 'sitemap-x.xml',
-  nameKey: 'blog_cat_tech',
-};
 
 const card = (slug: string) => ({ slug, title: `Title ${slug}`, date: '2026-10-01', excerpt: '', tags: [] });
 const reading = { slug: 'cur', title: 'Current', date: '2026-10-01', excerpt: '', tags: [], author: 'Touchizen', htmlContent: '<p>body</p>' };
