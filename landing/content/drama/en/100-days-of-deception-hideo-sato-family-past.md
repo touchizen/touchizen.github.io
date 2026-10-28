@@ -1,6 +1,6 @@
 ---
 title: "100 Days of Deception | Why Did Hideo's Mother Leave? The Secret of the Pawn Ticket \"Taishō 8\""
-date: "2026-10-27"
+date: "2026-10-27T16:30:00+09:00"
 excerpt: "Why doesn't Sato Hideo, son of the Inspector General, know his own mother's Korean name? And on the night she left, why did his father point a gun at the boy? We follow one pawn ticket hidden in a box lining: 'Shin Tae-jin' and 'Taishō 8.'"
 tags: ["100 Days of Deception", "tvN drama", "K-drama explained", "Sato Hideo", "pawn ticket", "Japanese-Korean intermarriage"]
 author: "Gordon Insight"

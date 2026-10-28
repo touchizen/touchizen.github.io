@@ -1,6 +1,6 @@
 ---
 title: "100 Days of Deception | Die Fahrkarte aus Folge 3… 3 Wochen später: „jener Tag“ in Shanghai"
-date: "2026-10-28"
+date: "2026-10-28T05:00:00+09:00"
 excerpt: "Auf der Fahrkarte in Ga-kyungs Hand steht in Folge 3: Shōwa 7, 8. April. Was geschah genau drei Wochen später im Shanghai des Jahres 1932? Und was ist das „Gajeongbu in Shanghai“, von dem Sato spricht?"
 tags: ["100 Days of Deception", "tvN-Serie", "K-Drama-Analyse", "Gajeongbu in Shanghai", "Koreanische Patriotische Organisation", "100 Days of Deception echte Geschichte"]
 author: "Gordon Insight"

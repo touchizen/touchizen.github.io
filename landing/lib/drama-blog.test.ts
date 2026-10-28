@@ -54,7 +54,8 @@ describe('a post with a video', () => {
   it('embeds the video under the title and links it at the end', () => {
     const html = renderToStaticMarkup(createElement(BlogPostClient, { lang: 'ko', post: { ...reading, youtube: 'abcdefghijk' }, category: FIXTURE }));
     const iframe = html.match(/<iframe[^>]*>/)?.[0] ?? '';
-    expect(iframe).toContain('src="https://www.youtube.com/embed/abcdefghijk"');
+    // youtube-nocookie: no YouTube cookies until the reader presses play (plays still count as views).
+    expect(iframe).toContain('src="https://www.youtube-nocookie.com/embed/abcdefghijk"');
     expect(iframe).toContain('title="Current"');
     expect(html.indexOf('<iframe')).toBeLessThan(html.indexOf('<p>body</p>'));
     const links = hrefs(html.slice(html.indexOf('<p>body</p>')));
@@ -78,7 +79,7 @@ describe('a post with a video', () => {
       name: post.title,
       description: post.excerpt,
       thumbnailUrl: 'https://i.ytimg.com/vi/abcdefghijk/maxresdefault.jpg',
-      uploadDate: '2026-10-27',
+      uploadDate: '2026-10-27T09:00:00+09:00',
       embedUrl: 'https://www.youtube.com/embed/abcdefghijk',
       url: 'https://www.youtube.com/watch?v=abcdefghijk',
     });
@@ -94,7 +95,7 @@ describe('lists and the hub', () => {
   it('groups a list by show, newest show first, with the posts under their show', () => {
     const html = renderToStaticMarkup(createElement(BlogPageClient, { lang: 'ko', posts: getAllPosts('ko', FIXTURE).map(toCardPost), category: FIXTURE }));
     expect(headings(html, 2)).toEqual(['다른 작품', '샘플 드라마']);
-    expect(headings(html, 3)).toEqual(['다른 작품 글 B', '샘플 드라마 글 A']);
+    expect(headings(html, 3)).toEqual(['다른 작품 글 B', '샘플 드라마 글 C', '샘플 드라마 글 A']);
   });
 
   it('keeps a list of posts without a show flat', () => {
@@ -108,18 +109,37 @@ describe('lists and the hub', () => {
     const [tech, drama] = hubSections('ko', [TECH, FIXTURE]);
     expect(tech.posts.map((p) => p.slug)).toEqual(getAllPosts('ko').slice(0, 3).map((p) => p.slug));
     expect(tech.more).toBe(true);
-    expect(drama.posts.map((p) => p.slug)).toEqual(['sample-b', 'sample-a']);
+    expect(drama.posts.map((p) => p.slug)).toEqual(['sample-b', 'sample-c', 'sample-a']);
     expect(drama.more).toBe(false);
   });
 
   it('heads hub cards below their category heading', () => {
     const html = renderToStaticMarkup(createElement(BlogHubClient, { lang: 'ko', sections: hubSections('ko', [TECH, FIXTURE]) }));
     expect(headings(html, 2)).toEqual(['IT·AI', '드라마']);
-    expect(headings(html, 3)).toHaveLength(5);
+    expect(headings(html, 3)).toHaveLength(6);
   });
 
   it('builds the hub page from the listed categories', () => {
     const { sections } = (BlogHubPage({ params: { lang: 'ko' } }) as ReactElement<{ sections: HubSection[] }>).props;
     expect(sections).toEqual(hubSections('ko'));
+  });
+});
+
+describe('posts published the same day', () => {
+  // Drama posts often go up twice a day, so `date` may carry the publish time (KST).
+  it('come newest first by publish time', () => {
+    expect(getAllPosts('ko', FIXTURE).map((p) => p.slug)).toEqual(['sample-b', 'sample-c', 'sample-a']);
+  });
+
+  it('show only the day to the reader', () => {
+    const list = renderToStaticMarkup(createElement(BlogPageClient, { lang: 'ko', posts: getAllPosts('ko', FIXTURE).map(toCardPost), category: FIXTURE }));
+    const post = renderToStaticMarkup(createElement(BlogPostClient, {
+      lang: 'ko', post: { ...reading, date: '2026-10-27T20:00:00+09:00' }, category: FIXTURE,
+      latest: [{ slug: 'sample-a', title: 'A', date: '2026-10-27T09:00:00+09:00' }],
+    }));
+    for (const html of [list, post]) {
+      expect(html).toContain('>2026-10-27</time>');
+      expect(html).not.toMatch(/T\d{2}:\d{2}/);
+    }
   });
 });

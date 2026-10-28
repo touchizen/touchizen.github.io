@@ -1,6 +1,6 @@
 ---
 title: "100 Days of Deception Episode 7 Preview | \"Did You Know Keum Is a Rare Surname?\" Why Sato Stopped at Keum Seo-hee"
-date: "2026-10-26"
+date: "2026-10-26T03:30:00+09:00"
 excerpt: "At the end of episode 6, Sato sits alone and mutters two names: Keum Seok-jung, and Keum Seo-hee, the fake name Ga-kyung goes by. Why did he stop at Keum Seo-hee? We follow the clues scene by scene, then make our episode 7 picks."
 tags: ["100 Days of Deception", "tvN drama", "K-drama analysis", "Episode 7 preview", "Keum Seo-hee", "Jeam-ri massacre"]
 author: "Gordon Insight"

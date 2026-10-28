@@ -44,7 +44,7 @@ function PostList({ lang, category, posts }: { lang: Language; category: BlogCat
             />
             <div className="min-w-0">
               <p className="text-sm font-semibold leading-snug line-clamp-3 group-hover:text-primary-500 transition-colors">{p.title}</p>
-              <time className="text-xs text-gray-400 dark:text-gray-500">{p.date}</time>
+              <time className="text-xs text-gray-400 dark:text-gray-500">{p.date.slice(0, 10)}</time>
             </div>
           </a>
         </li>
@@ -111,14 +111,15 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
             <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-8 pb-8 border-b border-gray-200 dark:border-gray-800">
               <span>{post.author}</span>
               <span>&middot;</span>
-              <time>{post.date}</time>
+              {/* `date` may carry the publish time to order same-day posts; readers see the day. */}
+              <time>{post.date.slice(0, 10)}</time>
             </div>
 
             {/* The video this post is the written side of — playing it here counts as a YouTube view. */}
             {post.youtube && (
               <div className="aspect-video mb-10 rounded-xl overflow-hidden bg-black shadow-lg">
                 <iframe
-                  src={`https://www.youtube.com/embed/${post.youtube}`}
+                  src={`https://www.youtube-nocookie.com/embed/${post.youtube}`}
                   title={post.title}
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -1,6 +1,6 @@
 ---
 title: "100 Days of Deception – Vorschau auf Folge 7 | „Ist Ihnen klar, dass Keum ein seltener Familienname ist?“ Warum Sato bei Keum Seo-hee stutzt"
-date: "2026-10-26"
+date: "2026-10-26T03:30:00+09:00"
 excerpt: "Am Ende von Folge 6 murmelt Sato allein zwei Namen: Keum Seok-jung und Keum Seo-hee, Ga-kyungs Deckname. Warum stutzt er ausgerechnet bei Keum Seo-hee? Wir folgen den Spuren Szene für Szene und wagen unsere Tipps für Folge 7."
 tags: ["100 Days of Deception", "tvN-Serie", "K-Drama-Analyse", "Vorschau Folge 7", "Keum Seo-hee", "Massaker von Jeam-ri"]
 author: "Gordon Insight"

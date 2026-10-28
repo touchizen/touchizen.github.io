@@ -1,6 +1,6 @@
 ---
 title: "100 Days of Deception | Warum So-ran ihren Mann 13 Jahre lang töten wollte – die drei Namen, die Seok-jung in Kyeam-ri preisgab"
-date: "2026-10-26"
+date: "2026-10-26T20:00:00+09:00"
 excerpt: "Dass eine Mutter, die ihre Tochter verloren hat, Jagd auf ihren Feind Sato macht, versteht man. Aber warum auch auf ihren eigenen Mann? Von der Rückblende in Kyeam-ri im April 1919 und den drei Namen, die Seok-jung an jenem Tag preisgab, über die Folterkammer in Folge 6 bis zum echten Jeam-ri von 1919 folgen wir So-rans 13 Jahren."
 tags: ["100 Days of Deception", "tvN-Serie", "K-Drama erklärt", "Kyeam-ri", "Massaker von Jeam-ri", "Albert Taylor"]
 author: "Gordon Insight"

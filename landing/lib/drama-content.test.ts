@@ -29,14 +29,14 @@ describe('drama posts', () => {
     expect(files.length).toBeGreaterThan(0);
   });
 
-  it('exist in every language, with the same video and show', () => {
+  it('exist in every language, with the same video, show and date', () => {
     const problems = slugsOf('ko').flatMap((slug) => {
       const missing = langs.filter((l) => !fs.existsSync(path.join(DIR, l, `${slug}.md`))).map((l) => `${slug}: no ${l}`);
       if (missing.length) return missing;
       const ko = read('ko', slug).data;
       return langs
-        .filter((l) => read(l, slug).data.youtube !== ko.youtube || read(l, slug).data.seriesId !== ko.seriesId)
-        .map((l) => `${slug}: ${l} differs in youtube/seriesId`);
+        .filter((l) => ['youtube', 'seriesId', 'date'].some((k) => read(l, slug).data[k] !== ko[k]))
+        .map((l) => `${slug}: ${l} differs in youtube/seriesId/date`);
     });
     expect(problems).toEqual([]);
   });
@@ -45,7 +45,8 @@ describe('drama posts', () => {
     const problems = files.flatMap(({ lang, slug, data }) =>
       [
         typeof data.title === 'string' && data.title.length > 0 ? null : 'title',
-        /^\d{4}-\d{2}-\d{2}$/.test(String(data.date)) ? null : 'date',
+        // A day, or a day and publish time with its offset ("2026-10-26T20:00:00+09:00") to order same-day posts.
+        /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2})?$/.test(String(data.date)) ? null : 'date',
         typeof data.excerpt === 'string' && data.excerpt.length > 0 ? null : 'excerpt',
         Array.isArray(data.tags) && data.tags.length > 0 ? null : 'tags',
         /^[A-Za-z0-9_-]{11}$/.test(String(data.youtube)) ? null : 'youtube',
@@ -55,6 +56,19 @@ describe('drama posts', () => {
       ].filter(Boolean).map((field) => `${lang}/${slug}: ${field}`),
     );
     expect(problems).toEqual([]);
+  });
+
+  // Without a time, two posts of one day fall in file-name order — the evening post can sit below the
+  // morning one and prev/next point the wrong way.
+  it('give a publish time when another post shares their day', () => {
+    const untimed = langs.flatMap((lang) => {
+      const posts = files.filter((f) => f.lang === lang);
+      return posts
+        .filter((f) => posts.some((o) => o !== f && String(o.data.date).slice(0, 10) === String(f.data.date).slice(0, 10)))
+        .filter((f) => !String(f.data.date).includes('T'))
+        .map((f) => `${lang}/${f.slug}`);
+    });
+    expect(untimed).toEqual([]);
   });
 
   it('point only at images that exist', () => {

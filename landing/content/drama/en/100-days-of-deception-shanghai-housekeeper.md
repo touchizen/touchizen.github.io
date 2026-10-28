@@ -1,6 +1,6 @@
 ---
 title: "100 Days of Deception | The Ep. 3 Train Ticket… 3 Weeks Later, \"That Day\" Hits Shanghai"
-date: "2026-10-28"
+date: "2026-10-28T05:00:00+09:00"
 excerpt: "The train ticket in Ga-kyung's hand in episode 3 is dated Shōwa 7, April 8. Exactly three weeks later, what happened in 1932 Shanghai? And what is the \"Shanghai gajeongbu\" Sato talks about?"
 tags: ["100 Days of Deception", "tvN drama", "K-drama analysis", "Shanghai gajeongbu", "Korean Patriotic Organization", "100 Days of Deception real history"]
 author: "Gordon Insight"

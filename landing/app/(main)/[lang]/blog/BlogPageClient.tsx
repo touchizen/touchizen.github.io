@@ -43,7 +43,7 @@ export function PostCard({ lang, category, post, heading: Heading = 'h2' }: {
             {post.title}
           </Heading>
           <p className="text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">{post.excerpt}</p>
-          <time className="text-sm text-gray-400 dark:text-gray-500">{post.date}</time>
+          <time className="text-sm text-gray-400 dark:text-gray-500">{post.date.slice(0, 10)}</time>
         </div>
       </a>
     </article>

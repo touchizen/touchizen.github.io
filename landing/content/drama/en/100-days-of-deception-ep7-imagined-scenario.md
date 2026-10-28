@@ -1,6 +1,6 @@
 ---
 title: "100 Days of Deception Ep. 7 Imagined Scenario | \"What Is That in Your Hand?\" The Hidden Photo Blows Up"
-date: "2026-10-28"
+date: "2026-10-28T16:30:00+09:00"
 excerpt: "In the episode 7 teaser, Ga-kyung hides a photo behind her back. Will that photo from Suwon reach Sato first, or Ga-kyung? And faced with it, whose side will Hideo take? This is my own imagined version of episode 7, built from clues in episodes 1–6 and the official teaser."
 tags: ["100 Days of Deception", "tvN drama", "K-drama analysis", "Episode 7 prediction", "Imagined scenario", "Family photo"]
 author: "Gordon Insight"

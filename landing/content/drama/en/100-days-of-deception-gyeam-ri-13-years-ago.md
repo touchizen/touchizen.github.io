@@ -1,6 +1,6 @@
 ---
 title: "100 Days of Deception | Why So-ran Wanted Her Husband Dead for 13 Years: The Three Names Seok-jung Gave Up in Kyeam-ri"
-date: "2026-10-26"
+date: "2026-10-26T20:00:00+09:00"
 excerpt: "A grieving mother hunting her enemy Sato makes sense. But why her husband, too? From the April 1919 flashback in Kyeam-ri and the three names Seok-jung gave up that day, to the torture room in episode 6 and the real Jeam-ri of 1919, we trace So-ran's 13 years."
 tags: ["100 Days of Deception", "tvN drama", "K-drama explained", "Kyeam-ri", "Jeam-ri massacre", "Albert Taylor"]
 author: "Gordon Insight"

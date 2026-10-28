@@ -1,6 +1,6 @@
 ---
 title: "100 Days of Deception | Warum ging Hideos Mutter? Das Geheimnis des Pfandscheins „Taishō 8“"
-date: "2026-10-27"
+date: "2026-10-27T16:30:00+09:00"
 excerpt: "Warum kennt Sato Hideo, der Sohn des Vizegouverneurs, den koreanischen Namen seiner eigenen Mutter nicht? Und warum richtete sein Vater in der Nacht, als sie ging, eine Waffe auf den Jungen? Wir folgen einem Pfandschein aus dem Futter einer Schachtel: ‚Shin Tae-jin‘ und ‚Taishō 8‘."
 tags: ["100 Days of Deception", "tvN-Serie", "K-Drama erklärt", "Sato Hideo", "Pfandschein", "japanisch-koreanische Ehen"]
 author: "Gordon Insight"

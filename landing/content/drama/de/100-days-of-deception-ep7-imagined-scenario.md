@@ -1,6 +1,6 @@
 ---
 title: "100 Days of Deception Folge 7 – Fantasie-Szenario | „Was haben Sie da?“ Ga-kyungs verstecktes Foto fliegt auf"
-date: "2026-10-28"
+date: "2026-10-28T16:30:00+09:00"
 excerpt: "Im Teaser zu Folge 7 versteckt Ga-kyung ein Foto hinter ihrem Rücken. Landet das Foto aus Suwon zuerst bei Sato oder bei Ga-kyung? Und auf wessen Seite stellt sich Hideo? Eine selbst ausgedachte Folge 7, gebaut aus den Hinweisen der Folgen 1–6 und dem offiziellen Teaser."
 tags: ["100 Days of Deception", "tvN-Serie", "K-Drama-Analyse", "Prognose Folge 7", "Fantasie-Szenario", "Familienfoto"]
 author: "Gordon Insight"
