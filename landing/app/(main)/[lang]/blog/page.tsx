@@ -1,10 +1,16 @@
-import { Language, languages } from '@/lib/i18n';
-import { getAllPosts, toCardPost } from '@/lib/blog';
+import type { Metadata } from 'next';
+import { Language, languages, translations } from '@/lib/i18n';
+import { buildListMetadata, getAllPosts, toCardPost } from '@/lib/blog';
 import { BLOG_CATEGORIES } from '@/lib/blog-categories';
 import BlogHubClient, { type HubSection } from './BlogHubClient';
 
 export function generateStaticParams() {
   return languages.map((l) => ({ lang: l.code }));
+}
+
+export function generateMetadata({ params }: { params: { lang: Language } }): Metadata {
+  const t = translations[params.lang];
+  return buildListMetadata(params.lang, (l) => `/${l}/blog/`, `${t.blog_title} | Touchizen`, t.blog_hub_subtitle);
 }
 
 const HUB_POSTS_PER_CATEGORY = 3;

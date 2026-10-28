@@ -53,6 +53,11 @@ export function blogSitemapXml(entries: SitemapEntry[], category: BlogCategory =
     ...urls, '</urlset>', ''].join('\n');
 }
 
+/** What a category's sitemap route serves (app/<sitemapFile>/route.ts). */
+export function categorySitemapResponse(category: BlogCategory): Response {
+  return new Response(blogSitemapXml(blogSitemapEntries(category), category), { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
+}
+
 /** /sitemap.xml: the hand-written page sitemap, then each blog category's sitemap. */
 export function sitemapIndexXml(categories: readonly BlogCategory[] = BLOG_CATEGORIES): string {
   const files = ['sitemap-pages.xml', ...categories.map((c) => c.sitemapFile)];

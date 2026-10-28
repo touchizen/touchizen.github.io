@@ -1,8 +1,9 @@
-import { blogSitemapEntries, blogSitemapXml } from '@/lib/blog-sitemap';
+import { categorySitemapResponse } from '@/lib/blog-sitemap';
+import { TECH } from '@/lib/blog-categories';
 
 // Emitted as out/sitemap-blog.xml by the static export (indexed by app/sitemap.xml).
 export const dynamic = 'force-static';
 
 export function GET() {
-  return new Response(blogSitemapXml(blogSitemapEntries()), { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
+  return categorySitemapResponse(TECH);
 }

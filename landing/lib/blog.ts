@@ -228,6 +228,29 @@ export function buildPostMetadata(lang: Language, slug: string, category: BlogCa
   };
 }
 
+/**
+ * Metadata for a blog list page (the hub or a category list): its own canonical, hreflang and share card.
+ * Without it the page inherits the language home's, telling crawlers it is a copy of /{lang}/.
+ */
+export function buildListMetadata(lang: Language, pathFor: (lang: Language) => string, title: string, description: string): Metadata {
+  const url = `${SITE_URL}${pathFor(lang)}`;
+  return {
+    title,
+    description,
+    metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical: url,
+      languages: {
+        ...Object.fromEntries(languages.map((l) => [l.code, `${SITE_URL}${pathFor(l.code)}`])),
+        'x-default': `${SITE_URL}${pathFor('en')}`,
+      },
+    },
+    // A child's openGraph replaces the parent's whole, so the image has to be restated here.
+    openGraph: { title, description, url, siteName: 'Touchizen', type: 'website', locale: localeMap[lang], images: [{ url: DEFAULT_OG_IMAGE, alt: title }] },
+    twitter: { card: 'summary', site: '@touchizen', creator: '@touchizen', title, description, images: [DEFAULT_OG_IMAGE] },
+  };
+}
+
 /** BlogPosting JSON-LD structured data. Pure (no fs) — safe to build in the server page and pass to the client. */
 export function buildPostJsonLd(lang: Language, slug: string, post: BlogPost, category: BlogCategory = TECH) {
   const url = postUrl(lang, slug, category);

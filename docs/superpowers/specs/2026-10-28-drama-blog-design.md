@@ -158,8 +158,8 @@ touchizen.com 블로그(`/{lang}/blog/`)에는 IT·AutoFlowCut 글만 있다. �
   ```
   sitemap.xml (색인 — robots.txt 가 가리킨다, 빌드 때 자동 생성)
    ├ sitemap-pages.xml   손으로 쓴 페이지(그대로)
-   ├ sitemap-blog.xml    IT 글 + /blog/tech/ — 이름 그대로(이미 서치 콘솔에 등록돼 있다)
-   ├ sitemap-drama.xml   드라마 글 + /blog/drama/ — 새로, 빌드 때 content/drama 에서 생성
+   ├ sitemap-blog.xml    IT 글 — 이름 그대로(이미 서치 콘솔에 등록돼 있다)
+   ├ sitemap-drama.xml   드라마 글 — 새로, 빌드 때 content/drama 에서 생성
    └ (나중) sitemap-economy.xml
   ```
 
