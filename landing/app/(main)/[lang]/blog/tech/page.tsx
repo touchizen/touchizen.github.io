@@ -1,18 +1,17 @@
-import type { Metadata } from 'next';
-import { Language, languages, translations } from '@/lib/i18n';
-import { buildListMetadata, getAllPosts, toCardPost } from '@/lib/blog';
-import { TECH, categoryListPath } from '@/lib/blog-categories';
-import BlogPageClient from '../BlogPageClient';
+import { Language, languages } from '@/lib/i18n';
+import { TECH } from '@/lib/blog-categories';
+import { listMetadata, renderListPage } from '../listRoute';
+
+type Props = { params: { lang: Language } };
 
 export function generateStaticParams() {
   return languages.map((l) => ({ lang: l.code }));
 }
 
-export function generateMetadata({ params }: { params: { lang: Language } }): Metadata {
-  const t = translations[params.lang];
-  return buildListMetadata(params.lang, (l) => categoryListPath(TECH, l), `${t[TECH.nameKey]} — ${t.blog_title} | Touchizen`, t.blog_subtitle);
+export function generateMetadata({ params }: Props) {
+  return listMetadata(params.lang, TECH);
 }
 
-export default function TechBlogPage({ params }: { params: { lang: Language } }) {
-  return <BlogPageClient lang={params.lang} posts={getAllPosts(params.lang, TECH).map(toCardPost)} category={TECH} />;
+export default function TechBlogPage({ params }: Props) {
+  return renderListPage(params.lang, TECH);
 }
