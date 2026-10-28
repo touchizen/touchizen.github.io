@@ -33,6 +33,11 @@ jobs:
           cd landing
           npm ci
 
+      - name: Test
+        run: |
+          cd landing
+          npm test
+
       - name: Build Next.js
         run: |
           cd landing

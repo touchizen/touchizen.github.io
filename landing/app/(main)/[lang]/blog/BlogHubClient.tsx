@@ -40,7 +40,7 @@ export default function BlogHubClient({ lang, sections }: { lang: Language; sect
                   </h2>
                   <div className="space-y-8">
                     {posts.map((post) => (
-                      <PostCard key={post.slug} lang={lang} category={category} post={post} />
+                      <PostCard key={post.slug} lang={lang} category={category} post={post} heading="h3" />
                     ))}
                   </div>
                   {more && (

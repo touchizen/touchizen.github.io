@@ -3,7 +3,7 @@
 // 예전 /{lang}/blog/ 를 북마크한 사람이 지금보다 덜 보면 안 된다 — 카테고리가 하나뿐일 때 허브는
 // 그 카테고리 글을 전부 보여 준다. 화면 컴포넌트의 주소는 전부 카테고리에서 나온다.
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { createElement, type ReactElement } from 'react';
+import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 import type { Language } from './i18n';
@@ -21,19 +21,12 @@ vi.mock('@/components/Footer', () => ({ default: () => null }));
 
 import { getAllPosts } from './blog';
 import { TECH, type BlogCategory } from './blog-categories';
+import { FAKE } from './__fixtures__/categories';
 import BlogHubClient, { type HubSection } from '@/app/(main)/[lang]/blog/BlogHubClient';
-import BlogHubPage from '@/app/(main)/[lang]/blog/page';
+import { hubSections } from './blog-hub';
 import BlogPageClient from '@/app/(main)/[lang]/blog/BlogPageClient';
 import BlogPostClient from '@/app/(main)/[lang]/blog/[slug]/BlogPostClient';
 
-const FAKE: BlogCategory = {
-  id: 'drama',
-  contentDir: 'blog',
-  postBase: 'x/y',
-  listBase: 'x/list',
-  sitemapFile: 'sitemap-x.xml',
-  nameKey: 'blog_cat_tech',
-};
 
 const card = (slug: string) => ({ slug, title: `Title ${slug}`, date: '2026-10-01', excerpt: '', tags: [] });
 const reading = { slug: 'cur', title: 'Current', date: '2026-10-01', excerpt: '', tags: [], author: 'Touchizen', htmlContent: '<p>body</p>' };
@@ -48,7 +41,7 @@ beforeEach(() => {
 
 describe('blog hub', () => {
   it('shows every IT post on the hub while IT is the only category', () => {
-    const { sections } = (BlogHubPage({ params: { lang: 'ko' } }) as ReactElement<{ sections: HubSection[] }>).props;
+    const sections = hubSections('ko', [TECH]);
     expect(sections).toHaveLength(1);
     expect(sections[0].category).toBe(TECH);
     expect(sections[0].posts).toHaveLength(getAllPosts('ko').length);

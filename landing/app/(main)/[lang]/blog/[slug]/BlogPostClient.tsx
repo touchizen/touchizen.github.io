@@ -15,6 +15,7 @@ interface BlogPost {
   tags: string[];
   author: string;
   htmlContent: string;
+  youtube?: string;
 }
 
 /** Just what a link to another post shows — post bodies stay out of the page payload. */
@@ -43,7 +44,7 @@ function PostList({ lang, category, posts }: { lang: Language; category: BlogCat
             />
             <div className="min-w-0">
               <p className="text-sm font-semibold leading-snug line-clamp-3 group-hover:text-primary-500 transition-colors">{p.title}</p>
-              <time className="text-xs text-gray-400 dark:text-gray-500">{p.date}</time>
+              <time className="text-xs text-gray-400 dark:text-gray-500">{p.date.slice(0, 10)}</time>
             </div>
           </a>
         </li>
@@ -75,8 +76,10 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
         can't drop it: the prose-code:* utilities style inline code but also leak
         into <pre><code>, painting a light chip over the dark code block and
         hiding its text. Reset block code to inherit the <pre> background/text.
+        Posts also put their own quotation marks around quoted lines, so the plugin's automatic
+        blockquote quotes are reset too — otherwise every quote reads ""like this"".
       */}
-      <style dangerouslySetInnerHTML={{ __html: '.prose pre code{background-color:transparent!important;padding:0!important;border-radius:0!important;color:inherit!important;font-weight:inherit!important}' }} />
+      <style dangerouslySetInnerHTML={{ __html: '.prose pre code{background-color:transparent!important;padding:0!important;border-radius:0!important;color:inherit!important;font-weight:inherit!important}.prose blockquote p:first-of-type::before,.prose blockquote p:last-of-type::after{content:none!important}' }} />
       {jsonLd && (
         <script
           type="application/ld+json"
@@ -110,8 +113,23 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
             <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-8 pb-8 border-b border-gray-200 dark:border-gray-800">
               <span>{post.author}</span>
               <span>&middot;</span>
-              <time>{post.date}</time>
+              {/* `date` may carry the publish time to order same-day posts; readers see the day. */}
+              <time>{post.date.slice(0, 10)}</time>
             </div>
+
+            {/* The video this post is the written side of — playing it here counts as a YouTube view. */}
+            {post.youtube && (
+              <div className="aspect-video mb-10 rounded-xl overflow-hidden bg-black shadow-lg">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${post.youtube}`}
+                  title={post.title}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            )}
 
             {/* Content */}
             <div
@@ -128,6 +146,29 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
                 prose-img:rounded-xl prose-img:shadow-lg"
               dangerouslySetInnerHTML={{ __html: post.htmlContent }}
             />
+
+            {post.youtube && (
+              <div className="flex flex-wrap gap-3 mt-12">
+                <a
+                  href={`https://youtu.be/${post.youtube}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-5 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold transition-colors"
+                >
+                  {t('blog_watch_youtube')}
+                </a>
+                {category.youtubeChannel && (
+                  <a
+                    href={`https://www.youtube.com/channel/${category.youtubeChannel}?sub_confirmation=1`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-5 py-3 rounded-xl border border-gray-300 dark:border-gray-700 hover:border-red-600 font-semibold transition-colors"
+                  >
+                    {t('blog_subscribe_channel')}
+                  </a>
+                )}
+              </div>
+            )}
 
             {/* Previous (older) and next (newer) post, in the blog list's date order. */}
             {(prev || next) && (

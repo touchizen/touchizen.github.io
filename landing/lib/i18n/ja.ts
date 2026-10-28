@@ -457,6 +457,10 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   blog_tags: 'タグ',
   blog_cat_tech: 'IT・AI',
   blog_hub_subtitle: 'Touchizenの記事をテーマ別にまとめました',
+  blog_cat_drama: 'ドラマ',
+  blog_drama_subtitle: 'ドラマ考察と次回予想 — Gordon Insight の動画を記事で',
+  blog_watch_youtube: 'YouTubeで見る',
+  blog_subscribe_channel: 'Gordon Insight をチャンネル登録',
 
   // AutoFlowCut
   autoflowcut_name: 'AutoFlowCut',

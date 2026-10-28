@@ -3,7 +3,8 @@ import path from 'node:path';
 import matter from 'gray-matter';
 import { describe, expect, it } from 'vitest';
 import { blogSitemapEntries, blogSitemapXml, sitemapIndexXml, type SitemapEntry } from './blog-sitemap';
-import { BLOG_CATEGORIES, TECH, type BlogCategory } from './blog-categories';
+import { BLOG_CATEGORIES, TECH } from './blog-categories';
+import { FAKE } from './__fixtures__/categories';
 import { GET } from '@/app/sitemap-blog.xml/route';
 import { GET as GET_INDEX } from '@/app/sitemap.xml/route';
 
@@ -90,12 +91,10 @@ describe('sitemap files in public/', () => {
     const xml = await res.text();
     expect(xml).toContain('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
     expect(locs(xml)).toEqual([`${SITE}/sitemap-pages.xml`, ...BLOG_CATEGORIES.map((c) => `${SITE}/${c.sitemapFile}`)]);
-    expect(locs(xml)).toEqual([`${SITE}/sitemap-pages.xml`, `${SITE}/sitemap-blog.xml`]);
   });
 
   it("adds a category's sitemap to the index by itself", () => {
-    const fake: BlogCategory = { id: 'drama', contentDir: 'blog', postBase: 'x/y', listBase: 'x/list', sitemapFile: 'sitemap-x.xml', nameKey: 'blog_cat_tech' };
-    expect(locs(sitemapIndexXml([TECH, fake]))).toEqual([`${SITE}/sitemap-pages.xml`, `${SITE}/sitemap-blog.xml`, `${SITE}/sitemap-x.xml`]);
+    expect(locs(sitemapIndexXml([TECH, FAKE]))).toEqual([`${SITE}/sitemap-pages.xml`, `${SITE}/sitemap-blog.xml`, `${SITE}/sitemap-x.xml`]);
   });
 
   it('leaves /sitemap.xml to the route alone', () => {

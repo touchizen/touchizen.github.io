@@ -457,6 +457,10 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   blog_tags: '태그',
   blog_cat_tech: 'IT·AI',
   blog_hub_subtitle: '터치즌의 글을 주제별로 모았습니다',
+  blog_cat_drama: '드라마',
+  blog_drama_subtitle: '드라마 해석과 다음 화 예측 — 고든인사이트 영상을 글로 읽기',
+  blog_watch_youtube: '유튜브에서 보기',
+  blog_subscribe_channel: '고든인사이트 구독하기',
 
   // AutoFlowCut
   autoflowcut_name: 'AutoFlowCut',

@@ -14,20 +14,14 @@ vi.mock('@/components/Footer', () => ({ default: () => null }));
 
 import { getPostSlugs } from './blog';
 import { BLOG_CATEGORIES, TECH, type BlogCategory } from './blog-categories';
+import { FAKE } from './__fixtures__/categories';
 import { blogSitemapEntries, blogSitemapXml, categorySitemapResponse } from './blog-sitemap';
 import { languages, type Language } from './i18n';
 import { postMetadata, postStaticParams, renderPostPage } from '@/app/(main)/[lang]/blog/postRoute';
+import { listMetadata, renderListPage } from '@/app/(main)/[lang]/blog/listRoute';
 import { generateMetadata as hubMetadata } from '@/app/(main)/[lang]/blog/page';
 import { generateMetadata as techListMetadata } from '@/app/(main)/[lang]/blog/tech/page';
 
-const FAKE: BlogCategory = {
-  id: 'drama',
-  contentDir: 'blog',
-  postBase: 'x/y',
-  listBase: 'x/list',
-  sitemapFile: 'sitemap-x.xml',
-  nameKey: 'blog_cat_tech',
-};
 const SITE = 'https://touchizen.com';
 const slug = getPostSlugs('ko')[0];
 
@@ -54,6 +48,16 @@ describe('post route helpers', () => {
   });
 });
 
+describe('list route helpers', () => {
+  it("lists the category's posts under the category", () => {
+    expect(props(renderListPage('ko', FAKE)).category).toBe(FAKE);
+  });
+
+  it("gives the list the category's canonical", () => {
+    expect(listMetadata('ko', FAKE).alternates?.canonical).toBe(`${SITE}/ko/x/list/`);
+  });
+});
+
 describe('every category route passes its own category', () => {
   const app = (...parts: string[]) => path.join(process.cwd(), 'app', ...parts);
 
@@ -73,6 +77,11 @@ describe('every category route passes its own category', () => {
       expect(shown.category).toBe(category);
       const listed = [...shown.related, ...shown.latest, ...shown.others].map((p) => `${first.lang}/${p.slug}`);
       expect(listed.filter((p) => !own.has(p))).toEqual([]);
+
+      const list = await import(app('(main)', '[lang]', category.listBase, 'page.tsx'));
+      expect(props(list.default({ params: { lang: first.lang } })).category).toBe(category);
+      expect((list.generateMetadata({ params: { lang: first.lang } }) as Metadata).alternates?.canonical)
+        .toBe(`${SITE}/${first.lang}/${category.listBase}/`);
 
       const route = await import(app(category.sitemapFile, 'route.ts'));
       expect(await route.GET().text()).toBe(blogSitemapXml(blogSitemapEntries(category), category));

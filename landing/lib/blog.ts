@@ -19,6 +19,11 @@ export interface BlogPost {
   htmlContent: string;
   noindex: boolean;
   image?: string;
+  /** YouTube video ID the post is the written side of — drama posts embed it. */
+  youtube?: string;
+  /** Show the post belongs to, as named in the post's language, and a language-independent key for it. */
+  series?: string;
+  seriesId?: string;
 }
 
 const contentDir = (category: BlogCategory) => path.join(process.cwd(), 'content', category.contentDir);
@@ -156,6 +161,9 @@ export function getPostBySlug(lang: Language, slug: string, category: BlogCatego
     htmlContent,
     noindex: data.noindex === true,
     image: data.image || undefined,
+    youtube: data.youtube || undefined,
+    series: data.series || undefined,
+    seriesId: data.seriesId || undefined,
   };
 }
 
@@ -272,25 +280,42 @@ export function buildPostJsonLd(lang: Language, slug: string, post: BlogPost, ca
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     keywords: post.tags.join(', '),
+    // Lets search show the post's video (drama posts are the written side of one).
+    ...(post.youtube && {
+      video: {
+        '@type': 'VideoObject',
+        name: post.title,
+        description: post.excerpt,
+        thumbnailUrl: `https://i.ytimg.com/vi/${post.youtube}/maxresdefault.jpg`,
+        uploadDate: post.date,
+        embedUrl: `https://www.youtube.com/embed/${post.youtube}`,
+        url: `https://www.youtube.com/watch?v=${post.youtube}`,
+      },
+    }),
   };
 }
 
 /** What a post card in a list shows — no body, so a list page doesn't carry every post's content. */
-export type CardPost = Pick<BlogPost, 'slug' | 'title' | 'date' | 'excerpt' | 'tags' | 'image'>;
+export type CardPost = Pick<BlogPost, 'slug' | 'title' | 'date' | 'excerpt' | 'tags' | 'image' | 'series' | 'seriesId'>;
 
-export const toCardPost = ({ slug, title, date, excerpt, tags, image }: BlogPost): CardPost => ({ slug, title, date, excerpt, tags, image });
+export const toCardPost = ({ slug, title, date, excerpt, tags, image, series, seriesId }: BlogPost): CardPost =>
+  ({ slug, title, date, excerpt, tags, image, series, seriesId });
 
 export function getAllPosts(lang: Language, category: BlogCategory = TECH): BlogPost[] {
   const slugs = getPostSlugs(lang, category);
   return slugs
     .map(slug => getPostBySlug(lang, slug, category))
     .filter((post): post is BlogPost => post !== null)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort(newestFirst);
 }
 
 type Relatable = { slug: string; date: string; tags: string[] };
 
-const newestFirst = (a: Relatable, b: Relatable) => new Date(b.date).getTime() - new Date(a.date).getTime();
+// Newest first; `date` may carry the publish time ("2026-10-26T20:00:00+09:00") for same-day posts.
+// Slug order settles exact ties, so the order never depends on how the file system lists files.
+function newestFirst(a: Relatable, b: Relatable): number {
+  return new Date(b.date).getTime() - new Date(a.date).getTime() || a.slug.localeCompare(b.slug);
+}
 
 /** Up to three other posts sharing a tag with `current`: most shared tags first, newest first among equals. */
 export function relatedPosts<T extends Relatable>(current: Relatable, posts: T[], limit = 3): T[] {

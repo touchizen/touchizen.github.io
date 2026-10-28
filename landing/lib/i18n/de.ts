@@ -457,6 +457,10 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   blog_tags: 'Tags',
   blog_cat_tech: 'Tech & KI',
   blog_hub_subtitle: 'Alle Beiträge von Touchizen nach Themen',
+  blog_cat_drama: 'Drama',
+  blog_drama_subtitle: 'Drama-Analysen und Prognosen zur nächsten Folge — die Gordon-Insight-Videos zum Nachlesen',
+  blog_watch_youtube: 'Auf YouTube ansehen',
+  blog_subscribe_channel: 'Gordon Insight abonnieren',
 
   // AutoFlowCut
   autoflowcut_name: 'AutoFlowCut',
