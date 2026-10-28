@@ -1,0 +1,2 @@
+# 애드센스(웹) 발행자 선언 — touchizen.com/ads.txt. 앱용은 app-ads.txt 가 따로 있다.
+google.com, pub-1889477374800958, DIRECT, f08c47fec0942fa0

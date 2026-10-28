@@ -115,6 +115,12 @@ export default function LangLayout({
   return (
     <html lang={params.lang} suppressHydrationWarning>
       <head>
+        {/* Google AdSense (auto ads) */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1889477374800958"
+          crossOrigin="anonymous"
+        />
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0" />
         <script
