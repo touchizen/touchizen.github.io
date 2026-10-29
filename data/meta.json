@@ -155,6 +155,10 @@
   "description": "Terminal-style developer runtime blueprint, interactive workspace statistics, and systems diagnostics cataloging the codebase footprint",
   "language": "Python"
  },
+ "AhmadHassan-BTed/AutoSwarm-Shadow-Adapter": {
+  "description": "Zero-modification Human-in-the-Loop adapter for OpenOPC's agentic DAG runtime.",
+  "language": "Python"
+ },
  "AhmadHassan-BTed/B": {
   "description": "An autonomous, context-aware AI desktop companion. Built with Python, featuring real-time screen vision, custom ONNX voice synthesis, active window tracking, and a dynamic floating UI with reactive facial expressions.",
   "language": "Python"
@@ -790,6 +794,10 @@
  "FoundationAgents/OpenManus": {
   "description": "No fortress, purely open ground.  OpenManus is Coming.",
   "language": "Python"
+ },
+ "Fractal-Compute-Orchestrations/FractalAndroid": {
+  "description": "A human-centric, resource-aware Android node for edge computing and federated learning. Orchestrates distributed intelligence with privacy-first localization and empathetic hardware management.",
+  "language": "Kotlin"
  },
  "Fractal-Compute-Orchestrations/FractalCore": {
   "description": "The central nervous system and backend orchestrator for Fractal. It handles multi-tenant task scheduling, real-time TFLOPs budgeting, and federated weight aggregation using FedAvg.",
@@ -1604,7 +1612,7 @@
   "language": "TeX"
  },
  "OrchestratorInc/agent-orchestrator": {
-  "description": "Open-source (Apache-2.0) orchestrator for Claude Code, Codex & 30+ coding agents. Plan, run and supervise agent teams from task to merged PR. Desktop (macOS, Windows, Linux) + iPhone & Android apps.",
+  "description": "Plan, run and supervise fleets of agents from task to merged PR. Desktop (macOS, Windows, Linux) + iPhone & Android apps.  Supports Claude Code, Codex & 35+ coding agents.",
   "language": "Go"
  },
  "Osmantic/ODS": {
@@ -1657,7 +1665,7 @@
  },
  "PenglongHuang/chinese-novelist-skill": {
   "description": "🎭 AI 写小说：从零生成 10-50 章完整中文小说，三层问答 · 创作记忆 · 悬念钩子 · 自动校验，长篇网文连载皆宜｜开源免费，适配主流 coding agent｜🤝 Infistar.cc 赞助 · 注册送 $5｜AI novel writing skill",
-  "language": "Python"
+  "language": "JavaScript"
  },
  "PeonPing/peon-ping": {
   "description": "Warcraft III Peon voice notifications (+ more!) for Claude Code, Codex, IDEs, and any AI agent. Stop babysitting your terminal. Employ a Peon today.",
@@ -3240,7 +3248,7 @@
   "language": "Shell"
  },
  "byoungd/up": {
-  "description": "韩先凯的人生进阶指南 AI时代 中英双语终身学习指南：英语学习、AI 协作、真实项目与成长证据。",
+  "description": "韩先凯的人生进阶指南 AI时代 中英双语终身学习指南：AI、学习 、创业、财富、爱情与人生",
   "language": "JavaScript"
  },
  "bytedance/UI-TARS-desktop": {
@@ -3280,7 +3288,7 @@
   "language": "Python"
  },
  "callstack/agent-device": {
-  "description": "Mobile app automation and verification for AI coding agents. CLI, MCP server, and typed Node.js API for iOS, Android, HarmonyOS, TV, web, macOS, and Linux.",
+  "description": "Open source device layer for AI coding agents: a CLI, MCP server, and typed Node.js API to control mobile, web, TV, and desktop apps on devices and simulators, locally or in the cloud.",
   "language": "TypeScript"
  },
  "can1357/oh-my-pi": {
@@ -4200,7 +4208,7 @@
   "language": "Rust"
  },
  "farzaa/clicky": {
-  "description": "",
+  "description": "The open-source project HeyClicky grew out of. The official HeyClicky app, an AI buddy for Mac and Windows: heyclicky.com",
   "language": "Swift"
  },
  "fastai/fastbook": {
@@ -4623,6 +4631,10 @@
   "description": "Agent Executor (AX) is Google's open agentic orchestration runtime",
   "language": "Go"
  },
+ "google/elephant-goldfish-model": {
+  "description": "Open-source skills for designing and reviewing software with AI agents",
+  "language": "Python"
+ },
  "google/googletest": {
   "description": "GoogleTest - Google Testing and Mocking Framework",
   "language": "C++"
@@ -4854,6 +4866,10 @@
  "hiyouga/LlamaFactory": {
   "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
   "language": "Python"
+ },
+ "hmjz100/LinkSwift": {
+  "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘",
+  "language": "JavaScript"
  },
  "holaboss-ai/holaOS": {
   "description": "Open-source agentic workspace enterprises can make their own. Connect the systems you already run — 100+ integrations, MCP, chat tools, apps, browser, local files — with shared memory. Any agent (Claude Code, Codex), any model, or BYOK. Set up in clicks, not months. Local-first: your data never leaves your machines.",
@@ -5544,7 +5560,7 @@
   "language": null
  },
  "lemomo-ai/lemo-opuscar": {
-  "description": "A toolbox of film styles made in code for Claude Code: 59 ready to use, and your own. Each style is a style prompt plus a demo film made entirely in code by Claude Opus 5.5, with no video model. By Lemomo. · 一套用代码做片的风格工具箱：59 种现成风格，也能做出你自己的",
+  "description": "A toolbox of film styles made in code for Claude Code: 66 ready to use, and your own. Each style is a style prompt plus a demo film made entirely in code by Claude Opus 5.5, with no video model. By Lemomo. · 一套用代码做片的风格工具箱：66 种现成风格，也能做出你自己的",
   "language": "JavaScript"
  },
  "lemony-ai/cascadeflow": {
@@ -5930,6 +5946,14 @@
  "meta-llama/llama": {
   "description": "Inference code for Llama models",
   "language": "Python"
+ },
+ "meta/astryx": {
+  "description": "An open source design system that's fully customizable and agent ready",
+  "language": "TypeScript"
+ },
+ "meta/docusaurus": {
+  "description": "Easy to maintain open source documentation websites.",
+  "language": "TypeScript"
  },
  "metabase/metabase": {
   "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
@@ -6322,6 +6346,10 @@
  "nashsu/llm_wiki": {
   "description": "LLM Wiki is a cross-platform desktop application that turns your documents into an organized, interlinked knowledge base — automatically. Instead of traditional RAG (retrieve-and-answer from scratch every time), the LLM incrementally builds and maintains a persistent wiki from your sources。",
   "language": "TypeScript"
+ },
+ "nateherkai/scroll-craft": {
+  "description": "An agent skill for building premium, immersive, scroll-driven websites. Works with Codex, Claude Code, and other coding agents. Also available as a Claude Code plugin.",
+  "language": "JavaScript"
  },
  "nativefier/nativefier": {
   "description": "Make any web page a desktop application",
@@ -7183,6 +7211,10 @@
   "description": "\"rsync for cloud storage\" - Google Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Wasabi, Google Cloud Storage, Azure Blob, Azure Files, Yandex Files",
   "language": "Go"
  },
+ "rddmwmddr/android-ad-cleaner": {
+  "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+  "language": "Python"
+ },
  "react-hook-form/react-hook-form": {
   "description": "📋 React Hooks for form state management and validation (Web + React Native)",
   "language": "TypeScript"
@@ -7296,7 +7328,7 @@
   "language": "HTML"
  },
  "rlaope/oh-my-hermes": {
-  "description": "⚚ The coding harness with Hermes Agent, Just type 'dag-ulw'",
+  "description": "⚚ The coding harness with Hermes Agent wired into IDE.",
   "language": "Python"
  },
  "rmyndharis/OpenWA": {
@@ -8584,7 +8616,7 @@
   "language": "Go"
  },
  "waligoraamodio288-rgb/hongguo-desktop-releases": {
-  "description": "红果短剧｜Windows 10/11 桌面版 + Android TV 测试版。真人剧、漫剧、AI 剧；电视 APK 4.08 MB，Android 5.0+ / ARM64，支持遥控、续播与换一部；免费使用，由渠道有数独立维护。",
+  "description": "红果短剧第三方客户端｜Windows 正式版、Mac M系列测试版、Android TV ARM32/ARM64 测试版。找剧、收藏、本机续播与电视遥控操作；免费使用，由渠道有数独立维护。",
   "language": null
  },
  "walkinglabs/awesome-harness-engineering": {
