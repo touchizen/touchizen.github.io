@@ -131,6 +131,10 @@
   "description": "Free Windows, Mac and Linux cleaner, scanner, and more.",
   "language": "TypeScript"
  },
+ "AgenticResourceRegistry/AgenticResourceRegistry": {
+  "description": "Share and discover coding agent resources across your team. Self-hosted, Apache 2.0, works with Claude Code, Kiro, Cursor, Codex, Pi and more.",
+  "language": "Python"
+ },
  "Agents365-ai/drawio-skill": {
   "description": "Agent skill that turns natural language, code, Terraform/K8s, SQL, OpenAPI, AsyncAPI, Protobuf and GraphQL sources into editable, tested draw.io architecture diagrams: incremental sync, multi-view projection, drift diff, CI architecture tests, whiteboard derasterize, interactive HTML/PPTX/Mermaid exports.",
   "language": "Python"
@@ -151,6 +155,10 @@
   "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
   "language": "Python"
  },
+ "AhmadHassan-BTed/AhSilence": {
+  "description": "An open-source Android Active Noise Cancellation (ANC) engine. Leveraging low-latency DSP to neutralize environmental hums and help you reclaim your quiet.",
+  "language": "Kotlin"
+ },
  "AhmadHassan-BTed/AhmadHassan-BTed": {
   "description": "Terminal-style developer runtime blueprint, interactive workspace statistics, and systems diagnostics cataloging the codebase footprint",
   "language": "Python"
@@ -167,9 +175,17 @@
   "description": "The AI-native JSON Gantt chart engine. Dependency-free interactive timelines with React, script-tag, CLI, topological DAG solver, and formal JSON schema.",
   "language": "TypeScript"
  },
+ "AhmadHassan-BTed/Ledgerify": {
+  "description": "Shopify Excel Ledger intelligence platform with dark aesthetic, multi-sheet workbook analysis, 7 departmental dashboards, and live comparative benchmarking.",
+  "language": "TypeScript"
+ },
  "AhmadHassan-BTed/OpenHeart": {
   "description": "Succinct Compositional Program Graph (SCPG) static analysis engine & 14-diagram UML generator in Rust.",
   "language": "Rust"
+ },
+ "AhmadHassan-BTed/RoseWish": {
+  "description": "A heartfelt, interactive narrative mini-game built in Python for Rose Day. Features custom entities, a dynamic dialogue system, animated particle effects, and integrated audio to deliver a unique, romantic digital experience.",
+  "language": "Python"
  },
  "AhmadHassan-BTed/SilentSniffer": {
   "description": "A professional, high-fidelity de-anonymization and vulnerability diagnostic framework. Features a zero-coupling modular architecture for browser-based intelligence gathering, hardware fingerprinting, and security research.",
@@ -412,7 +428,7 @@
   "language": "TypeScript"
  },
  "CherryHQ/cherry-studio": {
-  "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
+  "description": "Your AI workspace for models, agents, and productivity.",
   "language": "TypeScript"
  },
  "ChinaSiro/claude-code-sourcemap": {
@@ -972,7 +988,7 @@
   "language": "Python"
  },
  "HKUDS/nanobot": {
-  "description": "Ultra-lightweight, open-source, self-hosted personal AI agent framework in Python with WebUI, tools, memory, MCP, multi-agent workflows, automation, and chat apps",
+  "description": "Your lightweight open-source personal agent.",
   "language": "Python"
  },
  "HKUSTDial/Supervisor-Skills": {
@@ -1615,6 +1631,10 @@
   "description": "Plan, run and supervise fleets of agents from task to merged PR. Desktop (macOS, Windows, Linux) + iPhone & Android apps.  Supports Claude Code, Codex & 35+ coding agents.",
   "language": "Go"
  },
+ "Orkas-AI/Orkas": {
+  "description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled automations and connectors. Free app for macOS & Windows; built-in models or your own keys.",
+  "language": "JavaScript"
+ },
  "Osmantic/ODS": {
   "description": "ODS V3 Pre-Release: Public testing and refinement ahead of the official V3 launch. Turn your PC, Mac, or Linux box into a private AI server.",
   "language": "Python"
@@ -1720,7 +1740,7 @@
   "language": "Python"
  },
  "QLHazyCoder/FlowPilot": {
-  "description": "Chrome扩展：支持GPT（Codex） / kiro / Grok自动注册、相关反代项目（CPA/Sub）回调上传",
+  "description": "Chrome扩展：支持GPT（Codex） / kiro / Grok自动注册、上传",
   "language": "JavaScript"
  },
  "QSCTech/zju-icicles": {
@@ -2460,7 +2480,7 @@
   "language": "Jupyter Notebook"
  },
  "agno-agi/agno": {
-  "description": "The self-improving agent platform",
+  "description": "The self-driving agent platform",
   "language": "Python"
  },
  "ai-boost/awesome-harness-engineering": {
@@ -3513,7 +3533,7 @@
  },
  "colbymchenry/codegraph": {
   "description": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, CoPilot, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
-  "language": "C"
+  "language": "TypeScript"
  },
  "coleam00/excalidraw-diagram-skill": {
   "description": "Skill to give Claude Code (and any coding agent) the ability to generate beautiful and practical Excalidraw diagrams.",
@@ -4204,7 +4224,7 @@
   "language": "Rust"
  },
  "farion1231/cc-switch": {
-  "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok Build & Hermes Agent. Only official website: ccswitch.io",
+  "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io",
   "language": "Rust"
  },
  "farzaa/clicky": {
@@ -4890,6 +4910,10 @@
  "hoppscotch/hoppscotch": {
   "description": "Open-Source API Development Ecosystem • https://hoppscotch.io • Offline, On-Prem & Cloud • Web, Desktop & CLI • Open-Source Alternative to Postman, Insomnia",
   "language": "TypeScript"
+ },
+ "horizon-rust/horizon": {
+  "description": "Minecraft: Java Edition 26.3 rewritten from scratch in Rust, checked against vanilla with 281 differential harnesses. Get it with the Horizon launcher.",
+  "language": "Rust"
  },
  "hpcaitech/ColossalAI": {
   "description": "Making large AI models cheaper, faster and more accessible",
@@ -5620,7 +5644,7 @@
   "language": "TypeScript"
  },
  "liketrek/TREK": {
-  "description": "A self-hosted travel/trip planner with real-time collaboration, interactive maps, PWA support, SSO, budgets, packing lists, and more.",
+  "description": "The most complete open-source travel planner: real-time collaboration, bookings, budgets, packing lists, journals, offline PWA, SSO and an AI-ready MCP server, with planet-wide place search and routing built in.",
   "language": "TypeScript"
  },
  "liliMozi/openhanako": {
@@ -7525,7 +7549,7 @@
  },
  "seedds/nxnative": {
   "description": "Switch games running natively on iPhone, iPad and Mac: an NSP folder becomes an unsigned IPA (NSO rewriter, Horizon HLE host, NVN→Metal)",
-  "language": "Objective-C"
+  "language": "Python"
  },
  "serenakeyitan/awesome-notebookLM-prompts": {
   "description": "A curated collection of the strongest NotebookLM slide prompts sourced from the real creative underground . Your go-to resource for AI powerpoint :P",
@@ -7636,7 +7660,7 @@
   "language": "Shell"
  },
  "sickn33/agentic-awesome-skills": {
-  "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,750+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
+  "description": "2,877+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
   "language": "Python"
  },
  "siddharthvaddem/openscreen": {
@@ -8350,6 +8374,10 @@
  "unclebob/swarm-forge": {
   "description": "A simple tool for coordinating several AI agents.",
   "language": "Clojure"
+ },
+ "unclebob/ub-mode": {
+  "description": "",
+  "language": null
  },
  "unclecode/crawl4ai": {
   "description": "Open-source web crawler and scraper for LLMs and AI agents: any website into clean, LLM-ready Markdown. Run it yourself, or use Crawl4AI Cloud with one key. Join our Discord https://discord.gg/VuxzM8mtf",
