@@ -83,3 +83,57 @@ Geum·Gyeam-ri 는 예외였다 — 블로그는 넷플릭스 표기로 통일�
 ## 캡션
 - 드라마 본편·tvN 공식 영상: en `*© tvN “100 Days of Deception”*` · ja `*ⓒ tvN『100 Days of Deception（100日の嘘）』*` · de `*© tvN „100 Days of Deception“*`
 - 그 밖(다큐·사진)은 ko 캡션의 출처를 그대로 옮긴다(퍼블릭 도메인 표기 포함).
+
+## 스페인어 (es)
+라틴아메리카 중립 스페인어, 독자는 "ustedes". 이름은 en/de 열(넷플릭스 표기)과 같다. 번역 파일: `landing/content/drama/es/`.
+
+| ko | es |
+|---|---|
+| 100일의 거짓말 (시리즈명) | *100 Days of Deception* (front matter `series`: "100 Days of Deception") |
+| 고든인사이트 | Gordon Insight |
+| 제 추리 / 제 해석 / 제 추측 | **mi teoría** |
+| 픽 / 고든인사이트 픽 | **mi apuesta** / las apuestas de Gordon Insight (apuesta uno, dos, tres) |
+| 뇌피셜 | **pura especulación** |
+| 댓글 가설 / 보도 | hipótesis de los comentarios / según la prensa |
+| 정무총감 | vicegobernador general (1027 youtube-meta-langs 와 같음; 진짜 총독은 gobernador general) |
+| 경무국장 | jefe de policía |
+| 총독부 | Gobierno General |
+| 구국단 | Gugukdan |
+| 한인애국단 | Organización Patriótica Coreana (Hanin Aeguk-dan) |
+| 가정부 (家政婦 / 假政府) | *gajeongbu* 음역 유지 + 처음에 "empleada doméstica(家) vs gobierno provisional/falso(假)" 설명 (1028 youtube-meta-langs 와 같음) |
+| 상해 가정부 | gajeongbu de Shanghái |
+| 가정부 (히데오 집, 야나기) | la criada Yanagi |
+| 마님 | la señora |
+| 통역생 | intérprete en prácticas |
+| 전당표 | boleta de empeño |
+| 편집과 과장 | jefe de la sección de edición |
+| 국어 (=일본어) | *idioma nacional* (japonés) |
+| 쇼와 7년 / 다이쇼 8년 | Showa 7 / Taisho 8 (en 의 Shōwa·Taishō 에서 장음 부호 제거, 1027 meta 와 같음) |
+| 내선결혼 | matrimonios *naeseon* (naeji = la tierra interior 설명) |
+| 서양자(무코요시) | *mukoyoshi* (yerno adoptado) |
+| 3·1운동 | Movimiento del 1 de Marzo |
+| 기미년 | el año Gimi (1919) |
+| 국제연맹 | Sociedad de Naciones |
+| 만주사변 / 상해사변 / 만주국 | Incidente de Manchuria / Incidente de Shanghái / Manchukuo |
+| 훙커우공원 | parque Hongkou |
+| 윤봉길 · 김구 · 이봉창 · 이덕주 · 유진식 | Yun Bong-gil · Kim Gu · Lee Bong-chang · Lee Deok-ju · Yu Jin-sik |
+| 물통 폭탄 / 도시락 폭탄 | bomba cantimplora / bomba fiambrera (lonchera) |
+| 시게미쓰 · 시라카와 | Shigemitsu · Shirakawa |
+| 장제스 국민당 정부 | gobierno nacionalista de Chiang Kai-shek (República de China) |
+| 희원 | Heewon |
+| 카스텔라 | castella (처음에 "bizcocho de origen portugués muy popular en Japón" 설명) |
+| 개똥 | Gae-ttong (처음에 *caca de perro*, nombre humilde que se daba a los niños) |
+| 미역국 | *miyeokguk* (sopa de algas de cumpleaños) |
+| 반쪽 목걸이 | collar partido por la mitad / collar de media luna |
+| 확률표 | tabla de probabilidades |
+| 용의자 | sospechoso |
+| 서울 세브란스병원 · 딜쿠샤 | Hospital Severance · Dilkusha |
+| 앨버트 테일러 · 스코필드 · 우쓰노미야 다로 | Albert Taylor · Frank Schofield · Utsunomiya Tarō |
+| 상상 ①~⑥ | Imaginación 1 a 6 (유튜브 es 제목과 같음); "제 상상 속" → "en mi imaginación" |
+| 기록상 계암리 표기 | Kyeam-ri (블로그 통일; es 유튜브 meta 의 Gyeam-ri·Geum·Sin 은 쓰지 않음 — Keum Seo-hee, Shin Tae-jin) |
+
+### 캡션 (es)
+- 본편·tvN 공식 영상: `*© tvN “100 Days of Deception”*`
+- 예고·장면 접두 캡션: `*Avance oficial del episodio 7 · © tvN “100 Days of Deception”*` / `*Escena del episodio 6 · © tvN “100 Days of Deception”*`
+- 사진 출처 캡션은 ko 원문의 출처를 번역(예: `*Foto: mujeres de Jeam-ri que perdieron a sus maridos (1919) · de un folleto de la Cruz Roja Coreana · dominio público (Wikimedia Commons)*`)
+- 마지막 문장: "Las fotos de escenas y los diálogos de este artículo se citan con fines de crítica y reseña; los derechos pertenecen a sus respectivos titulares."

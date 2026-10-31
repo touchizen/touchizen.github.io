@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { Marked } from 'marked';
 import type { Metadata } from 'next';
-import { Language, languages } from './i18n';
+import { languages, type BlogLanguage } from './i18n';
 import { TECH, categoryPostPath, type BlogCategory } from './blog-categories';
 
 export interface BlogPost {
@@ -117,14 +117,15 @@ function renderMarkdown(content: string): string {
 
 const SITE_URL = 'https://touchizen.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/touchizen.png`;
-const localeMap: Record<Language, string> = {
+const localeMap: Record<BlogLanguage, string> = {
   en: 'en_US',
   ko: 'ko_KR',
   ja: 'ja_JP',
   de: 'de_DE',
+  es: 'es_ES',
 };
 
-function postUrl(lang: Language, slug: string, category: BlogCategory): string {
+function postUrl(lang: BlogLanguage, slug: string, category: BlogCategory): string {
   return `${SITE_URL}${categoryPostPath(category, lang, slug)}`;
 }
 
@@ -133,7 +134,7 @@ function resolveOgImage(post: BlogPost): string {
   return post.image.startsWith('http') ? post.image : `${SITE_URL}${post.image}`;
 }
 
-export function getPostSlugs(lang: Language, category: BlogCategory = TECH): string[] {
+export function getPostSlugs(lang: BlogLanguage, category: BlogCategory = TECH): string[] {
   const langDir = path.join(contentDir(category), lang);
   if (!fs.existsSync(langDir)) return [];
   return fs.readdirSync(langDir)
@@ -141,7 +142,7 @@ export function getPostSlugs(lang: Language, category: BlogCategory = TECH): str
     .map(f => f.replace(/\.md$/, ''));
 }
 
-export function getPostBySlug(lang: Language, slug: string, category: BlogCategory = TECH): BlogPost | null {
+export function getPostBySlug(lang: BlogLanguage, slug: string, category: BlogCategory = TECH): BlogPost | null {
   const filePath = path.join(contentDir(category), lang, `${slug}.md`);
   if (!fs.existsSync(filePath)) return null;
 
@@ -167,15 +168,13 @@ export function getPostBySlug(lang: Language, slug: string, category: BlogCatego
   };
 }
 
-/** Languages that actually have a published post for this slug (drives per-post hreflang). */
-export function getPostLanguages(slug: string, category: BlogCategory = TECH): Language[] {
-  return languages
-    .map((l) => l.code)
-    .filter((code) => fs.existsSync(path.join(contentDir(category), code, `${slug}.md`)));
+/** Languages of the category that actually have a published post for this slug (drives per-post hreflang). */
+export function getPostLanguages(slug: string, category: BlogCategory = TECH): BlogLanguage[] {
+  return category.languages.filter((code) => fs.existsSync(path.join(contentDir(category), code, `${slug}.md`)));
 }
 
 /** Per-post SEO metadata: real title/description/canonical/OG/Twitter/hreflang instead of inheriting the language home. */
-export function buildPostMetadata(lang: Language, slug: string, category: BlogCategory = TECH): Metadata {
+export function buildPostMetadata(lang: BlogLanguage, slug: string, category: BlogCategory = TECH): Metadata {
   const post = getPostBySlug(lang, slug, category);
   if (!post) return {};
 
@@ -239,8 +238,15 @@ export function buildPostMetadata(lang: Language, slug: string, category: BlogCa
 /**
  * Metadata for a blog list page (the hub or a category list): its own canonical, hreflang and share card.
  * Without it the page inherits the language home's, telling crawlers it is a copy of /{lang}/.
+ * `langs` are the languages the list exists in — the site's four unless its category has more.
  */
-export function buildListMetadata(lang: Language, pathFor: (lang: Language) => string, title: string, description: string): Metadata {
+export function buildListMetadata(
+  lang: BlogLanguage,
+  pathFor: (lang: BlogLanguage) => string,
+  title: string,
+  description: string,
+  langs: readonly BlogLanguage[] = languages.map((l) => l.code),
+): Metadata {
   const url = `${SITE_URL}${pathFor(lang)}`;
   return {
     title,
@@ -249,7 +255,7 @@ export function buildListMetadata(lang: Language, pathFor: (lang: Language) => s
     alternates: {
       canonical: url,
       languages: {
-        ...Object.fromEntries(languages.map((l) => [l.code, `${SITE_URL}${pathFor(l.code)}`])),
+        ...Object.fromEntries(langs.map((code) => [code, `${SITE_URL}${pathFor(code)}`])),
         'x-default': `${SITE_URL}${pathFor('en')}`,
       },
     },
@@ -260,7 +266,7 @@ export function buildListMetadata(lang: Language, pathFor: (lang: Language) => s
 }
 
 /** BlogPosting JSON-LD structured data. Pure (no fs) — safe to build in the server page and pass to the client. */
-export function buildPostJsonLd(lang: Language, slug: string, post: BlogPost, category: BlogCategory = TECH) {
+export function buildPostJsonLd(lang: BlogLanguage, slug: string, post: BlogPost, category: BlogCategory = TECH) {
   const url = postUrl(lang, slug, category);
   const ogImage = resolveOgImage(post);
   return {
@@ -301,7 +307,7 @@ export type CardPost = Pick<BlogPost, 'slug' | 'title' | 'date' | 'excerpt' | 't
 export const toCardPost = ({ slug, title, date, excerpt, tags, image, series, seriesId }: BlogPost): CardPost =>
   ({ slug, title, date, excerpt, tags, image, series, seriesId });
 
-export function getAllPosts(lang: Language, category: BlogCategory = TECH): BlogPost[] {
+export function getAllPosts(lang: BlogLanguage, category: BlogCategory = TECH): BlogPost[] {
   const slugs = getPostSlugs(lang, category);
   return slugs
     .map(slug => getPostBySlug(lang, slug, category))

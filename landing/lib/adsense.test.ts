@@ -45,10 +45,14 @@ function headOf(html: string): string {
 
 describe('AdSense auto ads code', () => {
   it('is in the <head> of every root layout', () => {
-    const rootLayouts = walk(join(LANDING, 'app'), (f) => f.endsWith('layout.tsx')).filter((f) =>
-      readFileSync(f, 'utf8').includes('<html'),
-    );
+    // The site's root layouts ([lang] and the Spanish drama blog's es) draw <html> through one shared
+    // shell, so that is where their <head> is.
+    const SHELL = join(LANDING, 'components', 'SiteDocument.tsx');
+    const rootLayouts = Array.from(new Set(walk(join(LANDING, 'app'), (f) => f.endsWith('layout.tsx'))
+      .map((f) => (readFileSync(f, 'utf8').includes('<SiteDocument') ? SHELL : f))))
+      .filter((f) => readFileSync(f, 'utf8').includes('<html'));
     expect(rootLayouts.length).toBeGreaterThan(0);
+    expect(rootLayouts).toContain(SHELL);
 
     const missing = rootLayouts
       .filter((f) => !headOf(readFileSync(f, 'utf8')).includes(ADSENSE_SRC))

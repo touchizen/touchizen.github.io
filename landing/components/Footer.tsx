@@ -1,11 +1,11 @@
 'use client';
 
-import { Language, translations, TranslationKey } from '@/lib/i18n';
+import { blogTranslations, siteLanguage, type BlogLanguage, type TranslationKey } from '@/lib/i18n';
 import { products, getSocialLinks } from '@/lib/products';
 import { BLOG_CATEGORIES, categoryListPath, type BlogCategory } from '@/lib/blog-categories';
 
 interface FooterProps {
-  lang: Language;
+  lang: BlogLanguage;
   categories?: readonly BlogCategory[];
 }
 
@@ -41,8 +41,10 @@ const SocialIcon = ({ icon }: { icon: string }) => {
 };
 
 export default function Footer({ lang, categories = BLOG_CATEGORIES }: FooterProps) {
-  const t = (key: TranslationKey) => translations[lang][key];
+  const t = (key: TranslationKey) => blogTranslations[lang][key];
   const socialLinks = getSocialLinks(lang);
+  // A blog-only language (Spanish) has no product or legal pages of its own — link the English ones.
+  const site = siteLanguage(lang);
 
   return (
     <footer className="bg-gray-900 dark:bg-black text-white py-16">
@@ -84,7 +86,7 @@ export default function Footer({ lang, categories = BLOG_CATEGORIES }: FooterPro
             <ul className="space-y-2">
               {products.map((product) => {
                 const href = product.hasDetailPage
-                  ? (product.isExternal ? product.link : `/${lang}${product.link}`)
+                  ? (product.isExternal ? product.link : `/${site}${product.link}`)
                   : undefined;
                 return (
                   <li key={product.id}>
@@ -131,7 +133,7 @@ export default function Footer({ lang, categories = BLOG_CATEGORIES }: FooterPro
             <ul className="space-y-2">
               <li>
                 <a
-                  href={`/${lang}/privacy/`}
+                  href={`/${site}/privacy/`}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t('footer_privacy')}
@@ -139,7 +141,7 @@ export default function Footer({ lang, categories = BLOG_CATEGORIES }: FooterPro
               </li>
               <li>
                 <a
-                  href={`/${lang}/terms/`}
+                  href={`/${site}/terms/`}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   {t('footer_terms')}
