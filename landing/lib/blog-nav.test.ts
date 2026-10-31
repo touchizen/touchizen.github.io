@@ -19,6 +19,15 @@ const count = (html: string, href: string) => hrefs(html).filter((h) => h === hr
 const header = (categories?: readonly BlogCategory[]) =>
   renderToStaticMarkup(createElement(Header, { lang: 'ko', onLanguageChange() {}, ...(categories && { categories }) }));
 
+describe('affiliate link', () => {
+  // 사용자 2026-10-31 "상단 제휴프로그램 일단 제거해줘" — header only; the footer keeps its link.
+  it('is gone from the header and stays in the footer', () => {
+    const affiliate = (html: string) => hrefs(html).filter((h) => h.includes('/affiliates'));
+    expect(affiliate(header())).toEqual([]);
+    expect(affiliate(renderToStaticMarkup(createElement(Footer, { lang: 'ko' })))).toHaveLength(1);
+  });
+});
+
 describe('blog navigation', () => {
   it('links the blog hub from the header', () => {
     expect(count(header(), '/ko/blog/')).toBeGreaterThan(0);

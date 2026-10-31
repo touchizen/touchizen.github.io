@@ -16,7 +16,6 @@ export const es = {
   footer_legal: 'Legal',
   footer_privacy: 'Política de privacidad',
   footer_terms: 'Términos del servicio',
-  nav_affiliate: 'Afiliados',
   footer_affiliate: 'Hazte afiliado (30% de comisión)',
   footer_copyright: '2026 Touchizen. Todos los derechos reservados.',
   autoflowcut_name: 'AutoFlowCut',
