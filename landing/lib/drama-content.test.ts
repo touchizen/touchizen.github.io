@@ -30,7 +30,7 @@ const SCRIPT_RESIDUE: [string, RegExp][] = [
  * must fail too, or the language menu would offer a Spanish page that was never built (Codex review).
  */
 export function untranslated(slugs: Record<string, string[]>): string[] {
-  const all = [...new Set(Object.values(slugs).flat())].sort();
+  const all = Array.from(new Set(Object.values(slugs).flat())).sort();
   return all.flatMap((slug) => Object.keys(slugs).filter((l) => !slugs[l].includes(slug)).map((l) => `${slug}: no ${l}`));
 }
 
