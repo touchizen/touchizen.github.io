@@ -171,6 +171,14 @@
   "description": "An autonomous, context-aware AI desktop companion. Built with Python, featuring real-time screen vision, custom ONNX voice synthesis, active window tracking, and a dynamic floating UI with reactive facial expressions.",
   "language": "Python"
  },
+ "AhmadHassan-BTed/CoDiver": {
+  "description": " An advanced, unified platform for code quality, architectural metrics, and Agile analytics. Features Python AST parsing, Java static analysis (code smells), and interactive project health dashboards built with Streamlit.",
+  "language": "Python"
+ },
+ "AhmadHassan-BTed/FormFilla": {
+  "description": "About A local-first browser extension that fills job-application forms from local JSON profile data and files. Matches are computed deterministically via multi-signal scoring, structural repeated-block detection, and bipartite optimization.",
+  "language": null
+ },
  "AhmadHassan-BTed/Jantt": {
   "description": "The AI-native JSON Gantt chart engine. Dependency-free interactive timelines with React, script-tag, CLI, topological DAG solver, and formal JSON schema.",
   "language": "TypeScript"
@@ -178,6 +186,18 @@
  "AhmadHassan-BTed/Ledgerify": {
   "description": "Shopify Excel Ledger intelligence platform with dark aesthetic, multi-sheet workbook analysis, 7 departmental dashboards, and live comparative benchmarking.",
   "language": "TypeScript"
+ },
+ "AhmadHassan-BTed/LichArch": {
+  "description": "Hyper-optimized dark theme suite, native KWin gesture engine, and automated setup launcher for KDE Plasma 6 on Arch Linux.",
+  "language": "QML"
+ },
+ "AhmadHassan-BTed/MotionShot": {
+  "description": "Camera app that freezes fast motion sequences into a single stroboscopic photo; powered by on-device computer vision, 2D stabilization, and manual exposure controls",
+  "language": "Kotlin"
+ },
+ "AhmadHassan-BTed/Noria": {
+  "description": "An agentic extractor for messaging platforms. Noria receives messages & URLs via chat; scrapes web data to evaluate the content against custom scoring matrices (e.g., jobs, scholarships); and sends a structured summary with a calculated match score directly to the assigned messenger number. ",
+  "language": "JavaScript"
  },
  "AhmadHassan-BTed/OpenHeart": {
   "description": "Succinct Compositional Program Graph (SCPG) static analysis engine & 14-diagram UML generator in Rust.",
@@ -187,8 +207,16 @@
   "description": "A heartfelt, interactive narrative mini-game built in Python for Rose Day. Features custom entities, a dynamic dialogue system, animated particle effects, and integrated audio to deliver a unique, romantic digital experience.",
   "language": "Python"
  },
+ "AhmadHassan-BTed/ShopifyAutoAuth": {
+  "description": "Enterprise-grade Shopify Admin API authentication adapter — OAuth 2.0 Client Credentials Grant with automatic token refresh.",
+  "language": "Python"
+ },
  "AhmadHassan-BTed/SilentSniffer": {
   "description": "A professional, high-fidelity de-anonymization and vulnerability diagnostic framework. Features a zero-coupling modular architecture for browser-based intelligence gathering, hardware fingerprinting, and security research.",
+  "language": "JavaScript"
+ },
+ "AhmadHassan-BTed/SoulMatrix": {
+  "description": "Interactive Destiny Matrix (Soul Blueprint) live reading dashboard and popup Script Board with real-time screen sync, couples compatibility, and age timeline overlays.",
   "language": "JavaScript"
  },
  "AhmadHassan-BTed/Turnitout-Humanizer": {
@@ -1128,7 +1156,7 @@
   "language": "Python"
  },
  "JimLiu/baoyu-design": {
-  "description": "Run Claude Design locally as an Agent Skill — Cursor, Claude Code & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus or Claude.",
+  "description": "Run Claude Design locally as an Agent Skill — Cursor, Codex, DeepSeek Harness & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus or Claude.",
   "language": "JavaScript"
  },
  "JimLiu/baoyu-skills": {
@@ -1641,7 +1669,7 @@
  },
  "OthmanAdi/planning-with-files": {
   "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
-  "language": "Python"
+  "language": "Shell"
  },
  "PC2005-cloud/dsh-pet": {
   "description": "DSH 桌面宠物：一行命令装好即用的透明动画小桌宠，支持多开、大小位置随心配置；还内置 DIY 素材链，能用 AI 视频自造专属宠物",
@@ -2647,6 +2675,10 @@
   "description": "Amagine3D: From hardware requirements to editable 3D designs",
   "language": "Python"
  },
+ "amosblomqvist/learnharness": {
+  "description": "Agent harness for learning difficult things.",
+  "language": "TypeScript"
+ },
  "amruthpillai/reactive-resume": {
   "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
   "language": "TypeScript"
@@ -2681,6 +2713,10 @@
  },
  "angular/components": {
   "description": "Component infrastructure and Material Design components for Angular",
+  "language": "TypeScript"
+ },
+ "anhao/ai-pose-gallery-zh": {
+  "description": "中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊",
   "language": "TypeScript"
  },
  "animate-css/animate.css": {
@@ -3324,7 +3360,7 @@
   "language": "C++"
  },
  "career-ops-hq/career-ops": {
-  "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and a job application tracker. It helps you fill in each application; you press Submit. Runs locally in your AI coding CLI (Claude Code, Codex, OpenCode and more).",
+  "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
   "language": "JavaScript"
  },
  "casey/just": {
@@ -4037,7 +4073,7 @@
  },
  "elayadesign/ai-design-skills": {
   "description": "",
-  "language": null
+  "language": "Python"
  },
  "elder-plinius/CL4R1T4S": {
   "description": "LEAKED SYSTEM PROMPTS FOR CHATGPT, CLAUDE, GEMINI, GROK, PERPLEXITY, CURSOR, LOVABLE, REPLIT, AND MORE! - AI SYSTEMS TRANSPARENCY FOR ALL! 👐",
@@ -4685,7 +4721,7 @@
  },
  "google/styleguide": {
   "description": "Style guides for Google-originated open-source projects",
-  "language": "HTML"
+  "language": "Emacs Lisp"
  },
  "google/zx": {
   "description": "A tool for writing better scripts",
@@ -5465,7 +5501,7 @@
  },
  "krahets/hello-algo": {
   "description": "《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现",
-  "language": "Java"
+  "language": "Swift"
  },
  "kubernetes/kubernetes": {
   "description": "Production-Grade Container Scheduling and Management",
@@ -6482,6 +6518,10 @@
  "nidhinjs/prompt-master": {
   "description": "A Claude skill that writes the accurate prompts for any AI tool. Zero tokens or credits wasted. Full context and memory retention",
   "language": null
+ },
+ "nightly-labs/openbot": {
+  "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
+  "language": "TypeScript"
  },
  "nikopueringer/CorridorKey": {
   "description": "Perfect Green Screen Keys",
@@ -7660,7 +7700,7 @@
   "language": "Shell"
  },
  "sickn33/agentic-awesome-skills": {
-  "description": "2,877+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
+  "description": "2,884+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
   "language": "Python"
  },
  "siddharthvaddem/openscreen": {
@@ -8120,7 +8160,7 @@
   "language": "Python"
  },
  "tigerless-labs/autoharness": {
-  "description": "Autoharness — a self-learning skill layer for Claude Code — distills skills from your real sessions, updates them as you work, and prunes the ones that stop getting used. No daemon, no benchmark.",
+  "description": "Building the self-learning layer next-gen agents will ship with, learning skills from real work.",
   "language": "Python"
  },
  "tigerless-labs/cost-xray": {
