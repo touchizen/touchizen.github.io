@@ -109,14 +109,6 @@ export default function Header<L extends BlogLanguage = Language>({ lang, onLang
                 </div>
               );
             })}
-            <a
-              href="https://touchizen.lemonsqueezy.com/affiliates"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
-            >
-              {t('nav_affiliate')}
-            </a>
           </nav>
 
           {/* Right side controls */}
@@ -171,15 +163,6 @@ export default function Header<L extends BlogLanguage = Language>({ lang, onLang
                 {item.key === 'nav_blog' && blogMenu && <BlogCategoryLinks lang={lang} categories={categories} className="pl-4 pb-2" />}
               </div>
             ))}
-            <a
-              href="https://touchizen.lemonsqueezy.com/affiliates"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block py-3 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
-            >
-              {t('nav_affiliate')}
-            </a>
           </nav>
         )}
       </div>
