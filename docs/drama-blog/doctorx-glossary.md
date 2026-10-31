@@ -56,3 +56,40 @@
 
 ## 캡션
 - 드라마 본편: en `*© SBS “Doctor X: Mafia in White”*` · ja `*ⓒ SBS『ドクターX～白いマフィアの時代～』*` · de `*© SBS „Doctor X: Mafia in White“*`
+
+## 스페인어 (es)
+라틴아메리카 중립 스페인어, 독자는 "ustedes". 이름은 en/de 열(넷플릭스 표기)과 같다. 번역 파일: `landing/content/drama/es/doctor-x-mafia-in-white-ep7-explained.md`.
+
+| ko | es |
+|---|---|
+| 닥터X: 하얀 마피아의 시대 (series) | *Doctor X: Mafia in White* |
+| 닥터X 외과의 다이몬 미치코 | *Doctor-X: Surgeon Michiko Daimon* (TV Asahi) |
+| SBS 금토드라마 | drama de viernes y sábado de SBS |
+| 뇌피셜 / 제가 보기엔 | **pura especulación** / **mi teoría** |
+| 장 소장 | la señora Jang (소개소 = la agencia) |
+| 우재경 | Dr. Woo |
+| 부승권 원장 | el director Bu Seung-gwon |
+| 임호석 시장 | el alcalde Im Ho-seok |
+| 지두석 전 대통령 | el expresidente Ji Du-seok |
+| 계엄군 | soldados de la ley marcial |
+| 전원 | traslado (a otro hospital) |
+| VIP 병동 | zona VIP |
+| 검체 용기 | recipiente de muestras |
+| 뼛조각 | fragmento de hueso |
+| 바이옵시 포셉 | pinzas de biopsia |
+| 트로이메라이 | *Träumerei* de Schumann (알: *soñar*) |
+| 하얀 거짓말 | 'mentira piadosa' (+ en coreano, literalmente, *mentira blanca*) |
+| 코드 블루 | Código Azul |
+| 노래방 | sala de karaoke (*noraebang*) |
+| 의사협회 | asociación médica |
+| 전공의 | médicos residentes |
+| 의대 정원 | plazas de Medicina |
+| 보건의료정책심의위원회 | Comité de Deliberación de Políticas de Salud y Medicina |
+| "전 절대 실패하지 않습니다" | "Yo nunca fallo." (es.srt) · 원작 私、失敗しないので = *Watashi, shippai shinai node* |
+| "전 총알이라고 말한 적 없습니다" | "Nunca dije que fuera una bala." (es.srt) |
+| "살려 놨잖아" | "Salvaste una vida." (es.srt: "Ya lo has hecho. Salvaste una vida.") |
+
+### 캡션 (es)
+- `*© SBS “Doctor X: Mafia in White”*`
+- 마지막 문장: "Las fotos de escenas y los diálogos de este artículo se citan con fines de crítica y reseña; los derechos pertenecen a SBS y a la productora."
+- 1980년 회상·지두석 관련 대목은 줄거리 사실만 옮겼고 감정·평가를 더하지 않았다.

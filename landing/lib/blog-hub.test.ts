@@ -48,6 +48,14 @@ describe('blog hub', () => {
     expect(sections[0].more).toBe(false);
   });
 
+  // The hub used to list categories in BLOG_CATEGORIES order, so IT stayed on top even when drama had today's post.
+  it('puts the category with the newest post first', () => {
+    const OLDER: BlogCategory = { ...TECH, id: 'economy', contentDir: '../lib/__fixtures__/hub/older' };
+    const NEWER: BlogCategory = { ...TECH, id: 'drama', contentDir: '../lib/__fixtures__/hub/newer' };
+    expect(hubSections('ko', [OLDER, NEWER]).map((s) => s.category.id)).toEqual(['drama', 'economy']);
+    expect(hubSections('ko', [NEWER, OLDER]).map((s) => s.category.id)).toEqual(['drama', 'economy']);
+  });
+
   it('shows three posts and a more link per category when there are several', () => {
     const sections: HubSection[] = [
       { category: TECH, posts: [card('a'), card('b'), card('c')], more: true },

@@ -1,18 +1,28 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Language, languages } from '@/lib/i18n';
+import { blogOnlyLanguages, languages, type BlogLanguage, type Language } from '@/lib/i18n';
 
-interface LanguageToggleProps {
-  lang: Language;
-  onChange: (lang: Language) => void;
+const SITE_CODES: readonly Language[] = languages.map((l) => l.code);
+
+/** The menu's entries for `codes`: the site's four unless the page has more (drama pages add Spanish). */
+export function languageMenu<L extends BlogLanguage = Language>(codes: readonly L[] = SITE_CODES as readonly L[]) {
+  return [...languages, ...blogOnlyLanguages].filter((l): l is { code: L; name: string; country: string } => codes.includes(l.code as L));
 }
 
-export default function LanguageToggle({ lang, onChange }: LanguageToggleProps) {
+interface LanguageToggleProps<L extends BlogLanguage> {
+  lang: L;
+  onChange: (lang: L) => void;
+  /** Languages to offer — the site's four by default. */
+  languages?: readonly L[];
+}
+
+export default function LanguageToggle<L extends BlogLanguage = Language>({ lang, onChange, languages: codes }: LanguageToggleProps<L>) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const currentLang = languages.find((l) => l.code === lang) || languages[0];
+  const options = languageMenu(codes);
+  const currentLang = options.find((l) => l.code === lang) || options[0];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -25,7 +35,7 @@ export default function LanguageToggle({ lang, onChange }: LanguageToggleProps) 
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const selectLanguage = (code: Language) => {
+  const selectLanguage = (code: L) => {
     localStorage.setItem('language', code);
     onChange(code);
     setIsOpen(false);
@@ -53,7 +63,7 @@ export default function LanguageToggle({ lang, onChange }: LanguageToggleProps) 
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50">
-          {languages.map((language) => (
+          {options.map((language) => (
             <button
               key={language.code}
               onClick={() => selectLanguage(language.code)}

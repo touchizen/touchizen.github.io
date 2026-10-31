@@ -1,6 +1,6 @@
 'use client';
 
-import { Language, translations, TranslationKey } from '@/lib/i18n';
+import { blogTranslations, type BlogLanguage, type TranslationKey } from '@/lib/i18n';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -12,7 +12,7 @@ export const FALLBACK_THUMBNAIL = '/images/touchizen.png';
 
 /** One post in a list: thumbnail, tags, title, excerpt, date — linked to the post. */
 export function PostCard({ lang, category, post, heading: Heading = 'h2' }: {
-  lang: Language;
+  lang: BlogLanguage;
   category: BlogCategory;
   post: CardPost;
   /** h3 when the card sits under a section heading (a show, or a category on the hub). */
@@ -61,13 +61,13 @@ function byShow(posts: CardPost[]): { seriesId: string; series: string; posts: C
   return Array.from(shows.values());
 }
 
-export default function BlogPageClient({ lang, posts, category = TECH }: { lang: Language; posts: CardPost[]; category?: BlogCategory }) {
+export default function BlogPageClient({ lang, posts, category = TECH }: { lang: BlogLanguage; posts: CardPost[]; category?: BlogCategory }) {
   const router = useRouter();
-  const t = (key: TranslationKey) => translations[lang][key];
+  const t = (key: TranslationKey) => blogTranslations[lang][key];
 
   return (
     <main className="min-h-screen">
-      <Header lang={lang} onLanguageChange={(newLang) => router.push(categoryListPath(category, newLang))} />
+      <Header lang={lang} languages={category.languages} onLanguageChange={(newLang) => router.push(categoryListPath(category, newLang))} />
 
       <div className="pt-24 pb-16">
         <div className="container-custom px-4">

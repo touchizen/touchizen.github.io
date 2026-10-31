@@ -1,5 +1,5 @@
 import { getPostBySlug, getPostSlugs } from './blog';
-import { Language, languages } from './i18n';
+import type { BlogLanguage } from './i18n';
 import { BLOG_CATEGORIES, TECH, categoryPostPath, type BlogCategory } from './blog-categories';
 
 /**
@@ -9,27 +9,26 @@ import { BLOG_CATEGORIES, TECH, categoryPostPath, type BlogCategory } from './bl
  */
 
 const SITE_URL = 'https://touchizen.com';
-const ORDER: Language[] = languages.map((l) => l.code);
 
 export interface SitemapEntry {
-  lang: Language;
+  lang: BlogLanguage;
   slug: string;
   date: string;
   modified?: string;
   noindex: boolean;
 }
 
-const postUrl = (lang: Language, slug: string, category: BlogCategory) => `${SITE_URL}${categoryPostPath(category, lang, slug)}`;
+const postUrl = (lang: BlogLanguage, slug: string, category: BlogCategory) => `${SITE_URL}${categoryPostPath(category, lang, slug)}`;
 
-/** One entry per post file of the category (IT: content/blog). */
+/** One entry per post file of the category (IT: content/blog), in each of the category's languages. */
 export function blogSitemapEntries(category: BlogCategory = TECH): SitemapEntry[] {
-  return ORDER.flatMap((lang) => getPostSlugs(lang, category).flatMap((slug) => {
+  return category.languages.flatMap((lang) => getPostSlugs(lang, category).flatMap((slug) => {
     const post = getPostBySlug(lang, slug, category);
     return post ? [{ lang, slug, date: post.date, modified: post.modified, noindex: post.noindex }] : [];
   }));
 }
 
-/** Sitemap <urlset> for the indexable posts: newest first, each post's languages linked with hreflang (x-default = English). */
+/** Sitemap <urlset> for the indexable posts: newest first, each post's languages (in the category's order) linked with hreflang (x-default = English). */
 export function blogSitemapXml(entries: SitemapEntry[], category: BlogCategory = TECH): string {
   const bySlug = new Map<string, SitemapEntry[]>();
   for (const e of entries.filter((x) => !x.noindex)) bySlug.set(e.slug, [...(bySlug.get(e.slug) ?? []), e]);
@@ -38,7 +37,7 @@ export function blogSitemapXml(entries: SitemapEntry[], category: BlogCategory =
   const posts = Array.from(bySlug.entries()).sort(([a, x], [b, y]) => newest(y) - newest(x) || a.localeCompare(b));
 
   const urls = posts.flatMap(([slug, list]) => {
-    const langs = ORDER.filter((code) => list.some((e) => e.lang === code));
+    const langs = category.languages.filter((code) => list.some((e) => e.lang === code));
     const links = [...langs.map((code) => [code, postUrl(code, slug, category)]), ...(langs.includes('en') ? [['x-default', postUrl('en', slug, category)]] : [])]
       .map(([hreflang, href]) => `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${href}" />`);
     return langs.map((code) => {

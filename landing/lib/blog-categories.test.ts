@@ -48,6 +48,24 @@ describe('blog categories', () => {
     expect(missing).toEqual([]);
   });
 
+  // A language outside the site's four (Spanish for drama) can't go in [lang]/layout.tsx — every page
+  // without params of its own would be built in it — so it gets a route tree of its own with posts in it.
+  it("gives every language beyond the site's its own route tree, and builds no other tree", () => {
+    const site: string[] = languages.map((l) => l.code);
+    const extra = Array.from(new Set(BLOG_CATEGORIES.flatMap((cat) => cat.languages.filter((l) => !site.includes(l)))));
+    const missing = BLOG_CATEGORIES.flatMap((cat) => cat.languages.filter((l) => !site.includes(l)).flatMap((l) =>
+      [
+        path.join('app', '(main)', l, 'layout.tsx'),
+        path.join('app', '(main)', l, cat.listBase, 'page.tsx'),
+        path.join('app', '(main)', l, cat.postBase, '[slug]', 'page.tsx'),
+      ].filter((f) => !fs.existsSync(path.join(process.cwd(), f))).concat(getPostSlugs(l, cat).length ? [] : [`${cat.id}/${l}: no posts`]),
+    ));
+    expect(missing).toEqual([]);
+    const trees = fs.readdirSync(path.join(process.cwd(), 'app', '(main)'), { withFileTypes: true })
+      .filter((d) => d.isDirectory() && d.name !== '[lang]').map((d) => d.name);
+    expect(trees.sort()).toEqual(extra.sort());
+  });
+
   it("builds a post's canonical, hreflang and JSON-LD from its category", () => {
     const slug = getPostSlugs('ko')[0];
     const post = getPostBySlug('ko', slug)!;
@@ -63,5 +81,15 @@ describe('blog categories', () => {
   it("writes a category sitemap with the category's addresses", () => {
     const xml = blogSitemapXml([{ lang: 'ko', slug: 'a', date: '2026-01-01', noindex: false }], FAKE);
     expect(xml).toContain(`<loc>${SITE}/ko/x/y/a/</loc>`);
+  });
+});
+
+describe('a category without one of the site languages', () => {
+  // Building pages a category doesn't declare would publish them with an English canonical (Codex review).
+  it('builds no post pages in that language', async () => {
+    const { postStaticParams } = await import('@/app/(main)/[lang]/blog/postRoute');
+    const noGerman: BlogCategory = { ...TECH, languages: ['en', 'ko', 'ja'] };
+    expect(postStaticParams(TECH).some((p) => p.lang === 'de')).toBe(true);
+    expect(postStaticParams(noGerman).some((p) => p.lang === 'de')).toBe(false);
   });
 });

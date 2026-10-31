@@ -36,7 +36,10 @@ touchizen.com 블로그(`/{lang}/blog/`)에는 IT·AutoFlowCut 글만 있다. �
 - 드라마별 시리즈 전용 페이지, 댓글, RSS.
 - 드라마 영상 스킬(drama-preview/weekday/prediction-video)에 "업로드 뒤 블로그 글 쓰기" 단계를
   넣는 일 — 이번 묶음이 자리 잡은 뒤 따로 정한다.
-- 스페인어(es) — 썸네일·자막엔 es 가 있지만 사이트 언어는 4개다.
+- 스페인어(es) — 썸네일·자막엔 es 가 있지만 사이트 언어는 4개다. **→ 2026-10-31 드라마 블로그에만 추가**(사용자
+  "드라마 블로그만"): `/es/blog/drama/` 와 글만 빌드한다. `BlogLanguage = Language | 'es'`, 카테고리마다 `languages`,
+  es 라우트는 `app/(main)/es/blog/drama/` 따로(공용 `components/SiteDocument.tsx`), es 페이지의 드라마 밖 링크는 /en/.
+  검사: `lib/drama-es.test.ts`·`lib/drama-es-pages.test.ts`.
 - 경제 블로그 — 틀만 받쳐 주고 글은 없다(빈 카테고리는 숨으니 아무것도 안 보인다).
 - 쇼핑 블로그 — 안 만든다. 사용자: "쇼핑은 당분간 쇼츠만".
 

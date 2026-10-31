@@ -9,4 +9,5 @@ export const FAKE: BlogCategory = {
   sitemapFile: 'sitemap-x.xml',
   nameKey: 'blog_cat_tech',
   subtitleKey: 'blog_subtitle',
+  languages: ['en', 'ko', 'ja', 'de'],
 };

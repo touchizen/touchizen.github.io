@@ -1,6 +1,6 @@
 'use client';
 
-import { Language, translations, TranslationKey } from '@/lib/i18n';
+import { blogTranslations, type BlogLanguage, type TranslationKey } from '@/lib/i18n';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -26,7 +26,7 @@ export interface PostSummary {
   image?: string;
 }
 
-function PostList({ lang, category, posts }: { lang: Language; category: BlogCategory; posts: PostSummary[] }) {
+function PostList({ lang, category, posts }: { lang: BlogLanguage; category: BlogCategory; posts: PostSummary[] }) {
   return (
     <ul className="space-y-4">
       {posts.map((p) => (
@@ -54,7 +54,7 @@ function PostList({ lang, category, posts }: { lang: Language; category: BlogCat
 }
 
 export default function BlogPostClient({ lang, post, related = [], others = [], latest = [], prev, next, jsonLd, category = TECH }: {
-  lang: Language;
+  lang: BlogLanguage;
   post: BlogPost;
   related?: PostSummary[];
   /** Shown in the related posts' place when no post shares a tag. */
@@ -67,7 +67,7 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
   category?: BlogCategory;
 }) {
   const router = useRouter();
-  const t = (key: TranslationKey) => translations[lang][key];
+  const t = (key: TranslationKey) => blogTranslations[lang][key];
 
   return (
     <main className="min-h-screen">
@@ -86,7 +86,7 @@ export default function BlogPostClient({ lang, post, related = [], others = [], 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
-      <Header lang={lang} onLanguageChange={(newLang) => router.push(categoryPostPath(category, newLang, post.slug))} />
+      <Header lang={lang} languages={category.languages} onLanguageChange={(newLang) => router.push(categoryPostPath(category, newLang, post.slug))} />
 
       <article className="pt-24 pb-16">
         <div className="container-custom px-4 lg:flex lg:justify-center lg:gap-12">

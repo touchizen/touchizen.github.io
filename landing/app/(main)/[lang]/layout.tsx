@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Language, languages } from '@/lib/i18n';
+import SiteDocument, { SITE_ROBOTS } from '@/components/SiteDocument';
 import '../../globals.css';
 
 type Props = {
@@ -88,17 +89,7 @@ export function generateMetadata({ params }: Props): Metadata {
       description: descriptions[lang],
       images: [ogImage],
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
+    robots: SITE_ROBOTS,
     verification: {
       google: 'abab50d830b4ddf2',
     },
@@ -112,45 +103,5 @@ export default function LangLayout({
   children: React.ReactNode;
   params: { lang: Language };
 }) {
-  return (
-    <html lang={params.lang} suppressHydrationWarning>
-      <head>
-        {/* Google AdSense (auto ads) */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1889477374800958"
-          crossOrigin="anonymous"
-        />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JLFKK5G0" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-S0JLFKK5G0');
-            `,
-          }}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme');
-                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark');
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body className="antialiased min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-        {children}
-      </body>
-    </html>
-  );
+  return <SiteDocument lang={params.lang}>{children}</SiteDocument>;
 }

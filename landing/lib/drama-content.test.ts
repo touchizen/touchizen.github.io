@@ -5,11 +5,12 @@ import path from 'node:path';
 import matter from 'gray-matter';
 import { describe, expect, it } from 'vitest';
 
-import { languages } from './i18n';
+import { DRAMA } from './blog-categories';
 
 const DIR = path.join(process.cwd(), 'content', 'drama');
 const PUBLIC = path.join(process.cwd(), 'public');
-const langs = languages.map((l) => l.code);
+// The drama blog's own languages — the site's four and Spanish (lib/blog-categories.ts).
+const langs = DRAMA.languages;
 const slugsOf = (lang: string) =>
   fs.existsSync(path.join(DIR, lang)) ? fs.readdirSync(path.join(DIR, lang)).filter((f) => f.endsWith('.md')).map((f) => f.slice(0, -3)) : [];
 const read = (lang: string, slug: string) => matter(fs.readFileSync(path.join(DIR, lang, `${slug}.md`), 'utf-8'));
@@ -24,20 +25,35 @@ const SCRIPT_RESIDUE: [string, RegExp][] = [
   ['script table', /^\|\s*#\s*\|/m],
 ];
 
+/**
+ * A slug missing from any language, over the slugs of all languages — a post written only in English
+ * must fail too, or the language menu would offer a Spanish page that was never built (Codex review).
+ */
+export function untranslated(slugs: Record<string, string[]>): string[] {
+  const all = Array.from(new Set(Object.values(slugs).flat())).sort();
+  return all.flatMap((slug) => Object.keys(slugs).filter((l) => !slugs[l].includes(slug)).map((l) => `${slug}: no ${l}`));
+}
+
+describe('the translation guard', () => {
+  it('catches a post that exists only outside Korean', () => {
+    expect(untranslated({ ko: ['a'], en: ['a', 'b'], es: ['a'] })).toEqual(['b: no ko', 'b: no es']);
+  });
+});
+
 describe('drama posts', () => {
   it('exist', () => {
     expect(files.length).toBeGreaterThan(0);
   });
 
   it('exist in every language, with the same video, show and date', () => {
-    const problems = slugsOf('ko').flatMap((slug) => {
-      const missing = langs.filter((l) => !fs.existsSync(path.join(DIR, l, `${slug}.md`))).map((l) => `${slug}: no ${l}`);
-      if (missing.length) return missing;
+    const missing = untranslated(Object.fromEntries(langs.map((l) => [l, slugsOf(l)])));
+    const complete = slugsOf('ko').filter((slug) => !missing.some((m) => m.startsWith(`${slug}:`)));
+    const problems = [...missing, ...complete.flatMap((slug) => {
       const ko = read('ko', slug).data;
       return langs
         .filter((l) => ['youtube', 'seriesId', 'date'].some((k) => read(l, slug).data[k] !== ko[k]))
         .map((l) => `${slug}: ${l} differs in youtube/seriesId/date`);
-    });
+    })];
     expect(problems).toEqual([]);
   });
 

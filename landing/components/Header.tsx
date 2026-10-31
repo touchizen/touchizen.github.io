@@ -1,19 +1,21 @@
 'use client';
 
 import { useState, useEffect, type KeyboardEvent } from 'react';
-import { Language, translations, TranslationKey } from '@/lib/i18n';
+import { blogTranslations, siteLanguage, type BlogLanguage, type Language, type TranslationKey } from '@/lib/i18n';
 import ThemeToggle from './ThemeToggle';
 import LanguageToggle from './LanguageToggle';
 import { BLOG_CATEGORIES, categoryListPath, type BlogCategory } from '@/lib/blog-categories';
 
-interface HeaderProps {
-  lang: Language;
-  onLanguageChange: (lang: Language) => void;
+interface HeaderProps<L extends BlogLanguage> {
+  lang: L;
+  onLanguageChange: (lang: L) => void;
+  /** Languages the language menu offers — the site's four unless the page has more (drama pages: Spanish). */
+  languages?: readonly L[];
   categories?: readonly BlogCategory[];
 }
 
 /** One link per blog category list — the desktop dropdown and the mobile menu share it. */
-export function BlogCategoryLinks({ lang, categories, className = '' }: { lang: Language; categories: readonly BlogCategory[]; className?: string }) {
+export function BlogCategoryLinks({ lang, categories, className = '' }: { lang: BlogLanguage; categories: readonly BlogCategory[]; className?: string }) {
   return (
     <div className={className}>
       {categories.map((category) => (
@@ -22,7 +24,7 @@ export function BlogCategoryLinks({ lang, categories, className = '' }: { lang: 
           href={categoryListPath(category, lang)}
           className="block py-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium whitespace-nowrap"
         >
-          {translations[lang][category.nameKey]}
+          {blogTranslations[lang][category.nameKey]}
         </a>
       ))}
     </div>
@@ -34,11 +36,13 @@ export function closeMenuOnEscape(e: KeyboardEvent) {
   if (e.key === 'Escape') (e.target as HTMLElement).blur?.();
 }
 
-export default function Header({ lang, onLanguageChange, categories = BLOG_CATEGORIES }: HeaderProps) {
+export default function Header<L extends BlogLanguage = Language>({ lang, onLanguageChange, languages, categories = BLOG_CATEGORIES }: HeaderProps<L>) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const t = (key: TranslationKey) => translations[lang][key];
+  const t = (key: TranslationKey) => blogTranslations[lang][key];
+  // A blog-only language (Spanish) has no home or hub of its own — those links go to the English site.
+  const site = siteLanguage(lang);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,10 +52,12 @@ export default function Header({ lang, onLanguageChange, categories = BLOG_CATEG
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Section anchors live on the home page; a blog-only language has none, so they lead to the English home.
+  const home = site === lang ? '' : `/${site}/`;
   const navItems = [
-    { key: 'nav_products' as TranslationKey, href: '#products' },
-    { key: 'nav_features' as TranslationKey, href: '#features' },
-    { key: 'nav_blog' as TranslationKey, href: `/${lang}/blog/` },
+    { key: 'nav_products' as TranslationKey, href: `${home}#products` },
+    { key: 'nav_features' as TranslationKey, href: `${home}#features` },
+    { key: 'nav_blog' as TranslationKey, href: `/${site}/blog/` },
   ];
   // A single category needs no menu: the blog link already leads to it.
   const blogMenu = categories.length > 1;
@@ -67,7 +73,7 @@ export default function Header({ lang, onLanguageChange, categories = BLOG_CATEG
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
-          <a href={`/${lang}`} className="flex items-center gap-3">
+          <a href={`/${site}`} className="flex items-center gap-3">
             <img
               src="/images/touchizen.png"
               alt="Touchizen"
@@ -115,7 +121,7 @@ export default function Header({ lang, onLanguageChange, categories = BLOG_CATEG
 
           {/* Right side controls */}
           <div className="flex items-center gap-2">
-            <LanguageToggle lang={lang} onChange={onLanguageChange} />
+            <LanguageToggle lang={lang} onChange={onLanguageChange} languages={languages} />
             <ThemeToggle />
 
             {/* Mobile menu button */}
