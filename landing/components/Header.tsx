@@ -14,6 +14,23 @@ interface HeaderProps<L extends BlogLanguage> {
   categories?: readonly BlogCategory[];
 }
 
+/**
+ * Products and Features point at sections of the home page (/{lang}/#products), so they work from a blog post too.
+ * Where the current page has the section itself — the home page, a product page's own #features — the click
+ * stays on the page as before.
+ */
+export function followSection(
+  event: { preventDefault(): void },
+  href: string,
+  doc: Pick<Document, 'getElementById'> = document,
+  loc: { hash: string } = window.location,
+) {
+  const id = href.split('#')[1];
+  if (!id || !doc.getElementById(id)) return;
+  event.preventDefault();
+  loc.hash = id;
+}
+
 /** One link per blog category list — the desktop dropdown and the mobile menu share it. */
 export function BlogCategoryLinks({ lang, categories, className = '' }: { lang: BlogLanguage; categories: readonly BlogCategory[]; className?: string }) {
   return (
@@ -52,12 +69,11 @@ export default function Header<L extends BlogLanguage = Language>({ lang, onLang
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Section anchors live on the home page; a blog-only language has none, so they lead to the English home.
-  const home = site === lang ? '' : `/${site}/`;
+  // Section links lead to the home page's sections (a blog-only language: the English home) — see followSection.
   const navItems = [
-    { key: 'nav_products' as TranslationKey, href: `${home}#products` },
-    { key: 'nav_features' as TranslationKey, href: `${home}#features` },
-    { key: 'nav_blog' as TranslationKey, href: `/${site}/blog/` },
+    { key: 'nav_products' as TranslationKey, href: `/${site}/#products`, section: true },
+    { key: 'nav_features' as TranslationKey, href: `/${site}/#features`, section: true },
+    { key: 'nav_blog' as TranslationKey, href: `/${site}/blog/`, section: false },
   ];
   // A single category needs no menu: the blog link already leads to it.
   const blogMenu = categories.length > 1;
@@ -93,6 +109,7 @@ export default function Header<L extends BlogLanguage = Language>({ lang, onLang
                 <a
                   key={item.key}
                   href={item.href}
+                  onClick={item.section ? (e) => followSection(e, item.href) : undefined}
                   aria-haspopup={opensMenu || undefined}
                   className="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
                 >
@@ -155,7 +172,10 @@ export default function Header<L extends BlogLanguage = Language>({ lang, onLang
               <div key={item.key}>
                 <a
                   href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    setIsMobileMenuOpen(false);
+                    if (item.section) followSection(e, item.href);
+                  }}
                   className="block py-3 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors font-medium"
                 >
                   {t(item.key)}

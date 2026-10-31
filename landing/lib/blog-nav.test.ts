@@ -8,7 +8,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 vi.mock('@/components/ThemeToggle', () => ({ default: () => null }));
 vi.mock('@/components/LanguageToggle', () => ({ default: () => null }));
 
-import Header, { BlogCategoryLinks, closeMenuOnEscape } from '@/components/Header';
+import Header, { BlogCategoryLinks, closeMenuOnEscape, followSection } from '@/components/Header';
 import Footer from '@/components/Footer';
 import { TECH, type BlogCategory } from './blog-categories';
 import { FAKE } from './__fixtures__/categories';
@@ -18,6 +18,31 @@ const hrefs = (html: string) => Array.from(html.matchAll(/<a href="([^"]+)"/g), 
 const count = (html: string, href: string) => hrefs(html).filter((h) => h === href).length;
 const header = (categories?: readonly BlogCategory[]) =>
   renderToStaticMarkup(createElement(Header, { lang: 'ko', onLanguageChange() {}, ...(categories && { categories }) }));
+
+describe('Products and Features links', () => {
+  // 사용자 2026-10-31: 블로그에서 제품·특징을 누르면 반응이 없었다 — #products 는 홈에만 있는 구역이다.
+  it('point at the home page sections, so they work from any page', () => {
+    const links = hrefs(header());
+    expect(links).toEqual(expect.arrayContaining(['/ko/#products', '/ko/#features']));
+    expect(links.filter((h) => h.startsWith('#'))).toEqual([]);
+  });
+
+  it('stay on the page when it has the section itself', () => {
+    const event = { preventDefault: vi.fn() };
+    const loc = { hash: '' };
+    followSection(event, '/ko/#features', { getElementById: () => ({}) as HTMLElement }, loc);
+    expect(event.preventDefault).toHaveBeenCalled();
+    expect(loc.hash).toBe('features');
+  });
+
+  it('go to the home page when the section is not on this page', () => {
+    const event = { preventDefault: vi.fn() };
+    const loc = { hash: '' };
+    followSection(event, '/ko/#products', { getElementById: () => null }, loc);
+    expect(event.preventDefault).not.toHaveBeenCalled();
+    expect(loc.hash).toBe('');
+  });
+});
 
 describe('affiliate link', () => {
   // 사용자 2026-10-31 "상단 제휴프로그램 일단 제거해줘" — header only; the footer keeps its link.
