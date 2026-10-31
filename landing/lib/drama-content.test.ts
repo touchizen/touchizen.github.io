@@ -25,20 +25,35 @@ const SCRIPT_RESIDUE: [string, RegExp][] = [
   ['script table', /^\|\s*#\s*\|/m],
 ];
 
+/**
+ * A slug missing from any language, over the slugs of all languages — a post written only in English
+ * must fail too, or the language menu would offer a Spanish page that was never built (Codex review).
+ */
+export function untranslated(slugs: Record<string, string[]>): string[] {
+  const all = [...new Set(Object.values(slugs).flat())].sort();
+  return all.flatMap((slug) => Object.keys(slugs).filter((l) => !slugs[l].includes(slug)).map((l) => `${slug}: no ${l}`));
+}
+
+describe('the translation guard', () => {
+  it('catches a post that exists only outside Korean', () => {
+    expect(untranslated({ ko: ['a'], en: ['a', 'b'], es: ['a'] })).toEqual(['b: no ko', 'b: no es']);
+  });
+});
+
 describe('drama posts', () => {
   it('exist', () => {
     expect(files.length).toBeGreaterThan(0);
   });
 
   it('exist in every language, with the same video, show and date', () => {
-    const problems = slugsOf('ko').flatMap((slug) => {
-      const missing = langs.filter((l) => !fs.existsSync(path.join(DIR, l, `${slug}.md`))).map((l) => `${slug}: no ${l}`);
-      if (missing.length) return missing;
+    const missing = untranslated(Object.fromEntries(langs.map((l) => [l, slugsOf(l)])));
+    const complete = slugsOf('ko').filter((slug) => !missing.some((m) => m.startsWith(`${slug}:`)));
+    const problems = [...missing, ...complete.flatMap((slug) => {
       const ko = read('ko', slug).data;
       return langs
         .filter((l) => ['youtube', 'seriesId', 'date'].some((k) => read(l, slug).data[k] !== ko[k]))
         .map((l) => `${slug}: ${l} differs in youtube/seriesId/date`);
-    });
+    })];
     expect(problems).toEqual([]);
   });
 
