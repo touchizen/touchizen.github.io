@@ -7,13 +7,15 @@ const HUB_POSTS_PER_CATEGORY = 3;
 
 /**
  * The hub's sections: each category's newest posts, newest first, and whether it has more.
+ * The category with the newest post comes first, so today's drama post isn't buried under IT.
  * With a single category the hub is that category's whole list — the old /blog/ page, no less.
  */
 export function hubSections(lang: Language, categories: readonly BlogCategory[] = BLOG_CATEGORIES): HubSection[] {
   const several = categories.length > 1;
+  const latest = (s: HubSection) => new Date(s.posts[0].date).getTime();
   return categories.map((category) => {
     const posts = getAllPosts(lang, category);
     const shown = several ? posts.slice(0, HUB_POSTS_PER_CATEGORY) : posts;
     return { category, posts: shown.map(toCardPost), more: posts.length > shown.length };
-  }).filter((s) => s.posts.length > 0);
+  }).filter((s) => s.posts.length > 0).sort((a, b) => latest(b) - latest(a));
 }

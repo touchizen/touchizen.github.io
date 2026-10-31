@@ -106,7 +106,10 @@ describe('lists and the hub', () => {
   });
 
   it('shows three posts and a more link per category when there are several', () => {
-    const [tech, drama] = hubSections('ko', [TECH, FIXTURE]);
+    // Sections come newest-post first (lib/blog-hub.test.ts), so find them by category, not position.
+    const sections = hubSections('ko', [TECH, FIXTURE]);
+    const tech = sections.find((s) => s.category.id === 'tech')!;
+    const drama = sections.find((s) => s.category.id === 'drama')!;
     expect(tech.posts.map((p) => p.slug)).toEqual(getAllPosts('ko').slice(0, 3).map((p) => p.slug));
     expect(tech.more).toBe(true);
     expect(drama.posts.map((p) => p.slug)).toEqual(['sample-b', 'sample-c', 'sample-a']);
@@ -115,7 +118,7 @@ describe('lists and the hub', () => {
 
   it('heads hub cards below their category heading', () => {
     const html = renderToStaticMarkup(createElement(BlogHubClient, { lang: 'ko', sections: hubSections('ko', [TECH, FIXTURE]) }));
-    expect(headings(html, 2)).toEqual(['IT·AI', '드라마']);
+    expect([...headings(html, 2)].sort()).toEqual(['IT·AI', '드라마'].sort());
     expect(headings(html, 3)).toHaveLength(6);
   });
 
