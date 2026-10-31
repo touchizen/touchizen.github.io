@@ -9,13 +9,17 @@ import BlogPostClient, { type PostSummary } from './[slug]/BlogPostClient';
 
 type Params = { lang: BlogLanguage; slug: string };
 
-/** Static params of the [lang] tree: the site's four languages only — a category's others have their own tree. */
+/**
+ * Static params of the [lang] tree: the site languages the category is written in — its blog-only languages
+ * have their own tree, and an undeclared language would be built with an English canonical.
+ */
 export function postStaticParams(category: BlogCategory): { lang: string; slug: string }[] {
-  const params = languages.flatMap((l) => getAllPosts(l.code, category).map((post) => ({ lang: l.code, slug: post.slug })));
+  const langs = languages.filter((l) => category.languages.includes(l.code));
+  const params = langs.flatMap((l) => getAllPosts(l.code, category).map((post) => ({ lang: l.code, slug: post.slug })));
   // When no posts exist, return a placeholder to satisfy output: 'export'.
   // The page component handles missing posts gracefully.
   if (params.length === 0) {
-    return languages.map((l) => ({ lang: l.code, slug: '_placeholder' }));
+    return langs.map((l) => ({ lang: l.code, slug: '_placeholder' }));
   }
   return params;
 }

@@ -52,9 +52,11 @@ export default function Header<L extends BlogLanguage = Language>({ lang, onLang
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Section anchors live on the home page; a blog-only language has none, so they lead to the English home.
+  const home = site === lang ? '' : `/${site}/`;
   const navItems = [
-    { key: 'nav_products' as TranslationKey, href: '#products' },
-    { key: 'nav_features' as TranslationKey, href: '#features' },
+    { key: 'nav_products' as TranslationKey, href: `${home}#products` },
+    { key: 'nav_features' as TranslationKey, href: `${home}#features` },
     { key: 'nav_blog' as TranslationKey, href: `/${site}/blog/` },
   ];
   // A single category needs no menu: the blog link already leads to it.

@@ -83,3 +83,13 @@ describe('blog categories', () => {
     expect(xml).toContain(`<loc>${SITE}/ko/x/y/a/</loc>`);
   });
 });
+
+describe('a category without one of the site languages', () => {
+  // Building pages a category doesn't declare would publish them with an English canonical (Codex review).
+  it('builds no post pages in that language', async () => {
+    const { postStaticParams } = await import('@/app/(main)/[lang]/blog/postRoute');
+    const noGerman: BlogCategory = { ...TECH, languages: ['en', 'ko', 'ja'] };
+    expect(postStaticParams(TECH).some((p) => p.lang === 'de')).toBe(true);
+    expect(postStaticParams(noGerman).some((p) => p.lang === 'de')).toBe(false);
+  });
+});

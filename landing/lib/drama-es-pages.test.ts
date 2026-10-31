@@ -59,8 +59,15 @@ const screens: [string, string][] = [
 ];
 
 describe('Spanish drama pages', () => {
-  it('are seven posts and the list', () => {
-    expect(slugs).toHaveLength(7);
+  // Every drama post, not a fixed count — a new post must not break the deploy's test step.
+  it('are every drama post and the list', () => {
+    expect(slugs).toEqual(getPostSlugs('ko', DRAMA).sort());
+  });
+
+  // A bare #fragment stays on the Spanish page, which has no #products or #features — it must lead to the English home.
+  it('send no link to a #fragment the page lacks', () => {
+    const bare = screens.flatMap(([page, html]) => hrefs(html).filter((h) => h.startsWith('#')).map((h) => `${page} → ${h}`));
+    expect(bare).toEqual([]);
   });
 
   it('link only to pages the export builds', async () => {
