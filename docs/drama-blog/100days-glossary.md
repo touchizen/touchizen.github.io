@@ -29,7 +29,15 @@ Geum·Gyeam-ri 는 예외였다 — 블로그는 넷플릭스 표기로 통일�
 | 개똥 | Gae-ttong | ケットン |
 | 하나코 | Hanako | ハナコ |
 | 후쿠다 | Fukuda | フクダ |
-| 신태진 | Shin Tae-jin | シン・テジン |
+| 신태진 | Shin Tae-jin (100days-wk-1030 유튜브 제목은 넷플릭스 'Sin Tae-jin' — 블로그는 이미 낸 글과 같은 Shin 유지) | シン・テジン |
+| 스즈키 (통역관) | Suzuki | スズキ |
+| 노마 | Noma | ノマ |
+| 류관실 (야나기 배역 이름, 댓글 제보) | Ryu Gwan-sil | リュ・グァンシル |
+| 기미년 | the year Gimi (1919) / das Jahr Gimi (1919) | 己未年（1919年） |
+| 송지효 (배우, 보도) | Song Ji-hyo | ソン・ジヒョ |
+| 밀정 | spy / Spion(in) (구국단 내부 첩자는 Spitzel) | 密偵 |
+| 반쪽 목걸이 | half necklace / halbe Halskette | 半分のペンダント |
+| 편집과 과장 | editing section chief / Leiter der Redaktionsabteilung | 編集課長 |
 | 희원 | Heewon (넷플릭스 1화) | ヒウォン |
 | 구국단 | Gugukdan | クグクダン（救国団） |
 | 한철용 · 남자현 · 지청천 · 양세봉 · 이봉창 · 이덕주 | Han Cheol-yong · Nam Ja-hyeon · Ji Cheong-cheon · Yang Se-bong · Lee Bong-chang · Lee Deok-ju | 각 이름의 일반적 가타카나 |
