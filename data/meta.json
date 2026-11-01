@@ -428,7 +428,7 @@
   "language": "C++"
  },
  "CYQawa/YunX": {
-  "description": "✨一个安卓网盘解析下载app✨",
+  "description": "✨一个安卓 网盘解析 + 视频平台解析 下载app✨",
   "language": "Kotlin"
  },
  "CalvinXKY/InfraTech": {
@@ -557,7 +557,7 @@
  },
  "CyC2018/CS-Notes": {
   "description": ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计",
-  "language": "Python"
+  "language": "JavaScript"
  },
  "CymChad/BaseRecyclerViewAdapterHelper": {
   "description": "BRVAH:Powerful and flexible RecyclerAdapter",
@@ -969,7 +969,7 @@
  },
  "HBAI-Ltd/Toonflow-app": {
   "description": "短剧、漫剧制作工具 Toonflow：开源 AI 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、AI Agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、MCP 与插件扩展。Open-source AI short drama and motion comic creation tool with an infinite canvas, AI agents, storyboarding, image and video generation. Self-hosted and extensible, with a canvas-based approach similar to LibTV and TapNow.",
-  "language": "TypeScript"
+  "language": "Vue"
  },
  "HEJustinSun/my-girlfriend-jingtian-latex": {
   "description": "",
@@ -1033,7 +1033,7 @@
  },
  "HarnessMD/munder-difflin": {
   "description": "an open-source alternative to the dots, bots and muses of the world, run an office of claude code/codex like agents on your laptop, sandboxes or anywhere, uses your existing subscriptions",
-  "language": "TypeScript"
+  "language": "JavaScript"
  },
  "HeartMuLa/heartlib": {
   "description": "HeartMuLa Official Repo: The Most Powerful Open-Source Music Generation Model of 2026",
@@ -1118,6 +1118,10 @@
  "JakeWharton/butterknife": {
   "description": "Bind Android views and callbacks to fields and methods.",
   "language": "Java"
+ },
+ "Jakeschincariol/instagram-agent-skill": {
+  "description": "Thirteen Claude skills that run an Instagram account: Reels off 26 scored hook formulas, a viral research skill, a caption linter, and a humanizer. Free, MIT.",
+  "language": "Python"
  },
  "Jakeschincariol/replica-skill": {
   "description": "Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
@@ -2328,7 +2332,7 @@
   "language": "TypeScript"
  },
  "YishenTu/claudian": {
-  "description": "An Obsidian plugin that embeds Claude Code/Codex as an AI collaborator in your vault",
+  "description": "An Obsidian plugin that embeds Claude Code, Codex and other agents as an AI collaborator in your vault.",
   "language": "TypeScript"
  },
  "YouMind-OpenLab/awesome-gpt-image-2": {
@@ -3433,7 +3437,7 @@
  },
  "chatfire-AI/huobao-drama": {
   "description": "🎬 火宝短剧 - 基于AI的一站式短剧生成平台 《一句话生成完整短剧，从剧本到成片全自动化》  Huobao Drama - An AI-Powered End-to-End Short Drama Generator \"One Sentence to Complete Drama: Fully Automated from Script to Final Video\"",
-  "language": "Vue"
+  "language": "TypeScript"
  },
  "chatwoot/chatwoot": {
   "description": "Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬",
@@ -3839,6 +3843,10 @@
   "description": "DeepSeek Harness: Everything is a Plugin.",
   "language": "TypeScript"
  },
+ "deepseek-ai/dsh-superagent-prototype": {
+  "description": "Towards a More Autonomous Agent System",
+  "language": "TypeScript"
+ },
  "deepspeedai/DeepSpeed": {
   "description": "DeepSpeed is a deep learning optimization library that makes distributed training and inference easy, efficient, and effective.",
   "language": "Python"
@@ -4103,6 +4111,10 @@
   "description": "Open-source Grok Bot alternative. Choose your own model and sandbox.",
   "language": "TypeScript"
  },
+ "elysia395/dsh-wallpaper-engine": {
+  "description": "把本机 Wallpaper Engine 的壁纸搬进 DSH 网页界面：场景壁纸由内置 MIT 开源引擎 WebWallGL 实时 WebGL 渲染（粒子 / puppet 骨骼 / SceneScript / 音频反应 / 鼠标交互），失败自动降级内嵌 MP4 与场景静态帧；Web 壁纸严格沙箱 + WE API；iOS 风格液态玻璃 UI 高度自定义，遮挡暂停省电、ffmpeg 帧率上限转码、系统音频频谱与 Now Playing、自定义上传与自动轮播；设置存宿主端，对 agent 零 token 开销。Windows / macOS / Linux 三平台原生（同一个包、同一条命令）。",
+  "language": "JavaScript"
+ },
  "emdash-cms/emdash": {
   "description": "EmDash is a full-stack TypeScript CMS based on Astro; the spiritual successor to WordPress",
   "language": "TypeScript"
@@ -4217,7 +4229,7 @@
  },
  "f/prompts.chat": {
   "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
-  "language": "HTML"
+  "language": "MDX"
  },
  "f/textream": {
   "description": "Textream is a free macOS teleprompter app for streamers, interviewers, and presenters. It highlights your script in real-time as you speak, displayed in a beautiful Dynamic Island overlay. With extensible features.",
@@ -6904,7 +6916,7 @@
   "language": "Rust"
  },
  "p-e-w/heretic": {
-  "description": "Fully automatic censorship removal for language models",
+  "description": "Training-free language model modification: Remove censorship, suppress slop, reduce sycophancy, and more",
   "language": "Python"
  },
  "p2r3/convert": {
@@ -8316,7 +8328,7 @@
   "language": "TypeScript"
  },
  "tvytlx/ai-agent-deep-dive": {
-  "description": "AI Agent 源码深度研究报告",
+  "description": "AI Agent Deep Dive",
   "language": "Python"
  },
  "tw93/Kaku": {
@@ -8533,6 +8545,10 @@
  },
  "vercel-labs/agent-browser": {
   "description": "Browser automation CLI for AI agents",
+  "language": "Rust"
+ },
+ "vercel-labs/agent-desktop": {
+  "description": "Agent Desktop gives any agent reliable computer use on the desktop. Built with Rust, it sees any app's real UI structure through OS accessibility trees and operates it — refs stay stable and actions stay safe to retry, instead of guessing from pixels.",
   "language": "Rust"
  },
  "vercel-labs/agent-skills": {
@@ -9060,7 +9076,7 @@
   "language": "JavaScript"
  },
  "zenstory-ai/oh-story-claudecode": {
-  "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 13 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
+  "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 14 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
   "language": "Python"
  },
  "zerobrewhq/zerobrew": {
