@@ -28,7 +28,7 @@
   "language": "JavaScript"
  },
  "1Panel-dev/1Panel": {
-  "description": "🔥 1Panel is a modern, open-source Linux server management panel and a lightweight AI management platform.",
+  "description": "🔥 1Panel is a modern, open-source Linux server management panel and a lightweight AI management platform. 1Panel 是专门为 AI 服务器打造的管理面板。",
   "language": "Go"
  },
  "1c7/chinese-independent-developer": {
@@ -979,6 +979,10 @@
   "description": "\"AI-Trader: 100% Fully-Automated Agent-Native Trading\"  ",
   "language": "Python"
  },
+ "HKUDS/AgentPilot": {
+  "description": "AgentPilot: Better Next Moves for Your Agent. Get Things Done Faster.",
+  "language": "Python"
+ },
  "HKUDS/CLI-Anything": {
   "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
   "language": "Python"
@@ -1119,6 +1123,10 @@
   "description": "Bind Android views and callbacks to fields and methods.",
   "language": "Java"
  },
+ "Jakeschincariol/day-trader-skill": {
+  "description": "11 Claude skills for day trading: scan thousands of charts, track breaking news, time every entry and exit, and replay every outcome before you risk a dollar.",
+  "language": "Python"
+ },
  "Jakeschincariol/instagram-agent-skill": {
   "description": "Thirteen Claude skills that run an Instagram account: Reels off 26 scored hook formulas, a viral research skill, a caption linter, and a humanizer. Free, MIT.",
   "language": "Python"
@@ -1235,6 +1243,10 @@
   "description": "🦍 The API and AI Gateway",
   "language": "Lua"
  },
+ "Kruk2/jasna": {
+  "description": "Video restoration tool",
+  "language": "Python"
+ },
  "Kuberwastaken/claurst": {
   "description": "Agentic Coding for Builders who Ship",
   "language": "Rust"
@@ -1292,7 +1304,7 @@
   "language": "JavaScript"
  },
  "Leaflet/Leaflet": {
-  "description": "🍃 JavaScript library for mobile-friendly interactive maps 🇺🇦",
+  "description": "🍃 number one JavaScript library for interactive maps 🇺🇦",
   "language": "JavaScript"
  },
  "Leey21/awesome-ai-research-writing": {
@@ -3375,6 +3387,10 @@
   "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
   "language": "HTML"
  },
+ "ccch1mneyyy/dsh-Go": {
+  "description": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
+  "language": "Dart"
+ },
  "ccch1mneyyy/dsh-TUI": {
   "description": "DSH's officially top-recommended TUI plugin — high performance, low overhead, cute pixel whale, smooth mouse interaction. One-command install via npm. / DSH 官方首推的 TUI 插件，高性能低占用，可爱像素鲸鱼，流畅鼠标交互，npm 一键安装",
   "language": "TypeScript"
@@ -4907,6 +4923,10 @@
   "description": "A fast, simple & powerful blog framework, powered by Node.js.",
   "language": "TypeScript"
  },
+ "heydamir/unslop": {
+  "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
+  "language": "JavaScript"
+ },
  "heygen-com/hyperframes": {
   "description": "Write HTML. Render video. Built for agents.",
   "language": "TypeScript"
@@ -5108,7 +5128,7 @@
   "language": "Svelte"
  },
  "infiniflow/ragflow": {
-  "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+  "description": "RAGFlow is an agent-native database: a Retrieval-Augmented Generation (RAG) engine that grew into context infrastructure.",
   "language": "Go"
  },
  "inkeep/open-knowledge": {
@@ -5403,6 +5423,10 @@
   "description": "🕵️‍♂️ (2-in-1) Email & Username OSINT suite featuring native MCP support for deep data extraction just from a single Email/Username. Analyzes 2720+ actively maintained scan vectors (210+ email / 2510+ username) for security research, investigations, and digital footprinting.",
   "language": "Python"
  },
+ "kajisho5/ffmpeg-skill": {
+  "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+  "language": "Python"
+ },
  "kangarooking/cangjie-skill": {
   "description": "把书、长视频、播客等高价值内容蒸馏成可执行的 Agent Skills（Distill high-value content from books, long-form videos, podcasts, and more into executable Agent Skills）",
   "language": "Python"
@@ -5550,6 +5574,10 @@
  "kyutai-labs/pocket-tts": {
   "description": "A TTS that fits in your CPU (and pocket)",
   "language": "Python"
+ },
+ "l0ng-ai/openidea": {
+  "description": "The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.",
+  "language": "TypeScript"
  },
  "labmlai/annotated_deep_learning_paper_implementations": {
   "description": "🧑‍🏫 60+ Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit, ...), optimizers (adam, adabelief, sophia, ...), gans(cyclegan, stylegan2, ...), 🎮 reinforcement learning (ppo, dqn), capsnet, distillation, ... 🧠",
@@ -6085,6 +6113,10 @@
  },
  "microsoft/TRELLIS.2": {
   "description": "Native and Compact Structured Latents for 3D Generation",
+  "language": "Python"
+ },
+ "microsoft/TokenEconomizer": {
+  "description": "Experience-Driven Black-Box Cost Control for Coding Agents",
   "language": "Python"
  },
  "microsoft/TypeScript": {
@@ -8718,6 +8750,10 @@
  "wang2122/sprix-sage-router": {
   "description": "Sprix AI at 屿智同行 — state-aware SELF/COLLABORATE/HANDOFF routing for A2A agent networks.",
   "language": "Python"
+ },
+ "wangzan101/Mika": {
+  "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
+  "language": "Kotlin"
  },
  "wanshuiyin/Auto-claude-code-research-in-sleep": {
   "description": "ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in — works with Claude Code, Codex, OpenClaw, or any LLM agent.",
