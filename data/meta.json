@@ -175,9 +175,13 @@
   "description": " An advanced, unified platform for code quality, architectural metrics, and Agile analytics. Features Python AST parsing, Java static analysis (code smells), and interactive project health dashboards built with Streamlit.",
   "language": "Python"
  },
+ "AhmadHassan-BTed/Coldimail": {
+  "description": "Intelligent faculty outreach and research matching for prospective graduate applicants",
+  "language": null
+ },
  "AhmadHassan-BTed/FormFilla": {
   "description": "About A local-first browser extension that fills job-application forms from local JSON profile data and files. Matches are computed deterministically via multi-signal scoring, structural repeated-block detection, and bipartite optimization.",
-  "language": null
+  "language": "TypeScript"
  },
  "AhmadHassan-BTed/Jantt": {
   "description": "The AI-native JSON Gantt chart engine. Dependency-free interactive timelines with React, script-tag, CLI, topological DAG solver, and formal JSON schema.",
@@ -720,7 +724,7 @@
   "language": "Python"
  },
  "EverMind-AI/Raven": {
-  "description": "The Harness of Harnesses • built for RSI: a trusted, persistent, self-evolving multi-agent ecosystem for all-domain collaboration.",
+  "description": "The Harness of Harnesses • Super Agent: a trusted, persistent, self-evolving multi-agent ecosystem for all-domain collaboration.",
   "language": "Python"
  },
  "EveryInc/compound-engineering-plugin": {
@@ -1135,6 +1139,10 @@
   "description": "Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
   "language": "Python"
  },
+ "Jakeschincariol/youtube-agent-skill": {
+  "description": "Eleven Claude skills that run a YouTube channel: scripts off 21 hook formulas with a scored hook, title and thumbnail linted as one pairing, an edit decision list from your transcript, a retention reader that finds where viewers actually leave, a Shorts cutter, and a virality engine. Free, MIT.",
+  "language": "Python"
+ },
  "Jakubantalik/Libraries.dev": {
   "description": "Libraries and models for next-gen UI",
   "language": "TypeScript"
@@ -1192,7 +1200,7 @@
   "language": "C"
  },
  "JustVugg/colibri": {
-  "description": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦",
+  "description": "A hierarchical inference engine for frontier MoE models: hot experts on the GPU (CUDA, Vulkan), warm ones in RAM, cold ones streamed from NVMe. Written in C, runs on the hardware you already own.",
   "language": "C"
  },
  "K-Dense-AI/scientific-agent-skills": {
@@ -2192,7 +2200,7 @@
   "language": "HTML"
  },
  "Tracer-Cloud/opensre": {
-  "description": "Build your own AI SRE agents. The open source toolkit for the AI era.",
+  "description": "The open-source agent for CI/CD reliability.",
   "language": "Python"
  },
  "TraderAlice/OpenAlice": {
@@ -3084,7 +3092,7 @@
   "language": "Python"
  },
  "backnotprop/plannotator": {
-  "description": "Annotate and review coding agent plans and code diffs visually, share with your team, send feedback to agents with one click.",
+  "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
   "language": "TypeScript"
  },
  "backstage/backstage": {
@@ -5151,6 +5159,10 @@
   "description": "The trust layer for agent-to-agent commerce — natural-language mandates, ERC-7710 delegated permissions, x402 payments, escrow, and dispute resolution as one open, catch-all Agent Skill / Claude Code plugin.",
   "language": "TypeScript"
  },
+ "interplains/Zero-Breach-Toolkit": {
+  "description": "Free, open-source check for traces of mercenary spyware (Pegasus, Predator, Graphite, Candiru and more) on computers, Android phones and iPhone backups. Double-click apps for Windows, Mac and Linux, in 27 languages.",
+  "language": "Python"
+ },
  "ionic-team/ionic-framework": {
   "description": "A powerful cross-platform UI toolkit for building native-quality iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript.",
   "language": "TypeScript"
@@ -5356,7 +5368,7 @@
   "language": "Go"
  },
  "jub0t/Concat": {
-  "description": "The truly free, open-source, local-first, cross-platform CapCut replacement. Scriptable through a JSON-RPC API & MCP.",
+  "description": " Beta: The truly free, open-source, local-first, cross-platform CapCut replacement. Scriptable through a JSON-RPC API & MCP.",
   "language": "Rust"
  },
  "jub0t/concat": {
@@ -6292,7 +6304,7 @@
   "language": "Python"
  },
  "mksglu/context-mode": {
-  "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and   enforces routing across 17 platforms via MCP + hooks.",
+  "description": "Free, local plugin that keeps tool output out of your coding agent's context window. Sandbox and SQLite FTS5 search, 99% fewer bytes in context. Works with Claude Code, Codex, Pi, OpenCode, Gemini CLI, Copilot CLI and 4 more agents. Zero telemetry.",
   "language": "TypeScript"
  },
  "mlabonne/llm-course": {
@@ -6894,6 +6906,10 @@
  "opendatalab/MinerU": {
   "description": "Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.",
   "language": "Python"
+ },
+ "openfilm/openfilm": {
+  "description": "The open source AI video agent: turns any coding agent into a video agent, with an editor to change anything it makes.",
+  "language": "TypeScript"
  },
  "opengeos/GeoLibre": {
   "description": "A lightweight, cloud-native GIS platform for visualizing, exploring, and analyzing geospatial data. It runs in the web browser, on the desktop, on mobile, and inside Jupyter notebooks.",
@@ -7624,7 +7640,7 @@
   "language": "Python"
  },
  "seaweedfs/seaweedfs": {
-  "description": "SeaweedFS is a distributed storage system for object storage (S3), file systems, and Iceberg tables, designed to handle billions of files with O(1) disk access and effortless horizontal scaling.",
+  "description": "SeaweedFS is a distributed storage system for object storage (S3), file systems, Iceberg table buckets, and Lance vector buckets, designed to handle billions of files with O(1) disk access and effortless horizontal scaling.",
   "language": "Go"
  },
  "securo-finance/securo": {
@@ -7941,6 +7957,10 @@
  },
  "storytold/cadcraft": {
   "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
+  "language": "Rust"
+ },
+ "storytold/craft-anything": {
+  "description": "Craft Anything: understand how any software works, and craft your own.",
   "language": "Rust"
  },
  "storytold/craft-launcher": {
@@ -8580,7 +8600,7 @@
   "language": "Rust"
  },
  "vercel-labs/agent-desktop": {
-  "description": "Agent Desktop gives any agent reliable computer use on the desktop. Built with Rust, it sees any app's real UI structure through OS accessibility trees and operates it — refs stay stable and actions stay safe to retry, instead of guessing from pixels.",
+  "description": "Computer use CLI for AI agents",
   "language": "Rust"
  },
  "vercel-labs/agent-skills": {
