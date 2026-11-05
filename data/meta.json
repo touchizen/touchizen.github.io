@@ -231,6 +231,10 @@
   "description": "aider is AI pair programming in your terminal",
   "language": "Python"
  },
+ "AienTech/dossier": {
+  "description": "A self-hosted job search app that writes tailored resumes and cover letters from your profile.",
+  "language": "TypeScript"
+ },
  "Alamofire/Alamofire": {
   "description": "Elegant HTTP Networking in Swift",
   "language": "Swift"
@@ -310,6 +314,10 @@
  "AppFlowy-IO/AppFlowy": {
   "description": "Bring projects, wikis, and teams together with AI. AppFlowy is the AI collaborative workspace where you achieve more without losing control of your data. The leading open source Notion alternative.",
   "language": "Dart"
+ },
+ "Appllama/appllama-skills": {
+  "description": "A builder, not just a researcher. Agent skills that turn top-grossing app patterns into native-quality mobile screens.",
+  "language": null
  },
  "AprilNEA/OpenLogi": {
   "description": "⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry.",
@@ -973,7 +981,7 @@
  },
  "HBAI-Ltd/Toonflow-app": {
   "description": "短剧、漫剧制作工具 Toonflow：开源 AI 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、AI Agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、MCP 与插件扩展。Open-source AI short drama and motion comic creation tool with an infinite canvas, AI agents, storyboarding, image and video generation. Self-hosted and extensible, with a canvas-based approach similar to LibTV and TapNow.",
-  "language": "Vue"
+  "language": "TypeScript"
  },
  "HEJustinSun/my-girlfriend-jingtian-latex": {
   "description": "",
@@ -1091,6 +1099,10 @@
   "description": "LabelImg is now part of the Label Studio community. The popular image annotation tool created by Tzutalin is no longer actively being developed, but you can check out Label Studio, the open source data labeling tool for images, text, hypertext, audio, video and time-series data.",
   "language": "Python"
  },
+ "HunYiSage/dsh-purge": {
+  "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
+  "language": "JavaScript"
+ },
  "Hypostasis-Cat/HypoMux": {
   "description": "CN Windows 多网卡聚合与网络加速工具。一键融合有线、Wi-Fi、热点等连接，实现多路径传输与智能流量调度。 EN Windows multi-NIC network accelerator. Combine Ethernet, Wi-Fi, hotspots and more for multi-path transmission and smart traffic routing.",
   "language": "Go"
@@ -1174,6 +1186,10 @@
  "Jia-Ethan/codex-keysmith": {
   "description": "Versioned Codex instruction deployment with preview, ownership manifests, hook isolation, scenario evaluation, and recovery.",
   "language": "Python"
+ },
+ "JiaFeiMiao-K-Cat/DiscImageStudio": {
+  "description": "",
+  "language": "C#"
  },
  "JimLiu/baoyu-design": {
   "description": "Run Claude Design locally as an Agent Skill — Cursor, Codex, DeepSeek Harness & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus or Claude.",
@@ -1505,6 +1521,10 @@
  },
  "NVIDIA/SkillSpector": {
   "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
+  "language": "Python"
+ },
+ "NVIDIA/auto-ontology": {
+  "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
   "language": "Python"
  },
  "NVIDIA/personaplex": {
@@ -2755,6 +2775,10 @@
   "description": "Reference implementation of Anoma",
   "language": "Elixir"
  },
+ "anomalyco/hex": {
+  "description": "Local voice dictation for mac, windows and linux",
+  "language": "Rust"
+ },
  "anomalyco/opencode": {
   "description": "The open source coding agent.",
   "language": "TypeScript"
@@ -3504,7 +3528,7 @@
   "language": null
  },
  "chthollyphile/folia-major": {
-  "description": "专注于绚丽的歌词动画效果的本地音乐/navidrome/第三方多平台在线音乐播放器",
+  "description": "专注于绚丽的歌词动画效果的本地音乐/navidrome/第三方多平台在线音乐播放器 A multi-platform music player for local files, Navidrome, and online streaming services, featuring stunning animated lyrics.",
   "language": "TypeScript"
  },
  "chubin/cheat.sh": {
@@ -3673,7 +3697,7 @@
  },
  "crosspoint-reader/crosspoint-reader": {
   "description": "Open-source e-reader firmware",
-  "language": "C"
+  "language": "C++"
  },
  "crynta/terax-ai": {
   "description": "Lightweight (7MB) terminal-first AI-native development environment",
@@ -3827,6 +3851,10 @@
   "description": "Deepfakes Software For All",
   "language": "Python"
  },
+ "deeplethe/sandstorm": {
+  "description": "Run thousands of AI agent sandboxes on the cheapest machines.",
+  "language": "Rust"
+ },
  "deeplethe/utopia": {
   "description": "World's first open-source enterprise world model.",
   "language": "Rust"
@@ -3904,7 +3932,7 @@
   "language": null
  },
  "dgtlmoon/changedetection.io": {
-  "description": "Best and simplest tool for website change detection, web page monitoring, and website change alerts. Perfect for tracking content changes, price drops, restock alerts, and website defacement monitoring—all for free or enjoy our SaaS plan!",
+  "description": "Best and simplest tool for website change detection, web page monitoring, and website change alerts. Perfect for tracking content changes, price drops, restock alerts, and website defacement monitoring— MCP included! all for free or enjoy our SaaS plan!",
   "language": "Python"
  },
  "didilili/ai-agents-from-zero": {
@@ -4091,6 +4119,10 @@
   "description": "아래한글 hwp viewer and editor by rust and wasm",
   "language": "Rust"
  },
+ "egoist/mygo": {
+  "description": "Develop desktop apps with native UI or web frontend in Go",
+  "language": "Go"
+ },
  "ehang-io/nps": {
   "description": "一款轻量级、高性能、功能强大的内网穿透代理服务器。支持tcp、udp、socks5、http等几乎所有流量转发，可用来访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析、内网socks5代理等等……，并带有功能强大的web管理端。a lightweight, high-performance, powerful intranet penetration proxy server, with a powerful web management terminal.",
   "language": "Go"
@@ -4186,6 +4218,10 @@
  "eternityspring/shuohao-skills": {
   "description": "AI 短剧制作的 skill 集合：拆角色、排大纲、出场景与道具设定、写剧本、切分镜 | Agent skills for AI short-drama production — character bibles, adaptation outlines, art bibles, screenplays, storyboards. Runs in Claude Code & codex.",
   "language": "JavaScript"
+ },
+ "ethanplusai/harvey": {
+  "description": "Autonomous AI sales agent powered by Claude Code or Codex. Finds prospects, writes cold emails, sends campaigns, handles replies, books meetings. No API keys needed — runs on your Claude or Codex subscriptions.",
+  "language": "Python"
  },
  "ethereum/go-ethereum": {
   "description": "Go implementation of the Ethereum protocol",
@@ -5264,7 +5300,7 @@
   "language": "Rust"
  },
  "jeecgboot/JeecgBoot": {
-  "description": "【低代码v2.0，一句话即可生成整个系统】企业级AI低代码平台，一键生成前后端代码甚至整个系统。 AI Skills 一句话画流程、设计表单、生成报表、大屏。内置 AI应用平台涵盖：AI聊天、知识库、流程编排、MCP插件等，兼容主流大模型。引领AI低代码「Skills 生成 → 在线配置 → 代码生成 → 手工合并->AI修改」开发模式，解决 Java 项目 90% 重复工作，提高效率又不失灵活。",
+  "description": "【AI 时代的业务系统基座】企业级 AI 低代码平台：权限、多租户、工作流、报表、大屏、AI 知识库等通用能力开箱即用，AI 只需生成业务差异部分。AI Skills 一句话生成完整系统——建表、前后端代码、菜单权限、BPM 流程、表单、报表、大屏全自动。内置 AI 应用平台（聊天、知识库、流程编排、MCP），兼容主流大模型。Java + Vue3，支持单体/微服务与信创国产化。",
   "language": "Java"
  },
  "jekyll/jekyll": {
@@ -5518,6 +5554,10 @@
  "kilimchoi/engineering-blogs": {
   "description": "A curated list of engineering blogs",
   "language": "Ruby"
+ },
+ "kingcharleslzy-ai/dsh-purge": {
+  "description": "dsh-purge Community · DeepSeek Harness 社区维护版：宿主兼容、状态诊断、提示词管理、更新与本机备份回滚。基于小杨 / YuJunZhiXue 的 dsh-purge。",
+  "language": "JavaScript"
  },
  "kirodotdev/KiroCrew": {
   "description": "A persistent workspace for development work that self-improves and continues beyond one session.",
@@ -6305,7 +6345,7 @@
  },
  "mksglu/context-mode": {
   "description": "Free, local plugin that keeps tool output out of your coding agent's context window. Sandbox and SQLite FTS5 search, 99% fewer bytes in context. Works with Claude Code, Codex, Pi, OpenCode, Gemini CLI, Copilot CLI and 4 more agents. Zero telemetry.",
-  "language": "TypeScript"
+  "language": "JavaScript"
  },
  "mlabonne/llm-course": {
   "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
@@ -6324,7 +6364,7 @@
   "language": "Go"
  },
  "modelcontextprotocol/servers": {
-  "description": "Model Context Protocol Servers",
+  "description": "Model Context Protocol Reference Servers",
   "language": "TypeScript"
  },
  "modem-dev/hunk": {
@@ -6744,7 +6784,7 @@
   "language": "TypeScript"
  },
  "omlahore/RemoveMacAI": {
-  "description": "Debloat macOS: turn off Apple Intelligence, analytics, ads and pop-ups. A native app and CLI, and every change can be undone.",
+  "description": "Turn off Apple Intelligence and delete its models on your Mac. Optional tweaks for analytics, ads and pop-ups. A native app and CLI, and every change can be undone.",
   "language": "Swift"
  },
  "omnigent-ai/omnigent": {
@@ -6758,6 +6798,10 @@
  "onecli/onecli": {
   "description": "Open-source sandboxed agent harness for teams. Giving every employee a secured personal agent.",
   "language": "TypeScript"
+ },
+ "onehumanbeing/esp32-iphone-agent": {
+  "description": "Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer account, no jailbreak.",
+  "language": "Swift"
  },
  "oobabooga/textgen": {
   "description": "Open-source desktop app for local LLMs. Text, vision, tool-calling, OpenAI/Anthropic-compatible API. 100% private.",
@@ -6817,7 +6861,7 @@
  },
  "open-webui/open-webui": {
   "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-  "language": "Python"
+  "language": "Svelte"
  },
  "openJiuwen-ai/jiuwenswarm": {
   "description": "JiuwenSwarm is an intelligent AI Agent built on openJiuwen. It extends the powerful capabilities of large language models directly to your fingertips through various communication apps you use daily.",
@@ -7019,6 +7063,10 @@
   "description": "Open-source 3D architectural editor with a local CLI, MCP tools, and practical workflows for humans and AI agents.",
   "language": "TypeScript"
  },
+ "patch-gg/pixelfx": {
+  "description": "244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
+  "language": "JavaScript"
+ },
  "patchy631/ai-engineering-hub": {
   "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
   "language": "Jupyter Notebook"
@@ -7102,6 +7150,10 @@
  "phaserjs/phaser": {
   "description": "Phaser is a fun, free and fast 2D game framework for making HTML5 games for desktop and mobile web browsers, supporting Canvas and WebGL rendering.",
   "language": "JavaScript"
+ },
+ "phone-harness/phone-harness": {
+  "description": "let your agent control your phone",
+  "language": "Python"
  },
  "photoprism/photoprism": {
   "description": "AI-Powered Photos App 🌈💎✨",
@@ -7908,7 +7960,7 @@
   "language": "Python"
  },
  "stablyai/orca": {
-  "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+  "description": "Orca is the place for working with a fleet of coding agents (e.g. Claude Code, Codex). Run any agent with your own subscription. Available on desktop, mobile and remote runtime.",
   "language": "TypeScript"
  },
  "stackryze/FreeDomains": {
@@ -8332,7 +8384,7 @@
   "language": "TypeScript"
  },
  "trailhq/Trail-Code": {
-  "description": "Turbocharge Claude Code, Cursor, Codex, Gemini & every coding agent: faster, cheaper, with contextual understanding specific to your codebase.",
+  "description": "One shared memory for every coding agent on your team. Claude Code, Cursor and Codex get a map of your code and your team's past decisions, so they pick up where you left off.",
   "language": "TypeScript"
  },
  "trailofbits/skills": {
@@ -8461,7 +8513,7 @@
  },
  "ultralytics/yolov5": {
   "description": "Ultralytics YOLOv5 in PyTorch for object detection, instance segmentation, classification, training, and export.",
-  "language": "Python"
+  "language": null
  },
  "ultraworkers/claw-code": {
   "description": "An agent-managed museum exhibit, built in Rust with Gajae-Code / LazyCodex — developed and maintained with no human intervention.",
@@ -8484,7 +8536,7 @@
   "language": null
  },
  "unclecode/crawl4ai": {
-  "description": "Open-source web crawler and scraper for LLMs and AI agents: any website into clean, LLM-ready Markdown. Run it yourself, or use Crawl4AI Cloud with one key. Join our Discord https://discord.gg/VuxzM8mtf",
+  "description": "Official Crawl4AI Cloud: a hosted web scraping, extraction, and search API for AI agents. Free API key, 1,000 credits a month, no card. Fully open source: this repo is the Apache-2.0 crawler that powers it, and you can self-host it.",
   "language": "Python"
  },
  "unhappychoice/gitlogue": {
@@ -8574,6 +8626,10 @@
  "vadimdemedes/ink": {
   "description": "🌈 React for interactive command-line apps",
   "language": "TypeScript"
+ },
+ "valentderah/totk-pc-recomp": {
+  "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows and Linux x86-64, with a Vulkan renderer. Game files not included.",
+  "language": "C"
  },
  "valinet/ExplorerPatcher": {
   "description": "This project aims to enhance the working environment on Windows",
