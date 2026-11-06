@@ -232,7 +232,7 @@
   "language": "Python"
  },
  "AienTech/dossier": {
-  "description": "A self-hosted job search app that writes tailored resumes and cover letters from your profile.",
+  "description": "A self-hosted job search and resume builder app that writes tailored resumes and cover letters from your profile.",
   "language": "TypeScript"
  },
  "Alamofire/Alamofire": {
@@ -611,6 +611,10 @@
   "description": "Draw and edit draw.io diagrams by chatting with an AI. Web app, desktop app, and an MCP server for Claude Code, Cursor, Codex and VS Code.",
   "language": "TypeScript"
  },
+ "DeanChensj/jiangshan-map": {
+  "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 164 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+  "language": "JavaScript"
+ },
  "DefinitelyTyped/DefinitelyTyped": {
   "description": "The repository for high quality TypeScript type definitions.",
   "language": "TypeScript"
@@ -650,6 +654,10 @@
  "DioxusLabs/dioxus": {
   "description": "Fullstack app framework for web, desktop, and mobile.",
   "language": "Rust"
+ },
+ "Djihads80/Eglantine": {
+  "description": "VERY experimental Nintendo Switch 2 emulator",
+  "language": "C++"
  },
  "Dogfalo/materialize": {
   "description": "Materialize, a CSS Framework based on Material Design",
@@ -992,7 +1000,7 @@
   "language": "Python"
  },
  "HKUDS/AgentPilot": {
-  "description": "AgentPilot: Better Next Moves for Your Agent. Get Things Done Faster.",
+  "description": "AgentPilot: Let a 9B Model Guide Your Agent’s Next Move—Better and Faster",
   "language": "Python"
  },
  "HKUDS/CLI-Anything": {
@@ -1682,6 +1690,10 @@
  "OpenMinis/OpenMinis": {
   "description": "OpenMinis — The AI Agent app across platforms. Fully free and open source.",
   "language": "Swift"
+ },
+ "OpenSelena/omniget": {
+  "description": "Open-source download manager for courses (Udemy/Hotmart), YouTube, music & 1,800+ sites. Built with Tauri 2.0, Rust & Svelte.",
+  "language": "Rust"
  },
  "OpenSenseNova/SenseNova-Skills": {
   "description": "Modular SenseNova skills for building AI-powered office assistants and productivity workflows",
@@ -3370,6 +3382,10 @@
  "cacggghp/vk-turn-proxy": {
   "description": "",
   "language": "Go"
+ },
+ "cactus-compute/cactus": {
+  "description": "Sub-50mb agentic, voice and vision intelligence for consumer devices.",
+  "language": "Python"
  },
  "cactus-compute/needle": {
   "description": "Automation foundation model for tiny devices: 2-bit, 8-29 MB, tool calls, ASR, structured extraction and embeddings on phones, wearables, smart homes, robots, cars and microcontrollers.",
@@ -5404,7 +5420,7 @@
   "language": "Go"
  },
  "jub0t/Concat": {
-  "description": " Beta: The truly free, open-source, local-first, cross-platform CapCut replacement. Scriptable through a JSON-RPC API & MCP.",
+  "description": "Beta: The truly free, open-source, local-first, cross-platform video editor. Scriptable through a JSON-RPC API & MCP.",
   "language": "Rust"
  },
  "jub0t/concat": {
@@ -5478,6 +5494,10 @@
  "kangarooking/cangjie-skill": {
   "description": "把书、长视频、播客等高价值内容蒸馏成可执行的 Agent Skills（Distill high-value content from books, long-form videos, podcasts, and more into executable Agent Skills）",
   "language": "Python"
+ },
+ "kaomei/stickman-video-director": {
+  "description": "Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels. Automate visuals, voiceover, captions & SFX. 100% Free & Open-Source.",
+  "language": "JavaScript"
  },
  "karan/Projects": {
   "description": ":page_with_curl: A list of practical projects that anyone can solve in any programming language.",
@@ -5840,7 +5860,7 @@
   "language": "TypeScript"
  },
  "lobehub/lobehub": {
-  "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
+  "description": "🤯 LobeHub - Super-Agents on Your Team. Add super-agents to the chats your team already uses.They take on work by themselves and get better every week.",
   "language": "TypeScript"
  },
  "localsend/localsend": {
@@ -5896,7 +5916,7 @@
   "language": "TypeScript"
  },
  "luolangaga/tubatools": {
-  "description": "这是图吧工具箱基于 WinUI 3 全新重构的版本，一款由社区驱动、深度契合 Windows 11 设计美学的现代化工具箱。它不仅确保你始终使用最新版本的工具，还集成了更加丰富的实用功能，更可满足高度自定义的个性化需求。",
+  "description": "这是基于图吧工具箱的使用WinUI 3 全新重构的版本，一款由社区驱动、深度契合 Windows 11 设计美学的现代化工具箱。它不仅确保你始终使用最新版本的工具，还集成了更加丰富的实用内置 fluent 风格的工具，更可满足高度自定义的个性化需求。",
   "language": "C#"
  },
  "luoluoluo22/jianying-editor-skill": {
@@ -7057,7 +7077,7 @@
  },
  "parcel-bundler/parcel": {
   "description": "The zero configuration build tool for the web. 📦🚀",
-  "language": "JavaScript"
+  "language": "Rust"
  },
  "pascalorg/editor": {
   "description": "Open-source 3D architectural editor with a local CLI, MCP tools, and practical workflows for humans and AI agents.",
@@ -7812,7 +7832,7 @@
   "language": "Shell"
  },
  "sickn33/agentic-awesome-skills": {
-  "description": "2,884+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
+  "description": "2,926+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
   "language": "Python"
  },
  "siddharthvaddem/openscreen": {
@@ -7960,7 +7980,7 @@
   "language": "Python"
  },
  "stablyai/orca": {
-  "description": "Orca is the place for working with a fleet of coding agents (e.g. Claude Code, Codex). Run any agent with your own subscription. Available on desktop, mobile and remote runtime.",
+  "description": "Orca lets you run a fleet of coding agents (e.g. Claude Code, Codex) with your own subscription. Available on desktop, mobile and remote runtime.",
   "language": "TypeScript"
  },
  "stackryze/FreeDomains": {
@@ -8029,6 +8049,10 @@
  },
  "storytold/effectcraft": {
   "description": "EffectCraft: An open-source motion graphics and compositing tool written by scratch in pure Rust",
+  "language": "Rust"
+ },
+ "storytold/figcraft": {
+  "description": "FigCraft: interface design and prototyping; an open-source, clean-room reimplementation of collaborative design workflows in pure Rust",
   "language": "Rust"
  },
  "storytold/filmcraft": {
@@ -8904,7 +8928,7 @@
   "language": "JavaScript"
  },
  "wshobson/agents": {
-  "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi",
+  "description": "Plugins, agents, skills, and commands for Claude Code, Codex CLI, Cursor, OpenCode, Antigravity CLI, GitHub Copilot, and Pi, written once in Markdown and adapted to each tool by generators with validation and evals.",
   "language": "Python"
  },
  "wuyoscar/GPT-Image2-Skill": {
@@ -9188,7 +9212,7 @@
   "language": "JavaScript"
  },
  "zenstory-ai/oh-story-claudecode": {
-  "description": "Claude Code / Codex / OpenCode agent skills for writing Chinese web novels (网文): 扫榜、拆文、写作、去AI味、封面全流程，长篇短篇都支持 | 14 skills for novel writing and long-form fiction with file-based continuity tracking. MIT.",
+  "description": "AI 写网文全流程 skill 包：扫榜选材、拆解爆款、大纲细纲、长篇连载防吃书、短篇反转、去AI味与封面生成，适配 Claude Code / Codex / Antigravity / OpenCode 等 ｜ Agent skill pack for writing Chinese web novels",
   "language": "Python"
  },
  "zerobrewhq/zerobrew": {
