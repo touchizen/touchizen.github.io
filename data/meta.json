@@ -293,7 +293,7 @@
  },
  "Anionex/banana-slides": {
   "description": "一站式原生AI PPT生成应用，几分钟内生成一套幻灯片; 支持上传任意模板图片，上传任意素材&智能解析，一句话/大纲/页面描述自动生成PPT，口头修改指定区域、一键导出可编辑ppt、视频等 - An AI-native slides generator based on nano banana/gpt-image🏞️",
-  "language": "TypeScript"
+  "language": "Python"
  },
  "AnmolSaini16/mapcn": {
   "description": "Beautiful map components. 100% Free, Zero config, one command setup.",
@@ -868,7 +868,7 @@
   "language": "Python"
  },
  "Fractal-Compute-Orchestrations/FractalWorkspace": {
-  "description": "A unified ecosystem and workspace for large-scale federated learning, bridging the gap between centralized model evolution and decentralized edge intelligence.",
+  "description": "A unified ecosystem and workspace for large-scale federated learning of Large Models & LLMS. Store compute as Wifi",
   "language": "Python"
  },
  "FreeCAD/FreeCAD": {
@@ -1000,7 +1000,7 @@
   "language": "Python"
  },
  "HKUDS/AgentPilot": {
-  "description": "AgentPilot: Let a 9B Model Guide Your Agent’s Next Move—Better and Faster",
+  "description": "AgentPilot: Make Your Agents Move Better and Faster",
   "language": "Python"
  },
  "HKUDS/CLI-Anything": {
@@ -1188,7 +1188,7 @@
   "language": "Kotlin"
  },
  "JetBrains/thinkrail": {
-  "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+  "description": "ThinkRail is the agentic IDE that gets better every time you use it",
   "language": "TypeScript"
  },
  "Jia-Ethan/codex-keysmith": {
@@ -1306,6 +1306,10 @@
  "LC044/WeChatMsg": {
   "description": "",
   "language": null
+ },
+ "LNPANDY/NX2Apple": {
+  "description": "Play your own Switch games on iPhone/iPad — one-click macOS app, no terminal. | 把 Switch 游戏装进 iPhone：图形界面一键构建，不用命令行。Bring your own game.",
+  "language": "Swift"
  },
  "LSPosed/LSPosed": {
   "description": "LSPosed Framework",
@@ -1664,7 +1668,7 @@
   "language": "Python"
  },
  "OpenByteInc/QuantDinger": {
-  "description": "Open-source AI Trading OS, agent trading, and vibe trading, with Jev System One integration. Research, build Python strategies, backtest, and paper/live trade across crypto, stocks, and forex. Launch your own multi-tenant trading SaaS with built-in user management, billing, payments, and settlement.",
+  "description": "The most complete open-source, self-hosted Agentic Trading OS—AI research, Python strategies, factor discovery, backtesting, optimization, paper/live multi-asset execution, risk controls, monitoring, MCP, and multi-tenant SaaS in one auditable stack.",
   "language": "Python"
  },
  "OpenCoworkAI/open-codesign": {
@@ -1713,7 +1717,7 @@
  },
  "OrchestratorInc/agent-orchestrator": {
   "description": "Plan, run and supervise fleets of agents from task to merged PR. Desktop (macOS, Windows, Linux) + iPhone & Android apps.  Supports Claude Code, Codex & 35+ coding agents.",
-  "language": "Go"
+  "language": "TypeScript"
  },
  "Orkas-AI/Orkas": {
   "description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled automations and connectors. Free app for macOS & Windows; built-in models or your own keys.",
@@ -2988,7 +2992,7 @@
   "language": "C++"
  },
  "asgeirtj/system_prompts_leaks": {
-  "description": "Documented system prompts from Anthropic - Claude Fable 5.1, Opus 5.5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
+  "description": "Leaked system prompts of ChatGPT, Claude, Gemini and more. The hidden system prompt of every popular chatbot, in full, every version since May 2025. Also Anthropic Claude Code, OpenAI Codex, Google Antigravity, xAI Grok, Meta Muse, Moonshot Kimi, Alibaba Qwen, Z.ai GLM ZCode, MiniMax, Cursor, Perplexity, DeepSeek and 30+ others. Updated daily.",
   "language": "Python"
  },
  "ashemag/human-atlas": {
@@ -3265,6 +3269,10 @@
  },
  "bookorbit/bookorbit": {
   "description": "BookOrbit: Your Reading Space",
+  "language": "TypeScript"
+ },
+ "bowenliang123/dsh-context": {
+  "description": "The best DeepSeek Harness plugin for context insight and management, with context dashboard / browser / sidebar and context command, for context statistics, composition, breakdown, evolution details, agent teams, understanding how the context is made of, and how it evolves. 一站式 DeepSeek Harness 上下文可视化插件，Context 面板、浏览器、侧栏、命令，透视上下文组成、演进、压缩、多 Agent等。",
   "language": "TypeScript"
  },
  "boykopovar/AnyPS5": {
@@ -4239,6 +4247,10 @@
   "description": "Autonomous AI sales agent powered by Claude Code or Codex. Finds prospects, writes cold emails, sends campaigns, handles replies, books meetings. No API keys needed — runs on your Claude or Codex subscriptions.",
   "language": "Python"
  },
+ "ethanplusai/sellbird": {
+  "description": "Sellbird (formerly Harvey): the open-source outreach platform that runs on your Claude or ChatGPT plan. Finds companies and decision makers, verifies emails, writes personal cold email, sends it and handles the replies.",
+  "language": "Python"
+ },
  "ethereum/go-ethereum": {
   "description": "Go implementation of the Ethereum protocol",
   "language": "Go"
@@ -4776,7 +4788,7 @@
   "language": "Go"
  },
  "google/elephant-goldfish-model": {
-  "description": "Open-source skills for designing and reviewing software with AI agents",
+  "description": "Open-source plugin for designing and reviewing software with agents",
   "language": "Python"
  },
  "google/googletest": {
@@ -5609,7 +5621,7 @@
  },
  "krahets/hello-algo": {
   "description": "《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现",
-  "language": "Swift"
+  "language": "Python"
  },
  "kubernetes/kubernetes": {
   "description": "Production-Grade Container Scheduling and Management",
@@ -6556,7 +6568,7 @@
   "language": "Python"
  },
  "nestjs/nest": {
-  "description": "A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications with TypeScript/JavaScript 🚀",
+  "description": "A progressive TypeScript framework for Node.js backends: from a small API in one file to efficient, scalable, enterprise-grade systems 🚀",
   "language": "TypeScript"
  },
  "netdata/netdata": {
@@ -8443,6 +8455,10 @@
   "description": "A cross-platform Electron Desktop App to stream and download any Movie, TV Series or Anime in the World. Zero Ads and Tracking",
   "language": "JavaScript"
  },
+ "tryatlas/atlas": {
+  "description": "Source control for agents. Use multiple coding agents, track their changes and query them in one place",
+  "language": "TypeScript"
+ },
  "trycompai/crm": {
   "description": "Comp AI CRM is an open source, CRM designed for AI agents. Agentic-first CRM.",
   "language": "TypeScript"
@@ -8460,7 +8476,7 @@
   "language": "Python"
  },
  "tw93/Kaku": {
-  "description": "A fast, good-looking, AI-friendly terminal for the Mac.",
+  "description": "A fast, AI-friendly Mac terminal.",
   "language": "Rust"
  },
  "tw93/Kami": {
@@ -8468,7 +8484,7 @@
   "language": "HTML"
  },
  "tw93/Mole": {
-  "description": "🐹 Keep your Mac and PC clean, light, and running like new. Fast open-source CLI, plus native Mac and Windows apps.",
+  "description": "🐹 Open-source Mac and PC cleaner. Keep your machine clean, light, and running like new. Fast CLI, plus native Mac and Windows apps.",
   "language": "Shell"
  },
  "tw93/Pake": {
@@ -9212,7 +9228,7 @@
   "language": "JavaScript"
  },
  "zenstory-ai/oh-story-claudecode": {
-  "description": "AI 写网文全流程 skill 包：扫榜选材、拆解爆款、大纲细纲、长篇连载防吃书、短篇反转、去AI味与封面生成，适配 Claude Code / Codex / Antigravity / OpenCode 等 ｜ Agent skill pack for writing Chinese web novels",
+  "description": "AI 写网文全流程 skill 包：扫榜选材、拆解爆款、大纲细纲、长篇设定与伏笔追踪、短篇反转、去AI味与封面生成，适配 Claude Code / Codex / Antigravity / OpenCode 等 ｜ Agent skill pack for writing Chinese web novels",
   "language": "Python"
  },
  "zerobrewhq/zerobrew": {
