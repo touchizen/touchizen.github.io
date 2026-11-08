@@ -399,6 +399,10 @@
   "description": "The agent-native LLM router for autonomous agents. Every frontier model behind one wallet, <1ms local routing, USDC payments on Base & Solana via x402.",
   "language": "TypeScript"
  },
+ "BlueHeisenberg/SCSKiller": {
+  "description": "Kill shader compilation stutter before you play. Compiles your games' shaders into the GPU driver's cache ahead of time. Windows, NVIDIA and AMD.",
+  "language": "C#"
+ },
  "BraveOPotato/FckSignups": {
   "description": "A list of tools that are open-source, in-browser, and require no-signups!",
   "language": "TypeScript"
@@ -440,7 +444,7 @@
   "language": "C++"
  },
  "CYQawa/YunX": {
-  "description": "✨一个安卓 网盘解析 + 视频平台解析 下载app✨",
+  "description": "YunX云析 ✨一个安卓 网盘解析 + 视频平台解析 下载app✨",
   "language": "Kotlin"
  },
  "CalvinXKY/InfraTech": {
@@ -613,7 +617,7 @@
  },
  "DeanChensj/jiangshan-map": {
   "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 164 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
-  "language": "JavaScript"
+  "language": "HTML"
  },
  "DefinitelyTyped/DefinitelyTyped": {
   "description": "The repository for high quality TypeScript type definitions.",
@@ -710,6 +714,10 @@
  "Edge0-AI/Edge0": {
   "description": "Run 35B MoE models in ~2.5 GB of RAM. Weights stream from SSD; a trained router predicts loads a step ahead. Mac, iPhone, Android, Windows supported",
   "language": "Python"
+ },
+ "Eglantine-Community/Eglantine": {
+  "description": "VERY experimental Nintendo Switch 2 emulator",
+  "language": "C++"
  },
  "Egonex-AI/Understand-Anything": {
   "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
@@ -1695,6 +1703,10 @@
   "description": "OpenMinis — The AI Agent app across platforms. Fully free and open source.",
   "language": "Swift"
  },
+ "OpenMontageInc/OpenMontage": {
+  "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+  "language": "Python"
+ },
  "OpenSelena/omniget": {
   "description": "Open-source download manager for courses (Udemy/Hotmart), YouTube, music & 1,800+ sites. Built with Tauri 2.0, Rust & Svelte.",
   "language": "Rust"
@@ -2084,7 +2096,7 @@
   "language": "Rust"
  },
  "TableProApp/TablePro": {
-  "description": "Free and open source database client built natively for developers",
+  "description": "Free, open-source native database client for macOS, Linux, iPhone and iPad.",
   "language": "Swift"
  },
  "TabularisDB/tabularis": {
@@ -2484,7 +2496,7 @@
   "language": "Python"
  },
  "abue-ammar/tinycast": {
-  "description": "Tinycast — a tiny, fully native macOS launcher, hotkeys, and clipboard history.",
+  "description": "A native macOS launcher for everyday productivity. Lightweight and open source.",
   "language": "Swift"
  },
  "accomplish-ai/coworker": {
@@ -3375,6 +3387,10 @@
   "description": "韩先凯的人生进阶指南 AI时代 中英双语终身学习指南：AI、学习 、创业、财富、爱情与人生",
   "language": "JavaScript"
  },
+ "byted-technologies/Coldimail": {
+  "description": "Intelligent faculty outreach and research matching for prospective graduate applicants",
+  "language": null
+ },
  "bytedance/UI-TARS-desktop": {
   "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
   "language": "TypeScript"
@@ -3942,6 +3958,10 @@
  "derailed/k9s": {
   "description": "🐶 Kubernetes CLI To Manage Your Clusters In Style!",
   "language": "Go"
+ },
+ "designfuchen/word-atlas": {
+  "description": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
+  "language": "TypeScript"
  },
  "deta/surf": {
   "description": "Personal AI Notebooks. Organize files & webpages and generate notes from them. Open source, local & open data, open model choice (incl. local).",
@@ -5070,6 +5090,10 @@
  "huangruiteng/loopx": {
   "description": "Long-horizon agent control plane for durable, governed work across Codex, Claude Code, and other harnesses.",
   "language": "Python"
+ },
+ "huggingface/agents-course": {
+  "description": "This repository contains the Hugging Face Agents Course. ",
+  "language": "MDX"
  },
  "huggingface/diffusers": {
   "description": "🤗 Diffusers: State-of-the-art diffusion models for image, video, and audio generation in PyTorch.",
@@ -7395,6 +7419,10 @@
   "description": "Complete container management platform",
   "language": "Go"
  },
+ "ranxianglei/billion-context": {
+  "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
+  "language": "TypeScript"
+ },
  "rapid7/metasploit-framework": {
   "description": "Metasploit Framework",
   "language": "Ruby"
@@ -8553,7 +8581,7 @@
  },
  "ultralytics/yolov5": {
   "description": "Ultralytics YOLOv5 in PyTorch for object detection, instance segmentation, classification, training, and export.",
-  "language": null
+  "language": "Python"
  },
  "ultraworkers/claw-code": {
   "description": "An agent-managed museum exhibit, built in Rust with Gajae-Code / LazyCodex — developed and maintained with no human intervention.",
@@ -9294,6 +9322,10 @@
  "zloirock/core-js": {
   "description": "Standard Library",
   "language": "JavaScript"
+ },
+ "zortos293/Lichii": {
+  "description": "VERY experimental Nintendo Switch 2 emulator",
+  "language": "C++"
  },
  "zsh-users/zsh-autosuggestions": {
   "description": "Fish-like autosuggestions for zsh",
