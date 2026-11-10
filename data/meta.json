@@ -713,7 +713,7 @@
  },
  "Edge0-AI/Edge0": {
   "description": "Run 35B MoE models in ~2.5 GB of RAM. Weights stream from SSD; a trained router predicts loads a step ahead. Mac, iPhone, Android, Windows supported",
-  "language": "Python"
+  "language": "C++"
  },
  "Eglantine-Community/Eglantine": {
   "description": "VERY experimental Nintendo Switch 2 emulator",
@@ -1635,6 +1635,10 @@
   "description": "한국인을 위한 스킬 모음집 - 에이전트를 한국인으로",
   "language": "JavaScript"
  },
+ "NotRexed/Hookshot": {
+  "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+  "language": "C++"
+ },
  "NousResearch/hermes-agent": {
   "description": "The agent that grows with you",
   "language": "Python"
@@ -1737,7 +1741,7 @@
  },
  "OrchestratorInc/agent-orchestrator": {
   "description": "Plan, run and supervise fleets of agents from task to merged PR. Desktop (macOS, Windows, Linux) + iPhone & Android apps.  Supports Claude Code, Codex & 35+ coding agents.",
-  "language": "TypeScript"
+  "language": "Go"
  },
  "Orkas-AI/Orkas": {
   "description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled automations and connectors. Free app for macOS & Windows; built-in models or your own keys.",
@@ -2783,6 +2787,10 @@
   "description": "",
   "language": "Kotlin"
  },
+ "anefzaoui/misterdownloadmanager": {
+  "description": "misterdownloadmanager: The ultimate open-source, clean-room download manager written from scratch in pure Rust for Windows, Mac, and Linux",
+  "language": "Rust"
+ },
  "angular/angular": {
   "description": "Deliver web apps with confidence 🚀",
   "language": "TypeScript"
@@ -3601,7 +3609,7 @@
  },
  "clash-verge-rev/clash-verge-rev": {
   "description": "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience",
-  "language": "TypeScript"
+  "language": "Rust"
  },
  "clashbk/clash": {
   "description": "Clash官网各版本Clash下载地址及备份下载地址",
@@ -5871,6 +5879,10 @@
   "description": "OpenClaw: Use All Major AI Models NO API Token! Claude/ChatGPT/Gemini/DeepSeek/Doubao/Grok/Qwen/Manus/Kimi",
   "language": "TypeScript"
  },
+ "liquidslr/leetcode-company-wise-problems": {
+  "description": "Lists of company wise questions. Every csv file in the companies directory corresponds to a list of questions on leetcode for a specific company based on the leetcode company tags. Updated as of 20 Oct, 2025",
+  "language": null
+ },
  "lissy93/web-check": {
   "description": "🕵️‍♂️ All-in-one OSINT tool for analysing any website",
   "language": "TypeScript"
@@ -6061,7 +6073,7 @@
  },
  "markedjs/marked": {
   "description": "A markdown parser and compiler. Built for speed.",
-  "language": "JavaScript"
+  "language": "TypeScript"
  },
  "marktext/marktext": {
   "description": "📝A simple and elegant markdown editor, available for Linux, macOS and Windows.",
@@ -7407,6 +7419,10 @@
   "description": "🚀🚀🚀A faster, better and more stable Redis desktop manager [GUI client], compatible with Linux, Windows, Mac.",
   "language": "JavaScript"
  },
+ "qybaihe/bla": {
+  "description": "🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against AI reverse-engineering agents like REA. Poison -> Exhaust -> Hallucinate.",
+  "language": "TypeScript"
+ },
  "radareorg/radare2": {
   "description": "UNIX-like reverse engineering framework and command-line toolset",
   "language": "C"
@@ -7576,7 +7592,7 @@
   "language": "HTML"
  },
  "rlaope/oh-my-hermes": {
-  "description": "⚚ The coding harness with Hermes Agent wired into IDE.",
+  "description": "⚚ The ultrawork agent with AI coworkers wired into you",
   "language": "Python"
  },
  "rmyndharis/OpenWA": {
@@ -7884,7 +7900,7 @@
   "language": "Shell"
  },
  "sickn33/agentic-awesome-skills": {
-  "description": "2,926+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
+  "description": "2,955+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
   "language": "Python"
  },
  "siddharthvaddem/openscreen": {
@@ -8080,7 +8096,7 @@
   "language": "Rust"
  },
  "storytold/cadcraft": {
-  "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
+  "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room CAD application in pure Rust",
   "language": "Rust"
  },
  "storytold/craft-anything": {
@@ -8092,15 +8108,15 @@
   "language": "Rust"
  },
  "storytold/deckcraft": {
-  "description": "Presentations and slide shows: an open-source, clean-room reimplementation of Microsoft PowerPoint in pure Rust. Part of the ArtCraft Crafting Apps.",
+  "description": "DeckCraft: presentations and slide shows; an open-source, clean-room presentation app in pure Rust. Part of the ArtCraft Crafting Apps.",
   "language": "Rust"
  },
  "storytold/designcraft": {
-  "description": "DesignCraft: An open-source page and layout design editor written by scratch in pure Rust",
+  "description": "DesignCraft: An open-source page and layout design editor written from scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/effectcraft": {
-  "description": "EffectCraft: An open-source motion graphics and compositing tool written by scratch in pure Rust",
+  "description": "EffectCraft: An open-source motion graphics and compositing tool written from scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/figcraft": {
@@ -8108,31 +8124,31 @@
   "language": "Rust"
  },
  "storytold/filmcraft": {
-  "description": "FilmCraft: An open-source, nonlinear video editor written by scratch in pure Rust",
+  "description": "FilmCraft: An open-source, nonlinear video editor written from scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/gridcraft": {
-  "description": "GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust. By ArtCraft.",
+  "description": "GridCraft: an open-source, clean-room spreadsheet in pure Rust. By ArtCraft.",
   "language": "Rust"
  },
  "storytold/lightcraft": {
-  "description": "LightCraft: An open-source non-destructive photo editor written by scratch in pure Rust",
+  "description": "LightCraft: An open-source non-destructive photo editor written from scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/pdfcraft": {
-  "description": "PdfCraft: An open-source PDF reader and editor written by scratch in pure Rust",
+  "description": "PdfCraft: An open-source PDF reader and editor written from scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/photocraft": {
-  "description": "PhotoCraft: An open-source, photo editor written by scratch in pure Rust",
+  "description": "PhotoCraft: An open-source photo editor written from scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/vectorcraft": {
-  "description": "VectorCraft: An open-source, vector art tool written by scratch in pure Rust",
+  "description": "VectorCraft: An open-source vector art tool written from scratch in pure Rust",
   "language": "Rust"
  },
  "storytold/wordcraft": {
-  "description": "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
+  "description": "WordCraft: an open-source, clean-room word processor in pure Rust",
   "language": "Rust"
  },
  "straight-tamago/misaka26": {
