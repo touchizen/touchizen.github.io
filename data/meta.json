@@ -411,6 +411,10 @@
   "description": "A list of tools that are open-source, in-browser, and require no-signups!",
   "language": "TypeScript"
  },
+ "BryceYuuu/RUN": {
+  "description": "RUN · 润：中国护照持有人的海外移居手册。欧洲 36 国 110 条移民路线 + 13 个主要移民地区：数字游民签证、欧盟蓝卡、技术移民、留学转工作、创业自雇、投资居留，每条附官方来源，持续更新。",
+  "language": "Python"
+ },
  "BuilderIO/agent-native": {
   "description": "A framework for building agentic apps",
   "language": "TypeScript"
@@ -1247,6 +1251,10 @@
   "description": "一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。",
   "language": "TypeScript"
  },
+ "KKKKhazix/agent-autoloop": {
+  "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+  "language": "TypeScript"
+ },
  "KKKKhazix/human-writing": {
   "description": "让 AI 写的中文读起来像一个具体的人在说话。通用创作与改稿 Skill，开箱即用。",
   "language": "Python"
@@ -1358,6 +1366,10 @@
  "Leey21/awesome-ai-research-writing": {
   "description": "Elevate your AI research writing, no more tedious polishing ✨ ",
   "language": null
+ },
+ "Leonxlnx/earshot": {
+  "description": "Ears for coding agents: let AI hear, review and make sound. CPU-only, open source.",
+  "language": "Python"
  },
  "Leonxlnx/taste-skill": {
   "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
@@ -1485,7 +1497,7 @@
  },
  "Minireel/HGhub": {
   "description": "YellowFruit third-party client",
-  "language": "TypeScript"
+  "language": null
  },
  "MinishLab/semble": {
   "description": "Fast and Accurate Code Search for Agents. Uses 99% fewer tokens than grep+read",
@@ -2090,6 +2102,10 @@
  "SuanmoSuanyangTechnology/MemoryBear": {
   "description": "MemoryBear Equip AI with human-like memory capability",
   "language": "Python"
+ },
+ "SunshineStream/Sunshine": {
+  "description": "Self-hosted game stream host for Moonlight.",
+  "language": "C++"
  },
  "SurgeDM/Surge": {
   "description": "Blazing fast TUI download manager built in Go for power users",
@@ -4167,6 +4183,10 @@
   "description": "Manually curated collection of resources for frontend web developers.",
   "language": null
  },
+ "e2e-inc/e2e": {
+  "description": "Next generation e2e testing framework for web and mobile apps.",
+  "language": "TypeScript"
+ },
  "earendil-works/pi": {
   "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
   "language": "TypeScript"
@@ -5107,6 +5127,10 @@
   "description": "🥧 HTTPie CLI  — modern, user-friendly command-line HTTP client for the API era. JSON support, colors, sessions, downloads, plugins & more.",
   "language": "Python"
  },
+ "huamidev/GestaltX": {
+  "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups, and support for 7 languages.",
+  "language": "Swift"
+ },
  "huangruiteng/loopx": {
   "description": "Long-horizon agent control plane for durable, governed work across Codex, Claude Code, and other harnesses.",
   "language": "Python"
@@ -5326,6 +5350,10 @@
  "jamiepine/voicebox": {
   "description": "The open-source AI voice studio. Clone, dictate, create.",
   "language": "Python"
+ },
+ "janestreet/agent_skills": {
+  "description": "Agent skills",
+  "language": null
  },
  "janhq/jan": {
   "description": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer.",
@@ -5666,6 +5694,10 @@
  "krahets/hello-algo": {
   "description": "《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现",
   "language": "Python"
+ },
+ "kuafuai/andee": {
+  "description": "Andee lives on your phone or Mac and uses any app like you do—no integrations, no root, any model; memory and passwords never leave your device | Andee 住进你的手机或 Mac，像你一样操作任何 App——无需集成、无需 Root、支持任意模型，记忆和密码绝不离开设备。",
+  "language": "Kotlin"
  },
  "kubernetes/kubernetes": {
   "description": "Production-Grade Container Scheduling and Management",
@@ -6671,6 +6703,10 @@
   "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
   "language": "TypeScript"
  },
+ "nexu-io/openmotion": {
+  "description": "🎬 Reverse engineering for any video. The first full-stack agentic video generator. Code video with HTML: recreate, edit and render in your local agent. 🔑 BYOA + BYOK · Free & open source · Motion.md · Images, Video, Music & Voice.",
+  "language": "TypeScript"
+ },
  "ngosang/trackerslist": {
   "description": "Updated list of public BitTorrent trackers",
   "language": null
@@ -7045,7 +7081,7 @@
  },
  "opensandbox-group/OpenSandbox": {
   "description": "Secure, Fast, and Extensible Sandbox runtime for AI agents.",
-  "language": "Python"
+  "language": "Go"
  },
  "opentofu/manifesto": {
   "description": "The OpenTF Manifesto expresses concern over HashiCorp's switch of the Terraform license from open-source to the Business Source License (BSL) and calls for the tool's return to a truly open-source license.",
@@ -8951,6 +8987,10 @@
   "description": "冰冷的钱就这样流进我温暖的口袋-游资（UZI）Skills — 让我们欢迎，股海贼王！66位投资大佬帮你看盘 · 22维数据 × 180条量化规则 × 17种机构分析方法 · A股/港股/美股 ",
   "language": "Python"
  },
+ "wdcpclover/ai4paper": {
+  "description": "PDF 全文翻译，保留排版双语对照 · 2.4 亿文献检索一键入库 · 文库知识库问答 · AI 精读论文、综述与思维导图 · 列表直显期刊分区 / 中科院 / JCR / 影响因子 · 免插件网页版 app.ai4paper.pro · 适配 Zotero 7–10",
+  "language": "HTML"
+ },
  "weave-os/router": {
   "description": "Model router for agentic systems. Routes every prompt to the right model in <50ms. Cut costs 40-70% with just an endpoint change.",
   "language": "Go"
@@ -9004,7 +9044,7 @@
   "language": "Python"
  },
  "wuyoscar/GPT-Image2-Skill": {
-  "description": "GPT Image 2/2.5 prompt gallery, image prompt library, agentic skill, and CLI for OpenAI image generation/editing",
+  "description": "GPT Image 2/2.5/2.6 prompt gallery, image prompt library, agentic skill, and CLI for OpenAI image generation/editing",
   "language": "Python"
  },
  "x1xhlol/system-prompts-and-models-of-ai-tools": {
@@ -9116,7 +9156,7 @@
   "language": "JavaScript"
  },
  "yc-software/qm": {
-  "description": "Multiplayer agent harness for work.",
+  "description": "Multiplayer agent harness for teams",
   "language": "TypeScript"
  },
  "ycccccccy/echotrace": {
