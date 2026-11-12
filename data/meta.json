@@ -103,6 +103,10 @@
   "description": "The system of action for AI-native cybersecurity—where intent becomes governed execution, evidence becomes operational memory, and every operation improves the next.",
   "language": "Go"
  },
+ "AIScientists-Dev/academic-humanizer": {
+  "description": "Strip AI-writing tells from papers and grant proposals (NSF/NIH), while keeping scholarly voice and tying claims to evidence. A skill for Claude Code, Codex, and MorphMind.",
+  "language": null
+ },
  "ARahim3/DigUp": {
   "description": "Search your computer by what's in your files: photos, PDFs, documents, recordings, videos and code. On-device on Mac, Windows and Linux, built on Google DeepMind's EmbeddingGemma 2.",
   "language": "Swift"
@@ -975,6 +979,10 @@
   "description": "A repo for jailbreaking various LLMs, mainly Claude",
   "language": null
  },
+ "GoogleChrome/modern-web-guidance": {
+  "description": "Keep your coding agent up to date with the latest web best practices",
+  "language": null
+ },
  "GoogleChromeLabs/squoosh": {
   "description": "Make images smaller using best-in-class codecs, right in the browser.",
   "language": "TypeScript"
@@ -1232,7 +1240,7 @@
   "language": "Go"
  },
  "JuneYaooo/rea-video": {
-  "description": "Reverse-engineer any video, shot by shot: filmed, AI-generated or coded, and how to remake it. 逆向一切视频，逐个镜头看是拍的、AI 生成的还是代码做的，再告诉你怎么复刻。",
+  "description": "Reverse-engineer any video, shot by shot: filmed, AI-generated or coded, and how to remake it. Breakdowns in the open VIDEO.md format. 逆向一切视频，逐个镜头看是拍的、AI 生成的还是代码做的，再告诉你怎么复刻；拆解结果按 VIDEO.md 格式输出。",
   "language": "Python"
  },
  "JustAResearcher/gpu-unlock-ada": {
@@ -1753,7 +1761,7 @@
  },
  "OrchestratorInc/agent-orchestrator": {
   "description": "Plan, run and supervise fleets of agents from task to merged PR. Desktop (macOS, Windows, Linux) + iPhone & Android apps.  Supports Claude Code, Codex & 35+ coding agents.",
-  "language": "Go"
+  "language": "TypeScript"
  },
  "Orkas-AI/Orkas": {
   "description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled automations and connectors. Free app for macOS & Windows; built-in models or your own keys.",
@@ -2608,7 +2616,7 @@
   "language": "Jupyter Notebook"
  },
  "agno-agi/agno": {
-  "description": "The self-driving agent platform",
+  "description": "The self-managing agent platform",
   "language": "Python"
  },
  "ai-boost/awesome-harness-engineering": {
@@ -3692,7 +3700,7 @@
   "language": "TypeScript"
  },
  "codewhale-hq/Codewhale": {
-  "description": "Open-source agent for the terminal written in Rust. Use any provider or model. Issues & PRs always welcome",
+  "description": "An open-source coding agent for your terminal, written in Rust. It works with any model, can split one task across several agents, and every line of it is yours to read.",
   "language": "Rust"
  },
  "colbymchenry/codegraph": {
@@ -4596,7 +4604,7 @@
   "language": "Python"
  },
  "gamedev-skills/awesome-gamedev-agent-skills": {
-  "description": "77 game-dev skills for AI coding agents — Godot, Unity, Unreal, Phaser, PixiJS, three.js, Bevy, pygame, LÖVE, Roblox. Portable SKILL.md Agent Skills (the format Anthropic launched as Claude Skills), with a router that loads the right skill for your engine and task. Runs in Claude Code, Cursor, Kiro, Codex, Copilot, Gemini CLI and more.",
+  "description": "Make games with your AI coding agent: 79 game-dev skills and a router for Godot, Unity, Unreal, Roblox, three.js, Phaser and 6 more engines. Checked on the real engines.",
   "language": "Python"
  },
  "garinasset/leak-check": {
@@ -5128,7 +5136,7 @@
   "language": "Python"
  },
  "huamidev/GestaltX": {
-  "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups, and support for 7 languages.",
+  "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
   "language": "Swift"
  },
  "huangruiteng/loopx": {
@@ -5400,7 +5408,7 @@
   "language": "Rust"
  },
  "jeecgboot/JeecgBoot": {
-  "description": "【AI 时代的业务系统基座】企业级 AI 低代码平台：权限、多租户、工作流、报表、大屏、AI 知识库等通用能力开箱即用，AI 只需生成业务差异部分。AI Skills 一句话生成完整系统——建表、前后端代码、菜单权限、BPM 流程、表单、报表、大屏全自动。内置 AI 应用平台（聊天、知识库、流程编排、MCP），兼容主流大模型。Java + Vue3，支持单体/微服务与信创国产化。",
+  "description": "一款免费开源的 AI 低代码平台，也是 AI 时代构建复杂业务系统的开源基座！权限、多租户、工作流、报表、大屏、AI 知识库等通用能力开箱即用，AI 只需生成业务差异部分。AI Skills 一句话生成完整系统——建表、前后端代码、菜单权限、BPM 流程、表单、报表、大屏全自动。内置 AI 应用平台（聊天、知识库、流程编排、MCP），兼容主流大模型",
   "language": "Java"
  },
  "jekyll/jekyll": {
@@ -5764,7 +5772,7 @@
   "language": "Python"
  },
  "langfuse/langfuse": {
-  "description": "🪢 Open source agent evals & observability: Trace, evaluate, and improve LLM applications with one open platform.",
+  "description": "🪢 Open source AI engineering platform: AI Gateway, agent observability, evals, and prompt/skill management, built on OpenTelemetry. One open platform for every AI call and every agent. Self-host or use Langfuse Cloud.",
   "language": "TypeScript"
  },
  "langgenius/dify": {
@@ -5820,7 +5828,7 @@
   "language": null
  },
  "lemomo-ai/lemo-opuscar": {
-  "description": "A toolbox of film styles made in code for Claude Code: 66 ready to use, and your own. Each style is a style prompt plus a demo film made entirely in code by Claude Opus 5.5, with no video model. By Lemomo. · 一套用代码做片的风格工具箱：66 种现成风格，也能做出你自己的",
+  "description": "A toolbox of film styles made in code for Claude Code: 99 ready to use, and your own. Each style is a style prompt plus a demo film made entirely in code by Claude Opus 5.5, with no video model. By Lemomo. · 一套用代码做片的风格工具箱：99 种现成风格，也能做出你自己的",
   "language": "JavaScript"
  },
  "lemony-ai/cascadeflow": {
@@ -6467,6 +6475,10 @@
   "description": "深度学习经典、新论文逐段精读",
   "language": null
  },
+ "mmparko/dsh-purge": {
+  "description": "DeepSeek Harness 破甲 (mirror of YuJunZhiXue/dsh-purge) — 上游即将删库，此为本仓库全量镜像：含全部分支/73 个 tag/完整提交历史。原作者署名与二开要求见 README 署名章节。",
+  "language": "JavaScript"
+ },
  "mnfst/awesome-free-llm-apis": {
   "description": "List of Permanent Free LLM API  (API Keys)",
   "language": "JavaScript"
@@ -6704,7 +6716,7 @@
   "language": "TypeScript"
  },
  "nexu-io/openmotion": {
-  "description": "🎬 Reverse engineering for any video. The first full-stack agentic video generator. Code video with HTML: recreate, edit and render in your local agent. 🔑 BYOA + BYOK · Free & open source · Motion.md · Images, Video, Music & Voice.",
+  "description": "The open-source full-stack studio for Opus 5.5 motion video. Reverse engineering for any video. Code video with HTML: recreate, edit and render. BYOA + BYOK · Motion.md · Images, Video, Music & Voice.",
   "language": "TypeScript"
  },
  "ngosang/trackerslist": {
@@ -6752,7 +6764,7 @@
   "language": "Python"
  },
  "nirholas/fresh-start": {
-  "description": "The original nirholas/claude-code before DMCA and take down. Once everything is cleared, it will return. Working with Anthropic and Github to get everything back.",
+  "description": "Record of the former nirholas/claude-code mirror: the DMCA, the leak timeline and the x402 correction. No Anthropic code",
   "language": null
  },
  "nlohmann/json": {
@@ -6861,6 +6873,10 @@
  },
  "obra/superpowers": {
   "description": "An agentic skills framework & software development methodology that works.",
+  "language": "Shell"
+ },
+ "obsidianmd/obsidian-skills": {
+  "description": "Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.",
   "language": "Shell"
  },
  "obsproject/obs-studio": {
@@ -8300,7 +8316,7 @@
   "language": "Rust"
  },
  "tanweai/pua": {
-  "description": "你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.",
+  "description": "你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement. | Lead: Minwei Wang (https://www.minwei.wang · ORCID: 0009-0002-7976-4689 · DOI: 10.5281/zenodo.24156132)",
   "language": "Python"
  },
  "taosdata/TDengine": {
@@ -8398,6 +8414,10 @@
  "tiann/hapi": {
   "description": "App for Codex / Claude Code / Pi / OpenCode / Kimi Code / Grok Build, vibe coding anytime, anywhere",
   "language": "TypeScript"
+ },
+ "tidain/YunX-Desktop": {
+  "description": "YunX（云析）的官方 windows 桌面端",
+  "language": "Kotlin"
  },
  "tigerless-labs/agent-memory": {
   "description": "Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an independent sleep-time Manage layer. Claude Code and Codex share one store. No API key.",
@@ -9032,7 +9052,7 @@
   "language": "TypeScript"
  },
  "withcoral/coral": {
-  "description": "The execution layer for AI agents. Act across more of your systems with precise controls: safer, faster and more efficient than MCP tools and gateways.",
+  "description": "Execution rails for agents. Equip your AI to work with sensitive enterprise systems. Give agents precise permissions and custom tools that work faster with fewer tokens.",
   "language": "Rust"
  },
  "withmarbleapp/os-taxonomy": {
