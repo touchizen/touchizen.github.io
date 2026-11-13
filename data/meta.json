@@ -624,7 +624,7 @@
   "language": "TypeScript"
  },
  "DeanChensj/jiangshan-map": {
-  "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 164 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+  "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
   "language": "JavaScript"
  },
  "DefinitelyTyped/DefinitelyTyped": {
@@ -720,7 +720,7 @@
   "language": "Python"
  },
  "Edge0-AI/Edge0": {
-  "description": "Run 35B MoE models in ~2.5 GB of RAM. Weights stream from SSD; a trained router predicts loads a step ahead. Mac, iPhone, Android, Windows supported",
+  "description": "Device-native foundation models: 145B on a laptop, 35B on a phone. Latent MoE, SSD-streamed weights, a router that predicts loads a step ahead. Mac, iPhone, Android, Windows.",
   "language": "C++"
  },
  "Eglantine-Community/Eglantine": {
@@ -1371,6 +1371,10 @@
   "description": "🍃 number one JavaScript library for interactive maps 🇺🇦",
   "language": "JavaScript"
  },
+ "Lee-xeo/Claude-Cage": {
+  "description": "Cage：为 Claude 特化的轻量化虚拟机，彻底杜绝网络泄露。多平台适配，支持多账号管理、远程部署、移动端操控。",
+  "language": "Go"
+ },
  "Leey21/awesome-ai-research-writing": {
   "description": "Elevate your AI research writing, no more tedious polishing ✨ ",
   "language": null
@@ -1976,7 +1980,7 @@
   "language": "Python"
  },
  "RocketChat/Rocket.Chat": {
-  "description": "The Secure CommsOS™ for mission-critical operations",
+  "description": "Interoperable by design. Governed by you. Open-source, secure platform for messaging, voice, video and governed AI, built for defense and government.",
   "language": "TypeScript"
  },
  "RyanCodrai/turbovec": {
@@ -3142,6 +3146,10 @@
  "awesomedata/awesome-public-datasets": {
   "description": "A topic-centric list of HQ open datasets.",
   "language": null
+ },
+ "aws/aws-emulator": {
+  "description": "AWS Emulator is a local emulator of the AWS APIs.",
+  "language": "Rust"
  },
  "awslabs/aidlc-workflows": {
   "description": "AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rules for AI coding agents",
@@ -6940,7 +6948,7 @@
   "language": "Python"
  },
  "oomol-lab/open-connector": {
-  "description": "Open-source auth gateway connecting 1500+ SaaS providers to AI agents through SDK, CLI, MCP, HTTP, and OpenAPI.",
+  "description": "Open-source auth gateway connecting 1700+ SaaS providers to AI agents through SDK, CLI, MCP, HTTP, and OpenAPI.",
   "language": "TypeScript"
  },
  "op7418/CodePilot": {
@@ -7316,7 +7324,7 @@
   "language": "Go"
  },
  "pingdotgg/t3code": {
-  "description": "",
+  "description": "The best way to control Claude Code, Codex and more from any computer or phone",
   "language": "TypeScript"
  },
  "pixel-agents-hq/pixel-agents": {
@@ -7500,7 +7508,7 @@
   "language": "Go"
  },
  "ranxianglei/billion-context": {
-  "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
+  "description": "A context-compression plugin for month-long single sessions (billions of tokens)  and small context windows (a 100K context is enough) .上下文压缩插件，月级长会话， 兼顾小窗口(100k上下文足矣) . billion-context is all you need",
   "language": "TypeScript"
  },
  "rapid7/metasploit-framework": {
@@ -8324,7 +8332,7 @@
   "language": "C"
  },
  "tashfeenahmed/freellmapi": {
-  "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+  "description": "10.1 billion tokens per month. 87 free LLM providers. 1,313 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
   "language": "TypeScript"
  },
  "tauri-apps/tauri": {
@@ -8484,7 +8492,7 @@
   "language": "Rust"
  },
  "tonhowtf/omniget": {
-  "description": "Udemy & Hotmart course downloader, YouTube downloader (yt-dlp GUI, 1,800+ sites) + desktop app for AI agents: Claude Code, Codex, Gemini CLI, Ollama. Permissions, undo, jobs, loops until tests pass, MCP server, 156 tools, course player. Free and open source for Windows, macOS and Linux. No terminal. Your files stay on your computer.",
+  "description": "Free, open source video downloader for Windows, macOS and Linux that AI agents can drive. Downloads from YouTube, Instagram, TikTok, X, Reddit, torrents and the sites yt-dlp supports. Its MCP server lets Claude Code, Cursor and Codex queue downloads, and it runs Claude Code, Codex, Gemini CLI and Ollama as agents.",
   "language": "Rust"
  },
  "tonsky/FiraCode": {
