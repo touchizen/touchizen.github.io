@@ -555,6 +555,10 @@
   "description": "Your always-on AI coworkers that move between text, calls, and Slack.",
   "language": "TypeScript"
  },
+ "CopilotKit/openfuse": {
+  "description": "A personal agent with a browser, terminal, files, and work that keeps going built with CopilotKit and AG-UI.",
+  "language": "TypeScript"
+ },
  "CopilotKit/openmuse": {
   "description": "A personal agent with a browser, terminal, files, and work that keeps going built with CopilotKit and AG-UI.",
   "language": "TypeScript"
@@ -855,6 +859,10 @@
   "description": "中国软件著作权申请材料 生成器 Skills，本 Skills 通过阅读本地项目，自动生成全套 .docx 软著申请材料，全开源，无须再付费购买任何软著申请服务",
   "language": "Python"
  },
+ "ForeactLabs/OpenExecutive": {
+  "description": "AI-powered virtual executive team — a single coherent executive persona backed by 8 specialist agents (FastAPI + Next.js).",
+  "language": "Python"
+ },
  "Forget-C/Jellyfish": {
   "description": "An end-to-end production workspace for AI-generated short dramas. From script input to structured storyboarding, consistency management, shot preparation, video generation, and export.",
   "language": "Python"
@@ -982,6 +990,10 @@
  "GoogleChrome/modern-web-guidance": {
   "description": "Keep your coding agent up to date with the latest web best practices",
   "language": null
+ },
+ "GoogleChrome/modern-web-guidance-src": {
+  "description": "Keep your coding agent up to date with the latest web best practices",
+  "language": "TypeScript"
  },
  "GoogleChromeLabs/squoosh": {
   "description": "Make images smaller using best-in-class codecs, right in the browser.",
@@ -1226,6 +1238,10 @@
  "JimLiu/baoyu-skills": {
   "description": "",
   "language": "TypeScript"
+ },
+ "JimLiu/open-artifacts": {
+  "description": "Run Claude Design locally as an Agent Skill — Cursor, Codex, DeepSeek Harness & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus or Claude.",
+  "language": "JavaScript"
  },
  "Jon-Becker/prediction-market-analysis": {
   "description": "A framework for collecting and analyzing prediction market data, including the largest publicly available dataset of Polymarket and Kalshi market and trade data.",
@@ -1742,6 +1758,10 @@
  "OpenMontageInc/OpenMontage": {
   "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
   "language": "Python"
+ },
+ "OpenSelena/libreget": {
+  "description": "Open-source download manager for courses (Udemy/Hotmart), YouTube, music & 1,800+ sites. Built with Tauri 2.0, Rust & Svelte.",
+  "language": "Rust"
  },
  "OpenSelena/omniget": {
   "description": "Open-source download manager for courses (Udemy/Hotmart), YouTube, music & 1,800+ sites. Built with Tauri 2.0, Rust & Svelte.",
@@ -3929,7 +3949,7 @@
  },
  "deanpeters/Product-Manager-Skills": {
   "description": "Product Management skills framework built on battle-tested methods for Claude Code, Cowork, Codex, and AI agents.",
-  "language": "Shell"
+  "language": "Python"
  },
  "debpalash/VoiceStudio": {
   "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
@@ -7480,7 +7500,7 @@
   "language": "JavaScript"
  },
  "qybaihe/bla": {
-  "description": "🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against AI reverse-engineering agents like REA. Poison -> Exhaust -> Hallucinate.",
+  "description": "🛡️ BLA (bla-agents / Blind LLM Agents) — Open-source Blue Defense MCP server & CLI protecting JS/TS, Electron ASAR, WASM, Python, Native Binaries, SQLite, GGUF/Safetensors & Android DEX against AI reverse-engineering agents (REA).",
   "language": "TypeScript"
  },
  "radareorg/radare2": {
@@ -7508,7 +7528,7 @@
   "language": "Go"
  },
  "ranxianglei/billion-context": {
-  "description": "A context-compression plugin for month-long single sessions (billions of tokens)  and small context windows (a 100K context is enough) .上下文压缩插件，月级长会话， 兼顾小窗口(100k上下文足矣) . billion-context is all you need",
+  "description": "A context-compression plugin for month-long single sessions (billions of tokens)  and small context windows (a 100K context is enough), billion-context is all you need .",
   "language": "TypeScript"
  },
  "rapid7/metasploit-framework": {
@@ -8224,7 +8244,7 @@
   "language": "TypeScript"
  },
  "streamlit/streamlit": {
-  "description": "Streamlit — A faster way to build and share data apps.",
+  "description": "Streamlit — The agent-native framework for data apps and dashboards.",
   "language": "Python"
  },
  "strukto-ai/mirage": {
@@ -8492,7 +8512,7 @@
   "language": "Rust"
  },
  "tonhowtf/omniget": {
-  "description": "Free, open source video downloader for Windows, macOS and Linux that AI agents can drive. Downloads from YouTube, Instagram, TikTok, X, Reddit, torrents and the sites yt-dlp supports. Its MCP server lets Claude Code, Cursor and Codex queue downloads, and it runs Claude Code, Codex, Gemini CLI and Ollama as agents.",
+  "description": "A local MCP server that gives your coding agent a desktop toolbox: downloads from YouTube, torrents and every site yt-dlp supports, media conversion, files, chats and system cleanup. One line connects Claude Code, Codex, Cursor or Gemini CLI, and sensitive actions wait for your click. Free and open source for Windows, macOS and Linux.",
   "language": "Rust"
  },
  "tonsky/FiraCode": {
@@ -9157,7 +9177,7 @@
  },
  "xuchonglang/investing-for-beginners": {
   "description": "美股、期权与加密货币知识框架",
-  "language": "JavaScript"
+  "language": null
  },
  "xyflow/xyflow": {
   "description": "React Flow | Svelte Flow - Powerful open source libraries for building node-based UIs with React (https://reactflow.dev) or Svelte (https://svelteflow.dev). Ready out-of-the-box and infinitely customizable.",
