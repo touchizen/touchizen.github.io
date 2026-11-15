@@ -1524,8 +1524,8 @@
   "language": "C#"
  },
  "Minireel/HGhub": {
-  "description": "YellowFruit third-party client",
-  "language": null
+  "description": "Plug-in media player",
+  "language": "Rust"
  },
  "MinishLab/semble": {
   "description": "Fast and Accurate Code Search for Agents. Uses 99% fewer tokens than grep+read",
@@ -2392,7 +2392,7 @@
   "language": null
  },
  "WUBING2023/PaperSpine": {
-  "description": "PaperSpine5 — local-first, evidence-bound paper research, writing, figures, review and delivery. Download: https://wubing2023.github.io/PaperSpine/v5/",
+  "description": "Open-source AI for Science Skill for research agents. Review literature, run analyses, make scientific figures, and deliver editable papers from chat.",
   "language": "Python"
  },
  "Waishnav/devspace": {
@@ -5328,7 +5328,7 @@
   "language": "TypeScript"
  },
  "interplains/Zero-Breach-Toolkit": {
-  "description": "Free, open-source check for traces of mercenary spyware (Pegasus, Predator, Graphite, Candiru and more) on computers, Android phones and iPhone backups. Double-click apps for Windows, Mac and Linux, in 27 languages.",
+  "description": "Free, offline checks for known mercenary spyware on Windows, Mac, Linux, iPhone and Android - plus the doors left open, suspicious links, emails, files and QR codes, your accounts, home network and nearby trackers. Apps with a window, 27 languages. Nothing leaves your computer.",
   "language": "Python"
  },
  "ionic-team/ionic-framework": {
@@ -6008,7 +6008,7 @@
   "language": "Clojure"
  },
  "loopx-project/loopx": {
-  "description": "Turn long-horizon goals into verifiable results. A local-first semantic control plane and research workbench for long-running agent teams, across sessions and runtimes.",
+  "description": "The control plane for 24/7 always-on agents. Turn long-horizon goals into verifiable results across Codex, Claude Code, and custom runtimes—from local SQLite to team scale.",
   "language": "Python"
  },
  "louislam/uptime-kuma": {
@@ -6492,7 +6492,7 @@
   "language": "Python"
  },
  "mksglu/context-mode": {
-  "description": "Free, local plugin that keeps tool output out of your coding agent's context window. Sandbox and SQLite FTS5 search, 99% fewer bytes in context. Works with Claude Code, Codex, Pi, OpenCode, Gemini CLI, Copilot CLI and 4 more agents. Zero telemetry.",
+  "description": "Free, local plugin that keeps tool output out of your coding agent's context window. Sandbox and SQLite FTS5 search, 99% fewer bytes in context. Works with Claude Code, Codex, Pi, OMP, OpenCode, Gemini CLI, Copilot CLI and 4 more agents. Zero telemetry.",
   "language": "JavaScript"
  },
  "mlabonne/llm-course": {
@@ -6906,6 +6906,10 @@
  "obsidianmd/obsidian-skills": {
   "description": "Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.",
   "language": "Shell"
+ },
+ "obsidianmd/pele": {
+  "description": "Renders Mermaid diagrams faster than you'd run from a volcano! 🌋 ",
+  "language": "TypeScript"
  },
  "obsproject/obs-studio": {
   "description": "OBS Studio - Free and open source software for live streaming and screen recording",
@@ -8803,6 +8807,10 @@
   "description": "The official mirror of the V8 Git repository",
   "language": "C++"
  },
+ "vAPI-Network/vapi-network": {
+  "description": "Buyer-controlled client for x402 API payments in USDC on Base.",
+  "language": "TypeScript"
+ },
  "vadimdemedes/ink": {
   "description": "🌈 React for interactive command-line apps",
   "language": "TypeScript"
@@ -8873,6 +8881,10 @@
  },
  "vercel-labs/skills": {
   "description": "The open agent skills tool - npx skills",
+  "language": "TypeScript"
+ },
+ "vercel-labs/ui": {
+  "description": "A library of behaviors for agents to build the next generation of user interfaces.",
   "language": "TypeScript"
  },
  "vercel-labs/zerolang": {
@@ -9036,7 +9048,7 @@
   "language": "Python"
  },
  "wdcpclover/ai4paper": {
-  "description": "PDF 全文翻译，保留排版双语对照 · 2.4 亿文献检索一键入库 · 文库知识库问答 · AI 精读论文、综述与思维导图 · 列表直显期刊分区 / 中科院 / JCR / 影响因子 · 免插件网页版 app.ai4paper.pro · 适配 Zotero 7–10",
+  "description": "Zotero AI 插件(Zotero AI plugin):PDF 全文翻译(双语对照,尽量保持排版)· 划词翻译 · 文库知识库问答 · AI 精读 · 列表直显期刊分区 / 影响因子 · 2.4 亿文献检索一键入库 · 适配 Zotero 7–10 · 免安装网页版 app.ai4paper.pro",
   "language": "HTML"
  },
  "weave-os/router": {
