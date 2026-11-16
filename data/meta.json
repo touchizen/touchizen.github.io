@@ -295,6 +295,10 @@
   "description": "Find the local LLM that actually runs and performs best on your hardware. Ranked by real, recency-aware benchmarks, not parameter count. One command, run it instantly.",
   "language": "Python"
  },
+ "Anil-matcha/Open-Generative-AI": {
+  "description": "Uncensored Open-source alternative to AI video platforms — Free AI image & video generation studio with 800+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
+  "language": "JavaScript"
+ },
  "Anionex/banana-slides": {
   "description": "一站式原生AI PPT生成应用，几分钟内生成一套幻灯片; 支持上传任意模板图片，上传任意素材&智能解析，一句话/大纲/页面描述自动生成PPT，口头修改指定区域、一键导出可编辑ppt、视频等 - An AI-native slides generator based on nano banana/gpt-image🏞️",
   "language": "Python"
@@ -1987,6 +1991,10 @@
   "description": "",
   "language": "Python"
  },
+ "Revivedx/SavageWindRecomp": {
+  "description": "Work-in-progress static recompilation of The Legend of Zelda: Breath of the Wild (Switch, v1.9.0) for Windows and Linux. Bring your own dump: no game files, keys or dumping tools included.",
+  "language": "C"
+ },
  "RightNow-AI/openfang": {
   "description": "Open-source Agent Operating System",
   "language": "Rust"
@@ -2002,6 +2010,10 @@
  "RocketChat/Rocket.Chat": {
   "description": "Interoperable by design. Governed by you. Open-source, secure platform for messaging, voice, video and governed AI, built for defense and government.",
   "language": "TypeScript"
+ },
+ "RoutineMiku/apkstart": {
+  "description": "Windows 上的安卓应用运行器：双击 APK 即装，应用以独立窗口与桌面图标运行，自持 QEMU 运行时",
+  "language": "JavaScript"
  },
  "RyanCodrai/turbovec": {
   "description": "A vector index built on TurboQuant, written in Rust with Python bindings",
@@ -3252,8 +3264,8 @@
   "language": "TypeScript"
  },
  "basketikun/chatgpt2api": {
-  "description": "ChatGPT官网接口纯协议的逆向实现，支持GPT-Image-2模型、文本模型，兼容OpenAI接口协议，在线批量生图/编辑图，号池管理，支持可编辑PPT/PSD文件逆向，支持导入CPA、sub2api号池 、支持接入Cherry  Studio、New Api 等软件",
-  "language": "Python"
+  "description": "ChatGPT 官网接口纯协议逆向实现，Go 语言编写，高并发、低内存、高性能。指纹级请求还原，支持 GPT-Image-2.6 生图/改图、GIF 动图、文本模型与语音合成/转写，兼容 OpenAI 接口协议，在线批量生图，号池管理，支持导入 CPA、sub2api 号池，可接入 Cherry Studio、New API 等软件",
+  "language": "Go"
  },
  "basketikun/infinite-canvas": {
   "description": "面向 AI 创作的开源无限画布工作台，集成 AI 生图、参考图编辑、视频生成、Agent 智能助手、画布编排、对话创作、提示词库与素材管理等能力，支持可视化创作流程与多 Agent 协同工作。兼容 OpenAI 接口生态，支持 chatgpt2api、grok2api、flow2api、newapi 等渠道接入。",
@@ -3805,6 +3817,10 @@
  },
  "crmne/spotifast": {
   "description": "Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.",
+  "language": "Rust"
+ },
+ "crmne/zapfast": {
+  "description": "ZapFast: a fast, native WhatsApp client in Rust and egui",
   "language": "Rust"
  },
  "crosspoint-reader/crosspoint-reader": {
@@ -5055,6 +5071,10 @@
   "description": "A tool for secrets management, encryption as a service, and privileged access management",
   "language": "Go"
  },
+ "haydenschmitty/floorplan": {
+  "description": "See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.",
+  "language": "JavaScript"
+ },
  "headroomlabs-ai/headroom": {
   "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
   "language": "Python"
@@ -5894,6 +5914,10 @@
  "lib-pku/libpku": {
   "description": "贵校课程资料民间整理",
   "language": "TeX"
+ },
+ "libracoder/kiri": {
+  "description": "A small, fast container runtime for macOS, Windows and Linux with free Ngrok alternative",
+  "language": "Rust"
  },
  "libukai/awesome-agent-skills": {
   "description": "Agent Skills 终极指南：快速入门、资源推荐、精选技能与实用工具 ｜The Ultimate Guide to Agent Skills: QuickStart, Resources, Features&Toolkit",
@@ -6744,7 +6768,7 @@
   "language": "TypeScript"
  },
  "nexu-io/openmotion": {
-  "description": "The open-source full-stack studio for Opus 5.5 motion video. Reverse engineering for any video. Code video with HTML: recreate, edit and render. BYOA + BYOK · Motion.md · Images, Video, Music & Voice.",
+  "description": "The open-source Claude Motion & CapCut alternative. Turn a reference video into editable motion graphics with your brand kit. Export MP4s for YouTube, YouTube Shorts, Instagram Reels, and TikTok. A full-stack agentic video studio with 300+ Motion.md guides and support for 22 agents, including Claude Code, Codex, DSH, and WorkBuddy.",
   "language": "TypeScript"
  },
  "ngosang/trackerslist": {
