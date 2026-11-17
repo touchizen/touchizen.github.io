@@ -379,6 +379,10 @@
   "description": "Caffe: a fast open framework for deep learning.",
   "language": "C++"
  },
+ "BaaRai/ARTEX": {
+  "description": "ARTEX - AI autonomous penetration testing system (English translation; upstream: Autumn-27/ARTEX, AGPL-3.0)",
+  "language": "Go"
+ },
  "BehiSecc/awesome-claude-skills": {
   "description": "A curated list of Claude Skills.",
   "language": null
@@ -552,7 +556,7 @@
   "language": "TypeScript"
  },
  "CopilotKit/OpenBot": {
-  "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+  "description": "The open, self-hostable alternative to closed AI bots. Production-ready, fully customizable, and plugs into every stack: any agent, any model, any tool.",
   "language": "TypeScript"
  },
  "CopilotKit/OpenDots": {
@@ -688,7 +692,7 @@
   "language": "TypeScript"
  },
  "Donchitos/Claude-Code-Game-Studios": {
-  "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+  "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 75 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
   "language": "Shell"
  },
  "DopplerHQ/awesome-interview-questions": {
@@ -1860,7 +1864,7 @@
   "language": "Kotlin"
  },
  "Piebald-AI/claude-code-system-prompts": {
-  "description": "All parts of Claude Code's system prompt, 27 builtin tool descriptions, sub agent prompts (Plan/Explore/Task), utility prompts (CLAUDE.md, compact,  statusline, magic docs, WebFetch, Bash cmd, security review, agent creation).  Updated for each Claude Code version.",
+  "description": "All parts of Claude Code's system prompt, builtin tool descriptions, subagent prompts (Plan/Explore/Task), and utility prompts.  Updated for each Claude Code version.",
   "language": "JavaScript"
  },
  "PleasePrompto/notebooklm-skill": {
@@ -2615,6 +2619,10 @@
   "description": "The world's simplest facial recognition api for Python and the command line",
   "language": "Python"
  },
+ "agent-of-empires/agent-of-empires": {
+  "description": "Manage multiple Claude Code, OpenCode agents from either TUI or Web for easy access on mobile. Also supports Mistral Vibe, Codex CLI, Gemini CLI, Pi.dev, Copilot CLI, Factory Droid Coding.",
+  "language": "Rust"
+ },
  "agent-substrate/substrate": {
   "description": "Agent Substrate: the core system",
   "language": "Go"
@@ -3304,7 +3312,7 @@
   "language": "Python"
  },
  "bilawalsidhu/gods-eye-view": {
-  "description": "A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+  "description": "God's Eye View: a spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe. Official site: godseyeview.ai",
   "language": "JavaScript"
  },
  "binaricat/Netcatty": {
@@ -3673,7 +3681,7 @@
  },
  "clash-verge-rev/clash-verge-rev": {
   "description": "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience",
-  "language": "Rust"
+  "language": "TypeScript"
  },
  "clashbk/clash": {
   "description": "Clash官网各版本Clash下载地址及备份下载地址",
@@ -6379,6 +6387,10 @@
   "description": "A programming framework for agentic AI",
   "language": "Python"
  },
+ "microsoft/copilot-sdk": {
+  "description": "To gain access, please finish setting up this repository now at: ",
+  "language": "Java"
+ },
  "microsoft/coreutils": {
   "description": "Coreutils for Windows: Installer & Packaging",
   "language": "Rust"
@@ -7148,7 +7160,7 @@
   "language": "TypeScript"
  },
  "openinterpreter/openinterpreter": {
-  "description": "A coding agent for open models like Kimi K3 and GLM 5.3",
+  "description": "A coding agent for open models like Kimi K3.1 and GLM 5.3",
   "language": "Rust"
  },
  "opensandbox-group/OpenSandbox": {
@@ -7897,7 +7909,7 @@
  },
  "seedds/nxnative": {
   "description": "Switch games running natively on iPhone, iPad and Mac: an NSP folder becomes an unsigned IPA (NSO rewriter, Horizon HLE host, NVN→Metal)",
-  "language": "Python"
+  "language": "Objective-C"
  },
  "serenakeyitan/awesome-notebookLM-prompts": {
   "description": "A curated collection of the strongest NotebookLM slide prompts sourced from the real creative underground . Your go-to resource for AI powerpoint :P",
@@ -8458,6 +8470,10 @@
  "thirdlayerinc/autoagent": {
   "description": "autonomous harness engineering",
   "language": "Python"
+ },
+ "thtbee/nectarlink": {
+  "description": "Your Android phone and your PC, working as one. Windows and Linux. Local-first, end-to-end encrypted, no account.",
+  "language": "Rust"
  },
  "thu-ml/TurboDiffusion": {
   "description": "TurboDiffusion: 100–200× Acceleration for Video Diffusion Models",
@@ -9216,7 +9232,7 @@
   "language": null
  },
  "xyflow/xyflow": {
-  "description": "React Flow | Svelte Flow - Powerful open source libraries for building node-based UIs with React (https://reactflow.dev) or Svelte (https://svelteflow.dev). Ready out-of-the-box and infinitely customizable.",
+  "description": "React Flow | Svelte Flow | Vue Flow - Powerful open source libraries for building node-based UIs with React (https://reactflow.dev), Svelte (https://svelteflow.dev) and Vue (https://vueflow.dev). Ready out-of-the-box and infinitely customizable.",
   "language": "TypeScript"
  },
  "yang0/handraw-style": {
