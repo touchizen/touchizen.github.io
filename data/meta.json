@@ -1260,7 +1260,7 @@
   "language": "Julia"
  },
  "JuliusBrussee/caveman": {
-  "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+  "description": "why use many token when few token do trick. Skill + local proxy for coding agents: shorter answers, smaller tool output, every original recoverable.",
   "language": "Go"
  },
  "JuneYaooo/rea-video": {
@@ -2663,6 +2663,10 @@
   "description": "The self-managing agent platform",
   "language": "Python"
  },
+ "ahujasid/mcp-for-blender": {
+  "description": "Community plugin to control Blender 3D with any LLM of your choice. Not affiliated with the official Blender Foundation.",
+  "language": "Python"
+ },
  "ai-boost/awesome-harness-engineering": {
   "description": "Awesome list for AI agent harness engineering: tools, patterns, evals, memory, MCP, permissions, observability, and orchestration.",
   "language": "Python"
@@ -3083,6 +3087,10 @@
   "description": "Your own search engine",
   "language": "Go"
  },
+ "asciimoo/nogon": {
+  "description": "Your own search engine",
+  "language": "Go"
+ },
  "asdf-vm/asdf": {
   "description": "Extendable version manager with support for Ruby, Node.js, Elixir, Erlang & more",
   "language": "Go"
@@ -3376,7 +3384,7 @@
   "language": "TypeScript"
  },
  "bowenliang123/dsh-context": {
-  "description": "The best DeepSeek Harness plugin for context insight and management, with context dashboard / browser / sidebar and context command, for context statistics, composition, breakdown, evolution details, agent teams, understanding how the context is made of, and how it evolves. 一站式 DeepSeek Harness 上下文可视化插件，Context 面板、浏览器、侧栏、命令，透视上下文组成、演进、压缩、多 Agent等。",
+  "description": "A context insight plugin officially recommended by DeepSeek Harness, for context composition, evolution and Multi-Agent details. DeepSeek Harness官方推荐的上下文洞察插件，透视上下文组成与演进，以及多Agent 协作与通讯。",
   "language": "TypeScript"
  },
  "boykopovar/AnyPS5": {
@@ -4027,6 +4035,10 @@
   "description": "Integrate the DeepSeek API into popular software",
   "language": null
  },
+ "deepseek-ai/chat-demo": {
+  "description": "Chat Demo",
+  "language": "TypeScript"
+ },
  "deepseek-ai/deepseek-harness": {
   "description": "DeepSeek Harness: Everything is a Plugin.",
   "language": "TypeScript"
@@ -4423,6 +4435,10 @@
   "description": "💫 Industrial-strength Natural Language Processing (NLP) in Python",
   "language": "Python"
  },
+ "expo/exact": {
+  "description": "Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI agent can build it, run it, see it, and test it on every one of them.",
+  "language": "Rust"
+ },
  "expo/expo": {
   "description": "An open-source framework for making universal native apps with React. Expo runs on Android, iOS, and the web.",
   "language": "TypeScript"
@@ -4552,7 +4568,7 @@
   "language": "Rust"
  },
  "firecrawl/firecrawl": {
-  "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
+  "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API.",
   "language": "TypeScript"
  },
  "firecrawl/pdf-inspector": {
@@ -5124,7 +5140,7 @@
   "language": "JavaScript"
  },
  "heygen-com/hyperframes": {
-  "description": "Write HTML. Render video. Built for agents.",
+  "description": "AI video you can actually edit. HyperFrames is a free, open-source AI video editor. Describe any video and get a real project you can change down to the frame.",
   "language": "TypeScript"
  },
  "hicccc77/WeFlow": {
@@ -5190,6 +5206,10 @@
  "httpie/cli": {
   "description": "🥧 HTTPie CLI  — modern, user-friendly command-line HTTP client for the API era. JSON support, colors, sessions, downloads, plugins & more.",
   "language": "Python"
+ },
+ "huami-dev/GestaltX": {
+  "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+  "language": "Swift"
  },
  "huamidev/GestaltX": {
   "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
@@ -6388,7 +6408,7 @@
   "language": "Python"
  },
  "microsoft/copilot-sdk": {
-  "description": "To gain access, please finish setting up this repository now at: ",
+  "description": "Multi-platform SDK for integrating GitHub Copilot Agent into apps and services",
   "language": "Java"
  },
  "microsoft/coreutils": {
@@ -6680,7 +6700,7 @@
   "language": "Java"
  },
  "nanocoai/nanoclaw": {
-  "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
+  "description": "Your own always-on AI assistant: self-hosted, open source, lightweight. Each agent runs in its own container on your machine, on the harness you choose (Claude Code, Codex, Cursor, OpenCode). Talk to it from Slack, WhatsApp, Telegram, Discord and more.",
   "language": "TypeScript"
  },
  "naptha/tesseract.js": {
@@ -6728,7 +6748,7 @@
   "language": "TypeScript"
  },
  "netdata/netdata": {
-  "description": "The fastest path to AI-powered full stack observability, even for lean teams.",
+  "description": "Full-stack observability · Metrics · Logs · Traces · Flows · Topology · Infrastructure · APM · NPM · DBM · RUM · Synthetics · Cloud · AI · OpenTelemetry · SNMP · NetFlow/IPFIX/sFlow · IPMI · Redfish · 800+ integrations",
   "language": "Go"
  },
  "netease-youdao/LobsterAI": {
@@ -7000,7 +7020,7 @@
   "language": "TypeScript"
  },
  "onehumanbeing/esp32-iphone-agent": {
-  "description": "Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer account, no jailbreak.",
+  "description": "Manina AI: let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer account, no jailbreak.",
   "language": "Swift"
  },
  "oobabooga/textgen": {
@@ -7388,7 +7408,7 @@
   "language": "TypeScript"
  },
  "pixel-agents-hq/pixel-agents": {
-  "description": "Pixel office.",
+  "description": "A playful way to manage your AI workforce",
   "language": "TypeScript"
  },
  "pixijs/pixijs": {
@@ -7909,7 +7929,7 @@
  },
  "seedds/nxnative": {
   "description": "Switch games running natively on iPhone, iPad and Mac: an NSP folder becomes an unsigned IPA (NSO rewriter, Horizon HLE host, NVN→Metal)",
-  "language": "Objective-C"
+  "language": "Python"
  },
  "serenakeyitan/awesome-notebookLM-prompts": {
   "description": "A curated collection of the strongest NotebookLM slide prompts sourced from the real creative underground . Your go-to resource for AI powerpoint :P",
