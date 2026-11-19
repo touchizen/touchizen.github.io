@@ -31,22 +31,15 @@ export default function RootPage() {
           Touchizen
         </div>
         <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
-          Creator tools for AI image &amp; video generation and CapCut workflows
+          Creator Tools
         </h1>
         <p className="mt-6 max-w-3xl text-lg text-gray-600 dark:text-gray-300 md:text-xl">
-          Start with AutoFlowCut to bulk-generate hundreds of AI images and videos with Google Flow,
-          then export them as ready-to-edit CapCut projects in one click.
+          Tools that save your time and boost your creativity.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <a
-            href="/en/autoflowcut/"
-            className="rounded-xl bg-violet-600 px-6 py-3 text-base font-semibold text-white transition hover:bg-violet-500"
-          >
-            Explore AutoFlowCut
-          </a>
-          <a
             href="/en/"
-            className="rounded-xl border border-violet-200 bg-white px-6 py-3 text-base font-semibold text-violet-700 transition hover:border-violet-300 hover:bg-violet-50 dark:border-violet-800 dark:bg-gray-900 dark:text-violet-300"
+            className="rounded-xl bg-violet-600 px-6 py-3 text-base font-semibold text-white transition hover:bg-violet-500"
           >
             View English Homepage
           </a>
@@ -64,17 +57,6 @@ export default function RootPage() {
               </div>
             </a>
           ))}
-        </div>
-        <div className="mt-14 grid gap-4 text-sm text-gray-600 dark:text-gray-300 md:grid-cols-3">
-          <div className="rounded-2xl border border-gray-200 bg-white/70 p-5 dark:border-gray-800 dark:bg-gray-900/70">
-            Bulk-generate hundreds of AI images and videos with Google Flow in a consistent style.
-          </div>
-          <div className="rounded-2xl border border-gray-200 bg-white/70 p-5 dark:border-gray-800 dark:bg-gray-900/70">
-            Export ready-to-edit CapCut projects with timing, subtitles, and motion already in place.
-          </div>
-          <div className="rounded-2xl border border-gray-200 bg-white/70 p-5 dark:border-gray-800 dark:bg-gray-900/70">
-            Use localized homepages for English, Korean, Japanese, and German visitors.
-          </div>
         </div>
       </section>
     </main>

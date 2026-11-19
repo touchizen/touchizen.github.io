@@ -7,6 +7,8 @@ author: "Touchizen"
 image: "/images/thumbnails/autoflowcut/thumbnail_1_en.png"
 ---
 
+> ⚠️ **AutoFlowCut is no longer maintained.** This post is kept for reference. The source code remains available on [GitHub](https://github.com/touchizen/AutoFlowCut) under the MIT License.
+
 ## "I already made my images somewhere else."
 
 You've got your narration recorded, your SRT timed, and your scenes grouped in a CSV. But you didn't generate your images inside AutoFlowCut — you made them in Midjourney, DALL·E, Stable Diffusion, or some other tool you love. Now you're staring at a folder full of `0001.png`, `0002.png`, `0003.png` and wondering:

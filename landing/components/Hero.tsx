@@ -8,7 +8,6 @@ interface HeroProps {
 
 export default function Hero({ lang }: HeroProps) {
   const t = (key: TranslationKey) => translations[lang][key];
-  const videoId = lang === 'ko' ? 'mYnfgqvCkME' : 'cqxvDx9HTvQ';
 
   return (
     <section className="relative flex items-center justify-center overflow-hidden py-20 md:py-24">
@@ -30,50 +29,9 @@ export default function Hero({ lang }: HeroProps) {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl mx-auto">
             <span className="gradient-text">{t('hero_title')}</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto text-balance">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-balance">
             {t('hero_subtitle')}
           </p>
-
-          {/* Latest product demo video */}
-          <div className="relative aspect-video max-w-7xl mx-auto rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/10">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src={`https://www.youtube.com/embed/${videoId}`}
-              title="AutoFlowCut Demo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#download"
-              className="btn-primary text-lg px-8 py-4"
-            >
-              {t('quick_dl_title')}
-              <svg
-                className="w-5 h-5 ml-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </a>
-            <a
-              href={`/${lang}/autoflowcut/`}
-              className="btn-secondary text-lg px-8 py-4"
-            >
-              {t('quick_dl_learn_more')}
-            </a>
-          </div>
         </div>
       </div>
     </section>

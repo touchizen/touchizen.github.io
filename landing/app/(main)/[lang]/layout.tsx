@@ -22,10 +22,10 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 
   const descriptions: Record<Language, string> = {
-    en: 'Save hours of work with AI-powered creator tools. Generate 100+ images in minutes and instantly convert to CapCut projects.',
-    ko: 'AI 기반 크리에이터 도구로 작업 시간을 절약하세요. 몇 분 안에 100개 이상의 이미지를 생성하고 CapCut 프로젝트로 즉시 변환하세요.',
-    ja: 'AIパワードのクリエイターツールで作業時間を節約。数分で100枚以上の画像を生成し、CapCutプロジェクトに即座に変換。',
-    de: 'Sparen Sie Stunden mit KI-gestützten Creator-Tools. Generieren Sie 100+ Bilder in Minuten und konvertieren Sie sofort in CapCut-Projekte.',
+    en: 'Apps and tools by Touchizen that save your time and boost your creativity.',
+    ko: '시간을 절약하고 창의력을 높여 주는 Touchizen의 앱과 도구.',
+    ja: '時間を節約し、創造力を高めるTouchizenのアプリとツール。',
+    de: 'Apps und Tools von Touchizen, die Zeit sparen und die Kreativität fördern.',
   };
 
   const locales: Record<Language, string> = {
@@ -37,20 +37,13 @@ export function generateMetadata({ params }: Props): Metadata {
 
   const baseUrl = 'https://touchizen.com';
 
-  // Demo video shown in the hero — Korean video for ko, English for the rest.
-  const videoId = lang === 'ko' ? 'mYnfgqvCkME' : 'cqxvDx9HTvQ';
-  const ogImage = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const ogImage = `${baseUrl}/images/touchizen.png`;
 
   return {
     title: titles[lang],
     description: descriptions[lang],
     keywords: [
       'creator tools',
-      'AI image generation',
-      'CapCut automation',
-      'Google Labs Whisk',
-      'bulk image creation',
-      'video editing automation',
       'content creation',
       'time saving tools',
     ],
@@ -73,16 +66,10 @@ export function generateMetadata({ params }: Props): Metadata {
       type: 'website',
       locale: locales[lang],
       alternateLocale: languages.filter((l) => l.code !== lang).map((l) => locales[l.code]),
-      images: [{ url: ogImage, width: 1280, height: 720, alt: titles[lang] }],
-      videos: [{
-        url: `https://www.youtube.com/embed/${videoId}`,
-        type: 'text/html',
-        width: 1280,
-        height: 720,
-      }],
+      images: [{ url: ogImage, width: 571, height: 571, alt: titles[lang] }],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'summary',
       site: '@touchizen',
       creator: '@touchizen',
       title: titles[lang],

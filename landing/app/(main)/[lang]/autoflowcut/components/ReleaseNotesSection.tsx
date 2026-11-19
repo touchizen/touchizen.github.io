@@ -14,7 +14,6 @@ type ReleaseCopy = {
   previousTitle: string;
   previousSummary: string;
   showMore: string;
-  githubLabel: string;
   older: Array<{ version: string; title: string; items: string[] }>;
 };
 
@@ -75,7 +74,6 @@ const releaseCopy: Record<Language, ReleaseCopy> = {
     previousTitle: '이전 릴리즈 및 레거시 바이너리',
     previousSummary: 'v2.1.0 이하 릴리즈와, 더 이상 배포하지 않는 레거시 Flow 시절 빌드입니다.',
     showMore: '이전 릴리즈 보기',
-    githubLabel: 'GitHub Releases에서 전체 보기',
     older: [
       {
         version: 'v2.1.0',
@@ -180,7 +178,6 @@ const releaseCopy: Record<Language, ReleaseCopy> = {
     previousTitle: 'Older Releases and Removed Legacy Binaries',
     previousSummary: 'v2.1.0 and earlier, plus the legacy Flow-era builds that are no longer distributed.',
     showMore: 'Show older releases',
-    githubLabel: 'View all on GitHub Releases',
     older: [
       {
         version: 'v2.1.0',
@@ -285,7 +282,6 @@ const releaseCopy: Record<Language, ReleaseCopy> = {
     previousTitle: '過去のリリースとレガシーバイナリ',
     previousSummary: 'v2.1.0以前のリリースと、提供を終了したレガシーFlow時代のビルドです。',
     showMore: '過去のリリースを見る',
-    githubLabel: 'GitHub Releasesで全て見る',
     older: [
       {
         version: 'v2.1.0',
@@ -390,7 +386,6 @@ const releaseCopy: Record<Language, ReleaseCopy> = {
     previousTitle: 'Ältere Releases und entfernte Legacy-Binaries',
     previousSummary: 'v2.1.0 und früher sowie die Legacy-Builds aus der Flow-Ära, die nicht mehr verteilt werden.',
     showMore: 'Ältere Releases anzeigen',
-    githubLabel: 'Alle auf GitHub Releases ansehen',
     older: [
       {
         version: 'v2.1.0',
@@ -443,7 +438,6 @@ const releaseCopy: Record<Language, ReleaseCopy> = {
 
 export default function ReleaseNotesSection({ lang }: { lang: Language }) {
   const copy = releaseCopy[lang];
-  const releasesUrl = 'https://github.com/touchizen/AutoFlowCut/releases';
 
   return (
     <section id="release-notes" className="section-padding bg-white dark:bg-gray-950">
@@ -473,17 +467,6 @@ export default function ReleaseNotesSection({ lang }: { lang: Language }) {
                   {copy.latestTitle}
                 </h3>
               </div>
-              <a
-                href={releasesUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gray-900 text-white dark:bg-white dark:text-gray-900 text-sm font-semibold transition-all hover:-translate-y-0.5"
-              >
-                {copy.githubLabel}
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H8M17 7v9" />
-                </svg>
-              </a>
             </div>
 
             <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed mb-6">

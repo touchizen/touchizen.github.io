@@ -72,7 +72,7 @@ describe('languages', () => {
   it('has Spanish words only for keys the site has, and English for the rest', () => {
     expect(Object.keys(es).filter((k) => !(k in translations.en))).toEqual([]);
     expect(blogTranslations.es.blog_back).toBe(es.blog_back);
-    expect(blogTranslations.es.autoflowcut_desc).toBe(translations.en.autoflowcut_desc);
+    expect(blogTranslations.es.calorieshot_desc).toBe(translations.en.calorieshot_desc);
     for (const l of SITE_LANGS) expect(blogTranslations[l]).toBe(translations[l]);
   });
 });

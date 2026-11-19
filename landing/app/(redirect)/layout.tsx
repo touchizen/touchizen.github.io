@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import '../globals.css';
 
 export const metadata: Metadata = {
-  title: 'Touchizen Creator Tools | AI Tools for Google Whisk and CapCut',
+  title: 'Touchizen Creator Tools',
   description:
-    'Explore Touchizen creator tools for Google Whisk, CapCut, and AI-powered content workflows. Choose your language and start with Whisk2CapCut.',
+    'Apps and tools by Touchizen that save your time and boost your creativity. Choose your language to see them all.',
   metadataBase: new URL('https://touchizen.com'),
   alternates: {
     canonical: 'https://touchizen.com/',

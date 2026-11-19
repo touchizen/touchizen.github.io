@@ -7,6 +7,8 @@ author: "Touchizen"
 image: "/images/thumbnails/autoflowcut/thumbnail_1_de.png"
 ---
 
+> ⚠️ **AutoFlowCut wird nicht mehr gepflegt.** Dieser Beitrag bleibt als Referenz erhalten. Der Quellcode bleibt auf [GitHub](https://github.com/touchizen/AutoFlowCut) unter der MIT-Lizenz verfügbar.
+
 ## „Meine Bilder habe ich schon woanders erstellt."
 
 Deine Narration ist aufgenommen, dein SRT ist getimt und deine Szenen sind in einer CSV gruppiert. Aber die Bilder hast du nicht in AutoFlowCut erzeugt — sondern in Midjourney, DALL·E, Stable Diffusion oder einem anderen Tool, das du gern nutzt. Jetzt starrst du auf einen Ordner voller `0001.png`, `0002.png`, `0003.png` und fragst dich:

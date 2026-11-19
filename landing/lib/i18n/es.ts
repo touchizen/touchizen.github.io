@@ -18,7 +18,6 @@ export const es = {
   footer_terms: 'Términos del servicio',
   footer_affiliate: 'Hazte afiliado (30% de comisión)',
   footer_copyright: '2026 Touchizen. Todos los derechos reservados.',
-  autoflowcut_name: 'AutoFlowCut',
   calorieshot_name: 'Calorie Shot',
   mathshorts_name: 'MathShorts',
   datrans_name: 'DaTrans',

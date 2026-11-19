@@ -7,6 +7,8 @@ author: "Touchizen"
 image: "/images/blog/story/story-step-prompts-en.png"
 ---
 
+> ⚠️ **AutoFlowCut is no longer maintained.** This post is kept for reference. The source code remains available on [GitHub](https://github.com/touchizen/AutoFlowCut) under the MIT License.
+
 ## What got made
 
 > 📌 The screens in this post are **UI mockups** built from a real project's data and the app's own CSS. The values in them (scenes, segments, prompts) are the actual output. The project itself ran in Korean; the story text shown here is an English translation of that output — the numbers, timings, and prompts are unchanged.

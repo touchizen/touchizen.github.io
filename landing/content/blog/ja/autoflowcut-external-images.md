@@ -7,6 +7,8 @@ author: "Touchizen"
 image: "/images/thumbnails/autoflowcut/thumbnail_1_ja.png"
 ---
 
+> ⚠️ **AutoFlowCutの運営は終了しました。** この記事は記録として残しています。ソースコードは[GitHub](https://github.com/touchizen/AutoFlowCut)でMITライセンスのもと公開しています。
+
 ## 「画像はもう別のところで作ったんです。」
 
 ナレーションの録音も終わり、SRT のタイミングも合わせ、シーンも CSV でグループ化しました。でも画像は AutoFlowCut の中で生成していません — Midjourney、DALL·E、Stable Diffusion など、いつも使っているお気に入りのツールで作りました。そして今、`0001.png`、`0002.png`、`0003.png` でいっぱいのフォルダを眺めながら、こう考えています:

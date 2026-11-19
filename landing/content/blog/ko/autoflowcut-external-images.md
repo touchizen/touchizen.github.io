@@ -7,6 +7,8 @@ author: "Touchizen"
 image: "/images/thumbnails/autoflowcut/thumbnail_1_ko.png"
 ---
 
+> ⚠️ **AutoFlowCut은 더 이상 운영하지 않습니다.** 이 글은 기록용으로 남겨 둡니다. 소스 코드는 [GitHub](https://github.com/touchizen/AutoFlowCut)에 MIT 라이선스로 공개되어 있습니다.
+
 ## "이미지는 이미 다른 데서 만들었는데요."
 
 나레이션 녹음도 끝났고, SRT 타이밍도 맞췄고, 씬도 CSV로 그룹핑했습니다. 그런데 이미지는 AutoFlowCut 안에서 생성하지 않았습니다 — Midjourney, DALL·E, Stable Diffusion 같은, 평소 즐겨 쓰는 도구로 만들었죠. 이제 `0001.png`, `0002.png`, `0003.png`가 가득한 폴더를 보면서 이런 고민이 듭니다:

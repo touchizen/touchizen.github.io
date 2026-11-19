@@ -1,10 +1,8 @@
 import { Language, TranslationKey } from '@/lib/i18n';
-import { msStoreUrl } from '@/lib/storeUrl';
 
 export default function HeroSection({ lang, t }: { lang: Language; t: (key: TranslationKey) => string }) {
-  const winStoreUrl = msStoreUrl('https://apps.microsoft.com/detail/9PNZVP54WRSM', lang);
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-16 pb-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950" />
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl" />
@@ -48,30 +46,6 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
           </div>
 
           <div className="flex flex-wrap justify-center gap-4">
-            {/* Windows - Microsoft Store */}
-            <a
-              href={winStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-semibold text-lg transition-all hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
-              </svg>
-              {t('autoflowcut_hero_cta' as TranslationKey)}
-            </a>
-            {/* macOS - GitHub Releases */}
-            <a
-              href="https://github.com/touchizen/AutoFlowCut/releases/latest"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-2xl font-semibold text-lg transition-all hover:-translate-y-0.5 shadow-lg"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              {t('autoflowcut_hero_cta_mac' as TranslationKey)}
-            </a>
             {/* Story mode guide */}
             <a
               href={`/guide/${lang}/autoflowcut/story-guide.html`}
@@ -95,11 +69,6 @@ export default function HeroSection({ lang, t }: { lang: Language; t: (key: Tran
             </a>
           </div>
 
-          {/* macOS arch guidance — navigator.platform/UA cannot tell Apple Silicon from Intel,
-              so we tell the user rather than guess for them. */}
-          <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-            {t('autoflowcut_hero_mac_arch' as TranslationKey)}
-          </p>
         </div>
       </div>
     </section>

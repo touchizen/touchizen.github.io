@@ -14,21 +14,9 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  // Video Creation Tools
-  {
-    id: 'autoflowcut',
-    nameKey: 'autoflowcut_name',
-    sloganKey: 'autoflowcut_slogan',
-    descKey: 'autoflowcut_desc',
-    features: ['autoflowcut_feature1', 'autoflowcut_feature2', 'autoflowcut_feature3'],
-    ctaKey: 'autoflowcut_cta',
-    link: '/autoflowcut/',
-    isExternal: false,
-    gradient: 'from-cyan-500 to-blue-600',
-    icon: '🎥',
-    iconImage: '/images/autoflowcut.svg',
-    hasDetailPage: true,
-  },
+  // autoflowcut removed from main page — no longer maintained (2026-11-19).
+  // The /autoflowcut/ subpage and guide stay up with a retired notice
+  // (autoflowcut/components/RetiredBanner.tsx).
   // whisk2capcut removed from main page — service ended (the standalone
   // /whisk2capcut/ subpage and its components are kept for reference and
   // can be cleaned up separately if no longer needed)
@@ -105,25 +93,20 @@ export const features: Feature[] = [
     icon: '⏱️',
   },
   {
-    id: 'bulk-images',
+    id: 'one-photo',
     titleKey: 'feature2_title',
     descKey: 'feature2_desc',
-    icon: '🖼️',
+    icon: '📸',
   },
   {
-    id: 'capcut-export',
+    id: 'layout-translation',
     titleKey: 'feature3_title',
     descKey: 'feature3_desc',
-    icon: '🎬',
+    icon: '🌐',
   },
 ];
 
 export const socialLinks = [
-  {
-    name: 'YouTube',
-    url: 'https://youtube.com/@touchizen',
-    icon: 'youtube',
-  },
   {
     name: 'GitHub',
     url: 'https://github.com/touchizen',
@@ -140,16 +123,3 @@ export const socialLinks = [
     icon: 'x',
   },
 ];
-
-// Language-specific YouTube channel URLs
-// ko: Korean channel (@터치즌)
-// default (en/ja/de): English channel (@touchizen)
-export function getSocialLinks(lang: string) {
-  const youtubeUrl =
-    lang === 'ko'
-      ? 'https://youtube.com/@터치즌'
-      : 'https://youtube.com/@touchizen';
-  return socialLinks.map((link) =>
-    link.name === 'YouTube' ? { ...link, url: youtubeUrl } : link
-  );
-}

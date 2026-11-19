@@ -29,7 +29,7 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
           </h3>
 
           {/* 4 Privacy Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,20 +71,6 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
                 {t('autoflowcut_trust_opensource_desc' as TranslationKey)}
               </p>
             </div>
-
-            <div className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800">
-              <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h4 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">
-                {t('autoflowcut_trust_free_title' as TranslationKey)}
-              </h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {t('autoflowcut_trust_free_desc' as TranslationKey)}
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -98,7 +84,7 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {/* Local Processing */}
             <div className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 text-center">
               <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -122,25 +108,10 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
                 </svg>
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">
-                {lang === 'ko' ? '오픈소스 (AGPL v3)' : lang === 'ja' ? 'オープンソース (AGPL v3)' : lang === 'de' ? 'Open Source (AGPL v3)' : 'Open Source (AGPL v3)'}
+                {lang === 'ko' ? '오픈소스 (MIT)' : lang === 'ja' ? 'オープンソース (MIT)' : lang === 'de' ? 'Open Source (MIT)' : 'Open Source (MIT)'}
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 {lang === 'ko' ? '소스 공개 · GitHub에서 코드 확인과 기여 가능' : lang === 'ja' ? 'ソース公開 · GitHubでコード確認・貢献可能' : lang === 'de' ? 'Quelloffen · Code einsehen und beitragen auf GitHub' : 'Source available — inspect and contribute on GitHub'}
-              </p>
-            </div>
-
-            {/* Free Forever */}
-            <div className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 text-center">
-              <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-7 h-7 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">
-                {lang === 'ko' ? '투명한 가격' : lang === 'ja' ? '透明な価格' : lang === 'de' ? 'Transparente Preise' : 'Transparent Pricing'}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {lang === 'ko' ? '앱 무료 · Flow 로그인(저비용 구독) 또는 내 API 키' : lang === 'ja' ? 'アプリ無料 · Flowログイン（低コスト定期購入）または自分のキー' : lang === 'de' ? 'App kostenlos · Flow-Login (günstiges Abo) oder eigener Schlüssel' : 'Free app · Flow login (low-cost subscription) or your own API key'}
               </p>
             </div>
           </div>
