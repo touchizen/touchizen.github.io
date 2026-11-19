@@ -4,7 +4,7 @@ import { msStoreUrl } from '@/lib/storeUrl';
 export default function HeroSection({ lang, t }: { lang: Language; t: (key: TranslationKey) => string }) {
   const winStoreUrl = msStoreUrl('https://apps.microsoft.com/detail/9PNZVP54WRSM', lang);
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-16 pb-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950" />
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl" />

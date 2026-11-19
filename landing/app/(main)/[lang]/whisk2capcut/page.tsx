@@ -25,7 +25,6 @@ import DesktopAppSection from './components/DesktopAppSection';
 import PricingSection from './components/PricingSection';
 import TrustSection from './components/TrustSection';
 import FAQSection from './components/FAQSection';
-import CTASection from './components/CTASection';
 import DeprecationBanner from './components/DeprecationBanner';
 
 export default function Whisk2CapCutPage() {
@@ -104,7 +103,6 @@ export default function Whisk2CapCutPage() {
       <PricingSection lang={lang} t={t} plans={plans} />
       <TrustSection lang={lang} t={t} />
       <FAQSection lang={lang} t={t} />
-      <CTASection lang={lang} t={t} />
 
       <Footer lang={lang} />
     </main>

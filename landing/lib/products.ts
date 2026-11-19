@@ -14,21 +14,9 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  // Video Creation Tools
-  {
-    id: 'autoflowcut',
-    nameKey: 'autoflowcut_name',
-    sloganKey: 'autoflowcut_slogan',
-    descKey: 'autoflowcut_desc',
-    features: ['autoflowcut_feature1', 'autoflowcut_feature2', 'autoflowcut_feature3'],
-    ctaKey: 'autoflowcut_cta',
-    link: '/autoflowcut/',
-    isExternal: false,
-    gradient: 'from-cyan-500 to-blue-600',
-    icon: '🎥',
-    iconImage: '/images/autoflowcut.svg',
-    hasDetailPage: true,
-  },
+  // autoflowcut removed from main page — no longer maintained (2026-11-19).
+  // The /autoflowcut/ subpage and guide stay up with a retired notice
+  // (autoflowcut/components/RetiredBanner.tsx).
   // whisk2capcut removed from main page — service ended (the standalone
   // /whisk2capcut/ subpage and its components are kept for reference and
   // can be cleaned up separately if no longer needed)

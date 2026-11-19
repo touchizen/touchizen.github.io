@@ -20,6 +20,7 @@ const APP_DIR = join(process.cwd(), 'app', '(main)', '[lang]');
 const NOT_ON_MAIN_PAGE: Record<string, string> = {
   blog: '상품이 아니라 글 목록이다',
   whisk2capcut: '서비스 종료 — lib/products.ts 의 주석 참고',
+  autoflowcut: '운영 종료(2026-11-19) — lib/products.ts 의 주석 참고',
   neonrail: '앱이 아직 배포 전이다 — 배포 뒤에 별도로 올린다',
 };
 

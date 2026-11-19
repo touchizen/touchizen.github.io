@@ -8,6 +8,8 @@ author: "Touchizen"
 image: "/images/blog/story/story-benchmark-hero-en.png"
 ---
 
+> ⚠️ **AutoFlowCut wird nicht mehr gepflegt.** Dieser Beitrag bleibt als Referenz erhalten. Der Quellcode bleibt auf [GitHub](https://github.com/touchizen/AutoFlowCut) unter der MIT-Lizenz verfügbar.
+
 ## Videos, die gut laufen, haben einen Grund
 
 > 📌 Die Abbildungen in diesem Beitrag sind **UI-Mockups**, erstellt aus den Daten eines realen Projekts und dem CSS der App. Die Werte darin (Szenen, Segmente, Prompts) sind der tatsächliche Output. Die Oberfläche von AutoFlowCut gibt es auf **Koreanisch und Englisch**, deshalb zeigen sie die englische Oberfläche. Das Projekt selbst lief auf Koreanisch; die hier gezeigten Geschichtstexte sind eine Übersetzung dieses Outputs — Zahlen, Zeiten und Prompts sind unverändert.

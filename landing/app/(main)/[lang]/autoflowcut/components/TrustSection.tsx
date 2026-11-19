@@ -122,7 +122,7 @@ export default function TrustSection({ lang, t }: { lang: Language; t: (key: Tra
                 </svg>
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">
-                {lang === 'ko' ? '오픈소스 (AGPL v3)' : lang === 'ja' ? 'オープンソース (AGPL v3)' : lang === 'de' ? 'Open Source (AGPL v3)' : 'Open Source (AGPL v3)'}
+                {lang === 'ko' ? '오픈소스 (MIT)' : lang === 'ja' ? 'オープンソース (MIT)' : lang === 'de' ? 'Open Source (MIT)' : 'Open Source (MIT)'}
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 {lang === 'ko' ? '소스 공개 · GitHub에서 코드 확인과 기여 가능' : lang === 'ja' ? 'ソース公開 · GitHubでコード確認・貢献可能' : lang === 'de' ? 'Quelloffen · Code einsehen und beitragen auf GitHub' : 'Source available — inspect and contribute on GitHub'}

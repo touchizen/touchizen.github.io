@@ -7,9 +7,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 // Section components
+import RetiredBanner from './components/RetiredBanner';
 import HeroSection from './components/HeroSection';
 import ScreenshotGallerySection from './components/ScreenshotGallerySection';
-import DemoVideoSection from './components/DemoVideoSection';
 import InstallationSection from './components/InstallationSection';
 import WhatIsSection from './components/WhatIsSection';
 import StoryModeSection from './components/StoryModeSection';
@@ -94,9 +94,9 @@ export default function AutoFlowCutPage() {
   return (
     <main className="min-h-screen overflow-x-hidden">
       <Header lang={lang} onLanguageChange={handleLanguageChange} />
+      <RetiredBanner lang={lang} />
 
       <HeroSection lang={lang} t={t} />
-      <DemoVideoSection lang={lang} t={t} />
       <ScreenshotGallerySection lang={lang} t={t} />
       <InstallationSection lang={lang} t={t} isMac={isMac} />
       <WhatIsSection lang={lang} t={t} />

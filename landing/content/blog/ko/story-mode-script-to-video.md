@@ -8,6 +8,8 @@ author: "Touchizen"
 image: "/images/blog/story/story-script-setup-ko.png"
 ---
 
+> ⚠️ **AutoFlowCut은 더 이상 운영하지 않습니다.** 이 글은 기록용으로 남겨 둡니다. 소스 코드는 [GitHub](https://github.com/touchizen/AutoFlowCut)에 MIT 라이선스로 공개되어 있습니다.
+
 ## 대본은 이미 있습니다
 
 > 📌 이 글의 화면은 실제 프로젝트 데이터와 앱의 CSS로 만든 **UI 목업**입니다. 표에 든 값(씬·세그먼트·프롬프트)은 실제 산출물 그대로입니다.

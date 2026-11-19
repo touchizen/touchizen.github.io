@@ -8,6 +8,8 @@ author: "Touchizen"
 image: "/images/blog/story/story-title-setup-en.png"
 ---
 
+> ⚠️ **AutoFlowCutの運営は終了しました。** この記事は記録として残しています。ソースコードは[GitHub](https://github.com/touchizen/AutoFlowCut)でMITライセンスのもと公開しています。
+
 ## タイトル1行あれば十分
 
 > 📌 この記事の画面は、実際のプロジェクトのデータとアプリのCSSから作った**UIモックアップ**です。表の値（シーン・セグメント・プロンプト）は実際の成果物そのままです。AutoFlowCutのUIは**韓国語と英語**に対応しているため、英語UIで作成しています。 なお実際のプロジェクトは韓国語で生成しています。ここに載せた物語テキストはその出力の翻訳で、数値・所要時間・プロンプトは原文のままです。
