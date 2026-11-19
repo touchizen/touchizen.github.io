@@ -2637,7 +2637,7 @@
  },
  "agentscope-ai/QwenPaw": {
   "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
-  "language": "TypeScript"
+  "language": "Python"
  },
  "agentscope-ai/agentscope": {
   "description": "Build and run agents you can see, understand and trust.",
@@ -3689,7 +3689,7 @@
  },
  "clash-verge-rev/clash-verge-rev": {
   "description": "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience",
-  "language": "TypeScript"
+  "language": "Rust"
  },
  "clashbk/clash": {
   "description": "Clash官网各版本Clash下载地址及备份下载地址",
@@ -4268,7 +4268,7 @@
   "language": "Python"
  },
  "echo-loop/Echo-Loop": {
-  "description": "Echo Loop 是一款科学、高效的 AI 英语听说训练 App，通过精听、跟读、盲听、复述和间隔复习，自动驱动学习者把每一段音频真正练懂、练熟、练到会说。",
+  "description": "Echo Loop 是最专业的英语精听 App，通过精听、跟读、盲听、复述和间隔复习，自动驱动你把每一段音频练懂、练熟、练到会说。",
   "language": "Dart"
  },
  "edwardkim/rhwp": {
@@ -4907,6 +4907,10 @@
   "description": "",
   "language": "Python"
  },
+ "google-research/paper-orchestra": {
+  "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+  "language": "Python"
+ },
  "google-research/timesfm": {
   "description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
   "language": "Python"
@@ -5208,6 +5212,10 @@
   "language": "Python"
  },
  "huami-dev/GestaltX": {
+  "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
+  "language": "Swift"
+ },
+ "huami1314/GestaltX": {
   "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
   "language": "Swift"
  },
@@ -5532,7 +5540,7 @@
   "language": "C"
  },
  "jingyaogong/minimind": {
-  "description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+  "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
   "language": "Python"
  },
  "jlcodes99/cockpit-tools": {
@@ -6575,6 +6583,10 @@
   "description": "Model Context Protocol Reference Servers",
   "language": "TypeScript"
  },
+ "modelflare-ai/AnyModelBot": {
+  "description": "🤖 Open-source, local-first alternative to Grok Bot, OpenAI dots and Claude Duet. Your own AI bots on any model: GPT, Claude, Gemini, Grok, DeepSeek, Kimi, GLM and 70+ more through one Modelflare key. Reach them in the app, WeChat or Feishu; they remember you, work in the background, run commands and use your computer. Pay per use.",
+  "language": "Python"
+ },
  "modem-dev/hunk": {
   "description": "Review-first terminal diff viewer for agentic coders",
   "language": "TypeScript"
@@ -6748,7 +6760,7 @@
   "language": "TypeScript"
  },
  "netdata/netdata": {
-  "description": "Full-stack observability · Metrics · Logs · Traces · Flows · Topology · Infrastructure · APM · NPM · DBM · RUM · Synthetics · Cloud · AI · OpenTelemetry · SNMP · NetFlow/IPFIX/sFlow · IPMI · Redfish · 800+ integrations",
+  "description": "Full-stack observability · Metrics · Logs · Traces · Flows · Topology · Infrastructure · APM · NPM · DBM · RUM · Synthetics · Cloud · AI · OpenTelemetry · SNMP · NetFlow/IPFIX/sFlow · IPMI · Redfish · 2000+ integrations",
   "language": "Go"
  },
  "netease-youdao/LobsterAI": {
@@ -7172,7 +7184,7 @@
   "language": "Python"
  },
  "openfilm/openfilm": {
-  "description": "The open source AI video agent: turns any coding agent into a video agent, with an editor to change anything it makes.",
+  "description": "The open source AI video agent: turns any coding agent into a video agent, with editors to change anything it makes.",
   "language": "TypeScript"
  },
  "opengeos/GeoLibre": {
@@ -7867,6 +7879,10 @@
   "description": "Research on Coding Agents",
   "language": null
  },
+ "sandbox-quantum/switch": {
+  "description": "Open-source AI teammates in Slack, Teams, Discord, Telegram and Mattermost. Self-host it, with any agent harness and any model.",
+  "language": "Python"
+ },
  "sansan0/TrendRadar": {
   "description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，赋能 AI 自然语言对话分析、情感洞察与趋势预测等。支持 Docker ，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 等渠道智能推送。",
   "language": "Python"
@@ -8040,7 +8056,7 @@
   "language": "Shell"
  },
  "sickn33/agentic-awesome-skills": {
-  "description": "2,955+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
+  "description": "3,000+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
   "language": "Python"
  },
  "siddharthvaddem/openscreen": {
@@ -8380,7 +8396,7 @@
   "language": "Rust"
  },
  "tabler/tabler": {
-  "description": "Free and open source admin dashboard UI kit built on Bootstrap: 100+ pages, 6,000+ icons, dark mode, RTL.",
+  "description": "Free and open source admin dashboard UI kit built on Bootstrap: 100+ pages, 6,500+ icons, dark mode, RTL.",
   "language": "Astro"
  },
  "taigrr/spank": {
@@ -9157,7 +9173,7 @@
  },
  "withmarbleapp/os-taxonomy": {
   "description": "",
-  "language": "JavaScript"
+  "language": "HTML"
  },
  "wshobson/agents": {
   "description": "Plugins, agents, skills, and commands for Claude Code, Codex CLI, Cursor, OpenCode, Antigravity CLI, GitHub Copilot, and Pi, written once in Markdown and adapted to each tool by generators with validation and evals.",
