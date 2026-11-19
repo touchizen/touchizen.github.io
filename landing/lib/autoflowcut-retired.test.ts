@@ -161,9 +161,17 @@ describe('nothing left to download or buy on the AutoFlowCut page', () => {
     expect(html).toContain('data-afc-retired'); // the render really is the AutoFlowCut page
     expect(html).not.toContain('apps.microsoft.com');
     expect(html).not.toContain('Microsoft Store');
-    expect(html).not.toContain('releases/latest');
+    expect(html).not.toContain('AutoFlowCut/releases'); // the releases page is where the installers are
     expect(html).not.toMatch(/\$\d+\.99/);
     expect(html).not.toMatch(/youtube\.com\/|youtu\.be\//);
+    for (const pitch of [
+      ...['Transparent Pricing', '투명한 가격', '透明な価格', 'Transparente Preise'],
+      ...['내보내기 Pro', 'エクスポートPro'],
+      ...['migrating to AutoFlowCut', 'AutoFlowCut으로의 전환', 'AutoFlowCutへの移行', 'Wechsel zu AutoFlowCut'],
+    ]) {
+      expect(html, pitch).not.toContain(pitch);
+    }
+    expect(html).not.toMatch(/Export Pro\b/); // not "Export Project"
   });
 
   it('drops the install, pricing, contribution-rewards and download-CTA sections', () => {
