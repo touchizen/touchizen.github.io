@@ -15,10 +15,10 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 
   const descriptions: Record<Language, string> = {
-    en: 'Story mode writes the script with AI (Claude, Codex), generates AI voiceover (Typecast, ElevenLabs, Gemini) and sound effects, and splits scenes automatically. Then bulk-generate images and video with Gemini and Veo — via Google Flow login or your own API key — and export edit-ready projects for CapCut, Adobe Premiere Pro, or Vrew in one click. Free desktop app, open source (MIT).',
-    ko: '스토리 모드가 AI(Claude·Codex)로 대본을 쓰고, AI 나레이션(Typecast·ElevenLabs·Gemini)과 효과음을 생성하고, 씬을 자동 분리합니다. 이어서 Google Flow 로그인 또는 내 API 키로 Gemini·Veo 이미지/비디오를 대량 생성하고, 편집 가능한 CapCut·Premiere Pro·Vrew 프로젝트로 원클릭 내보내기. 무료 데스크톱 앱, 오픈소스(MIT).',
-    ja: 'ストーリーモードがAI(Claude・Codex)で台本を書き、AIナレーション(Typecast・ElevenLabs・Gemini)と効果音を生成し、シーンを自動分割。続いてGoogle Flowログインまたは自分のAPIキーでGemini・Veoの画像・動画を一括生成し、CapCut・Adobe Premiere Pro・Vrewの編集可能なプロジェクトへワンクリックエクスポート。無料デスクトップアプリ、オープンソース(MIT)。',
-    de: 'Der Story-Modus schreibt das Skript mit KI (Claude, Codex), erzeugt KI-Sprachausgabe (Typecast, ElevenLabs, Gemini) und Soundeffekte und teilt Szenen automatisch auf. Danach generieren Sie Bilder und Videos mit Gemini und Veo — per Google-Flow-Login oder eigenem API-Schlüssel — und exportieren editierbare Projekte für CapCut, Adobe Premiere Pro oder Vrew per Klick. Kostenlose Desktop-App, Open Source (MIT).',
+    en: 'AutoFlowCut is no longer maintained. It was a desktop app that wrote scripts with AI, generated images and video with Gemini and Veo, and exported projects to CapCut, Premiere Pro and Vrew. The source code remains available on GitHub under the MIT License.',
+    ko: 'AutoFlowCut은 더 이상 운영하지 않습니다. AI로 대본을 쓰고 Gemini·Veo로 이미지와 영상을 만들어 CapCut·Premiere Pro·Vrew 프로젝트로 내보내던 데스크톱 앱입니다. 소스 코드는 GitHub에 MIT 라이선스로 공개되어 있습니다.',
+    ja: 'AutoFlowCutの運営は終了しました。AIで台本を書き、Gemini・Veoで画像と動画を生成して、CapCut・Premiere Pro・Vrewのプロジェクトへ書き出すデスクトップアプリでした。ソースコードはGitHubでMITライセンスのもと公開しています。',
+    de: 'AutoFlowCut wird nicht mehr gepflegt. Die Desktop-App schrieb Skripte mit KI, erzeugte Bilder und Videos mit Gemini und Veo und exportierte Projekte für CapCut, Premiere Pro und Vrew. Der Quellcode bleibt auf GitHub unter der MIT-Lizenz verfügbar.',
   };
 
   const ogImages: Record<Language, string> = {

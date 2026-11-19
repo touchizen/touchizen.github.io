@@ -32,6 +32,14 @@ const REPO_URL = 'https://github.com/touchizen/AutoFlowCut';
 
 const read = (p: string) => readFileSync(p, 'utf8');
 
+/** The words each language's retired notice is built on. */
+const RETIRED_WORDS: Record<string, string> = {
+  ko: '더 이상 운영하지 않습니다',
+  en: 'no longer maintained',
+  ja: '運営は終了しました',
+  de: 'nicht mehr gepflegt',
+};
+
 function filesUnder(dir: string): string[] {
   return readdirSync(dir).flatMap((name) => {
     const p = join(dir, name);
@@ -94,6 +102,18 @@ describe('retired notice on what stays', () => {
     const html = renderToStaticMarkup(createElement(RetiredBanner, { lang }));
     expect(html).toContain('data-afc-retired');
     expect(html).toContain(REPO_URL);
+    expect(html).toContain(RETIRED_WORDS[lang]);
+    expect(html).toContain('MIT');
+  });
+
+  it.each(languages.map((l) => l.code))('tells search and link previews it is retired, in %s', async (lang) => {
+    const { generateMetadata } = await import('@/app/(main)/[lang]/autoflowcut/layout');
+    const meta = await generateMetadata({ params: { lang } });
+    for (const description of [meta.description, meta.openGraph?.description, meta.twitter?.description]) {
+      expect(description).toContain(RETIRED_WORDS[lang]);
+      expect(description).toContain('MIT');
+      expect(description).not.toMatch(/free desktop app|무료 데스크톱|無料デスクトップ|Kostenlose Desktop/i);
+    }
   });
 
   it('has no YouTube link left on the AutoFlowCut page', () => {
