@@ -60,20 +60,6 @@ export default function FlowIntroSection({ lang, t }: { lang: Language; t: (key:
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="text-center">
-              <a
-                href="https://github.com/touchizen/AutoFlowCut/releases"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-colors"
-              >
-                {t('autoflowcut_flow_cta' as TranslationKey)}
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
           </div>
         </div>
       </section>

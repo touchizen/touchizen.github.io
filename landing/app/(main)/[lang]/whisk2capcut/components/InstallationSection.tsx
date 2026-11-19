@@ -68,7 +68,7 @@ export default function InstallationSection({ lang, t, isMac }: { lang: Language
             <div className="mt-10 p-6 rounded-2xl border-2 border-amber-400 bg-amber-50 dark:bg-amber-900/20 dark:border-amber-600">
               <div className="text-center">
                 <p className="text-lg font-bold text-amber-700 dark:text-amber-300">
-                  {lang === 'ko' ? '⚠️ Google Whisk 종료로 서비스가 종료됩니다' : lang === 'ja' ? '⚠️ Google Whisk終了によりサービスを終了します' : lang === 'de' ? '⚠️ Dienst wird aufgrund der Einstellung von Google Whisk beendet' : '⚠️ Service ending due to Google Whisk shutdown'}
+                  {lang === 'ko' ? '⚠️ Google Whisk 종료로 서비스를 종료했습니다' : lang === 'ja' ? '⚠️ Google Whisk終了によりサービスを終了しました' : lang === 'de' ? '⚠️ Dienst wurde aufgrund der Einstellung von Google Whisk beendet' : '⚠️ Service ended due to Google Whisk shutdown'}
                 </p>
               </div>
             </div>

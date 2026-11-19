@@ -272,7 +272,6 @@ export const en = {
   pricing_cta_free: 'Start Free',
   pricing_cta_pro: 'Go Pro',
   pricing_purchase_note: 'Purchase and subscription are handled inside the app — available in both the Desktop app and Chrome extension.',
-  autoflowcut_pricing_purchase_note: 'Purchase and subscription are handled inside the AutoFlowCut desktop app.',
 
   // CapCut Timeline Preview
   timeline_preview: 'Preview',
@@ -451,11 +450,8 @@ The young prince practices sword fighting in the courtyard`,
   autoflowcut_hero_title: 'AutoFlowCut',
   autoflowcut_hero_slogan: 'Prompts in, video project out',
   autoflowcut_hero_subtitle: 'Bulk-generate AI images and videos two ways — sign in with Google Flow (free on a low-cost subscription) or bring your own Gemini & Veo API key — then export complete projects for CapCut, Adobe Premiere Pro, or Vrew with timeline, audio, subtitles, and animations.',
-  autoflowcut_hero_cta: 'Get it on Microsoft Store',
-  autoflowcut_hero_cta_mac: 'macOS Download',
   autoflowcut_hero_cta_secondary: 'Release Notes',
   autoflowcut_hero_cta_story: 'Story mode guide',
-  autoflowcut_hero_mac_arch: 'macOS ships as two builds — arm64 for Apple Silicon (M1 and later), x64 for Intel Macs.',
   autoflowcut_platform_badge: 'Desktop App · Open Source',
 
   autoflowcut_what_title: 'What is AutoFlowCut?',
@@ -519,11 +515,6 @@ The young prince practices sword fighting in the courtyard`,
   autoflowcut_diff_tts: 'Built-in Voiceover (TTS)',
   autoflowcut_diff_sfx: 'Sound Effects from the Script',
 
-  autoflowcut_cta_title: 'Ready to Automate Your Workflow?',
-  autoflowcut_cta_subtitle: 'Download the desktop app or review the release notes.',
-  autoflowcut_cta_download: 'Get it on Microsoft Store',
-  autoflowcut_cta_mac: 'macOS Download',
-  autoflowcut_cta_github: 'Release Notes',
 
   // AutoFlowCut FAQ
   autoflowcut_faq_title: 'Frequently Asked Questions',
@@ -538,14 +529,10 @@ The young prince practices sword fighting in the courtyard`,
   autoflowcut_faq_a4: 'You can import scene prompts from TXT (one per line), CSV (structured data with columns), and SRT (subtitle files with timing) — each is parsed into scenes automatically. You can also start with no file at all: in Story mode you write or generate the script inside the app and it splits into scenes for you.',
   autoflowcut_faq_q5: 'Which editors can I export to?',
   autoflowcut_faq_a5: 'Export a complete project to CapCut, Adobe Premiere Pro (.prproj), or Vrew (.vrew). Each includes timeline, media files, subtitles, and Ken Burns animations — ready to edit immediately.',
-  autoflowcut_faq_q6: 'Is AutoFlowCut free?',
-  autoflowcut_faq_a6: 'AutoFlowCut is free to download and open source (MIT). Flow Login mode offers free generation on a low-cost subscription; API Key mode is pay-as-you-go, billed by Google to your own key. Export has a free monthly allowance with an optional Pro plan for unlimited exports.',
   autoflowcut_faq_q7: 'Can AutoFlowCut write the script for me?',
   autoflowcut_faq_a7: 'Yes — that is Story mode, new in v3.0. It takes you from a blank page to a finished project without leaving the app: Setup, Research, Synopsis, Script, Scene split, Audio, Prompts. The AI can write the script (Claude or Codex) or you can paste and import your own; characters found in the script register themselves as reference cards. Turn on "auto" for the steps you trust, press "Run all", and the pipeline carries itself to the end.',
   autoflowcut_faq_q8: 'Does AutoFlowCut generate voiceover and sound effects?',
   autoflowcut_faq_a8: 'Yes. In the Audio step you assign a voice per speaker from Typecast, ElevenLabs, or Gemini — search and preview voices in the picker, apply emotion to character lines (never the narrator), and get a separate narration track per speaker. Sound effects are pulled out of the script automatically, placed on scenes, and can be auditioned one at a time.',
-  autoflowcut_faq_q9: 'Which macOS build should I download?',
-  autoflowcut_faq_a9: 'On Apple Silicon (M1 and later) download the arm64 DMG; on an Intel Mac download the x64 DMG. Both are attached to every GitHub release from v3.0.0 onward. If you are unsure which Mac you have, open the Apple menu and choose "About This Mac" to see the chip.',
 
   // AutoFlowCut - Screenshot Gallery
   autoflowcut_screenshot_badge: 'App Preview',
@@ -556,20 +543,6 @@ The young prince practices sword fighting in the courtyard`,
   // AutoFlowCut - Demo Video
 
   // AutoFlowCut - Installation
-  autoflowcut_install_title: 'Download & Install',
-  autoflowcut_install_desc: 'AutoFlowCut is a standalone desktop app. Download for your platform and start creating.',
-  autoflowcut_install_mac_title: 'macOS',
-  autoflowcut_install_mac_desc: 'Download the DMG from GitHub Releases. Two builds are provided — pick the one that matches your Mac.',
-  autoflowcut_install_mac_arch: 'Apple Silicon (M1 and later) → mac-arm64.dmg · Intel Mac → mac-x64.dmg. Not sure? Apple menu → About This Mac shows the chip.',
-  autoflowcut_install_mac_btn: 'Download for Mac',
-  autoflowcut_install_win_title: 'Windows',
-  autoflowcut_install_win_desc: 'Available on Microsoft Store. Supports Windows 10/11.',
-  autoflowcut_install_win_btn: 'Get from MS Store',
-  autoflowcut_install_requirement: 'Requirements',
-  autoflowcut_install_req1: 'A Google account (Flow login) or a Google AI Studio API key (API mode)',
-  autoflowcut_install_req2: 'macOS 12+ (arm64 for Apple Silicon, x64 for Intel) or Windows 10+',
-  autoflowcut_install_req3: 'Internet connection for AI generation',
-  autoflowcut_install_opensource: 'Open source (MIT) — inspect the code and releases on GitHub',
 
   // AutoFlowCut - Google API Intro
   autoflowcut_flow_badge: 'Two Generation Modes',
@@ -581,7 +554,6 @@ The young prince practices sword fighting in the courtyard`,
   autoflowcut_flow_feat2_desc: 'Bring your own Gemini/Veo API key for power users and bulk work. Pay-as-you-go, billed by Google. Fast — about 100 images in ~2-5 minutes.',
   autoflowcut_flow_feat3_title: 'Switch Anytime',
   autoflowcut_flow_feat3_desc: 'Toggle between Flow login and API key whenever you want — start free on a low-cost subscription, scale up to fast API generation when you need it.',
-  autoflowcut_flow_cta: 'Download AutoFlowCut',
 
   // AutoFlowCut - Time Saving
   autoflowcut_time_badge: 'Save Time',
@@ -658,16 +630,6 @@ The young prince practices sword fighting in the courtyard`,
   autoflowcut_trust_badges_title: 'Trust Badges',
 
   // AutoFlowCut - Contribute & Earn
-  autoflowcut_contribute_badge: 'Open Source · MIT',
-  autoflowcut_contribute_title: 'Contribute & Earn',
-  autoflowcut_contribute_subtitle: 'AutoFlowCut is open source, and we reward community contributions.',
-  autoflowcut_contribute_bug_title: 'Fix a bug → usage credits',
-  autoflowcut_contribute_bug_desc: 'Find a bug, fix it, and open a PR. Once reviewed and merged, you receive usage credits sized to the impact — from a minimum of 10 generations up to 1 year of unlimited use.',
-  autoflowcut_contribute_plugin_title: 'Revenue-model plugins → merged',
-  autoflowcut_contribute_plugin_desc: 'Built a plugin that adds a revenue model? Open a PR. We review and merge well-built, secure plugins that fit the project, and work out the details with you.',
-  autoflowcut_contribute_note: 'All contributions are accepted under MIT. Reward amounts are granted at the maintainer\'s discretion based on quality and impact.',
-  autoflowcut_contribute_cta_github: 'Open a PR on GitHub',
-  autoflowcut_contribute_cta_discord: 'Discuss on Discord',
 
   // AutoFlowCut - Story Mode (in-app, v3.0)
   autoflowcut_story_badge: 'New in v3.0 · Built into the app',

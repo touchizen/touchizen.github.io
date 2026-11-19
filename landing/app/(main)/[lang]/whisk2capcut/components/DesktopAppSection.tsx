@@ -32,7 +32,7 @@ export default function DesktopAppSection({ lang, t, isMac }: { lang: Language; 
               <div className="flex flex-col justify-center gap-4">
                 <div className="p-4 bg-amber-500/20 border border-amber-500/40 rounded-xl text-center">
                   <p className="text-amber-300 font-semibold">
-                    {lang === 'ko' ? '⚠️ Google Whisk 종료로 서비스가 종료됩니다' : lang === 'ja' ? '⚠️ Google Whisk終了によりサービスを終了します' : lang === 'de' ? '⚠️ Dienst wird aufgrund der Einstellung von Google Whisk beendet' : '⚠️ Service ending due to Google Whisk shutdown'}
+                    {lang === 'ko' ? '⚠️ Google Whisk 종료로 서비스를 종료했습니다' : lang === 'ja' ? '⚠️ Google Whisk終了によりサービスを終了しました' : lang === 'de' ? '⚠️ Dienst wurde aufgrund der Einstellung von Google Whisk beendet' : '⚠️ Service ended due to Google Whisk shutdown'}
                   </p>
                 </div>
               </div>

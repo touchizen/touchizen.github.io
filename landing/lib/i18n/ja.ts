@@ -272,7 +272,6 @@ export const ja = {
   pricing_cta_free: '無料で始める',
   pricing_cta_pro: 'Proを購入',
   pricing_purchase_note: '購入とサブスクリプションはアプリ内で行われます — デスクトップアプリとChrome拡張機能の両方で対応。',
-  autoflowcut_pricing_purchase_note: '購入とサブスクリプションはAutoFlowCutデスクトップアプリ内で行われます。',
 
   // CapCut Timeline Preview
   timeline_preview: 'プレビュー',
@@ -451,11 +450,8 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   autoflowcut_hero_title: 'AutoFlowCut',
   autoflowcut_hero_slogan: 'プロンプトから動画プロジェクトへ',
   autoflowcut_hero_subtitle: 'AI画像・動画を2つの方法で一括生成 — Google Flowでサインイン（低価格サブスクで無料）するか、ご自身のGemini & Veo APIキーを使用 — タイムライン、音声、字幕、アニメーション付きの完成プロジェクトをCapCut・Adobe Premiere Pro・Vrewへエクスポートできます。',
-  autoflowcut_hero_cta: 'Microsoft Storeで入手',
-  autoflowcut_hero_cta_mac: 'macOS ダウンロード',
   autoflowcut_hero_cta_secondary: 'リリースノート',
   autoflowcut_hero_cta_story: 'ストーリーモードガイド',
-  autoflowcut_hero_mac_arch: 'macOSはビルドが2種類あります — Apple Silicon（M1以降）はarm64、Intel Macはx64。',
   autoflowcut_platform_badge: 'デスクトップアプリ · オープンソース',
 
   autoflowcut_what_title: 'AutoFlowCutとは？',
@@ -519,11 +515,6 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   autoflowcut_diff_tts: '内蔵ナレーション（TTS）',
   autoflowcut_diff_sfx: '台本からの効果音自動抽出',
 
-  autoflowcut_cta_title: 'ワークフローを自動化する準備はできましたか？',
-  autoflowcut_cta_subtitle: 'デスクトップアプリをダウンロードするか、リリースノートを確認してください。',
-  autoflowcut_cta_download: 'Microsoft Storeで入手',
-  autoflowcut_cta_mac: 'macOS ダウンロード',
-  autoflowcut_cta_github: 'リリースノート',
 
   // AutoFlowCut FAQ
   autoflowcut_faq_title: 'よくある質問',
@@ -538,14 +529,10 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   autoflowcut_faq_a4: 'TXT（1行ごと）、CSV（列構造データ）、SRT（タイミング付き字幕ファイル）からシーンプロンプトをインポートでき、各形式は自動的にシーンとしてパースされます。ファイルなしで始めることもできます — ストーリーモードならアプリ内で台本を書く／生成すると、そのままシーンに分割されます。',
   autoflowcut_faq_q5: 'どのエディタにエクスポートできますか？',
   autoflowcut_faq_a5: 'CapCut・Adobe Premiere Pro（.prproj）・Vrew（.vrew）へ完成プロジェクトをエクスポートできます。それぞれタイムライン、メディアファイル、字幕、Ken Burnsアニメーションが含まれており、すぐに編集を開始できます。',
-  autoflowcut_faq_q6: 'AutoFlowCutは無料ですか？',
-  autoflowcut_faq_a6: 'AutoFlowCutは無料でダウンロードでき、オープンソース（MIT）です。Flowログインモードは低価格サブスクで無料生成が可能、APIキーモードは従量課金でご自身のキーに基づきGoogleから請求されます。エクスポートには無料の月間枠と、無制限エクスポート用の任意Proプランがあります。',
   autoflowcut_faq_q7: '台本もAIが書いてくれますか？',
   autoflowcut_faq_a7: 'はい — v3.0で追加されたストーリーモードです。白紙から完成プロジェクトまで、アプリを離れずに完結します：設定 → リサーチ → あらすじ → 台本 → シーン分割 → オーディオ → プロンプト。AI（Claude · Codex）が台本を書くことも、自分の台本を貼り付け／インポートすることもでき、台本中の人物はリファレンスカードとして自動登録されます。任せられるステップの「自動」をオンにして「一括実行」を押せば、パイプラインが最後まで自走します。',
   autoflowcut_faq_q8: 'ナレーションや効果音も生成できますか？',
   autoflowcut_faq_a8: 'はい。オーディオのステップで、Typecast · ElevenLabs · Geminiのボイスを話者ごとに指定します。ピッカーで検索・試聴でき、キャラクターの台詞に感情を反映し（ナレーターは対象外）、話者ごとに分かれたナレーショントラックが得られます。効果音は台本から自動抽出してシーンに配置し、1つずつ試聴できます。',
-  autoflowcut_faq_q9: 'macOSはどのビルドをダウンロードすべきですか？',
-  autoflowcut_faq_a9: 'Apple Silicon（M1以降）はarm64のDMG、Intel Macはx64のDMGをダウンロードしてください。v3.0.0以降、すべてのGitHubリリースに両方が添付されています。どちらか分からない場合は、Appleメニュー →「このMacについて」でチップを確認できます。',
 
   // AutoFlowCut - スクリーンショットギャラリー
   autoflowcut_screenshot_badge: 'アプリプレビュー',
@@ -556,20 +543,6 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   // AutoFlowCut - デモ動画
 
   // AutoFlowCut - インストール
-  autoflowcut_install_title: 'ダウンロード＆インストール',
-  autoflowcut_install_desc: 'AutoFlowCutはスタンドアロンのデスクトップアプリです。お使いのプラットフォーム用をダウンロードしてください。',
-  autoflowcut_install_mac_title: 'macOS',
-  autoflowcut_install_mac_desc: 'GitHub ReleasesからDMGをダウンロード。ビルドは2種類あるので、お使いのMacに合うものを選んでください。',
-  autoflowcut_install_mac_arch: 'Apple Silicon（M1以降）→ mac-arm64.dmg · Intel Mac → mac-x64.dmg。分からない場合は Appleメニュー →「このMacについて」でチップを確認。',
-  autoflowcut_install_mac_btn: 'Mac用ダウンロード',
-  autoflowcut_install_win_title: 'Windows',
-  autoflowcut_install_win_desc: 'Microsoft Storeで入手可能。Windows 10/11対応。',
-  autoflowcut_install_win_btn: 'MS Storeで入手',
-  autoflowcut_install_requirement: '動作要件',
-  autoflowcut_install_req1: 'Google アカウント（Flowログイン）または Google AI Studio APIキー（APIモード）',
-  autoflowcut_install_req2: 'macOS 12+（Apple Siliconはarm64、Intelはx64）またはWindows 10+',
-  autoflowcut_install_req3: 'AI生成のためのインターネット接続',
-  autoflowcut_install_opensource: 'オープンソース（MIT）— GitHubでコードとリリースを確認',
 
   // AutoFlowCut - Google API紹介
   autoflowcut_flow_badge: '2つの生成モード',
@@ -581,7 +554,6 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   autoflowcut_flow_feat2_desc: 'ご自身のGemini/Veo APIキーを使い、パワーユーザーや大量処理に対応。従量課金でGoogleから請求されます。高速で、画像100枚あたり約2〜5分です。',
   autoflowcut_flow_feat3_title: 'いつでも切り替え',
   autoflowcut_flow_feat3_desc: 'FlowログインとAPIキーをいつでも切り替え可能 — 低コストのサブスクで無料で始めて、必要になったら高速なAPI生成にスケールアップできます。',
-  autoflowcut_flow_cta: 'AutoFlowCutをダウンロード',
 
   // AutoFlowCut - 時間節約
   autoflowcut_time_badge: '時間節約',
@@ -658,16 +630,6 @@ style,cinematic,images/cinematic.png,"Dramatic lighting"`,
   autoflowcut_trust_badges_title: '信頼バッジ',
 
   // AutoFlowCut - コントリビュート＆リワード
-  autoflowcut_contribute_badge: 'オープンソース · MIT',
-  autoflowcut_contribute_title: 'コントリビュートしてリワードを獲得',
-  autoflowcut_contribute_subtitle: 'AutoFlowCutはオープンソースであり、コミュニティのコントリビューションに報います。',
-  autoflowcut_contribute_bug_title: 'バグ修正 → 利用クレジット',
-  autoflowcut_contribute_bug_desc: 'バグを見つけて修正し、PRを送ってください。レビューを経てマージされると、影響の大きさに応じた利用クレジットを獲得できます — 最低10回の生成から、最大1年間の無制限利用まで。',
-  autoflowcut_contribute_plugin_title: '収益モデルプラグイン → マージ',
-  autoflowcut_contribute_plugin_desc: '収益モデルを追加するプラグインを作りましたか？PRを送ってください。よく作り込まれた安全でプロジェクトに合致するプラグインをレビュー・マージし、詳細を一緒に詰めていきます。',
-  autoflowcut_contribute_note: 'すべてのコントリビューションはMITの下で受け付けられます。リワードの額は品質と影響に基づき、メンテナーの裁量で付与されます。',
-  autoflowcut_contribute_cta_github: 'GitHubでPRを送る',
-  autoflowcut_contribute_cta_discord: 'Discordで相談する',
 
   // AutoFlowCut - Story Mode (in-app, v3.0)
   autoflowcut_story_badge: 'v3.0の新機能 · アプリ内蔵',

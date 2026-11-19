@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { Language, languages, translations, TranslationKey } from '@/lib/i18n';
 import Header from '@/components/Header';
@@ -10,7 +9,6 @@ import Footer from '@/components/Footer';
 import RetiredBanner from './components/RetiredBanner';
 import HeroSection from './components/HeroSection';
 import ScreenshotGallerySection from './components/ScreenshotGallerySection';
-import InstallationSection from './components/InstallationSection';
 import WhatIsSection from './components/WhatIsSection';
 import StoryModeSection from './components/StoryModeSection';
 import FlowIntroSection from './components/FlowIntroSection';
@@ -25,11 +23,8 @@ import HowItWorksSection from './components/HowItWorksSection';
 import InputGuideSection from './components/InputGuideSection';
 import ExportGuideSection from './components/ExportGuideSection';
 import ReleaseNotesSection from './components/ReleaseNotesSection';
-import PricingSection from './components/PricingSection';
-import ContributeSection from './components/ContributeSection';
 import TrustSection from './components/TrustSection';
 import FAQSection from './components/FAQSection';
-import CTASection from './components/CTASection';
 
 export default function AutoFlowCutPage() {
   const router = useRouter();
@@ -41,55 +36,9 @@ export default function AutoFlowCutPage() {
 
   const t = (key: TranslationKey) => translations[lang][key];
 
-  const [isMac, setIsMac] = useState(false);
-
-  useEffect(() => {
-    setIsMac(/Mac|iPhone|iPad|iPod/.test(navigator.platform));
-  }, []);
-
   const handleLanguageChange = (newLang: Language) => {
     router.push(`/${newLang}/autoflowcut`);
   };
-
-  const proSaveText = {
-    en: 'Save 17%',
-    ko: '17% 절약',
-    ja: '17%節約',
-    de: '17% sparen',
-  }[lang];
-
-  // B-3 quota model: 5/month + 5 lifetime signup bonus
-  const plans = [
-    {
-      name: t('pricing_free'),
-      desc: t('pricing_free_desc'),
-      price: '$0',
-      period: '',
-      features: [
-        t('pricing_free_feature1'),
-        t('pricing_free_feature2'),
-        t('pricing_free_feature3'),
-      ],
-      cta: t('pricing_cta_free'),
-      highlighted: false,
-    },
-    {
-      name: t('pricing_pro'),
-      desc: t('pricing_pro_desc'),
-      price: '$9.99',
-      period: lang === 'ko' ? '/월' : lang === 'ja' ? '/月' : lang === 'de' ? '/Monat' : '/mo',
-      yearlyPrice: '$99.99',
-      yearlyPeriod: lang === 'ko' ? '/년' : lang === 'ja' ? '/年' : lang === 'de' ? '/Jahr' : '/yr',
-      saveText: proSaveText,
-      features: [
-        t('pricing_pro_feature1'),
-        t('pricing_pro_feature2'),
-        t('pricing_pro_feature3'),
-      ],
-      cta: t('pricing_cta_pro'),
-      highlighted: true,
-    },
-  ];
 
   return (
     <main className="min-h-screen overflow-x-hidden">
@@ -98,7 +47,6 @@ export default function AutoFlowCutPage() {
 
       <HeroSection lang={lang} t={t} />
       <ScreenshotGallerySection lang={lang} t={t} />
-      <InstallationSection lang={lang} t={t} isMac={isMac} />
       <WhatIsSection lang={lang} t={t} />
       <StoryModeSection lang={lang} t={t} />
       <FlowIntroSection lang={lang} t={t} />
@@ -113,11 +61,8 @@ export default function AutoFlowCutPage() {
       <InputGuideSection lang={lang} t={t} />
       <ExportGuideSection lang={lang} t={t} />
       <ReleaseNotesSection lang={lang} />
-      <PricingSection lang={lang} t={t} plans={plans} />
-      <ContributeSection lang={lang} t={t} />
       <TrustSection lang={lang} t={t} />
       <FAQSection lang={lang} t={t} />
-      <CTASection lang={lang} t={t} />
 
       <Footer lang={lang} />
     </main>

@@ -29,18 +29,18 @@ export default function RetiredBanner({ lang }: { lang: Language }) {
   const m = messages[lang];
 
   return (
-    <div data-afc-retired className="relative z-40 mt-16 bg-gradient-to-r from-amber-500 to-orange-500 text-white">
+    <div data-afc-retired className="relative z-40 mt-16 bg-gradient-to-r from-amber-700 to-orange-700 text-white">
       <div className="container-custom px-4 py-4">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left">
           <div className="flex-1">
             <p className="font-bold text-lg">{m.title}</p>
-            <p className="text-sm text-white/90">{m.desc}</p>
+            <p className="text-sm text-white">{m.desc}</p>
           </div>
           <a
             href={REPO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-orange-600 rounded-xl font-bold text-sm hover:bg-orange-50 transition-all shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-orange-800 rounded-xl font-bold text-sm hover:bg-orange-50 transition-all shrink-0"
           >
             {m.cta}
           </a>

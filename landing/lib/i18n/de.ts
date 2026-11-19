@@ -272,7 +272,6 @@ export const de = {
   pricing_cta_free: 'Kostenlos starten',
   pricing_cta_pro: 'Pro kaufen',
   pricing_purchase_note: 'Kauf und Abonnement erfolgen in der App — sowohl in der Desktop-App als auch in der Chrome-Erweiterung verfügbar.',
-  autoflowcut_pricing_purchase_note: 'Kauf und Abonnement erfolgen in der AutoFlowCut-Desktop-App.',
 
   // CapCut Timeline Preview
   timeline_preview: 'Vorschau',
@@ -451,11 +450,8 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   autoflowcut_hero_title: 'AutoFlowCut',
   autoflowcut_hero_slogan: 'Prompts rein, Videoprojekt raus',
   autoflowcut_hero_subtitle: 'Generieren Sie KI-Bilder und Videos stapelweise auf zwei Wegen — melden Sie sich mit Google Flow an (kostenlos über ein günstiges Abo) oder bringen Sie Ihren eigenen Gemini & Veo API-Schlüssel mit — und exportieren Sie komplette Projekte für CapCut, Adobe Premiere Pro oder Vrew mit Timeline, Audio, Untertiteln und Animationen.',
-  autoflowcut_hero_cta: 'Im Microsoft Store holen',
-  autoflowcut_hero_cta_mac: 'macOS Download',
   autoflowcut_hero_cta_secondary: 'Release Notes',
   autoflowcut_hero_cta_story: 'Story-Modus-Anleitung',
-  autoflowcut_hero_mac_arch: 'macOS erscheint in zwei Builds — arm64 für Apple Silicon (M1 und neuer), x64 für Intel-Macs.',
   autoflowcut_platform_badge: 'Desktop-App · Open Source',
 
   autoflowcut_what_title: 'Was ist AutoFlowCut?',
@@ -519,11 +515,6 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   autoflowcut_diff_tts: 'Integrierte Sprachausgabe (TTS)',
   autoflowcut_diff_sfx: 'Soundeffekte aus dem Skript',
 
-  autoflowcut_cta_title: 'Bereit, Ihren Workflow zu automatisieren?',
-  autoflowcut_cta_subtitle: 'Laden Sie die Desktop-App herunter oder lesen Sie die Release Notes.',
-  autoflowcut_cta_download: 'Im Microsoft Store holen',
-  autoflowcut_cta_mac: 'macOS Download',
-  autoflowcut_cta_github: 'Release Notes',
 
   // AutoFlowCut FAQ
   autoflowcut_faq_title: 'Häufig gestellte Fragen',
@@ -538,14 +529,10 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   autoflowcut_faq_a4: 'Sie können Szenen-Prompts aus TXT (zeilenweise), CSV (strukturierte Spaltendaten) und SRT (Untertiteldateien mit Timing) importieren — jedes Format wird automatisch in Szenen geparst. Sie können aber auch ganz ohne Datei starten: Im Story-Modus schreiben oder generieren Sie das Skript in der App, und es wird für Sie in Szenen aufgeteilt.',
   autoflowcut_faq_q5: 'In welche Editoren kann ich exportieren?',
   autoflowcut_faq_a5: 'Exportieren Sie ein komplettes Projekt nach CapCut, Adobe Premiere Pro (.prproj) oder Vrew (.vrew). Jedes enthält Timeline, Mediendateien, Untertitel und Ken Burns-Animationen — sofort zur Bearbeitung bereit.',
-  autoflowcut_faq_q6: 'Ist AutoFlowCut kostenlos?',
-  autoflowcut_faq_a6: 'AutoFlowCut kann kostenlos heruntergeladen werden und ist Open Source (MIT). Der Flow-Login-Modus bietet kostenlose Generierung über ein günstiges Abo; der API-Key-Modus ist nutzungsbasiert und wird von Google auf Ihren eigenen Schlüssel abgerechnet. Der Export enthält ein kostenloses Monatskontingent mit einem optionalen Pro-Plan für unbegrenzte Exporte.',
   autoflowcut_faq_q7: 'Schreibt AutoFlowCut das Skript für mich?',
   autoflowcut_faq_a7: 'Ja — das ist der Story-Modus, neu in v3.0. Er führt Sie vom leeren Blatt zum fertigen Projekt, ohne die App zu verlassen: Setup, Recherche, Synopsis, Skript, Szenenaufteilung, Audio, Prompts. Die KI kann das Skript schreiben (Claude oder Codex), oder Sie fügen Ihr eigenes ein; Figuren aus dem Skript registrieren sich selbst als Referenzkarten. Aktivieren Sie „Auto“ für die Schritte, denen Sie vertrauen, drücken Sie „Alles ausführen“, und die Pipeline läuft bis zum Ende durch.',
   autoflowcut_faq_q8: 'Erzeugt AutoFlowCut Sprachausgabe und Soundeffekte?',
   autoflowcut_faq_a8: 'Ja. Im Audio-Schritt weisen Sie jedem Sprecher eine Stimme von Typecast, ElevenLabs oder Gemini zu — Stimmen im Picker suchen und probehören, Emotionen auf Figurenzeilen anwenden (nie auf den Erzähler) und pro Sprecher eine eigene Narrationsspur erhalten. Soundeffekte werden automatisch aus dem Skript gezogen, auf Szenen gelegt und lassen sich einzeln anhören.',
-  autoflowcut_faq_q9: 'Welchen macOS-Build soll ich herunterladen?',
-  autoflowcut_faq_a9: 'Auf Apple Silicon (M1 und neuer) laden Sie die arm64-DMG, auf einem Intel-Mac die x64-DMG. Beide liegen jedem GitHub-Release ab v3.0.0 bei. Wenn Sie unsicher sind: Apple-Menü → „Über diesen Mac“ zeigt den Chip an.',
 
   // AutoFlowCut - Screenshot-Galerie
   autoflowcut_screenshot_badge: 'App-Vorschau',
@@ -556,20 +543,6 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   // AutoFlowCut - Demo-Video
 
   // AutoFlowCut - Installation
-  autoflowcut_install_title: 'Download & Installation',
-  autoflowcut_install_desc: 'AutoFlowCut ist eine eigenständige Desktop-App. Laden Sie die Version für Ihre Plattform herunter.',
-  autoflowcut_install_mac_title: 'macOS',
-  autoflowcut_install_mac_desc: 'DMG von GitHub Releases herunterladen. Es gibt zwei Builds — wählen Sie den passenden für Ihren Mac.',
-  autoflowcut_install_mac_arch: 'Apple Silicon (M1 und neuer) → mac-arm64.dmg · Intel-Mac → mac-x64.dmg. Unsicher? Apple-Menü → „Über diesen Mac“ zeigt den Chip.',
-  autoflowcut_install_mac_btn: 'Für Mac herunterladen',
-  autoflowcut_install_win_title: 'Windows',
-  autoflowcut_install_win_desc: 'Im Microsoft Store erhältlich. Windows 10/11 unterstützt.',
-  autoflowcut_install_win_btn: 'Aus MS Store holen',
-  autoflowcut_install_requirement: 'Voraussetzungen',
-  autoflowcut_install_req1: 'Ein Google-Konto (Flow-Login) oder ein Google AI Studio API-Schlüssel (API-Modus)',
-  autoflowcut_install_req2: 'macOS 12+ (arm64 für Apple Silicon, x64 für Intel) oder Windows 10+',
-  autoflowcut_install_req3: 'Internetverbindung für AI-Generierung',
-  autoflowcut_install_opensource: 'Open Source (MIT) — Code und Releases auf GitHub einsehen',
 
   // AutoFlowCut - Google API Einführung
   autoflowcut_flow_badge: 'Zwei Generierungsmodi',
@@ -581,7 +554,6 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   autoflowcut_flow_feat2_desc: 'Bringen Sie Ihren eigenen Gemini/Veo API-Schlüssel mit für Power-User und Massenarbeit. Nutzungsbasiert, von Google abgerechnet. Schnell — etwa 100 Bilder in ca. 2-5 Minuten.',
   autoflowcut_flow_feat3_title: 'Jederzeit wechseln',
   autoflowcut_flow_feat3_desc: 'Wechseln Sie zwischen Flow-Login und API-Key, wann immer Sie möchten — starten Sie kostenlos im günstigen Abo und skalieren Sie bei Bedarf zur schnellen API-Generierung.',
-  autoflowcut_flow_cta: 'AutoFlowCut herunterladen',
 
   // AutoFlowCut - Zeitersparnis
   autoflowcut_time_badge: 'Zeitersparnis',
@@ -658,16 +630,6 @@ Der junge Prinz übt im Burghof Schwertkampf`,
   autoflowcut_trust_badges_title: 'Vertrauenssiegel',
 
   // AutoFlowCut - Beitragen & Verdienen
-  autoflowcut_contribute_badge: 'Open Source · MIT',
-  autoflowcut_contribute_title: 'Beitragen & Verdienen',
-  autoflowcut_contribute_subtitle: 'AutoFlowCut ist Open Source, und wir belohnen Community-Beiträge.',
-  autoflowcut_contribute_bug_title: 'Bug beheben → Nutzungsguthaben',
-  autoflowcut_contribute_bug_desc: 'Finden Sie einen Bug, beheben Sie ihn und öffnen Sie einen PR. Nach Prüfung und Merge erhalten Sie Nutzungsguthaben je nach Wirkung — von mindestens 10 Generierungen bis zu 1 Jahr unbegrenzter Nutzung.',
-  autoflowcut_contribute_plugin_title: 'Umsatzmodell-Plugins → gemergt',
-  autoflowcut_contribute_plugin_desc: 'Haben Sie ein Plugin gebaut, das ein Umsatzmodell hinzufügt? Öffnen Sie einen PR. Wir prüfen und mergen gut gebaute, sichere Plugins, die zum Projekt passen, und klären die Details mit Ihnen.',
-  autoflowcut_contribute_note: 'Alle Beiträge werden unter MIT akzeptiert. Die Höhe der Belohnung liegt im Ermessen des Maintainers und richtet sich nach Qualität und Wirkung.',
-  autoflowcut_contribute_cta_github: 'PR auf GitHub öffnen',
-  autoflowcut_contribute_cta_discord: 'Auf Discord besprechen',
 
   // AutoFlowCut - Story Mode (in-app, v3.0)
   autoflowcut_story_badge: 'Neu in v3.0 · In der App',

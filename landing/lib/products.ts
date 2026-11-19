@@ -108,11 +108,6 @@ export const features: Feature[] = [
 
 export const socialLinks = [
   {
-    name: 'YouTube',
-    url: 'https://youtube.com/@touchizen',
-    icon: 'youtube',
-  },
-  {
     name: 'GitHub',
     url: 'https://github.com/touchizen',
     icon: 'github',
@@ -128,16 +123,3 @@ export const socialLinks = [
     icon: 'x',
   },
 ];
-
-// Language-specific YouTube channel URLs
-// ko: Korean channel (@터치즌)
-// default (en/ja/de): English channel (@touchizen)
-export function getSocialLinks(lang: string) {
-  const youtubeUrl =
-    lang === 'ko'
-      ? 'https://youtube.com/@터치즌'
-      : 'https://youtube.com/@touchizen';
-  return socialLinks.map((link) =>
-    link.name === 'YouTube' ? { ...link, url: youtubeUrl } : link
-  );
-}

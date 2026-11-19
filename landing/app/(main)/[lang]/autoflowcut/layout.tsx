@@ -124,18 +124,6 @@ function generateJsonLd(lang: Language) {
     operatingSystem: 'macOS, Windows',
     url: `${baseUrl}/${lang}/autoflowcut/`,
     description: descriptions[lang],
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-      description: ({
-        en: 'Free to download and open source (MIT). Includes 5 project exports/month + 5 signup bonus. Pro: $9.99/mo or $99.99/yr for unlimited exports. Flow login offers free generation on a low-cost subscription; API mode is billed by Google.',
-        ko: '무료 다운로드 및 오픈소스(MIT). 프로젝트 내보내기 월 5회 + 가입 보너스 5회 포함. Pro는 월 $9.99 또는 연 $99.99로 내보내기 무제한. Flow 로그인은 저비용 구독으로 무료 생성, API 모드는 Google에 직접 과금됩니다.',
-        ja: '無料ダウンロード＆オープンソース(MIT)。プロジェクトエクスポート月5回 + 登録ボーナス5回付き。Proは月額$9.99または年額$99.99でエクスポート無制限。Flowログインは低コストのサブスクで無料生成、APIモードはGoogleから直接請求されます。',
-        de: 'Kostenloser Download und Open Source (MIT). Enthält 5 Projekt-Exporte/Monat + 5 Anmelde-Bonus. Pro: $9,99/Mo oder $99,99/Jahr für unbegrenzte Exporte. Flow-Login bietet kostenlose Generierung im günstigen Abo; API-Modus wird von Google berechnet.',
-      })[lang],
-    },
-    downloadUrl: 'https://github.com/touchizen/AutoFlowCut/releases/latest',
     author: {
       '@type': 'Organization',
       name: 'Touchizen',
@@ -157,11 +145,9 @@ function generateJsonLd(lang: Language) {
       { q: 'autoflowcut_faq_q3', a: 'autoflowcut_faq_a3' },
       { q: 'autoflowcut_faq_q4', a: 'autoflowcut_faq_a4' },
       { q: 'autoflowcut_faq_q5', a: 'autoflowcut_faq_a5' },
-      { q: 'autoflowcut_faq_q6', a: 'autoflowcut_faq_a6' },
-      { q: 'autoflowcut_faq_q7', a: 'autoflowcut_faq_a7' },
+        { q: 'autoflowcut_faq_q7', a: 'autoflowcut_faq_a7' },
       { q: 'autoflowcut_faq_q8', a: 'autoflowcut_faq_a8' },
-      { q: 'autoflowcut_faq_q9', a: 'autoflowcut_faq_a9' },
-    ].map(({ q, a }) => ({
+      ].map(({ q, a }) => ({
       '@type': 'Question',
       name: t(q),
       acceptedAnswer: {

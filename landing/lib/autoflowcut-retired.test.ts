@@ -5,11 +5,21 @@ import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 import { createElement } from 'react';
+import matter from 'gray-matter';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
+import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
-import { languages } from '@/lib/i18n';
+import { blogOnlyLanguages, languages } from '@/lib/i18n';
+
+// The AutoFlowCut page reads its language from the route; render it as each language.
+const route = vi.hoisted(() => ({ lang: 'en' }));
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({ push: () => {}, replace: () => {} }),
+  useParams: () => ({ lang: route.lang }),
+  usePathname: () => `/${route.lang}/autoflowcut/`,
+}));
 
 import { products } from './products';
 
@@ -55,6 +65,11 @@ describe('main page without AutoFlowCut', () => {
     expect(read(layout)).not.toMatch(/capcut|whisk|youtube/i);
   });
 
+  it.each([...languages, ...blogOnlyLanguages].map((l) => l.code))('has no YouTube link in the %s footer', (lang) => {
+    const html = renderToStaticMarkup(createElement(Footer, { lang }));
+    expect(html).not.toMatch(/youtube\.com\/|youtu\.be\//);
+  });
+
   it('no longer sends whisk2capcut readers to AutoFlowCut', () => {
     const pointing = filesUnder(join(LANG_DIR, 'whisk2capcut')).filter((f) =>
       read(f).includes('/autoflowcut'),
@@ -90,24 +105,76 @@ describe('retired notice on what stays', () => {
     expect(sources.filter((f) => read(f).includes('AGPL'))).toEqual([]);
   });
 
-  it('puts the notice on every AutoFlowCut guide page', () => {
-    const pages = readdirSync(GUIDE_DIR)
-      .map((lang) => join(GUIDE_DIR, lang, 'autoflowcut'))
-      .filter((dir) => existsSync(dir))
-      .flatMap((dir) => readdirSync(dir).filter((f) => f.endsWith('.html')).map((f) => join(dir, f)));
-    expect(pages.length).toBe(28);
-    expect(pages.filter((p) => !read(p).includes('data-afc-retired'))).toEqual([]);
+  it('puts the notice on every AutoFlowCut guide page, in every guide language', () => {
+    const guideLangs = readdirSync(GUIDE_DIR).filter((l) => existsSync(join(GUIDE_DIR, l, 'autoflowcut')));
+    const pagesOf = (l: string) =>
+      readdirSync(join(GUIDE_DIR, l, 'autoflowcut')).filter((f) => f.endsWith('.html')).sort();
+    expect(guideLangs.sort()).toEqual(languages.map((l) => l.code).sort());
+    for (const l of guideLangs) expect(pagesOf(l), l).toEqual(pagesOf('en'));
+    expect(pagesOf('en').length).toBeGreaterThan(0);
+
+    const missing = guideLangs.flatMap((l) =>
+      pagesOf(l)
+        .map((f) => join(GUIDE_DIR, l, 'autoflowcut', f))
+        .filter((p) => {
+          const html = read(p);
+          const at = html.indexOf('data-afc-retired');
+          const notice = at < 0 ? '' : html.slice(at, html.indexOf('</div>', html.indexOf('</div>', at) + 1));
+          return !(notice.includes('AutoFlowCut') && notice.includes('MIT') && notice.includes(REPO_URL));
+        }),
+    );
+    expect(missing).toEqual([]);
   });
 
-  it('puts the notice first in every blog post tagged AutoFlowCut', () => {
-    const posts = readdirSync(BLOG_DIR)
-      .flatMap((lang) => readdirSync(join(BLOG_DIR, lang)).map((f) => join(BLOG_DIR, lang, f)))
-      .filter((p) => p.endsWith('.md') && /^tags:.*"AutoFlowCut"/m.test(read(p)));
-    expect(posts.length).toBe(20);
-    const missing = posts.filter((p) => {
-      const body = read(p).replace(/^---\n[\s\S]*?\n---\n/, '').trimStart();
-      return !(body.startsWith('> ⚠️') && body.split('\n')[0].includes(REPO_URL));
+  it('puts the notice first in every blog post tagged AutoFlowCut, in every site language', () => {
+    const tagged = readdirSync(BLOG_DIR).flatMap((lang) =>
+      readdirSync(join(BLOG_DIR, lang))
+        .filter((f) => f.endsWith('.md'))
+        .map((f) => ({ lang, slug: f.replace(/\.md$/, ''), ...matter(read(join(BLOG_DIR, lang, f))) }))
+        .filter((post) => (post.data.tags ?? []).includes('AutoFlowCut')),
+    );
+    const slugs = Array.from(new Set(tagged.map((p) => p.slug))).sort();
+    expect(slugs.length).toBeGreaterThan(0);
+    for (const l of languages.map((x) => x.code)) {
+      expect(tagged.filter((p) => p.lang === l).map((p) => p.slug).sort(), l).toEqual(slugs);
+    }
+
+    const missing = tagged.filter((post) => {
+      const first = post.content.trimStart().split('\n')[0];
+      return !(first.startsWith('> ⚠️ **AutoFlowCut') && first.includes('MIT') && first.includes(REPO_URL));
     });
-    expect(missing).toEqual([]);
+    expect(missing.map((p) => `${p.lang}/${p.slug}`)).toEqual([]);
+  });
+});
+
+describe('nothing left to download or buy on the AutoFlowCut page', () => {
+  it.each(languages.map((l) => l.code))('renders the %s page without store, download, price or YouTube', async (lang) => {
+    route.lang = lang;
+    const { default: AutoFlowCutPage } = await import('@/app/(main)/[lang]/autoflowcut/page');
+    const html = renderToStaticMarkup(createElement(AutoFlowCutPage));
+    expect(html).toContain('data-afc-retired'); // the render really is the AutoFlowCut page
+    expect(html).not.toContain('apps.microsoft.com');
+    expect(html).not.toContain('Microsoft Store');
+    expect(html).not.toContain('releases/latest');
+    expect(html).not.toMatch(/\$\d+\.99/);
+    expect(html).not.toMatch(/youtube\.com\/|youtu\.be\//);
+  });
+
+  it('drops the install, pricing, contribution-rewards and download-CTA sections', () => {
+    const page = read(join(LANG_DIR, 'autoflowcut', 'page.tsx'));
+    for (const section of ['InstallationSection', 'PricingSection', 'ContributeSection', 'CTASection']) {
+      expect(page).not.toContain(section);
+    }
+  });
+
+  it('asks no pricing or macOS-download question in the FAQ or its structured data', () => {
+    for (const file of ['components/FAQSection.tsx', 'layout.tsx']) {
+      expect(read(join(LANG_DIR, 'autoflowcut', file))).not.toMatch(/autoflowcut_faq_[qa](6|9)\b/);
+    }
+  });
+
+  it('offers no price or download in the structured data', () => {
+    const layout = read(join(LANG_DIR, 'autoflowcut', 'layout.tsx'));
+    expect(layout).not.toMatch(/offers|downloadUrl|\$\d+\.99/);
   });
 });
