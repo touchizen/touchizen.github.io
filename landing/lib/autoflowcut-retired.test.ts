@@ -54,6 +54,12 @@ describe('main page without AutoFlowCut', () => {
     expect(html).not.toContain('<iframe');
   });
 
+  it.each(languages.map((l) => l.code))('lists no AutoFlowCut feature in the %s home features section', async (lang) => {
+    const { default: Features } = await import('@/components/Features');
+    const html = renderToStaticMarkup(createElement(Features, { lang }));
+    expect(html).not.toMatch(/capcut|autoflowcut|100\+|100장|100枚/i);
+  });
+
   it('does not pitch AutoFlowCut on the root page crawlers read', () => {
     expect(read(join(APP, '(redirect)', 'page.tsx'))).not.toMatch(/autoflowcut/i);
   });

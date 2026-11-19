@@ -93,16 +93,16 @@ export const features: Feature[] = [
     icon: '⏱️',
   },
   {
-    id: 'bulk-images',
+    id: 'one-photo',
     titleKey: 'feature2_title',
     descKey: 'feature2_desc',
-    icon: '🖼️',
+    icon: '📸',
   },
   {
-    id: 'capcut-export',
+    id: 'layout-translation',
     titleKey: 'feature3_title',
     descKey: 'feature3_desc',
-    icon: '🎬',
+    icon: '🌐',
   },
 ];
 

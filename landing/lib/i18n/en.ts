@@ -248,10 +248,10 @@ export const en = {
   features_subtitle: 'Built for creators, by creators',
   feature1_title: 'Save Time',
   feature1_desc: 'Turn hours of repetitive work into just a few minutes',
-  feature2_title: 'Bulk Image Creation',
-  feature2_desc: 'Generate 100+ AI images at once with consistent style',
-  feature3_title: 'Instant CapCut Export',
-  feature3_desc: 'One-click conversion to ready-to-edit CapCut projects',
+  feature2_title: 'One Photo Is Enough',
+  feature2_desc: 'Snap a photo and AI analyzes the calories or turns a maths problem into a step-by-step video',
+  feature3_title: 'Translate with the Layout Intact',
+  feature3_desc: 'Read PDF and EPUB documents translated, with the original layout kept',
 
   // Pricing
   pricing_title: 'Simple Pricing',

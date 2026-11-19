@@ -248,10 +248,10 @@ export const de = {
   features_subtitle: 'Von Creators für Creators entwickelt',
   feature1_title: 'Zeit sparen',
   feature1_desc: 'Stunden repetitiver Arbeit in nur wenige Minuten verwandeln',
-  feature2_title: 'Massen-Bildgenerierung',
-  feature2_desc: '100+ AI-Bilder auf einmal mit einheitlichem Stil generieren',
-  feature3_title: 'Sofortiger CapCut-Export',
-  feature3_desc: 'Ein-Klick-Konvertierung zu editierbaren CapCut-Projekten',
+  feature2_title: 'Ein Foto genügt',
+  feature2_desc: 'Einfach fotografieren – die KI analysiert Kalorien oder macht aus einer Matheaufgabe ein Erklärvideo',
+  feature3_title: 'Übersetzen, Layout bleibt',
+  feature3_desc: 'PDF- und EPUB-Dokumente übersetzt lesen – das ursprüngliche Layout bleibt erhalten',
 
   // Pricing
   pricing_title: 'Einfache Preise',

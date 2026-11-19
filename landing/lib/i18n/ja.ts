@@ -248,10 +248,10 @@ export const ja = {
   features_subtitle: 'クリエイターのために、クリエイターが作った',
   feature1_title: '時間節約',
   feature1_desc: '数時間の繰り返し作業を数分に短縮',
-  feature2_title: '大量画像生成',
-  feature2_desc: '一貫したスタイルで100枚以上のAI画像を一度に生成',
-  feature3_title: 'CapCut即時変換',
-  feature3_desc: 'ワンクリックで編集可能なCapCutプロジェクトに変換',
+  feature2_title: '写真1枚で十分',
+  feature2_desc: '撮るだけでAIがカロリーを分析し、数学の解説動画まで作ります',
+  feature3_title: 'レイアウトそのまま翻訳',
+  feature3_desc: 'PDF・EPUBを原文のレイアウトのまま翻訳して読めます',
 
   // Pricing
   pricing_title: 'シンプルな料金',
