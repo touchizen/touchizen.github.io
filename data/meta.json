@@ -1096,8 +1096,8 @@
   "language": "C"
  },
  "HarnessMD/munder-difflin": {
-  "description": "an open-source alternative to the dots, bots and muses of the world, run an office of claude code/codex like agents on your laptop, sandboxes or anywhere, uses your existing subscriptions",
-  "language": "JavaScript"
+  "description": "Coolest app to use agents, local, multi provider and open source grok bot alternative. Build custom worlds for your claude code and codex like agents",
+  "language": "TypeScript"
  },
  "HeartMuLa/heartlib": {
   "description": "HeartMuLa Official Repo: The Most Powerful Open-Source Music Generation Model of 2026",
@@ -2167,6 +2167,10 @@
   "description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
   "language": "TypeScript"
  },
+ "TNTcraftHIM/Piik": {
+  "description": "Free, open-source screen sharing for private live streams with friends. Watch together in a browser or self-host Piik. 免费开源的私密屏幕共享，支持游戏直播、一起看电影与自部署。",
+  "language": "TypeScript"
+ },
  "TabbyML/tabby": {
   "description": "Self-hosted AI coding assistant",
   "language": "Rust"
@@ -2206,6 +2210,10 @@
  "Tencent/BrowserSkill": {
   "description": "Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.",
   "language": "TypeScript"
+ },
+ "Tencent/LoopForge": {
+  "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+  "language": "Go"
  },
  "Tencent/WeKnora": {
   "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
@@ -3245,6 +3253,10 @@
  },
  "backnotprop/plannotator": {
   "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+  "language": "TypeScript"
+ },
+ "backnotprop/pstack": {
+  "description": "Use pstack with claude, codex, pi - Skills and principles for rigorous AI-assisted engineering",
   "language": "TypeScript"
  },
  "backstage/backstage": {
@@ -4359,6 +4371,10 @@
   "description": "Box3D is a 3D physics engine for games",
   "language": "C"
  },
+ "erkamyaman/rust-anything": {
+  "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+  "language": "Rust"
+ },
  "esengine/DeepSeek-Reasonix": {
   "description": "A reliable coding agent for complex software engineering tasks.",
   "language": "Go"
@@ -5028,7 +5044,7 @@
   "language": "Python"
  },
  "guohuiyuan/go-music-dl": {
-  "description": "一个基于 Go 语言的全网音乐搜索与下载工具。支持 CLI 命令行与 Web 服务双模式，内置网易云、QQ、酷狗、Bilibili、汽水音乐等 10+ 个主流平台，支持多源并发搜索与无损音质解析。music-dl交流群：755087923",
+  "description": "一个基于 Go 语言的全网音乐搜索与下载工具。支持 CLI 命令行与 Web 服务双模式，内置网易云、QQ、酷狗、Bilibili、汽水音乐等 10+ 个主流平台，支持多源并发搜索与无损音质解析。music-dl交流群：1125708443",
   "language": "Go"
  },
  "guokaigdg/animal-island-ui": {
@@ -5204,7 +5220,7 @@
   "language": "Python"
  },
  "htdt/godogen": {
-  "description": "Autonomous game development with Claude Code and Codex",
+  "description": "Skills for Claude Code, Codex and Antigravity to build games, and anything else a game engine renders well",
   "language": "Python"
  },
  "httpie/cli": {
@@ -5672,7 +5688,7 @@
   "language": "Python"
  },
  "kaomei/stickman-video-director": {
-  "description": "Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels. Automate visuals, voiceover, captions & SFX. 100% Free & Open-Source.",
+  "description": "AI Agent Skill (Claude Code, Codex & more): Turn any script into animated stickman videos for faceless YouTube, Shorts & TikTok. 14+ styles with voiceover, captions & SFX. Free & open-source (MIT).",
   "language": "JavaScript"
  },
  "karan/Projects": {
@@ -5786,6 +5802,10 @@
  "krahets/hello-algo": {
   "description": "《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现",
   "language": "Python"
+ },
+ "krisgfx9/Wireless-Device-Battery-Monitor": {
+  "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+  "language": "C++"
  },
  "kuafuai/andee": {
   "description": "Andee lives on your phone or Mac and uses any app like you do—no integrations, no root, any model; memory and passwords never leave your device | Andee 住进你的手机或 Mac，像你一样操作任何 App——无需集成、无需 Root、支持任意模型，记忆和密码绝不离开设备。",
@@ -6266,6 +6286,10 @@
  "mcncarl/yichen-skills": {
   "description": "",
   "language": "Python"
+ },
+ "mdiri-ai/SoduWork": {
+  "description": "The AI-native engine for teams and their agents. Multi-harness, multi-agent, self-hosted.",
+  "language": "JavaScript"
  },
  "medusajs/medusa": {
   "description": "The world's most flexible commerce platform for agents and developers",
@@ -6760,7 +6784,7 @@
   "language": "TypeScript"
  },
  "netdata/netdata": {
-  "description": "Full-stack observability · Metrics · Logs · Traces · Flows · Topology · Infrastructure · APM · NPM · DBM · RUM · Synthetics · Cloud · AI · OpenTelemetry · SNMP · NetFlow/IPFIX/sFlow · IPMI · Redfish · 2000+ integrations",
+  "description": "Full-stack observability · Metrics · Logs · Traces · Flows · Topology · Infrastructure · APM · NPM · DBM · RUM · Synthetics · Cloud · AI SRE · OpenTelemetry · SNMP · NetFlow/IPFIX/sFlow · IPMI · Redfish · 2000+ integrations",
   "language": "Go"
  },
  "netease-youdao/LobsterAI": {
@@ -7768,7 +7792,7 @@
   "language": "Python"
  },
  "rocketride-org/rocketride-server": {
-  "description": "High-performance AI pipeline engine with a C++ core and 50+ Python-extensible nodes. Build, debug, and scale LLM workflows with 13+ model providers, 8+ vector databases, and agent orchestration, all from your IDE. Includes VS Code extension, TypeScript/Python SDKs, and Docker deployment.",
+  "description": "RocketRide is an open source AI meta-harness with the only enterprise-grade runtime built on C++. Build, test and publish durable agents that scale in production.",
   "language": "Python"
  },
  "rohitg00/agentmemory": {
@@ -7880,7 +7904,7 @@
   "language": null
  },
  "sandbox-quantum/switch": {
-  "description": "Open-source AI teammates in Slack, Teams, Discord, Telegram and Mattermost. Self-host it, with any agent harness and any model.",
+  "description": "Open-source AI teammates in Slack, Teams, Discord, Telegram and Mattermost. Bring Claude Code, Codex, Gemini (Antigravity), Cursor, GitHub Copilot or your own agent on any model, and connect them to GitHub, Jira, Notion, Linear, Google Workspace and more. Self-hosted multi-agent orchestration with MCP.",
   "language": "Python"
  },
  "sansan0/TrendRadar": {
@@ -7945,7 +7969,7 @@
  },
  "seedds/nxnative": {
   "description": "Switch games running natively on iPhone, iPad and Mac: an NSP folder becomes an unsigned IPA (NSO rewriter, Horizon HLE host, NVN→Metal)",
-  "language": "Python"
+  "language": "Objective-C"
  },
  "serenakeyitan/awesome-notebookLM-prompts": {
   "description": "A curated collection of the strongest NotebookLM slide prompts sourced from the real creative underground . Your go-to resource for AI powerpoint :P",
@@ -8717,7 +8741,7 @@
  },
  "twbs/bootstrap": {
   "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
-  "language": "MDX"
+  "language": "JavaScript"
  },
  "twentyhq/twenty": {
   "description": "The open alternative to Salesforce, designed for AI.",
@@ -9076,7 +9100,7 @@
   "language": "Go"
  },
  "waligoraamodio288-rgb/hongguo-desktop-releases": {
-  "description": "红果短剧第三方客户端｜Windows 正式版、Mac M系列测试版、Android TV ARM32/ARM64 测试版。找剧、收藏、本机续播与电视遥控操作；免费使用，由渠道有数独立维护。",
+  "description": "红果短剧电脑版｜在 Windows 电脑上找剧、选集、收藏和接着上次看。免费第三方客户端，由渠道有数独立维护，提供 Windows 正式版、Mac M 系列和 Android TV 测试版。",
   "language": null
  },
  "walkinglabs/awesome-harness-engineering": {
@@ -9460,7 +9484,7 @@
   "language": "JavaScript"
  },
  "zenstory-ai/oh-story-claudecode": {
-  "description": "AI 写网文全流程 skill 包：扫榜选材、拆解爆款、大纲细纲、长篇设定与伏笔追踪、短篇反转、去AI味与封面生成，适配 Claude Code / Codex / Antigravity / OpenCode 等 ｜ Agent skill pack for writing Chinese web novels",
+  "description": "网文写作 Agent 技能包：扫榜、拆文、大纲细纲、长短篇连载、伏笔追踪、去AI味与封面生成，适配 Claude Code / Codex 等 ｜ Agent skills for writing web novels",
   "language": "Python"
  },
  "zerobrewhq/zerobrew": {
