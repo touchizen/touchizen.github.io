@@ -736,7 +736,7 @@
   "language": "C++"
  },
  "Eglantine-Community/Eglantine": {
-  "description": "VERY experimental Nintendo Switch 2 emulator",
+  "description": "An experimental Switch 2 Emulator built for Windows, Linux and MacOS.",
   "language": "C++"
  },
  "Egonex-AI/Understand-Anything": {
@@ -1174,6 +1174,10 @@
  "InterceptSuite/ProxyBridge": {
   "description": "Proxifier Alternative to redirect any Windows/MacOS/Linux TCP and UDP traffic to HTTP/Socks5 proxy",
   "language": "C"
+ },
+ "ItsNotRexed/Leonida": {
+  "description": "Leonida Is A Native PC Recompilation Of The Xbox Version Of Grand Theft Auto 6",
+  "language": "Python"
  },
  "ItzCrazyKns/Vane": {
   "description": "Vane is an AI-powered answering engine.",
@@ -3025,7 +3029,7 @@
  },
  "apache/maka": {
   "description": "Apache Maka (Incubating) is a high-performance agent workspace that keeps a complete record of everything it did.",
-  "language": "TypeScript"
+  "language": "Rust"
  },
  "apache/skywalking": {
   "description": "APM, Application Performance Monitoring System",
@@ -3090,6 +3094,10 @@
  "aristocratos/btop": {
   "description": "A monitor of resources",
   "language": "C++"
+ },
+ "arjun988/blender-skills": {
+  "description": "94 specialist Blender skills for Cursor, Claude Code, Kiro & Codex -> MCP-powered production pipeline from blockout to engine export.",
+  "language": "TypeScript"
  },
  "arman-bd/guppylm": {
   "description": "A ~9M parameter LLM that talks like a small fish.",
@@ -4387,6 +4395,10 @@
   "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
   "language": "Rust"
  },
+ "ersinkoc/phonebox": {
+  "description": "Turn an old Android phone into a customizable desk panel and touch control deck for Windows, Linux and macOS. 124 widgets and 30 templates for system stats, AI coding, media and automation, in 13 languages. USB or paired Wi-Fi. No cloud required.",
+  "language": "JavaScript"
+ },
  "esengine/DeepSeek-Reasonix": {
   "description": "A reliable coding agent for complex software engineering tasks.",
   "language": "Go"
@@ -5224,7 +5236,7 @@
   "language": "TypeScript"
  },
  "horizon-rust/horizon": {
-  "description": "Minecraft: Java Edition 26.3 rewritten from scratch in Rust, checked against vanilla with 281 differential harnesses. Get it with the Horizon launcher.",
+  "description": "Minecraft 26.3 rewritten in Rust.",
   "language": "Rust"
  },
  "hpcaitech/ColossalAI": {
@@ -9196,7 +9208,7 @@
   "language": "TypeScript"
  },
  "wiltodelta/remove-ai-watermarks": {
-  "description": "Remove visible and invisible AI watermarks from images and video, and AI provenance metadata from images, video, and audio. Python library, CLI, and agent skill for SynthID, C2PA, EXIF, IPTC, XMP, and common generative-AI marks. By Victor Kuznetsov.",
+  "description": "Remove visible and invisible AI watermarks from images and video, clean supported audio watermarks, and strip AI provenance metadata. Python library, CLI, and agent skill for SynthID, C2PA, and other AI marks. By Victor Kuznetsov.",
   "language": "Python"
  },
  "withastro/astro": {
@@ -9264,7 +9276,7 @@
   "language": "JavaScript"
  },
  "xiaoyang111222/cn-math-taxonomy": {
-  "description": "数学（小学到高中）、英语（三年级到高中）、初中物理的知识图谱：1644 个知识点、2403 条先修边、6723 道题，对齐课标，附自适应前置诊断。",
+  "description": "中小学 10 学科知识图谱查漏补缺：4,068 个知识点、6,429 条先修关系、16,419 道题。按国家课程标准逐条核对，诊断定位真正没学会的前置知识点，给出补学路径。",
   "language": "Python"
  },
  "xindoo/agentic-design-patterns": {
@@ -9499,9 +9511,13 @@
   "description": ":scissors: Modern copy to clipboard. No Flash. Just 3kb gzipped :clipboard:",
   "language": "JavaScript"
  },
+ "zenstory-ai/drama-skills": {
+  "description": "AI 短剧与漫剧制作 Agent 技能包：小说改剧本、视觉设定、分镜、生图/生视频提示词与剪辑成片，适配 Claude Code / Codex 等 ｜ Agent skills for AI short dramas & motion comics",
+  "language": "Python"
+ },
  "zenstory-ai/oh-story-claudecode": {
   "description": "网文写作 Agent 技能包：扫榜、拆文、大纲细纲、长短篇连载、伏笔追踪、去AI味与封面生成，适配 Claude Code / Codex 等 ｜ Agent skills for writing web novels",
-  "language": "Python"
+  "language": "JavaScript"
  },
  "zerobrewhq/zerobrew": {
   "description": "An up to 10x faster Homebrew client",
