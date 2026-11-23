@@ -188,7 +188,7 @@
   "language": "TypeScript"
  },
  "AhmadHassan-BTed/Jantt": {
-  "description": "The AI-native JSON Gantt chart engine. Dependency-free interactive timelines with React, script-tag, CLI, topological DAG solver, and formal JSON schema.",
+  "description": "Create interactive Gantt charts with AI — no code required, free forever. Built-in BYOK AI Copilot (10 providers + Ollama), free cloud rooms, working-calendar CPM, 6 views, React/Vue/Svelte/Python/MCP.",
   "language": "TypeScript"
  },
  "AhmadHassan-BTed/Ledgerify": {
@@ -872,7 +872,7 @@
   "language": "Python"
  },
  "Forget-C/Jellyfish": {
-  "description": "An end-to-end production workspace for AI-generated short dramas. From script input to structured storyboarding, consistency management, shot preparation, video generation, and export.",
+  "description": "开源 AI短剧生成与短剧制作工作台，支持剧本拆解、短剧分镜、角色一致性管理和视频生成。Open-source AI short drama studio for storyboarding and video generation.",
   "language": "Python"
  },
  "FortAwesome/Font-Awesome": {
@@ -1193,6 +1193,10 @@
  },
  "Jakeschincariol/day-trader-skill": {
   "description": "11 Claude skills for day trading: scan thousands of charts, track breaking news, time every entry and exit, and replay every outcome before you risk a dollar.",
+  "language": "Python"
+ },
+ "Jakeschincariol/founder-skill": {
+  "description": "Eleven free Claude skills that test a business before you launch it: a board trained on Hormozi, Thiel and Jobs, a marketing director, a CFO, and a consumer panel of 100 buyer agents. Free, MIT.",
   "language": "Python"
  },
  "Jakeschincariol/instagram-agent-skill": {
@@ -1907,6 +1911,10 @@
   "description": "A self-improving RLM agent for coding workflows and long-running autonomous tasks.",
   "language": "Rust"
  },
+ "PurpleDoubleD/locally-uncensored": {
+  "description": "The all-in-one local AI studio for your desktop: chat, image and video generation and a coding agent in one free, open source app. Windows and Linux. No Docker, no terminal, no cloud required.",
+  "language": "TypeScript"
+ },
  "Pythagora-io/gpt-pilot": {
   "description": "The first real AI developer",
   "language": "Python"
@@ -2592,7 +2600,7 @@
   "language": "Python"
  },
  "abue-ammar/tinycast": {
-  "description": "A native macOS launcher for everyday productivity. Lightweight and open source.",
+  "description": "A native macOS launcher built for productivity. Fast, lightweight, and open source.",
   "language": "Swift"
  },
  "accomplish-ai/coworker": {
@@ -3355,6 +3363,10 @@
   "description": "God's Eye View: a spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe. Official site: godseyeview.ai",
   "language": "JavaScript"
  },
+ "bilibili/GPT-SoVITS": {
+  "description": "1 min voice data can also be used to train a good TTS model! (few shot voice cloning)",
+  "language": "Python"
+ },
  "binaricat/Netcatty": {
   "description": "SSH workspace, SFTP, and terminals in one",
   "language": "TypeScript"
@@ -3416,7 +3428,7 @@
   "language": "TypeScript"
  },
  "bowenliang123/dsh-context": {
-  "description": "A context insight plugin officially recommended by DeepSeek Harness, for context composition, evolution and Multi-Agent details. DeepSeek Harness官方推荐的上下文洞察插件，透视上下文组成与演进，以及多Agent 协作与通讯。",
+  "description": "DeepSeek Harness officially recommended - a context insight plugin, for context composition, evolution and Multi-Agent details. DeepSeek Harness官方推荐的上下文洞察插件，透视上下文组成与演进，以及多Agent 协作与通讯。",
   "language": "TypeScript"
  },
  "boykopovar/AnyPS5": {
@@ -3516,7 +3528,7 @@
   "language": "Shell"
  },
  "byoungd/up": {
-  "description": "韩先凯的人生进阶指南 AI时代 中英双语终身学习指南：AI、学习 、创业、财富、爱情与人生",
+  "description": "人生进阶指南 韩先凯的人生进阶指南 AI时代中英双语终身学习指南：学习 、创业、财富、爱情、人生与AI",
   "language": "JavaScript"
  },
  "byted-technologies/Coldimail": {
@@ -3588,7 +3600,7 @@
   "language": "Rust"
  },
  "cathrynlavery/diagram-design": {
-  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
   "language": "HTML"
  },
  "ccch1mneyyy/dsh-Go": {
@@ -4108,7 +4120,7 @@
   "language": "TypeScript"
  },
  "deusyu/harness-engineering": {
-  "description": "Harness Engineering 学习指南 — 从概念理解到独立实践的深度学习档案",
+  "description": "Harness Engineering（驭缰工程）中文学习档案：概念笔记、一手翻译与实践记录 · Chinese study archive",
   "language": "JavaScript"
  },
  "dexhunter/seedance2-skill": {
@@ -5184,7 +5196,7 @@
   "language": "JavaScript"
  },
  "heygen-com/hyperframes": {
-  "description": "AI video you can actually edit. HyperFrames is a free, open-source AI video editor. Describe any video and get a real project you can change down to the frame.",
+  "description": "Open-source AI video editor: edit your own footage, or create and remake any video with Claude Code, Codex or the free Studio app. Write HTML, render MP4. By HeyGen.",
   "language": "TypeScript"
  },
  "hicccc77/WeFlow": {
@@ -6691,6 +6703,10 @@
   "description": "JavaScript 3D Library.",
   "language": "JavaScript"
  },
+ "mromidev/claude-animated-shorts": {
+  "description": "Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion",
+  "language": "TypeScript"
+ },
  "msitarzewski/agency-agents": {
   "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
   "language": "Shell"
@@ -8100,7 +8116,7 @@
   "language": "TypeScript"
  },
  "shy3130/tick-stock-panel": {
-  "description": "TSP自托管、零运维的 A 股「自建策略 + 监控 + 回测」量化工作台  | LLM能力驱使策略定制+个股分析+复盘 | 自由接入第三方数据源与个性化扩展数据 | 个人开源",
+  "description": "TSP自托管、零运维的 A 股「自建策略 + 监控 + 回测」量化工作台  | LLM能力驱使策略定制+个股分析+复盘 | 自由接入第三方数据源与个性化扩展数据 ",
   "language": "Python"
  },
  "sickcodes/Docker-OSX": {
@@ -9291,6 +9307,10 @@
   "description": "后端架构师技术图谱",
   "language": null
  },
+ "xinif-a/apds": {
+  "description": "Curated list of Agent Skills centered on people, relationships, commemorative scenes, and methodological perspectives",
+  "language": "JavaScript"
+ },
  "xinntao/Real-ESRGAN": {
   "description": "Real-ESRGAN aims at developing Practical Algorithms for General Image/Video Restoration.",
   "language": "Python"
@@ -9326,6 +9346,10 @@
  "yang0/handraw-style": {
   "description": "手绘风格编号画廊与双语提示词 Skill",
   "language": "HTML"
+ },
+ "yangbin1322/hongguo-player": {
+  "description": "红果短剧电脑版 · 不用安卓模拟器，直接在 Windows / macOS 上刷红果短剧 · 国内下载: hongguo.235698.xyz · 打不开用蓝奏云 (无需密码): wwalp.lanzout.com/b0rbj88ji",
+  "language": null
  },
  "yangshun/front-end-interview-handbook": {
   "description": "Front End interview preparation materials for busy engineers (updated for 2026)",
