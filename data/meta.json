@@ -188,7 +188,7 @@
   "language": "TypeScript"
  },
  "AhmadHassan-BTed/Jantt": {
-  "description": "Create interactive Gantt charts with AI — no code required, free forever. Built-in BYOK AI Copilot (10 providers + Ollama), free cloud rooms, working-calendar CPM, 6 views, React/Vue/Svelte/Python/MCP.",
+  "description": "Create interactive Gantt charts with AI : no code required, free forever. Built-in BYOK AI Copilot (10 providers + Ollama), free cloud rooms, working-calendar CPM, 6 views, React/Vue/Svelte/Python/MCP.",
   "language": "TypeScript"
  },
  "AhmadHassan-BTed/Ledgerify": {
@@ -296,7 +296,7 @@
   "language": "Python"
  },
  "Anil-matcha/Open-Generative-AI": {
-  "description": "Uncensored Open-source alternative to AI video platforms — Free AI image & video generation studio with 800+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
+  "description": "Uncensored AI Image & Video Generator — Free AI image & video generation studio with 800+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
   "language": "JavaScript"
  },
  "Anionex/banana-slides": {
@@ -823,6 +823,10 @@
   "description": "Codex Dream Skin",
   "language": "JavaScript"
  },
+ "Fei-Craft/DS-Bot": {
+  "description": "A team of long-lived bots for DeepSeek Harness, with main bots, bot-to-bot messages and group chats.",
+  "language": "JavaScript"
+ },
  "Fei2411/DS-Bot": {
   "description": "A team of long-lived bots for DeepSeek Harness, with main bots, bot-to-bot messages and group chats.",
   "language": "JavaScript"
@@ -841,6 +845,10 @@
  },
  "FlashML-org/FreeToken": {
   "description": "FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently.",
+  "language": "Python"
+ },
+ "FlashML-org/FreeVideo": {
+  "description": "Make videos on the computer you already own. FreeVideo runs MiniMax H3 in as little as 8 GB of VRAM and 16 GB of RAM, and adapts its acceleration path to your hardware.",
   "language": "Python"
  },
  "FlorianBruniaux/claude-code-ultimate-guide": {
@@ -1494,6 +1502,10 @@
  "Martian-Engineering/lossless-claw": {
   "description": "Lossless Claw — LCM (Lossless Context Management) plugin for OpenClaw",
   "language": "TypeScript"
+ },
+ "Marvisak/VIctory": {
+  "description": "An attempt at running GTA VI on PC",
+  "language": "Rust"
  },
  "Master-cai/Research-Paper-Writing-Skills": {
   "description": "Skill package for ML/CV/NLP paper writing, curated and adapted from Prof. Peng Sida's open notes for Codex, Claude Code, and Gemini.",
@@ -2216,8 +2228,8 @@
   "language": "TypeScript"
  },
  "TauricResearch/TradingAgents": {
-  "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-  "language": "Python"
+  "description": "TradingAgents: Towards Agentic Finance Research",
+  "language": "TypeScript"
  },
  "TeamNewPipe/NewPipe": {
   "description": "A libre lightweight streaming front-end for Android.",
@@ -3428,7 +3440,7 @@
   "language": "TypeScript"
  },
  "bowenliang123/dsh-context": {
-  "description": "DeepSeek Harness officially recommended - a context insight plugin, for context composition, evolution and Multi-Agent details. DeepSeek Harness官方推荐的上下文洞察插件，透视上下文组成与演进，以及多Agent 协作与通讯。",
+  "description": "DeepSeek Harness officially recommended - a context insight plugin, for context composition, evolution and Multi-Agent collaboration. DeepSeek Harness官方推荐的上下文洞察插件，透视上下文组成与演进，以及多Agent 协作与通讯。",
   "language": "TypeScript"
  },
  "boykopovar/AnyPS5": {
@@ -4360,7 +4372,7 @@
   "language": "C++"
  },
  "elementalsouls/Claude-BugHunter": {
-  "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+  "description": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
   "language": "Python"
  },
  "elie222/rakazo": {
@@ -5151,6 +5163,10 @@
   "description": "A tool for secrets management, encryption as a service, and privileged access management",
   "language": "Go"
  },
+ "havenicec/google-qr-sms-helper": {
+  "description": "Chrome Extension (MV3) to switch Google's mandatory QR code verification back to standard 6-digit SMS verification via iPad Mini profile & [3,null,4] RPC fallback.",
+  "language": "JavaScript"
+ },
  "haydenschmitty/floorplan": {
   "description": "See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.",
   "language": "JavaScript"
@@ -5471,6 +5487,10 @@
   "description": "Free, open-source Windows optimization tool for performance, privacy, and simplicity.",
   "language": "C#"
  },
+ "ivall/xcl": {
+  "description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
+  "language": "Rust"
+ },
  "jackfrued/Python-100-Days": {
   "description": "Python - 100天从新手到大师",
   "language": "Jupyter Notebook"
@@ -5594,6 +5614,10 @@
  "jingyaogong/minimind": {
   "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
   "language": "Python"
+ },
+ "jiwoochris/artex-global": {
+  "description": "Global edition of ARTEX — an LLM multi-agent autonomous penetration-testing framework. English default, switchable to Korean/Chinese/Spanish/Japanese. For authorized, defensive and detection use only. (upstream: Autumn-27/ARTEX, AGPL-3.0)",
+  "language": "Go"
  },
  "jlcodes99/cockpit-tools": {
   "description": " 🚀 通用 AI IDE 账号管理工具：支持 Antigravity / Codex / GitHub Copilot / Windsurf / Kiro / Cursor / Gemini-cli / CodeBuddy，多账号切换、配额监控、自动唤醒与多开实例管理。 🚀 Universal AI IDE account manager for Antigravity / Codex / GitHub Copilot / Windsurf / Kiro / Cursor / Gemini-cli / CodeBuddy, with multi-account switching, quota monitoring, wake-up automation, and multi-insta",
@@ -5724,7 +5748,7 @@
   "language": "Python"
  },
  "kaomei/stickman-video-director": {
-  "description": "AI Agent Skill (Claude Code, Codex & more): Turn any script into animated stickman videos for faceless YouTube, Shorts & TikTok. 14+ styles with voiceover, captions & SFX. Free & open-source (MIT).",
+  "description": "AI Agent Skill (Claude Code, Codex & more): Turn any script into animated stickman videos for faceless YouTube, Shorts & TikTok. 20+ styles with voiceover, captions & SFX. Free & open-source (MIT).",
   "language": "JavaScript"
  },
  "karan/Projects": {
@@ -6618,6 +6642,10 @@
  "mizorewww/laya-mlx": {
   "description": "Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
   "language": "Python"
+ },
+ "mjmirza/app-store-compliance": {
+  "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+  "language": "Shell"
  },
  "mksglu/context-mode": {
   "description": "Free, local plugin that keeps tool output out of your coding agent's context window. Sandbox and SQLite FTS5 search, 99% fewer bytes in context. Works with Claude Code, Codex, Pi, OMP, OpenCode, Gemini CLI, Copilot CLI and 4 more agents. Zero telemetry.",
@@ -8103,6 +8131,10 @@
   "description": "Independent CarPlay receiver for compatible Android head units. Wired and wireless public preview.",
   "language": "Kotlin"
  },
+ "shinyobjectz/raea": {
+  "description": "Render Anything Engine: tell your AI what to make. Videos, motion graphics, 3D and games as React and TypeScript, rendered on your own GPU. Rust + Bevy, macOS, Linux and Windows.",
+  "language": "TypeScript"
+ },
  "shitagaki-lab/see-through": {
   "description": "\"Single-image Layer Decomposition for Anime Characters\" (SIGGRAPH 2026 Conference Paper)",
   "language": "Python"
@@ -9028,7 +9060,7 @@
   "language": "TypeScript"
  },
  "vercel-labs/ui": {
-  "description": "A library of behaviors for agents to build the next generation of user interfaces.",
+  "description": "A library of behaviors for agents to build and drive the next generation of user interfaces.",
   "language": "TypeScript"
  },
  "vercel-labs/zerolang": {
@@ -9130,6 +9162,10 @@
  "vuetifyjs/vuetify": {
   "description": "🐉 Vue Component Framework",
   "language": "TypeScript"
+ },
+ "vxcontrol/pentagi": {
+  "description": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
+  "language": "Go"
  },
  "wafer-ai/gpu-perf-engineering-resources": {
   "description": "A curated resource list for learning AI performance engineering, from GPU fundamentals to production inference.",
@@ -9322,6 +9358,10 @@
  "xitu/gold-miner": {
   "description": "🥇掘金翻译计划，可能是世界最大最好的英译中技术社区，最懂读者和译者的翻译平台：",
   "language": null
+ },
+ "xixu-me/apds": {
+  "description": "Curated list of Agent Skills centered on people, relationships, commemorative scenes, and methodological perspectives",
+  "language": "JavaScript"
  },
  "xixu-me/awesome-persona-distill-skills": {
   "description": "Curated list of Agent Skills centered on people, relationships, commemorative scenes, and methodological perspectives",
@@ -9525,7 +9565,7 @@
  },
  "zenbu-labs/terminal-browser": {
   "description": "A real browser inside your terminal",
-  "language": "TypeScript"
+  "language": "Rust"
  },
  "zenc-lang/zenc": {
   "description": "Write like a high-level language, run like C.",
