@@ -380,7 +380,7 @@
   "language": "C++"
  },
  "BaaRai/ARTEX": {
-  "description": "ARTEX - AI autonomous penetration testing system (English translation; upstream: Autumn-27/ARTEX, AGPL-3.0)",
+  "description": "Actively maintained ARTEX: AI autonomous penetration testing system. Self-hosted, model-agnostic, evidence-backed findings. Community continuation of Autumn-27/ARTEX, AGPL-3.0.",
   "language": "Go"
  },
  "BehiSecc/awesome-claude-skills": {
@@ -636,7 +636,7 @@
   "language": "TypeScript"
  },
  "DeanChensj/jiangshan-map": {
-  "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+  "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 200+ territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
   "language": "JavaScript"
  },
  "DefinitelyTyped/DefinitelyTyped": {
@@ -1158,6 +1158,10 @@
  "HunYiSage/dsh-purge": {
   "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
   "language": "JavaScript"
+ },
+ "Hut-hzf/ung220z-tool": {
+  "description": "ung220z-tool 是一个针对 UNG220Z，另含中兴/烽火/华为/九联多厂商适配、固件指纹识别与分家族排障建议的一键凭据提取工具，仅限在你自己的设备上用于找回忘记的管理密码、迁移宽带配置或安全自查。",
+  "language": "Python"
  },
  "Hypostasis-Cat/HypoMux": {
   "description": "CN Windows 多网卡聚合与网络加速工具。一键融合有线、Wi-Fi、热点等连接，实现多路径传输与智能流量调度。 EN Windows multi-NIC network accelerator. Combine Ethernet, Wi-Fi, hotspots and more for multi-path transmission and smart traffic routing.",
@@ -1876,7 +1880,7 @@
   "language": "JavaScript"
  },
  "PenglongHuang/chinese-novelist-skill": {
-  "description": "🎭 AI 写小说：从零生成 10-50 章完整中文小说，三层问答 · 创作记忆 · 悬念钩子 · 自动校验，长篇网文连载皆宜｜开源免费，适配主流 coding agent｜🤝 Infistar.cc 赞助 · 注册送 $5｜AI novel writing skill",
+  "description": "🎭 AI 写小说：从零生成 10-50 章完整中文小说，三层问答 · 创作记忆 · 悬念钩子 · 自动校验，长篇网文连载皆宜｜开源免费，适配主流 agent harness｜🤝 Infistar.cc 赞助 · 注册送 $5｜AI novel writing skill",
   "language": "JavaScript"
  },
  "PeonPing/peon-ping": {
@@ -3812,7 +3816,7 @@
   "language": "TypeScript"
  },
  "codewhale-hq/Codewhale": {
-  "description": "An open-source coding agent for your terminal, written in Rust. It works with any model, can split one task across several agents, and every line of it is yours to read.",
+  "description": "Open-source Rust coding agent for terminal, web, and desktop. Any model, multi-agent fleets, MCP & plugins, OS sandboxing, and session receipts.",
   "language": "Rust"
  },
  "colbymchenry/codegraph": {
@@ -5032,7 +5036,7 @@
   "language": "JavaScript"
  },
  "googleworkspace/cli": {
-  "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
+  "description": " Community CLI for Google Workspace APIs.",
   "language": "Rust"
  },
  "gorhill/uBlock": {
@@ -5053,7 +5057,7 @@
  },
  "grafana/grafana": {
   "description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
-  "language": "TypeScript"
+  "language": "Go"
  },
  "graykode/abtop": {
   "description": "Like htop, but for AI coding agents. Monitor Claude    Code & Codex CLI sessions, tokens, context window,    rate limits, and ports in real-time.",
@@ -5672,7 +5676,7 @@
   "language": "Go"
  },
  "jub0t/Concat": {
-  "description": "Beta: The truly free, open-source, local-first, cross-platform video editor. Scriptable through a JSON-RPC API & MCP.",
+  "description": "The open-source CapCut alternative.",
   "language": "Rust"
  },
  "jub0t/concat": {
@@ -6252,7 +6256,7 @@
   "language": "Objective-C"
  },
  "magnitudedev/magnitude": {
-  "description": "Open source inference engine that tunes its kernels on your hardware to find the fastest way to run each model. 2x faster than Ollama. Works on Apple Silicon, NVIDIA, AMD, Intel, or just a CPU.",
+  "description": "Open source inference engine that spreads models across your GPU, RAM, and SSD so they run on everyday Macs and PCs. Works on Apple Silicon, NVIDIA, AMD, Intel, or just a CPU.",
   "language": "Rust"
  },
  "makecindy/cindy": {
@@ -9180,7 +9184,7 @@
   "language": "Go"
  },
  "waligoraamodio288-rgb/hongguo-desktop-releases": {
-  "description": "红果短剧电脑版｜在 Windows 电脑上找剧、选集、收藏和接着上次看。免费第三方客户端，由渠道有数独立维护，提供 Windows 正式版、Mac M 系列和 Android TV 测试版。",
+  "description": "红果短剧电脑版｜支持 Windows 正式版、Mac（Apple Silicon + Intel 双架构）与 Android TV。免费第三方客户端，由渠道有数独立维护，支持找剧、选集、收藏与续播。",
   "language": null
  },
  "walkinglabs/awesome-harness-engineering": {
@@ -9310,6 +9314,10 @@
  "xbtlin/ai-berkshire": {
   "description": "AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters' methodologies + multi-agent adversarial analysis.",
   "language": "HTML"
+ },
+ "xcl-dev/xcl": {
+  "description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
+  "language": "Rust"
  },
  "xdash/FDE-the-Guidance-Book-of-Forward-Deployed-Engineer": {
   "description": "FDE（前沿部署工程师）从零入门指南（基于范冰《增长黑客》原书框架）",
