@@ -71,6 +71,10 @@
   "description": "Animation engine for explanatory math videos",
   "language": "Python"
  },
+ "4lwayz/portwatch-vi": {
+  "description": "Does GTA VI run on PC yet? A live tracker of community recompilation and emulation efforts, updated daily.",
+  "language": "JavaScript"
+ },
  "521xueweihan/HelloGitHub": {
   "description": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
   "language": "Python"
@@ -1135,6 +1139,10 @@
   "description": "🚀面向求职与开发场景的实用 AI Skills 集合，支持简历优化、岗位投递、面试准备与开发提效。",
   "language": "HTML"
  },
+ "Hithink-Tech-Org/Financial-API": {
+  "description": "同花顺官方 A股金融数据服务，提供股票实时行情、历史行情、财务报表、指数、板块、涨停等数据，适用于 AI Agent、量化研究和应用开发，支持 API、MCP、CLI 和 Python。Official Tonghuashun (HiThink) A-share financial data service providing real-time and historical stock market data, financial statements, indices, sectors and limit-up data for AI agents, quantitative research and application development.",
+  "language": "TypeScript"
+ },
  "Hmbown/Codewhale": {
   "description": "Open-source coding agent for your terminal, built in Rust and on a journey of continuous community improvement. Issues and PRs welcome.",
   "language": "Rust"
@@ -1186,6 +1194,10 @@
  "InterceptSuite/ProxyBridge": {
   "description": "Proxifier Alternative to redirect any Windows/MacOS/Linux TCP and UDP traffic to HTTP/Socks5 proxy",
   "language": "C"
+ },
+ "InukaAsith/TwinDesk": {
+  "description": " All your computers and your phone/iPhone, working as one desk. Screens, apps, files, clipboard, calls, texts, notifications, mouse and keyboard, shared between Mac, Windows, Linux , Android, Web and ios / ipados . Free and open source. No account, no cloud, and no shared network needed.",
+  "language": "JavaScript"
  },
  "ItsNotRexed/Leonida": {
   "description": "Leonida Is A Native PC Recompilation Of The Xbox Version Of Grand Theft Auto 6",
@@ -2497,6 +2509,10 @@
  },
  "XiaomiMiMo/MiMo-Code": {
   "description": "MiMo Code: Where Models and Agents Co-Evolve",
+  "language": "TypeScript"
+ },
+ "XinaTian/MROffice": {
+  "description": "MR Office — the open-source editors of the AI office suite closest to Microsoft Office: documents, spreadsheets, presentations, PDF and code in the browser. Copilot in every editor edits real Word, Excel and PowerPoint files with you; an MCP server lets Claude, ChatGPT, Cursor and Codex create and edit them; embed it in your app with one line.",
   "language": "TypeScript"
  },
  "XingangPan/DragGAN": {
@@ -4376,7 +4392,7 @@
   "language": "C++"
  },
  "elementalsouls/Claude-BugHunter": {
-  "description": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+  "description": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
   "language": "Python"
  },
  "elie222/rakazo": {
@@ -5057,7 +5073,7 @@
  },
  "grafana/grafana": {
   "description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
-  "language": "Go"
+  "language": "TypeScript"
  },
  "graykode/abtop": {
   "description": "Like htop, but for AI coding agents. Monitor Claude    Code & Codex CLI sessions, tokens, context window,    rate limits, and ports in real-time.",
@@ -6648,7 +6664,7 @@
   "language": "Python"
  },
  "mjmirza/app-store-compliance": {
-  "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+  "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 125 documented rejection patterns and fixes, privacy manifest and Data safety checks, 117 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
   "language": "Shell"
  },
  "mksglu/context-mode": {
@@ -6764,7 +6780,7 @@
   "language": null
  },
  "multica-ai/multica": {
-  "description": "Make humans and AI agents work as one team — open-source and self-hostable.",
+  "description": "Shared task board where people and AI coding agents work as teammates. Source-available, self-hostable.",
   "language": "Go"
  },
  "muratcankoylan/Agent-Skills-for-Context-Engineering": {
@@ -6774,6 +6790,10 @@
  "musistudio/claude-code-router": {
   "description": "One local control plane for every AI agent: route across models, fuse new capabilities, orchestrate tools, and stay fully in control.",
   "language": "TypeScript"
+ },
+ "mutonby/openshorts": {
+  "description": "Open source AI clip generator: turns long videos into viral 9:16 shorts with AI moment detection, face tracking, subtitles and dubbing. Self-host free with Docker (MIT), or use the cloud with GPU speed from $12/mo. MCP server and API for AI agents.",
+  "language": "Python"
  },
  "muxuuu/serenity-skill": {
   "description": "Serenity-inspired Agent Skill for supply-chain bottleneck stock research",
@@ -8183,6 +8203,10 @@
   "description": "SVG icons for popular brands",
   "language": "JavaScript"
  },
+ "simplexai-labs/linger": {
+  "description": "Linger is An Open-Source Personal Agent That Runs Fully on Your PC.  We aim to break Big Tech’s grip on AI by bringing powerful local AI to everyday computers through efficient model–harness co-design, so everyone can run their own.",
+  "language": "TypeScript"
+ },
  "simplifaisoul/osiris": {
   "description": "Open Source Global Intelligence Platform - Real-Time OSINT Dashboard - A Palantir Alternative -                            2nZNHm3Lr9umG3DVrzYwHgktwkuKuJRXqqRqs3ewpump ",
   "language": "TypeScript"
@@ -8788,7 +8812,7 @@
   "language": "TypeScript"
  },
  "tt-a1i/archify": {
-  "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
+  "description": "Turn any idea, plan, or codebase into an interactive diagram or one-page answer: 10 diagram types, Architecture Diagnosis, Story video and PR walkthroughs. An Agent Skill for Claude Code, Codex, Cursor and more.",
   "language": "JavaScript"
  },
  "tutti-os/tutti": {
