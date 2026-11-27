@@ -873,7 +873,7 @@
  },
  "Flowseal/zapret-discord-youtube": {
   "description": "",
-  "language": "Batchfile"
+  "language": "Lua"
  },
  "Fokkyp/SoftwareCopyright-Skill": {
   "description": "中国软件著作权申请材料 生成器 Skills，本 Skills 通过阅读本地项目，自动生成全套 .docx 软著申请材料，全开源，无须再付费购买任何软著申请服务",
@@ -1108,7 +1108,7 @@
   "language": "C"
  },
  "HarnessMD/munder-difflin": {
-  "description": "Coolest app to use agents, local, multi provider and open source grok bot alternative. Build custom worlds for your claude code and codex like agents",
+  "description": "Coolest app to use agents. A local, multi provider and open source grok bot alternative. Build custom worlds for your claude code and codex like agents",
   "language": "TypeScript"
  },
  "HeartMuLa/heartlib": {
@@ -1141,7 +1141,7 @@
  },
  "Hithink-Tech-Org/Financial-API": {
   "description": "同花顺官方 A股金融数据服务，提供股票实时行情、历史行情、财务报表、指数、板块、涨停等数据，适用于 AI Agent、量化研究和应用开发，支持 API、MCP、CLI 和 Python。Official Tonghuashun (HiThink) A-share financial data service providing real-time and historical stock market data, financial statements, indices, sectors and limit-up data for AI agents, quantitative research and application development.",
-  "language": "TypeScript"
+  "language": "HTML"
  },
  "Hmbown/Codewhale": {
   "description": "Open-source coding agent for your terminal, built in Rust and on a journey of continuous community improvement. Issues and PRs welcome.",
@@ -1812,7 +1812,7 @@
   "language": "Python"
  },
  "OpenSelena/libreget": {
-  "description": "Open-source download manager for courses (Udemy/Hotmart), YouTube, music & 1,800+ sites. Built with Tauri 2.0, Rust & Svelte.",
+  "description": "Open-source download manager & offline media toolbox for YouTube, music, social media, learning platforms & 1,800+ sites. Built with Tauri 2.0, Rust & Svelte.",
   "language": "Rust"
  },
  "OpenSelena/omniget": {
@@ -2434,6 +2434,10 @@
  "VectifyAI/PageIndex": {
   "description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
   "language": "Python"
+ },
+ "Vialibrex/FlClash": {
+  "description": "A multi-platform proxy client based on ClashMeta,simple and easy to use, open-source and ad-free.",
+  "language": "Dart"
  },
  "Vincentwei1021/video-shotcraft": {
   "description": "AI video skill for Claude Code & Codex — cinematic, editable product promos with Remotion: 124 shot recipe cards, 150 motion previews, beat sync, sound design, Motion Workbench & JianYing (CapCut CN) export.",
@@ -3166,6 +3170,10 @@
  "aseprite/aseprite": {
   "description": "Animated sprite editor & pixel art tool (Windows, macOS, Linux)",
   "language": "C++"
+ },
+ "asfgsrgerg/jkandf": {
+  "description": "Curated list of Agent Skills centered on people, relationships, commemorative scenes, and methodological perspectives",
+  "language": "JavaScript"
  },
  "asgeirtj/system_prompts_leaks": {
   "description": "Leaked system prompts of ChatGPT, Claude, Gemini and more. The hidden system prompt of every popular chatbot, in full, every version since May 2025. Also Anthropic Claude Code, OpenAI Codex, Google Antigravity, xAI Grok, Meta Muse, Moonshot Kimi, Alibaba Qwen, Z.ai GLM ZCode, MiniMax, Cursor, Perplexity, DeepSeek and 30+ others. Updated daily.",
@@ -4436,7 +4444,7 @@
   "language": "C"
  },
  "erkamyaman/rust-anything": {
-  "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+  "description": "Rewrite your app in Rust, piece by piece, checked against the original at every step. Works with TypeScript, JavaScript, Python, Go, Ruby, Java, C, PHP, C#, Kotlin and PowerShell.",
   "language": "Rust"
  },
  "ersinkoc/phonebox": {
@@ -4520,7 +4528,7 @@
   "language": "Python"
  },
  "expo/exact": {
-  "description": "Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI agent can build it, run it, see it, and test it on every one of them.",
+  "description": "Agent Native, Rust based, high performance way to build apps on web, iOS, macOS, Android, Linux and other platforms. ",
   "language": "Rust"
  },
  "expo/expo": {
@@ -5073,7 +5081,7 @@
  },
  "grafana/grafana": {
   "description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
-  "language": "TypeScript"
+  "language": "Go"
  },
  "graykode/abtop": {
   "description": "Like htop, but for AI coding agents. Monitor Claude    Code & Codex CLI sessions, tokens, context window,    rate limits, and ports in real-time.",
@@ -8005,7 +8013,7 @@
  },
  "sansan0/TrendRadar": {
   "description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, web search, MCP & smart alerts.🎯 告别信息过载，你的 AI     舆情监控助手与热点筛选工具！聚合多平台热点 + RSS 订阅 + 定时联网搜索，支持关键词与 AI 智能筛选。AI 翻译 + AI 分析简报直推手机，支持接入 MCP     架构，赋能 AI 自然语言对话分析、实时检索、情感洞察与趋势预测。支持 Docker，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/Bark/Slack     等渠道智能推送。",
-  "language": "Python"
+  "language": "TypeScript"
  },
  "sanyuan0704/sanyuan-skills": {
   "description": "Expert code review skill: SOLID, security, performance, error handling, boundary conditions",
@@ -8606,6 +8614,10 @@
  "testerSunshine/12306": {
   "description": "12306智能刷票，订票",
   "language": "Python"
+ },
+ "tgeorgiadis/quiver-launcher": {
+  "description": "A modern launcher for downloading, installing, and running apps from GitHub and GitLab releases. With a personal library, community catalog subscriptions, and flexible filtering.",
+  "language": "TypeScript"
  },
  "thaw-app/Thaw": {
   "description": "The open source menu bar manager",
@@ -9208,7 +9220,7 @@
   "language": "Go"
  },
  "waligoraamodio288-rgb/hongguo-desktop-releases": {
-  "description": "红果短剧电脑版｜支持 Windows 正式版、Mac（Apple Silicon + Intel 双架构）与 Android TV。免费第三方客户端，由渠道有数独立维护，支持找剧、选集、收藏与续播。",
+  "description": "红果桌面端（红果短剧电脑版）｜渠道有数独立维护的免费第三方客户端。Windows 10/11 x64 无需安卓模拟器，另提供 Mac 双架构和 Android TV 版。",
   "language": null
  },
  "walkinglabs/awesome-harness-engineering": {
@@ -9360,7 +9372,7 @@
   "language": "JavaScript"
  },
  "xiaoyang111222/cn-math-taxonomy": {
-  "description": "中小学 10 学科知识图谱查漏补缺：4,068 个知识点、6,429 条先修关系、16,419 道题。按国家课程标准逐条核对，诊断定位真正没学会的前置知识点，给出补学路径。",
+  "description": "中小学 11 学科知识图谱查漏补缺：4,221 个知识点、6,681 条先修关系、17,031 道题。按国家课程标准逐条核对，诊断定位真正没学会的前置知识点，给出补学路径。",
   "language": "Python"
  },
  "xindoo/agentic-design-patterns": {
@@ -9456,7 +9468,7 @@
   "language": "TypeScript"
  },
  "yetone/magpie": {
-  "description": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
+  "description": "Pool every plan you pay for — Claude, ChatGPT, Copilot, GLM Coding Plan, Kimi Code and more — and use them in any agent: Claude Code, Codex, Claude Desktop… When one runs out, the next takes over.",
   "language": "Go"
  },
  "yi1108/printfilm": {
