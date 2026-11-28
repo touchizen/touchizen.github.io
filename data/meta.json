@@ -339,6 +339,10 @@
   "description": "AI Agent 驱动的开源可自部署视频工作台：将小说与剧本转为角色、场景、道具资产、分镜、视频和剪映草稿，支持跨镜头一致性、多供应商与费用追踪 | Self-hosted AI video workspace for stories, storyboards and short-form video production",
   "language": "Python"
  },
+ "Arekejoker/qwen21-nsfw-pose-skill": {
+  "description": "Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw",
+  "language": "Python"
+ },
  "Arthur-Ficial/apfel": {
   "description": "The free AI already on your Mac. CLI tool, OpenAI-compatible server, and interactive chat — all on-device via Apple Intelligence. No API keys, no cloud, no downloads.",
   "language": "Swift"
@@ -1114,6 +1118,10 @@
  "HeartMuLa/heartlib": {
   "description": "HeartMuLa Official Repo: The Most Powerful Open-Source Music Generation Model of 2026",
   "language": "Python"
+ },
+ "HenryNdubuaku/cognition-compendium": {
+  "description": "Become a cracked researcher/engineer with this unconventional textbook covering maths, computing, cognition, ML and Neuro.",
+  "language": "Cuda"
  },
  "HenryNdubuaku/maths-cs-ai-compendium": {
   "description": "Become a cracked AI/ML researcher/engineer with this unconventional textbook covering maths, computing, and ML with intuition.",
@@ -3166,6 +3174,10 @@
  "asdf-vm/asdf": {
   "description": "Extendable version manager with support for Ruby, Node.js, Elixir, Erlang & more",
   "language": "Go"
+ },
+ "asdfasdfasdfdsa/bnjd": {
+  "description": "Curated list of Agent Skills centered on people, relationships, commemorative scenes, and methodological perspectives",
+  "language": "JavaScript"
  },
  "aseprite/aseprite": {
   "description": "Animated sprite editor & pixel art tool (Windows, macOS, Linux)",
@@ -6533,7 +6545,7 @@
  },
  "microsoft/copilot-sdk": {
   "description": "Multi-platform SDK for integrating GitHub Copilot Agent into apps and services",
-  "language": "Java"
+  "language": "Rust"
  },
  "microsoft/coreutils": {
   "description": "Coreutils for Windows: Installer & Packaging",
@@ -7128,7 +7140,7 @@
   "language": "Python"
  },
  "ohmyzsh/ohmyzsh": {
-  "description": "🙃   A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
+  "description": "🙃   A delightful community-driven (with 2,600+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
   "language": "Shell"
  },
  "ollama/ollama": {
@@ -8815,6 +8827,10 @@
   "description": "A cross-platform Electron Desktop App to stream and download any Movie, TV Series or Anime in the World. Zero Ads and Tracking",
   "language": "JavaScript"
  },
+ "trustno1-coder/VIctory-NVIDIA": {
+  "description": "VIctory (Xbox Series compatibility layer) tuned for NVIDIA RTX cards: Series X at 2560x1440 with DLSS, about 26-30 fps on an RTX 5070, DLSS frame generation 2x-6x, an F1 settings menu and F3 stats panel, open water without dark blocks. Built on many repos combined into one. No game files or NVIDIA files included.",
+  "language": "Rust"
+ },
  "tryatlas/atlas": {
   "description": "Source control for agents. Use multiple coding agents, track their changes and query them in one place",
   "language": "TypeScript"
@@ -9372,7 +9388,7 @@
   "language": "JavaScript"
  },
  "xiaoyang111222/cn-math-taxonomy": {
-  "description": "中小学 11 学科知识图谱查漏补缺：4,221 个知识点、6,681 条先修关系、17,031 道题。按国家课程标准逐条核对，诊断定位真正没学会的前置知识点，给出补学路径。",
+  "description": "中小学 11 学科知识图谱数据集（JSON）：4,231 知识点、6,700 条先修关系、17,092 道题；对齐国家课程标准与人教版/统编版教材，含沪教版等版本映射。CC BY-NC 4.0。",
   "language": "Python"
  },
  "xindoo/agentic-design-patterns": {
@@ -9685,7 +9701,7 @@
  },
  "ziishaned/learn-regex": {
   "description": "Learn regex the easy way",
-  "language": null
+  "language": "Python"
  },
  "zloirock/core-js": {
   "description": "Standard Library",
